@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9080204147037d30fe4286ae1d23083",
+    "content-hash": "7d957f88d1ae5408657edcaa364a0a26",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9598,6 +9598,15 @@
             "time": "2015-12-17T08:42:14+00:00"
         },
         {
+            "name": "zakiya/courts-theme",
+            "version": "master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/zakiya/courts-theme/archive/master.zip"
+            },
+            "type": "drupal-theme"
+        },
+        {
             "name": "zaporylie/composer-drupal-optimizations",
             "version": "1.1.0",
             "source": {
@@ -12107,7 +12116,8 @@
         "drupal/rabbit_hole": 10,
         "drupal/search_api_spellcheck": 20,
         "drupal/simple_block": 10,
-        "drupal/xmlsitemap": 15
+        "drupal/xmlsitemap": 15,
+        "zakiya/courts-theme": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
