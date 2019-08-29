@@ -1,0 +1,22 @@
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: ''
+folder: ../config-local
+module:
+  devel: 0
+  log_stdout: 0
+  stage_file_proxy: 0
+theme: {  }
+blacklist:
+  - devel.settings
+  - devel.toolbar.settings
+graylist:
+  - system.file
+  - 'xmlsitemap.xmlsitemap.*'
+  - 'webform.webform.*'
+graylist_dependents: false
+graylist_skip_equal: true
+weight: 0

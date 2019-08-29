@@ -1,0 +1,68 @@
+name: JCC Mega
+type: profile
+description: ''
+core: 8.x
+
+install:
+- admin_toolbar
+- adminimal_admin_toolbar
+- automated_cron
+- big_pipe
+- block
+- breakpoint
+- chosen
+- chosen_lib
+- ckeditor
+- color
+- config
+- config_direct_save
+- config_filter
+- config_split
+- contact
+- contextual
+- datetime
+- dblog
+- default_content
+- dynamic_page_cache
+- editor
+- field
+- field_ui
+- file
+- filter
+- hal
+- help
+- history
+- image
+- link
+- media
+- menu_ui
+- module_filter
+- node
+- options
+- page_cache
+- path
+- quickedit
+- rdf
+- search
+- serialization
+- shortcut
+- simple_block
+- system
+- taxonomy
+- text
+- toolbar
+- tour
+- update
+- user
+- views_ui
+- menu_link_content
+- views
+
+dependencies:
+- node
+- block
+- views
+
+themes:
+- adminimal_theme
+- seven
