@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d957f88d1ae5408657edcaa364a0a26",
+    "content-hash": "916b0d2ebfd5614dd59181aa27661b38",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6026,6 +6026,16 @@
             "time": "2019-08-13T17:33:27+00:00"
         },
         {
+            "name": "enyo/dropzone",
+            "version": "5.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/enyo/dropzone",
+                "reference": "v5.5.0"
+            },
+            "type": "drupal-library"
+        },
+        {
             "name": "grasmash/expander",
             "version": "1.0.0",
             "source": {
@@ -6683,6 +6693,48 @@
                 "php"
             ],
             "time": "2019-08-12T20:17:41+00:00"
+        },
+        {
+            "name": "oomphinc/composer-installers-extender",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oomphinc/composer-installers-extender.git",
+                "reference": "ca1c4b16b0905c81d1e77e608f36a2eff1a56f56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oomphinc/composer-installers-extender/zipball/ca1c4b16b0905c81d1e77e608f36a2eff1a56f56",
+                "reference": "ca1c4b16b0905c81d1e77e608f36a2eff1a56f56",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "composer/installers": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "OomphInc\\ComposerInstallersExtender\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Beemsterboer",
+                    "email": "stephen@oomphinc.com",
+                    "homepage": "https://github.com/balbuf"
+                }
+            ],
+            "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
+            "homepage": "http://www.oomphinc.com/",
+            "time": "2017-03-31T16:57:39+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -10245,6 +10297,55 @@
                 "scraper"
             ],
             "time": "2018-06-29T15:13:57+00:00"
+        },
+        {
+            "name": "harvesthq/chosen",
+            "version": "v1.8.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/harvesthq/chosen-package.git",
+                "reference": "ad86732b668627c131e61ee8f0e6e9ed52e4db8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/harvesthq/chosen-package/zipball/ad86732b668627c131e61ee8f0e6e9ed52e4db8d",
+                "reference": "ad86732b668627c131e61ee8f0e6e9ed52e4db8d",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Koen Punt",
+                    "homepage": "https://github.com/koenpunt"
+                },
+                {
+                    "name": "Patrick Filler",
+                    "homepage": "https://github.com/pfiller"
+                },
+                {
+                    "name": "Christophe Coevoet",
+                    "homepage": "https://github.com/stof"
+                },
+                {
+                    "name": "Ken Earley",
+                    "homepage": "https://github.com/kenearley"
+                }
+            ],
+            "description": "Chosen is a JavaScript plugin that makes select boxes user-friendly. It is currently available in both jQuery and Prototype flavors.",
+            "homepage": "https://harvesthq.github.io/chosen/",
+            "keywords": [
+                "dropdown",
+                "form",
+                "input",
+                "multiselect",
+                "select",
+                "ui"
+            ],
+            "time": "2018-06-28T20:32:51+00:00"
         },
         {
             "name": "instaclick/php-webdriver",

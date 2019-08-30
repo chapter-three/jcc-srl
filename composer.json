@@ -24,6 +24,19 @@
             }
         },
         {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone",
+                "version": "5.5.0",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/enyo/dropzone",
+                    "type": "git",
+                    "reference": "v5.5.0"
+                }
+            }
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -36,14 +49,14 @@
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/adminimal_theme": "^1.5",
         "drupal/autosave_form": "^1.0",
-        "drupal/chosen": "^2.7",
+        "drupal/chosen": "^2.8",
         "drupal/components": "^1.1",
-        "drupal/console": "^1.9",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_exclude": "1.x-dev",
         "drupal/config_ignore": "^2.1",
         "drupal/config_installer": "^1.0",
         "drupal/config_split": "^1.4",
+        "drupal/console": "^1.9",
         "drupal/core": "^8.7.0",
         "drupal/default_content": "^1.0@alpha",
         "drupal/dropzonejs": "^2.0@alpha",
@@ -75,6 +88,8 @@
         "drupal/webform": "^5.4",
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
+        "enyo/dropzone": "^5.5",
+        "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
@@ -117,9 +132,15 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "installer-types": [
+            "library"
+        ],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "harvesthq/chosen"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
