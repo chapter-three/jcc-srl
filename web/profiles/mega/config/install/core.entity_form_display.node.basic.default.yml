@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
+    - entity_browser.browser.meb
     - field.field.node.basic.body
     - field.field.node.basic.field_media
     - node.type.basic
@@ -33,7 +33,7 @@ content:
   field_media:
     weight: 7
     settings:
-      entity_browser: media_entity_browser
+      entity_browser: meb
       field_widget_display: rendered_entity
       field_widget_display_settings:
         view_mode: default

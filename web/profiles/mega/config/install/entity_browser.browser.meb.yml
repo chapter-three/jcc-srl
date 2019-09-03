@@ -9,7 +9,7 @@ dependencies:
     - entity_browser_entity_form
     - media
     - views
-name: media_entity_browser
+name: meb
 label: 'Media Entity Browser'
 display: modal
 display_configuration:
