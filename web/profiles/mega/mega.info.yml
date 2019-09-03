@@ -16,7 +16,6 @@ install:
 - color
 - components
 - config
-- config_direct_save
 - config_filter
 - config_split
 - contact
