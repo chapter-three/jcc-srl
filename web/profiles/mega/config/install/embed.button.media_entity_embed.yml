@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_entity_browser
+    - entity_browser.browser.media_entity_browser_wysiwyg
   module:
     - entity_embed
     - media
@@ -12,9 +12,8 @@ type_id: entity
 type_settings:
   entity_type: media
   bundles: {  }
-  display_plugins:
-    - 'entity_reference:entity_reference_entity_view'
-  entity_browser: media_entity_browser
+  display_plugins: {  }
+  entity_browser: media_entity_browser_wysiwyg
   entity_browser_settings:
-    display_review: false
+    display_review: true
 icon_uuid: null

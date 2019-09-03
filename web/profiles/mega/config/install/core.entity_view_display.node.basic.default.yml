@@ -3,8 +3,11 @@ status: true
 dependencies:
   config:
     - field.field.node.basic.body
+    - field.field.node.basic.field_media
+    - image.style.large
     - node.type.basic
   module:
+    - media
     - text
     - user
 id: node.basic.default
@@ -15,13 +18,18 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
-    settings: {  }
+  field_media:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  links: true

@@ -1,9 +1,10 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.basic.body
+    - field.field.node.basic.field_media
     - node.type.basic
   module:
     - text
@@ -26,4 +27,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_media: true
