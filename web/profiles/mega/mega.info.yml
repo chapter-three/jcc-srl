@@ -57,6 +57,7 @@ install:
 - path
 - pathauto
 - quickedit
+- r4032login
 - rabbit_hole
 - redirect
 - rdf
