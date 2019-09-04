@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default
+label: Default
+description: 'Default Linkit Profile'
+attributes:
+  target:
+    id: target
+    weight: 0
+    settings:
+      widget_type: simple_checkbox
+  title:
+    id: title
+    weight: 0
+    settings:
+      automatic_title: true
+matchers:
+  df252163-3a1a-45b8-82a8-69618a00a145:
+    uuid: df252163-3a1a-45b8-82a8-69618a00a145
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: Nodes
+      bundles: {  }
+      group_by_bundle: true
+      include_unpublished: false
+  995df179-f232-4231-99f6-60e9f58539e7:
+    uuid: 995df179-f232-4231-99f6-60e9f58539e7
+    id: 'entity:media'
+    weight: 0
+    settings:
+      result_description: Media
+      bundles: {  }
+      group_by_bundle: true

@@ -58,7 +58,6 @@
         "drupal/core": "^8.7.0",
         "drupal/default_content": "^1.0@alpha",
         "drupal/dropzonejs": "^2.0@alpha",
-        "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_browser": "^2.1",
         "drupal/entity_clone": "^1.0@beta",
         "drupal/entity_embed": "^1.0@RC",

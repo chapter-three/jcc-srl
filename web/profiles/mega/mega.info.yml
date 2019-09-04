@@ -27,7 +27,6 @@ install:
 - dropzonejs_eb_widget
 - dynamic_page_cache
 - editor
-- editor_advanced_link
 - entity_clone
 - entity_embed
 - environment_indicator
