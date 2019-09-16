@@ -43,9 +43,9 @@ jobs:
           command: echo "@todo build theme."
         #   command: npm --prefix web/themes/custom/[theme] install web/themes/custom/[theme] && gulp compile --cwd web/themes/custom/[theme]/
 
-      - run:
-          name: Run Linting
-          command: composer run lint
+          #      - run:
+          #          name: Run Linting
+          #          command: composer run lint
 
       # - run:
         #   name: Place Settings
