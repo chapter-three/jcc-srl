@@ -1,0 +1,120 @@
+version: 2
+defaults: &defaults
+  docker:
+    - image: quay.io/pantheon-public/build-tools-ci:1.x
+  working_directory: ~/project
+  environment:
+    DATE_TIMEZONE: America/Los_Angeles
+    TERM: xterm
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - composer-cache
+            - terminus-install
+
+      - run:
+          # Set TERMINUS_ENV and related environment variables.
+          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+          name: environment
+          command: /build-tools-ci/scripts/set-environment
+
+      - run:
+          name: Run Composer Install
+          command: composer install -o
+
+      - save_cache:
+          key: composer-cache
+          paths:
+            - $HOME/.composer/cache
+
+      - save_cache:
+          key: terminus-install
+          paths:
+            - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+
+      - run:
+          name: Build assets for testing
+          command: echo "@todo build theme."
+        #   command: npm --prefix web/themes/custom/[theme] install web/themes/custom/[theme] && gulp compile --cwd web/themes/custom/[theme]/
+
+      - run:
+          name: Run Linting
+          command: composer run lint
+
+      # - run:
+        #   name: Place Settings
+       #   command: cp -f .circleci/settings.local.php ./web/sites/default/settings.local.php
+
+      # - run:
+        #   name: Start Services
+        #   command: service mysql start && sudo echo '127.0.0.1       project.local' >> /etc/hosts && service apache2 start && chown -R root:www-data ./web
+
+      # - run:
+        #   name: Get and Import Database (Latest Live Backup)
+        #   command: scripts/dbsync.sh [file] -i
+
+      # - run:
+        #   name: Update DB and Config
+        #   command: scripts/reset.sh
+
+      # - run:
+        #   name: Run Tests
+        #   command: echo "No tests configured. Just see if site exists.\n" && curl http://project.local
+
+  deploy:
+    <<: *defaults
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "7c:41:a8:b4:67:5e:d4:b3:03:d3:ec:be:46:af:3b:6d"
+
+      - checkout
+
+      - restore_cache:
+          keys:
+            - composer-cache
+            - terminus-install
+
+      - run:
+          # Set TERMINUS_ENV and related environment variables.
+          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+          name: dependencies
+          command: /build-tools-ci/scripts/set-environment
+
+      - run:
+          name: Authenticate Terminus
+          command: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+
+      - run:
+          name: Run Composer Install
+          command: composer install -o
+
+      - run:
+          name: Build assets
+          command: echo "@todo build theme."
+        #   command: npm --prefix web/themes/custom/[theme] install web/themes/custom/[theme] && gulp compile --cwd web/themes/custom/[theme]/
+
+      - run:
+          name: Deploy Artifact
+          command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+                - stage
+                - master

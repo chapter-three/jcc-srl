@@ -11,6 +11,7 @@ use Composer\Script\Event;
 use Composer\Semver\Comparator;
 use DrupalFinder\DrupalFinder;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 use Webmozart\PathUtil\Path;
 
 class ScriptHandler {
@@ -42,13 +43,13 @@ class ScriptHandler {
       require_once $drupalRoot . '/core/includes/install.inc';
       $settings['config_directories'] = [
         CONFIG_SYNC_DIRECTORY => (object) [
-          'value' => Path::makeRelative($drupalFinder->getComposerRoot() . '/config/sync', $drupalRoot),
+          'value' => Path::makeRelative($drupalFinder->getComposerRoot() . '/config', $drupalRoot),
           'required' => TRUE,
         ],
       ];
       drupal_rewrite_settings($settings, $drupalRoot . '/sites/default/settings.php');
       $fs->chmod($drupalRoot . '/sites/default/settings.php', 0666);
-      $event->getIO()->write("Created a sites/default/settings.php file with chmod 0666");
+      $event->getIO()->write("Create a sites/default/settings.php file with chmod 0666");
     }
 
     // Create the files directory with chmod 0777
@@ -56,7 +57,7 @@ class ScriptHandler {
       $oldmask = umask(0);
       $fs->mkdir($drupalRoot . '/sites/default/files', 0777);
       umask($oldmask);
-      $event->getIO()->write("Created a sites/default/files directory with chmod 0777");
+      $event->getIO()->write("Create a sites/default/files directory with chmod 0777");
     }
   }
 
@@ -95,6 +96,53 @@ class ScriptHandler {
       $io->writeError('<error>Drupal-project requires Composer version 1.0.0 or higher. Please update your Composer before continuing</error>.');
       exit(1);
     }
+  }
+
+  /**
+   * Post install tasks.
+   * @param  Event  $event
+   *  Composer script event.
+   */
+  public static function postInstall(Event $event) {
+    $fs = new Filesystem();
+    $finder = new Finder();
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $drupalRoot = $drupalFinder->getDrupalRoot();
+    $composerRoot = $drupalFinder->getComposerRoot();
+
+    // Don't create .lando.yml if one exists. Check 2 dirs up for scenarios
+    // that build into a tmp directory and move back into lando directory.
+    if (!$fs->exists($drupalRoot . '/../.lando.yml') && !$fs->exists($drupalRoot . '/../../.lando.yml')) {
+      $fs->rename($drupalRoot . '/../start.lando.yml', $drupalRoot . '/../.lando.yml');
+    }
+    else {
+      $fs->remove($drupalRoot . '/../start.lando.yml');
+    }
+
+    // Move settings.local.php files if necessary.
+    // Get site dirs.
+    $finder->depth('== 0');
+    $finder->directories()->in($drupalRoot . '/sites');
+    $copy_files = ['settings.local.php', 'services.local.yml', 'settings.php'];
+
+    foreach ($finder as $dir) {
+      $site = str_replace($drupalRoot . '/sites/', '', $dir);
+      foreach ($copy_files as $copy_file) {
+        if ($fs->exists("$composerRoot/scripts/local/$site/$copy_file") && !$fs->exists("$dir/$copy_file")) {
+          $fs->copy("$composerRoot/scripts/local/$site/$copy_file", "$dir/$copy_file");
+          echo "\n$copy_file was copied to $dir from scripts/local/$site\n";
+          echo "This *SHOULD* get you started. Review $dir/$copy_file if you're having trouble.\n";
+        }
+      }
+      echo "\nYou *MAY* find a starter sql file here: 'scripts/local/$site/sql.start' that you can import directly if you need it.\n";
+
+    }
+
+    echo "\n
+SUCCESS!  You have installed your Drupal 8 Project!
+See README.md for important information.\n
+";
   }
 
 }

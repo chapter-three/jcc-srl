@@ -1,0 +1,56 @@
+# Rename this file to .lando.yml to use, or delete if you already have one.
+# Named start.lando.yml to not conflict with projects installed with lando mw install.
+
+# project_code: cmm, apb_d7, etc.
+name: jcc
+
+# drupal8 | drupal7 | wordpress
+recipe: drupal8
+
+config:
+  # default: web | lightning: docroot
+  webroot: web
+
+  php: '7.3'
+
+  # Optionally activate xdebug
+  #
+  # If you are having trouble getting xdebug to work please see:
+  # https://docs.devwithlando.io/services/php.html#using-xdebug
+  #xdebug: true
+
+
+  # *********************************************************************************
+  # ****   No need to change anything below, unless you know what you're doing.  ****
+  # ****                    And have a very specific need.                       ****
+  #**********************************************************************************
+
+# Additional services and features.
+services:
+  # Theme.
+  node-cli:
+    type: node:10
+    globals:
+      gulp-cli: "latest"
+
+# Custom Lando commands
+tooling:
+  build:
+    service: appserver
+    cmd: /app/scripts/build.sh
+    description: "Build the project. \n  -c Clean build. \n  -l (live) Build production code. composer install --no-dev \n -t Theme build \n  -w Run theme watcher \n  -y Confirm prompts."
+  build:theme:
+    service: node-cli
+    description: "Compile the theme. \n -w to start watcher."
+    cmd:
+      - "/app/scripts/build.sh -t"
+  gulp:
+    service: node-cli
+  node:
+    service: node-cli
+  npm:
+    service: node-cli
+  reset:
+    service: appserver
+    cmd: /app/scripts/reset.sh
+    description: "Runs updb, cr, cim, uli \n Reset your local after a build or db install. \n Update scripts/reset.sh to add/change functionality."
