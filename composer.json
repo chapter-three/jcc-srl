@@ -130,6 +130,9 @@
           "DrupalProject\\composer\\ScriptHandler::postInstall",
           "find ./vendor/ -type d -name .git | xargs rm -rf",
           "find ./web/ -type d -name .git | xargs rm -rf"
+        ],
+        "artifact-sync": [
+          "rsync -KPar --delete --force --files-from=scripts/deploy.txt ./ data/artifact/"
         ]
     },
     "extra": {
