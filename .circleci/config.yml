@@ -1,7 +1,7 @@
 version: 2
 defaults: &defaults
   docker:
-    - image: quay.io/pantheon-public/build-tools-ci:1.x
+    - image: quay.io/pantheon-public/build-tools-ci:6.x
   working_directory: ~/project
   environment:
     DATE_TIMEZONE: America/Los_Angeles
