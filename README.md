@@ -9,6 +9,9 @@ Once installed cd to project directory and type `lando` for a list of commands.
 
  - `lando start` - Spin up the environment.
  - `lando db-import [path to db]` - Import your database. Store db in `data/`.
+   - See `scripts/local/default/sql.start` for an dump from initial install.
+   - This is a SQL file but .sql is git ignored so it's named sql.start.
+   - Import it directly if you need a starter with the correct config ids.
  - `lando build` - Composer install `-c` will delete vendor and contribs first.
    - Or `lando composer install`
  - `lando build:theme` - Build the theme assets.
