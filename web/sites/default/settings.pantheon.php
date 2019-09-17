@@ -1,6 +1,34 @@
 <?php
 
 /**
+ * @file
+ * Pantheon configuration file.
+ *
+ * IMPORTANT NOTE:
+ * Do not modify this file. This file is maintained by Pantheon.
+ *
+ * Site-specific modifications belong in settings.php, not this file. This file
+ * may change in future releases and modifications would cause conflicts when
+ * attempting to apply upstream updates.
+ */
+
+/**
+ * Version of Pantheon files.
+ *
+ * This is a monotonically-increasing sequence number that is
+ * incremented whenever a change is made to any Pantheon file.
+ * Not changed if Drupal core is updated without any change to
+ * any Pantheon file.
+ *
+ * The Pantheon version is included in the git tag only if a
+ * release is made that includes changes to Pantheon files, but
+ * not to any Drupal files.
+ */
+if (!defined("PANTHEON_VERSION")) {
+  define("PANTHEON_VERSION", "3");
+}
+
+/**
  * Determine whether this is a preproduction or production environment, and
  * then load the pantheon services.yml file.  This file should be named either
  * 'pantheon-production-services.yml' (for 'live' or 'test' environments)
@@ -16,6 +44,62 @@ if (
 
 if (file_exists($pantheon_services_file)) {
   $settings['container_yamls'][] = $pantheon_services_file;
+}
+
+/**
+ * Set the default location for the 'private' directory.  Note
+ * that this location is protected when running on the Pantheon
+ * environment, but may be exposed if you migrate your site to
+ * another environment.
+ */
+$settings['file_private_path'] = 'sites/default/files/private';
+
+// Check to see if we are serving an installer page.
+$is_installer_url = (strpos($_SERVER['SCRIPT_NAME'], '/core/install.php') === 0);
+
+/**
+ * Add the Drupal 8 CMI Directory Information directly in settings.php to make sure
+ * Drupal knows all about that.
+ *
+ * Issue: https://github.com/pantheon-systems/drops-8/issues/2
+ *
+ * IMPORTANT SECURITY NOTE:  The configuration paths set up
+ * below are secure when running your site on Pantheon.  If you
+ * migrate your site to another environment on the public internet,
+ * you should relocate these locations. See "After Installation"
+ * at https://www.drupal.org/node/2431247
+ *
+ */
+if ($is_installer_url) {
+  $config_directories = array(
+    CONFIG_SYNC_DIRECTORY => 'sites/default/files',
+  );
+}
+else {
+  $config_directories = array(
+    CONFIG_SYNC_DIRECTORY => 'sites/default/config',
+  );
+}
+
+
+/**
+ * Allow Drupal 8 to Cleanly Redirect to Install.php For New Sites.
+ *
+ * Issue: https://github.com/pantheon-systems/drops-8/issues/3
+ *
+ * c.f. https://github.com/pantheon-systems/drops-8/pull/53
+ *
+ */
+if (
+  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
+  !$is_installer_url &&
+  (isset($_SERVER['PANTHEON_DATABASE_STATE']) && ($_SERVER['PANTHEON_DATABASE_STATE'] == 'empty')) &&
+  (empty($GLOBALS['install_state'])) &&
+  (php_sapi_name() != "cli")
+) {
+  include_once __DIR__ . '/../../core/includes/install.core.inc';
+  include_once __DIR__ . '/../../core/includes/install.inc';
+  install_goto('core/install.php');
 }
 
 /**
@@ -88,6 +172,15 @@ if (isset($_ENV['PANTHEON_ROLLING_TMP']) && isset($_ENV['PANTHEON_DEPLOYMENT_IDE
 }
 
 /**
+ * Install the Pantheon Service Provider to hook Pantheon services into
+ * Drupal 8. This service provider handles operations such as clearing the
+ * Pantheon edge cache whenever the Drupal cache is rebuilt.
+ */
+if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+  $GLOBALS['conf']['container_service_providers']['PantheonServiceProvider'] = '\Pantheon\Internal\PantheonServiceProvider';
+}
+
+/**
  * The default list of directories that will be ignored by Drupal's file API.
  *
  * By default ignore node_modules and bower_components folders to avoid issues
@@ -103,3 +196,14 @@ if (empty($settings['file_scan_ignore_directories'])) {
     'bower_components',
   ];
 }
+
+/**
+ * Lockdown accessible host patterns.
+ */
+$settings['trusted_host_patterns'] = array(
+  '^develop-jcc-srl.pantheonsite.io$',
+  '^stage-jcc-srl.pantheonsite.io$',
+  '^live-jcc-srl.pantheonsite.io$',
+);
+
+
