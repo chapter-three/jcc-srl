@@ -121,19 +121,19 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-           "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-           "DrupalProject\\composer\\ScriptHandler::postInstall",
-           "find ./vendor/ -type d -name .git | xargs rm -rf",
-           "find ./web/ -type d -name .git | xargs rm -rf"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::postInstall",
+            "find ./vendor/ -type d -name .git | xargs rm -rf",
+            "find ./web/ -type d -name .git | xargs rm -rf"
         ],
         "post-update-cmd": [
-          "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-          "DrupalProject\\composer\\ScriptHandler::postInstall",
-          "find ./vendor/ -type d -name .git | xargs rm -rf",
-          "find ./web/ -type d -name .git | xargs rm -rf"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::postInstall",
+            "find ./vendor/ -type d -name .git | xargs rm -rf",
+            "find ./web/ -type d -name .git | xargs rm -rf"
         ],
         "artifact-sync": [
-          "rsync -KPar --delete --force --files-from=scripts/deploy.txt ./ data/artifact/"
+            "rsync -KPar --delete --force --files-from=scripts/deploy.txt ./ data/artifact/"
         ]
     },
     "extra": {

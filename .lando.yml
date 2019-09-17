@@ -35,22 +35,26 @@ services:
 
 # Custom Lando commands
 tooling:
-  build:
-    service: appserver
-    cmd: /app/scripts/build.sh
-    description: "Build the project. \n  -c Clean build. \n  -l (live) Build production code. composer install --no-dev \n -t Theme build \n  -w Run theme watcher \n  -y Confirm prompts."
-  build:theme:
-    service: node-cli
-    description: "Compile the theme. \n -w to start watcher."
-    cmd:
-      - "/app/scripts/build.sh -t"
-  gulp:
-    service: node-cli
   node:
     service: node-cli
   npm:
     service: node-cli
   reset:
     service: appserver
-    cmd: /app/scripts/reset.sh
-    description: "Runs updb, cr, cim, uli \n Reset your local after a build or db install. \n Update scripts/reset.sh to add/change functionality."
+    description: "Runs updb, cr, cim, uli \n Reset your local after a build or db install."
+    cmd:
+      - drush updb -y
+      - drush cr
+      - drush cim -y
+      - drush uli -l jcc.lndo.site
+  theme:build:
+    service: node-cli
+    description: "Compile the theme. (Shortcut for npm install && npm run dev)"
+    cmd:
+      - npm install --prefix web/themes/custom/atrium
+      - npm run dev --prefix web/themes/custom/atrium
+  theme:watch:
+    service: node-cli
+    description: "Run the watcher."
+    cmd:
+      - npm run watch --prefix web/themes/custom/atrium
