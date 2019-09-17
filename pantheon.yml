@@ -4,7 +4,7 @@ php_version: 7.3
 drush_version: 8
 
 workflows:
-  deploy:
+  sync_code::
     after:
       - type: webphp
         description: DB update and import configuration from .yml files
