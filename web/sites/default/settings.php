@@ -774,14 +774,14 @@ $settings['entity_update_backup'] = TRUE;
  * Keep this code block at the end of this file to take full effect.
  */
 
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
+$config_directories['sync'] = '../config';
+
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-  $pantheon_settings = dirname(__FILE__) . '/settings.pantheon.php';
+  $pantheon_settings = $app_root . '/' . $site_path .  '/settings.pantheon.php';
   if (file_exists($pantheon_settings)) {
     include $pantheon_settings;
   }
 }
-
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-   include $app_root . '/' . $site_path . '/settings.local.php';
- }
-$config_directories['sync'] = '../config';
