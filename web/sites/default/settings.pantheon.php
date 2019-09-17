@@ -204,6 +204,11 @@ $settings['trusted_host_patterns'] = array(
   '^develop-jcc-srl.pantheonsite.io$',
   '^stage-jcc-srl.pantheonsite.io$',
   '^live-jcc-srl.pantheonsite.io$',
+  '^develop-jcc-srl.chapterthree.com$',
+  '^stage-jcc-srl.chapterthree.com$',
+  '^live-jcc-srl.chapterthree.com$',
+  '^dev-jcc-srl.pantheonsite.io$',
+  '^dev-jss-srl.chapterthree.com$',
 );
 
 
