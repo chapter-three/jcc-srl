@@ -40,7 +40,8 @@ jobs:
 
       - run:
           name: Build assets for testing
-          command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
+          command: echo "Not building theme."
+          #          command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
 
           #      - run:
           #          name: Run Linting
@@ -96,7 +97,8 @@ jobs:
 
       - run:
           name: Build assets
-          command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
+          command: echo "Not building theme."
+          # command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
 
       - run:
           name: Deploy Artifact
