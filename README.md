@@ -1,21 +1,43 @@
-## Local Development With Lando
+## Local Development (lando optional)
+
+This project contains a .lando.yml file for consistent development environments with docker.
+If you choose to use a different tool for local php development you can ignore this file.
+
+Please configure your local to use the correct php version..
+
+### PHP: 7.3
 
 * Docker: https://www.docker.com/community-edition
 * Lando: https://docs.devwithlando.io
 
 Once installed cd to project directory and type `lando` for a list of commands.
 
-*Spin up the local:*
+#### Spin up the local:
 
- - `lando start` - Spin up the environment.
- - `lando db-import [path to db]` - Import your database. Store db in `data/`.
+ - Clone this repo: `git clone git@github.com:chapter-three/jcc-srl.git`
+ - `cd jcc-srl`
+ - Start your local environment. (With lando: `lando start`)
+ - `composer install` (With lando: `lando composer install`)
+   - A post install script will set your settings.local.php and services.local.yml files if they do not already exist. Feel free to modify these for you local environment, they are git ignored.
+   - If using Docker and or Lando (with Docker), be sure to run composer commands from inside the container to prevent PHP verson conflicts. Lando has a passthrough command: `lando composer`.
+ - Import your database. (With lando: `lando db-import [path to db]`
    - See `scripts/local/default/sql.start` for an dump from initial install.
-   - This is a SQL file but .sql is git ignored so it's named sql.start.
-   - Import it directly if you need a starter with the correct config ids.
- - `lando build` - Composer install `-c` will delete vendor and contribs first.
-   - Or `lando composer install`
- - `lando build:theme` - Build the theme assets.
- - `lando reset` - Runs reset.sh to updb, cim, cr ...
+   - This is a SQL file but .sql is git ignored so it's named sql.start. Import it directly if you need a starter with the correct config ids.
+   - If a more recent database dump is available, use that instead.
+ - Build the theme:
+   - `cd web/sites/custom/atrium`
+   - `npm install` (With lando: `lando npm install`)
+   - If using Docker/Lando, be sure to run npm from inside the container to prevent version conflicts.
+   - `npm run dev` to build assets. (With lando: `lando npm run dev`)
+   - **Optional for theme work:** run the watcher with `npm run watch`.
+     - See `web/sites/custom/atrium/webpack.mix.js` for proxy url.
+ - Run updates:
+   - `cd [site directory]` - [site directory] is web for default or web/sites/[multisite].
+   - Database updates: `drush updb` (With lando: `lando drush updb`)
+   - Reset Cache: `drush cr` (With lando: `lando drush cr`)
+   - Import config: `drush cim` (With lando: `lando drush cim`)
+   - Grab a login link: `drush uli [user id] -l [local url]` default is user 1. (With lando: `lando drush uli`)
+     - See `lando info` for a list of available proxy urls for local lando development.
 
 **Ready to work.**
 
@@ -31,8 +53,8 @@ Once installed cd to project directory and type `lando` for a list of commands.
 ### Workflow
 
  - Make new feature branches from the most stable branch (`feature/[ticket-id]--short-description`)
-   - `master` for production sites.
-   - Possibly `stage` for pre-production sites, depending on if you commit completed work to a (future production) `master` branch at the end of sprints.
+   - From `master` for production sites.
+   - Possibly from `stage` for pre-production sites, depending on if you commit completed work to a (future production) `master` branch at the end of sprints.
  - Push feature branches github and Pull Request against `develop` for code review.
  - Merge to develop for CI testing and deploy to develop environment for QA.
    - QA Pass: Pull Request / Merge feature branch to current `stage` branch for CI build/deploy to stage environment.
