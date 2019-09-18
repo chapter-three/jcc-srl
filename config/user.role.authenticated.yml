@@ -18,4 +18,5 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format simple_html'
   - 'view media'

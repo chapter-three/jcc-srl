@@ -1,0 +1,17 @@
+uuid: a076594c-ffa4-4fa6-9778-16fb6213ecb8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Simple HTML'
+format: simple_html
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<em> <strong>'
+      filter_html_help: true
+      filter_html_nofollow: false
