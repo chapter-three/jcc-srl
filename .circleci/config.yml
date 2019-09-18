@@ -118,3 +118,4 @@ workflows:
                 - develop
                 - stage
                 - master
+                - /^epic-.*/
