@@ -1,0 +1,14 @@
+uuid: aec8b115-23d3-4da6-8625-73c9d6d8e18d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.jcc_web_services
+  module:
+    - user
+id: user_remove_role_action.jcc_web_services
+label: 'Remove the JCC Web Services role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: jcc_web_services

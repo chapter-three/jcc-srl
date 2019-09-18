@@ -1,0 +1,14 @@
+uuid: 3c483b51-f615-42b6-a732-a6d5d97a4108
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.jcc_web_services
+  module:
+    - user
+id: user_add_role_action.jcc_web_services
+label: 'Add the JCC Web Services role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: jcc_web_services
