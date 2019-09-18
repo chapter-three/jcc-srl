@@ -25,12 +25,7 @@ Once installed cd to project directory and type `lando` for a list of commands.
    - This is a SQL file but .sql is git ignored so it's named sql.start. Import it directly if you need a starter with the correct config ids.
    - If a more recent database dump is available, use that instead.
  - Build the theme:
-   - `cd web/sites/custom/atrium`
-   - `npm install` (With lando: `lando npm install`)
-   - If using Docker/Lando, be sure to run npm from inside the container to prevent version conflicts.
-   - `npm run dev` to build assets. (With lando: `lando npm run dev`)
-   - **Optional for theme work:** run the watcher with `npm run watch`.
-     - See `web/sites/custom/atrium/webpack.mix.js` for proxy url.
+   - TBD
  - Run updates:
    - `cd [site directory]` - [site directory] is web for default or web/sites/[multisite].
    - Database updates: `drush updb` (With lando: `lando drush updb`)
@@ -46,9 +41,9 @@ Once installed cd to project directory and type `lando` for a list of commands.
 
 ### Branches
 
- - `master` - clean stable production code. Lives on a production server.
- - `stage` - code that's ready for client review. Lives on a stage server.
- - `develop` - unstable test code for internal QA and integration testing.
+ - `master` - clean stable production code. Lives on the production environment.
+ - `stage` - code that is ready for client review. Lives on the stage environemnt.
+ - `develop` - unstable test code for internal QA and integration testing. Lives on the develop environment.
 
 ### Workflow
 
@@ -59,11 +54,49 @@ Once installed cd to project directory and type `lando` for a list of commands.
  - Merge to develop for CI testing and deploy to develop environment for QA.
    - QA Pass: Pull Request / Merge feature branch to current `stage` branch for CI build/deploy to stage environment.
    - QA Fail: Keep working on feature branch and repeat.
- - Client review of features on `stage`.
-   - Client review Pass: At end of the sprint merge all client approved features to master for CI deploy to production.
+ - User Acceptance and signoff of features on `stage`.
+   - Pass: At end of the sprint, merge all approved features to master for CI deploy to production.
      - If all features in `stage` are approved, stage branch can be merged to `master` IF you're sure it's clean.
      - Otherwise, merge approved features individually, or use a `release branch` to collect them and merge that to master.
+   - Fail: Rework the feature branch and repeat from develop environment.
  - Repeat for next sprint.
+
+#### Pantheon, Multidev and Epics
+
+Given this project will be developed on [Pantheon](https://pantheon.io), at least initially, here are some additional notes.
+
+ - [Terminus](https://pantheon.io/docs/terminus) is a commandline tool for interaction with Pantheon.
+   - You can use the web dashboard, but I'll reference some terminus commands here.
+
+We're using a Parallel Git Workflow, rather than the standard Pantheon workflow, so we have the 3 environments described above. `develop` and `stage` are Pantheon "Multisite" environments.
+
+Another use for Multisite environments on this project is `epic` branches. Epics are for large features or a collection of features that depend on each other, that will be developed in parallel before being merged into the normal test environments.
+
+The CircleCI integration is configured to deploy branches that start with `epic-` to the server. Set it up like this:
+
+ - Create multidev environment on Pantheon
+   - Terminus
+     - terminus multidev:create [site_env] [multidev]
+     - [site_env] = jcc-srl.dev (The environment to clone.)
+     - [multidev] = epic-[description] (Any valid Pantheon branch name prefixed with `epic-`.)
+   - Web Dashboard
+     - On the Multidev Tab - Multidev overview
+     - Click `Create Multidev Environment`
+     - Enter multidev branch name prefixed with `epic-`
+     - Select the environment to clone. (dev)
+ - Create an epic- branch from master in this working repo.
+ - Push the epic branch to Github
+   - Circle CI will build and deploy it to the new multidev environment everytime it's updated.
+
+**The epic- prefix will allow Circle CI to deploy it.**
+
+##### Managing multiple devs/features in the epic.
+
+ - Features that will be part of the epic can branch from the epic so they have the up do date work they depend on.
+ - Epic features can Pull Request against the epic for code review.
+ - Once merged to the epic, Circle CI will build and deploy the epic to Pantheon.
+ - Once the epic is complete and ready for full internal QA and integration, the epic can Pull Request / Merge to `develop`
+ - If the epic passes QA and integration the epic can be merged to `stage` for User Acceptance and signoff for release.
 
 
 ## Module Management
