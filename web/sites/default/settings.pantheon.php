@@ -201,14 +201,8 @@ if (empty($settings['file_scan_ignore_directories'])) {
  * Lockdown accessible host patterns.
  */
 $settings['trusted_host_patterns'] = array(
-  '^develop-jcc-srl.pantheonsite.io$',
-  '^stage-jcc-srl.pantheonsite.io$',
-  '^live-jcc-srl.pantheonsite.io$',
-  '^develop-jcc-srl.chapterthree.com$',
-  '^stage-jcc-srl.chapterthree.com$',
-  '^live-jcc-srl.chapterthree.com$',
-  '^dev-jcc-srl.pantheonsite.io$',
-  '^dev-jcc-srl.chapterthree.com$',
+  '^.+jcc-srl\.pantheonsite\.io$',
+  '^.+jcc-srl\.chapterthree\.com$',
 );
 
 
