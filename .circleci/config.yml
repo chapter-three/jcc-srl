@@ -203,7 +203,7 @@ workflows:
                 - stage
                 - master
                 - /^epic-.*/
-      - deploy_artifiact:
+      - deploy_artifact:
           requires:
             - build
           filters:
