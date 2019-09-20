@@ -141,9 +141,10 @@ jobs:
                 #name: post-test actions
                 #command: ./.circleci/scripts/pantheon/03-post-test
 
-            - run:
-                name: handle merge to master (if needed)
-                command: ./.circleci/scripts/pantheon/04-merge-master
+            # master is handled by deploy_artifact job.
+            #- run:
+                #name: handle merge to master (if needed)
+                #command: ./.circleci/scripts/pantheon/04-merge-master
 
             - run:
                 name: remove transient test fixtures
