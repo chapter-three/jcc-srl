@@ -21,6 +21,69 @@ cd data/artifact
 git add .
 git commit -am "Built assets. $TIMESTAMP"
 echo "\n@todo- Work out release taging.\n"
+
+# Tag for dev.
+# Pantheon's serial workflow uses a tag on master to set "Test" environment.
+# Try tagging develop branch with pantheon_dev_N to see if we can hijack.
+if [ $CIRCLE_BRANCH == 'develop' ] ; then
+  # Get latest pantheon_dev_ tag.
+  git fetch origin --tags
+  pantheon_prefix='pantheon_dev_'
+  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
+  if [ -z $pantheon_current ] ; then
+    # No current tag so start with 1.
+    pantheon_new=1
+  else
+    pantheon_id=${pantheon_current#${pantheon_prefix}}
+    pantheon_new=$(($pantheon_id+1))
+  fi
+  echo
+  echo "Tagging develop branch for dev environment: $pantheon_prefix$pantheon_new"
+  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon dev release."
+fi
+
+# Tag for test/stage.
+# Pantheon's serial workflow uses a tag on master to set "Test" environment.
+# Try tagging stage branch with pahtheon_test_N to see if we can hijack.
+if [ $CIRCLE_BRANCH == 'stage' ] ; then
+  # Get latest pantheon_live_ tag.
+  git fetch origin --tags
+  pantheon_prefix='pantheon_test_'
+  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
+  if [ -z $pantheon_current ] ; then
+    # No current tag so start with 1.
+    pantheon_new=1
+  else
+    pantheon_id=${pantheon_current#${pantheon_prefix}}
+    pantheon_new=$(($pantheon_id+1))
+  fi
+  echo
+  echo "Tagging stage branch for test environment: $pantheon_prefix$pantheon_new"
+  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon test release."
+fi
+
+# Tag for master.
+if [ $CIRCLE_BRANCH == 'master' ] ; then
+  # Get latest pantheon_live_ tag.
+  git fetch origin --tags
+  pantheon_prefix='pantheon_live_'
+  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
+  if [ -z $pantheon_current ] ; then
+    # No current tag so start with 1.
+    pantheon_new=1
+  else
+    pantheon_id=${pantheon_current#${pantheon_prefix}}
+    pantheon_new=$(($pantheon_id+1))
+  fi
+  echo
+  echo "Tagging master branch for production (Live): $pantheon_prefix$pantheon_new"
+  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon live release."
+fi
+
+echo
+echo "Pushing $CIRCLE_BRANCH"
 git push origin $CIRCLE_BRANCH -f --tags
+
+echo
 echo "If deployment was successful, post-code-update hook will handle importing config, updating db, and clearing caches."
 
