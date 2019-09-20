@@ -44,6 +44,7 @@ Once installed cd to project directory and type `lando` for a list of commands.
  - `master` - clean stable production code. Lives on the Pantheon "dev" environment.
    - On Pantheon `master` branch is the default "dev" environment.
    - We can deploy `master` to "Live" by tagging commits appropriately. (automated)
+   - **Merging to master on Github WILL deploy to Live**
  - `stage` - code that is ready for client review. Lives on the "stage" Multidev environment.
  - `develop` - unstable test code for internal QA and integration testing. Lives on the "develop" Multidev environment.
 
