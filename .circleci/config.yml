@@ -156,9 +156,9 @@ workflows:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
       - build
       # Build deploy and test on target platform
-      - build_deploy_and_test
-        requires:
-          - build
+      - build_deploy_and_test:
+          requires:
+            - build
 
 experimental:
   notify:
