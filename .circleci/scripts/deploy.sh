@@ -39,6 +39,7 @@ if [ $CIRCLE_BRANCH == 'develop' ] ; then
   fi
   echo
   echo "Tagging develop branch for dev environment: $pantheon_prefix$pantheon_new"
+  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon dev release."
 fi
 
 # Tag for test/stage.
@@ -58,6 +59,7 @@ if [ $CIRCLE_BRANCH == 'stage' ] ; then
   fi
   echo
   echo "Tagging stage branch for test environment: $pantheon_prefix$pantheon_new"
+  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon test release."
 fi
 
 # Tag for master.
@@ -75,8 +77,11 @@ if [ $CIRCLE_BRANCH == 'master' ] ; then
   fi
   echo
   echo "Tagging master branch for production (Live): $pantheon_prefix$pantheon_new"
+  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon live release."
 fi
 
+echo
+echo "Pushing $CIRCLE_BRANCH"
 git push origin $CIRCLE_BRANCH -f --tags
 
 echo
