@@ -63,7 +63,7 @@ Once installed cd to project directory and type `lando` for a list of commands.
    - Fail: Rework the feature branch and repeat from develop environment.
  - Repeat for next sprint.
 
-#### Pantheon, Multidev and Epics
+### Pantheon, Multidev and Epics
 
 Given this project will be developed on [Pantheon](https://pantheon.io), at least initially, here are some additional notes.
 
@@ -72,14 +72,18 @@ Given this project will be developed on [Pantheon](https://pantheon.io), at leas
 
 We're using a Parallel Git Workflow, rather than the standard Pantheon workflow, so we have the 3 environments described above. `develop` and `stage` are Pantheon "Multisite" environments.
 
-Another use for Multisite environments on this project is `epic` branches. Epics are for large features or a collection of features that depend on each other, that will be developed in parallel before being merged into the normal test environments.
+ - Any new branches pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
+ - Any Pull Requests on Github will also spawn a multidev on Pantheon, named for the Pull Request ID that spawned it.
+ - These are temporary because pantheon only allows 10 multidev environments.
 
-The CircleCI integration is configured to deploy branches that start with `epic-` to the server. Set it up like this:
+If you need a more persistent multidev for longer term development of a set of features, the workflow supports `epic` branches. Epics are for large features or a collection of features that depend on each other, that will be developed in parallel before being merged into the normal test environments.
+
+The CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev. Set it up like this:
 
  - Create multidev environment on Pantheon
    - Terminus
      - terminus multidev:create [site_env] [multidev]
-     - [site_env] = jcc-srl.dev (The environment to clone.)
+     - [site_env] = jcc-srl.live (The environment to clone.)
      - [multidev] = epic-[description] (Any valid Pantheon branch name prefixed with `epic-`.)
    - Web Dashboard
      - On the Multidev Tab - Multidev overview
@@ -90,14 +94,13 @@ The CircleCI integration is configured to deploy branches that start with `epic-
  - Push the epic branch to Github
    - Circle CI will build and deploy it to the new multidev environment everytime it's updated.
 
-**The epic- prefix will allow Circle CI to deploy it.**
 
-##### Managing multiple devs/features in the epic.
+#### Managing multiple devs/features in the epic.
 
  - Features that will be part of the epic can branch from the epic so they have the up do date work they depend on.
  - Epic features can Pull Request against the epic for code review.
  - Once merged to the epic, Circle CI will build and deploy the epic to Pantheon.
- - Once the epic is complete and ready for full internal QA and integration, the epic can Pull Request / Merge to `develop`
+ - Once the epic is complete and ready for full internal QA and integration, the epic can Pull Request to `develop`.
  - If the epic passes QA and integration the epic can be merged to `stage` for User Acceptance and signoff for release.
 
 
