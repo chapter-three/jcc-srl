@@ -177,14 +177,14 @@ jobs:
                 name: Run Composer Install
                 command: composer install -o --no-dev
 
-           - run:
+            - run:
                 name: Build assets
                 command: echo "Not building theme."
                 # command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
 
-           - run:
-               name: Deploy Artifact
-               command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
+            - run:
+                name: Deploy Artifact
+                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
 
 workflows:
   version: 2
@@ -194,25 +194,25 @@ workflows:
       - build
       # Build deploy and test on target platform
       - build_deploy_and_test:
-        requires:
-          - build
-        filters:
-          branches:
-            ignore:
-              - develop
-              - stage
-              - master
-              - /^epic-.*/
-      - deploy_artifiact:
-        requires:
-          - build
-        filters:
-          branches:
-            only:
-              - develop
-              - stage
-              - master
-              - /^epic-.*/
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - develop
+                - stage
+                - master
+                - /^epic-.*/
+      - deploy_artifact:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+                - stage
+                - master
+                - /^epic-.*/
 
 experimental:
   notify:
