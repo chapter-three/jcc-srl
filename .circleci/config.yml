@@ -1,115 +1,209 @@
-version: 2
+# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:6.x
   working_directory: ~/project
   environment:
-    DATE_TIMEZONE: America/Los_Angeles
-    TERM: xterm
+    #=========================================================================
+    # In addition to the environment variables defined in this file, also
+    # add the following variables in the Circle CI UI.
+    #
+    # See: https://circleci.com/docs/2.0/env-vars/
+    #
+    # TERMINUS_SITE:  Name of the Pantheon site to run tests on, e.g. my_site
+    # TERMINUS_TOKEN: The Pantheon machine token
+    # GITHUB_TOKEN:   The GitHub personal access token
+    # GIT_EMAIL:      The email address to use when making commits
+    #
+    # TEST_SITE_NAME: The name of the test site to provide when installing.
+    # ADMIN_PASSWORD: The admin password to use when installing.
+    # ADMIN_EMAIL:    The email address to give the admin when installing.
+    #=========================================================================
+    TZ: "/usr/share/zoneinfo/America/Los_Angeles"
 
+    # The variables below usually do not need to be modified.
+
+    #======================================================================================================================================
+    # Circle CI 2.0 does not yet expand environment variables so they have to be manually EXPORTed
+    # Once environment variables can be expanded the variables below can be uncommented and the EXPORTs in set-up-globals.sh can be removed
+    # See: https://discuss.circleci.com/t/unclear-how-to-work-with-user-variables-circleci-provided-env-variables/12810/11
+    # See: https://discuss.circleci.com/t/environment-variable-expansion-in-working-directory/11322
+    # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
+    #======================================================================================================================================
+
+    NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
+    ADMIN_USERNAME: admin
+    # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
+    TERM: dumb
+
+version: 2
 jobs:
-  build:
-    <<: *defaults
-    steps:
-      - checkout
+    # @todo: common initialization: 'composer install' for the site-under-test
+    build:
+        <<: *defaults
+        steps:
+            - checkout
 
-      - restore_cache:
-          keys:
-            - composer-cache
-            - terminus-install
+            - restore_cache:
+                keys:
+                    - composer-cache
+                    - terminus-install
 
-      - run:
-          # Set TERMINUS_ENV and related environment variables.
-          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-          name: environment
-          command: /build-tools-ci/scripts/set-environment
+            - run:
+                # Set TERMINUS_ENV and related environment variables.
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+                name: environment
+                command: /build-tools-ci/scripts/set-environment
 
-      - run:
-          name: Run Composer Install
-          command: composer install -o
+            - run:
+                name: run composer install to get the vendor directory
+                command: composer install
 
-      - save_cache:
-          key: composer-cache
-          paths:
-            - $HOME/.composer/cache
+            - save_cache:
+                key: composer-cache
+                paths:
+                    - $HOME/.composer/cache
 
-      - save_cache:
-          key: terminus-install
-          paths:
-            - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+            - save_cache:
+                key: terminus-install
+                paths:
+                    - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
 
-      - run:
-          name: Build assets for testing
-          command: echo "Not building theme."
-          #          command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
+            - run:
+                name: lint php code for syntax errors
+                command: composer -n lint
 
-          #      - run:
-          #          name: Run Linting
-          #          command: composer run lint
+            - run:
+                name: check coding standards
+                command: composer -n code-sniff
 
-      # - run:
-        #   name: Place Settings
-       #   command: cp -f .circleci/settings.local.php ./web/sites/default/settings.local.php
+            - run:
+                name: run unit tests
+                command: composer -n unit-test
 
-      # - run:
-        #   name: Start Services
-        #   command: service mysql start && sudo echo '127.0.0.1       project.local' >> /etc/hosts && service apache2 start && chown -R root:www-data ./web
+    build_deploy_and_test:
+        <<: *defaults
+        steps:
+            - checkout
 
-      # - run:
-        #   name: Get and Import Database (Latest Live Backup)
-        #   command: scripts/dbsync.sh [file] -i
+            - restore_cache:
+                keys:
+                    - composer-cache
+                    - terminus-install
 
-      # - run:
-        #   name: Update DB and Config
-        #   command: scripts/reset.sh
+            - run:
+                # Set TERMINUS_ENV and related environment variables.
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+                name: dependencies
+                command: /build-tools-ci/scripts/set-environment
 
-      # - run:
-        #   name: Run Tests
-        #   command: echo "No tests configured. Just see if site exists.\n" && curl http://project.local
+            - run:
+                name: install dev dependencies, build assets, etc.
+                command: ./.circleci/scripts/pantheon/01-prepare
 
-  deploy:
-    <<: *defaults
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "7c:41:a8:b4:67:5e:d4:b3:03:d3:ec:be:46:af:3b:6d"
+            - run:
+                name: build assets
+                command: composer -n build-assets
 
-      - checkout
+            #- run:
+                #name: create simplesamlphp symlink
+                #command: |
+                    #mkdir -p ./vendor/simplesamlphp
+                    #cd ./vendor/simplesamlphp
+                    #rm -r simplesamlphp
+                    #ln -Fs ../../web/private/simplesamlphp-1.17.0-rc3 simplesamlphp
 
-      - restore_cache:
-          keys:
-            - composer-cache
-            - terminus-install
+            #- run:
+                #name: add secrets
+                #command: |
+                    #echo $FILE_IDCSCERTIFICATEPEM | base64 --decode >> ./web/private/IDCSCertificate.pem
+                    #echo $FILE_SAMLCRT | base64 --decode >> ./web/private/saml.crt
+                    #echo $FILE_SAMLPEM | base64 --decode >> ./web/private/saml.pem
+                    #echo $FILE_SIMPLESAMLCONFIG | base64 --decode >> ./web/private/simplesaml_config.php
+                    #mkdir -p ./web/private/metadata
+                    #echo $FILE_SAML20IDPREMOTE | base64 --decode >> ./web/private/metadata/saml20-idp-remote.php
+                    #echo $FILE_SAML20SPREMOTE | base64 --decode >> ./web/private/metadata/saml20-sp-remote.php
 
-      - run:
-          # Set TERMINUS_ENV and related environment variables.
-          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-          name: dependencies
-          command: /build-tools-ci/scripts/set-environment
+            - run:
+                name: prepare database for site-under test
+                command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
+                # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
 
-      - run:
-          name: Authenticate Terminus
-          command: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+            - run:
+                name: run composer install again to get dev dependencies
+                command: composer install
 
-      - run:
-          name: Run Composer Install
-          command: composer install -o
+            #- run:
+                #name: run functional tests with Behat
+                #command: ./tests/scripts/run-behat
 
-      - run:
-          name: Build assets
-          command: echo "Not building theme."
-          # command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
+            #- run:
+                #name: post-test actions
+                #command: ./.circleci/scripts/pantheon/03-post-test
 
-      - run:
-          name: Deploy Artifact
-          command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
+            - run:
+                name: handle merge to master (if needed)
+                command: ./.circleci/scripts/pantheon/04-merge-master
+
+            - run:
+                name: remove transient test fixtures
+                command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
+
+    deploy_artifact:
+        <<: *defaults
+        steps:
+            - add_ssh_keys:
+                fingerprints:
+                    - "7c:41:a8:b4:67:5e:d4:b3:03:d3:ec:be:46:af:3b:6d"
+
+            - checkout
+
+            - restore_cache:
+                keys:
+                    - composer-cache
+                    - terminus-install
+
+            - run:
+                # Set TERMINUS_ENV and related environment variables.
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+                name: dependencies
+                command: /build-tools-ci/scripts/set-environment
+
+            - run:
+                name: Authenticate Terminus
+                command: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+
+            - run:
+                name: Run Composer Install
+                command: composer install -o --no-dev
+
+            - run:
+                name: Build assets
+                command: echo "Not building theme."
+                # command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
+
+            - run:
+                name: Deploy Artifact
+                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
 
 workflows:
   version: 2
-  build-deploy:
+  build_and_test:
     jobs:
+      # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
       - build
-      - deploy:
+      # Build deploy and test on target platform
+      - build_deploy_and_test:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - develop
+                - stage
+                - master
+                - /^epic-.*/
+      - deploy_artifact:
           requires:
             - build
           filters:
@@ -119,3 +213,9 @@ workflows:
                 - stage
                 - master
                 - /^epic-.*/
+
+experimental:
+  notify:
+    branches:
+      only:
+        - master
