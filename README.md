@@ -21,11 +21,29 @@ Once installed cd to project directory and type `lando` for a list of commands.
    - A post install script will set your settings.local.php and services.local.yml files if they do not already exist. Feel free to modify these for you local environment, they are git ignored.
    - If using Docker and or Lando (with Docker), be sure to run composer commands from inside the container to prevent PHP verson conflicts. Lando has a passthrough command: `lando composer`.
  - Import your database. (With lando: `lando db-import [path to db]`
-   - See `scripts/local/default/sql.start` for an dump from initial install.
-   - This is a SQL file but .sql is git ignored so it's named sql.start. Import it directly if you need a starter with the correct config ids.
-   - If a more recent database dump is available, use that instead.
+    - Import your database.
+   
+      To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
+      ```bash
+   
+        # Go to Project root.
+        cd [this-directory]
+   
+        # Create a new backup.
+        terminus backup:create jcc-srl.develop --element=db
+   
+        # Get the download url
+        terminus backup:get jcc-srl.develop --element=db
+   
+        # Move db to project root.
+        mv [path-to-db] .
+   
+        # or import the database with Lando
+        lando db-import [filename]
+      ```
+   
  - Build the theme:
-   - TBD
+   - See theme's README.md.
  - Run updates:
    - `cd [site directory]` - [site directory] is web for default or web/sites/[multisite].
    - Database updates: `drush updb` (With lando: `lando drush updb`)
@@ -44,32 +62,34 @@ Once installed cd to project directory and type `lando` for a list of commands.
  - `master` - clean stable production code. Lives on the Pantheon "dev" environment.
    - On Pantheon `master` branch is the default "dev" environment.
    - We can deploy `master` to "Live" by tagging commits appropriately. (automated)
-   - **Merging to master on Github WILL deploy to Live**
+   - **Do not commit directly to master**
  - `stage` - code that is ready for client review. Lives on the "stage" Multidev environment.
- - `develop` - unstable test code for internal QA and integration testing. Lives on the "develop" Multidev environment.
+ - `develop` - Peer-reviewed test code for internal QA and integration testing. Lives on the "develop" Multidev environment.
 
-### Workflow
+### Pre-Launch Workflow
 
- - Make new feature branches from the most stable branch (`feature/[ticket-id]--short-description`)
-   - From `master` for production sites.
-   - Possibly from `stage` for pre-production sites, depending on if you commit completed work to a (future production) `master` branch at the end of sprints.
- - Push feature branches github and Pull Request against `develop` for code review.
+ - Make new feature branches from `develop` (`feature/[ticket-id]--short-description`)
+ - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
+ - Push feature branches github and Pull Request(PR) against `develop` for code review. PRs should be approved by another developer.
  - Merge to develop for CI testing and deploy to develop environment for QA.
    - QA Pass: Pull Request / Merge feature branch to current `stage` branch for CI build/deploy to stage environment.
-   - QA Fail: Keep working on feature branch and repeat.
- - User Acceptance and signoff of features on `stage`.
-   - Pass: At end of the sprint, merge all approved features to master for CI deploy to production.
-     - If all features in `stage` are approved, stage branch can be merged to `master` IF you're sure it's clean.
-     - Otherwise, merge approved features individually, or use a `release branch` to collect them and merge that to master.
-   - Fail: Rework the feature branch and repeat from develop environment.
- - Repeat for next sprint.
+   - QA Fail: Check out feature branch, rebase develop, and continue working.
+ 
+### Post-Launch Workflow
+- Follow pre-launch instructions.
+- User Acceptance and signoff of features on `stage`.
+   - Pass: At end of the development cycle, merge all approved features to master for CI deploy to production.
+     - If all features in `stage` are approved, stage branch can be merged to `master`.
+     - Alternatively, merge approved features individually, or use a `release branch` to collect them and merge that to master.
+   - Fail: Rebase the feature branch and repeat from develop environment.
+ 
 
 ### Pantheon, Multidev and Epics
 
 Given this project will be developed on [Pantheon](https://pantheon.io), at least initially, here are some additional notes.
 
  - [Terminus](https://pantheon.io/docs/terminus) is a commandline tool for interaction with Pantheon.
-   - You can use the web dashboard, but I'll reference some terminus commands here.
+   - You can also use the web dashboard in place of most of these commands.
 
 We're using a Parallel Git Workflow, rather than the standard Pantheon workflow, so we have the 3 environments described above. `develop` and `stage` are Pantheon "Multisite" environments.
 
