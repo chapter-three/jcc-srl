@@ -1,0 +1,50 @@
+uuid: 713a2b98-4544-4a0d-bb32-7652a63353b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.flex.field_columns
+    - field.field.paragraph.flex.field_create_anchor
+    - field.field.paragraph.flex.field_namechange
+    - field.field.paragraph.flex.field_title_display
+    - paragraphs.paragraphs_type.flex
+  module:
+    - options
+    - text
+id: paragraph.flex.default
+targetEntityType: paragraph
+bundle: flex
+mode: default
+content:
+  field_columns:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_create_anchor:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_namechange:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_title_display:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

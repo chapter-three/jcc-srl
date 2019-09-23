@@ -1,0 +1,21 @@
+uuid: 94dbed28-2cbb-4875-addb-cd92fcf488d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_display
+    - paragraphs.paragraphs_type.flex
+  module:
+    - text
+id: paragraph.flex.field_title_display
+field_name: field_title_display
+entity_type: paragraph
+bundle: flex
+label: 'Display Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
