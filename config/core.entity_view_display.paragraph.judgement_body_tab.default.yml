@@ -1,0 +1,55 @@
+uuid: 7329c9b7-e8d8-4e90-afba-a088ac8d99bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.judgement_body_tab.field_display_block
+    - field.field.paragraph.judgement_body_tab.field_display_forms
+    - field.field.paragraph.judgement_body_tab.field_option_text
+    - field.field.paragraph.judgement_body_tab.field_paragraphs
+    - paragraphs.paragraphs_type.judgement_body_tab
+  module:
+    - entity_reference_revisions
+id: paragraph.judgement_body_tab.default
+targetEntityType: paragraph
+bundle: judgement_body_tab
+mode: default
+content:
+  field_display_block:
+    weight: 1
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_forms:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_option_text:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }
