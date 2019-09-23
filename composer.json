@@ -11,17 +11,8 @@
     ],
     "repositories": [
         {
-
-            "type": "package",
-            "package": {
-                "name": "zakiya/courts-theme",
-                "version": "master",
-                "type": "drupal-theme",
-                "dist": {
-                    "url": "https://github.com/zakiya/courts-theme/archive/master.zip",
-                    "type": "zip"
-                }
-            }
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
         },
         {
             "type": "package",
@@ -35,10 +26,6 @@
                     "reference": "v5.5.0"
                 }
             }
-        },
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
         }
     ],
     "require": {
@@ -93,7 +80,6 @@
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
-        "zakiya/courts-theme": "dev-master",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
