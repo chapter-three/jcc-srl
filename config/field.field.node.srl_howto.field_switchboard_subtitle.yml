@@ -1,0 +1,21 @@
+uuid: aaeadc79-2bbc-4bf6-b136-5f1706907a82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_switchboard_subtitle
+    - node.type.srl_howto
+  module:
+    - text
+id: node.srl_howto.field_switchboard_subtitle
+field_name: field_switchboard_subtitle
+entity_type: node
+bundle: srl_howto
+label: 'Switchboard Subtitle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
