@@ -1,0 +1,21 @@
+uuid: e2d797f5-76fc-4d22-bdfa-d041abeebaec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_display
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - text
+id: paragraph.postcard.field_title_display
+field_name: field_title_display
+entity_type: paragraph
+bundle: postcard
+label: 'Display Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
