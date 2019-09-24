@@ -1,0 +1,27 @@
+uuid: c76ac72e-3a4a-462d-b097-467486929a08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_1
+    - media.type.jcc_form
+  module:
+    - file
+id: media.jcc_form.field_media_file_1
+field_name: field_media_file_1
+entity_type: media
+bundle: jcc_form
+label: 'Encrypted Public PDF'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: jcc_forms
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

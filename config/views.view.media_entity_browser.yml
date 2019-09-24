@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - image.style.media_entity_browser_thumbnail
+    - taxonomy.vocabulary.code
   module:
     - entity_browser
     - image
     - media
+    - paragraphs
+    - range
+    - taxonomy
     - user
 _core:
   default_config_hash: KhJKNvvt7B6WGw3Dsk2pTYPfpcm671g7afKTwxJn4Fo
@@ -37,7 +41,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -498,11 +502,149 @@ display:
           entity_type: media
           entity_field: langcode
           plugin_id: language
+        field_code_target_id:
+          id: field_code_target_id
+          table: paragraph__field_code
+          field: field_code_target_id
+          relationship: field_code
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_code_target_id_op
+            label: Code
+            description: ''
+            use_operator: false
+            operator: field_code_target_id_op
+            identifier: field_code_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              jcc_web_services: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: code
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_section:
+          id: field_section
+          table: paragraph__field_section
+          field: field_section
+          relationship: field_code
+          group_type: group
+          admin_label: ''
+          operator: within
+          value: null
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_section_op
+            label: Section
+            description: ''
+            use_operator: false
+            operator: field_section_op
+            identifier: field_section
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              jcc_web_services: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          include_endpoints: true
+          plugin_id: range
+        field_section_suffix_value:
+          id: field_section_suffix_value
+          table: paragraph__field_section_suffix
+          field: field_section_suffix_value
+          relationship: field_code
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_section_suffix_value_op
+            label: 'Section Suffix'
+            description: ''
+            use_operator: false
+            operator: field_section_suffix_value_op
+            identifier: field_section_suffix_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+              jcc_web_services: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: string
       sorts: {  }
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_code:
+          id: field_code
+          table: media__field_code
+          field: field_code
+          relationship: none
+          group_type: group
+          admin_label: 'field_code: Paragraph'
+          required: false
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
       filter_groups:
@@ -518,6 +660,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }
   media_browser_all:
@@ -534,5 +677,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - user.permissions
       tags: {  }
