@@ -14,8 +14,3 @@ libraries:
 
 ckeditor_stylesheets:
   - assets/css/atrium.style.css
-
-component-libraries:
-  atrium:
-    paths:
-      - ./src/components
