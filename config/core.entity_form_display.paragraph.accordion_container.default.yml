@@ -1,0 +1,39 @@
+uuid: cbb7cf21-c6c2-4f45-bfe7-1edb09dbda18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion_container.field_accordions
+    - field.field.paragraph.accordion_container.field_body
+    - paragraphs.paragraphs_type.accordion_container
+  module:
+    - paragraphs
+    - text
+id: paragraph.accordion_container.default
+targetEntityType: paragraph
+bundle: accordion_container
+mode: default
+content:
+  field_accordions:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_body:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

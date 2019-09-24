@@ -1,0 +1,23 @@
+uuid: 029555b5-b1dc-4d7f-9896-a7cab501c889
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_create_anchor
+    - paragraphs.paragraphs_type.step_container
+id: paragraph.step_container.field_create_anchor
+field_name: field_create_anchor
+entity_type: paragraph
+bundle: step_container
+label: 'Add To Hero Nav?'
+description: 'For Wayfinding Boilerplate and Onramp nodes only.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

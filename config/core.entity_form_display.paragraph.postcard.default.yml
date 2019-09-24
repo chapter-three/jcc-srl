@@ -1,0 +1,87 @@
+uuid: 83999e6b-c538-45e8-b83c-82a610285dc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.postcard.field_additional
+    - field.field.paragraph.postcard.field_body
+    - field.field.paragraph.postcard.field_create_anchor
+    - field.field.paragraph.postcard.field_display
+    - field.field.paragraph.postcard.field_link
+    - field.field.paragraph.postcard.field_media
+    - field.field.paragraph.postcard.field_text_overlay
+    - field.field.paragraph.postcard.field_title_display
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - link
+    - text
+id: paragraph.postcard.default
+targetEntityType: paragraph
+bundle: postcard
+mode: default
+content:
+  field_additional:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_create_anchor:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_media:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_text_overlay:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title_display:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true

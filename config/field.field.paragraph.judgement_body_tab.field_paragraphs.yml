@@ -1,0 +1,38 @@
+uuid: 5f967506-c3bf-42f8-80dc-a911d66914e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.judgement_body_tab
+  module:
+    - entity_reference_revisions
+id: paragraph.judgement_body_tab.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: judgement_body_tab
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      accordion:
+        weight: 5
+        enabled: false
+      accordion_container:
+        weight: 6
+        enabled: false
+      card:
+        weight: 7
+        enabled: false
+      judgement_body_tab:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

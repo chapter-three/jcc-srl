@@ -1,0 +1,21 @@
+uuid: dc287190-3834-4393-8b06-ddf189a6852d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display
+    - paragraphs.paragraphs_type.step_container
+  module:
+    - options
+id: paragraph.step_container.field_display
+field_name: field_display
+entity_type: paragraph
+bundle: step_container
+label: Display
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,54 @@
+uuid: 95fed30e-42ca-4656-8234-732a1f19a6c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.judgement_body_tab.field_display_block
+    - field.field.paragraph.judgement_body_tab.field_display_forms
+    - field.field.paragraph.judgement_body_tab.field_option_text
+    - field.field.paragraph.judgement_body_tab.field_paragraphs
+    - paragraphs.paragraphs_type.judgement_body_tab
+  module:
+    - paragraphs
+id: paragraph.judgement_body_tab.default
+targetEntityType: paragraph
+bundle: judgement_body_tab
+mode: default
+content:
+  field_display_block:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_forms:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_option_text:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
