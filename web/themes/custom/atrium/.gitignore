@@ -3,4 +3,5 @@
 .DS_Store
 *.codekit
 .idea
+.env
 node_modules
