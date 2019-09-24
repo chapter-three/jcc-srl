@@ -26,6 +26,19 @@
                     "reference": "v5.5.0"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "exygy/courtyard",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/exygy/courtyard.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
@@ -76,6 +89,7 @@
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
+        "exygy/courtyard": "dev-master",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",

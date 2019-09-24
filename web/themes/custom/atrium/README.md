@@ -1,18 +1,26 @@
-# Installation
+# Atrium
 
-atrium theme uses [Webpack](https://webpack.js.org) to compile and bundle SASS and JS.
+Atrium is a custom Drupal theme used for the JCC SRL project. This theme uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript. If you need to make any changes to CSS or JavaScript, you'll need to make sure you're running the build script first.
 
-#### Step 1
-Make sure you have Node and npm installed. 
-You can read a guide on how to install node here: https://docs.npmjs.com/getting-started/installing-node
+## Installation
 
-If you prefer to use [Yarn](https://yarnpkg.com) instead of npm, install Yarn by following the guide [here](https://yarnpkg.com/docs/install).
+With [Node and NPM installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), navigate to the root of this theme in your terminal, and install NPM dependencies:
 
-#### Step 2
-Go to the root of atrium theme and run the following commands: `npm install` or `yarn install`.
+```sh
+npm install
+```
 
-#### Step 3
-Update `proxy` in **webpack.mix.json**.
+## Run the Build Script
 
-#### Step 4
-Run the following command to compile Sass and watch for changes: `npm run watch` or `yarn watch`.
+Start the build script, which will compile Sass and watch for changes:
+
+```sh
+npm run watch
+```
+
+## Proxy
+
+This build script assumes you have setup your development environment using Lando, as documented in the main README, and uses `https://jcc.lndo.site` as the proxy for BrowserSync. If you prefer not to use Lando, and have a different virtual host, you may change the host used by the build script:
+
+1. Copy the `.env.example` renaming to `.env` and place it in the theme root.
+2. Uncomment the `MIX_PROXY` and set the value to your host.

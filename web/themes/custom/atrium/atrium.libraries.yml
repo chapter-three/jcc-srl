@@ -1,5 +1,4 @@
 style:
-  version: VERSION
   css:
     theme:
       assets/css/atrium.style.css: {}
