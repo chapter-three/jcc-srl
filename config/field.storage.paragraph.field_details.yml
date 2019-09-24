@@ -1,35 +1,26 @@
-uuid: 4c996593-58ef-4879-956a-81241b3a1011
+uuid: ec418822-ff67-4fae-a0c6-d4e995b52778
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_namechange
-field_name: field_namechange
+id: paragraph.field_details
+field_name: field_details
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: '1'
-      label: '1'
+      value: flowmap
+      label: Flowmap
     -
-      value: '2'
-      label: '2'
-    -
-      value: '3'
-      label: '3'
-    -
-      value: '4'
-      label: '4'
-    -
-      value: '5'
-      label: '5'
+      value: vertical_steps
+      label: 'Vertical Steps'
   allowed_values_function: ''
 module: options
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
