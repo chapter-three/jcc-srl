@@ -10,7 +10,7 @@ field_name: field_create_anchor
 entity_type: paragraph
 bundle: postcard
 label: 'Add To Hero Nav?'
-description: ''
+description: 'For Wayfinding Boilerplate and Onramp nodes only.'
 required: false
 translatable: true
 default_value:

@@ -12,7 +12,7 @@ field_name: field_namechange
 entity_type: paragraph
 bundle: flex
 label: 'Hide under the following name change scenarios'
-description: ''
+description: 'For Namechange Wayfinding Wizard only'
 required: false
 translatable: false
 default_value: {  }
