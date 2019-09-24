@@ -1,0 +1,21 @@
+uuid: 70efda41-f2fb-4721-a8cf-fd30b19263d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_nav_title
+    - node.type.srl_onramp
+  module:
+    - text
+id: node.srl_onramp.field_hero_nav_title
+field_name: field_hero_nav_title
+entity_type: node
+bundle: srl_onramp
+label: 'Hero Nav Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,54 @@
+uuid: aba52add-d968-4c5c-969b-587da69e7fe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.srl_onramp
+    - paragraphs.paragraphs_type.accordion_container
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - entity_reference_revisions
+id: node.srl_onramp.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: srl_onramp
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_container: accordion_container
+      postcard: postcard
+    target_bundles_drag_drop:
+      accordion:
+        weight: 9
+        enabled: false
+      accordion_container:
+        enabled: true
+        weight: 10
+      card:
+        weight: 11
+        enabled: false
+      flex:
+        weight: 12
+        enabled: false
+      judgement_body_tab:
+        weight: 13
+        enabled: false
+      postcard:
+        enabled: true
+        weight: 14
+      step:
+        weight: 15
+        enabled: false
+      step_container:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions
