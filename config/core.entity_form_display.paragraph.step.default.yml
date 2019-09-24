@@ -26,9 +26,11 @@ content:
     region: content
   field_details:
     weight: 3
-    settings: {  }
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: text_textarea
     region: content
   field_details_link_text:
     weight: 2
@@ -42,7 +44,7 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_title_display:
     weight: 0

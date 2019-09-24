@@ -29,7 +29,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    type: text_default
     region: content
   field_details_link_text:
     weight: 2

@@ -1,4 +1,4 @@
-uuid: 0249440a-cffc-47c5-b9d7-a4171534267e
+uuid: 80a86ca7-0372-454d-80dd-825149a5d0ba
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_details
     - paragraphs.paragraphs_type.step
   module:
-    - options
+    - text
 id: paragraph.step.field_details
 field_name: field_details
 entity_type: paragraph
@@ -18,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: text_long
