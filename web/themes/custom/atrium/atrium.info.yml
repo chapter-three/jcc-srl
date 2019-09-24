@@ -14,3 +14,17 @@ libraries:
 
 ckeditor_stylesheets:
   - assets/css/atrium.style.css
+
+component-libraries:
+  protons:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/00-protons
+  atoms:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/01-atoms
+  molecules:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/02-molecules
+  organisms:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/03-organisms
