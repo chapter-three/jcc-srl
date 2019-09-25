@@ -1,0 +1,21 @@
+uuid: 4bbdaf21-f7db-4317-815f-9e4e9121f69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_howto_tabs_title
+    - node.type.srl_howto_instruction
+  module:
+    - text
+id: node.srl_howto_instruction.field_howto_tabs_title
+field_name: field_howto_tabs_title
+entity_type: node
+bundle: srl_howto_instruction
+label: 'HowTo Tabs Title'
+description: 'Ex: What did the bank notice say?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

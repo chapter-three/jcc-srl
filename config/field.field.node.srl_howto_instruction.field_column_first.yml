@@ -1,0 +1,22 @@
+uuid: 99091c6b-1c41-4819-a52a-73ac7c1c12fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_column_first
+    - node.type.srl_howto_instruction
+  module:
+    - text
+id: node.srl_howto_instruction.field_column_first
+field_name: field_column_first
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Hero - First Column'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

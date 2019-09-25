@@ -1,0 +1,22 @@
+uuid: 2e5d7866-7a71-4192-b9e2-74cc938af7ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_onramp
+id: node.srl_onramp.promote
+field_name: promote
+entity_type: node
+bundle: srl_onramp
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
