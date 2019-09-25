@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.jcc_form.field_case_type
     - field.field.media.jcc_form.field_code
     - field.field.media.jcc_form.field_date_effective
     - field.field.media.jcc_form.field_description
@@ -29,6 +30,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_case_type:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_code:
     type: entity_reference_paragraphs
     weight: 5

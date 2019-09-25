@@ -35,6 +35,6 @@ settings:
       video: video
     sort:
       field: _none
-    auto_create: false
+    auto_create: true
     auto_create_bundle: audio
 field_type: entity_reference
