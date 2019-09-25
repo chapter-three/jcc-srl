@@ -135,14 +135,7 @@ class ScriptHandler {
           echo "This *SHOULD* get you started. Review $dir/$copy_file if you're having trouble.\n";
         }
       }
-      echo "\nYou *MAY* find a starter sql file here: 'scripts/local/$site/sql.start' that you can import directly if you need it.\n";
-
     }
-
-    echo "\n
-SUCCESS!  You have installed your Drupal 8 Project!
-See README.md for important information.\n
-";
   }
 
 }
