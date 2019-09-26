@@ -124,6 +124,7 @@
         "components/highlightjs": "9.7.*",
         "d3/d3": "3.5.*",
         "drupal/devel": "^2.1",
+        "drupal/log_stdout": "^1.1",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
