@@ -9,6 +9,8 @@ dependencies:
     - field.field.paragraph.flex.field_title_display
     - paragraphs.paragraphs_type.flex
   module:
+    - allowed_formats
+    - maxlength
     - text
 id: paragraph.flex.default
 targetEntityType: paragraph
@@ -41,7 +43,13 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: text_textfield
     region: content
 hidden:
