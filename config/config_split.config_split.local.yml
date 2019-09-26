@@ -11,7 +11,7 @@ folder: ../config-local
 module:
   devel: 0
   log_stdout: 0
-  stage_file_proxy: 0
+  webprofiler: 0
 theme: {  }
 blacklist:
   - devel.settings
