@@ -132,7 +132,7 @@ class ScriptHandler {
         if ($fs->exists("$composerRoot/scripts/local/$site/$copy_file") && !$fs->exists("$dir/$copy_file")) {
           $fs->copy("$composerRoot/scripts/local/$site/$copy_file", "$dir/$copy_file");
           echo "\n$copy_file was copied to $dir from scripts/local/$site\n";
-          echo "This *SHOULD* get you started. Review $dir/$copy_file if you're having trouble.\n";
+          echo "This should get you started. Review $dir/$copy_file if you're having trouble.\n";
         }
       }
     }
