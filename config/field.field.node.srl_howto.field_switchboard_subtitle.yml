@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_switchboard_subtitle
     - node.type.srl_howto
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
 id: node.srl_howto.field_switchboard_subtitle
 field_name: field_switchboard_subtitle
 entity_type: node

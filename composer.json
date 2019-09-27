@@ -72,6 +72,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/adminimal_theme": "^1.5",
+        "drupal/allowed_formats": "^1.1",
         "drupal/autosave_form": "^1.0",
         "drupal/chosen": "^2.8",
         "drupal/components": "^1.1",

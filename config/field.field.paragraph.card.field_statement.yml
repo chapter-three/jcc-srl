@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_statement
     - paragraphs.paragraphs_type.card
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
 id: paragraph.card.field_statement
 field_name: field_statement
 entity_type: paragraph
