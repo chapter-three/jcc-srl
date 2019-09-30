@@ -7,3 +7,11 @@ style:
   dependencies:
     - core/jquery
     - core/drupal
+    - atrium/patternlab
+
+patternlab:
+  css:
+    theme:
+      ../../../libraries/courtyard/public/css/styles.min.css: {}
+  js:
+    ../../../libraries/courtyard/public/js/scripts.js: {}
