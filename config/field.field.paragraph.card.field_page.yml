@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_page
-    - node.type.basic
+    - node.type.srl_howto_instruction
     - paragraphs.paragraphs_type.card
 id: paragraph.card.field_page
 field_name: field_page
@@ -20,9 +20,9 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      basic: basic
+      srl_howto_instruction: srl_howto_instruction
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: basic
 field_type: entity_reference
