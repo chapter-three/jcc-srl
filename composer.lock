@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "035767e7c390908dce7df39087d24000",
+    "content-hash": "10c22f05663c811ae621fddc073c9ef0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2545,17 +2545,17 @@
         },
         {
             "name": "drupal/components",
-            "version": "1.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/components.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/components-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "72af8ff1ca842556ee4b95335595c24703acdb75"
+                "url": "https://ftp.drupal.org/files/projects/components-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "adb1872a655466d575c2d3396f7ca2daba0a2918"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2566,7 +2566,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
+                    "version": "8.x-1.0",
                     "datestamp": "1556870881",
                     "security-coverage": {
                         "status": "covered",
@@ -6241,7 +6241,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "master"
+                "reference": "fbc0eb2"
             },
             "type": "drupal-library"
         },
@@ -10356,9 +10356,7 @@
             "version": "9.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/components/highlightjs/archive/9.7.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/components/highlightjs/archive/9.7.0.zip"
             },
             "type": "drupal-library"
         },
@@ -10367,9 +10365,7 @@
             "version": "v3.5.17",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/d3/d3/archive/v3.5.17.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/d3/d3/archive/v3.5.17.zip"
             },
             "type": "drupal-library"
         },
@@ -12478,6 +12474,17 @@
         {
             "name": "webflo/drupal-core-require-dev",
             "version": "8.7.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webflo/drupal-core-require-dev.git",
+                "reference": "f535c939fee065b202ed5a84b15aa5385ba49d5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/f535c939fee065b202ed5a84b15aa5385ba49d5e",
+                "reference": "f535c939fee065b202ed5a84b15aa5385ba49d5e",
+                "shasum": ""
+            },
             "require": {
                 "behat/mink": "1.7.x-dev",
                 "behat/mink-goutte-driver": "^1.2",
