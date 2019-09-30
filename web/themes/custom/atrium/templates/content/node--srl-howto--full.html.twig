@@ -1,0 +1,22 @@
+{% extends 'node.html.twig' %}
+{% block content %}
+  {#
+    - TODO: Node title (and parent/breadcrumb trail) needs to get in this
+      component.
+    - TODO: Are there other background color options? This one doesn't seem
+      right. Seems like it should be gray.
+  #}
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    title: content.field_title_display,
+    lead: content.field_column_first,
+    column_content_right: content.field_column_second,
+    column_variant: content.field_column_second|render ? 'has-two-columns' : null,
+    background_variant: 'has-background-color'
+  } %}
+
+  {{ content|without(
+    'field_title_display',
+    'field_column_first',
+    'field_column_second'
+  )}}
+{% endblock %}
