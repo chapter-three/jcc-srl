@@ -54,4 +54,7 @@ settings:
       step_container:
         enabled: true
         weight: 16
+      srl_date_calculator:
+        weight: 18
+        enabled: false
 field_type: entity_reference_revisions

@@ -1,0 +1,7 @@
+srl_date_calculator.srl_date_calculator_form:
+  path: '/srl_date_calculator/form/srl_date_calculator'
+  defaults:
+    _form: '\Drupal\srl_date_calculator\Form\SRLDateCalculatorForm'
+    _title: 'SRLDateCalculatorForm'
+  requirements:
+    _access: 'TRUE'

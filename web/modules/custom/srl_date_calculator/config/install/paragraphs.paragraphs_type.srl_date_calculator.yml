@@ -1,0 +1,9 @@
+uuid: f56e412f-2609-4cfc-99da-2ea67b840833
+langcode: en
+status: true
+dependencies: {  }
+id: srl_date_calculator
+label: 'SRL Date Calculator'
+icon_uuid: null
+description: 'Widget used to calculate important future dates based on a user entered date.'
+behavior_plugins: {  }
