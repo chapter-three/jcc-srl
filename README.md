@@ -55,9 +55,7 @@ Once installed cd to project directory and type `lando` for a list of commands.
    - Import config: `drush cim` (With lando: `lando drush cim`)
    - Grab a login link: `drush uli [user id] -l [local url]` default is user 1. (With lando: `lando drush uli`)
      - See `lando info` for a list of available proxy urls for local lando development.
-     
-     
-     
+
 
 **Ready to work.**
 
