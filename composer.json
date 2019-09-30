@@ -75,7 +75,7 @@
         "drupal/allowed_formats": "^1.1",
         "drupal/autosave_form": "^1.0",
         "drupal/chosen": "^2.8",
-        "drupal/components": "^1.1",
+        "drupal/components": "1.0.0",
         "drupal/config_exclude": "1.x-dev",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
