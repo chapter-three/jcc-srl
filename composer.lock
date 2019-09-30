@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "035767e7c390908dce7df39087d24000",
+    "content-hash": "6844d7b8c0f0a52c3d07b254e2d52827",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6241,7 +6241,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "master"
+                "reference": "fbc0eb2"
             },
             "type": "drupal-library"
         },
@@ -10356,9 +10356,7 @@
             "version": "9.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/components/highlightjs/archive/9.7.0.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/components/highlightjs/archive/9.7.0.zip"
             },
             "type": "drupal-library"
         },
@@ -10367,9 +10365,7 @@
             "version": "v3.5.17",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/d3/d3/archive/v3.5.17.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/d3/d3/archive/v3.5.17.zip"
             },
             "type": "drupal-library"
         },
@@ -12478,6 +12474,17 @@
         {
             "name": "webflo/drupal-core-require-dev",
             "version": "8.7.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webflo/drupal-core-require-dev.git",
+                "reference": "f535c939fee065b202ed5a84b15aa5385ba49d5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/f535c939fee065b202ed5a84b15aa5385ba49d5e",
+                "reference": "f535c939fee065b202ed5a84b15aa5385ba49d5e",
+                "shasum": ""
+            },
             "require": {
                 "behat/mink": "1.7.x-dev",
                 "behat/mink-goutte-driver": "^1.2",

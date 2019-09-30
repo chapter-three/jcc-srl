@@ -18,13 +18,13 @@ ckeditor_stylesheets:
 component-libraries:
   protons:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/00-protons
+      - ../../../libraries/courtyard/source/_patterns/protons
   atoms:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/01-atoms
+      - ../../../libraries/courtyard/source/_patterns/atoms
   molecules:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/02-molecules
+      - ../../../libraries/courtyard/source/_patterns/molecules
   organisms:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/03-organisms
+      - ../../../libraries/courtyard/source/_patterns/organisms
