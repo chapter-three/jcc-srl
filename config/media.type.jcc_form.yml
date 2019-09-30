@@ -1,0 +1,19 @@
+uuid: 410c0a6e-0b6e-4f22-be1a-a356ee163b2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
+id: jcc_form
+label: 'JCC Form'
+description: 'PDF Forms with reference to Legal Codes and Sections.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file_1
+field_map:
+  name: name

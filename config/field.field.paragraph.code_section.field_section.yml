@@ -1,0 +1,29 @@
+uuid: ba79a714-7bf7-40a8-ae25-68012cb8b295
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section
+    - paragraphs.paragraphs_type.code_section
+  module:
+    - range
+id: paragraph.code_section.field_section
+field_name: field_section
+entity_type: paragraph
+bundle: code_section
+label: Section
+description: 'Use the same value in <em>From</em> and to  for single values.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  from:
+    prefix: ''
+    suffix: ''
+  to:
+    prefix: ''
+    suffix: ''
+field_type: range_float
