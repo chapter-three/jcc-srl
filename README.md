@@ -44,6 +44,10 @@ Once installed cd to project directory and type `lando` for a list of commands.
    
  - Build the theme:
    - See theme's README.md.
+
+ - Set up local drush options:
+    - `cp drush/example.drush.yml drush/drush.yml`
+ 
  - Run updates:
    - `cd [site directory]` - [site directory] is web for default or web/sites/[multisite].
    - Database updates: `drush updb` (With lando: `lando drush updb`)
@@ -51,6 +55,7 @@ Once installed cd to project directory and type `lando` for a list of commands.
    - Import config: `drush cim` (With lando: `lando drush cim`)
    - Grab a login link: `drush uli [user id] -l [local url]` default is user 1. (With lando: `lando drush uli`)
      - See `lando info` for a list of available proxy urls for local lando development.
+
 
 **Ready to work.**
 
