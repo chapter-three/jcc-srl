@@ -1,8 +1,9 @@
-uuid: d56323f0-ff33-4c54-a542-227f30a39d34
+uuid: 87fbc167-4987-4671-a887-cb432dedd6e2
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.paragraph.extras
     - field.field.paragraph.flex.field_columns
     - field.field.paragraph.flex.field_create_anchor
     - field.field.paragraph.flex.field_namechange
@@ -12,21 +13,28 @@ dependencies:
     - allowed_formats
     - maxlength
     - text
-id: paragraph.flex.default
+id: paragraph.flex.extras
 targetEntityType: paragraph
 bundle: flex
-mode: default
+mode: extras
 content:
   field_columns:
-    weight: 1
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_title_display:
+  field_create_anchor:
     weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_title_display:
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -41,6 +49,5 @@ content:
     region: content
 hidden:
   created: true
-  field_create_anchor: true
   field_namechange: true
   status: true

@@ -65,7 +65,7 @@ content:
       title_plural: Paragraphs
       edit_mode: preview
       add_mode: dropdown
-      form_display_mode: default
+      form_display_mode: extras
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
