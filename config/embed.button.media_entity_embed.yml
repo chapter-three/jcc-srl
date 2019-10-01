@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_entity_browser_wysiwyg
+  content:
+    - 'file:file:81d2a211-a90b-420c-9357-06b6bb4a7a01'
   module:
     - entity_embed
     - media
@@ -19,4 +21,4 @@ type_settings:
   entity_browser: media_entity_browser_wysiwyg
   entity_browser_settings:
     display_review: true
-icon_uuid: null
+icon_uuid: 81d2a211-a90b-420c-9357-06b6bb4a7a01
