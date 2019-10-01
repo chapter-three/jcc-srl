@@ -63,6 +63,21 @@
                     "type": "zip"
                 }
             }
+        },
+        "harvesthq/chosen": {
+            "type": "package",
+            "package": {
+                "name": "harvesthq/chosen",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
         }
     },
     "require": {
@@ -117,6 +132,7 @@
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
         "exygy/courtyard": "dev-master#fbc0eb2",
+        "harvesthq/chosen": "^1.8",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
