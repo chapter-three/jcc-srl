@@ -14,6 +14,8 @@ libraries:
 
 ckeditor_stylesheets:
   - assets/css/atrium.style.css
+  - https://confident-allen-d061ed.netlify.com/css/styles.css
+  # - ../../../libraries/courtyard/public/css/styles.min.css
 
 component-libraries:
   protons:
