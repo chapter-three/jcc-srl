@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_forms
-    - media.type.file
+    - media.type.jcc_form
     - node.type.srl_howto_instruction
 id: node.srl_howto_instruction.field_forms
 field_name: field_forms
@@ -20,9 +20,9 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      file: file
+      jcc_form: jcc_form
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: file
 field_type: entity_reference
