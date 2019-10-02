@@ -42,12 +42,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_namechange:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_title_display:
     weight: 0
     settings:
@@ -64,4 +58,5 @@ content:
     region: content
 hidden:
   created: true
+  field_namechange: true
   status: true
