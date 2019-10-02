@@ -118,7 +118,6 @@
         "drupal/pathauto": "^1.4",
         "drupal/r4032login": "^1.1",
         "drupal/rabbit_hole": "^1.0@beta",
-        "drupal/radix": "^4.5",
         "drupal/range": "^1.1",
         "drupal/redirect": "^1.3",
         "drupal/search404": "^1.0",
@@ -144,6 +143,7 @@
         "d3/d3": "3.5.*",
         "drupal/devel": "^2.1",
         "drupal/log_stdout": "^1.1",
+        "drupal/twig_xdebug": "^1.1",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
