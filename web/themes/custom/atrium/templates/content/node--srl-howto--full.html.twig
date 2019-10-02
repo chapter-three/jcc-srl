@@ -7,7 +7,7 @@
       right. Seems like it should be gray.
   #}
   {% include '@molecules/blocks/hero/hero.twig' with {
-    title: content.field_title_display,
+    title: content.field_title_display|render ? content.field_title_display : label,
     lead: content.field_column_first,
     column_content_right: content.field_column_second,
     column_variant: content.field_column_second|render ? 'has-two-columns' : null,
