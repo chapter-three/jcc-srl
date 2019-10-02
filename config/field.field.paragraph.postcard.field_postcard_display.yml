@@ -1,23 +1,21 @@
-uuid: b8130619-d0b3-41d5-aa09-715dc8476e6f
+uuid: 6937e7c3-edb9-4d0e-a7dd-cb7ee652ee27
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_display
+    - field.storage.paragraph.field_postcard_display
     - paragraphs.paragraphs_type.postcard
   module:
     - options
-id: paragraph.postcard.field_display
-field_name: field_display
+id: paragraph.postcard.field_postcard_display
+field_name: field_postcard_display
 entity_type: paragraph
 bundle: postcard
 label: Display
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: parent
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

@@ -5,12 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.srl_howto_instruction
-    - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.accordion_container
-    - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.flex
-    - paragraphs.paragraphs_type.postcard
-    - paragraphs.paragraphs_type.step
     - paragraphs.paragraphs_type.step_container
   module:
     - entity_reference_revisions
@@ -29,35 +24,33 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      accordion: accordion
-      accordion_container: accordion_container
-      card: card
       flex: flex
-      postcard: postcard
-      step: step
       step_container: step_container
     target_bundles_drag_drop:
       accordion:
-        enabled: true
         weight: 9
+        enabled: false
       accordion_container:
-        enabled: true
         weight: 10
+        enabled: false
       card:
-        enabled: true
         weight: 11
+        enabled: false
       flex:
         enabled: true
         weight: 12
+      code_section:
+        weight: 13
+        enabled: false
       judgement_body_tab:
         weight: 13
         enabled: false
       postcard:
-        enabled: true
         weight: 14
+        enabled: false
       step:
-        enabled: true
         weight: 15
+        enabled: false
       step_container:
         enabled: true
         weight: 16

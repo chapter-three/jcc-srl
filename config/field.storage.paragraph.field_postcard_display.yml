@@ -1,12 +1,12 @@
-uuid: 50750beb-ba76-41f0-be89-1ccf14a6e723
+uuid: b8f815de-b528-4147-842e-b3e074fb0d39
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_display
-field_name: field_display
+id: paragraph.field_postcard_display
+field_name: field_postcard_display
 entity_type: paragraph
 type: list_string
 settings:

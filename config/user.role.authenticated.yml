@@ -6,7 +6,7 @@ _core:
   default_config_hash: 9uT02MET40-oWxiM1uv6x1KX4Pke_SScFY5Rk7gIuAo
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access comments'

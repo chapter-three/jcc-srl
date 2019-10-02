@@ -1,0 +1,10 @@
+uuid: 1632f10f-17be-43de-a6a6-fc467805d1c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.extras
+label: Extras
+targetEntityType: paragraph
+cache: true

@@ -16,7 +16,6 @@ module:
   config: 0
   config_filter: 0
   config_split: 0
-  contact: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -59,7 +58,6 @@ module:
   options: 0
   page_cache: 0
   path: 0
-  quickedit: 0
   r4032login: 0
   rabbit_hole: 0
   range: 0
