@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.meb
+    - entity_browser.browser.jcc_forms
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
@@ -68,14 +68,14 @@ content:
   field_forms:
     weight: 125
     settings:
-      entity_browser: meb
+      entity_browser: jcc_forms
       field_widget_display: rendered_entity
       field_widget_display_settings:
         view_mode: default
+      field_widget_edit: true
       field_widget_remove: true
       open: true
       selection_mode: selection_append
-      field_widget_edit: false
       field_widget_replace: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
