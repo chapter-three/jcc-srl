@@ -13,5 +13,7 @@ patternlab:
   css:
     theme:
       ../../../libraries/courtyard/public/css/styles.min.css: {}
+      https://confident-allen-d061ed.netlify.com/css/styles.css?1569964764: { type: external }
   js:
     ../../../libraries/courtyard/public/js/scripts.js: {}
+    https://confident-allen-d061ed.netlify.com/js/scripts.js: { type: external }
