@@ -1,0 +1,27 @@
+uuid: 162322eb-224a-4157-bc10-fba8ffa7d012
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_step_display
+field_name: field_step_display
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: flowmap
+      label: Flowmap
+    -
+      value: vertical_steps
+      label: 'Vertical Steps'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
