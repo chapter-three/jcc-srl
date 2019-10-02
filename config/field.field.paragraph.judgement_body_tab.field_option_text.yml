@@ -10,7 +10,7 @@ field_name: field_option_text
 entity_type: paragraph
 bundle: judgement_body_tab
 label: 'Option Text'
-description: 'Ex: The bank levied my account. This field is typically blank.'
+description: 'Ex: <strong>The bank levied my account.</strong> (This field is typically blank. See <a href="/node/4">Bank Levy</a> for its use)'
 required: false
 translatable: false
 default_value: {  }

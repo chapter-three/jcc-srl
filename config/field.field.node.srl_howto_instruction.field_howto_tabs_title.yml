@@ -19,7 +19,7 @@ field_name: field_howto_tabs_title
 entity_type: node
 bundle: srl_howto_instruction
 label: 'HowTo Tabs Title'
-description: 'Ex: What did the bank notice say?'
+description: 'Ex: <strong>What did the bank notice say?</strong> (This field is typically blank. See <a href="/node/4">Bank Levy</a> for its use)'
 required: false
 translatable: false
 default_value: {  }
