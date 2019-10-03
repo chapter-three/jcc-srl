@@ -48,8 +48,11 @@ function srl_date_calculator_preprocess_paragraph(&$variables) {
   if ($paragraph->getType() == 'srl_date_calculator') {
     // Inject the date form and attach our library.
     $form = \Drupal::formBuilder()->getForm('\Drupal\srl_date_calculator\Form\SRLDateCalculatorForm');
-    $variables['content']['srl_date_calculator'] = $form;
-    $variables['#attached']['library'][] = 'srl_date_calculator/srl_date_calculator';
+    // Don't add form or library if on the edit form, to prevent ajax issues.
+    if (\Drupal::routeMatch()->getRouteName() != 'entity.node.edit_form') {
+      $variables['content']['srl_date_calculator'] = $form;
+      $variables['#attached']['library'][] = 'srl_date_calculator/srl_date_calculator';
+    }
   }
 }
 

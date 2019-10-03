@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.srl_howto_instruction
     - paragraphs.paragraphs_type.flex
+    - paragraphs.paragraphs_type.srl_date_calculator
     - paragraphs.paragraphs_type.step_container
   module:
     - entity_reference_revisions
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       flex: flex
       step_container: step_container
+      srl_date_calculator: srl_date_calculator
     target_bundles_drag_drop:
       accordion:
         weight: 9
@@ -45,6 +47,9 @@ settings:
       judgement_body_tab:
         weight: 13
         enabled: false
+      calculation_date:
+        weight: 14
+        enabled: false
       postcard:
         weight: 14
         enabled: false
@@ -55,6 +60,6 @@ settings:
         enabled: true
         weight: 16
       srl_date_calculator:
+        enabled: true
         weight: 18
-        enabled: false
 field_type: entity_reference_revisions

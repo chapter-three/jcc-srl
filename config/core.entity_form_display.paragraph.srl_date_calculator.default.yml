@@ -21,12 +21,12 @@ content:
     type: entity_reference_paragraphs
     weight: 2
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
+      title: 'Date Calculator'
+      title_plural: 'Date Calculators'
+      edit_mode: preview
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: calculation_date
     third_party_settings: {  }
     region: content
   field_label:
