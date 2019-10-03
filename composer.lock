@@ -6281,7 +6281,8 @@
                 "url": "https://github.com/exygy/courtyard.git",
                 "reference": "f567935"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2019-10-01T21:18:56+00:00"
         },
         {
             "name": "grasmash/expander",
