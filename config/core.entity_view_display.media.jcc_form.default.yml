@@ -11,72 +11,14 @@ dependencies:
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_url
-    - image.style.thumbnail
     - media.type.jcc_form
   module:
-    - datetime
-    - entity_reference_revisions
-    - file
-    - image
     - link
-    - text
-    - user
 id: media.jcc_form.default
 targetEntityType: media
 bundle: jcc_form
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
-    weight: 8
-    region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
-  field_case_type:
-    weight: 10
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_code:
-    type: entity_reference_revisions_entity_view
-    weight: 5
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_date_effective:
-    weight: 6
-    label: inline
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_description:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_media_file_1:
-    weight: 4
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    type: file_default
-    region: content
   field_number:
     weight: 1
     label: hidden
@@ -86,14 +28,14 @@ content:
     type: string
     region: content
   field_url:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
+      trim_length: null
+      url_only: true
+      target: _blank
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
     third_party_settings: {  }
     type: link
     region: content
@@ -105,21 +47,13 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  thumbnail:
-    type: image
-    weight: 9
-    label: hidden
-    settings:
-      image_style: thumbnail
-      image_link: ''
-    region: content
-    third_party_settings: {  }
-  uid:
-    label: hidden
-    type: author
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  created: true
+  field_case_type: true
+  field_code: true
+  field_date_effective: true
+  field_description: true
+  field_media_file_1: true
   field_pdf_private: true
+  thumbnail: true
+  uid: true
