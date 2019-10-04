@@ -23,9 +23,8 @@
   {% endif %}
 {%- endfor -%}
 
-{# TODO: field_title_display is formatted. We may need twig_tweak for this. #}
 {% include '@organisms/sections/text-section/text-section.twig' with {
-  headergroup: { title: paragraph.field_title_display.value },
+  headergroup: { title: paragraph.field_title_display|view },
   column_content_left: column_content_left,
   column_content_right: column_content_right,
   column_variant: column_content_right ? 'has-two-columns-half' : ''
