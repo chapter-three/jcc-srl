@@ -1,0 +1,9 @@
+uuid: f2611656-ca1a-45a4-921a-a6b6355dab3a
+langcode: en
+status: true
+dependencies: {  }
+id: calculation_date
+label: 'Calculation Date'
+icon_uuid: null
+description: 'The label and number of days to calculate to with the date calculator.'
+behavior_plugins: {  }

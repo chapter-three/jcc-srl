@@ -1,20 +1,20 @@
-uuid: 5d410f7a-1246-4a78-9408-430ccf3465e6
+uuid: 45f9b454-e37a-4636-8ce9-1d73711e9fc6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_howto_body
-    - node.type.srl_howto_instruction
-    - paragraphs.paragraphs_type.judgement_body_tab
+    - field.storage.paragraph.field_calculation_dates
+    - paragraphs.paragraphs_type.calculation_date
+    - paragraphs.paragraphs_type.srl_date_calculator
   module:
     - entity_reference_revisions
-id: node.srl_howto_instruction.field_howto_body
-field_name: field_howto_body
-entity_type: node
-bundle: srl_howto_instruction
-label: 'HowTo Body'
+id: paragraph.srl_date_calculator.field_calculation_dates
+field_name: field_calculation_dates
+entity_type: paragraph
+bundle: srl_date_calculator
+label: 'Calculation Dates'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,39 +23,36 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      judgement_body_tab: judgement_body_tab
+      calculation_date: calculation_date
     target_bundles_drag_drop:
       accordion:
-        weight: 9
-        enabled: false
-      accordion_container:
-        weight: 10
-        enabled: false
-      card:
         weight: 11
         enabled: false
-      flex:
+      accordion_container:
         weight: 12
         enabled: false
       calculation_date:
-        weight: 13
-        enabled: false
-      judgement_body_tab:
         enabled: true
         weight: 13
-      postcard:
+      card:
         weight: 14
         enabled: false
-      step:
+      flex:
         weight: 15
         enabled: false
-      code_section:
+      judgement_body_tab:
         weight: 16
         enabled: false
-      step_container:
-        weight: 16
+      postcard:
+        weight: 17
         enabled: false
       srl_date_calculator:
         weight: 18
+        enabled: false
+      step:
+        weight: 19
+        enabled: false
+      step_container:
+        weight: 20
         enabled: false
 field_type: entity_reference_revisions

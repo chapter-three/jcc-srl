@@ -42,6 +42,9 @@ settings:
       code_section:
         weight: 13
         enabled: false
+      calculation_date:
+        weight: 14
+        enabled: false
       flex:
         enabled: true
         weight: 14
@@ -54,4 +57,7 @@ settings:
       step_container:
         enabled: true
         weight: 18
+      srl_date_calculator:
+        weight: 20
+        enabled: false
 field_type: entity_reference_revisions

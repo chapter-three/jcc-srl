@@ -1,0 +1,9 @@
+srl_date_calculator:
+  js:
+    js/srl_date_calculator.js: {}
+  css:
+    layout:
+      css/srl_date_calculator.css: {}
+  dependencies:
+    - core/jquery
+

@@ -1,0 +1,23 @@
+uuid: 4aac359f-d469-4f2b-a55c-fc9144ed62e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_days
+    - paragraphs.paragraphs_type.calculation_date
+id: paragraph.calculation_date.field_days
+field_name: field_days
+entity_type: paragraph
+bundle: calculation_date
+label: Days
+description: 'Number of days from user entered date when this action should occur.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
