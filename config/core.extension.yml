@@ -65,6 +65,7 @@ module:
   range: 0
   rdf: 0
   redirect: 0
+  role_delegation: 0
   search: 0
   serialization: 0
   shortcut: 0
