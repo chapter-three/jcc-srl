@@ -1,14 +1,10 @@
 {% extends 'node.html.twig' %}
 {% block content %}
-  {#
-    - TODO: Not sure how I can figure out the parent node here based on the
-      content currently in the node. We might need a field for this.
-  #}
   {% include '@molecules/blocks/hero/hero.twig' with {
     breadcrumbs: [
       {
-        url: '#',
-        name: 'Parent',
+        url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
+        name: node.field_parent.entity.label,
       },
       {
         url: url,
@@ -25,6 +21,7 @@
   {{ content|without(
     'field_title_display',
     'field_column_first',
-    'field_column_second'
+    'field_column_second',
+    'field_parent'
   )}}
 {% endblock %}
