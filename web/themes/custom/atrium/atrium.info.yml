@@ -8,7 +8,7 @@ regions:
   header: Header
   content: Content
   footer: Footer
-  node: "Node Content"
+  node_hero: "Node Hero"
 
 libraries:
   - atrium/style
