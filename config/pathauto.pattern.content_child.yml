@@ -1,4 +1,4 @@
-uuid: f340d01d-daa5-4013-b3b1-0baa0b1928cb
+uuid: c77a73b3-a443-4d80-9775-acae5b9db6d2
 langcode: en
 status: true
 dependencies:
@@ -6,21 +6,19 @@ dependencies:
     - node
 _core:
   default_config_hash: 7E0Vv3GS4TyNtPiN7THo1HWudsD3-fiFNGZabOgVbpk
-id: content_default
+id: content_child
 label: 'Content Default'
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '[node:field_parent:entity:title]/[node:title]'
 selection_criteria:
-  94ea7d61-f781-404e-8022-e9eab138a914:
+  883b0939-4d34-427a-a335-2a738ae62d86:
     id: node_type
     bundles:
-      basic: basic
-      srl_howto: srl_howto
-      srl_onramp: srl_onramp
+      srl_howto_instruction: srl_howto_instruction
     negate: false
     context_mapping:
       node: node
-    uuid: 94ea7d61-f781-404e-8022-e9eab138a914
+    uuid: 883b0939-4d34-427a-a335-2a738ae62d86
 selection_logic: and
-weight: 0
+weight: -5
 relationships: {  }
