@@ -175,13 +175,15 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptHandler::postInstall",
             "find ./vendor/ -type d -name .git | xargs rm -rf",
-            "find ./web/ -type d -name .git | xargs rm -rf"
+            "find ./web/ -type d -name .git | xargs rm -rf",
+            "find .git/ -type d -name hooks | xargs rm -rf"
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptHandler::postInstall",
             "find ./vendor/ -type d -name .git | xargs rm -rf",
-            "find ./web/ -type d -name .git | xargs rm -rf"
+            "find ./web/ -type d -name .git | xargs rm -rf",
+            "find .git/ -type d -name hooks | xargs rm -rf"
         ],
         "build-assets": [
             "@prepare-for-pantheon",
