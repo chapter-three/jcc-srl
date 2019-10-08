@@ -47,8 +47,11 @@
   ]|merge(classes|default([]))
 %}
 
+{# Please DO NOT remove the id attribute. #}
+{% set paragraph_id = 'p' ~ paragraph.id() %}
+
 {% block paragraph %}
-  <div{{attributes.addClass(classes)}}>
+  <div{{attributes.addClass(classes).setAttribute('id', paragraph_id) }}>
     {% block content %}
       {{ content }}
     {% endblock %}
