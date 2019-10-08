@@ -17,7 +17,7 @@ It sets some variables used later in the steps.
 It defines jobs consisting of steps. Steps are keyed with commands `run`, `save_cache`, `restore_cache`, etc.
 
  * `run`: can define a command which executes like the commandline inside the build container. Often this simply calls scripts included in the `.circleci` directory, to do the heavy lifting.
- * `save_cach`: define a key and a path to make accessible later in a workflow so you can avoid having to generate their contents again in the same workflow, to save some time. (i.e. `$HOME/.composer/cache`)
+ * `save_cache`: define a key and a path to make accessible later in a workflow, so you can avoid having to generate their contents again in the same workflow, to save some time. (i.e. `$HOME/.composer/cache`)
  * `restore_cache`: loads the caches saved previously in the workflow.
 
 It defines a workflow `build_and_test` that runs the jobs defined previously, with conditions (on which branches) and requirements (deploying code requires a succesful build first).
@@ -47,7 +47,7 @@ On the creation of a Pull Request (PR) on Github, CircleCI will build the codeba
 If the build completes it will create a new Pantheon Multidev environment cloning the active test database for content from `develop` branch.
 
 * The multidev environment is named after the PR id.  `pr-42`
-* You need to manually delete these multidev environments after the PR is merged to `develop` as there is a limit of 10.
+* You need to manually delete these multidev environments after the PR is merged to `develop` as there is a limit of 10. More with "Elite" plan.
 * See repo README.md for additional information on workflow.
 
 ## A More Platform Agnostic Approach
@@ -98,13 +98,13 @@ On Acquia you can set whether an environment syncs code from a branch or a tag.
 
 If you're running your own servers you can achieve code sync to a `work_tree` with a `post-recieve` git hook.
 
-After deploying a Drupal project, we usually want to run database updates, config import and cache reset. There is more than one approach you can take with this.
+After deploying a Drupal project we want to run database updates, config import and cache rebuild. There is more than one approach you can take with this.
 
 If your project has drush aliases configured for your hosting platform, you can add the drush commands to the deploy script or CI config file for:
 
  * `drush @[site.env] updb -y` Database Updates
  * `drush @[site.env] cim -y` Config Import
- * `drush @[site.env] cr` Cache Reset
+ * `drush @[site.env] cr` Cache Rebuild
 
 ### The Current Pantheon Post Deploy
 
