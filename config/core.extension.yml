@@ -81,6 +81,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  views_aggregator: 0
   views_ui: 0
   extlink: 1
   menu_link_content: 1
