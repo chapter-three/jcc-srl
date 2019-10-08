@@ -132,7 +132,7 @@
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
-        "exygy/courtyard": "dev-master#f567935",
+        "exygy/courtyard": "dev-master#f22c281",
         "harvesthq/chosen": "^1.8.7",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
