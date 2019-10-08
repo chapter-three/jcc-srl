@@ -1,0 +1,66 @@
+// Tabs: Primary
+// -----------------------------------------------------------------------------
+
+.nav-tabs {
+  border-left: 1px solid color('base-lighter');
+  border-bottom: 1px solid color('base-lighter');
+  font-size: 0.875rem;
+
+  .nav-tabs__item {
+    margin: 0;
+  }
+
+  .nav-tabs__link {
+    color: color('base-darkest');
+    border: 1px solid color('base-lighter');
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    background-color: color('base-lightest');
+    padding: 0 1.85rem;
+    height: 40px;
+    line-height: 36px;
+    position: relative;
+    outline: 0;
+
+    &:hover {
+      background: color('base-lighter');
+      color: color('base-darkest');
+    }
+
+    &:focus {
+      background: color('primary-light');
+      border-color: color('primary-light');
+      color: #fff;
+      outline: 0;
+    }
+
+    &.is-active {
+      border-bottom-color: color('primary-light');
+      color: color('base-darkest');
+
+      &:focus {
+        color: #fff;
+      }
+
+      .is-collapse-enabled & {
+        border-right-color: color('primary-light');
+      }
+
+      .is-horizontal & {
+        border-bottom-color: color('primary-light');
+      }
+
+      &:after {
+        background-color: color('primary-light');
+        bottom: 0;
+        content: '';
+        height: 4px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: 16;
+      }
+    }
+  }
+}

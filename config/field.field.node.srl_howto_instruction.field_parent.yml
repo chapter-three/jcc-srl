@@ -10,19 +10,19 @@ id: node.srl_howto_instruction.field_parent
 field_name: field_parent
 entity_type: node
 bundle: srl_howto_instruction
-label: "SRL HowTo Parent"
+label: 'SRL HowTo Parent'
 description: 'Ex: "Debt Collection"'
 required: true
 translatable: false
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
-  handler: "default:node"
+  handler: 'default:node'
   handler_settings:
     target_bundles:
       srl_howto: srl_howto
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ""
+    auto_create_bundle: ''
 field_type: entity_reference
