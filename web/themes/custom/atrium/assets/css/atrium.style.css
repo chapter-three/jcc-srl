@@ -2937,3 +2937,181 @@ Settings
 Values
 ----------------------------------------
 */
+.is-collapse-enabled .nav-tabs,
+.is-horizontal .nav-tabs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.is-collapse-enabled .nav-tabs:before,
+.is-horizontal .nav-tabs:before {
+  border-bottom: 1px solid #dcdee0;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+.is-collapse-enabled .nav-tabs {
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 40px;
+}
+.is-collapse-enabled .nav-tabs:before {
+  right: 60px;
+}
+.is-collapse-enabled .nav-tabs.is-open::before {
+  display: none;
+}
+
+.nav-tabs.is-open {
+  max-height: 999em;
+}
+
+.is-horizontal .nav-tabs {
+  overflow: visible;
+  max-height: none !important;
+  padding-top: 0 !important;
+  border-bottom: 0;
+}
+
+.nav-tabs .nav-tabs__item {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.is-collapse-enabled .nav-tabs__item.is-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 60px);
+  z-index: 15;
+}
+
+.is-horizontal .nav-tabs__item {
+  float: left;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.is-horizontal .nav-tabs__item.is-active,
+.is-horizontal .nav-tabs.nav-tabs--primary .nav-tabs__item.is-active {
+  position: relative;
+  top: 0;
+  width: auto;
+}
+
+.nav-tabs .nav-tabs__link {
+  display: block;
+  text-decoration: none;
+}
+
+.tabs__trigger,
+.is-horizontal .tabs__trigger {
+  display: none;
+}
+
+/* JS dependent styling */
+.is-collapse-enabled .tabs__trigger {
+  background: #73b3e7;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  left: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 60px;
+  z-index: 10;
+}
+.is-collapse-enabled .tabs__trigger:focus {
+  background-color: #3d4551;
+  color: #fff;
+  z-index: 20;
+}
+
+.nav-tabs {
+  border-left: 1px solid #dcdee0;
+  border-bottom: 1px solid #dcdee0;
+  font-size: 0.875rem;
+}
+.nav-tabs .nav-tabs__item {
+  margin: 0;
+}
+.nav-tabs .nav-tabs__link {
+  color: #1b1b1b;
+  border: 1px solid #dcdee0;
+  border-left: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  background-color: #f0f0f0;
+  padding: 0 1.85rem;
+  height: 40px;
+  line-height: 36px;
+  position: relative;
+  outline: 0;
+}
+.nav-tabs .nav-tabs__link:hover {
+  background: #dcdee0;
+  color: #1b1b1b;
+}
+.nav-tabs .nav-tabs__link:focus {
+  background: #73b3e7;
+  border-color: #73b3e7;
+  color: #fff;
+  outline: 0;
+}
+.nav-tabs .nav-tabs__link.is-active {
+  border-bottom-color: #73b3e7;
+  color: #1b1b1b;
+}
+.nav-tabs .nav-tabs__link.is-active:focus {
+  color: #fff;
+}
+.is-collapse-enabled .nav-tabs .nav-tabs__link.is-active {
+  border-right-color: #73b3e7;
+}
+.is-horizontal .nav-tabs .nav-tabs__link.is-active {
+  border-bottom-color: #73b3e7;
+}
+.nav-tabs .nav-tabs__link.is-active:after {
+  background-color: #73b3e7;
+  bottom: 0;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 16;
+}
+
+.nav-tabs--secondary {
+  border-bottom: 1px solid #1b1b1b;
+  font-size: 0.875rem;
+}
+.nav-tabs--secondary .nav-tabs__link {
+  color: #71767a;
+  border-bottom: 4px solid transparent;
+  padding: 0.25rem 1rem;
+}
+.nav-tabs--secondary .nav-tabs__link:hover,
+.nav-tabs--secondary .nav-tabs__link:focus {
+  color: #1b1b1b;
+}
+.nav-tabs--secondary .nav-tabs__link.is-active {
+  color: #1b1b1b;
+  border-bottom-color: #73b3e7;
+}

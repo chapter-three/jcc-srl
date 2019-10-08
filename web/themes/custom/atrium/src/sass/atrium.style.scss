@@ -1,20 +1,25 @@
 // Base Dependencies
 // -----------------------------------------------------------------------------
 
-@import 'base/base';
-
+@import "base/base";
 
 // Base Styles & Helpers
 // -----------------------------------------------------------------------------
 
-@import 'base/elements';
-@import 'base/typography';
-@import 'base/helpers';
-
+@import "base/elements";
+@import "base/typography";
+@import "base/helpers";
 
 // Layout
 // -----------------------------------------------------------------------------
 
-@import 'layout/page.header';
-@import 'layout/page.content';
-@import 'layout/page.footer';
+@import "layout/page.header";
+@import "layout/page.content";
+@import "layout/page.footer";
+
+// Components
+// -----------------------------------------------------------------------------
+
+@import "navigation/nav-tabs";
+@import "navigation/nav-tabs-primary";
+@import "navigation/nav-tabs-secondary";
