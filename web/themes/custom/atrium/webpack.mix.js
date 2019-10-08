@@ -7,9 +7,7 @@
  | for your application. See https://github.com/JeffreyWay/laravel-mix.
  |
  */
-const proxy = process.env.MIX_PROXY
-  ? process.env.MIX_PROXY
-  : "https://jcc.lndo.site";
+const proxy = process.env.MIX_PROXY ? process.env.MIX_PROXY : "https://jcc.lndo.site";
 const mix = require("laravel-mix");
 
 /*

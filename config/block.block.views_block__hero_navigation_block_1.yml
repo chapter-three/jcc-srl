@@ -14,20 +14,20 @@ theme: atrium
 region: node_hero
 weight: -2
 provider: null
-plugin: "views_block:hero_navigation-block_1"
+plugin: 'views_block:hero_navigation-block_1'
 settings:
-  id: "views_block:hero_navigation-block_1"
-  label: ""
+  id: 'views_block:hero_navigation-block_1'
+  label: ''
   provider: views
   label_display: visible
-  views_label: ""
+  views_label: ''
   items_per_page: none
-  context_mapping: {}
+  context_mapping: {  }
 visibility:
-  "entity_bundle:node":
-    id: "entity_bundle:node"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     bundles:
       srl_onramp: srl_onramp
     negate: false
     context_mapping:
-      node: "@node.node_route_context:node"
+      node: '@node.node_route_context:node'

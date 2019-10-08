@@ -16,5 +16,5 @@ settings:
   id: system_messages_block
   label: Messages
   provider: system
-  label_display: "0"
-visibility: {}
+  label_display: '0'
+visibility: {  }

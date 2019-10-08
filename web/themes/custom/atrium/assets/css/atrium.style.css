@@ -3107,8 +3107,7 @@ Values
   border-bottom: 4px solid transparent;
   padding: 0.25rem 1rem;
 }
-.nav-tabs--secondary .nav-tabs__link:hover,
-.nav-tabs--secondary .nav-tabs__link:focus {
+.nav-tabs--secondary .nav-tabs__link:hover, .nav-tabs--secondary .nav-tabs__link:focus {
   color: #1b1b1b;
 }
 .nav-tabs--secondary .nav-tabs__link.is-active {

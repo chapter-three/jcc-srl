@@ -11,9 +11,9 @@
 
   // Bottom border should not affect overall container height.
   &:before {
-    border-bottom: 1px solid color("base-lighter");
+    border-bottom: 1px solid color('base-lighter');
     bottom: 0;
-    content: "";
+    content: '';
     display: block;
     height: 1px;
     left: 0;
@@ -104,7 +104,7 @@
 
 /* JS dependent styling */
 .is-collapse-enabled .tabs__trigger {
-  background: color("primary-light");
+  background: color('primary-light');
   border: 0;
   color: #fff;
   cursor: pointer;
@@ -119,7 +119,7 @@
   z-index: 10;
 
   &:focus {
-    background-color: color("base-darker");
+    background-color: color('base-darker');
     color: #fff;
     z-index: 20;
   }
