@@ -26,36 +26,39 @@ settings:
       judgement_body_tab: judgement_body_tab
     target_bundles_drag_drop:
       accordion:
-        weight: 9
+        weight: -25
         enabled: false
       accordion_container:
-        weight: 10
+        weight: -24
         enabled: false
       card:
-        weight: 11
+        weight: -23
         enabled: false
       flex:
-        weight: 12
+        weight: -22
         enabled: false
       calculation_date:
-        weight: 13
+        weight: -21
+        enabled: false
+      tabs:
+        weight: -20
         enabled: false
       judgement_body_tab:
         enabled: true
-        weight: 13
+        weight: -19
       postcard:
-        weight: 14
+        weight: -18
         enabled: false
       step:
-        weight: 15
+        weight: -17
         enabled: false
       code_section:
-        weight: 16
+        weight: -16
         enabled: false
       step_container:
-        weight: 16
+        weight: -15
         enabled: false
       srl_date_calculator:
-        weight: 18
+        weight: -14
         enabled: false
 field_type: entity_reference_revisions

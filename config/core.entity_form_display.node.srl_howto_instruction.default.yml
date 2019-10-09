@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_body
+    - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
@@ -16,6 +17,7 @@ dependencies:
   module:
     - allowed_formats
     - entity_browser
+    - link
     - maxlength
     - paragraphs
     - path
@@ -83,7 +85,7 @@ content:
     region: content
   field_howto_body:
     type: entity_reference_paragraphs
-    weight: 14
+    weight: 15
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -92,6 +94,14 @@ content:
       form_display_mode: default
       default_paragraph_type: judgement_body_tab
     third_party_settings: {  }
+    region: content
+  field_howto_tabs:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_howto_tabs_title:
     weight: 13
@@ -108,7 +118,7 @@ content:
     type: text_textfield
     region: content
   field_paragraphs:
-    weight: 15
+    weight: 16
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -121,12 +131,9 @@ content:
     region: content
   field_parent:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_title_display:
     weight: 9
