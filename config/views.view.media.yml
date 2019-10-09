@@ -6,8 +6,6 @@ dependencies:
     - field.storage.media.field_case_type
     - field.storage.media.field_code
     - field.storage.media.field_number
-    - field.storage.paragraph.field_code
-    - field.storage.paragraph.field_section
     - field.storage.paragraph.field_section_suffix
     - image.style.thumbnail
     - taxonomy.vocabulary.case_type
@@ -671,15 +669,15 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_code:
-          id: field_code
-          table: paragraph__field_code
+        field_code_1:
+          id: field_code_1
+          table: media__field_code
           field: field_code
-          relationship: field_code
+          relationship: none
           group_type: group
           admin_label: ''
           label: Code
-          exclude: true
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -720,72 +718,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_code_1:
-          id: field_code_1
-          table: media__field_code
-          field: field_code
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Code
-          exclude: false
-          alter:
-            alter_text: true
-            text: '{{ field_code }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
           type: entity_reference_revisions_entity_view
           settings:
-            view_mode: default
+            view_mode: code
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -797,11 +732,11 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_section:
-          id: field_section
-          table: paragraph__field_section
-          field: field_section
-          relationship: field_code
+        field_code_2:
+          id: field_code_2
+          table: media__field_code
+          field: field_code
+          relationship: none
           group_type: group
           admin_label: ''
           label: Section
@@ -845,16 +780,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: from
-          type: range_decimal
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
           settings:
-            range_separator: '-'
-            thousand_separator: ''
-            range_combine: true
-            from_prefix_suffix: false
-            to_prefix_suffix: false
-            decimal_separator: .
-            scale: 2
+            view_mode: section
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1625,8 +1554,6 @@ display:
         - 'config:field.storage.media.field_case_type'
         - 'config:field.storage.media.field_code'
         - 'config:field.storage.media.field_number'
-        - 'config:field.storage.paragraph.field_code'
-        - 'config:field.storage.paragraph.field_section'
         - 'config:field.storage.paragraph.field_section_suffix'
   media_page_list:
     display_plugin: page
@@ -1659,6 +1586,4 @@ display:
         - 'config:field.storage.media.field_case_type'
         - 'config:field.storage.media.field_code'
         - 'config:field.storage.media.field_number'
-        - 'config:field.storage.paragraph.field_code'
-        - 'config:field.storage.paragraph.field_section'
         - 'config:field.storage.paragraph.field_section_suffix'
