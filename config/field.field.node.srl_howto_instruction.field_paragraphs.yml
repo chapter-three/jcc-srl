@@ -29,37 +29,40 @@ settings:
       step_container: step_container
       srl_date_calculator: srl_date_calculator
     target_bundles_drag_drop:
-      accordion:
-        weight: 9
-        enabled: false
-      accordion_container:
-        weight: 10
-        enabled: false
-      card:
-        weight: 11
+      judgement_body_tab:
+        weight: -25
         enabled: false
       flex:
         enabled: true
-        weight: 12
-      code_section:
-        weight: 13
-        enabled: false
-      judgement_body_tab:
-        weight: 13
-        enabled: false
-      calculation_date:
-        weight: 14
-        enabled: false
-      postcard:
-        weight: 14
-        enabled: false
-      step:
-        weight: 15
-        enabled: false
+        weight: -24
       step_container:
         enabled: true
-        weight: 16
+        weight: -23
       srl_date_calculator:
         enabled: true
-        weight: 18
+        weight: -22
+      accordion:
+        weight: -21
+        enabled: false
+      accordion_container:
+        weight: -20
+        enabled: false
+      card:
+        weight: -19
+        enabled: false
+      code_section:
+        weight: -18
+        enabled: false
+      calculation_date:
+        weight: -17
+        enabled: false
+      postcard:
+        weight: -16
+        enabled: false
+      step:
+        weight: -15
+        enabled: false
+      tabs:
+        weight: -14
+        enabled: false
 field_type: entity_reference_revisions

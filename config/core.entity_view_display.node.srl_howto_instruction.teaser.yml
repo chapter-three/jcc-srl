@@ -31,4 +31,5 @@ hidden:
   field_howto_body: true
   field_howto_tabs_title: true
   field_paragraphs: true
+  field_parent: true
   field_title_display: true
