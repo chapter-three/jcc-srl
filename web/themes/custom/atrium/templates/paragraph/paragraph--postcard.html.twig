@@ -13,6 +13,7 @@
     {{ content.field_link }}
   {% endset %}
 
+  {# TODO: ShouldPostcard display map to variants? #}
   {% include '@molecules/blocks/postcard/postcard.twig' with {
     headergroup: {
       title: content.field_title_display,
@@ -29,6 +30,7 @@
     'field_body',
     'field_create_anchor',
     'field_link',
+    'field_postcard_display',
     'field_text_overlay',
     'field_title_display'
   ) }}
