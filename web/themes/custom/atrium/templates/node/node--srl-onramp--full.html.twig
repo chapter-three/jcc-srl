@@ -11,7 +11,9 @@
   } %}
 
   {{ content|without(
-    'field_title_display',
-    'field_description'
+    'field_case_type',
+    'field_description',
+    'field_hero_nav_title',
+    'field_title_display'
   )}}
 {% endblock %}
