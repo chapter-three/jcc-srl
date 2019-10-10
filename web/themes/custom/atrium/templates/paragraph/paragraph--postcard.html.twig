@@ -13,12 +13,13 @@
     {{ content.field_link }}
   {% endset %}
 
+  {# TODO: ShouldPostcard display map to variants? #}
   {% include '@molecules/blocks/postcard/postcard.twig' with {
     headergroup: {
       title: content.field_title_display,
       lead: missing_fields
     },
-    image: file_url(paragraph.field_image.entity.field_media_image.entity.uri.value),
+    image: file_url(paragraph.field_media.entity.field_media_image.entity.uri.value),
     tag: content.field_text_overlay,
     header_align_variant: 'has-header-left',
     background_variant: 'has-background'
@@ -29,6 +30,7 @@
     'field_body',
     'field_create_anchor',
     'field_link',
+    'field_postcard_display',
     'field_text_overlay',
     'field_title_display'
   ) }}

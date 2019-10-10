@@ -12,8 +12,6 @@ style:
 patternlab:
   css:
     theme:
-      https://confident-allen-d061ed.netlify.com/css/styles.css: { type: external }
-      # ../../../libraries/courtyard/public/css/styles.min.css: {}
+      ../../../libraries/courtyard/public/css/styles.min.css: {}
   js:
-    https://confident-allen-d061ed.netlify.com/js/scripts.js: { type: external }
-    # ../../../libraries/courtyard/public/js/scripts.js: {}
+    ../../../libraries/courtyard/public/js/scripts.js: {}
