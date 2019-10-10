@@ -169,3 +169,11 @@ section of composer.json:
 ```
 
 
+### Configuration Split and Configuration Exclude
+
+To use configuration split and configuration exclude for local development add the following to `settings.local.php`
+
+```
+$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'config_exclude', 'kint', 'search_kint', 'libraries_debug', 'entity_clone', 'reroute_email', 'devel_generate', 'dynamic_page_cache', 'google_tag', 'page_cache', 'simplesamlphp_auth'];
+$config['config_split.config_split.local']['status'] = TRUE;
+```
