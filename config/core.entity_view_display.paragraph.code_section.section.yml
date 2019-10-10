@@ -1,0 +1,34 @@
+uuid: b3f59158-c202-40a1-a04a-92863e38c67c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.section
+    - field.field.paragraph.code_section.field_code
+    - field.field.paragraph.code_section.field_section
+    - field.field.paragraph.code_section.field_section_suffix
+    - paragraphs.paragraphs_type.code_section
+  module:
+    - range
+id: paragraph.code_section.section
+targetEntityType: paragraph
+bundle: code_section
+mode: section
+content:
+  field_section:
+    weight: 0
+    label: hidden
+    settings:
+      decimal_separator: .
+      scale: 2
+      range_separator: '-'
+      thousand_separator: ''
+      range_combine: true
+      from_prefix_suffix: false
+      to_prefix_suffix: false
+    third_party_settings: {  }
+    type: range_decimal
+    region: content
+hidden:
+  field_code: true
+  field_section_suffix: true

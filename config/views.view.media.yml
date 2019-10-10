@@ -4,20 +4,21 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_case_type
+    - field.storage.media.field_code
     - field.storage.media.field_number
-    - field.storage.paragraph.field_code
-    - field.storage.paragraph.field_section
     - field.storage.paragraph.field_section_suffix
     - image.style.thumbnail
     - taxonomy.vocabulary.case_type
     - taxonomy.vocabulary.code
   module:
+    - entity_reference_revisions
     - image
     - media
     - paragraphs
     - range
     - taxonomy
     - user
+    - views_aggregator
 _core:
   default_config_hash: 43XFGeSSdrPgQUZjUKJ9KH8Ig5rD_SOg0p2r2rynFyM
 id: media
@@ -82,13 +83,12 @@ display:
             last: 'Last »'
           quantity: 9
       style:
-        type: table
+        type: views_aggregator_plugin_style_table
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
-          override: true
-          sticky: false
+          override: 1
+          sticky: 0
           caption: ''
           summary: ''
           description: ''
@@ -100,6 +100,7 @@ display:
             field_case_type: field_case_type
             field_number: field_number
             field_code: field_code
+            field_code_1: field_code_1
             field_section: field_section
             uid: uid
             status: status
@@ -110,88 +111,204 @@ display:
             media_bulk_form:
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             thumbnail__target_id:
-              sortable: false
+              sortable: 0
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             name:
-              sortable: true
+              sortable: 1
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 1
+              aggr:
+                views_aggregator_group_and_compress: views_aggregator_group_and_compress
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             bundle:
-              sortable: true
+              sortable: 1
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_case_type:
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_number:
-              sortable: true
+              sortable: 1
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_code:
-              sortable: true
+              sortable: 1
               default_sort_order: asc
               align: ''
-              separator: ''
-              empty_column: false
+              separator: ;
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_enumerate_raw: views_aggregator_enumerate_raw
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
+            field_code_1:
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_section:
               align: ''
               separator: ' '
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             uid:
-              sortable: false
+              sortable: 0
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             status:
-              sortable: true
+              sortable: 1
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             changed:
-              sortable: true
+              sortable: 1
               default_sort_order: desc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             operations:
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
             field_section_suffix:
-              sortable: false
+              sortable: 0
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: 0
               responsive: ''
+              has_aggr: 0
+              aggr:
+                views_aggregator_first: views_aggregator_first
+              aggr_par: ''
+              has_aggr_column: 0
+              aggr_column: views_aggregator_sum
+              aggr_par_column: ''
           default: changed
-          empty_table: true
+          empty_table: 1
+          group_aggregation:
+            group_aggregation_results: '0'
+            grouping_field_class: ''
+            result_label_prefix: ''
+            result_label_suffix: ''
+            grouping_row_class: ''
+          column_aggregation:
+            totals_row_position:
+              2: '2'
+              1: 0
+            totals_per_page: '1'
+            precision: '2'
+            totals_row_class: ''
       row:
         type: fields
       fields:
@@ -552,11 +669,11 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_code:
-          id: field_code
-          table: paragraph__field_code
+        field_code_1:
+          id: field_code_1
+          table: media__field_code
           field: field_code
-          relationship: field_code
+          relationship: none
           group_type: group
           admin_label: ''
           label: Code
@@ -601,10 +718,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: entity_reference_revisions_entity_view
           settings:
-            link: true
-          group_column: target_id
+            view_mode: code
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -615,11 +732,11 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_section:
-          id: field_section
-          table: paragraph__field_section
-          field: field_section
-          relationship: field_code
+        field_code_2:
+          id: field_code_2
+          table: media__field_code
+          field: field_code
+          relationship: none
           group_type: group
           admin_label: ''
           label: Section
@@ -663,16 +780,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: from
-          type: range_decimal
+          click_sort_column: target_id
+          type: entity_reference_revisions_entity_view
           settings:
-            range_separator: '-'
-            thousand_separator: ''
-            range_combine: true
-            from_prefix_suffix: false
-            to_prefix_suffix: false
-            decimal_separator: .
-            scale: 2
+            view_mode: section
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1441,9 +1552,8 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.media.field_case_type'
+        - 'config:field.storage.media.field_code'
         - 'config:field.storage.media.field_number'
-        - 'config:field.storage.paragraph.field_code'
-        - 'config:field.storage.paragraph.field_section'
         - 'config:field.storage.paragraph.field_section_suffix'
   media_page_list:
     display_plugin: page
@@ -1474,7 +1584,6 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.media.field_case_type'
+        - 'config:field.storage.media.field_code'
         - 'config:field.storage.media.field_number'
-        - 'config:field.storage.paragraph.field_code'
-        - 'config:field.storage.paragraph.field_section'
         - 'config:field.storage.paragraph.field_section_suffix'
