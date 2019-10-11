@@ -1,4 +1,4 @@
-## Local Development (lando optional)
+## Local Development (Lando optional)
 
 This project contains a .lando.yml file for consistent development environments with docker.
 If you choose to use a different tool for local php development you can ignore this file.
@@ -168,12 +168,12 @@ section of composer.json:
 }
 ```
 
+## Configuration Management.
+This site uses [config_split](http://drupal.org/project/config_split) and [config_exclude](http://drupal.org/project/config_exclude) to keep environment-specific and developer modules out of the repository. See settings.local.php for example configuration.
 
-### Configuration Split and Configuration Exclude
-
-To use configuration split and configuration exclude for local development add the following to `settings.local.php`
-
-```
-$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'config_exclude', 'kint', 'search_kint', 'libraries_debug', 'entity_clone', 'reroute_email', 'devel_generate', 'dynamic_page_cache', 'google_tag', 'page_cache', 'simplesamlphp_auth'];
-$config['config_split.config_split.local']['status'] = TRUE;
-```
+**Typical workflow:**
+  1. Import database locally. 
+  2. `(lando) drush cim` to import configuration from code into database.
+  3. Make changes locally.
+  4. `(lando) drush cex` to export database configuration to code.
+  5. Commit and push changes. 
