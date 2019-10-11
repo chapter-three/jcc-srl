@@ -1,4 +1,4 @@
-# Judicial Council of California - Self-represented Litigant portal
+# Judicial Council of California - Self-Represented Litigant (SRL) portal
 Drupal 8.
 
 Hosted on Pantheon.
@@ -10,15 +10,18 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
  1. Clone this repo: 
 
     `git clone git@github.com:chapter-three/jcc-srl.git`
+
  2. Move to root directory
 
     `cd jcc-srl`
+
  3.  Start your local environment. 
 
-    `lando start` 
+    `lando start` or equivalent
+
  4.  Install dependencies with Composer.
 
-    `composer install` or `lando composer install`
+    `lando composer install` or `composer install`
 
  5. Import your database.
    
@@ -37,51 +40,63 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
         # Move db to project root.
         mv [path-to-db] .
    
-        # or import the database with Lando
+        # Import the database
         lando db-import [filename]
       ```
    
- - Set up local options:
+ 6. Set up local options:
 
     ```bash
     cd [this-directory]
     cp examples/example.drush.yml drush/drush.yml
     cp examples/example.settings.local.php web/sites/default/settings.local.php
-    cp examples/example.services.local.php web/sites/default/services.local.yml
+    cp examples/example.services.local.yml web/sites/default/services.local.yml
  
     ```
+  7. Test setup by logging in.
+    
+    `lando drush uli` or `drush uli`
 
 ## 2. Git Workflow. 
-1. Checkout latest code.
-  
-  `git checkout develop`
+  1. Checkout latest code.
 
-2. Create a feature branch. 
+    `git checkout develop`
+
+  2. Create a feature branch. 
   
-  `git checkout -b feature/[ticket-id]--short-description`
+    `git checkout -b feature/[ticket-id]--short-description`
   
-3. Make commits. 
-    - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
+  3. Make commits. 
+      - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
     
-4. Rebase to origin and push feature branches.
-    `git rebase origin/develop`
-    `git push`
+  4. Rebase to origin and push feature branches.
 
-5. Create Github Pull Request(PR) against `develop` for code review. 
+      `git rebase origin/develop`
+      `git push`
 
-6. CircleCI runs to deploy code, rebuild artifacts and caches, run database updates, and perform tests. 
+  5. Create Github Pull Request(PR) against `develop` for code review. 
 
-7. If CI passes, PRs should be approved and merged by another developer.
+  6. CircleCI runs to deploy code, rebuild artifacts and caches, run database updates, and perform tests. 
+
+  7. If CI passes, PRs should be approved and merged by another developer.
   
   
 ## 3. Configuration Management.
 This site uses [config_split](http://drupal.org/project/config_split) and [config_exclude](http://drupal.org/project/config_exclude) to keep environment-specific and developer modules out of the repository. See [scripts/local/default/settings.local.php](scripts/local/default/settings.local.php) for example configuration.
 
 **Typical configuration workflow:**
-  1. Import database locally. 
-  2. `(lando) drush cim` to import configuration from code into database.
+  1. Import database locally. (See above)
+
+  2. Import configuration from code into database.
+
+  `lando drush cim` or `drush cim`
+
   3. Make changes locally.
-  4. `(lando) drush cex` to export database configuration to code.
+
+  4. Export database configuration to code.
+
+  `lando drush cex` or `drush cex` 
+
   5. Commit and push changes. 
 
 
@@ -169,10 +184,16 @@ section of composer.json:
 
 ## 7. Useful commands:
    - Database updates: 
-      `drush updb` or `lando drush updb`
+
+      `lando drush updb` or `drush updb`
+
    - Rebuild Cache: 
-      `drush cr` or `lando drush cr`
+
+      `lando drush cr` or `drush cr`
+
    - Grab a login link: 
-      `drush uli` or `lando drush uli`
+
+      `lando drush uli` or `drush uli`
+
    - See list of available proxy urls for local Lando development.
       `lando info` 
