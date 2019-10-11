@@ -149,3 +149,19 @@ $config['system.logging']['error_level'] = 'verbose';
 // For pantheon hosting, use sites/default/files as its writable
 // Move into settings.php at the end to override pantheon settings.
 // $config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/files/config';
+
+/* Exclude all dev modules from core.extension.yml */
+$settings['config_exclude_modules'] = [
+  'config_exclude',
+  'devel',
+  'devel_generate',
+  'kint',
+  'libraries_debug',
+  'page_cache',
+  'reroute_email',
+  'search_kint',
+  'stage_file_proxy',
+];
+
+/* Store local configuration separately so it isn't tracked by git. */
+$config['config_split.config_split.local']['status'] = TRUE;
