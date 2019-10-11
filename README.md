@@ -118,7 +118,7 @@ The CircleCI integration is configured to deploy branches that start with `epic-
      - Select the environment to clone. (dev)
  - Create an epic- branch from master in this working repo.
  - Push the epic branch to Github
-   - Circle CI will build and deploy it to the new multidev environment everytime it's updated.
+   - Circle CI will build and deploy it to the new multidev environment every time it's updated.
 
 
 #### Managing multiple devs/features in the epic.
@@ -169,7 +169,7 @@ section of composer.json:
 ```
 
 ## Configuration Management.
-This site uses [config_split](http://drupal.org/project/config_split) and [config_exclude](http://drupal.org/project/config_exclude) to keep environment-specific and developer modules out of the repository. See settings.local.php for example configuration.
+This site uses [config_split](http://drupal.org/project/config_split) and [config_exclude](http://drupal.org/project/config_exclude) to keep environment-specific and developer modules out of the repository. See [scripts/local/default/settings.local.php](scripts/local/default/settings.local.php) for example configuration.
 
 **Typical workflow:**
   1. Import database locally. 
