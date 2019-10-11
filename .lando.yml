@@ -19,30 +19,12 @@ config:
   # https://docs.devwithlando.io/services/php.html#using-xdebug
   #xdebug: true
 
-
-  # *********************************************************************************
-  # ****   No need to change anything below, unless you know what you're doing.  ****
-  # ****                    And have a very specific need.                       ****
-  #**********************************************************************************
-
-# Additional services and features.
-services:
-  # Theme.
-  node-cli:
-    type: node:10
-    globals:
-      gulp-cli: "latest"
-
 # Custom Lando commands
 tooling:
-  node:
-    service: node-cli
-  npm:
-    service: node-cli
   reset:
     service: appserver
-    description: "Runs updb, cr, cim, uli \n Reset your local after a build or db install."
+    description: "Runs updb, cim, cr, \n Reset your local after a build or db install."
     cmd:
       - drush updb -y
-      - drush cr
       - drush cim -y
+      - drush cr
