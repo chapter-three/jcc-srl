@@ -124,8 +124,8 @@ $databases['default']['default'] = array (
 );
 
 /* Temp and Private dirctories. */
-$config['system.file']['path']['temporary'] = '../data/tmp';
-$config['system.file']['path']['private'] = '../data/private';
+$config['system.file']['path']['temporary'] = 'sites/default/files/tmp';
+$config['system.file']['path']['private'] = 'sites/default/files/private';
 $settings['file_temporary_path'] = $config['system.file']['path']['temporary'];
 $settings['file_private_path'] = $config['system.file']['path']['private'];
 
@@ -141,9 +141,9 @@ $config['devel.settings']['devel_dumper'] = 'var_dumper';
 $config['system.logging']['error_level'] = 'verbose';
 
 /* Stage File Proxy Settings */
-// $config['stage_file_proxy.settings']['origin'] = '[origin site]';
-// $config['stage_file_proxy.settings']['use_imagecache_root'] = 0;
-// $config['stage_file_proxy.settings']['hotlink'] = 1;
+$config['stage_file_proxy.settings']['origin'] = 'https://develop-jcc-srl.pantheonsite.io';
+$config['stage_file_proxy.settings']['use_imagecache_root'] = 0;
+$config['stage_file_proxy.settings']['hotlink'] = 1;
 
 /* Config Sync dir */
 // For pantheon hosting, use sites/default/files as its writable
@@ -157,7 +157,6 @@ $settings['config_exclude_modules'] = [
   'devel_generate',
   'kint',
   'libraries_debug',
-  'page_cache',
   'reroute_email',
   'search_kint',
   'stage_file_proxy',

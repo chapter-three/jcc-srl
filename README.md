@@ -51,8 +51,10 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
     cp examples/example.drush.yml drush/drush.yml
     cp examples/example.settings.local.php web/sites/default/settings.local.php
     cp examples/example.services.local.yml web/sites/default/services.local.yml
- 
+    mkdir config-local
+    mkdir sites/default/files/private
     ```
+
   7. Test setup by logging in.
     
     `lando drush uli` or `drush uli`
