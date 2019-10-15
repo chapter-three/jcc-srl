@@ -1,29 +1,31 @@
-## Local Development (lando optional)
+# Judicial Council of California - Self-Represented Litigant (SRL) portal
+Drupal 8.
 
-This project contains a .lando.yml file for consistent development environments with docker.
-If you choose to use a different tool for local php development you can ignore this file.
+Hosted on Pantheon.
 
-Please configure your local to use the correct php version..
+This project assumes [Lando](https://docs.devwithlando.io) for local development but any -AMP stack will do. Use lando commands when multiple options are given. 
 
-### PHP: 7.3
+## 1. Initial local set up.
 
-* Docker: https://www.docker.com/community-edition
-* Lando: https://docs.devwithlando.io
+ 1. Clone this repo: 
 
-Once installed cd to project directory and type `lando` for a list of commands.
+    `git clone git@github.com:chapter-three/jcc-srl.git`
 
-#### Spin up the local:
+ 2. Move to root directory
 
- - Clone this repo: `git clone git@github.com:chapter-three/jcc-srl.git`
- - `cd jcc-srl`
- - Start your local environment. (With lando: `lando start`)
- - `composer install` (With lando: `lando composer install`)
-   - A post install script will set your settings.local.php and services.local.yml files if they do not already exist. Feel free to modify these for you local environment, they are git ignored.
-   - If using Docker and or Lando (with Docker), be sure to run composer commands from inside the container to prevent PHP verson conflicts. Lando has a passthrough command: `lando composer`.
- - Import your database. (With lando: `lando db-import [path to db]`
-    - Import your database.
+    `cd jcc-srl`
+
+ 3.  Start your local environment. 
+
+    `lando start` or equivalent
+
+ 4.  Install dependencies with Composer.
+
+    `lando composer install` or `composer install`
+
+ 5. Import your database.
    
-      To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
+    - To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
       ```bash
    
         # Go to Project root.
@@ -38,60 +40,79 @@ Once installed cd to project directory and type `lando` for a list of commands.
         # Move db to project root.
         mv [path-to-db] .
    
-        # or import the database with Lando
+        # Import the database
         lando db-import [filename]
       ```
    
- - Build the theme:
-   - See theme's README.md.
+ 6. Set up local options:
 
- - Set up local drush options:
-    - `cp drush/example.drush.yml drush/drush.yml`
- 
- - Run updates:
-   - `cd [site directory]` - [site directory] is web for default or web/sites/[multisite].
-   - Database updates: `drush updb` (With lando: `lando drush updb`)
-   - Reset Cache: `drush cr` (With lando: `lando drush cr`)
-   - Import config: `drush cim` (With lando: `lando drush cim`)
-   - Grab a login link: `drush uli [user id] -l [local url]` default is user 1. (With lando: `lando drush uli`)
-     - See `lando info` for a list of available proxy urls for local lando development.
+    ```bash
+    cd [this-directory]
+    cp examples/example.drush.yml drush/drush.yml
+    cp examples/example.settings.local.php web/sites/default/settings.local.php
+    cp examples/example.services.local.yml web/sites/default/services.local.yml
+    mkdir config-local
+    mkdir sites/default/files/private
+    ```
+
+  7. Test setup by logging in.
+    
+    `lando drush uli` or `drush uli`
+
+## 2. Git Workflow. 
+  1. Checkout latest code.
+
+    `git checkout develop`
+
+  2. Create a feature branch. 
+  
+    `git checkout -b feature/[ticket-id]--short-description`
+  
+  3. Make commits. 
+      - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
+    
+  4. Rebase to origin and push feature branches.
+
+      `git rebase origin/develop`
+      `git push`
+
+  5. Create Github Pull Request(PR) against `develop` for code review. 
+
+  6. CircleCI runs to deploy code, rebuild artifacts and caches, run database updates, and perform tests. 
+
+  7. If CI passes, PRs should be approved and merged by another developer.
+  
+  
+## 3. Configuration Management.
+This site uses [config_split](http://drupal.org/project/config_split) and [config_exclude](http://drupal.org/project/config_exclude) to keep environment-specific and developer modules out of the repository. See [scripts/local/default/settings.local.php](scripts/local/default/settings.local.php) for example configuration.
+
+**Typical configuration workflow:**
+  1. Import database locally. (See above)
+
+  2. Import configuration from code into database.
+
+  `lando drush cim` or `drush cim`
+
+  3. Make changes locally.
+
+  4. Export database configuration to code.
+
+  `lando drush cex` or `drush cex` 
+
+  5. Commit and push changes. 
 
 
-**Ready to work.**
-
-
-## Git Workflow
-
-### Branches
-
+## 4. Git Branches and Deployments
  - `master` - clean stable production code. Lives on the Pantheon "dev" environment.
    - On Pantheon `master` branch is the default "dev" environment.
    - We can deploy `master` to "Live" by tagging commits appropriately. (automated)
+   - Post-launch release branches may be used to deploy to live.
    - **Do not commit directly to master**
  - `stage` - code that is ready for client review. Lives on the "stage" Multidev environment.
- - `develop` - Peer-reviewed test code for internal QA and integration testing. Lives on the "develop" Multidev environment.
-
-### Pre-Launch Workflow
-
- - Make new feature branches from `develop` (`feature/[ticket-id]--short-description`)
- - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
- - Push feature branches github and Pull Request(PR) against `develop` for code review. PRs should be approved by another developer.
- - Merge to develop for CI testing and deploy to develop environment for QA.
-   - QA Pass: Pull Request / Merge feature branch to current `stage` branch for CI build/deploy to stage environment.
-   - QA Fail: Check out feature branch, rebase develop, and continue working.
- 
-### Post-Launch Workflow
-- Follow pre-launch instructions.
-- User Acceptance and signoff of features on `stage`.
-   - Pass: At end of the development cycle, merge all approved features to master for CI deploy to production.
-     - If all features in `stage` are approved, stage branch can be merged to `master`.
-     - Alternatively, merge approved features individually, or use a `release branch` to collect them and merge that to master.
-   - Fail: Rebase the feature branch and repeat from develop environment.
+ - `develop` - Peer-reviewed test code for internal QA and integration testing. Lives on the "develop" multidev environment.
  
 
-### Pantheon, Multidev and Epics
-
-Given this project will be developed on [Pantheon](https://pantheon.io), at least initially, here are some additional notes.
+## 5. Pantheon, Multidev and Epics
 
  - [Terminus](https://pantheon.io/docs/terminus) is a commandline tool for interaction with Pantheon.
    - You can also use the web dashboard in place of most of these commands.
@@ -100,7 +121,7 @@ We're using a Parallel Git Workflow, rather than the standard Pantheon workflow,
 
  - Any new branches pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
  - Any Pull Requests on Github will also spawn a multidev on Pantheon, named for the Pull Request ID that spawned it.
- - These are temporary because pantheon only allows 10 multidev environments.
+ - Pantheon only allows 10 multidev environments at this service level so inactive `pr-` and `ci-` environments may need to be deleted manually.
 
 If you need a more persistent multidev for longer term development of a set of features, the workflow supports `epic` branches. Epics are for large features or a collection of features that depend on each other, that will be developed in parallel before being merged into the normal test environments.
 
@@ -118,10 +139,10 @@ The CircleCI integration is configured to deploy branches that start with `epic-
      - Select the environment to clone. (dev)
  - Create an epic- branch from master in this working repo.
  - Push the epic branch to Github
-   - Circle CI will build and deploy it to the new multidev environment everytime it's updated.
+   - Circle CI will build and deploy it to the new multidev environment every time it's updated.
 
 
-#### Managing multiple devs/features in the epic.
+**About Epics**
 
  - Features that will be part of the epic can branch from the epic so they have the up do date work they depend on.
  - Epic features can Pull Request against the epic for code review.
@@ -130,31 +151,26 @@ The CircleCI integration is configured to deploy branches that start with `epic-
  - If the epic passes QA and integration the epic can be merged to `stage` for User Acceptance and signoff for release.
 
 
-## Module Management
+## 6. Module Management
 
-From the project root:
-
-### Adding Contrib Modules
+**Adding Contrib Modules**
 
  - `lando composer require drupal/[package_name] --no-update` to add it to the composer.json without updating everything.
  - `lando composer update drupal/[package_name]` to fetch/update only the desired module.
 
 
-### Updating Contrib Modules
+**Updating Contrib Modules**
 
  - `lando composer update drupal/[package_name]`
 
 
-### Removing Contrib Modules
+**Removing Contrib Modules**
 
  - `lando composer remove [package] --no-update` will remove a package from require or require-dev, without running all updates.
  - `lando composer update [package]` will remove the package code.
 
 
-### How can I apply patches to downloaded modules?
-
-If you need to apply patches, you can do so with the
-[composer-patches](https://github.com/cweagans/composer-patches) plugin.
+**Appling patches**
 
 To add a patch to drupal module foobar insert the patches section in the extra
 section of composer.json:
@@ -168,12 +184,18 @@ section of composer.json:
 }
 ```
 
+## 7. Useful commands:
+   - Database updates: 
 
-### Configuration Split and Configuration Exclude
+      `lando drush updb` or `drush updb`
 
-To use configuration split and configuration exclude for local development add the following to `settings.local.php`
+   - Rebuild Cache: 
 
-```
-$settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'config_exclude', 'kint', 'search_kint', 'libraries_debug', 'entity_clone', 'reroute_email', 'devel_generate', 'dynamic_page_cache', 'google_tag', 'page_cache', 'simplesamlphp_auth'];
-$config['config_split.config_split.local']['status'] = TRUE;
-```
+      `lando drush cr` or `drush cr`
+
+   - Grab a login link: 
+
+      `lando drush uli` or `drush uli`
+
+   - See list of available proxy urls for local Lando development.
+      `lando info` 
