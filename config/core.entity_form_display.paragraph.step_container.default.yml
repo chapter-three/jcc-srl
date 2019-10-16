@@ -11,9 +11,27 @@ dependencies:
     - paragraphs.paragraphs_type.step_container
   module:
     - allowed_formats
+    - field_group
     - maxlength
     - paragraphs
     - text
+third_party_settings:
+  field_group:
+    group_container_intro:
+      children:
+        - field_title_display
+        - field_description
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: false
+      label: 'Container Intro'
+      region: content
 id: paragraph.step_container.default
 targetEntityType: paragraph
 bundle: step_container
@@ -36,7 +54,7 @@ content:
     type: text_textarea
     region: content
   field_step_display:
-    weight: 1
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     type: options_select

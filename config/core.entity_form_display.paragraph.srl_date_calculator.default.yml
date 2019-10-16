@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.srl_date_calculator.field_title_display
     - paragraphs.paragraphs_type.srl_date_calculator
   module:
+    - allowed_formats
+    - maxlength
     - paragraphs
     - text
 _core:
@@ -42,7 +44,13 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: text_textfield
     region: content
 hidden:
