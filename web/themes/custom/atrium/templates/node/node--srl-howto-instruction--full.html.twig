@@ -4,17 +4,17 @@
     breadcrumbs: [
       {
         url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
-        name: node.field_parent.entity.label,
+        label: node.field_parent.entity.label,
       },
       {
         url: url,
-        name: label,
+        label: label,
       }
     ],
     title: content.field_title_display|render ? content.field_title_display : label,
     lead: content.field_column_first,
     column_content_right: content.field_column_second,
-    column_variant: content.field_column_second|render ? 'has-two-columns' : null,
+    column_variant: content.field_column_second|render ? 'has-two-columns-half' : null,
     background_variant: 'has-background-color'
   } %}
 

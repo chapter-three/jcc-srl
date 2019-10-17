@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11ea1c1397121a2a63a1b1523cb1dd98",
+    "content-hash": "1010e8276d02bf54fdbb327bcaddd8de",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2209,7 +2209,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.9",
-                    "datestamp": "1548270780",
+                    "datestamp": "1571249584",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5040,7 +5040,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1554239887",
+                    "datestamp": "1570828084",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6509,10 +6509,9 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "fbf1fbe"
+                "reference": "4ed7e33"
             },
-            "type": "drupal-library",
-            "time": "2019-10-09T18:54:32+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "grasmash/expander",
@@ -12938,6 +12937,17 @@
         {
             "name": "webflo/drupal-core-require-dev",
             "version": "8.7.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webflo/drupal-core-require-dev.git",
+                "reference": "593123300b3cf9974fa0742282af90fa72ac06fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/593123300b3cf9974fa0742282af90fa72ac06fc",
+                "reference": "593123300b3cf9974fa0742282af90fa72ac06fc",
+                "shasum": ""
+            },
             "require": {
                 "behat/mink": "1.7.x-dev",
                 "behat/mink-goutte-driver": "^1.2",
