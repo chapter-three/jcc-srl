@@ -2,7 +2,7 @@
 {% block content %}
 
   {% include '@molecules/blocks/hero/hero.twig' with {
-    breadcrumbs: [{ url: url, name: label }],
+    breadcrumbs: [{ url: url, label: label }],
     title: content.field_title_display|render ? content.field_title_display : label,
     lead: content.field_description,
     column_content_right: node_hero,

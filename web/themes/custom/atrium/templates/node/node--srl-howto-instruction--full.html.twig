@@ -4,11 +4,11 @@
     breadcrumbs: [
       {
         url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
-        name: node.field_parent.entity.label,
+        label: node.field_parent.entity.label,
       },
       {
         url: url,
-        name: label,
+        label: label,
       }
     ],
     title: content.field_title_display|render ? content.field_title_display : label,
