@@ -8,8 +8,8 @@ dependencies:
     - atrium
 id: title
 theme: atrium
-region: header
-weight: -3
+region: title
+weight: 0
 provider: null
 plugin: page_title_block
 settings:
