@@ -42,49 +42,43 @@
  * @see html.html.twig
  */
 #}
-<div class="layout-container">
+{% set classes = [
+  'page',
+]|merge(classes|default([])) %}
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+<div{{ attributes.addClass(classes) }}>
+  {% if page.header|render %}
+    <header class="page__header jcc-header" role="banner">
+      <div class="jcc-header__container">
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="jcc-header__logo">
+          {% include "@atoms/icons/logo.twig" with {
+            icon: 'logo-group',
+            icon_file: '../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg',
+            title: 'Logo'|t
+          } %}
+        </a>
+        {{ page.header }}
+      </div>
+    </header>
+  {% endif %}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
+  {% if page.title|render %}
+    <div class="page__title">
+      {{ page.title }}
+    </div>
+  {% endif %}
 
   <main role="main">
-    <a id="main-content" tabindex="-1"></a>
-    {# link is in html.html.twig #}
+    <a id="main-content" tabindex="-1"></a> {# link is in html.html.twig #}
 
-    <div class="layout-content">
+    <div class="page__content">
       {{ page.content }}
     </div>
-    {# /.layout-content #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer class="page__footer" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endif %}
-
 </div>
-{# /.layout-container #}
