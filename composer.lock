@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "668995bfb4493b628ddaf5f12de4af8d",
+    "content-hash": "328a6f39ca85ee030214977c8b250636",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2209,7 +2209,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.9",
-                    "datestamp": "1571249584",
+                    "datestamp": "1548270780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4539,6 +4539,74 @@
             }
         },
         {
+            "name": "drupal/key",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/key.git",
+                "reference": "8.x-1.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "4547bf7a95972c8e84dc730936ff94718e2d9ca2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.10",
+                    "datestamp": "1567172584",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Cellar Door",
+                    "homepage": "https://www.drupal.org/user/658076"
+                },
+                {
+                    "name": "CrashTest_",
+                    "homepage": "https://www.drupal.org/user/261457"
+                },
+                {
+                    "name": "nerdstein",
+                    "homepage": "https://www.drupal.org/user/1557710"
+                },
+                {
+                    "name": "rlhawk",
+                    "homepage": "https://www.drupal.org/user/352283"
+                }
+            ],
+            "description": "Provides the ability to manage site-wide keys",
+            "homepage": "http://drupal.org/project/key",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/key",
+                "issues": "http://drupal.org/project/key"
+            }
+        },
+        {
             "name": "drupal/linkit",
             "version": "4.3.0",
             "source": {
@@ -5107,7 +5175,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1570828084",
+                    "datestamp": "1554239887",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6642,7 +6710,8 @@
                 "url": "https://github.com/exygy/courtyard.git",
                 "reference": "8241feb"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2019-10-16T21:56:03+00:00"
         },
         {
             "name": "fastglass/sendgrid",
@@ -13214,12 +13283,6 @@
                 "type": "git",
                 "url": "https://github.com/webflo/drupal-core-require-dev.git",
                 "reference": "593123300b3cf9974fa0742282af90fa72ac06fc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/593123300b3cf9974fa0742282af90fa72ac06fc",
-                "reference": "593123300b3cf9974fa0742282af90fa72ac06fc",
-                "shasum": ""
             },
             "require": {
                 "behat/mink": "1.7.x-dev",
