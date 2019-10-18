@@ -7,7 +7,7 @@ dependencies:
 id: tabs
 theme: atrium
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: local_tasks_block
 settings:
