@@ -6,9 +6,10 @@ base theme: classy
 
 regions:
   header: Header
+  title: Title
   content: Content
   footer: Footer
-  node_hero: "Node Hero"
+  node_hero: 'Node Hero'
 
 libraries:
   - atrium/style
