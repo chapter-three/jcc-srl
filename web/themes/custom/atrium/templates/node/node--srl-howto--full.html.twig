@@ -17,7 +17,7 @@
     {% set primary = node.field_children_primary %}
 
     {% for key, item in node.field_children_primary.value %}
-      {# This ^ check is important because Card fields are NOT required. Empty
+      {# ⇣ This check is important because Card fields are NOT required. Empty
       Cards are possible, and would return the wrong data. #}
       {% if primary.get(key).entity.field_page.value %}
         {% set tile_target = primary.get(key).entity.field_page.entity %}
@@ -42,7 +42,7 @@
     {% set secondary = node.field_children_secondary %}
 
     {% for key, item in node.field_children_secondary.value %}
-      {# This ^ check is important because Card fields are NOT required. Empty
+      {# ⇣ This check is important because Card fields are NOT required. Empty
       Cards are possible, and would return the wrong data. #}
       {% if secondary.get(key).entity.field_page.value %}
         {% set tile_target = secondary.get(key).entity.field_page.entity %}
