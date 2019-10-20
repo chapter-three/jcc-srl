@@ -81,6 +81,16 @@ else {
   );
 }
 
+/**
+ * Environment-specific mail settings.
+ */
+
+if (
+  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
+  ( ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'develop') )
+) {
+  $config['config_split.config_split.prod']['status'] = TRUE;
+}
 
 /**
  * Allow Drupal 8 to Cleanly Redirect to Install.php For New Sites.
