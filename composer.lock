@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16c91d9de62ff417653a68267fff62cd",
+    "content-hash": "91d7a291e76ddcdff4cdb65ee502cf59",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4704,6 +4704,60 @@
             }
         },
         {
+            "name": "drupal/maillog",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/maillog.git",
+                "reference": "14fd24cd89e299ad271608cd52706c60b753c26d"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1470431939",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                },
+                {
+                    "name": "pluess",
+                    "homepage": "https://www.drupal.org/user/84659"
+                }
+            ],
+            "description": "Utility to log all Mails for debugging purposes. It is possible to suppress mail delivery for e.g. dev or staging systems.",
+            "homepage": "https://www.drupal.org/project/maillog",
+            "support": {
+                "source": "https://git.drupalcode.org/project/maillog"
+            },
+            "time": "2016-08-05T21:18:07+00:00"
+        },
+        {
             "name": "drupal/mailsystem",
             "version": "4.1.0",
             "source": {
@@ -6710,62 +6764,7 @@
                 "url": "https://github.com/exygy/courtyard.git",
                 "reference": "8241feb"
             },
-            "type": "drupal-library",
-            "time": "2019-10-16T21:56:03+00:00"
-        },
-        {
-            "name": "fastglass/sendgrid",
-            "version": "1.0.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/taz77/sendgrid-php-ng.git",
-                "reference": "95f16f748d609f8455b7c4be74fdd1a8febacaea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/taz77/sendgrid-php-ng/zipball/95f16f748d609f8455b7c4be74fdd1a8febacaea",
-                "reference": "95f16f748d609f8455b7c4be74fdd1a8febacaea",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": ">=6.2.1",
-                "php": ">=5.5.0",
-                "sendgrid/smtpapi": "~0.5"
-            },
-            "replace": {
-                "sendgrid/sendgrid-php": "*"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~7.3",
-                "vlucas/phpdotenv": "~1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SendGrid\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brady Owens",
-                    "email": "brady@fastglass.net",
-                    "homepage": "https://github.com/taz77"
-                }
-            ],
-            "description": "This library allows you to send emails through SendGrid using PHP and Guzzle 6.x.",
-            "homepage": "https://github.com/taz77/sendgrid-php-ng",
-            "keywords": [
-                "email",
-                "grid",
-                "send",
-                "sendgrid"
-            ],
-            "time": "2019-01-16T00:58:24+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "fastglass/sendgrid",
@@ -13372,6 +13371,7 @@
         "drupal/entity_clone": 10,
         "drupal/entity_embed": 5,
         "drupal/inline_entity_form": 5,
+        "drupal/maillog": 20,
         "drupal/maxlength": 10,
         "drupal/rabbit_hole": 10,
         "drupal/search_api_spellcheck": 20,
