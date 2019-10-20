@@ -48,6 +48,7 @@ module:
   honeypot: 0
   image: 0
   inline_entity_form: 0
+  key: 0
   link: 0
   linkit: 0
   login_emailusername: 0
