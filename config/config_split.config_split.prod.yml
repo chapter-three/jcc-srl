@@ -1,0 +1,16 @@
+uuid: ae5475b4-5a7d-4d90-9693-d5f33f8d3127
+langcode: en
+status: false
+dependencies: {  }
+id: prod
+label: Production
+description: 'Intended for Pantheon ''develop'' and ''live'' environments.'
+folder: ../config-prod
+module: {  }
+theme: {  }
+blacklist:
+  - mailsystem.settings
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 1

@@ -6,7 +6,7 @@ _core:
   default_config_hash: hmxcPDoB0F4JtlDtNQ1cpB1wi37zYX-Qz4v70kr6i64
 id: local
 label: Local
-description: ''
+description: 'Local development environments.'
 folder: ../config-local
 module:
   devel: 0
