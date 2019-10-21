@@ -86,10 +86,16 @@ else {
  */
 
 if (
-  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
-  ( ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'develop') )
+  isset($_ENV['PANTHEON_ENVIRONMENT'])
 ) {
-  $config['config_split.config_split.prod']['status'] = TRUE;
+  if (
+    ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'develop')
+  ) {
+    $config['config_split.config_split.prod']['status'] = TRUE;
+  }
+  else {
+    $config['config_split.config_split.stage']['status'] = TRUE;
+  }
 }
 
 /**

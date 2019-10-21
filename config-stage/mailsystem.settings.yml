@@ -1,4 +1,4 @@
-theme: current
+theme: atrium
 defaults:
   sender: maillog
   formatter: php_mail
