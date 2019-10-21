@@ -30,66 +30,101 @@
  * @see template_preprocess_views_view()
  */
 #}
-{%
-  set classes = [
-    'view',
-    'view-' ~ id|clean_class,
-    'view-id-' ~ id,
-    'view-display-id-' ~ display_id,
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if title %}
-    {{ title }}
-  {% endif %}
-  {{ title_suffix }}
-  {% if header %}
-    <div class="view-header">
-      {{ header }}
-    </div>
-  {% endif %}
-  {% if exposed %}
-    <div class="view-filters">
-      {{ exposed }}
-    </div>
-  {% endif %}
-  {% if attachment_before %}
-    <div class="attachment attachment-before">
-      {{ attachment_before }}
-    </div>
-  {% endif %}
+{% set tag = tag|default('div') %}
+{% set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+] %}
 
-  {% if rows %}
-    <div class="view-content">
-      {{ rows }}
-    </div>
-  {% elseif empty %}
-    <div class="view-empty">
-      {{ empty }}
-    </div>
-  {% endif %}
+{% block view %}
+  <{{ tag }}{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
 
-  {% if pager %}
-    {{ pager }}
-  {% endif %}
-  {% if attachment_after %}
-    <div class="attachment attachment-after">
-      {{ attachment_after }}
-    </div>
-  {% endif %}
-  {% if more %}
-    {{ more }}
-  {% endif %}
-  {% if footer %}
-    <div class="view-footer">
-      {{ footer }}
-    </div>
-  {% endif %}
-  {% if feed_icons %}
-    <div class="feed-icons">
-      {{ feed_icons }}
-    </div>
-  {% endif %}
-</div>
+    {% block title %}
+      {% if title %}
+        {{ title }}
+      {% endif %}
+    {% endblock %}
+
+    {% block header %}
+      {% if header %}
+        <div class="view__header">
+          {{ header }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block exposed %}
+      {% if exposed %}
+        <div class="view__filters">
+          {{ exposed }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block attachment_before %}
+      {% if attachment_before %}
+        <div class="view__attachment view__attachment--before">
+          {{ attachment_before }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block content %}
+      {% if rows %}
+        <div class="view__content">
+          {{ rows }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block empty %}
+      {% if empty %}
+        <div class="view__content is-empty">
+          {{ empty }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block pager %}
+      {% if pager %}
+        {{ pager }}
+      {% endif %}
+    {% endblock %}
+
+    {% block attachment_after %}
+      {% if attachment_after %}
+        <div class="view__attachment view__attachment--after">
+          {{ attachment_after }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block more %}
+      {% if more %}
+        {{ more }}
+      {% endif %}
+    {% endblock %}
+
+    {% block footer %}
+      {% if footer %}
+        <div class="view-footer">
+          {{ footer }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block feed_icons %}
+      {% if feed_icons %}
+        <div class="feed-icons">
+          {{ feed_icons }}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+  </{{ tag }}>
+{% endblock %}
