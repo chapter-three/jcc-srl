@@ -10,6 +10,7 @@ module: {  }
 theme: {  }
 blacklist:
   - mailsystem.settings
+  - system.mail
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
