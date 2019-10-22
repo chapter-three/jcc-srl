@@ -170,7 +170,7 @@ The CircleCI integration is configured to deploy branches that start with `epic-
  - `lando composer update [package]` will remove the package code.
 
 
-**Appling patches**
+**Applying patches**
 
 To add a patch to drupal module foobar insert the patches section in the extra
 section of composer.json:
@@ -184,7 +184,10 @@ section of composer.json:
 }
 ```
 
-## 7. Useful commands:
+## 7. Sensitive config:
+API keys (like SendGrid's) should be stored in the  private:// directory and managed with the key and config_split modules. Environment switches are set in settings.pantheon.php.
+
+## 8. Useful commands:
    - Database updates: 
 
       `lando drush updb` or `drush updb`
