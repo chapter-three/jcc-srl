@@ -5,7 +5,7 @@ dependencies: {  }
 id: prod
 label: Production
 description: 'Intended for Pantheon ''develop'' and ''live'' environments.'
-folder: ../config-prod
+folder: ../config/config-prod
 module: {  }
 theme: {  }
 blacklist:

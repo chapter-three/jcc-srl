@@ -777,7 +777,7 @@ $settings['entity_update_backup'] = TRUE;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
-$config_directories['sync'] = '../config';
+$config_directories['sync'] = '../config/config-default';
 
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   $pantheon_settings = $app_root . '/' . $site_path .  '/settings.pantheon.php';

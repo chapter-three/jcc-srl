@@ -17,7 +17,7 @@ terminus -n build:env:merge "$TERMINUS_SITE.$TERMINUS_ENV" --yes
 terminus -n drush $TERMINUS_SITE.dev -- updatedb --yes
 
 # If there are any exported configuration files, then import them
-if [ -f "config/system.site.yml" ] ; then
+if [ -f "config/config-default/system.site.yml" ] ; then
   terminus -n drush "$TERMINUS_SITE.dev" -- config-import --yes
 fi
 
