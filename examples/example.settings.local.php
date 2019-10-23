@@ -11,19 +11,6 @@
  */
 
 /**
- * If the code below doesn't already exist in settings.php, copy below to
- * the bottom of settings.php so it will load settings.local.php for overrides.
- * Be sure to uncomment this code in settings.php.
- * The code is here for reference and can be removed from settings.local.php.
- *
- * Do NOT commit settings.local.php to the repo. Make sure it's added to the .gitignore file.
- */
-// $local_settings = dirname(__FILE__) . '/settings.local.php';
-// if (file_exists($local_settings)) {
-//   include $local_settings;
-// }
-
-/**
  * Assertions.
 *
 * The Drupal project primarily uses runtime assertions to enforce the
@@ -144,11 +131,6 @@ $config['system.logging']['error_level'] = 'verbose';
 $config['stage_file_proxy.settings']['origin'] = 'https://develop-jcc-srl.pantheonsite.io';
 $config['stage_file_proxy.settings']['use_imagecache_root'] = 0;
 $config['stage_file_proxy.settings']['hotlink'] = 1;
-
-/* Config Sync dir */
-// For pantheon hosting, use sites/default/files as its writable
-// Move into settings.php at the end to override pantheon settings.
-// $config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/files/config';
 
 /* Exclude all dev modules from core.extension.yml */
 $settings['config_exclude_modules'] = [
