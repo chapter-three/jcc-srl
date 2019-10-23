@@ -5,7 +5,7 @@ dependencies: {  }
 id: stage
 label: Stage
 description: 'Intended for Pantheon multidev and local environments'
-folder: ../config-stage
+folder: ../config/config-stage
 module:
   maillog: 0
 theme: {  }

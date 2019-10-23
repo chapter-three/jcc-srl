@@ -77,25 +77,8 @@ if ($is_installer_url) {
 }
 else {
   $config_directories = array(
-    CONFIG_SYNC_DIRECTORY => '../config',
+    CONFIG_SYNC_DIRECTORY => 'sites/default/config',
   );
-}
-
-/**
- * Environment-specific mail settings.
- */
-
-if (
-  isset($_ENV['PANTHEON_ENVIRONMENT'])
-) {
-  if (
-    ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'develop')
-  ) {
-    $config['config_split.config_split.prod']['status'] = TRUE;
-  }
-  else {
-    $config['config_split.config_split.stage']['status'] = TRUE;
-  }
 }
 
 /**
@@ -195,6 +178,14 @@ if (isset($_ENV['PANTHEON_ROLLING_TMP']) && isset($_ENV['PANTHEON_DEPLOYMENT_IDE
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   $GLOBALS['conf']['container_service_providers']['PantheonServiceProvider'] = '\Pantheon\Internal\PantheonServiceProvider';
 }
+/**
+ * "Trusted host settings" are not necessary on Pantheon; traffic will only
+ * be routed to your site if the host settings match a domain configured for
+ * your site in the dashboard.
+ */
+if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+  $settings['trusted_host_patterns'][] = '.*';
+}
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
@@ -212,13 +203,3 @@ if (empty($settings['file_scan_ignore_directories'])) {
     'bower_components',
   ];
 }
-
-/**
- * Lockdown accessible host patterns.
- */
-$settings['trusted_host_patterns'] = array(
-  '^.+jcc-srl\.pantheonsite\.io$',
-  '^.+jcc-srl\.chapterthree\.com$',
-);
-
-
