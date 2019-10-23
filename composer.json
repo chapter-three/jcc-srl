@@ -207,6 +207,11 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "patches": {
+            "drupal/inline_entity_form": {
+                "Support entity revision references": "https://www.drupal.org/files/issues/2019-09-23/inline_entity_form-2367235-126.patch"
+            }
+        },
         "installer-types": [
             "library"
         ],
