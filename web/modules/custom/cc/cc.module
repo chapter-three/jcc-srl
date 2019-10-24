@@ -179,18 +179,17 @@ function cc_form_submit(array &$form, FormStateInterface $form_state) {
 }
 
 /**
- * Implements hook_entity_display_build_alter().
- *
- * Check user input for each conditional display.
- *
- * @throws \Exception
+ * Implements hook_entity_view_alter().
  */
-function cc_entity_display_build_alter(&$build, $context) {
+function cc_entity_view_alter(
+  array &$build,
+  Drupal\Core\Entity\EntityInterface $entity,
+  EntityViewDisplayInterface $display
+) {
+  // List of items to hide.
+  $hide = [];
 
-  // Any conditional displays for this entity.
-  /** @var \Drupal\Core\Entity\EntityInterface $host_entity */
-  $host_entity = $context['entity'];
-  foreach (ConditionalDisplay::getConditionalDisplays($host_entity) as $cc) {
+  foreach (ConditionalDisplay::getConditionalDisplays($entity) as $cc) {
 
     // Make sure the conditional field is present.
     if (!isset($build[$cc->getFieldName()][$cc->getFieldDelta()])) {
@@ -215,17 +214,34 @@ function cc_entity_display_build_alter(&$build, $context) {
       }
     }
 
-    // Evaluate conditions and hide when FALSE.
+    // Evaluate conditions.
     if (!$cc->getConditions()->eval($user_input)) {
-      switch ($build[$cc->getFieldName()]['#field_type']) {
+      $hide[$cc->getFieldName()][] = $cc->getFieldDelta();
+    }
+  }
+
+  foreach ($hide as $field_name => $deltas) {
+    // In reverse order in order to use field item list remove method, which
+    // resets item indexes.
+    while (count($deltas)) {
+      $delta = array_pop($deltas);
+      switch ($build[$field_name]['#field_type']) {
 
         case 'entity_reference_revisions':
-          $build[$cc->getFieldName()][$cc->getFieldDelta()]['#access'] = FALSE;
+          /** @var \Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList $items */
+          $items = $build[$field_name]['#items'];
+          $items->removeItem($delta);
+          unset($build[$field_name][$delta]);
+          $i = 1;
+          while (isset($build[$field_name][$delta + $i])) {
+            $build[$field_name][$delta + $i - 1] = $build[$field_name][$delta + $i];
+            unset($build[$field_name][$delta + $i]);
+          }
           break;
 
         default:
-          $build[$cc->getFieldName()][$cc->getFieldDelta()]['#access'] = FALSE;
-          break;
+          // $build[$field_name][$delta]['#access'] = FALSE;
+          throw new Exception('Field type not implemented.');
 
       }
     }
