@@ -5,6 +5,7 @@ type: theme
 base theme: classy
 
 regions:
+  logo: 'Logo'
   header: Header
   title: Title
   content: Content
