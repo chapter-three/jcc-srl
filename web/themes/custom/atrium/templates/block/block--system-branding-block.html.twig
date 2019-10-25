@@ -7,9 +7,11 @@
 {% if site_logo %}
   <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="jcc-header__logo">
     {% include "@atoms/icons/logo.twig" with {
-      img: site_logo,
-      alt: 'Logo'|t,
-      patternlab: true
+      patternlab: true,
+      img: {
+        src: site_logo,
+        alt: 'Logo'|t,
+      }
     } %}
   </a>
 {% endif %}

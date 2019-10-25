@@ -14,4 +14,4 @@ patternlab:
     theme:
       ../../../libraries/courtyard/public/css/styles.min.css: {}
   js:
-    ../../../libraries/courtyard/public/js/scripts.js: {}
+    ../../../libraries/courtyard/public/js/scripts.min.js: { minified: true, preprocess: false }
