@@ -6,7 +6,7 @@ dependencies:
     - atrium
 id: tabs
 theme: atrium
-region: content
+region: tabs
 weight: 0
 provider: null
 plugin: local_tasks_block

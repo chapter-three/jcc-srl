@@ -1,15 +1,17 @@
-name: atrium
+name: Atrium
 description: A custom theme for JCC.
 core: 8.x
 type: theme
 base theme: classy
 
 regions:
+  logo: 'Logo'
   header: Header
+  header_node: 'Header > Hero (Node)'
   title: Title
+  tabs: Tabs
   content: Content
   footer: Footer
-  node_hero: 'Node Hero'
 
 libraries:
   - atrium/style
@@ -37,13 +39,13 @@ ckeditor_stylesheets:
 component-libraries:
   protons:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/protons
+      - ../../../libraries/courtyard/source/_patterns/00-protons
   atoms:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/atoms
+      - ../../../libraries/courtyard/source/_patterns/01-atoms
   molecules:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/molecules
+      - ../../../libraries/courtyard/source/_patterns/02-molecules
   organisms:
     paths:
-      - ../../../libraries/courtyard/source/_patterns/organisms
+      - ../../../libraries/courtyard/source/_patterns/03-organisms

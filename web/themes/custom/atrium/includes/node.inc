@@ -16,6 +16,6 @@ function atrium_preprocess_node(&$variables) {
   // also print within the corresponding page template.
   $allowed_types = ['srl_onramp'];
   if (in_array($node->bundle(), $allowed_types)) {
-    atrium_add_regions_to_node(['node_hero'], $variables);
+    atrium_add_regions_to_node(['header_node'], $variables);
   }
 }

@@ -1,0 +1,23 @@
+uuid: 978cee18-dfda-4ec5-8a65-3c7a52ab929b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - atrium
+id: branding
+theme: atrium
+region: logo
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
