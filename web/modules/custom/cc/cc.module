@@ -180,6 +180,8 @@ function cc_form_submit(array &$form, FormStateInterface $form_state) {
 
 /**
  * Implements hook_entity_view_alter().
+ *
+ * @throws \Exception
  */
 function cc_entity_view_alter(
   array &$build,
