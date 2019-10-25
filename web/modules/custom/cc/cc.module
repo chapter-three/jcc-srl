@@ -139,7 +139,7 @@ function cc_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $find_cc = function (&$element) use (&$find_cc) {
     foreach (Element::children($element) as $field_name) {
       $child = &$element[$field_name];
-      if (@$child['cc']) {
+      if (ConditionalDisplay::isConditionalDisplayWidgetElement($child)) {
         return TRUE;
       }
       elseif ($find_cc($child)) {
