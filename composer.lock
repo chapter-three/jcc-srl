@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c773ffc8600e28b392dd944986706fe",
+    "content-hash": "b40cb857d9ba5e45d017ddd1a24ad808",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2209,7 +2209,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.9",
-                    "datestamp": "1571249584",
+                    "datestamp": "1548270780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4496,6 +4496,9 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Support entity revision references": "https://www.drupal.org/files/issues/2019-09-23/inline_entity_form-2367235-126.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5229,7 +5232,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1570828084",
+                    "datestamp": "1554239887",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"

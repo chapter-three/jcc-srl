@@ -13,11 +13,14 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
     - field.field.node.srl_howto_instruction.field_title_display
+    - field.field.node.srl_howto_instruction.field_user_input
     - node.type.srl_howto_instruction
   module:
     - allowed_formats
+    - cc
     - entity_browser
     - field_group
+    - inline_entity_form
     - link
     - maxlength
     - paragraphs
@@ -60,6 +63,7 @@ third_party_settings:
       children:
         - field_forms
         - field_howto_body
+        - field_user_input
         - field_paragraphs
       parent_name: ''
       weight: 4
@@ -134,7 +138,7 @@ content:
     region: content
   field_howto_body:
     type: entity_reference_paragraphs
-    weight: 4
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -175,7 +179,9 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: _none
-    third_party_settings: {  }
+    third_party_settings:
+      cc:
+        status: '1'
     type: entity_reference_paragraphs
     region: content
   field_parent:
@@ -197,6 +203,19 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: text_textfield
+    region: content
+  field_user_input:
+    weight: 4
+    settings:
+      form_mode: default
+      revision: false
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
     region: content
   path:
     type: path

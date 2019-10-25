@@ -12,8 +12,10 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
     - field.field.node.srl_howto_instruction.field_title_display
+    - field.field.node.srl_howto_instruction.field_user_input
     - node.type.srl_howto_instruction
   module:
+    - cc
     - entity_reference_revisions
     - link
     - text
@@ -75,7 +77,7 @@ content:
     type: text_default
     region: content
   field_paragraphs:
-    weight: 9
+    weight: 10
     label: hidden
     settings:
       view_mode: default
@@ -97,6 +99,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_user_input:
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: cc_user_input_revisions
     region: content
   links:
     weight: 0

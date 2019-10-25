@@ -1,0 +1,31 @@
+add user input entities:
+  title: 'Create new User input entities'
+
+administer user input entities:
+  title: 'Administer User input entities'
+  description: 'Allow to access the administration form to configure User input entities.'
+  restrict access: true
+
+delete user input entities:
+  title: 'Delete User input entities'
+
+edit user input entities:
+  title: 'Edit User input entities'
+
+view published user input entities:
+  title: 'View published User input entities'
+
+view unpublished user input entities:
+  title: 'View unpublished User input entities'
+
+view all user input revisions:
+  title: 'View all User input revisions'
+
+revert all user input revisions:
+  title: 'Revert all User input revisions'
+  description: 'Role requires permission <em>view User input revisions</em> and <em>edit rights</em> for user input entities in question or <em>administer user input entities</em>.'
+
+delete all user input revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view User input revisions</em> and <em>delete rights</em> for user input entities in question or <em>administer user input entities</em>.'
+

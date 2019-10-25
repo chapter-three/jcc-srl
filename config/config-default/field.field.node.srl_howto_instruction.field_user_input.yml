@@ -1,0 +1,23 @@
+uuid: 2da72437-1f0e-4105-94a4-d3b1384a8fe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_input
+    - node.type.srl_howto_instruction
+  module:
+    - entity_reference_revisions
+id: node.srl_howto_instruction.field_user_input
+field_name: field_user_input
+entity_type: node
+bundle: srl_howto_instruction
+label: 'User Input'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cc_user_input'
+  handler_settings: {  }
+field_type: entity_reference_revisions
