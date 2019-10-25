@@ -38,6 +38,15 @@ class ConditionalDisplay {
   protected $fieldDelta;
 
   /**
+   * Settings.
+   *
+   * @var array
+   */
+  protected $settings = [
+    'require_input' => TRUE,
+  ];
+
+  /**
    * Conditions.
    *
    * @var \Drupal\cc\Conditions
@@ -113,6 +122,35 @@ class ConditionalDisplay {
    */
   public function setFieldDelta(int $fieldDelta) {
     $this->fieldDelta = $fieldDelta;
+    return $this;
+  }
+
+  /**
+   * Get setting.
+   *
+   * @param string|int $key
+   *   A key.
+   *
+   * @return mixed
+   *   The setting value, or NULL if not found.
+   */
+  public function getSetting($key) {
+    return @$this->settings[$key];
+  }
+
+  /**
+   * Set settings.
+   *
+   * @param string $key
+   *   A key.
+   * @param mixed $value
+   *   A value.
+   *
+   * @return \Drupal\cc\ConditionalDisplay
+   *   For chaining.
+   */
+  public function setSetting($key, $value): ConditionalDisplay {
+    $this->settings[$key] = $value;
     return $this;
   }
 
@@ -197,8 +235,11 @@ class ConditionalDisplay {
   /**
    * Get conditions.
    *
-   * @return bool|\Drupal\cc\Conditions
-   *   False on failure, array otherwise.
+   * @param bool $reset
+   *   Re-load from database.
+   *
+   * @return $this
+   *   For chaining.
    *
    * @throws \Exception
    */
@@ -207,19 +248,23 @@ class ConditionalDisplay {
       $database = Drupal::database();
       $query = $database
         ->select('cc_field_conditions', 'fc')
-        ->fields('fc', ['conditions']);
+        ->fields('fc', ['settings', 'conditions']);
       $query->condition('fc.entity_type', $this->hostEntity->getEntityTypeId());
       $query->condition('fc.entity_id', $this->hostEntity->id());
       $query->condition('fc.revision_id', $this->hostEntity->getRevisionId());
       $query->condition('fc.langcode', $this->hostEntity->language()->getId());
       $query->condition('fc.field', $this->fieldName);
       $query->condition('fc.delta', $this->fieldDelta);
-      $conditions = $query->execute()->fetchField();
-      $this->conditions = $conditions !== FALSE && $conditions !== NULL
-        ? unserialize($conditions)
+      $value = $query->execute()->fetchField(0);
+      $this->settings = $value !== FALSE && $value !== NULL
+        ? unserialize($value)
+        : [];
+      $value = $query->execute()->fetchField(1);
+      $this->conditions = $value !== FALSE && $value !== NULL
+        ? unserialize($value)
         : new Conditions();
     }
-    return $this->conditions;
+    return $this;
   }
 
   /**
@@ -244,6 +289,7 @@ class ConditionalDisplay {
         'delta' => $this->fieldDelta,
       ])
       ->fields([
+        'settings' => serialize($this->settings),
         'conditions' => serialize($this->conditions),
       ])
       ->execute();
@@ -397,6 +443,12 @@ class ConditionalDisplay {
       'field_delta' => [
         '#type' => 'value',
         '#value' => $this->fieldDelta,
+      ],
+      'require_input' => [
+        '#type' => 'checkbox',
+        '#title' => t('Require user input'),
+        '#description' => t('Hide this field when there is no user input.'),
+        '#default_value' => $this->getSetting('require_input'),
       ],
     ];
 
@@ -643,6 +695,10 @@ class ConditionalDisplay {
     /** @var \Drupal\cc\ConditionalDisplay $cc */
     $cc = $widget_state['entity'];
 
+    foreach (['require_input'] as $key) {
+      $cc->setSetting($key, $form_state->getValue($parents)['require_input']);
+    }
+
     $process_conditions = function (&$element, $path) use ($form_state) {
       $value = $form_state->getValue(array_merge($path));
       if ($value['operator']) {
@@ -659,20 +715,12 @@ class ConditionalDisplay {
       return NULL;
     };
 
-    if ($conditions = $process_conditions($element, $parents)) {
-      $cc->setConditions($conditions);
-    }
+    $cc->setConditions($process_conditions($element, $parents));
 
     if ($save) {
       /** @var \Drupal\Core\Entity\ContentEntityInterface $host_entity */
       $host_entity = $form_state->getFormObject()->getEntity();
-      $cc->setHostEntity($host_entity);
-      if ($cc->conditions->getConditions()) {
-        $cc->save();
-      }
-      else {
-        $cc->delete();
-      }
+      $cc->setHostEntity($host_entity)->save();
     }
 
     return $cc;

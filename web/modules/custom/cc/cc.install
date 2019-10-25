@@ -5,6 +5,8 @@
  * Install, update and uninstall functions for the cc module.
  */
 
+use Drupal\Core\Database\Database;
+
 /**
  * Implements hook_schema().
  */
@@ -49,6 +51,10 @@ function cc_schema() {
         'not null' => TRUE,
         'description' => 'The sequence number for the host entity field.',
       ],
+      'settings' => [
+        'type' => 'blob',
+        'description' => 'Serialized settings.',
+      ],
       'conditions' => [
         'type' => 'blob',
         'description' => 'Serialized conditions.',
@@ -60,4 +66,13 @@ function cc_schema() {
   ];
 
   return $schema;
+}
+
+/**
+ * Add settings column to field conditions table.
+ */
+function cc_update_8001(&$sandbox) {
+  $spec = cc_schema()['cc_field_conditions']['fields']['settings'];
+  $schema = Database::getConnection()->schema();
+  $schema->addField('cc_field_conditions', 'settings', $spec);
 }

@@ -216,8 +216,12 @@ function cc_entity_view_alter(
       }
     }
 
-    // Evaluate conditions.
-    if (!$cc->getConditions()->eval($user_input)) {
+    if (
+      // Hide when no user input.
+      ($cc->getSetting('require_input') && empty($user_input)) ||
+      // Evaluate conditions.
+      !$cc->getConditions()->eval($user_input)
+    ) {
       $hide[$cc->getFieldName()][] = $cc->getFieldDelta();
     }
   }
