@@ -74,6 +74,12 @@
     <div class="page__content">
       {{ page.content }}
     </div>
+
+    {% if page.content_below|render %}
+      <div class="page__content-below">
+        {{ page.content_below }}
+      </div>
+    {% endif %}
   </main>
 
   {% if page.footer %}

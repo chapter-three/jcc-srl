@@ -1,0 +1,33 @@
+uuid: 98aba2bf-56a9-411c-b304-257811b9f77f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.switchboard
+  module:
+    - ctools
+    - views
+  theme:
+    - atrium
+id: views_block__switchboard_block_1
+theme: atrium
+region: content_below
+weight: 0
+provider: null
+plugin: 'views_block:switchboard-block_1'
+settings:
+  id: 'views_block:switchboard-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      srl_howto_instruction: srl_howto_instruction
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
