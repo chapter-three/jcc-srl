@@ -92,11 +92,11 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => -5,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -3,
+        'weight' => -4,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -138,6 +138,17 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
       ])
       ->setDisplayOptions('form', [
         'type' => 'options_select',
+        'weight' => -3,
+      ]);
+
+    $fields['required'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Required'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue(FALSE)->setDisplayOptions('view', [
+        'region' => 'hidden',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'checkbox',
         'weight' => -2,
       ]);
 
@@ -200,6 +211,21 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
    */
   public function setSelectionType($type) {
     $this->set('selection_type', $type);
+    return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isRequired() {
+    return $this->get('required')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setRequired($required) {
+    $this->set('required', $required);
     return $this;
   }
 

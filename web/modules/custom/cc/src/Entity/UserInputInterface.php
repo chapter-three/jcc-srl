@@ -57,6 +57,25 @@ interface UserInputInterface extends ContentEntityInterface, RevisionLogInterfac
   public function setSelectionType($type);
 
   /**
+   * True if required option is set.
+   *
+   * @return bool
+   *   Input is required.
+   */
+  public function isRequired();
+
+  /**
+   * Sedt the required flag.
+   *
+   * @param bool $required
+   *   Value.
+   *
+   * @return \Drupal\cc\Entity\UserInputInterface
+   *   The called User input entity.
+   */
+  public function setRequired($required);
+
+  /**
    * Gets the User Input items.
    *
    * @return array

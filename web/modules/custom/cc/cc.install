@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Database\Database;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Implements hook_schema().
@@ -75,4 +76,22 @@ function cc_update_8001(&$sandbox) {
   $spec = cc_schema()['cc_field_conditions']['fields']['settings'];
   $schema = Database::getConnection()->schema();
   $schema->addField('cc_field_conditions', 'settings', $spec);
+}
+
+/**
+ * Add required base field to user input entity.
+ */
+function cc_update_8002(&$sandbox) {
+  $field_storage_definition = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Required'))
+    ->setRevisionable(TRUE)
+    ->setDefaultValue(FALSE)->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'checkbox',
+      'weight' => -2,
+    ]);
+  Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('required', 'cc_user_input', 'cc', $field_storage_definition);
 }

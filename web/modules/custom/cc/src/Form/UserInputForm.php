@@ -60,6 +60,7 @@ class UserInputForm extends FormBase {
 
     $form['#method'] = 'get';
     $form['#cache'] = ['max-age' => 0];
+    $form['#token'] = FALSE;
 
     // Each user input element.
     foreach ($this->entities as $delta => $entity) {
@@ -68,6 +69,7 @@ class UserInputForm extends FormBase {
         '#title' => $entity->label(),
         '#weight' => 10 + $delta,
         '#default_value' => Drupal::request()->query->get($entity->uuid()) ?: [],
+        '#required' => $entity->isRequired(),
       ];
       $options = $entity->getItemsOptions();
 
@@ -123,9 +125,10 @@ class UserInputForm extends FormBase {
 
   /**
    * {@inheritdoc}
-   *
-   * @see cc_entity_display_build_alter()
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {}
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Form is processed when entity is prepared for rendering.
+    // @see cc_entity_view_alter()
+  }
 
 }

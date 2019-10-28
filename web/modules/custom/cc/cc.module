@@ -191,6 +191,13 @@ function cc_entity_view_alter(
   // List of items to hide.
   $hide = [];
 
+  // Verify we have a user input form.
+  $form_state = cc_user_input_form_state();
+  if ($form_state && $form_state->getValue('form_id') != 'cc_user_input') {
+    $form_state = NULL;
+  }
+
+  // Each field marked for conditional display.
   foreach (ConditionalDisplay::getConditionalDisplays($entity) as $cc) {
 
     // Make sure the conditional field is present.
@@ -198,29 +205,35 @@ function cc_entity_view_alter(
       continue;
     }
 
-    // Check for user input.
-    $user_input = [];
-    if (Drupal::request()->query->get('form_id') == 'cc_user_input') {
-      $keys = array_unique(array_map(function ($condition) {
+    // Get user input.
+    unset($user_input);
+    if (
+      // No input when required but form not submitted.
+      ($cc->getSetting('require_input') && $form_state->isSubmitted()) &&
+      // No input on error.
+      !$form_state->getErrors()
+    ) {
+      $user_input = [];
+      $uuids = array_unique(array_map(function ($condition) {
         return $condition['uuid'];
       }, $cc->getConditions()->getConditions()));
-      foreach ($keys as $key) {
-        if ($input = Drupal::request()->query->get($key)) {
+      foreach ($uuids as $uuid) {
+        if ($input = $form_state->getValue($uuid)) {
           if (is_array($input)) {
-            $user_input[$key] = $input;
+            $user_input[$uuid] = $input;
           }
           else {
-            $user_input[$key] = [$input => $input];
+            $user_input[$uuid] = [$input => $input];
           }
         }
       }
     }
 
     if (
-      // Hide when no user input.
-      ($cc->getSetting('require_input') && empty($user_input)) ||
+      // User input required.
+      (!isset($user_input) && $cc->getSetting('require_input')) ||
       // Evaluate conditions.
-      !$cc->getConditions()->eval($user_input)
+      (isset($user_input) && !$cc->getConditions()->eval($user_input))
     ) {
       $hide[$cc->getFieldName()][] = $cc->getFieldDelta();
     }
@@ -252,6 +265,24 @@ function cc_entity_view_alter(
       }
     }
   }
+}
+
+/**
+ * Gets/sets a reference to user input form state for later use.
+ *
+ * @param string $uuid
+ *   Entity uuid of the user input entity.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ *
+ * @return \Drupal\Core\Form\FormStateInterface|null
+ */
+function cc_user_input_form_state(FormStateInterface $form_state = NULL) {
+  $state = &drupal_static(__FUNCTION__);
+  if ($form_state) {
+    $state = $form_state;
+  }
+  return $state;
 }
 
 /**
