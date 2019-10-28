@@ -11,6 +11,7 @@ regions:
   title: Title
   tabs: Tabs
   content: Content
+  content_below: 'Content: Below'
   footer: Footer
 
 libraries:
