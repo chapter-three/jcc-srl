@@ -188,7 +188,8 @@ class Conditions {
             return TRUE;
           }
         }
-        return FALSE;
+        // No conditions evaluates to TRUE.
+        return !count($this->conditions);
 
     }
     return TRUE;
