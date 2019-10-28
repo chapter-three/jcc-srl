@@ -212,7 +212,7 @@ class ConditionalDisplay {
    *
    * @throws \Exception
    */
-  public static function getConditionalDisplays(EntityInterface $host_entity) {
+  public static function getEntityConditionalDisplays(EntityInterface $host_entity) {
     $database = Drupal::database();
     $query = $database
       ->select('cc_field_conditions', 'fc')
@@ -230,6 +230,55 @@ class ConditionalDisplay {
         $host_entity, $row->field, $row->delta);
     }
     return $ccs;
+  }
+
+  /**
+   * Bulk deletes conditional displays.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $host_entity
+   *   A host entity.
+   * @param int $revision_id
+   *   An optional revision id to limit the deletion to.
+   * @param string $language_code
+   *   An optional language code to limit the deletion to.
+   *
+   * @return int
+   *   The number of rows affected by the delete query.
+   */
+  public static function deleteEntityConditionalDisplays(
+    EntityInterface $host_entity,
+    $revision_id = NULL,
+    $language_code = NULL
+  ) {
+    $database = Drupal::database();
+    $query = $database
+      ->delete('cc_field_conditions');
+    $query->condition('entity_type', $host_entity->getEntityTypeId());
+    $query->condition('entity_id', $host_entity->id());
+    if ($revision_id) {
+      $query->condition('revision_id', $revision_id);
+    }
+    if ($language_code) {
+      $query->condition('langcode', $language_code);
+    }
+    return $query->execute();
+  }
+
+  /**
+   * Bulk deletes conditional displays for a language.
+   *
+   * @param string $language_code
+   *   Language code.
+   *
+   * @return int
+   *   The number of rows affected by the delete query.
+   */
+  public static function deleteLanguageConditionalDisplays($language_code) {
+    $database = Drupal::database();
+    $query = $database
+      ->delete('cc_field_conditions');
+    $query->condition('langcode', $language_code);
+    return $query->execute();
   }
 
   /**

@@ -8,11 +8,14 @@
 use Drupal\cc\ConditionalDisplay;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\language\ConfigurableLanguageInterface;
 
 /**
  * Implements hook_help().
@@ -198,7 +201,7 @@ function cc_entity_view_alter(
   }
 
   // Each field marked for conditional display.
-  foreach (ConditionalDisplay::getConditionalDisplays($entity) as $cc) {
+  foreach (ConditionalDisplay::getEntityConditionalDisplays($entity) as $cc) {
 
     // Make sure the conditional field is present.
     if (!isset($build[$cc->getFieldName()][$cc->getFieldDelta()])) {
@@ -288,14 +291,14 @@ function cc_user_input_form_state(FormStateInterface $form_state = NULL) {
 /**
  * Implements hook_entity_update().
  */
-function cc_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+function cc_entity_update(EntityInterface $entity) {
   // @todo detect parameter changes and save
 }
 
 /**
  * Implements hook_entity_insert().
  */
-function cc_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+function cc_entity_insert(EntityInterface $entity) {
   // @todo detect parameter changes and save
 }
 
@@ -303,19 +306,37 @@ function cc_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
  * Implements hook_entity_delete().
  */
 function cc_entity_delete(EntityInterface $entity) {
-  // @todo cc_field_conditions table cleanup
+  ConditionalDisplay::deleteEntityConditionalDisplays($entity);
 }
 
 /**
  * Implements hook_entity_revision_delete().
  */
 function cc_entity_revision_delete(EntityInterface $entity) {
-  // @todo cc_field_conditions table cleanup
+  if ($entity instanceof FieldableEntityInterface &&
+    $entity instanceof RevisionableInterface
+  ) {
+    ConditionalDisplay::deleteEntityConditionalDisplays(
+      $entity, $entity->getRevisionId());
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete() for 'configurable_language'.
+ */
+function cc_configurable_language_delete(
+  ConfigurableLanguageInterface $language
+) {
+  ConditionalDisplay::deleteLanguageConditionalDisplays($language->id());
 }
 
 /**
  * Implements hook_entity_translation_delete().
  */
 function cc_entity_translation_delete(EntityInterface $translation) {
-  // @todo cc_field_conditions table cleanup
+  if ($translation instanceof FieldableEntityInterface) {
+    ConditionalDisplay::deleteEntityConditionalDisplays(
+      $translation, NULL, $translation->language());
+  }
+
 }
