@@ -304,14 +304,14 @@ class ConditionalDisplay {
       $query->condition('fc.langcode', $this->hostEntity->language()->getId());
       $query->condition('fc.field', $this->fieldName);
       $query->condition('fc.delta', $this->fieldDelta);
-      $value = $query->execute()->fetchField(0);
-      $this->settings = $value !== FALSE && $value !== NULL
-        ? unserialize($value)
-        : [];
-      $value = $query->execute()->fetchField(1);
-      $this->conditions = $value !== FALSE && $value !== NULL
-        ? unserialize($value)
-        : new Conditions();
+      $result = $query->execute();
+      if ($row = $result->fetchObject()) {
+        $this->settings = unserialize($row->settings);
+        $this->conditions = unserialize($row->conditions);
+      }
+      else {
+        $this->conditions = new Conditions();
+      }
     }
     return $this;
   }
@@ -498,6 +498,7 @@ class ConditionalDisplay {
         '#title' => t('Require user input'),
         '#description' => t('Hide this field when there is no user input.'),
         '#default_value' => $this->getSetting('require_input'),
+        '#weight' => 1,
       ],
     ];
 
@@ -515,6 +516,7 @@ class ConditionalDisplay {
           '#title' => t('Operator'),
           '#options' => Conditions::getOperatorOptions(),
           '#default_value' => $conditions->getOperator(),
+          '#weight' => -1,
         ],
       ];
       /** @var array|\Drupal\cc\Conditions $condition */
