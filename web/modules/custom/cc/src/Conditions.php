@@ -207,11 +207,12 @@ class Conditions {
    *   The result.
    */
   protected function evalCondition(array $user_input, array $condition) {
-    $user_input = $user_input[$condition['uuid']] ?: [];
+    $user_input = array_filter($user_input[$condition['uuid']] ?: []);
+    $values = array_filter($condition['value']);
     switch ($condition['operator']) {
 
       case self::CONDITION_OPERATOR_NONE_OF:
-        foreach (array_filter($condition['value']) as $value) {
+        foreach ($values as $value) {
           if (isset($user_input[$value])) {
             return FALSE;
           }
@@ -219,7 +220,7 @@ class Conditions {
         return TRUE;
 
       case self::CONDITION_OPERATOR_ONE_OF:
-        foreach (array_filter($condition['value']) as $value) {
+        foreach ($values as $value) {
           if (isset($user_input[$value])) {
             return TRUE;
           }
@@ -227,7 +228,7 @@ class Conditions {
         return FALSE;
 
       case self::CONDITION_OPERATOR_ALL_OF:
-        foreach (array_filter($condition['value']) as $value) {
+        foreach ($values as $value) {
           if (!isset($user_input[$value])) {
             return FALSE;
           }
