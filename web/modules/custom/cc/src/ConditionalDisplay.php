@@ -510,14 +510,22 @@ class ConditionalDisplay {
     ) {
       $element = [
         '#type' => 'fieldset',
-        'operator' => [
+      ];
+      if (count($conditions->getConditions())) {
+        $element['operator'] = [
           '#type' => 'select',
           '#title' => t('Operator'),
           '#options' => Conditions::getOperatorOptions(),
           '#default_value' => $conditions->getOperator(),
           '#weight' => -1,
-        ],
-      ];
+        ];
+      }
+      else {
+        $element['operator'] = [
+          '#type' => 'value',
+          '#value' => $conditions->getOperator(),
+        ];
+      }
       /** @var array|\Drupal\cc\Conditions $condition */
       foreach ($conditions->getConditions() as $i => $condition) {
         if ($condition instanceof Conditions) {
