@@ -3,21 +3,27 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.step_container.field_brow
     - field.field.paragraph.step_container.field_create_anchor
     - field.field.paragraph.step_container.field_description
-    - field.field.paragraph.step_container.field_step_display
     - field.field.paragraph.step_container.field_steps
     - field.field.paragraph.step_container.field_title_display
     - paragraphs.paragraphs_type.step_container
   module:
     - entity_reference_revisions
-    - options
     - text
 id: paragraph.step_container.default
 targetEntityType: paragraph
 bundle: step_container
 mode: default
 content:
+  field_brow:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_create_anchor:
     weight: 3
     label: hidden
@@ -34,13 +40,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_step_display:
-    weight: 0
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_key
     region: content
   field_steps:
     type: entity_reference_revisions_entity_view
