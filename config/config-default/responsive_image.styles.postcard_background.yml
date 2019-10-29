@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - image.style.2_1_1024x512
-    - image.style.2_1_1304x652
     - image.style.2_1_1600x800
+    - image.style.2_1_2048x1024
     - image.style.2_1_375x188
     - image.style.2_1_640x320
-    - image.style.2_1_652x326
     - image.style.2_1_768x384
 id: postcard_background
 label: 'Postcard Background'
@@ -21,11 +20,10 @@ image_style_mappings:
       sizes: 100vw
       sizes_image_styles:
         - 2_1_1024x512
-        - 2_1_1304x652
         - 2_1_1600x800
+        - 2_1_2048x1024
         - 2_1_375x188
         - 2_1_640x320
-        - 2_1_652x326
         - 2_1_768x384
 breakpoint_group: responsive_image
 fallback_image_style: 2_1_375x188
