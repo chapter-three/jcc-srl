@@ -144,7 +144,8 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
     $fields['required'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Required'))
       ->setRevisionable(TRUE)
-      ->setDefaultValue(FALSE)->setDisplayOptions('view', [
+      ->setDefaultValue(FALSE)
+      ->setDisplayOptions('view', [
         'region' => 'hidden',
       ])
       ->setDisplayOptions('form', [

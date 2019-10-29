@@ -5,7 +5,6 @@ namespace Drupal\cc;
 use Drupal;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
-use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -59,7 +58,7 @@ class ConditionalDisplay {
    * @return \Drupal\Core\Entity\ContentEntityBase
    *   The host entity.
    */
-  public function getHostEntity(): ContentEntityBase {
+  public function getHostEntity() {
     return $this->hostEntity;
   }
 
@@ -83,7 +82,7 @@ class ConditionalDisplay {
    * @return string
    *   The host entity field name.
    */
-  public function getFieldName(): string {
+  public function getFieldName() {
     return $this->fieldName;
   }
 
@@ -107,7 +106,7 @@ class ConditionalDisplay {
    * @return int
    *   The sequence number for the host entity field.
    */
-  public function getFieldDelta(): int {
+  public function getFieldDelta() {
     return $this->fieldDelta;
   }
 
@@ -149,7 +148,7 @@ class ConditionalDisplay {
    * @return \Drupal\cc\ConditionalDisplay
    *   For chaining.
    */
-  public function setSetting($key, $value): ConditionalDisplay {
+  public function setSetting($key, $value) {
     $this->settings[$key] = $value;
     return $this;
   }
@@ -160,7 +159,7 @@ class ConditionalDisplay {
    * @return \Drupal\cc\Conditions
    *   The conditions.
    */
-  public function getConditions(): Conditions {
+  public function getConditions() {
     return $this->conditions;
   }
 
@@ -173,7 +172,7 @@ class ConditionalDisplay {
    * @return ConditionalDisplay
    *   For chaining.
    */
-  public function setConditions(Conditions $conditions): ConditionalDisplay {
+  public function setConditions(Conditions $conditions) {
     $this->conditions = $conditions;
     return $this;
   }
