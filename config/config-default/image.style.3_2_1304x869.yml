@@ -1,0 +1,17 @@
+uuid: ff4baf34-9894-4748-97a4-cb53ce57f1c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 3_2_1304x869
+label: '3:2 Ratio - 1304 x 869'
+effects:
+  a888297e-1c57-438d-a04b-947984f806ae:
+    uuid: a888297e-1c57-438d-a04b-947984f806ae
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1304
+      height: 869
+      crop_type: focal_point
