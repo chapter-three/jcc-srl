@@ -9,22 +9,8 @@
 
   {% if content.field_steps|render %}
 
-    {#
-    /**
-    * Step Display
-    * field_step_display (list)
-    *
-    * There are currently two display options. These dictate what component is
-    * used to render steps.
-    *
-    * 1. Vertical Steps (vertical_steps): Known as "Steps" in Pattern Lab.
-    * 2. Flowmap (flowmap): Known as "Timeline" in Pattern Lab.
-    */
-    #}
-    {% set component = paragraph.field_step_display.value %}
-
     {% set headergroup = {
-      brow: (component == 'vertical_steps') ? 'Next steps'|t : null,
+      brow: content.field_brow,
       title: content.field_title_display,
       lead: content.field_description,
     } %}
@@ -57,23 +43,15 @@
       {% endif %}
     {% endfor %}
 
-    {% if component == 'flowmap' %}
-      {% include '@organisms/sections/timeline/timeline.twig' with {
-        headergroup: headergroup,
-        timeline: step_content,
-        background_variant: 'has-background-color--dark'
-      } only %}
+    {% include '@organisms/sections/steps/steps.twig' with {
+      headergroup: headergroup,
+      steps: step_content,
+    } only %}
 
-    {% elseif component == 'vertical_steps' %}
-      {% include '@organisms/sections/steps/steps.twig' with {
-        headergroup: headergroup,
-        steps: step_content,
-      } only %}
-
-    {% endif %}
   {% endif %}
 
   {{ content|without(
+    'field_brow',
     'field_create_anchor',
     'field_description',
     'field_step_display',
