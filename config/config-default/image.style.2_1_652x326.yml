@@ -4,14 +4,14 @@ status: true
 dependencies:
   module:
     - focal_point
-name: 2_1_668x334
-label: '2:1 Ratio - Max 668 x 334'
+name: 2_1_652x326
+label: '2:1 Ratio - Max 652 x 326'
 effects:
   757fe10a-1c86-4679-ad00-50e072a95e40:
     uuid: 757fe10a-1c86-4679-ad00-50e072a95e40
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 668
-      height: 334
+      width: 652
+      height: 326
       crop_type: focal_point
