@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.2_1_1024x512
-    - image.style.2_1_1304x652
-    - image.style.2_1_1600x800
-    - image.style.2_1_375x188
-    - image.style.2_1_640x320
-    - image.style.2_1_652x326
-    - image.style.2_1_768x384
+    - image.style.3_2_1024x683
+    - image.style.3_2_1304x869
+    - image.style.3_2_2048x1024
+    - image.style.3_2_375x250
+    - image.style.3_2_652x435
+    - image.style.3_2_768x512
 id: postcard
 label: Postcard
 image_style_mappings:
@@ -20,12 +19,11 @@ image_style_mappings:
     image_mapping:
       sizes: '(min-width:1024px) 652px, 100vw'
       sizes_image_styles:
-        - 2_1_1024x512
-        - 2_1_1304x652
-        - 2_1_1600x800
-        - 2_1_375x188
-        - 2_1_640x320
-        - 2_1_652x326
-        - 2_1_768x384
+        - 3_2_1024x683
+        - 3_2_1304x869
+        - 3_2_2048x1024
+        - 3_2_375x250
+        - 3_2_652x435
+        - 3_2_768x512
 breakpoint_group: responsive_image
-fallback_image_style: 2_1_375x188
+fallback_image_style: 3_2_375x250
