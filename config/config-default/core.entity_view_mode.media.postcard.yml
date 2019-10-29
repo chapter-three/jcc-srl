@@ -1,0 +1,10 @@
+uuid: 635f5ed0-b2f0-46a4-96c5-a0cdfbdd8371
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.postcard
+label: Postcard
+targetEntityType: media
+cache: true
