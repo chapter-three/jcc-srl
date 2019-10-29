@@ -6,7 +6,6 @@ dependencies:
     - core.entity_form_mode.paragraph.extras
     - field.field.paragraph.step_container.field_create_anchor
     - field.field.paragraph.step_container.field_description
-    - field.field.paragraph.step_container.field_step_display
     - field.field.paragraph.step_container.field_steps
     - field.field.paragraph.step_container.field_title_display
     - paragraphs.paragraphs_type.step_container
@@ -35,12 +34,6 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_step_display:
-    type: options_select
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_steps:
     type: entity_reference_paragraphs
     weight: 5

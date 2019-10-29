@@ -1,49 +1,38 @@
-uuid: 902cff05-3acb-42f0-85e9-b49878e3fe5b
+uuid: ddd1e208-d5c7-497a-a2b7-a958a6d2fc2d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.step_container.field_brow
-    - field.field.paragraph.step_container.field_create_anchor
-    - field.field.paragraph.step_container.field_description
-    - field.field.paragraph.step_container.field_steps
-    - field.field.paragraph.step_container.field_title_display
-    - paragraphs.paragraphs_type.step_container
+    - field.field.paragraph.timeline.field_brow
+    - field.field.paragraph.timeline.field_description
+    - field.field.paragraph.timeline.field_timeline_items
+    - field.field.paragraph.timeline.field_title_display
+    - paragraphs.paragraphs_type.timeline
   module:
     - entity_reference_revisions
     - text
-id: paragraph.step_container.default
+id: paragraph.timeline.default
 targetEntityType: paragraph
-bundle: step_container
+bundle: timeline
 mode: default
 content:
   field_brow:
-    weight: 6
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_create_anchor:
-    weight: 3
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_description:
-    weight: 4
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_steps:
+  field_timeline_items:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 3
     label: hidden
     settings:
       view_mode: default

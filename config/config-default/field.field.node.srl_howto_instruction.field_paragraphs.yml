@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.flex
     - paragraphs.paragraphs_type.srl_date_calculator
     - paragraphs.paragraphs_type.step_container
+    - paragraphs.paragraphs_type.timeline
   module:
     - entity_reference_revisions
 id: node.srl_howto_instruction.field_paragraphs
@@ -27,6 +28,7 @@ settings:
     target_bundles:
       flex: flex
       step_container: step_container
+      timeline: timeline
       srl_date_calculator: srl_date_calculator
     target_bundles_drag_drop:
       judgement_body_tab:
@@ -38,31 +40,34 @@ settings:
       step_container:
         enabled: true
         weight: -23
-      srl_date_calculator:
+      timeline:
         enabled: true
         weight: -22
-      accordion:
+      srl_date_calculator:
+        enabled: true
         weight: -21
-        enabled: false
-      accordion_container:
+      accordion:
         weight: -20
         enabled: false
-      card:
+      accordion_container:
         weight: -19
         enabled: false
-      code_section:
+      card:
         weight: -18
         enabled: false
-      calculation_date:
+      code_section:
         weight: -17
         enabled: false
-      postcard:
+      calculation_date:
         weight: -16
         enabled: false
-      step:
+      postcard:
         weight: -15
         enabled: false
-      tabs:
+      step:
         weight: -14
+        enabled: false
+      timeline_item:
+        weight: 26
         enabled: false
 field_type: entity_reference_revisions
