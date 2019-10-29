@@ -495,7 +495,7 @@ class ConditionalDisplay {
       'require_input' => [
         '#type' => 'checkbox',
         '#title' => t('Require user input'),
-        '#description' => t('Hide this field when there is no user input.'),
+        '#description' => t('Hide when there is no user input.'),
         '#default_value' => $this->getSetting('require_input'),
         '#weight' => 1,
       ],
