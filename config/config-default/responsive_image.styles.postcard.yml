@@ -1,0 +1,31 @@
+uuid: d74058d5-97f7-48d2-9fc2-7e869ed12ef7
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.2_1_1024x512
+    - image.style.2_1_1336x668
+    - image.style.2_1_1600x800
+    - image.style.2_1_375x188
+    - image.style.2_1_640x320
+    - image.style.2_1_668x334
+    - image.style.2_1_768x384
+id: postcard
+label: Postcard
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1024px) 668px, 100vw'
+      sizes_image_styles:
+        - 2_1_1024x512
+        - 2_1_1336x668
+        - 2_1_1600x800
+        - 2_1_375x188
+        - 2_1_640x320
+        - 2_1_668x334
+        - 2_1_768x384
+breakpoint_group: responsive_image
+fallback_image_style: 2_1_375x188
