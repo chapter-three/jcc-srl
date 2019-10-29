@@ -116,7 +116,7 @@ class UserInputForm extends FormBase {
     $form['submit'] = [
       '#name' => 'submit',
       '#type' => 'submit',
-      '#value' => $this->t('Apply'),
+      '#value' => $this->t('Submit'),
       '#weight' => 999,
     ];
 
