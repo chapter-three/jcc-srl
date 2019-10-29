@@ -164,6 +164,9 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
       ->setDisplayOptions('form', [
         'type' => 'string_textarea',
         'weight' => -1,
+        'settings' => [
+          'rows' => 2,
+        ],
       ]);
 
     return $fields;
