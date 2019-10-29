@@ -15,30 +15,31 @@
       lead: content.field_description,
     } %}
 
-    {% set step_content = [] %}
-    {% set steps = paragraph.field_timeline_items %}
+    {% set item_content = [] %}
+    {% set items = paragraph.field_timeline_items %}
 
-    {% for key, item in steps.value %}
+
+    {% for key, item in items.value %}
       {% set read_more = [] %}
-      {# ⇣ This check is important because Timeline item fields are NOT required. Empty
-      Timeline items are possible, and would return the wrong data. #}
-      {% if steps.get(key).entity.field_title_display.value %}
-        {% set step = steps.get(key).entity %}
+      {# ⇣ This check is important because Timeline item fields are NOT required.
+      Empty Timeline items are possible, and would return the wrong data. #}
+      {% if items.get(key).entity.field_title_display.value %}
+        {% set timeline_item = items.get(key).entity %}
 
         {# Prepare "Read more" toggle #}
-        {% if step.field_details.value %}
+        {% if timeline_item.field_details.value %}
 
           {% set read_more = {
-            id: 'read-more-' ~ step.id(),
-            title: step.field_details_link_text.value|default('Read more'|t),
-            content: step.field_details|view,
+            id: 'read-more-' ~ item.id(),
+            title: timeline_item.field_details_link_text.value|default('Read more'|t),
+            content: timeline_item.field_details|view,
           } %}
         {% endif %}
 
-        {# Store each step in an array for the Pattern component. #}
-        {% set step_content = step_content|merge([{
-          title: step.field_title_display|view,
-          excerpt: step.field_description|view,
+        {# Store each item in an array for the Pattern component. #}
+        {% set item_content = item_content|merge([{
+          title: timeline_item.field_title_display|view,
+          excerpt: timeline_item.field_description|view,
           read_more: read_more
         }]) %}
       {% endif %}
@@ -46,7 +47,7 @@
 
     {% include '@organisms/sections/timeline/timeline.twig' with {
       headergroup: headergroup,
-      timeline: step_content,
+      timeline: item_content,
       background_variant: 'has-background-color--dark'
     } only %}
 
