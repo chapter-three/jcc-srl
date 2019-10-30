@@ -1,0 +1,17 @@
+uuid: dd665390-c58a-4291-91ce-491a8429a6f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 2_1_768x384
+label: '2:1 Ratio - 768 x 384'
+effects:
+  25e62bbf-6ea9-4f62-8411-7b99e0eee7e2:
+    uuid: 25e62bbf-6ea9-4f62-8411-7b99e0eee7e2
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 384
+      crop_type: focal_point

@@ -1,0 +1,29 @@
+uuid: 469e7537-217d-463f-8a86-1b14f4fe1b96
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.2_1_1024x512
+    - image.style.2_1_1600x800
+    - image.style.2_1_2048x1024
+    - image.style.2_1_375x188
+    - image.style.2_1_640x320
+    - image.style.2_1_768x384
+id: postcard_background
+label: 'Postcard Background'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 2_1_1024x512
+        - 2_1_1600x800
+        - 2_1_2048x1024
+        - 2_1_375x188
+        - 2_1_640x320
+        - 2_1_768x384
+breakpoint_group: responsive_image
+fallback_image_style: 2_1_375x188
