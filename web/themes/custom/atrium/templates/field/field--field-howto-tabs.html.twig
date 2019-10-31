@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Template for "HowTo Tabs" field.
+ */
+#}
+<ul role="tablist">
+  {%- for item in items -%}
+    <li role="presentation">
+      {{ item.content }}
+    </li>
+  {%- endfor -%}
+</ul>
