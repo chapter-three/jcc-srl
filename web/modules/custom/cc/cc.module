@@ -242,23 +242,23 @@ function cc_entity_view_alter(
     }
   }
 
-  foreach ($hide as $field_name => $deltas) {
+  foreach ($hide as $field_name => $deltas_to_remove) {
     // In reverse order in order to use field item list remove method, which
     // resets item indexes.
-    while (count($deltas)) {
-      $delta = array_pop($deltas);
+    while (count($deltas_to_remove)) {
+      $delta = array_pop($deltas_to_remove);
       switch ($build[$field_name]['#field_type']) {
 
         case 'entity_reference_revisions':
           /** @var \Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList $items */
           $items = $build[$field_name]['#items'];
-          $items->removeItem($delta);
-          unset($build[$field_name][$delta]);
-          $i = 1;
-          while (isset($build[$field_name][$delta + $i])) {
-            $build[$field_name][$delta + $i - 1] = $build[$field_name][$delta + $i];
-            unset($build[$field_name][$delta + $i]);
+          // Move build items up to replace removed.
+          for ($i = $delta; $i < $items->count() - 1; $i++) {
+            $build[$field_name][$i] = $build[$field_name][$i + 1];
           }
+          unset($build[$field_name][$items->count() - 1]);
+          // Remove from field list.
+          $items->removeItem($delta);
           break;
 
         default:
