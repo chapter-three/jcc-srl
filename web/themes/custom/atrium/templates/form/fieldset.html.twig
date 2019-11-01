@@ -26,6 +26,7 @@
     'form-item',
     'js-form-wrapper',
     'form-wrapper',
+    'usa-fieldset',
   ]
 %}
 <fieldset{{ attributes.addClass(classes) }}>
@@ -37,12 +38,12 @@
     ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  <legend{{ legend.attributes }}>
+  <legend{{ legend.attribute.addClass('usa-legend') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
   </legend>
   <div class="fieldset-wrapper">
     {% if errors %}
-      <div class="form-item--error-message">
+      <div class="form-item--error-message usa-error-message">
         <strong>{{ errors }}</strong>
       </div>
     {% endif %}
@@ -54,7 +55,7 @@
       <span class="field-suffix">{{ suffix }}</span>
     {% endif %}
     {% if description.content %}
-      <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>
+      <div{{ description.attributes.addClass('description', 'usa-hint') }}>{{ description.content }}</div>
     {% endif %}
   </div>
 </fieldset>

@@ -8,10 +8,28 @@
  * - options: The <option> element children.
  *
  * @see template_preprocess_select()
+ *
+ * Important note: Multiple <select> not really supported, and there are MANY
+ * libraries affecting <select> elements in Atrium:
+ *
+ * 1. EasyDropDown (JS): From Courtyard, and DOES NOT SUPPORT multiple <select>.
+ *    This is applied in a "dropdown" component to single select elements.
+ * 2. Chosen (JS): Installed on the Drupal side. Chosen Drupal settings use a
+ *    body class (.atrium) to prevent single selects from being processed.
+ * 3. USWDS (CSS): Oddly, this library does not support multiple <select>'s
+ *    either. Applying `usa-select` to a multiple select results in a barely
+ *    usable appearance.
+ * 4. Courtyard (CSS & JS): Courtyard applies EasyDropdown and also adds some
+ *    classes on top.
  */
 #}
+{% set classes = [
+  not element['#multiple'] ? 'usa-select',
+  not element['#multiple'] ? 'jcc-dropdown',
+] %}
+
 {% spaceless %}
-  <select{{ attributes }}>
+  <select{{ attributes.addClass(classes) }}>
     {% for option in options %}
       {% if option.type == 'optgroup' %}
         <optgroup label="{{ option.label }}">
