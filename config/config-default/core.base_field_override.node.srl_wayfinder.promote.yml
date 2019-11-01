@@ -1,0 +1,22 @@
+uuid: 4b4e2c9f-d76b-4924-be95-72e91caab33b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_wayfinder
+id: node.srl_wayfinder.promote
+field_name: promote
+entity_type: node
+bundle: srl_wayfinder
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
