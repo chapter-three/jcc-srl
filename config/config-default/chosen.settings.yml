@@ -1,5 +1,5 @@
 minimum_single: 4
-minimum_multiple: 4
+minimum_multiple: 0
 disable_search_threshold: 0
 minimum_width: 0
 use_relative_width: false
@@ -14,6 +14,8 @@ disabled_themes:
   bartik: '0'
   seven: '0'
   adminimal_theme: '0'
+  atrium: '0'
 chosen_include: 0
 _core:
   default_config_hash: b4fBdLwGlKs_2ifIOxyh8wBTZZQ7W6dVJ1wUA6xuQQ8
+max_shown_results: null
