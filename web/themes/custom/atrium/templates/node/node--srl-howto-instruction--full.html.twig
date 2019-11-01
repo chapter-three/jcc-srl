@@ -21,16 +21,34 @@
     <div class="jcc-header-group__title">
       {{ content.field_howto_tabs_title }}
     </div>
-    {{ content.field_howto_tabs }}
   </div>
 
+  {# Create the right column. #}
+  {% set right_column %}
+
+    {# @todo Use courtyard molecules-read-more. #}
+    {{ content.field_blocks }}
+
+    {# @todo Use courtyard molecules-filelist.#}
+    {{ content.field_forms }}
+  {% endset %}
+
+  {% include '@organisms/sections/text-section/text-section.twig' with {
+    column_content_left: content.body,
+    column_content_right: right_column,
+    column_variant: 'has-two-columns-threequarter'
+  } only %}
+
   {{ content|without(
-    'field_forms',
-    'field_howto_tabs',
-    'field_howto_tabs_title',
-    'field_title_display',
+    'body',
+    'field_blocks',
     'field_column_first',
     'field_column_second',
-    'field_parent'
+    'field_forms',
+    'field_howto_body',
+    'field_howto_tabs',
+    'field_howto_tabs_title',
+    'field_parent',
+    'field_title_display'
   )}}
 {% endblock %}
