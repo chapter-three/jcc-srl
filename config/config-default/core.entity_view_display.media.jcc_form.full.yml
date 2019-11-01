@@ -1,8 +1,9 @@
-uuid: a8f77231-f8e0-4a57-b2f5-c85f58018e4c
+uuid: 5dfd7fab-b2cb-4c1c-883c-71dd33923001
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.full
     - field.field.media.jcc_form.field_case_type
     - field.field.media.jcc_form.field_code
     - field.field.media.jcc_form.field_date_effective
@@ -12,10 +13,12 @@ dependencies:
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_url
     - media.type.jcc_form
-id: media.jcc_form.default
+  module:
+    - link
+id: media.jcc_form.full
 targetEntityType: media
 bundle: jcc_form
-mode: default
+mode: full
 content:
   field_number:
     weight: 1
@@ -24,6 +27,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_url:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
     region: content
   name:
     type: string
@@ -41,6 +56,5 @@ hidden:
   field_description: true
   field_media_file_1: true
   field_pdf_private: true
-  field_url: true
   thumbnail: true
   uid: true
