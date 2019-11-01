@@ -42,7 +42,7 @@ content:
     type: text_textarea
     region: content
   field_background:
-    weight: 1
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -64,14 +64,14 @@ content:
     type: text_textarea
     region: content
   field_create_anchor:
-    weight: 0
+    weight: 3
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_header:
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -113,7 +113,7 @@ content:
     type: string_textarea
     region: content
   field_title_display:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''

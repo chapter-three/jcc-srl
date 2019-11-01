@@ -19,7 +19,7 @@ settings:
       label: 'Background Color'
     -
       value: default
-      label: Default
+      label: 'Default (None)'
   allowed_values_function: ''
 module: options
 locked: false
