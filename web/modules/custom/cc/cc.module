@@ -64,7 +64,7 @@ function cc_field_widget_third_party_settings_form(
         '#type' => 'checkbox',
         '#title' => t('Enable conditional display'),
         '#default_value' => $default_value,
-      ]
+      ],
     ];
   };
   switch ($field_definition->getType()) {
