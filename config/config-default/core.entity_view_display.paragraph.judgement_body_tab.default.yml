@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.judgement_body_tab.field_body
     - field.field.paragraph.judgement_body_tab.field_display_block
-    - field.field.paragraph.judgement_body_tab.field_display_forms
     - paragraphs.paragraphs_type.judgement_body_tab
   module:
     - text
@@ -23,16 +22,6 @@ content:
     region: content
   field_display_block:
     weight: 1
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_display_forms:
-    weight: 2
     label: hidden
     settings:
       format: default

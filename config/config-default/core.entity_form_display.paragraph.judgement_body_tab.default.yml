@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.judgement_body_tab.field_body
     - field.field.paragraph.judgement_body_tab.field_display_block
-    - field.field.paragraph.judgement_body_tab.field_display_forms
     - paragraphs.paragraphs_type.judgement_body_tab
   module:
     - allowed_formats
@@ -17,7 +16,7 @@ bundle: judgement_body_tab
 mode: default
 content:
   field_body:
-    weight: 2
+    weight: 0
     settings:
       rows: 5
       placeholder: ''
@@ -33,13 +32,6 @@ content:
     type: text_textarea
     region: content
   field_display_block:
-    weight: 0
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_display_forms:
     weight: 1
     settings:
       display_label: true

@@ -1,0 +1,28 @@
+uuid: 14a06a71-579d-4874-9293-5f392e43fe3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.node.field_blocks
+    - node.type.srl_howto_instruction
+id: node.srl_howto_instruction.field_blocks
+field_name: field_blocks
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Sidebar Blocks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      basic: basic
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

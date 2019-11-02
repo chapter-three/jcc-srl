@@ -9,8 +9,8 @@ id: paragraph.judgement_body_tab.field_display_block
 field_name: field_display_block
 entity_type: paragraph
 bundle: judgement_body_tab
-label: 'Display Judgement Block?'
-description: ''
+label: 'Display "What is Judgement" block?'
+description: 'The "What is a Judgement?" block will appear in the sidebar when this option is checked. <a href="/block/1">Edit block here.</a>'
 required: false
 translatable: false
 default_value:

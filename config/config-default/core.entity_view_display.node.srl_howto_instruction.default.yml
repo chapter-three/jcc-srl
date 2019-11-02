@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.srl_howto_instruction.body
+    - field.field.node.srl_howto_instruction.field_blocks
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
@@ -23,6 +25,22 @@ targetEntityType: node
 bundle: srl_howto_instruction
 mode: default
 content:
+  body:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_blocks:
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_column_first:
     weight: 3
     label: hidden
@@ -40,9 +58,9 @@ content:
   field_forms:
     type: entity_reference_entity_view
     weight: 5
-    label: hidden
+    label: above
     settings:
-      view_mode: default
+      view_mode: full
       link: false
     third_party_settings: {  }
     region: content

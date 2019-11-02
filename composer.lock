@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57ea05eff1427905292ac8524088a632",
+    "content-hash": "c59141d445bddae5340ea4ef1b1e8c27",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4498,7 +4498,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Support entity revision references": "https://www.drupal.org/files/issues/2019-09-23/inline_entity_form-2367235-126.patch"
+                    "Support entity revision references": "https://www.drupal.org/files/issues/2019-10-07/inline_entity_form-2367235-131.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6765,9 +6765,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "5c64e3b"
+                "reference": "59bb21f"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2019-10-31T22:45:13+00:00"
         },
         {
             "name": "fastglass/sendgrid",
