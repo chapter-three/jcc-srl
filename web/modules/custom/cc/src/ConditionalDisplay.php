@@ -58,7 +58,7 @@ class ConditionalDisplay {
   /**
    * Get the host entity.
    *
-   * @return \Drupal\Core\Entity\ContentEntityBase
+   * @return \Drupal\Core\Entity\ContentEntityInterface
    *   The host entity.
    */
   public function getHostEntity() {
@@ -677,7 +677,6 @@ class ConditionalDisplay {
     while ($widget_element = NestedArray::getValue($form, array_slice($button['#array_parents'], 0, $i))) {
       if ($widget_element['cc']) {
         $element = $widget_element['cc'];
-        /** @var ConditionalDisplay $cc */
         $cc = self::processElement($element, $form, $form_state);
         // @todo handle nested.
         $value = $form_state
@@ -722,7 +721,6 @@ class ConditionalDisplay {
     while ($widget_element = NestedArray::getValue($form, array_slice($button['#array_parents'], 0, $i))) {
       if ($widget_element['cc']) {
         $element = $widget_element['cc'];
-        /** @var ConditionalDisplay $cc */
         $cc = self::processElement($element, $form, $form_state);
         $parents = array_slice(
           $button['#parents'],
