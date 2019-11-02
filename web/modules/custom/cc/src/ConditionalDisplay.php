@@ -7,7 +7,10 @@ use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\RevisionableInterface;
+use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\Language;
 use Exception;
 
 /**
@@ -201,6 +204,38 @@ class ConditionalDisplay {
   }
 
   /**
+   * Gets revision id of an entity.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $host_entity
+   *   An entity.
+   *
+   * @return int
+   *   An id.
+   */
+  public static function getHostEntityRevisionId(EntityInterface $host_entity) {
+    if ($host_entity instanceof RevisionableInterface) {
+      return $host_entity->getRevisionId();
+    }
+    return $host_entity->id();
+  }
+
+  /**
+   * Gets language code of an entity.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $host_entity
+   *   An entity.
+   *
+   * @return string
+   *   An id.
+   */
+  public static function getHostEntityLanguageId(EntityInterface $host_entity) {
+    if ($host_entity instanceof TranslatableInterface) {
+      return $host_entity->language()->getId();
+    }
+    return Language::LANGCODE_DEFAULT;
+  }
+
+  /**
    * Gets all conditional displays for a host entity.
    *
    * @param \Drupal\Core\Entity\EntityInterface $host_entity
@@ -218,8 +253,8 @@ class ConditionalDisplay {
       ->fields('fc', ['field', 'delta']);
     $query->condition('fc.entity_type', $host_entity->getEntityTypeId());
     $query->condition('fc.entity_id', $host_entity->id());
-    $query->condition('fc.revision_id', $host_entity->getRevisionId());
-    $query->condition('fc.langcode', $host_entity->language()->getId());
+    $query->condition('fc.revision_id', self::getHostEntityRevisionId($host_entity));
+    $query->condition('fc.langcode', self::getHostEntityLanguageId($host_entity));
     $query->orderBy('fc.field');
     $query->orderBy('fc.delta');
     $ccs = [];
@@ -299,8 +334,8 @@ class ConditionalDisplay {
         ->fields('fc', ['settings', 'conditions']);
       $query->condition('fc.entity_type', $this->hostEntity->getEntityTypeId());
       $query->condition('fc.entity_id', $this->hostEntity->id());
-      $query->condition('fc.revision_id', $this->hostEntity->getRevisionId());
-      $query->condition('fc.langcode', $this->hostEntity->language()->getId());
+      $query->condition('fc.revision_id', self::getHostEntityRevisionId($this->hostEntity));
+      $query->condition('fc.langcode', self::getHostEntityLanguageId($this->hostEntity));
       $query->condition('fc.field', $this->fieldName);
       $query->condition('fc.delta', $this->fieldDelta);
       $result = $query->execute();
@@ -331,8 +366,8 @@ class ConditionalDisplay {
       ->keys([
         'entity_type' => $this->hostEntity->getEntityTypeId(),
         'entity_id' => $this->hostEntity->id(),
-        'revision_id' => $this->hostEntity->getRevisionId(),
-        'langcode' => $this->hostEntity->language()->getId(),
+        'revision_id' => self::getHostEntityRevisionId($this->hostEntity),
+        'langcode' => self::getHostEntityLanguageId($this->hostEntity),
         'field' => $this->fieldName,
         'delta' => $this->fieldDelta,
       ])
@@ -356,8 +391,8 @@ class ConditionalDisplay {
       ->delete('cc_field_conditions');
     $query->condition('entity_type', $this->hostEntity->getEntityTypeId());
     $query->condition('entity_id', $this->hostEntity->id());
-    $query->condition('revision_id', $this->hostEntity->getRevisionId());
-    $query->condition('langcode', $this->hostEntity->language()->getId());
+    $query->condition('revision_id', self::getHostEntityRevisionId($this->hostEntity));
+    $query->condition('langcode', self::getHostEntityLanguageId($this->hostEntity));
     $query->condition('field', $this->fieldName);
     $query->condition('delta', $this->fieldDelta);
     $query->execute();
@@ -731,8 +766,6 @@ class ConditionalDisplay {
    *   The Form API form array.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The Form API form state object.
-   * @param bool $save
-   *   Write the ConditionalDisplay object to the database.
    *
    * @return \Drupal\cc\ConditionalDisplay
    *   The updated ConditionalDisplay object.
@@ -742,8 +775,7 @@ class ConditionalDisplay {
   public static function processElement(
     array &$element,
     array &$form,
-    FormStateInterface $form_state,
-    $save = FALSE
+    FormStateInterface $form_state
   ) {
     $field_name = $element['#array_parents'][count($element['#array_parents']) - 4];
     $delta = $element['#array_parents'][count($element['#array_parents']) - 2];
@@ -774,12 +806,6 @@ class ConditionalDisplay {
     };
 
     $cc->setConditions($process_conditions($element, $parents));
-
-    if ($save) {
-      /** @var \Drupal\Core\Entity\ContentEntityInterface $host_entity */
-      $host_entity = $form_state->getFormObject()->getEntity();
-      $cc->setHostEntity($host_entity)->save();
-    }
 
     return $cc;
   }

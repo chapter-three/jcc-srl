@@ -6,6 +6,7 @@
  */
 
 use Drupal\cc\ConditionalDisplay;
+use Drupal\Core\Entity\ContentEntityFormInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
@@ -153,7 +154,7 @@ function cc_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   };
   if ($find_cc($form)) {
     if (isset($form['actions']['submit']['#submit'])) {
-      $form['actions']['submit']['#submit'][] = 'cc_form_submit';
+      array_unshift($form['actions']['submit']['#submit'], 'cc_form_submit');
     }
     else {
       throw new Exception('Unexpected form structure.');
@@ -164,21 +165,37 @@ function cc_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 /**
  * Submit handler for forms with conditional display elements.
  *
+ * @throws \Exception
  * @see cc_form_alter()
  */
 function cc_form_submit(array &$form, FormStateInterface $form_state) {
-  // Finds elements with conditional display.
-  $process_elements = function (&$element) use (&$process_elements, &$form, $form_state) {
-    foreach (Element::children($element) as $field_name) {
-      $child = &$element[$field_name];
-      if (@$child['cc']) {
-        ConditionalDisplay::processElement($child['cc'], $form, $form_state, TRUE);
+  if (!$form_state->getFormObject() instanceOf ContentEntityFormInterface ||
+    !($host_entity = $form_state->getformObject()->getEntity())
+  ) {
+    return;
+  }
+
+  $process_elements = function (&$elements, $host_entity) use (&$process_elements, &$form, $form_state) {
+    foreach (Element::children($elements) as $field_name) {
+      $element = &$elements[$field_name];
+      if (ConditionalDisplay::isConditionalDisplayWidgetElement($element)) {
+        $cc = ConditionalDisplay::processElement($element['cc'], $form, $form_state);
+        if ($cc->getHostEntity()->getEntityTypeId() == $host_entity->getEntityTypeId() ||
+         $cc->getHostEntity()->id() == $host_entity->id()
+        ) {
+          /** @noinspection PhpUndefinedFieldInspection */
+          $host_entity->cc[$cc->getFieldName()][$cc->getFieldDelta()] = $cc;
+        }
+        else {
+          // @todo handle nested entities, need to set $host_entity to the
+          // the updated host entity.
+          throw new Exception('Nested conditions not yet implemented.');
+        }
       }
-      $process_elements($child);
+      $process_elements($element, $host_entity);
     }
   };
-
-  $process_elements($form);
+  $process_elements($form, $host_entity);
 }
 
 /**
@@ -289,17 +306,52 @@ function cc_user_input_form_state(FormStateInterface $form_state = NULL) {
 }
 
 /**
+ * Implements hook_entity_storage_load().
+ *
+ * @throws \Exception
+ */
+function cc_entity_storage_load(array $entities, $entity_type) {
+  foreach ($entities as $entity) {
+    foreach (ConditionalDisplay::getEntityConditionalDisplays($entity) as $cc) {
+      $entity->cc[$cc->getFieldName()][$cc->getFieldDelta()] = $cc;
+    }
+  }
+}
+
+/**
  * Implements hook_entity_update().
+ *
+ * @throws \Exception
  */
 function cc_entity_update(EntityInterface $entity) {
-  // @todo detect parameter changes and save
+  if (isset($entity->cc)) {
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    ConditionalDisplay::deleteEntityConditionalDisplays(
+      $entity, $entity->getRevisionId(), $entity->language()->getId());
+    foreach ($entity->cc as $ccs) {
+      /** @var ConditionalDisplay $cc */
+      foreach ($ccs as $cc) {
+        $cc->setHostEntity($entity)->save();
+      }
+    }
+  }
 }
 
 /**
  * Implements hook_entity_insert().
+ *
+ * @throws \Exception
  */
 function cc_entity_insert(EntityInterface $entity) {
-  // @todo detect parameter changes and save
+  if (isset($entity->cc)) {
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    foreach ($entity->cc as $ccs) {
+      /** @var ConditionalDisplay $cc */
+      foreach ($ccs as $cc) {
+        $cc->setHostEntity($entity)->save();
+      }
+    }
+  }
 }
 
 /**
