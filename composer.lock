@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "555eb107461bf12113e1db33e9dc4d8b",
+    "content-hash": "5a374c134798efcd6908da638695a522",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4543,6 +4543,9 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Support entity revision references": "https://www.drupal.org/files/issues/2019-10-07/inline_entity_form-2367235-131.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

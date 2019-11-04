@@ -19,3 +19,4 @@ permissions:
   - 'use text format basic_html'
   - 'use text format simple_html'
   - 'view media'
+  - 'view published user input entities'
