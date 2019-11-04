@@ -20,6 +20,7 @@
 
         {% include '@molecules/navigation/jump-nav/jump-nav.twig' with {
           title: drupal_field('field_hero_nav_title', 'node', arguments.parent_id),
+          tag: 'h2',
           jump_nav: nav,
         } %}
       {% endif %}
