@@ -5,11 +5,12 @@ dependencies:
   config:
     - entity_browser.browser.meb
     - field.field.paragraph.postcard.field_additional
+    - field.field.paragraph.postcard.field_background
     - field.field.paragraph.postcard.field_body
     - field.field.paragraph.postcard.field_create_anchor
+    - field.field.paragraph.postcard.field_header
     - field.field.paragraph.postcard.field_link
     - field.field.paragraph.postcard.field_media
-    - field.field.paragraph.postcard.field_postcard_display
     - field.field.paragraph.postcard.field_text_overlay
     - field.field.paragraph.postcard.field_title_display
     - paragraphs.paragraphs_type.postcard
@@ -40,6 +41,12 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
+  field_background:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_body:
     weight: 4
     settings:
@@ -57,11 +64,17 @@ content:
     type: text_textarea
     region: content
   field_create_anchor:
-    weight: 2
+    weight: 3
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_header:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_link:
     weight: 5
@@ -86,12 +99,6 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_postcard_display:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_text_overlay:
     weight: 7
     settings:
@@ -106,7 +113,7 @@ content:
     type: string_textarea
     region: content
   field_title_display:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''

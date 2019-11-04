@@ -1,0 +1,20 @@
+uuid: 3e54328f-bfa5-4b19-99de-2d0ba0fafbb6
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.handbook
+  module:
+    - user
+id: node.handbook.teaser
+targetEntityType: node
+bundle: handbook
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 681bcbcf-0b0a-4cd2-9478-01a0ec1f9592
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - options
+id: paragraph.postcard.field_background
+field_name: field_background
+entity_type: paragraph
+bundle: postcard
+label: Background
+description: 'Set background appearance.'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string
