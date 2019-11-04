@@ -18,6 +18,7 @@ use Exception;
  *   id = "cc_user_input_revisions",
  *   label = @Translation("User Input"),
  *   field_types = {
+ *     "entity_reference",
  *     "entity_reference_revisions",
  *   }
  * )
