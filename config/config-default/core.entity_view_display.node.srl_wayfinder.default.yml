@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.srl_wayfinder.field_options
     - field.field.node.srl_wayfinder.field_paragraphs
     - node.type.srl_wayfinder
   module:
+    - cc
     - entity_reference_revisions
     - user
 id: node.srl_wayfinder.default
@@ -13,8 +15,17 @@ targetEntityType: node
 bundle: srl_wayfinder
 mode: default
 content:
+  field_options:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: cc_user_input_revisions
+    region: content
   field_paragraphs:
-    weight: 101
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -23,7 +34,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
