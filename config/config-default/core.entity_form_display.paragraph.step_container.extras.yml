@@ -62,4 +62,5 @@ content:
     region: content
 hidden:
   created: true
+  field_brow: true
   status: true

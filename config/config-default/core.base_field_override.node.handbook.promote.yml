@@ -1,0 +1,22 @@
+uuid: 4a472e44-9ea9-45f6-b276-901d339ae2a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.handbook
+id: node.handbook.promote
+field_name: promote
+entity_type: node
+bundle: handbook
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

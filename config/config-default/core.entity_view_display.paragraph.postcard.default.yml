@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.postcard.field_additional
+    - field.field.paragraph.postcard.field_background
     - field.field.paragraph.postcard.field_body
     - field.field.paragraph.postcard.field_create_anchor
+    - field.field.paragraph.postcard.field_header
     - field.field.paragraph.postcard.field_link
     - field.field.paragraph.postcard.field_media
-    - field.field.paragraph.postcard.field_postcard_display
     - field.field.paragraph.postcard.field_text_overlay
     - field.field.paragraph.postcard.field_title_display
     - paragraphs.paragraphs_type.postcard
@@ -28,6 +29,13 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_background:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
   field_body:
     weight: 5
     label: hidden
@@ -44,6 +52,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_header:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
     region: content
   field_link:
     weight: 6
@@ -65,13 +80,6 @@ content:
       view_mode: postcard
       link: false
     third_party_settings: {  }
-    region: content
-  field_postcard_display:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_key
     region: content
   field_text_overlay:
     weight: 7

@@ -10,16 +10,11 @@
 
   {# Set defaults for Postcard component. #}
   {% set header_align_variant = 'has-header-left' %}
-  {% set tag = 'h2' %}
+  {% set background_variant = paragraph.field_background.value %}
+  {% set tag = paragraph.field_header.value %}
   {% set image = content.field_media %}
 
-  {% if paragraph.field_postcard_display.value == 'child' %}
-    {% set header_align_variant = 'has-header-right' %}
-    {% set tag = 'h3' %}
-
-  {% elseif paragraph.field_postcard_display.value == 'background_image' %}
-    {% set header_align_variant = 'has-background-image' %}
-    {% set tag = 'h2' %}
+  {% if paragraph.field_postcard_display.value == 'has-background-image' %}
     {% if content.field_media|render %}
       {% set image_id = paragraph.field_media.entity.id() %}
       {% set image = drupal_entity('media', image_id, 'postcard_background') %}
@@ -33,6 +28,7 @@
   {% endset %}
 
   {% include '@molecules/blocks/postcard/postcard.twig' with {
+    background_variant: background_variant,
     header_align_variant: header_align_variant,
     headergroup: {
       title: content.field_title_display,
@@ -54,11 +50,12 @@
 
   {{ content|without(
     'field_additional',
+    'field_background',
     'field_body',
     'field_create_anchor',
+    'field_header',
     'field_link',
     'field_media',
-    'field_postcard_display',
     'field_text_overlay',
     'field_title_display'
   ) }}
