@@ -19,5 +19,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   plugin_ids:
-    'block_content:1134afdd-ce2e-44b6-953f-7497a91dbc1b': 'block_content:1134afdd-ce2e-44b6-953f-7497a91dbc1b'
+    'fixed_block_content:judgement': 'fixed_block_content:judgement'
 field_type: block_field
