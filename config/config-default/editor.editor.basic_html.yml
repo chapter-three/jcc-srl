@@ -37,6 +37,10 @@ settings:
             - Blockquote
             - media_entity_embed
         -
+          name: Styles
+          items:
+            - Styles
+        -
           name: 'Block Formatting'
           items:
             - Format
@@ -50,7 +54,7 @@ settings:
             - Maximize
   plugins:
     stylescombo:
-      styles: ''
+      styles: "p.jcc-hero__lead|Hero Lead\r\np.jcc-header-group__lead|Header Lead\r\nh2.jcc-card__title|Card Title (h2)\r\nh3.jcc-card__title|Card Title (h3)"
     language:
       language_list: un
     linkit:
