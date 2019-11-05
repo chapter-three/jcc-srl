@@ -4,7 +4,22 @@
  * Template for "Relevant Forms".
  */
 #}
-<h2 class="jcc-filelist__title">{{ label }}</h2>
-{%- for item in items -%}
-  {{ item.content }}
-{%- endfor -%}
+{% set files = [] %}
+{% for key, item in items %}
+  {% set media =  item.content["#media"] %}
+  {% set files = files|merge([{
+    url: media.field_url.uri,
+    name: "#{media.name.value} (form #{media.field_number.value})",
+  }]) %}
+{% endfor %}
+
+{% include '@molecules/blocks/filelist/filelist.twig' with {
+  title: label,
+  files: files,
+  icon: {
+    icon_file: "../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg",
+    icon: "book",
+    title: "Book",
+    decorative: false,
+  }
+} %}
