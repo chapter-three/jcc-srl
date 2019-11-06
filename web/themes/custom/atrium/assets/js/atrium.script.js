@@ -90,14 +90,61 @@
 /*!*********************************!*\
   !*** ./src/js/atrium.script.js ***!
   \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/messages */ "./src/js/components/messages.js");
+/* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_messages__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/***/ }),
+
+/***/ "./src/js/components/messages.js":
+/*!***************************************!*\
+  !*** ./src/js/components/messages.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 (function () {
   'use strict';
 
-  Drupal.behaviors.helloWorld = {
-    attach: function attach(context) {}
+  Drupal.theme.message = function (_ref, _ref2) {
+    var text = _ref.text;
+    var type = _ref2.type,
+        id = _ref2.id;
+    var types = {
+      error: {
+        "class": 'error',
+        label: Drupal.t('Error message'),
+        role: 'alert'
+      },
+      info: {
+        "class": 'info',
+        label: Drupal.t('Informational message'),
+        role: 'status'
+      },
+      status: {
+        "class": 'success',
+        label: Drupal.t('Success message'),
+        role: 'status'
+      },
+      warning: {
+        "class": 'warning',
+        label: Drupal.t('Warning message'),
+        role: 'alert'
+      }
+    };
+    var messageWrapper = document.createElement('div');
+    messageWrapper.setAttribute('class', "usa-alert usa-alert--".concat(types[type]["class"]));
+    messageWrapper.setAttribute('role', types[type].role);
+    messageWrapper.setAttribute('aria-label', types[type].label);
+    messageWrapper.setAttribute('data-drupal-message-id', id);
+    messageWrapper.setAttribute('data-drupal-message-type', type);
+    messageWrapper.innerHTML = "\n      <div class=\"usa-alert__body\">\n        <p class=\"usa-alert__text\">\n          ".concat(text, "\n        </p>\n      </div>");
+    return messageWrapper;
   };
 })(jQuery, Drupal);
 
@@ -121,8 +168,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
-module.exports = __webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
+__webpack_require__(/*! /Users/jacine/Sites/jcc-srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
+module.exports = __webpack_require__(/*! /Users/jacine/Sites/jcc-srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
 
 
 /***/ })

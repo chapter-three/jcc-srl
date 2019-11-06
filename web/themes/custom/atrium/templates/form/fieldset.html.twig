@@ -38,7 +38,7 @@
     ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  <legend{{ legend.attribute.addClass('usa-legend') }}>
+  <legend{{ legend.attributes.addClass('usa-legend', 'jcc-form-group__title') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
   </legend>
   <div class="fieldset-wrapper">
