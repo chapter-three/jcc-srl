@@ -98,19 +98,36 @@
 
   Drupal.behaviors.howToTabs = {
     attach: function attach(context) {
-      var body = $('.jcc-tab-section__container + .jcc-text-section');
-      var button = $('[role="tablist"] a');
-      body.hide();
-      body.attr('aria-hidden', 'true');
+      // @todo Make this generic if we end up reusing this functionality.
+      // Define body.
+      var body = $('.jcc-tab-section__container + .jcc-text-section'); // Define paths and hashes.
 
-      if (window.location.hash == '#show-body') {
-        body.show();
-        body.removeAttr('aria-hidden');
-      }
+      var path1 = '/debt-collection/bank-levy-bank-levied-my-account';
+      var path2 = '/debt-collection/bank-levy';
+      var hash = '#show-body'; // Define buttons.
 
-      button.click(function () {
+      var button1 = $('[role="tablist"] a[href="' + path1 + '"]');
+      var button2 = $('[role="tablist"] a[href="' + path2 + hash + '"]'); // Page load behavior.
+
+      if (window.location.pathname === path1) {
+        button1.attr('aria-selected', "true");
+      } else if (window.location.pathname === path2 && window.location.hash === '') {
+        body.hide();
+        body.attr('aria-hidden', 'true');
+      } else if (window.location.pathname === path2 && window.location.hash === hash) {
+        button2.attr('aria-selected', "true");
+      } // Button click behavior.
+
+
+      button2.click(function () {
+        button1.removeAttr('aria-selected');
+        button2.attr('aria-selected', "true");
         body.show();
         body.removeAttr('aria-hidden', 'true');
+      });
+      button1.click(function () {
+        button1.attr('aria-selected', "true");
+        button2.removeAttr('aria-selected');
       });
     }
   };
