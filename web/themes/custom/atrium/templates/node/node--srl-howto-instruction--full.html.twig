@@ -17,28 +17,28 @@
     background_variant: 'has-background-color--light'
   } %}
 
-  <div class="jcc-section-tabs__container">
-    <div class="jcc-header-group__title">
-      {{ content.field_howto_tabs_title }}
+  {% if node.field_howto_tabs_title.value and node.field_howto_tabs.value %}
+    <div class="jcc-tab-section__container">
+      {{ attach_library('atrium/howtotabs') }}
+      <h4 class="jcc-header-group__title">
+        {{ content.field_howto_tabs_title }}
+      </h4>
       {{ content.field_howto_tabs }}
     </div>
-  </div>
+  {% endif %}
 
-  {# Create the right column. #}
   {% set right_column %}
-
-    {# @todo Use courtyard molecules-read-more. #}
     {{ content.field_blocks }}
-
-    {# @todo Use courtyard molecules-filelist.#}
     {{ content.field_forms }}
   {% endset %}
 
-  {% include '@organisms/sections/text-section/text-section.twig' with {
-    column_content_left: content.body,
-    column_content_right: right_column,
-    column_variant: 'has-two-columns-threequarter'
-  } only %}
+  {% if node.body.value %}
+    {% include '@organisms/sections/text-section/text-section.twig' with {
+      column_content_left: content.body,
+      column_content_right: right_column,
+      column_variant: 'has-two-columns-threequarter'
+    } only %}
+  {% endif %}
 
   {{ content|without(
     'body',

@@ -18,6 +18,7 @@ dependencies:
     - node.type.srl_howto_instruction
   module:
     - allowed_formats
+    - block_field
     - entity_browser
     - field_group
     - link
@@ -105,9 +106,12 @@ content:
     third_party_settings: {  }
   field_blocks:
     weight: 11
-    settings: {  }
+    settings:
+      configuration_form: full
+      plugin_id: ''
+      settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: block_field_default
     region: content
   field_column_first:
     weight: 4
@@ -145,7 +149,7 @@ content:
     type: text_textarea
     region: content
   field_forms:
-    weight: 12
+    weight: 13
     settings:
       entity_browser: meb_forms
       field_widget_display: rendered_entity

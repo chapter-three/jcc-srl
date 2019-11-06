@@ -54,4 +54,6 @@ mix
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js("src/js/atrium.script.js", "js");
+mix
+  .js('src/js/atrium.script.js', 'js')
+  .js('src/js/howtotabs.js', 'js');

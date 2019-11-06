@@ -81,48 +81,51 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/atrium.script.js":
-/*!*********************************!*\
-  !*** ./src/js/atrium.script.js ***!
-  \*********************************/
+/***/ "./src/js/howtotabs.js":
+/*!*****************************!*\
+  !*** ./src/js/howtotabs.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-(function () {
+(function ($) {
   'use strict';
 
-  Drupal.behaviors.helloWorld = {
-    attach: function attach(context) {}
+  Drupal.behaviors.howToTabs = {
+    attach: function attach(context) {
+      var body = $('.jcc-tab-section__container + .jcc-text-section');
+      var button = $('[role="tablist"] a');
+      body.hide();
+      body.attr('aria-hidden', 'true');
+
+      if (window.location.hash == '#show-body') {
+        body.show();
+        body.removeAttr('aria-hidden');
+      }
+
+      button.click(function () {
+        body.show();
+        body.removeAttr('aria-hidden', 'true');
+      });
+    }
   };
 })(jQuery, Drupal);
 
 /***/ }),
 
-/***/ "./src/sass/atrium.style.scss":
-/*!************************************!*\
-  !*** ./src/sass/atrium.style.scss ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!********************************************************************!*\
-  !*** multi ./src/js/atrium.script.js ./src/sass/atrium.style.scss ***!
-  \********************************************************************/
+/***/ 1:
+/*!***********************************!*\
+  !*** multi ./src/js/howtotabs.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
-module.exports = __webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
+module.exports = __webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/howtotabs.js */"./src/js/howtotabs.js");
 
 
 /***/ })

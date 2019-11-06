@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_title_display
     - node.type.srl_howto_instruction
   module:
+    - block_field
     - entity_reference_revisions
     - link
     - text
@@ -33,13 +34,11 @@ content:
     type: text_default
     region: content
   field_blocks:
-    weight: 11
+    weight: 13
     label: hidden
-    settings:
-      view_mode: default
-      link: false
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    type: block_field
     region: content
   field_column_first:
     weight: 3
