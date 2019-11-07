@@ -14,7 +14,7 @@ const mix = require('laravel-mix');
  | Configuration
  |--------------------------------------------------------------------------
  */
-mix.setPublicPath("assets").disableNotifications();
+mix.setPublicPath('assets').disableNotifications();
 
 /*
  |--------------------------------------------------------------------------
@@ -49,10 +49,11 @@ mix
       enabled: true,
       options: {
         grid: true,
-        overrideBrowserslist: ["last 2 versions", ">= 1%", "ie >= 11"]
+        overrideBrowserslist: ['last 2 versions', '>= 1%', 'ie >= 11']
       }
     }
-  });
+  }
+);
 
 /*
  |--------------------------------------------------------------------------
