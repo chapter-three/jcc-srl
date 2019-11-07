@@ -35,10 +35,14 @@ mix.browserSync({
  | SASS
  |--------------------------------------------------------------------------
  */
+
+// Node Sass Options: https://github.com/sass/node-sass#options
+const nodeSassOptions = {
+  includePaths: ['node_modules', '../../../libraries']
+};
+
 mix
-  .sass("src/sass/atrium.style.scss", "css", {
-    includePaths: ["node_modules", "../../../libraries"]
-  })
+  .sass('src/sass/atrium.style.scss', 'css', nodeSassOptions)
   .options({
     processCssUrls: false,
     autoprefixer: {
