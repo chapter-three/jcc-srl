@@ -1,26 +1,32 @@
 # Atrium
 
+- [About](#about)
+- [Installation](#installation)
+- [Updating Courtyard Within Drual](#updating-courtyard-within-drupal)
+
+## About
+
 Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [Courtyard](https://github.com/Exygy/courtyard), a Pattern Lab instance.
 
 - Courtyard is installed via Composer as a [Drupal Library](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) to `web/libraries/courtyard`. See documentation for [updating](#updating-courtyard-within-drupal) as needed.
 - Source Twig templates are directly consumed by Drupal, with the help of [Components](https://www.drupal.org/project/components) module, and namespaces common to Courtyard and Atrium. See `component-libraries` in `atrium.info.yml`.
 - Courtyard's compiled assets are also directly consumed by Drupal, via a library definition in `atrium.libraries.yml`, which is loaded globally.
+- Atrium uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript.  For more information on how to work with Sass and JavaScript in this theme, see the following documentation:
+
+  - Sass: [`src/sass/README.md`](./src/sass/README.md)
+  - JavaScript: [`src/js/README.md`](./src/js/README.md)
+
 - Atrium's build includes Courtyard Sass variables, mixins, and [USWDS](https://github.com/uswds/uswds) dependencies in `src/sass/base/_base.scss`.
 
 ## Installation
 
-
-### Prerequisites
+### 1. Prerequisites
 
 Ensure that [Node* and NPM are installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before proceeding.
 
 _Note: While the Atrium build script works properly with the current Node LTS (recommended) version, currently `12.13.0`, the Pattern Lab instance requires the current version, currently `13.1.0`._
 
-1. [Install Courtyard](#courtyard-installation). This is required, as Atrium utilizes Courtyard source, and that of its dependencies.
-
-2. [Install Atrium](#atrium-installation).
-
-### 1. Courtyard Installation
+### 2. Courtyard Installation
 
 1. Navigate to the Courtyard source: `cd web/libraries/courtyard`.
 
@@ -58,9 +64,7 @@ You'll need to be **very careful** to commit and push all outstanding Courtyard 
 
 2. Reinstall Courtyard's Composer and NPM dependencies described above.
 
-### 2. Atrium Installation
-
-Atrium uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript.
+### 3. Atrium Installation
 
 1. Ensure that Courtyard has been installed (see instructions above).
 
