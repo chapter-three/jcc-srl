@@ -7,8 +7,7 @@
  | for your application. See https://github.com/JeffreyWay/laravel-mix.
  |
  */
-const proxy = process.env.MIX_PROXY ? process.env.MIX_PROXY : "https://jcc.lndo.site";
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -22,9 +21,11 @@ mix.setPublicPath("assets").disableNotifications();
  | Browsersync
  |--------------------------------------------------------------------------
  */
+
+// Note: To customize the proxy, see docs in README.md.
 mix.browserSync({
-  proxy: proxy,
-  files: ["assets/js/**/*.js", "assets/css/**/*.css"],
+  proxy: process.env.MIX_PROXY ? process.env.MIX_PROXY : 'https://jcc.lndo.site',
+  files: ['assets/js/**/*.js', 'assets/css/**/*.css'],
   stream: true,
   watch: true
 });
