@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.srl_date_calculator.field_body
     - field.field.paragraph.srl_date_calculator.field_calculation_dates
     - field.field.paragraph.srl_date_calculator.field_label
     - field.field.paragraph.srl_date_calculator.field_title_display
@@ -17,6 +18,13 @@ targetEntityType: paragraph
 bundle: srl_date_calculator
 mode: default
 content:
+  field_body:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_calculation_dates:
     type: entity_reference_revisions_entity_view
     weight: 2

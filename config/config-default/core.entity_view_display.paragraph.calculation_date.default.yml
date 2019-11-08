@@ -3,9 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.calculation_date.field_body
+    - field.field.paragraph.calculation_date.field_date_input_label
+    - field.field.paragraph.calculation_date.field_date_result_label
+    - field.field.paragraph.calculation_date.field_date_widget_title
     - field.field.paragraph.calculation_date.field_days
-    - field.field.paragraph.calculation_date.field_label
+    - field.field.paragraph.calculation_date.field_title_display
     - paragraphs.paragraphs_type.calculation_date
+  module:
+    - text
 _core:
   default_config_hash: EMr592OoWwovNVxbzyp9bQO7mJX6uwaC08S4vN1QWKE
 id: paragraph.calculation_date.default
@@ -13,6 +19,37 @@ targetEntityType: paragraph
 bundle: calculation_date
 mode: default
 content:
+  field_body:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_date_input_label:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_result_label:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_widget_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_days:
     weight: 1
     label: hidden
@@ -22,12 +59,11 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  field_label:
-    weight: 0
+  field_title_display:
+    weight: 2
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: text_default
     region: content
 hidden: {  }

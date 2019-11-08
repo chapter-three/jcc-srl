@@ -1,0 +1,21 @@
+uuid: dc5f31b3-d6f6-48cd-801a-b5c307df2fde
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_widget_title
+    - paragraphs.paragraphs_type.calculation_date
+id: paragraph.calculation_date.field_date_widget_title
+field_name: field_date_widget_title
+entity_type: paragraph
+bundle: calculation_date
+label: 'Date Widget Title'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Estimate your timing'
+default_value_callback: ''
+settings: {  }
+field_type: string
