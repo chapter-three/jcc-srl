@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for "Calcuated Date" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+
+  {{ content.field_title_display }}
+  {{ content.field_body }}
+  <div class="jcc-datefinder">
+    <h2 class="jcc-datefinder__title">{{ content.field_date_widget_title }}</h2>
+    <div class="jcc-datefinder__content">
+        <label for="filing_date" class="jcc-datefinder__label" title="{{ content.field_title_display }}">{{ content.field_title_display }}</label>
+      <div class="jcc-datefinder__adjacent-dates">
+        <p class="jcc-datefinder__label">{{ content.field_date_input_label }}</p>
+        {{ content.srl_date_calculator }}
+        <span class="jcc-datefinder__icon">
+          <svg class="icon icon-undo2" role="img" title="Undo" aria-hidden="true"><use xlink:href="#i-undo2"></use></svg>      </span>
+        <p class="jcc-datefinder__date"></p>
+      </div>
+      <div class="jcc-datefinder__adjacent-dates">
+        <p class="jcc-datefinder__label">{{ content.field_date_result_label }}</p>
+        <span class="jcc-datefinder__icon">
+          <svg class="icon icon-redo2" role="img" title="Redo" aria-hidden="true"><use xlink:href="#i-redo2"></use></svg>      </span>
+        <p class="jcc-datefinder__date">{{ content.field_days }}</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
