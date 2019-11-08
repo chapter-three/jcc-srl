@@ -1,19 +1,32 @@
 # Atrium
 
+- [About](#about)
+- [Installation](#installation)
+- [Updating Courtyard Within Drual](#updating-courtyard-within-drupal)
+
+## About
+
 Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [Courtyard](https://github.com/Exygy/courtyard), a Pattern Lab instance.
 
 - Courtyard is installed via Composer as a [Drupal Library](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) to `web/libraries/courtyard`. See documentation for [updating](#updating-courtyard-within-drupal) as needed.
 - Source Twig templates are directly consumed by Drupal, with the help of [Components](https://www.drupal.org/project/components) module, and namespaces common to Courtyard and Atrium. See `component-libraries` in `atrium.info.yml`.
 - Courtyard's compiled assets are also directly consumed by Drupal, via a library definition in `atrium.libraries.yml`, which is loaded globally.
+- Atrium uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript.  For more information on how to work with Sass and JavaScript in this theme, see the following documentation:
+
+  - Sass: [`src/sass/README.md`](./src/sass/README.md)
+  - JavaScript: [`src/js/README.md`](./src/js/README.md)
+
 - Atrium's build includes Courtyard Sass variables, mixins, and [USWDS](https://github.com/uswds/uswds) dependencies in `src/sass/base/_base.scss`.
 
-## Prerequisites
+## Installation
 
-Ensure that [Node and NPM are installed*](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before proceeding.
+### 1. Prerequisites
 
-_* While the Atrium build script works properly with the current Node LTS (recommended) version, currently `10.16.3`, the Pattern Lab instance requires the current version, currently `12.12.0`._
+Ensure that [Node* and NPM are installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before proceeding.
 
-## Courtyard Installation
+_Note: While the Atrium build script works properly with the current Node LTS (recommended) version, currently `12.13.0`, the Pattern Lab instance requires the current version, currently `13.1.0`._
+
+### 2. Courtyard Installation
 
 1. Navigate to the Courtyard source: `cd web/libraries/courtyard`.
 
@@ -35,7 +48,7 @@ _* While the Atrium build script works properly with the current Node LTS (recom
 
 ---
 
-### ⚠️ Important Courtyard Development Notes ⚠️
+#### ⚠️ Important Courtyard Development Notes ⚠️
 
 When Composer `install` or `update` commands are run in the root of this repository, the entire courtyard directory is removed, including all `.git`, `node_modules`, `vendor` directory. This is required because Pantheon doesn't support Git submodules, and has important implications for the Courtyard development workflow in the context of the Drupal repository.
 
@@ -51,17 +64,17 @@ You'll need to be **very careful** to commit and push all outstanding Courtyard 
 
 2. Reinstall Courtyard's Composer and NPM dependencies described above.
 
-## Atrium Installation
+### 3. Atrium Installation
 
-Atrium uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript.
+1. Ensure that Courtyard has been installed (see instructions above).
 
-1. Navigate to the Atrium source: `cd web/themes/custom/atrium`
+2. Navigate to the Atrium source: `cd web/themes/custom/atrium`
 
-2. Install NPM dependencies: `npm install`
+3. Install NPM dependencies: `npm install`
 
-3. Start the build script, which will compile Sass and watch for changes: `npm run watch`
+4. Start the build script, which will compile Sass and watch for changes: `npm run watch`
 
-### Customizing the BrowserSync Proxy
+#### Customizing the BrowserSync Proxy
 
 Atrium's build script assumes you have setup your development environment using Lando, as documented in the main README, and uses `https://jcc.lndo.site` as the proxy for BrowserSync. If you prefer not to use Lando, and have a different virtual host, you may change the host used by the build script:
 
