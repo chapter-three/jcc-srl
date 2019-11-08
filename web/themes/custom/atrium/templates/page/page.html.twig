@@ -56,15 +56,15 @@
     </header>
   {% endif %}
 
-  {% if page.title|render %}
-    <div class="page__title">
-      {{ page.title }}
-    </div>
-  {% endif %}
-
   {% if page.tabs|render %}
     <div class="page__tabs">
       {{ page.tabs }}
+    </div>
+  {% endif %}
+
+  {% if page.title|render %}
+    <div class="page__title">
+      {{ page.title }}
     </div>
   {% endif %}
 
