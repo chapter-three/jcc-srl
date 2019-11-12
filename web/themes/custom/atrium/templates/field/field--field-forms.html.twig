@@ -9,13 +9,15 @@
   {% set media =  item.content["#media"] %}
   {% set files = files|merge([{
     url: media.field_url.uri,
-    name: "#{media.name.value} (form #{media.field_number.value})",
+    url_title: 'Form ' ~ media.field_number.value,
+    name: media.name.value,
   }]) %}
 {% endfor %}
 
-{% include '@molecules/blocks/filelist/filelist.twig' with {
+{% include '@molecules/blocks/link-list/link-list.twig' with {
   title: label,
-  files: files,
+  files_list: true,
+  items: files,
   icon: {
     icon_file: "../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg",
     icon: "book",
