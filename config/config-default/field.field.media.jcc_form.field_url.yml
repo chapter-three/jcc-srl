@@ -13,7 +13,7 @@ entity_type: media
 bundle: jcc_form
 label: 'Link to Original Form'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
