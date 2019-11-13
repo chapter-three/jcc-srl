@@ -26,10 +26,18 @@
     </div>
   {% endif %}
 
-  {% set right_column %}
-    {{ content.field_blocks }}
-    {{ content.field_forms }}
-  {% endset %}
+  {% set right_column = null %}
+  {% if content.field_blocks|render or content.field_forms|render %}
+    {% set right_column %}
+      {{ content.field_blocks }}
+      {{ content.field_forms }}
+      {% if content.field_forms|render %}
+        <div class="margin-bottom-4">
+          {{ content.field_forms }}
+        </div>
+      {% endif %}
+    {% endset %}
+  {% endif %}
 
   {% if node.body.value %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
