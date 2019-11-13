@@ -1,7 +1,7 @@
 // Responsive Tabs
 // -----------------------------------------------------------------------------
 
-$nav-tabs-background-color: color($theme-color-primary-light);
+$nav-tabs-background-color: #e6e6e6;
 $nav-tabs-font-size: 1rem;
 $nav-tabs-line-height: 3;
 $nav-tabs-trigger-width: 60px;
@@ -23,7 +23,10 @@ $nav-tabs-collapsed-height: calc((#{$nav-tabs-line-height} * #{$nav-tabs-font-si
 
 .nav-tabs__wrapper {
   background: $nav-tabs-background-color;
-  padding-top: 50px; // Offset .jcc-header logo overlap.
+  // Offset .jcc-header logo overlap.  Note that the mobile header is not styled
+  // properly as of yet, so this may need to be adapted for smaller screens at
+  // some point.
+  padding-top: 80px;
   margin-bottom: 0;
 
   &, * {
