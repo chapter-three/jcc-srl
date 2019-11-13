@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e863abe024bb86ce00618c4068a5a679",
+    "content-hash": "12d0484ba36ed889c9e01da24b64208f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6887,10 +6887,9 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "990ce07"
+                "reference": "aa576ee"
             },
-            "type": "drupal-library",
-            "time": "2019-11-11T22:57:03+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "fastglass/sendgrid",
