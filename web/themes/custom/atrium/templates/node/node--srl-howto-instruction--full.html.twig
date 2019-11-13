@@ -26,16 +26,11 @@
     </div>
   {% endif %}
 
-  {% set right_column = null %}
-  {% if content.field_blocks|render or content.field_forms|render %}
+  {% set right_column = '' %}
+  {% if node.field_blocks.value or node.field_forms.value %}
     {% set right_column %}
       {{ content.field_blocks }}
       {{ content.field_forms }}
-      {% if content.field_forms|render %}
-        <div class="margin-bottom-4">
-          {{ content.field_forms }}
-        </div>
-      {% endif %}
     {% endset %}
   {% endif %}
 
