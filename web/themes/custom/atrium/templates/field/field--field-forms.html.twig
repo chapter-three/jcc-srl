@@ -14,14 +14,16 @@
   }]) %}
 {% endfor %}
 
-{% include '@molecules/blocks/link-list/link-list.twig' with {
+{% include '@molecules/blocks/list-block/list-block.twig' with {
   title: label,
   files_list: true,
-  items: files,
-  icon: {
-    icon_file: "../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg",
-    icon: "book",
-    title: "Book",
-    decorative: false,
+  list: {
+    items: files,
+    icon: {
+      icon_file: '../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg',
+      icon: 'file',
+      title: 'File',
+      decorative: false,
+    }
   }
 } %}
