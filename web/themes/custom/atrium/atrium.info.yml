@@ -49,7 +49,10 @@ libraries-override:
         css/components/ui-dialog.css: false
         # The files listed below are those we have chosen to keep.
         # css/components/container-inline.css: false
-
+  extlink/drupal.extlink:
+    css:
+      theme:
+        extlink.css: false
   system/admin:
     css:
       theme:

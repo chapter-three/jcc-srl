@@ -14,14 +14,18 @@
   }]) %}
 {% endfor %}
 
-{% include '@molecules/blocks/link-list/link-list.twig' with {
-  title: label,
-  files_list: true,
-  items: files,
-  icon: {
-    icon_file: "../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg",
-    icon: "book",
-    title: "Book",
-    decorative: false,
-  }
-} %}
+<div class="margin-bottom-4">
+  {% include '@molecules/blocks/list-block/list-block.twig' with {
+    title: label,
+    files_list: true,
+    list: {
+      items: files,
+      icon: {
+        icon_file: '../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg',
+        icon: 'file',
+        title: 'File',
+        decorative: false,
+      }
+    }
+  } %}
+</div>

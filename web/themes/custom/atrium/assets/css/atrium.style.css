@@ -1738,8 +1738,8 @@ https://v2.designsystem.digital.gov/style-tokens
 ----------------------------------------
 */
 .nav-tabs__wrapper {
-  background: #73b3e7;
-  padding-top: 50px;
+  background: #e6e6e6;
+  padding-top: 80px;
   margin-bottom: 0;
 }
 .nav-tabs__wrapper, .nav-tabs__wrapper * {
