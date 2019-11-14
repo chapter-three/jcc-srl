@@ -58,6 +58,7 @@ module:
   maxlength: 0
   media: 0
   media_entity_browser: 0
+  media_library: 0
   menu_ui: 0
   metatag: 0
   module_filter: 0
