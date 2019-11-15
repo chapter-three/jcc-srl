@@ -1,0 +1,11 @@
+uuid: 8b038c40-225c-42ae-8d3b-0218c9109004
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.jcc_form
+id: media_type_jcc_form
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
