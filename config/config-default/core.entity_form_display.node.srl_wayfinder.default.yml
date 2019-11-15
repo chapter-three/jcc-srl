@@ -59,6 +59,13 @@ content:
         status: '1'
     type: entity_reference_paragraphs
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
     weight: 3

@@ -32,3 +32,4 @@ hidden:
   field_switchboard_subtitle: true
   field_switchboard_title: true
   field_title_display: true
+  langcode: true
