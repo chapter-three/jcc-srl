@@ -12,7 +12,7 @@ bundle: jcc_form
 label: 'Form #'
 description: 'Example: <strong>FL-150</strong>'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
