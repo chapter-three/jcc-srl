@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.postcard
   module:
     - allowed_formats
+    - cc
     - entity_browser
     - link
     - maxlength
@@ -90,13 +91,15 @@ content:
       entity_browser: meb
       field_widget_display: rendered_entity
       field_widget_display_settings:
-        view_mode: default
+        view_mode: media_library
+      field_widget_edit: true
       field_widget_remove: true
       open: true
       selection_mode: selection_append
-      field_widget_edit: false
       field_widget_replace: false
-    third_party_settings: {  }
+    third_party_settings:
+      cc:
+        status: 0
     type: entity_browser_entity_reference
     region: content
   field_text_overlay:

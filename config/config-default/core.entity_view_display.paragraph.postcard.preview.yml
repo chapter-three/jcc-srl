@@ -1,0 +1,99 @@
+uuid: 098c792b-88c9-49cc-8b01-78e9bbd58b55
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.postcard.field_additional
+    - field.field.paragraph.postcard.field_background
+    - field.field.paragraph.postcard.field_body
+    - field.field.paragraph.postcard.field_create_anchor
+    - field.field.paragraph.postcard.field_header
+    - field.field.paragraph.postcard.field_link
+    - field.field.paragraph.postcard.field_media
+    - field.field.paragraph.postcard.field_text_overlay
+    - field.field.paragraph.postcard.field_title_display
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - link
+    - options
+    - text
+id: paragraph.postcard.preview
+targetEntityType: paragraph
+bundle: postcard
+mode: preview
+content:
+  field_additional:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_background:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_body:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_create_anchor:
+    weight: 3
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_header:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_link:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: media_library
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_text_overlay:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title_display:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

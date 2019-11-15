@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_case_type
     - node.type.srl_onramp
-    - taxonomy.vocabulary.case_types
+    - taxonomy.vocabulary.case_type
 id: node.srl_onramp.field_case_type
 field_name: field_case_type
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      case_types: case_types
+      case_type: case_type
     sort:
       field: name
       direction: asc
