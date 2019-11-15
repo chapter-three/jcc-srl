@@ -1,0 +1,8 @@
+uuid: fd9150be-b689-4edd-9449-8f8a69797f94
+langcode: en
+status: true
+dependencies: {  }
+id: jcc_short
+label: 'JCC short date'
+locked: false
+pattern: 'm/d/y g:ia'
