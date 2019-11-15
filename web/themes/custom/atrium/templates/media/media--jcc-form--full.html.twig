@@ -4,13 +4,14 @@
  * Template for "JCC Form" media type using "Full content" display mode.
  */
 #}
-{{ title_suffix.contextual_links }}
-<div>
-  {% set label = "#{media.name.value} (form #{media.field_number.value})" %}
-
-  {% if media.field_url.uri %}
-    {{ link(label, media.field_url.uri) }}
-  {% else %}
-    {{ label }}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+  {% if content %}
+    {% for item in content %}
+      <div class="margin-4">
+        <div><label class="jcc-form-group__title">{{ item['#title'] }}</label></div>
+        <div>{{ item }}</div>
+      </div>
+    {% endfor %}
   {% endif %}
-</div>
+</article>
