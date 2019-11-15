@@ -19,5 +19,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_options: true
   field_paragraphs: true
   langcode: true
