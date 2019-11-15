@@ -12,6 +12,8 @@ dependencies:
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_url
     - media.type.jcc_form
+  module:
+    - link
 id: media.jcc_form.default
 targetEntityType: media
 bundle: jcc_form
@@ -25,6 +27,18 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_url:
+    type: link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
   name:
     type: string
     weight: 0
@@ -41,6 +55,6 @@ hidden:
   field_description: true
   field_media_file_1: true
   field_pdf_private: true
-  field_url: true
+  langcode: true
   thumbnail: true
   uid: true
