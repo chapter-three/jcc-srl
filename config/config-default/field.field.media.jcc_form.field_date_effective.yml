@@ -14,7 +14,7 @@ bundle: jcc_form
 label: 'Last RU-PRO Update / Effective Date'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
