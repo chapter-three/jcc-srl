@@ -28,4 +28,40 @@ settings:
       code_section:
         enabled: true
         weight: 2
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_container:
+        weight: 15
+        enabled: false
+      calculation_date:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      flex:
+        weight: 19
+        enabled: false
+      judgement_body_tab:
+        weight: 20
+        enabled: false
+      postcard:
+        weight: 21
+        enabled: false
+      srl_date_calculator:
+        weight: 22
+        enabled: false
+      step:
+        weight: 23
+        enabled: false
+      step_container:
+        weight: 24
+        enabled: false
+      timeline:
+        weight: 25
+        enabled: false
+      timeline_item:
+        weight: 26
+        enabled: false
 field_type: entity_reference_revisions

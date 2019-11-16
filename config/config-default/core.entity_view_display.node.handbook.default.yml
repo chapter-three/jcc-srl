@@ -21,4 +21,5 @@ content:
     type: text_default
     region: content
 hidden:
+  langcode: true
   links: true

@@ -51,6 +51,7 @@ module:
   image: 0
   inline_entity_form: 0
   key: 0
+  language: 0
   link: 0
   linkit: 0
   login_emailusername: 0
@@ -71,6 +72,7 @@ module:
   range: 0
   redirect: 0
   responsive_image: 0
+  rh_media: 0
   role_delegation: 0
   search: 0
   sendgrid_integration: 0
@@ -83,7 +85,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   twig_tweak: 0
   update: 0
   user: 0
@@ -92,6 +93,7 @@ module:
   extlink: 1
   menu_link_content: 1
   pathauto: 1
+  content_translation: 10
   views: 10
   paragraphs: 11
   mega: 1000

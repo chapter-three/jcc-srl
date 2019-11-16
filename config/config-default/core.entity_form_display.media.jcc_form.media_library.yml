@@ -17,7 +17,19 @@ id: media.jcc_form.media_library
 targetEntityType: media
 bundle: jcc_form
 mode: media_library
-content: {  }
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   created: true
   field_case_type: true

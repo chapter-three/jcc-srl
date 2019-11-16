@@ -40,5 +40,6 @@ hidden:
   field_number: true
   field_pdf_private: true
   field_url: true
+  langcode: true
   name: true
   uid: true

@@ -28,3 +28,4 @@ hidden:
   field_hero_nav_title: true
   field_paragraphs: true
   field_title_display: true
+  langcode: true
