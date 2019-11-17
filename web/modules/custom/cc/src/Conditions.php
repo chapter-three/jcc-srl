@@ -101,8 +101,8 @@ class Conditions {
   /**
    * Add new condition.
    *
-   * @param string $uuid
-   *   User input entity uuid.
+   * @param string $entity_id
+   *   User input entity id.
    * @param int $operator
    *   One of self::CONDITION_OPERATOR_ONE_OF, self::CONDITION_OPERATOR_ALL_OF.
    * @param array $value
@@ -112,12 +112,12 @@ class Conditions {
    *   For chaining.
    */
   public function addCondition(
-    string $uuid,
+    string $entity_id,
     $operator = self::CONDITION_OPERATOR_NONE_OF,
     array $value = []
   ) {
     $this->conditions[] = [
-      'uuid' => $uuid,
+      'id' => $entity_id,
       'operator' => $operator,
       'value' => $value,
     ];
@@ -207,7 +207,7 @@ class Conditions {
    *   The result.
    */
   protected function evalCondition(array $user_input, array $condition) {
-    $user_input = array_filter($user_input[$condition['uuid']] ?: []);
+    $user_input = array_filter($user_input[$condition['id']] ?: []);
     $values = array_filter($condition['value']);
     switch ($condition['operator']) {
 

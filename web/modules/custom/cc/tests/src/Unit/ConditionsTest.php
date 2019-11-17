@@ -31,38 +31,38 @@ class ConditionsTest extends UnitTestCase {
    */
   public function evalDataProvider() {
     $condition_0_true = [
-      'uuid' => 'uuid-0',
+      'id' => 0,
       'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
       'value' => [
         'item_0' => 'item_0',
       ],
     ];
     $condition_0_false = [
-      'uuid' => 'uuid-0',
+      'id' => 0,
       'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
       'value' => [
         'item_0' => 'item_0',
       ],
     ];
     $condition_1_true = [
-      'uuid' => 'uuid-1',
+      'id' => 1,
       'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
       'value' => [
         'item_0' => 'item_0',
       ],
     ];
     $condition_1_false = [
-      'uuid' => 'uuid-1',
+      'id' => 1,
       'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
       'value' => [
         'item_0' => 'item_0',
       ],
     ];
     $values = [
-      'uuid-0' => [
+      0 => [
         'item_0' => 0,
       ],
-      'uuid-1' => [
+      1 => [
         'item_0' => 'item_0',
       ],
     ];
@@ -161,7 +161,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -171,7 +171,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 'item_1',
             'item_2' => 'item_2',
@@ -183,7 +183,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -193,7 +193,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 0,
             'item_2' => 0,
@@ -205,7 +205,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 0,
@@ -215,7 +215,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 'item_1',
             'item_2' => 'item_2',
@@ -227,7 +227,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 0,
@@ -237,7 +237,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 0,
             'item_2' => 0,
@@ -249,7 +249,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 0,
@@ -259,7 +259,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 'item_1',
             'item_2' => 0,
@@ -271,7 +271,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -281,7 +281,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 'item_1',
             'item_2' => 0,
@@ -293,7 +293,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 0,
@@ -303,7 +303,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 0,
             'item_2' => 'item_2',
@@ -315,7 +315,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_NONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -325,7 +325,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 0,
             'item_2' => 'item_2',
@@ -338,7 +338,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -348,7 +348,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 'item_1',
             'item_2' => 'item_2',
@@ -360,7 +360,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -370,7 +370,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 0,
             'item_2' => 0,
@@ -382,7 +382,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 0,
@@ -392,7 +392,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 'item_1',
             'item_2' => 'item_2',
@@ -404,7 +404,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 0,
@@ -414,7 +414,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 0,
             'item_2' => 0,
@@ -426,7 +426,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 0,
@@ -436,7 +436,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 'item_1',
             'item_2' => 0,
@@ -448,7 +448,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -458,7 +458,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 'item_1',
             'item_2' => 0,
@@ -470,7 +470,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 0,
@@ -480,7 +480,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 0,
             'item_2' => 'item_2',
@@ -492,7 +492,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ONE_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -502,7 +502,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 0,
             'item_2' => 'item_2',
@@ -515,7 +515,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -525,7 +525,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 'item_1',
             'item_2' => 'item_2',
@@ -537,7 +537,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -547,7 +547,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 0,
             'item_2' => 0,
@@ -559,7 +559,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 0,
@@ -569,7 +569,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 'item_1',
             'item_2' => 'item_2',
@@ -581,7 +581,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 0,
@@ -591,7 +591,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 0,
             'item_2' => 0,
@@ -603,7 +603,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 0,
@@ -613,7 +613,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 'item_1',
             'item_2' => 0,
@@ -625,7 +625,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -635,7 +635,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 0,
             'item_1' => 'item_1',
             'item_2' => 0,
@@ -647,7 +647,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 0,
@@ -657,7 +657,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 0,
             'item_2' => 'item_2',
@@ -669,7 +669,7 @@ class ConditionsTest extends UnitTestCase {
         Conditions::OPERATOR_AND,
         [
           [
-            'uuid' => 'uuid-0',
+            'id' => 0,
             'operator' => Conditions::CONDITION_OPERATOR_ALL_OF,
             'value' => [
               'item_0' => 'item_0',
@@ -679,7 +679,7 @@ class ConditionsTest extends UnitTestCase {
           ],
         ],
         [
-          'uuid-0' => [
+          0 => [
             'item_0' => 'item_0',
             'item_1' => 0,
             'item_2' => 'item_2',
