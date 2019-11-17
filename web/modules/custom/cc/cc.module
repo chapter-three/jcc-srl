@@ -291,8 +291,6 @@ function cc_entity_view_alter(
 /**
  * Gets/sets a reference to user input form state for later use.
  *
- * @param string $uuid
- *   Entity uuid of the user input entity.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   The form state object.
  *
