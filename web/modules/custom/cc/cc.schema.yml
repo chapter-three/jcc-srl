@@ -1,0 +1,10 @@
+field.widget.settings.cc_user_input_item:
+  type: mapping
+  label: 'User input item widget settings'
+  mapping:
+    size:
+      type: integer
+      label: 'Size'
+    placeholder:
+      type: textfield
+      label: 'Placeholder'
