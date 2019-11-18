@@ -153,23 +153,6 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
         'weight' => -2,
       ]);
 
-    $fields['items'] = BaseFieldDefinition::create('string_long')
-      ->setLabel(t('Items'))
-      ->setDescription(t('User Input items.'))
-      ->setRevisionable(TRUE)
-      ->setTranslatable(TRUE)
-      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
-      ->setDisplayOptions('view', [
-        'region' => 'hidden',
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textarea',
-        'weight' => -1,
-        'settings' => [
-          'rows' => 2,
-        ],
-      ]);
-
     $fields['input_items'] = BaseFieldDefinition::create('cc_user_input_item')
       ->setLabel(t('Items'))
       ->setDescription(t('User Input items.'))

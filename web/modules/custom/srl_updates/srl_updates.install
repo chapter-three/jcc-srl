@@ -4,6 +4,7 @@
  * @file Module install file.
  */
 
+use Drupal\cc\ConditionalDisplay;
 use Drupal\cc\Conditions;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -140,4 +141,15 @@ function srl_updates_update_8002(&$sandbox) {
         ->execute();
     }
   }
+}
+
+/**
+ * Remove legacy cc module user input items field.
+ */
+function srl_updates_update_8003(&$sandbox) {
+  $definition_update_manager = Drupal::entityDefinitionUpdateManager();
+  $field_storage_definition = $definition_update_manager
+    ->getFieldStorageDefinition('items', 'cc_user_input');
+  $definition_update_manager
+    ->uninstallFieldStorageDefinition($field_storage_definition);
 }
