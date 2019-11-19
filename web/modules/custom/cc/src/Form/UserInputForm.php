@@ -68,7 +68,7 @@ class UserInputForm extends FormBase {
       $base_element = [
         '#title' => $entity->label(),
         '#weight' => 10 + $delta,
-        '#default_value' => Drupal::request()->query->get($entity->uuid()) ?: [],
+        '#default_value' => Drupal::request()->query->get($entity->id()) ?: [],
         '#required' => $entity->isRequired(),
       ];
       $options = $entity->getItemsOptions();
@@ -77,13 +77,13 @@ class UserInputForm extends FormBase {
 
         case UserInputInterface::SELECTION_TYPE_RADIO:
           if (count($options)) {
-            $form[$entity->uuid()] = [
+            $form[$entity->id()] = [
               '#type' => 'radios',
               '#options' => $options,
             ] + $base_element;
           }
           else {
-            $form[$entity->uuid()] = [
+            $form[$entity->id()] = [
               '#type' => 'radio',
             ] + $base_element;
           }
@@ -91,20 +91,20 @@ class UserInputForm extends FormBase {
 
         case UserInputInterface::SELECTION_TYPE_CHECKBOX:
           if (count($options)) {
-            $form[$entity->uuid()] = [
+            $form[$entity->id()] = [
               '#type' => 'checkboxes',
               '#options' => $options,
             ] + $base_element;
           }
           else {
-            $form[$entity->uuid()] = [
+            $form[$entity->id()] = [
               '#type' => 'checkbox',
             ] + $base_element;
           }
           break;
 
         case UserInputInterface::SELECTION_TYPE_SELECT:
-          $form[$entity->uuid()] = [
+          $form[$entity->id()] = [
             '#type' => 'select',
             '#options' => $options,
           ] + $base_element;

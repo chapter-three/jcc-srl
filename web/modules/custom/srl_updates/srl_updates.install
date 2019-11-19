@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file Module install file.
+ */
+
+use Drupal\cc\Conditions;
+
+/**
+ * Convert to cc module user input id from uuid.
+ */
+function srl_updates_update_8001(&$sandbox) {
+  $storage = Drupal::entityTypeManager()->getStorage('cc_user_input');
+
+  $database = Drupal::database();
+  $query = $database
+    ->select('cc_field_conditions', 'fc')
+    ->fields('fc');
+  foreach ($query->execute() as $row) {
+    $save = FALSE;
+    /** @var \Drupal\cc\Conditions $conditions */
+    $conditions = unserialize($row->conditions);
+    $conditions_array = $conditions->getConditions();
+    foreach ($conditions_array as $i => &$condition) {
+      $save = TRUE;
+      /** @var \Drupal\cc\Entity\UserInput $entity */
+      if (empty($condition['uuid']) ||
+        !($entity = reset($storage->loadByProperties(['uuid' => $condition['uuid']])))
+      ) {
+        unset($conditions_array[$i]);
+      }
+      else {
+        unset($condition['uuid']);
+        $condition['id'] = $entity->id();
+      }
+    }
+    if ($save) {
+      $conditions = new Conditions($conditions->getOperator(), array_values($conditions_array));
+      $database
+        ->merge('cc_field_conditions')
+        ->keys([
+          'entity_type' => $row->entity_type,
+          'entity_id' => $row->entity_id,
+          'revision_id' => $row->revision_id,
+          'langcode' => $row->langcode,
+          'field' => $row->field,
+          'delta' => $row->delta,
+        ])
+        ->fields([
+          'conditions' => serialize($conditions),
+        ])
+        ->execute();
+    }
+  }
+}
