@@ -5,5 +5,5 @@ dependencies: {  }
 id: accordion_container
 label: 'Accordion Container'
 icon_uuid: null
-description: ''
+description: 'Set of Accordions'
 behavior_plugins: {  }

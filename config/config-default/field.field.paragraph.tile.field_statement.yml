@@ -1,0 +1,28 @@
+uuid: 26f11953-5e77-4b91-a2c0-4f788d1917dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_statement
+    - paragraphs.paragraphs_type.tile
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.tile.field_statement
+field_name: field_statement
+entity_type: paragraph
+bundle: tile
+label: 'Action Statement'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

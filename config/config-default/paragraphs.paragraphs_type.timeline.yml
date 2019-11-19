@@ -5,5 +5,5 @@ dependencies: {  }
 id: timeline
 label: Timeline
 icon_uuid: null
-description: ''
+description: 'Container for horizontal timeline/flowmap component.'
 behavior_plugins: {  }
