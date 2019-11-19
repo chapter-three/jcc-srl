@@ -12,7 +12,9 @@ use \Drupal\Core\Form\FormStateInterface;
  * Implements hook_views_pre_render().
  */
 function jcc_forms_views_pre_render(ViewExecutable $view) {
-  if ($view->id() == 'media_jcc_forms') {
+  if ($view->id() == 'media_jcc_forms'||
+    ($view->id() == 'media_entity_browser' && $view->current_display == 'jcc_form_browser')
+  ) {
     $mids = [];
 
     foreach ($view->result as $i => $result) {
