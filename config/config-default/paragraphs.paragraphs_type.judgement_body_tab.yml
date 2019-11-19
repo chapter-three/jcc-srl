@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: judgement_body_tab
-label: 'Judgement Body'
+label: 'Judgement Body (DEPRECATED)'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }
