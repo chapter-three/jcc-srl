@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12d0484ba36ed889c9e01da24b64208f",
+    "content-hash": "c5ccd39401355e5457310e866fdcc50a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1153,6 +1153,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -3388,6 +3389,9 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch"
                 }
             },
             "autoload": {
@@ -6887,7 +6891,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "aa576ee"
+                "reference": "13a4461"
             },
             "type": "drupal-library"
         },
