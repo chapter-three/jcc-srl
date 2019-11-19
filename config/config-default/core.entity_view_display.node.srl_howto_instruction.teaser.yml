@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
-    - field.field.node.srl_howto_instruction.field_howto_body
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
     - field.field.node.srl_howto_instruction.field_paragraphs
@@ -34,7 +33,6 @@ hidden:
   field_column_first: true
   field_column_second: true
   field_forms: true
-  field_howto_body: true
   field_howto_tabs: true
   field_howto_tabs_title: true
   field_paragraphs: true
