@@ -6,6 +6,7 @@
  */
 
 use Drupal\views\ViewExecutable;
+use \Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_views_pre_render().
@@ -29,4 +30,15 @@ function jcc_forms_views_pre_render(ViewExecutable $view) {
     // @todo Render correct number of items per page.
 
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters JCC Form Edit page.
+ */
+function jcc_forms_form_media_jcc_form_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Redirect to JCC Forms view on save.
+  $form_state->setRedirect('view.media_jcc_forms.page_1');
 }
