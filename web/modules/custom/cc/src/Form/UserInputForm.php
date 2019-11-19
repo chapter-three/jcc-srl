@@ -59,7 +59,6 @@ class UserInputForm extends FormBase {
     }
 
     $form['#method'] = 'get';
-    $form['#cache'] = ['max-age' => 0];
     $form['#token'] = FALSE;
 
     // Each user input element.
@@ -71,7 +70,7 @@ class UserInputForm extends FormBase {
         '#default_value' => Drupal::request()->query->get($entity->id()) ?: [],
         '#required' => $entity->isRequired(),
       ];
-      $options = $entity->getItemsOptions();
+      $options = $entity->getInputItemsOptions();
 
       switch ($entity->getSelectionType()) {
 

@@ -81,7 +81,7 @@
 
 {{ attach_library('classy/node') }}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes)|without('role') }}>
   {{ title_prefix }}
 
   {% block title %}

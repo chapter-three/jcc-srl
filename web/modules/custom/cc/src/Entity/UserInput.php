@@ -153,7 +153,7 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
         'weight' => -2,
       ]);
 
-    $fields['items'] = BaseFieldDefinition::create('string_long')
+    $fields['input_items'] = BaseFieldDefinition::create('cc_user_input_item')
       ->setLabel(t('Items'))
       ->setDescription(t('User Input items.'))
       ->setRevisionable(TRUE)
@@ -236,25 +236,25 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
   /**
    * {@inheritdoc}
    */
-  public function getItems() {
-    return $this->get('items')->getValue();
+  public function getInputItems() {
+    return $this->get('input_items')->getValue();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function setItems(array $items) {
-    $this->set('items', $items);
+  public function setInputItems(array $input_items) {
+    $this->set('input_items', $input_items);
     return $this;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getItemsOptions() {
+  public function getInputItemsOptions() {
     $options = [];
-    foreach ($this->getItems() as $i => $item) {
-      $options["item_$i"] = Html::escape($item['value']);
+    foreach ($this->getInputItems() as $item) {
+      $options['item_' . $item['id']] = Html::escape($item['value']);
     }
     return $options;
   }
