@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: card
-label: Card
+label: 'Card (DEPRECATED)'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

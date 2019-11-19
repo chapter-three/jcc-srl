@@ -1,0 +1,9 @@
+uuid: 87ebfce2-361d-439e-a704-d4a2eccf5f4f
+langcode: en
+status: true
+dependencies: {  }
+id: tile
+label: Tile
+icon_uuid: null
+description: 'Items for the Switchboard component.'
+behavior_plugins: {  }
