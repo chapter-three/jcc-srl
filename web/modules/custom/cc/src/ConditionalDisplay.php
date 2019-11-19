@@ -416,7 +416,7 @@ class ConditionalDisplay {
             foreach ($field->referencedEntities() as $user_input) {
               $parameter_fields[$field_name][$user_input->id()] = [
                 'label' => $user_input->label(),
-                'options' => $user_input->getItemsOptions(),
+                'options' => $user_input->getInputItemsOptions(),
               ];
             }
           }
