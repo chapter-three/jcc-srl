@@ -1,0 +1,7 @@
+name: 'JCC Forms'
+type: module
+description: 'Custom code related to JCC Forms.'
+core: 8.x
+package: 'JCC'
+dependencies:
+  - views
