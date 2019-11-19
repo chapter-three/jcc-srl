@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_children_primary
     - node.type.srl_howto
-    - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.tile
   module:
     - entity_reference_revisions
@@ -24,7 +23,6 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      card: card
       tile: tile
     target_bundles_drag_drop:
       accordion:
@@ -34,8 +32,8 @@ settings:
         weight: 10
         enabled: false
       card:
-        enabled: true
         weight: 11
+        enabled: false
       flex:
         weight: 12
         enabled: false
