@@ -5,5 +5,5 @@ dependencies: {  }
 id: step
 label: Step
 icon_uuid: null
-description: ''
+description: 'An individual step within a vertical step container.'
 behavior_plugins: {  }

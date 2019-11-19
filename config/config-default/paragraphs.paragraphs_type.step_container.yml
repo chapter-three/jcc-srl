@@ -5,5 +5,5 @@ dependencies: {  }
 id: step_container
 label: 'Step Container'
 icon_uuid: null
-description: ''
+description: 'Container for vertical steps.'
 behavior_plugins: {  }

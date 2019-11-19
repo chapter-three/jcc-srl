@@ -1,0 +1,31 @@
+uuid: 1aedfb26-02b2-4bfd-aacb-b719c28fd7cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tile.field_page
+    - field.field.paragraph.tile.field_statement
+    - paragraphs.paragraphs_type.tile
+  module:
+    - text
+id: paragraph.tile.default
+targetEntityType: paragraph
+bundle: tile
+mode: default
+content:
+  field_page:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_statement:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

@@ -5,5 +5,5 @@ dependencies: {  }
 id: timeline_item
 label: 'Timeline Item'
 icon_uuid: null
-description: ''
+description: 'An individual timeline item within the timeline container.'
 behavior_plugins: {  }
