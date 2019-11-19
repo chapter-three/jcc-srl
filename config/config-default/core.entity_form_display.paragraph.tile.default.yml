@@ -1,18 +1,18 @@
-uuid: f6f7b514-677e-44ce-acfd-5b4a8f034912
+uuid: b11309e2-830f-44f0-8da4-95aea8518c86
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card.field_page
-    - field.field.paragraph.card.field_statement
-    - paragraphs.paragraphs_type.card
+    - field.field.paragraph.tile.field_page
+    - field.field.paragraph.tile.field_statement
+    - paragraphs.paragraphs_type.tile
   module:
     - allowed_formats
     - maxlength
     - text
-id: paragraph.card.default
+id: paragraph.tile.default
 targetEntityType: paragraph
-bundle: card
+bundle: tile
 mode: default
 content:
   field_page:

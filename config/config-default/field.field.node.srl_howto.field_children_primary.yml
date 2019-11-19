@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_children_primary
     - node.type.srl_howto
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.tile
   module:
     - entity_reference_revisions
 id: node.srl_howto.field_children_primary
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       card: card
+      tile: tile
     target_bundles_drag_drop:
       accordion:
         weight: 9
@@ -48,5 +50,23 @@ settings:
         enabled: false
       step_container:
         weight: 16
+        enabled: false
+      calculation_date:
+        weight: 17
+        enabled: false
+      code_section:
+        weight: 19
+        enabled: false
+      srl_date_calculator:
+        weight: 23
+        enabled: false
+      tile:
+        enabled: true
+        weight: 26
+      timeline:
+        weight: 27
+        enabled: false
+      timeline_item:
+        weight: 28
         enabled: false
 field_type: entity_reference_revisions
