@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains jcc_forms.module.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function jcc_forms_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'media_jcc_forms') {
+    $mids = [];
+
+    foreach ($view->result as $i => $result) {
+      $mid = $result->mid;
+      if (in_array($mid, $mids)) {
+        unset($view->result[$i]);
+      }
+      else {
+        $mids[] = $mid;
+      }
+    }
+    $view->total_rows = count($view->result);
+    $view->pager->total_items = count($view->result);
+
+    // @todo Render correct number of items per page.
+
+  }
+}
