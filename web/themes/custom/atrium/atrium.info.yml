@@ -60,7 +60,6 @@ libraries-override:
   system/base:
     css:
       component:
-        /core/themes/stable/css/system/components/align.module.css: false
         /core/themes/stable/css/system/components/details.module.css: false
         /core/themes/stable/css/system/components/fieldgroup.module.css: false
         /core/themes/stable/css/system/components/item-list.module.css: false
@@ -74,6 +73,7 @@ libraries-override:
         /core/themes/stable/css/system/components/tabledrag.module.css: false
         /core/themes/stable/css/system/components/tree-child.module.css: false
         # The files listed below are those we have chosen to keep.
+        # /core/themes/stable/css/system/components/align.module.css: false
         # /core/themes/stable/css/system/components/ajax-progress.module.css: false
         # /core/themes/stable/css/system/components/autocomplete-loading.module.css: false
         # /core/themes/stable/css/system/components/clearfix.module.css: false

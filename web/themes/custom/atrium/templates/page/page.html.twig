@@ -48,7 +48,7 @@
 
 <div{{ attributes.addClass(classes) }}>
   {% if page.header|render or page.logo|render %}
-    <header class="page__header jcc-header" role="banner">
+    <header class="page__header jcc-header">
       <div class="jcc-header__container">
         {{ page.logo }}
         {{ page.header }}
@@ -68,7 +68,7 @@
     </div>
   {% endif %}
 
-  <main role="main">
+  <main>
     <a id="main-content" tabindex="-1"></a> {# link is in html.html.twig #}
 
     <div class="page__content">
