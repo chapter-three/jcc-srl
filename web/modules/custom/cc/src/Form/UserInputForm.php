@@ -59,6 +59,7 @@ class UserInputForm extends FormBase {
     }
 
     $form['#method'] = 'get';
+    $form['#cache'] = ['max-age' => 0];
     $form['#token'] = FALSE;
 
     // Each user input element.
