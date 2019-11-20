@@ -132,6 +132,10 @@ $config['stage_file_proxy.settings']['origin'] = 'https://develop-jcc-srl.panthe
 $config['stage_file_proxy.settings']['use_imagecache_root'] = 0;
 $config['stage_file_proxy.settings']['hotlink'] = 1;
 
+/* Environment Indicator */
+$config['environment_indicator.indicator']['bg_color'] = '#045d30';
+$config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+
 /* Exclude all dev modules from core.extension.yml */
 $settings['config_exclude_modules'] = [
   'config_exclude',
