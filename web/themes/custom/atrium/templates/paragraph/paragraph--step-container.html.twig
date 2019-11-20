@@ -5,7 +5,7 @@
  */
 #}
 {% extends 'paragraph.html.twig' %}
-{% block content %}
+{% block paragraph %}
 
   {% if content.field_steps|render %}
 
@@ -44,8 +44,10 @@
     {% endfor %}
 
     {% include '@organisms/sections/steps/steps.twig' with {
+      id: paragraph_id,
       headergroup: headergroup,
       steps: step_content,
+      background_variant: 'has-background-color--transparent',
     } only %}
 
   {% endif %}
