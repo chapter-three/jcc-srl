@@ -35,6 +35,7 @@
     {% endfor %}
 
     {% include '@molecules/interactive/accordion/accordion.twig' with {
+      id: paragraph_id,
       full: true,
       accordion: accordion_content,
       attributes: create_attribute(),

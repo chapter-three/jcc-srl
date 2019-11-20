@@ -6,7 +6,7 @@
  */
 #}
 {% extends 'paragraph.html.twig' %}
-{% block content %}
+{% block paragraph %}
 
   {# Set defaults for Postcard component. #}
   {% set header_align_variant = 'has-header-left' %}
@@ -28,6 +28,7 @@
   {% endset %}
 
   {% include '@molecules/blocks/postcard/postcard.twig' with {
+    id: paragraph_id,
     background_variant: background_variant,
     header_align_variant: header_align_variant,
     headergroup: {

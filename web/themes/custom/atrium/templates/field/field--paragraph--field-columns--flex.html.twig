@@ -24,6 +24,7 @@
 {%- endfor -%}
 
 {% include '@organisms/sections/text-section/text-section.twig' with {
+  id: 'p' ~ paragraph.id(),
   headergroup: { title: paragraph.field_title_display|view },
   column_content_left: column_content_left,
   column_content_right: column_content_right,
