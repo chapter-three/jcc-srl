@@ -13,6 +13,8 @@ config:
 
   php: '7.3'
 
+  database: mariadb
+
   # Optionally activate xdebug
   #
   # If you are having trouble getting xdebug to work please see:
