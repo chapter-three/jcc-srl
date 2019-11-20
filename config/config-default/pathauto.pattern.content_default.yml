@@ -10,17 +10,7 @@ id: content_default
 label: 'Content Default'
 type: 'canonical_entities:node'
 pattern: '[node:title]'
-selection_criteria:
-  94ea7d61-f781-404e-8022-e9eab138a914:
-    id: node_type
-    bundles:
-      basic: basic
-      srl_howto: srl_howto
-      srl_onramp: srl_onramp
-    negate: false
-    context_mapping:
-      node: node
-    uuid: 94ea7d61-f781-404e-8022-e9eab138a914
+selection_criteria: {  }
 selection_logic: and
-weight: 0
+weight: -10
 relationships: {  }
