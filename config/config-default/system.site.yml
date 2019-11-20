@@ -2,8 +2,8 @@ name: 'JCC SRL'
 mail: webdev@jud.ca.gov
 slogan: ''
 page:
-  403: ''
-  404: ''
+  403: /node/61
+  404: /node/62
   front: /node/8
 admin_compact_mode: false
 weight_select_max: 100
