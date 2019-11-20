@@ -14,6 +14,29 @@
   {% set tag = paragraph.field_header.value %}
   {% set image = content.field_media %}
 
+  {# @todo has-background-color is no longer the variant option. For now, we are
+  mapping it to 'background-color--light--secondary`. Eventually this will need
+  proper support. Will also advocate for the default to be set in PL, so we
+  don't have to track/manually pass it. Current variant list as of 11/20/19:
+  - has-background-color--transparent (default)
+  - has-background-color--light--secondary (has-background-color)
+  - has-background-color--dark--secondary (NOT SUPPORTED)
+  - has-background-image (ok, handled below) #}
+  {% if paragraph.field_background.value == 'default' %}
+    {% set background_variant = 'has-background-color--transparent' %}
+  {% elseif paragraph.field_background.value == 'has-background-color' %}
+    {% set background_variant = 'has-background-color--light--secondary' %}
+  {% endif %}
+
+  {% if paragraph.field_postcard_display.value == 'has-background-image' %}
+    {% if content.field_media|render %}
+      {% set image_id = paragraph.field_media.entity.id() %}
+      {% set image = drupal_entity('media', image_id, 'postcard_background') %}
+    {% endif %}
+  {% endif %}
+
+
+
   {% if paragraph.field_postcard_display.value == 'has-background-image' %}
     {% if content.field_media|render %}
       {% set image_id = paragraph.field_media.entity.id() %}
