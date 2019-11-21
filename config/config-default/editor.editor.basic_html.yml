@@ -54,7 +54,7 @@ settings:
             - Maximize
   plugins:
     stylescombo:
-      styles: 'p.jcc-lead|Lead paragraph'
+      styles: "p.jcc-lead|Lead paragraph\r\nh2.jcc-title|Section Title"
     language:
       language_list: un
     linkit:
