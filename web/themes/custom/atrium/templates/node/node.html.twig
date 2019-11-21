@@ -83,32 +83,36 @@
 
 <article{{ attributes.addClass(classes)|without('role') }}>
   {{ title_prefix }}
-
-  {% block title %}
-    {% if label and not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-  {% endblock %}
-
   {{ title_suffix }}
 
-  {% block meta %}
-    {% if display_submitted %}
-      <footer class="node__meta">
-        {{ author_picture }}
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </footer>
-    {% endif %}
-  {% endblock %}
-
   {% block content %}
-    <div{{ content_attributes.addClass('node__content') }}>
-      {{ content }}
-    </div>
+    {% if label and not page %}
+      {% set title %}
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {% endset %}
+    {% endif %}
+
+    {% set body %}
+      {% if display_submitted %}
+        <footer class="node__meta">
+          {{ author_picture }}
+          <div{{ author_attributes.addClass('node__submitted') }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        </footer>
+      {% endif %}
+      {{ content}}
+    {% endset %}
+
+    {% include '@organisms/sections/text-section/text-section.twig' with {
+      background_variant: 'has-background-color--transparent',
+      column_content_left: body,
+      column_variant: 'two-columns-threequarter',
+      headergroup: {
+        tag: 'h1',
+        title: title
+      },
+    } only %}
   {% endblock %}
 </article>

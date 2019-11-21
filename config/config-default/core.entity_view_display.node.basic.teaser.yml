@@ -1,6 +1,6 @@
 uuid: ef65f6a7-d051-43b1-a0d9-4fa28a1ab2a4
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -18,18 +18,14 @@ bundle: basic
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
+    region: content
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
   field_media: true
   langcode: true
+  links: true

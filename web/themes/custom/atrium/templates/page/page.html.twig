@@ -62,7 +62,13 @@
     </div>
   {% endif %}
 
-  {% if page.title|render %}
+  {% set nodes_with_hero = [
+    'srl_howto_instruction',
+    'srl_howto',
+    'srl_onramp',
+  ] %}
+
+  {% if page.title|render and node.bundle() not in nodes_with_hero %}
     <div class="page__title">
       {{ page.title }}
     </div>
