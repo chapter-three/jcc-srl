@@ -1,6 +1,6 @@
 uuid: b6e7a8f3-8955-4abc-af53-4f2a44888450
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -18,12 +18,7 @@ id: node.srl_howto.teaser
 targetEntityType: node
 bundle: srl_howto
 mode: teaser
-content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
   field_children_primary: true
   field_children_secondary: true
@@ -33,3 +28,4 @@ hidden:
   field_switchboard_title: true
   field_title_display: true
   langcode: true
+  links: true

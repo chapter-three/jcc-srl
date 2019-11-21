@@ -1,6 +1,6 @@
 uuid: 92e4bc77-4382-4919-8d03-838f94160da5
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -21,12 +21,7 @@ id: node.srl_howto_instruction.teaser
 targetEntityType: node
 bundle: srl_howto_instruction
 mode: teaser
-content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
   body: true
   field_blocks: true
@@ -39,3 +34,4 @@ hidden:
   field_parent: true
   field_title_display: true
   langcode: true
+  links: true
