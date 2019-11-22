@@ -5,5 +5,5 @@ dependencies: {  }
 id: accordion
 label: Accordion
 icon_uuid: null
-description: ''
+description: 'Individual expanding/collapsing component.'
 behavior_plugins: {  }

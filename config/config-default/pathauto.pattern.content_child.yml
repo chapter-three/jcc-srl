@@ -7,18 +7,18 @@ dependencies:
 _core:
   default_config_hash: 7E0Vv3GS4TyNtPiN7THo1HWudsD3-fiFNGZabOgVbpk
 id: content_child
-label: 'Content Default'
+label: 'Content Child'
 type: 'canonical_entities:node'
 pattern: '[node:field_parent:entity:title]/[node:title]'
 selection_criteria:
-  883b0939-4d34-427a-a335-2a738ae62d86:
+  b4cfbed8-2434-4e2d-88f4-6538d7a67dd6:
     id: node_type
     bundles:
       srl_howto_instruction: srl_howto_instruction
     negate: false
     context_mapping:
       node: node
-    uuid: 883b0939-4d34-427a-a335-2a738ae62d86
+    uuid: b4cfbed8-2434-4e2d-88f4-6538d7a67dd6
 selection_logic: and
-weight: -5
+weight: -9
 relationships: {  }

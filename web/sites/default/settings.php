@@ -99,23 +99,33 @@ $config_directories['sync'] = '../config/config-default';
  * Set environment-specific config_split status.
  */
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-  if (
+
+  // Live.
+  if ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') {
+    $config['config_split.config_split.prod']['status'] = TRUE;
+  }
+
+  // Develop.
+  else if ($_ENV['PANTHEON_ENVIRONMENT'] == 'develop') {
 
     // We need password reset emails using SendGrid from `develop`,
     // so for now, `develop` multidev should use the production configuration.
     // After launch, this will likely be changed.
-    ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') ||  ($_ENV['PANTHEON_ENVIRONMENT'] == 'develop')
-  ) {
     $config['config_split.config_split.prod']['status'] = TRUE;
+    $config['environment_indicator.indicator']['bg_color'] = '#ff9300';
+    $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
   }
+
+  // All other multidevs.
   else {
-
-    // All other multidevs.
     $config['config_split.config_split.stage']['status'] = TRUE;
+    $config['environment_indicator.indicator']['bg_color'] = '#5b0ca3';
+    $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
   }
-} else {
+}
 
-  // Assumes local.
+// Assumes local.
+else {
   $config['config_split.config_split.local']['status'] = TRUE;
   $config['config_split.config_split.stage']['status'] = TRUE;
 }

@@ -5,14 +5,14 @@
  */
 #}
 {% extends 'paragraph.html.twig' %}
-{% block content %}
+{% block paragraph %}
 
   {% if content.field_steps|render %}
 
     {% set headergroup = {
-      brow: content.field_brow,
-      title: content.field_title_display,
-      lead: content.field_description,
+      brow: content.field_brow|render ? content.field_brow : '',
+      title: content.field_title_display|render ? content.field_title_display : '',
+      lead: content.field_description|render ? content.field_description : '',
     } %}
 
     {% set step_content = [] %}
@@ -44,8 +44,10 @@
     {% endfor %}
 
     {% include '@organisms/sections/steps/steps.twig' with {
+      id: paragraph_id,
       headergroup: headergroup,
       steps: step_content,
+      background_variant: 'has-background-color--transparent',
     } only %}
 
   {% endif %}

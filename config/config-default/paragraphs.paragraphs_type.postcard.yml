@@ -5,5 +5,5 @@ dependencies: {  }
 id: postcard
 label: Postcard
 icon_uuid: null
-description: ''
+description: 'Image and text component typically used to display PDF annotations.'
 behavior_plugins: {  }

@@ -5,12 +5,12 @@
  */
 #}
 {% extends 'paragraph.html.twig' %}
-{% block content %}
+{% block paragraph %}
 
   {% if content.field_body|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       background_variant: 'has-background-color--dark',
-      body: content.field_body,
+      body: content.field_body|render ? content.field_body : null,
     } only %}
   {% endif %}
 
@@ -35,6 +35,7 @@
     {% endfor %}
 
     {% include '@molecules/interactive/accordion/accordion.twig' with {
+      id: paragraph_id,
       full: true,
       accordion: accordion_content,
       attributes: create_attribute(),

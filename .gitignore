@@ -22,6 +22,9 @@
 *.swp
 /tags
 .vimrc
+.vscode
+.favorites.json
+*.code-workspace
 
 # Ignore .env files as they are personal
 /.env

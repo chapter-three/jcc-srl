@@ -1,6 +1,6 @@
 uuid: 92e4bc77-4382-4919-8d03-838f94160da5
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
-    - field.field.node.srl_howto_instruction.field_howto_body
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
     - field.field.node.srl_howto_instruction.field_paragraphs
@@ -22,22 +21,17 @@ id: node.srl_howto_instruction.teaser
 targetEntityType: node
 bundle: srl_howto_instruction
 mode: teaser
-content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
   body: true
   field_blocks: true
   field_column_first: true
   field_column_second: true
   field_forms: true
-  field_howto_body: true
   field_howto_tabs: true
   field_howto_tabs_title: true
   field_paragraphs: true
   field_parent: true
   field_title_display: true
   langcode: true
+  links: true

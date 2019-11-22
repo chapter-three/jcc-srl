@@ -35,7 +35,6 @@ settings:
           name: Media
           items:
             - Blockquote
-            - media_entity_embed
         -
           name: Styles
           items:
@@ -54,7 +53,7 @@ settings:
             - Maximize
   plugins:
     stylescombo:
-      styles: "p.jcc-hero__lead|Hero Lead\r\np.jcc-header-group__lead|Header Lead\r\nh2.jcc-card__title|Card Title (h2)\r\nh3.jcc-card__title|Card Title (h3)"
+      styles: "p.jcc-lead|Lead paragraph\r\nh2.jcc-title|Title (section)"
     language:
       language_list: un
     linkit:

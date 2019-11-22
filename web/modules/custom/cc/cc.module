@@ -109,7 +109,7 @@ function cc_field_widget_form_alter(
       $entity = $field->getEntity();
 
       $widget_state = ConditionalDisplay::getWidgetState(
-        $entity->uuid(), $field_name, $context['delta'], $form_state);
+        $entity->id(), $field_name, $context['delta'], $form_state);
       /** @var ConditionalDisplay $cc */
       if ($widget_state && isset($widget_state['entity'])) {
         $cc = $widget_state['entity'];
@@ -123,7 +123,7 @@ function cc_field_widget_form_alter(
           'entity' => $cc,
         ];
         ConditionalDisplay::setWidgetState(
-          $entity->uuid(), $field_name, $context['delta'], $form_state, $state);
+          $entity->id(), $field_name, $context['delta'], $form_state, $state);
       }
       $element['cc'] = $cc->getWidgetElement($context['form'], $form_state);
 
@@ -235,16 +235,16 @@ function cc_entity_view_alter(
       !$form_state->getErrors()
     ) {
       $user_input = [];
-      $uuids = array_unique(array_map(function ($condition) {
-        return $condition['uuid'];
+      $ids = array_unique(array_map(function ($condition) {
+        return $condition['id'];
       }, $cc->getConditions()->getConditions()));
-      foreach ($uuids as $uuid) {
-        if ($input = $form_state->getValue($uuid)) {
+      foreach ($ids as $id) {
+        if ($input = $form_state->getValue($id)) {
           if (is_array($input)) {
-            $user_input[$uuid] = $input;
+            $user_input[$id] = $input;
           }
           else {
-            $user_input[$uuid] = [$input => $input];
+            $user_input[$id] = [$input => $input];
           }
         }
       }
@@ -291,8 +291,6 @@ function cc_entity_view_alter(
 /**
  * Gets/sets a reference to user input form state for later use.
  *
- * @param string $uuid
- *   Entity uuid of the user input entity.
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  *   The form state object.
  *

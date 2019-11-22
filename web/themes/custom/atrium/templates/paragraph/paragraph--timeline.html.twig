@@ -5,7 +5,7 @@
  */
 #}
 {% extends 'paragraph.html.twig' %}
-{% block content %}
+{% block paragraph %}
 
   {% if content.field_timeline_items|render %}
 
@@ -46,6 +46,7 @@
     {% endfor %}
 
     {% include '@organisms/sections/timeline/timeline.twig' with {
+      id: paragraph_id,
       headergroup: headergroup,
       timeline: item_content,
       background_variant: 'has-background-color--dark'

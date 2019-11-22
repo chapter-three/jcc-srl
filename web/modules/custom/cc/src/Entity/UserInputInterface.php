@@ -81,26 +81,23 @@ interface UserInputInterface extends ContentEntityInterface, RevisionLogInterfac
    * @return array
    *   Array of input item descriptions.
    */
-  public function getItems();
+  public function getInputItems();
 
   /**
-   * Get items as FAPI #options array.
+   * Get input items as FAPI #options array.
    *
    * @return array
    *   FAPI #options value..
    */
-  public function getItemsOptions();
+  public function getInputItemsOptions();
 
   /**
    * Sets the User Input items.
    *
-   * @param array $items
-   *   Array of input item descriptions.
-   *
    * @return \Drupal\cc\Entity\UserInputInterface
    *   The called User input entity.
    */
-  public function setItems(array $items);
+  public function setInputItems(array $input_items);
 
   /**
    * Gets the User input creation timestamp.

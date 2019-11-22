@@ -1,0 +1,155 @@
+<?php
+
+/**
+ * @file Module install file.
+ */
+
+use Drupal\cc\ConditionalDisplay;
+use Drupal\cc\Conditions;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+
+/**
+ * Convert to cc module user input id from uuid.
+ */
+function srl_updates_update_8001(&$sandbox) {
+  $storage = Drupal::entityTypeManager()->getStorage('cc_user_input');
+
+  $database = Drupal::database();
+  $query = $database
+    ->select('cc_field_conditions', 'fc')
+    ->fields('fc');
+  foreach ($query->execute() as $row) {
+    $save = FALSE;
+    /** @var \Drupal\cc\Conditions $conditions */
+    $conditions = unserialize($row->conditions);
+    $conditions_array = $conditions->getConditions();
+    foreach ($conditions_array as $i => &$condition) {
+      $save = TRUE;
+      /** @var \Drupal\cc\Entity\UserInput $entity */
+      if (empty($condition['uuid']) ||
+        !($entity = reset($storage->loadByProperties(['uuid' => $condition['uuid']])))
+      ) {
+        unset($conditions_array[$i]);
+      }
+      else {
+        unset($condition['uuid']);
+        $condition['id'] = $entity->id();
+      }
+    }
+    if ($save) {
+      $conditions = new Conditions($conditions->getOperator(), array_values($conditions_array));
+      $database
+        ->merge('cc_field_conditions')
+        ->keys([
+          'entity_type' => $row->entity_type,
+          'entity_id' => $row->entity_id,
+          'revision_id' => $row->revision_id,
+          'langcode' => $row->langcode,
+          'field' => $row->field,
+          'delta' => $row->delta,
+        ])
+        ->fields([
+          'conditions' => serialize($conditions),
+        ])
+        ->execute();
+    }
+  }
+}
+
+/**
+ * Convert cc module user input items field from string_long to cc_user_input_item.
+ */
+function srl_updates_update_8002(&$sandbox) {
+  $definition_update_manager = Drupal::entityDefinitionUpdateManager();
+
+  // Add new items field.
+  $field_storage_definition = BaseFieldDefinition::create('cc_user_input_item')
+    ->setLabel(t('Items'))
+    ->setDescription(t('User Input items.'))
+    ->setRevisionable(TRUE)
+    ->setTranslatable(TRUE)
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'string_textarea',
+      'weight' => -1,
+      'settings' => [
+        'rows' => 2,
+      ],
+    ]);
+  $definition_update_manager->installFieldStorageDefinition(
+    'input_items', 'cc_user_input', 'cc', $field_storage_definition);
+
+  // Migrate data to new field.
+  $storage = Drupal::entityTypeManager()->getStorage('cc_user_input');
+  /** @var \Drupal\cc\Entity\UserInput $entity */
+  foreach ($storage->loadByProperties() as $entity) {
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\StringLongItem $item */
+    foreach ($entity->get('items') as $item) {
+      $entity->get('input_items')->appendItem($item->getValue());
+    }
+    $entity->save();
+  }
+
+  // Update conditions to new user input item ids.
+  $regex = '/^item_([0-9]+)$/';
+  $database = Drupal::database();
+  $query = $database
+    ->select('cc_field_conditions', 'fc')
+    ->fields('fc');
+  foreach ($query->execute() as $row) {
+    $update = FALSE;
+    /** @var \Drupal\cc\Conditions $conditions */
+    $conditions = unserialize($row->conditions);
+    $conditions_updated = [];
+    foreach ($conditions->getConditions() as $i => $condition) {
+      $condition_updated = [
+        'operator' => $condition['operator'],
+        'id' => $condition['id'],
+        'value' => [],
+      ];
+      foreach ($condition['value'] as $key => $value) {
+        $update = TRUE;
+        preg_match($regex, $key, $matches);
+        $key = 'item_' . ($matches[1] + 1);
+        if (preg_match($regex, $value, $matches)) {
+          $value = 'item_' . ($matches[1] + 1);
+        }
+        $condition_updated['value'][$key] = $value;
+      }
+      $conditions_updated[$i] = $condition_updated;
+    }
+    if ($update) {
+      $conditions = new Conditions($conditions->getOperator(), $conditions_updated);
+      $database = Drupal::database();
+      $database
+        ->merge('cc_field_conditions')
+        ->keys([
+          'entity_type' => $row->entity_type,
+          'entity_id' => $row->entity_id,
+          'revision_id' => $row->revision_id,
+          'langcode' => $row->langcode,
+          'field' => $row->field,
+          'delta' => $row->delta,
+        ])
+        ->fields([
+          'conditions' => serialize($conditions),
+        ])
+        ->execute();
+    }
+  }
+}
+
+/**
+ * Remove legacy cc module user input items field.
+ */
+function srl_updates_update_8003(&$sandbox) {
+  $definition_update_manager = Drupal::entityDefinitionUpdateManager();
+  $field_storage_definition = $definition_update_manager
+    ->getFieldStorageDefinition('items', 'cc_user_input');
+  $definition_update_manager
+    ->uninstallFieldStorageDefinition($field_storage_definition);
+}

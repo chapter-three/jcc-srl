@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
-    - field.field.node.srl_howto_instruction.field_howto_body
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
     - field.field.node.srl_howto_instruction.field_paragraphs
@@ -61,15 +60,6 @@ content:
     settings:
       view_mode: default
       link: false
-    third_party_settings: {  }
-    region: content
-  field_howto_body:
-    type: entity_reference_revisions_entity_view
-    weight: 8
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
     third_party_settings: {  }
     region: content
   field_howto_tabs:

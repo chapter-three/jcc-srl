@@ -414,9 +414,9 @@ class ConditionalDisplay {
             $field = $this->hostEntity->get($field_name);
             /** @var \Drupal\cc\Entity\UserInput $user_input */
             foreach ($field->referencedEntities() as $user_input) {
-              $parameter_fields[$field_name][$user_input->uuid()] = [
+              $parameter_fields[$field_name][$user_input->id()] = [
                 'label' => $user_input->label(),
-                'options' => $user_input->getItemsOptions(),
+                'options' => $user_input->getInputItemsOptions(),
               ];
             }
           }
@@ -430,10 +430,10 @@ class ConditionalDisplay {
   /**
    * Get parameter label.
    */
-  public function getParameterLabel($entity_uuid) {
+  public function getParameterLabel($entity_id) {
     foreach ($this->getParameters() as $field_name => $values) {
-      foreach ($values as $uuid => $value) {
-        if ($uuid == $entity_uuid) {
+      foreach ($values as $id => $value) {
+        if ($id == $entity_id) {
           return $value['label'];
         }
       }
@@ -447,8 +447,8 @@ class ConditionalDisplay {
   public function getParameterKeysOptions() {
     $options = [];
     foreach ($this->getParameters() as $field_name => $values) {
-      foreach ($values as $uuid => $value) {
-        $options[$uuid] = $value['label'];
+      foreach ($values as $id => $value) {
+        $options[$id] = $value['label'];
       }
     }
     return $options;
@@ -457,11 +457,11 @@ class ConditionalDisplay {
   /**
    * Get parameter entity values as select #options array.
    */
-  public function getParameterValuesOptions($entity_uuid) {
+  public function getParameterValuesOptions($entity_id) {
     $options = [];
     foreach ($this->getParameters() as $field_name => $values) {
-      foreach ($values as $uuid => $value) {
-        if ($uuid == $entity_uuid) {
+      foreach ($values as $id => $value) {
+        if ($id == $entity_id) {
           foreach ($value['options'] as $key => $option) {
             $options[$key] = $option;
           }
@@ -502,7 +502,7 @@ class ConditionalDisplay {
 
     $prefix = implode('-', [
       'cc',
-      $this->getHostEntity()->uuid(),
+      $this->getHostEntity()->id(),
       $this->fieldName,
       $this->fieldDelta,
     ]);
@@ -517,7 +517,7 @@ class ConditionalDisplay {
       '#element_validate' => [[get_class($this), 'validateParametersElement']],
       'host_entity' => [
         '#type' => 'value',
-        '#value' => $this->hostEntity->uuid(),
+        '#value' => $this->hostEntity->id(),
       ],
       'field_name' => [
         '#type' => 'value',
@@ -569,10 +569,10 @@ class ConditionalDisplay {
         else {
           $element[$i] = [
             '#type' => 'fieldset',
-            '#title' => $this->getParameterLabel($condition['uuid']),
-            'uuid' => [
+            '#title' => $this->getParameterLabel($condition['id']),
+            'id' => [
               '#type' => 'value',
-              '#value' => $condition['uuid'],
+              '#value' => $condition['id'],
             ],
             'operator' => [
               '#type' => 'select',
@@ -581,7 +581,7 @@ class ConditionalDisplay {
             ],
             'condition' => [
               '#type' => 'checkboxes',
-              '#options' => $this->getParameterValuesOptions($condition['uuid']),
+              '#options' => $this->getParameterValuesOptions($condition['id']),
               '#default_value' => $condition['value'],
             ],
             'remove' => [
@@ -645,16 +645,16 @@ class ConditionalDisplay {
   /**
    * Gets widget state.
    */
-  public static function getWidgetState($entity_uuid, $field_name, $delta, FormStateInterface $form_state) {
-    $parents = ['cc', $entity_uuid, $field_name, $delta];
+  public static function getWidgetState($entity_id, $field_name, $delta, FormStateInterface $form_state) {
+    $parents = ['cc', $entity_id, $field_name, $delta];
     return NestedArray::getValue($form_state->getStorage(), $parents);
   }
 
   /**
    * Sets widget state.
    */
-  public static function setWidgetState($entity_uuid, $field_name, $delta, FormStateInterface $form_state, $value) {
-    $parents = ['cc', $entity_uuid, $field_name, $delta];
+  public static function setWidgetState($entity_id, $field_name, $delta, FormStateInterface $form_state, $value) {
+    $parents = ['cc', $entity_id, $field_name, $delta];
     NestedArray::setValue($form_state->getStorage(), $parents, $value);
   }
 
@@ -794,8 +794,10 @@ class ConditionalDisplay {
         $i = 0;
         while (@$value[$i]) {
           // @todo conditions, nested conditions.
-          $condition->addCondition($value[$i]['uuid'],
-            $value[$i]['operator'], $value[$i]['condition']);
+          if (@$value[$i]['id']) {
+            $condition->addCondition($value[$i]['id'],
+              $value[$i]['operator'], $value[$i]['condition']);
+          }
           $i++;
         }
         return $condition;
