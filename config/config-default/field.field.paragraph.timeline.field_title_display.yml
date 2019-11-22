@@ -1,0 +1,28 @@
+uuid: b110541f-5f64-4cd3-a4b5-afcd3addedd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_display
+    - paragraphs.paragraphs_type.timeline
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.timeline.field_title_display
+field_name: field_title_display
+entity_type: paragraph
+bundle: timeline
+label: 'Display Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

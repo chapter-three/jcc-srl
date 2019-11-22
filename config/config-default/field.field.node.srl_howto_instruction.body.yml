@@ -1,0 +1,29 @@
+uuid: 2bca0807-b3a2-41c3-94f7-22fc9d14de4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.srl_howto_instruction
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.srl_howto_instruction.body
+field_name: body
+entity_type: node
+bundle: srl_howto_instruction
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

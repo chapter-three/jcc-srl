@@ -1,0 +1,11 @@
+uuid: 09e2bfe4-a299-4725-9da7-eae5d377b057
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+id: media_type_audio
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

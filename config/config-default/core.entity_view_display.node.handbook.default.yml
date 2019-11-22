@@ -1,0 +1,25 @@
+uuid: 0ee45b3d-ba8e-4cc3-badd-fb194e4f95bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.handbook.body
+    - node.type.handbook
+  module:
+    - text
+    - user
+id: node.handbook.default
+targetEntityType: node
+bundle: handbook
+mode: default
+content:
+  body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true
+  links: true

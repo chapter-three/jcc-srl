@@ -1,0 +1,18 @@
+uuid: 952e121c-261a-40b8-974d-38f2e8c03130
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'SRL Wayfinder'
+type: srl_wayfinder
+description: 'Pages with end user input define paths of MULPs.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -13,11 +13,15 @@ fi
 # Merge the multidev for the PR into the dev environment
 terminus -n build:env:merge "$TERMINUS_SITE.$TERMINUS_ENV" --yes
 
+# If any modules, or theme files have been moved around or reorganized, in order to avoid
+# "The website encountered an unexpected error. Please try again later." error on First Visit
+terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" cache-rebuild
+
 # Run updatedb on the dev environment
 terminus -n drush $TERMINUS_SITE.dev -- updatedb --yes
 
 # If there are any exported configuration files, then import them
-if [ -f "config/system.site.yml" ] ; then
+if [ -f "config/config-default/system.site.yml" ] ; then
   terminus -n drush "$TERMINUS_SITE.dev" -- config-import --yes
 fi
 

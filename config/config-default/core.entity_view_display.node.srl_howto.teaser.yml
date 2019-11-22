@@ -1,0 +1,31 @@
+uuid: b6e7a8f3-8955-4abc-af53-4f2a44888450
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.srl_howto.field_children_primary
+    - field.field.node.srl_howto.field_children_secondary
+    - field.field.node.srl_howto.field_column_first
+    - field.field.node.srl_howto.field_column_second
+    - field.field.node.srl_howto.field_switchboard_subtitle
+    - field.field.node.srl_howto.field_switchboard_title
+    - field.field.node.srl_howto.field_title_display
+    - node.type.srl_howto
+  module:
+    - user
+id: node.srl_howto.teaser
+targetEntityType: node
+bundle: srl_howto
+mode: teaser
+content: {  }
+hidden:
+  field_children_primary: true
+  field_children_secondary: true
+  field_column_first: true
+  field_column_second: true
+  field_switchboard_subtitle: true
+  field_switchboard_title: true
+  field_title_display: true
+  langcode: true
+  links: true

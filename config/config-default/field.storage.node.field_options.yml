@@ -1,0 +1,21 @@
+uuid: e8c64733-36b6-4eb0-a9ea-bda31d8f75eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - cc
+    - entity_reference_revisions
+    - node
+id: node.field_options
+field_name: field_options
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: cc_user_input
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

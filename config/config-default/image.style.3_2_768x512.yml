@@ -1,0 +1,17 @@
+uuid: 16ddade6-aaa3-405d-982f-a335d944e927
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 3_2_768x512
+label: '3:2 Ratio - 768 x 512'
+effects:
+  a888297e-1c57-438d-a04b-947984f806ae:
+    uuid: a888297e-1c57-438d-a04b-947984f806ae
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 512
+      crop_type: focal_point

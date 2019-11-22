@@ -13,48 +13,20 @@ config:
 
   php: '7.3'
 
+  database: mariadb
+
   # Optionally activate xdebug
   #
   # If you are having trouble getting xdebug to work please see:
   # https://docs.devwithlando.io/services/php.html#using-xdebug
   #xdebug: true
 
-
-  # *********************************************************************************
-  # ****   No need to change anything below, unless you know what you're doing.  ****
-  # ****                    And have a very specific need.                       ****
-  #**********************************************************************************
-
-# Additional services and features.
-services:
-  # Theme.
-  node-cli:
-    type: node:10
-    globals:
-      gulp-cli: "latest"
-
 # Custom Lando commands
 tooling:
-  node:
-    service: node-cli
-  npm:
-    service: node-cli
   reset:
     service: appserver
-    description: "Runs updb, cr, cim, uli \n Reset your local after a build or db install."
+    description: "Runs updb, cim, cr, \n Reset your local after a build or db install."
     cmd:
       - drush updb -y
-      - drush cr
       - drush cim -y
-      - drush uli -l jcc.lndo.site
-  theme:build:
-    service: node-cli
-    description: "Compile the theme. (Shortcut for npm install && npm run dev)"
-    cmd:
-      - npm install --prefix web/themes/custom/atrium
-      - npm run dev --prefix web/themes/custom/atrium
-  theme:watch:
-    service: node-cli
-    description: "Run the watcher."
-    cmd:
-      - npm run watch --prefix web/themes/custom/atrium
+      - drush cr

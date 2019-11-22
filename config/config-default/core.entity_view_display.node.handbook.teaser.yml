@@ -1,0 +1,19 @@
+uuid: 3e54328f-bfa5-4b19-99de-2d0ba0fafbb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.handbook.body
+    - node.type.handbook
+  module:
+    - user
+id: node.handbook.teaser
+targetEntityType: node
+bundle: handbook
+mode: teaser
+content: {  }
+hidden:
+  body: true
+  langcode: true
+  links: true

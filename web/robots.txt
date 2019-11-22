@@ -59,3 +59,6 @@ Disallow: /index.php/user/password/
 Disallow: /index.php/user/register/
 Disallow: /index.php/user/login/
 Disallow: /index.php/user/logout/
+
+# Remove this line after Alpha2 launch.
+Disallow: /

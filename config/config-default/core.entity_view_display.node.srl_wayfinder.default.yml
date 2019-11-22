@@ -1,0 +1,42 @@
+uuid: 3af5f3a0-78ea-4b1e-8e0b-4dbbe7dd0d68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.srl_wayfinder.field_options
+    - field.field.node.srl_wayfinder.field_paragraphs
+    - node.type.srl_wayfinder
+  module:
+    - cc
+    - entity_reference_revisions
+    - user
+id: node.srl_wayfinder.default
+targetEntityType: node
+bundle: srl_wayfinder
+mode: default
+content:
+  field_options:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: cc_user_input_revisions
+    region: content
+  field_paragraphs:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

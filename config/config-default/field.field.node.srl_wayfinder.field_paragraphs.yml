@@ -1,0 +1,75 @@
+uuid: d5c03376-2bee-4167-8069-fa811e5da536
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.srl_wayfinder
+    - paragraphs.paragraphs_type.flex
+    - paragraphs.paragraphs_type.postcard
+    - paragraphs.paragraphs_type.srl_date_calculator
+    - paragraphs.paragraphs_type.step_container
+    - paragraphs.paragraphs_type.timeline
+  module:
+    - entity_reference_revisions
+id: node.srl_wayfinder.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: srl_wayfinder
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      flex: flex
+      postcard: postcard
+      srl_date_calculator: srl_date_calculator
+      step_container: step_container
+      timeline: timeline
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_container:
+        weight: 15
+        enabled: false
+      calculation_date:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      code_section:
+        weight: 18
+        enabled: false
+      flex:
+        enabled: true
+        weight: 19
+      judgement_body_tab:
+        weight: 20
+        enabled: false
+      postcard:
+        enabled: true
+        weight: 21
+      srl_date_calculator:
+        enabled: true
+        weight: 22
+      step:
+        weight: 23
+        enabled: false
+      step_container:
+        enabled: true
+        weight: 24
+      timeline:
+        enabled: true
+        weight: 25
+      timeline_item:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

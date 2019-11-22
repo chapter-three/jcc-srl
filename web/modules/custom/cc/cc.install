@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the cc module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function cc_schema() {
+  $schema['cc_field_conditions'] = [
+    'description' => 'Stores conditions for fields.',
+    'fields' => [
+      'entity_type' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'description' => 'The host entity type.',
+      ],
+      'entity_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "The host entity id.",
+      ],
+      'revision_id' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "The host entity revision id.",
+      ],
+      'langcode' => [
+        'type' => 'varchar_ascii',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The host entity language code. References {language}.langcode.',
+      ],
+      'field' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'description' => 'The host entity field name.',
+      ],
+      'delta' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The sequence number for the host entity field.',
+      ],
+      'settings' => [
+        'type' => 'blob',
+        'description' => 'Serialized settings.',
+      ],
+      'conditions' => [
+        'type' => 'blob',
+        'description' => 'Serialized conditions.',
+      ],
+    ],
+    'primary key' => ['entity_type', 'entity_id', 'revision_id', 'langcode', 'field', 'delta'],
+    'unique keys' => [],
+    'indexes' => [],
+  ];
+
+  return $schema;
+}

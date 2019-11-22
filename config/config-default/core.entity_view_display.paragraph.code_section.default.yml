@@ -1,0 +1,47 @@
+uuid: c923a4c1-68f6-429c-ae25-c2ec40632c71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.code_section.field_code
+    - field.field.paragraph.code_section.field_section
+    - field.field.paragraph.code_section.field_section_suffix
+    - paragraphs.paragraphs_type.code_section
+  module:
+    - range
+id: paragraph.code_section.default
+targetEntityType: paragraph
+bundle: code_section
+mode: default
+content:
+  field_code:
+    weight: 0
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_section:
+    weight: 1
+    label: above
+    settings:
+      decimal_separator: .
+      scale: 2
+      range_separator: '-'
+      thousand_separator: ''
+      range_combine: true
+      from_prefix_suffix: false
+      to_prefix_suffix: false
+    third_party_settings: {  }
+    type: range_decimal
+    region: content
+  field_section_suffix:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

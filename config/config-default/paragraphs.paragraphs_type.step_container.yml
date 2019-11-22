@@ -1,0 +1,9 @@
+uuid: 49f2636a-8747-4c40-95a1-31bd1a2e9820
+langcode: en
+status: true
+dependencies: {  }
+id: step_container
+label: 'Step Container'
+icon_uuid: null
+description: 'Container for vertical steps.'
+behavior_plugins: {  }

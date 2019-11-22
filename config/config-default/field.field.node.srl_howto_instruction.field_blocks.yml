@@ -1,0 +1,23 @@
+uuid: 1faf5cd0-30f6-417f-8241-95285424c670
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blocks
+    - node.type.srl_howto_instruction
+  module:
+    - block_field
+id: node.srl_howto_instruction.field_blocks
+field_name: field_blocks
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Sidebar Blocks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    'fixed_block_content:judgement': 'fixed_block_content:judgement'
+field_type: block_field

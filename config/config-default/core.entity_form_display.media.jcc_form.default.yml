@@ -1,0 +1,130 @@
+uuid: 3a5a4e80-dffa-4f18-a1b4-9bb78fa826cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.jcc_form.field_case_type
+    - field.field.media.jcc_form.field_code
+    - field.field.media.jcc_form.field_date_effective
+    - field.field.media.jcc_form.field_description
+    - field.field.media.jcc_form.field_media_file_1
+    - field.field.media.jcc_form.field_number
+    - field.field.media.jcc_form.field_pdf_private
+    - field.field.media.jcc_form.field_url
+    - media.type.jcc_form
+  module:
+    - datetime
+    - file
+    - link
+    - paragraphs
+    - path
+    - text
+id: media.jcc_form.default
+targetEntityType: media
+bundle: jcc_form
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_case_type:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_code:
+    type: entity_reference_paragraphs
+    weight: 8
+    settings:
+      title: 'Code Section'
+      title_plural: 'Code Sections'
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: code_section
+    third_party_settings: {  }
+    region: content
+  field_date_effective:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_description:
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_media_file_1:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_number:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pdf_private:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_url:
+    weight: 3
+    settings:
+      placeholder_url: 'https://www.courts.ca.gov/documents'
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden:
+  status: true

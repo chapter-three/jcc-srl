@@ -1,0 +1,23 @@
+uuid: 4c07670c-1968-4d8a-83e5-fd265cea8d7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_url
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_url
+field_name: field_url
+entity_type: media
+bundle: jcc_form
+label: 'Link to Original Form'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

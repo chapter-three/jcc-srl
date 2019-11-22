@@ -1,0 +1,67 @@
+uuid: 3c73212f-112d-4319-9d83-c9d728e2dfb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timeline_items
+    - paragraphs.paragraphs_type.timeline
+    - paragraphs.paragraphs_type.timeline_item
+  module:
+    - entity_reference_revisions
+id: paragraph.timeline.field_timeline_items
+field_name: field_timeline_items
+entity_type: paragraph
+bundle: timeline
+label: 'Timeline Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      timeline_item: timeline_item
+    target_bundles_drag_drop:
+      step_container:
+        weight: 13
+        enabled: false
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_container:
+        weight: 15
+        enabled: false
+      calculation_date:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      code_section:
+        weight: 18
+        enabled: false
+      flex:
+        weight: 19
+        enabled: false
+      judgement_body_tab:
+        weight: 20
+        enabled: false
+      postcard:
+        weight: 21
+        enabled: false
+      srl_date_calculator:
+        weight: 22
+        enabled: false
+      step:
+        weight: 23
+        enabled: false
+      timeline:
+        weight: 24
+        enabled: false
+      timeline_item:
+        enabled: true
+        weight: 26
+field_type: entity_reference_revisions

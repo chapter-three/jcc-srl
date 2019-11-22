@@ -1,0 +1,9 @@
+uuid: 3692c3cf-5452-4ff3-96b8-8a767e6e0df9
+langcode: en
+status: true
+dependencies: {  }
+id: card
+label: 'Card (DEPRECATED)'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

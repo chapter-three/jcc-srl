@@ -1,0 +1,39 @@
+uuid: cc2fd6a8-cb45-4afb-94dc-8748087dceca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.basic.body
+    - field.field.node.basic.field_media
+    - image.style.large
+    - node.type.basic
+  module:
+    - media
+    - text
+    - user
+_core:
+  default_config_hash: yA_hyz2S6d-S09EOKJfahwBxv-tjADiCjwmhsWthkyg
+id: node.basic.default
+targetEntityType: node
+bundle: basic
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_media:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  links: true

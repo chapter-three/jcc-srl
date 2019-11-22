@@ -1,0 +1,13 @@
+check:
+  disabled_extensions: true
+  interval_days: 1
+fetch:
+  url: ''
+  max_attempts: 2
+  timeout: 30
+notification:
+  emails:
+    - hosting@chapterthree.com
+  threshold: security
+_core:
+  default_config_hash: Zzv8P-_LmX3dQwrOcbUjugMp_iE7Bs9Q9Z0e1rxvkmQ

@@ -1,0 +1,9 @@
+uuid: 556d7885-a354-4441-aead-4c585f30a4d5
+langcode: en
+status: true
+dependencies: {  }
+id: accordion
+label: Accordion
+icon_uuid: null
+description: 'Individual expanding/collapsing component.'
+behavior_plugins: {  }

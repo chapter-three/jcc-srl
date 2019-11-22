@@ -1,0 +1,21 @@
+uuid: ab025649-b426-45d9-bf02-cb5bb458dced
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.srl_wayfinder.field_options
+    - field.field.node.srl_wayfinder.field_paragraphs
+    - node.type.srl_wayfinder
+  module:
+    - user
+id: node.srl_wayfinder.teaser
+targetEntityType: node
+bundle: srl_wayfinder
+mode: teaser
+content: {  }
+hidden:
+  field_options: true
+  field_paragraphs: true
+  langcode: true
+  links: true

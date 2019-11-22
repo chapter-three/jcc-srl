@@ -1,0 +1,28 @@
+uuid: b0a01d37-d16d-49ce-9f60-0493c73b3af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.srl_onramp
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.srl_onramp.field_description
+field_name: field_description
+entity_type: node
+bundle: srl_onramp
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

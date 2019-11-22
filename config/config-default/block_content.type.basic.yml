@@ -1,0 +1,8 @@
+uuid: d6bcd56e-7d46-4098-8362-2e3da11b1173
+langcode: en
+status: true
+dependencies: {  }
+id: basic
+label: 'Basic Editable Block'
+revision: 0
+description: 'Basic block for content that shouldn''t be stored in config.'

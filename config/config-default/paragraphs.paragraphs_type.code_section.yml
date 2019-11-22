@@ -1,0 +1,9 @@
+uuid: 03e5767c-9bff-4b3e-ba24-e7c5e6d3e30e
+langcode: en
+status: true
+dependencies: {  }
+id: code_section
+label: 'Code Section'
+icon_uuid: null
+description: 'Used to refer to a Legal Code and Section.  i.e.: Family Code § 270'
+behavior_plugins: {  }

@@ -1,0 +1,17 @@
+uuid: a45fcfa0-f4d7-4714-a8ec-f022f350d4c6
+langcode: en
+status: false
+dependencies: {  }
+id: stage
+label: Stage
+description: 'Intended for Pantheon multidev and local environments'
+folder: ../config/config-stage
+module:
+  maillog: 0
+theme: {  }
+blacklist:
+  - mailsystem.settings
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 1

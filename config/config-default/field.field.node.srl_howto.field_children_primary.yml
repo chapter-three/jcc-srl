@@ -1,0 +1,70 @@
+uuid: 6e31aea2-bc55-472f-871d-a99518f375d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_children_primary
+    - node.type.srl_howto
+    - paragraphs.paragraphs_type.tile
+  module:
+    - entity_reference_revisions
+id: node.srl_howto.field_children_primary
+field_name: field_children_primary
+entity_type: node
+bundle: srl_howto
+label: 'Primary Children'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tile: tile
+    target_bundles_drag_drop:
+      accordion:
+        weight: 9
+        enabled: false
+      accordion_container:
+        weight: 10
+        enabled: false
+      card:
+        weight: 11
+        enabled: false
+      flex:
+        weight: 12
+        enabled: false
+      judgement_body_tab:
+        weight: 13
+        enabled: false
+      postcard:
+        weight: 14
+        enabled: false
+      step:
+        weight: 15
+        enabled: false
+      step_container:
+        weight: 16
+        enabled: false
+      calculation_date:
+        weight: 17
+        enabled: false
+      code_section:
+        weight: 19
+        enabled: false
+      srl_date_calculator:
+        weight: 23
+        enabled: false
+      tile:
+        enabled: true
+        weight: 26
+      timeline:
+        weight: 27
+        enabled: false
+      timeline_item:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

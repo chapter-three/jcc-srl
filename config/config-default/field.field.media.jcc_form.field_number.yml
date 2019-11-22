@@ -1,0 +1,19 @@
+uuid: b49941fb-5de6-4ed2-b738-8d3ec8c76c64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_number
+    - media.type.jcc_form
+id: media.jcc_form.field_number
+field_name: field_number
+entity_type: media
+bundle: jcc_form
+label: 'Form #'
+description: 'Example: <strong>FL-150</strong>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

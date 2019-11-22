@@ -1,0 +1,65 @@
+uuid: 5cc7cdd5-9c6d-4836-a47c-9cd29a35ac6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.srl_onramp.field_case_type
+    - field.field.node.srl_onramp.field_description
+    - field.field.node.srl_onramp.field_hero_nav_title
+    - field.field.node.srl_onramp.field_paragraphs
+    - field.field.node.srl_onramp.field_title_display
+    - node.type.srl_onramp
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.srl_onramp.default
+targetEntityType: node
+bundle: srl_onramp
+mode: default
+content:
+  field_case_type:
+    weight: 103
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_description:
+    weight: 105
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hero_nav_title:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 106
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title_display:
+    weight: 102
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

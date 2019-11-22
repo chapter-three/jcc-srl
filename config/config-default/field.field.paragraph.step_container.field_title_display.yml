@@ -1,0 +1,28 @@
+uuid: 50ad07d2-b2fe-4994-b7a0-abc5e7fcb930
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_display
+    - paragraphs.paragraphs_type.step_container
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.step_container.field_title_display
+field_name: field_title_display
+entity_type: paragraph
+bundle: step_container
+label: 'Display Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

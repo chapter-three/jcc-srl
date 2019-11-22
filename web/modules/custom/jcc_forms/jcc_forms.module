@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains jcc_forms.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters JCC Form Edit page.
+ */
+function jcc_forms_form_media_jcc_form_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Redirect to JCC Forms view on save.
+  $form_state->setRedirect('view.media_jcc_forms.page_1');
+}

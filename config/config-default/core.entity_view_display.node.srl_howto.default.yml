@@ -1,0 +1,82 @@
+uuid: 41797e18-571b-4a68-a810-1e8e1b8ec86e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.srl_howto.field_children_primary
+    - field.field.node.srl_howto.field_children_secondary
+    - field.field.node.srl_howto.field_column_first
+    - field.field.node.srl_howto.field_column_second
+    - field.field.node.srl_howto.field_switchboard_subtitle
+    - field.field.node.srl_howto.field_switchboard_title
+    - field.field.node.srl_howto.field_title_display
+    - node.type.srl_howto
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.srl_howto.default
+targetEntityType: node
+bundle: srl_howto
+mode: default
+content:
+  field_children_primary:
+    type: entity_reference_revisions_entity_view
+    weight: 109
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_children_secondary:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_column_first:
+    weight: 103
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_column_second:
+    weight: 104
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_switchboard_subtitle:
+    weight: 106
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_switchboard_title:
+    weight: 105
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title_display:
+    weight: 102
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

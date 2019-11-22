@@ -1,0 +1,45 @@
+uuid: 4ab8f417-4f4d-4ae6-8ab1-18ba8913f486
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.jcc_form.field_case_type
+    - field.field.media.jcc_form.field_code
+    - field.field.media.jcc_form.field_date_effective
+    - field.field.media.jcc_form.field_description
+    - field.field.media.jcc_form.field_media_file_1
+    - field.field.media.jcc_form.field_number
+    - field.field.media.jcc_form.field_pdf_private
+    - field.field.media.jcc_form.field_url
+    - image.style.medium
+    - media.type.jcc_form
+  module:
+    - image
+id: media.jcc_form.media_library
+targetEntityType: media
+bundle: jcc_form
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_case_type: true
+  field_code: true
+  field_date_effective: true
+  field_description: true
+  field_media_file_1: true
+  field_number: true
+  field_pdf_private: true
+  field_url: true
+  langcode: true
+  name: true
+  uid: true

@@ -1,0 +1,20 @@
+uuid: 32904526-bc0c-4507-a90b-bde11f0b67d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - atrium
+id: messages
+theme: atrium
+region: content
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  provider: system
+  label_display: '0'
+visibility: {  }

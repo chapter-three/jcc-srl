@@ -1,0 +1,30 @@
+uuid: 35e832a4-e798-40c2-bb00-d6e3e7a7039b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.background
+field_name: background
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: parent
+      label: Parent
+    -
+      value: child
+      label: Child
+    -
+      value: background_image
+      label: 'Background Image'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

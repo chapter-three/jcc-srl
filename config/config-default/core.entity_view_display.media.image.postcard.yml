@@ -1,0 +1,33 @@
+uuid: 748b6b91-d652-4474-8171-34a3ca12d759
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.postcard
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.postcard
+  module:
+    - responsive_image
+_core:
+  default_config_hash: 1QgVN6gol01eilaqPYzS0WWmcGeOQxZqIAG3RDY875I
+id: media.image.postcard
+targetEntityType: media
+bundle: image
+mode: postcard
+content:
+  field_media_image:
+    type: responsive_image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      responsive_image_style: postcard
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

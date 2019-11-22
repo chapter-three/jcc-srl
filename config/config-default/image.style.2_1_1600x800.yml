@@ -1,0 +1,17 @@
+uuid: 97dc3085-5a4a-49d8-ae73-19ffc90d14ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 2_1_1600x800
+label: '2:1 Ratio - 1600 x 800'
+effects:
+  ec8d4420-bb36-4072-8563-8ea4b8f5fa70:
+    uuid: ec8d4420-bb36-4072-8563-8ea4b8f5fa70
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1600
+      height: 800
+      crop_type: focal_point

@@ -1,0 +1,109 @@
+uuid: e4a61321-0479-47a7-b344-467e56dbfdff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.srl_wayfinder.field_options
+    - field.field.node.srl_wayfinder.field_paragraphs
+    - node.type.srl_wayfinder
+  module:
+    - cc
+    - entity_browser_entity_form
+    - inline_entity_form
+    - maxlength
+    - paragraphs
+    - path
+id: node.srl_wayfinder.default
+targetEntityType: node
+bundle: srl_wayfinder
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_options:
+    weight: 6
+    settings:
+      form_mode: default
+      revision: true
+      override_labels: true
+      label_singular: 'Option set'
+      label_plural: 'Option sets'
+      allow_new: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+      allow_existing: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+      cc:
+        status: 0
+    type: inline_entity_form_complex
+    region: content
+  field_paragraphs:
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings:
+      cc:
+        status: '1'
+    type: entity_reference_paragraphs
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

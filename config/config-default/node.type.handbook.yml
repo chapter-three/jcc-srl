@@ -1,0 +1,18 @@
+uuid: 1f176a0f-9ffe-4c54-a780-62851427bc44
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'JCC SRL Website Handbook'
+type: handbook
+description: 'Pages with end user input define paths of MULPs.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

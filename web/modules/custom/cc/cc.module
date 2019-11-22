@@ -1,0 +1,393 @@
+<?php
+
+/**
+ * @file
+ * Contains cc.module.
+ */
+
+use Drupal\cc\ConditionalDisplay;
+use Drupal\Core\Entity\ContentEntityFormInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Entity\RevisionableInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\language\ConfigurableLanguageInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cc_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cc module.
+    case 'help.page.cc':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Content tailored to user input.') . '</p>';
+      return $output;
+
+    default:
+      return NULL;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cc_theme($existing, $type, $theme, $path) {
+  return [
+    'cc_conditional_display_element' => [
+      'render element' => 'element',
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_field_widget_third_party_settings_form().
+ */
+function cc_field_widget_third_party_settings_form(
+  WidgetInterface $plugin,
+  FieldDefinitionInterface $field_definition,
+  $form_mode,
+  array $form,
+  FormStateInterface $form_state
+) {
+
+  // Add checkbox to widget settings.
+  $element = function ($default_value) {
+    return [
+      'status' => [
+        '#type' => 'checkbox',
+        '#title' => t('Enable conditional display'),
+        '#default_value' => $default_value,
+      ],
+    ];
+  };
+  switch ($field_definition->getType()) {
+
+    case 'entity_reference':
+    case 'entity_reference_revisions':
+      return $element($plugin->getThirdPartySetting('cc', 'status'));
+      break;
+
+  }
+
+  return NULL;
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * @throws \Exception
+ */
+function cc_field_widget_form_alter(
+  &$element,
+  FormStateInterface $form_state,
+  &$context
+) {
+
+  // Add conditional elements to widget.
+  /** @var WidgetInterface $widget */
+  $widget = $context['widget'];
+  if ($widget->getThirdPartySetting('cc', 'status')) {
+
+    // The parent field.
+    /** @var \Drupal\Core\Field\FieldItemListInterface $items */
+    $items = $context['items'];
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $field */
+    if ($field = $items->get($context['delta'])) {
+
+      $field_name = $field->getFieldDefinition()->getName();
+
+      // The host entity.
+      /** @var \Drupal\Core\Entity\ContentEntityBase $entity */
+      $entity = $field->getEntity();
+
+      $widget_state = ConditionalDisplay::getWidgetState(
+        $entity->id(), $field_name, $context['delta'], $form_state);
+      /** @var ConditionalDisplay $cc */
+      if ($widget_state && isset($widget_state['entity'])) {
+        $cc = $widget_state['entity'];
+      }
+      else {
+        $cc = new ConditionalDisplay(
+          $entity,
+          $field_name,
+          $context['delta']);
+        $state = [
+          'entity' => $cc,
+        ];
+        ConditionalDisplay::setWidgetState(
+          $entity->id(), $field_name, $context['delta'], $form_state, $state);
+      }
+      $element['cc'] = $cc->getWidgetElement($context['form'], $form_state);
+
+    }
+  }
+
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Adds form submit handler when form contains conditional display elements.
+ *
+ * @throws \Exception
+ */
+function cc_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $find_cc = function (&$element) use (&$find_cc) {
+    foreach (Element::children($element) as $field_name) {
+      $child = &$element[$field_name];
+      if (ConditionalDisplay::isConditionalDisplayWidgetElement($child)) {
+        return TRUE;
+      }
+      elseif ($find_cc($child)) {
+        return TRUE;
+      }
+    }
+    return FALSE;
+  };
+  if ($find_cc($form)) {
+    if (isset($form['actions']['submit']['#submit'])) {
+      array_unshift($form['actions']['submit']['#submit'], 'cc_form_submit');
+    }
+    else {
+      throw new Exception('Unexpected form structure.');
+    }
+  }
+}
+
+/**
+ * Submit handler for forms with conditional display elements.
+ *
+ * @throws \Exception
+ * @see cc_form_alter()
+ */
+function cc_form_submit(array &$form, FormStateInterface $form_state) {
+  if (!$form_state->getFormObject() instanceOf ContentEntityFormInterface ||
+    !($host_entity = $form_state->getformObject()->getEntity())
+  ) {
+    return;
+  }
+  /** @var \Drupal\Core\Entity\ContentEntityInterface $host_entity */
+
+  $process_elements = function (&$elements, $host_entity) use (&$process_elements, &$form, $form_state) {
+    foreach (Element::children($elements) as $field_name) {
+      $element = &$elements[$field_name];
+      if (ConditionalDisplay::isConditionalDisplayWidgetElement($element)) {
+        $cc = ConditionalDisplay::processElement($element['cc'], $form, $form_state);
+        if ($cc->getHostEntity()->getEntityTypeId() == $host_entity->getEntityTypeId() ||
+         $cc->getHostEntity()->id() == $host_entity->id()
+        ) {
+          /** @noinspection PhpUndefinedFieldInspection */
+          $host_entity->cc[$cc->getFieldName()][$cc->getFieldDelta()] = $cc;
+        }
+        else {
+          // @todo handle nested entities, need to set $host_entity to the
+          // the updated host entity.
+          throw new Exception('Nested conditions not yet implemented.');
+        }
+      }
+      $process_elements($element, $host_entity);
+    }
+  };
+  $process_elements($form, $host_entity);
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ *
+ * @throws \Exception
+ */
+function cc_entity_view_alter(
+  array &$build,
+  Drupal\Core\Entity\EntityInterface $entity,
+  EntityViewDisplayInterface $display
+) {
+  // List of items to hide.
+  $hide = [];
+
+  // Verify we have a user input form.
+  $form_state = cc_user_input_form_state();
+  if ($form_state && $form_state->getValue('form_id') != 'cc_user_input') {
+    $form_state = NULL;
+  }
+
+  // Each field marked for conditional display.
+  foreach (ConditionalDisplay::getEntityConditionalDisplays($entity) as $cc) {
+
+    // Make sure the conditional field is present.
+    if (!isset($build[$cc->getFieldName()][$cc->getFieldDelta()])) {
+      continue;
+    }
+
+    // Get user input.
+    unset($user_input);
+    if (
+      // No input when required but form not submitted.
+      ($cc->getSetting('require_input') && $form_state->isSubmitted()) &&
+      // No input on error.
+      !$form_state->getErrors()
+    ) {
+      $user_input = [];
+      $ids = array_unique(array_map(function ($condition) {
+        return $condition['id'];
+      }, $cc->getConditions()->getConditions()));
+      foreach ($ids as $id) {
+        if ($input = $form_state->getValue($id)) {
+          if (is_array($input)) {
+            $user_input[$id] = $input;
+          }
+          else {
+            $user_input[$id] = [$input => $input];
+          }
+        }
+      }
+    }
+
+    if (
+      // User input required.
+      (!isset($user_input) && $cc->getSetting('require_input')) ||
+      // Evaluate conditions.
+      (isset($user_input) && !$cc->getConditions()->eval($user_input))
+    ) {
+      $hide[$cc->getFieldName()][] = $cc->getFieldDelta();
+    }
+  }
+
+  foreach ($hide as $field_name => $deltas_to_remove) {
+    // In reverse order in order to use field item list remove method, which
+    // resets item indexes.
+    while (count($deltas_to_remove)) {
+      $delta = array_pop($deltas_to_remove);
+      switch ($build[$field_name]['#field_type']) {
+
+        case 'entity_reference_revisions':
+          /** @var \Drupal\entity_reference_revisions\EntityReferenceRevisionsFieldItemList $items */
+          $items = $build[$field_name]['#items'];
+          // Move build items up to replace removed.
+          for ($i = $delta; $i < $items->count() - 1; $i++) {
+            $build[$field_name][$i] = $build[$field_name][$i + 1];
+          }
+          unset($build[$field_name][$items->count() - 1]);
+          // Remove from field list.
+          $items->removeItem($delta);
+          break;
+
+        default:
+          // $build[$field_name][$delta]['#access'] = FALSE;
+          throw new Exception('Field type not implemented.');
+
+      }
+    }
+  }
+}
+
+/**
+ * Gets/sets a reference to user input form state for later use.
+ *
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state object.
+ *
+ * @return \Drupal\Core\Form\FormStateInterface|null
+ */
+function cc_user_input_form_state(FormStateInterface $form_state = NULL) {
+  $state = &drupal_static(__FUNCTION__);
+  if ($form_state) {
+    $state = $form_state;
+  }
+  return $state;
+}
+
+/**
+ * Implements hook_entity_storage_load().
+ *
+ * @throws \Exception
+ */
+function cc_entity_storage_load(array $entities, $entity_type) {
+  foreach ($entities as $entity) {
+    foreach (ConditionalDisplay::getEntityConditionalDisplays($entity) as $cc) {
+      $entity->cc[$cc->getFieldName()][$cc->getFieldDelta()] = $cc;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_update().
+ *
+ * @throws \Exception
+ */
+function cc_entity_update(EntityInterface $entity) {
+  if (isset($entity->cc)) {
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    ConditionalDisplay::deleteEntityConditionalDisplays(
+      $entity, $entity->getRevisionId(), $entity->language()->getId());
+    foreach ($entity->cc as $ccs) {
+      /** @var ConditionalDisplay $cc */
+      foreach ($ccs as $cc) {
+        $cc->setHostEntity($entity)->save();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ *
+ * @throws \Exception
+ */
+function cc_entity_insert(EntityInterface $entity) {
+  if (isset($entity->cc)) {
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    foreach ($entity->cc as $ccs) {
+      /** @var ConditionalDisplay $cc */
+      foreach ($ccs as $cc) {
+        $cc->setHostEntity($entity)->save();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function cc_entity_delete(EntityInterface $entity) {
+  ConditionalDisplay::deleteEntityConditionalDisplays($entity);
+}
+
+/**
+ * Implements hook_entity_revision_delete().
+ */
+function cc_entity_revision_delete(EntityInterface $entity) {
+  if ($entity instanceof FieldableEntityInterface &&
+    $entity instanceof RevisionableInterface
+  ) {
+    ConditionalDisplay::deleteEntityConditionalDisplays(
+      $entity, $entity->getRevisionId());
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete() for 'configurable_language'.
+ */
+function cc_configurable_language_delete(
+  ConfigurableLanguageInterface $language
+) {
+  ConditionalDisplay::deleteLanguageConditionalDisplays($language->id());
+}
+
+/**
+ * Implements hook_entity_translation_delete().
+ */
+function cc_entity_translation_delete(EntityInterface $translation) {
+  if ($translation instanceof FieldableEntityInterface) {
+    ConditionalDisplay::deleteEntityConditionalDisplays(
+      $translation, NULL, $translation->language());
+  }
+
+}
