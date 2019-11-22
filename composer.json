@@ -215,9 +215,6 @@
             },
             "drupal/inline_entity_form": {
                 "Support entity revision references": "https://www.drupal.org/files/issues/2019-10-07/inline_entity_form-2367235-131.patch"
-            },
-            "drupal/core": {
-                "View with entity table relation shouldn't always add fields to query": "patches/3095482-2.drupal.View-with-entity-table-relation-shouldnt-always-add-fields-to-query.patch"
             }
         },
         "installer-types": [
