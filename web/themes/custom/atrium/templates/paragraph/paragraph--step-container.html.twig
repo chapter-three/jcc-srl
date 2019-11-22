@@ -10,9 +10,9 @@
   {% if content.field_steps|render %}
 
     {% set headergroup = {
-      brow: content.field_brow,
-      title: content.field_title_display,
-      lead: content.field_description,
+      brow: content.field_brow|render ? content.field_brow : '',
+      title: content.field_title_display|render ? content.field_title_display : '',
+      lead: content.field_description|render ? content.field_description : '',
     } %}
 
     {% set step_content = [] %}

@@ -10,7 +10,7 @@
   {% if content.field_body|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       background_variant: 'has-background-color--dark',
-      body: content.field_body,
+      body: content.field_body|render ? content.field_body : null,
     } only %}
   {% endif %}
 

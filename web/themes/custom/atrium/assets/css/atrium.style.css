@@ -1935,3 +1935,49 @@ https://v2.designsystem.digital.gov/style-tokens
   display: block;
   background-color: #2378c3;
 }
+
+.pager {
+  margin: 2rem 0;
+}
+
+ul.pager__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+li.pager__item {
+  color: #2378c3;
+  display: inline-block;
+  margin: 0 0.15rem;
+  padding: 0;
+  list-style: none;
+}
+li.pager__item a, li.pager__item a:link, li.pager__item a:visited {
+  border-radius: 3px;
+  color: #2378c3;
+  display: block;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+li.pager__item a:hover, li.pager__item.is-active a {
+  background: #2378c3;
+  color: #fff;
+}
+li.pager__item__ellipsis {
+  padding: 0.75rem 1.5rem;
+}
