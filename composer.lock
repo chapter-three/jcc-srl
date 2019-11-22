@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c269f64fb570d5b1fc922a68fe82d06",
+    "content-hash": "c95ae38b323953dbb00285672db66177",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3447,7 +3447,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch"
+                    "View with entity table relation shouldn't always add fields to query": "patches/3095482-2.drupal.View-with-entity-table-relation-shouldnt-always-add-fields-to-query.patch"
                 }
             },
             "autoload": {
@@ -6983,7 +6983,8 @@
                 "url": "https://github.com/exygy/courtyard.git",
                 "reference": "82e6ec0"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2019-11-20T23:50:37+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
