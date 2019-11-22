@@ -1737,6 +1737,11 @@ USWDS style tokens in the documentation:
 https://v2.designsystem.digital.gov/style-tokens
 ----------------------------------------
 */
+.caption {
+  margin-bottom: 1rem;
+  min-width: 12rem;
+}
+
 .nav-tabs__wrapper {
   background: #e6e6e6;
   padding-top: 80px;
