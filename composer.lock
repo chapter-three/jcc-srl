@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c95ae38b323953dbb00285672db66177",
+    "content-hash": "345147c41a5e315af754fe47f69c2dbc",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3447,7 +3447,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "View with entity table relation shouldn't always add fields to query": "patches/3095482-2.drupal.View-with-entity-table-relation-shouldnt-always-add-fields-to-query.patch"
+                    "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch"
                 }
             },
             "autoload": {
@@ -6977,14 +6977,13 @@
         },
         {
             "name": "exygy/courtyard",
-            "version": "dev-master",
+            "version": "1.0.1-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "82e6ec0"
+                "reference": "d22edff"
             },
-            "type": "drupal-library",
-            "time": "2019-11-20T23:50:37+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -13847,7 +13846,7 @@
         "drupal/simple_block": 10,
         "drupal/views_aggregator": 15,
         "drupal/xmlsitemap": 15,
-        "exygy/courtyard": 20,
+        "exygy/courtyard": 15,
         "drupal/stage_file_proxy": 5
     },
     "prefer-stable": true,

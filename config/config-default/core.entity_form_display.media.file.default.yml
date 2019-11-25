@@ -1,37 +1,41 @@
-uuid: 8d135835-dd84-4a1d-88fd-7d3d72a27956
+uuid: c96cab9b-7893-4b7e-bb08-61c6590ca4b4
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.media_library
     - field.field.media.file.field_media_file
     - media.type.file
   module:
     - file
-_core:
-  default_config_hash: MoONd1Snx4wuAdOo3Xh0yr9kyIf_L5_ocp50YjG74dQ
-id: media.file.media_library
+id: media.file.default
 targetEntityType: media
 bundle: file
-mode: media_library
+mode: default
 content:
   field_media_file:
     type: file_generic
-    weight: 0
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
-  name: true
   path: true
   status: true
   uid: true

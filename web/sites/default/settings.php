@@ -112,7 +112,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
     // so for now, `develop` multidev should use the production configuration.
     // After launch, this will likely be changed.
     $config['config_split.config_split.prod']['status'] = TRUE;
-    $config['environment_indicator.indicator']['bg_color'] = '#ff9300';
+    $config['environment_indicator.indicator']['bg_color'] = '#5b0ca3';
     $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
   }
 
