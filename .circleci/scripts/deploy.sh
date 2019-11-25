@@ -42,23 +42,23 @@ if [ $CIRCLE_BRANCH == 'stage' ] ; then
   git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon test release."
 fi
 
-# Tag for master.
-if [ $CIRCLE_BRANCH == 'master' ] ; then
-  # Get latest pantheon_live_ tag.
-  git fetch origin --tags
-  pantheon_prefix='pantheon_live_'
-  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
-  if [ -z $pantheon_current ] ; then
-    # No current tag so start with 1.
-    pantheon_new=1
-  else
-    pantheon_id=${pantheon_current#${pantheon_prefix}}
-    pantheon_new=$(($pantheon_id+1))
-  fi
-  echo
-  echo "Tagging master branch for production (Live): $pantheon_prefix$pantheon_new"
-  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon live release."
-fi
+## Tag for master.
+#if [ $CIRCLE_BRANCH == 'master' ] ; then
+#  # Get latest pantheon_live_ tag.
+#  git fetch origin --tags
+#  pantheon_prefix='pantheon_live_'
+#  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
+#  if [ -z $pantheon_current ] ; then
+#    # No current tag so start with 1.
+#    pantheon_new=1
+#  else
+#    pantheon_id=${pantheon_current#${pantheon_prefix}}
+#    pantheon_new=$(($pantheon_id+1))
+#  fi
+#  echo
+#  echo "Tagging master branch for production (Live): $pantheon_prefix$pantheon_new"
+#  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon live release."
+#fi
 
 echo
 echo "Pushing $CIRCLE_BRANCH"
