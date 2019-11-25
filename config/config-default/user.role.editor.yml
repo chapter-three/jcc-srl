@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access contextual links'
   - 'access environment indicator'
+  - 'access file_wysiwyg entity browser pages'
   - 'access meb entity browser pages'
   - 'access meb_forms entity browser pages'
   - 'access media overview'
