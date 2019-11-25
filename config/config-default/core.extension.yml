@@ -75,6 +75,7 @@ module:
   redirect: 0
   responsive_image: 0
   rh_media: 0
+  rh_taxonomy: 0
   role_delegation: 0
   search: 0
   sendgrid_integration: 0
