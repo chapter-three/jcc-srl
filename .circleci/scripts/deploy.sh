@@ -20,27 +20,28 @@ cd ../.. && composer -n artifact-sync
 cd data/artifact
 git add .
 git commit -am "Built assets. $TIMESTAMP"
-echo "\n@todo- Work out release taging.\n"
 
-# Tag for test/stage.
-# Pantheon's serial workflow uses a tag on master to set "Test" environment.
-# Try tagging stage branch with pahtheon_test_N to see if we can hijack.
-if [ $CIRCLE_BRANCH == 'stage' ] ; then
-  # Get latest pantheon_live_ tag.
-  git fetch origin --tags
-  pantheon_prefix='pantheon_test_'
-  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
-  if [ -z $pantheon_current ] ; then
-    # No current tag so start with 1.
-    pantheon_new=1
-  else
-    pantheon_id=${pantheon_current#${pantheon_prefix}}
-    pantheon_new=$(($pantheon_id+1))
-  fi
-  echo
-  echo "Tagging stage branch for test environment: $pantheon_prefix$pantheon_new"
-  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon test release."
-fi
+#echo "\n@todo- Work out release taging.\n"
+
+## Tag for test/stage.
+## Pantheon's serial workflow uses a tag on master to set "Test" environment.
+## Try tagging stage branch with pahtheon_test_N to see if we can hijack.
+#if [ $CIRCLE_BRANCH == 'stage' ] ; then
+#  # Get latest pantheon_live_ tag.
+#  git fetch origin --tags
+#  pantheon_prefix='pantheon_test_'
+#  pantheon_current=$(git tag -l --sort=v:refname $pantheon_prefix* | tail -1)
+#  if [ -z $pantheon_current ] ; then
+#    # No current tag so start with 1.
+#    pantheon_new=1
+#  else
+#    pantheon_id=${pantheon_current#${pantheon_prefix}}
+#    pantheon_new=$(($pantheon_id+1))
+#  fi
+#  echo
+#  echo "Tagging stage branch for test environment: $pantheon_prefix$pantheon_new"
+#  git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon test release."
+#fi
 
 ## Tag for master.
 #if [ $CIRCLE_BRANCH == 'master' ] ; then
