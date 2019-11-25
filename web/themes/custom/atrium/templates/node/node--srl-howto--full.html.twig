@@ -5,8 +5,8 @@
   {% include '@molecules/blocks/hero/hero.twig' with {
     breadcrumbs: [{ label: label }],
     title: content.field_title_display|render ? content.field_title_display : label,
-    body: content.field_column_first,
-    column_content_right: content.field_column_second,
+    body: content.field_column_first|render ? content.field_column_first : '',
+    column_content_right: content.field_column_second|render ? content.field_column_second : '',
     column_variant: content.field_column_second|render ? 'has-two-columns-half' : 'has-two-columns-threequarter',
   } only %}
 
@@ -54,8 +54,8 @@
   {% if content.field_children_primary|render or content.field_children_secondary|render %}
     {% include '@organisms/sections/switchboard/switchboard.twig' with {
       headergroup: {
-        brow: content.field_switchboard_title,
-        title: content.field_switchboard_subtitle
+        brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
+        title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
       },
       switchboard_tiles: switchboard_tiles,
       switchboard_tiles2: switchboard_tiles2,
