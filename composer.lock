@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4248de8c1972ee70dc443a5c703b58ca",
+    "content-hash": "345147c41a5e315af754fe47f69c2dbc",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6977,14 +6977,13 @@
         },
         {
             "name": "exygy/courtyard",
-            "version": "dev-master",
+            "version": "1.0.1-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
                 "reference": "d22edff"
             },
-            "type": "drupal-library",
-            "time": "2019-11-22T19:06:14+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -13847,7 +13846,7 @@
         "drupal/simple_block": 10,
         "drupal/views_aggregator": 15,
         "drupal/xmlsitemap": 15,
-        "exygy/courtyard": 20,
+        "exygy/courtyard": 15,
         "drupal/stage_file_proxy": 5
     },
     "prefer-stable": true,
