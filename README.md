@@ -6,7 +6,7 @@ Hosted on Pantheon.
 
 This project assumes [Lando](https://docs.devwithlando.io) for local development but any -AMP stack will do. Use lando commands when multiple options are given.
 
-## Initial Local Set Up.
+## Initial Local Set Up
 
 1. Clone this repo:
 
@@ -26,24 +26,25 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
 
 5. Import your database.
 
-   - To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
-     ```bash
+   To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
 
-       # Go to Project root.
-       cd [this-directory]
+   ```bash
 
-       # Create a new backup.
-       terminus backup:create jcc-srl.develop --element=db
+     # Go to Project root.
+     cd [this-directory]
 
-       # Get the download url
-       terminus backup:get jcc-srl.develop --element=db
+     # Create a new backup.
+     terminus backup:create jcc-srl.develop --element=db
 
-       # Move db to project root.
-       mv [path-to-db] .
+     # Get the download url
+     terminus backup:get jcc-srl.develop --element=db
 
-       # Import the database
-       lando db-import [filename]
-     ```
+     # Move db to project root.
+     mv [path-to-db] .
+
+     # Import the database
+     lando db-import [filename]
+   ```
 
 6. Set up local options:
 
@@ -71,12 +72,13 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
   `git checkout -b feature/[ticket-id]--short-description`
 
 3. Make commits.
-    - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
+
+   All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
 
 4. Rebase to origin and push feature branches.
 
-    `git rebase origin/develop`
-    `git push`
+  `git rebase origin/develop`
+  `git push`
 
 5. Create Github Pull Request(PR) against `develop` for code review.
 
@@ -94,13 +96,13 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
 
 2. Import configuration from code into database.
 
-`lando drush cim` or `drush cim`
+  `lando drush cim` or `drush cim`
 
 3. Make changes locally.
 
 4. Export database configuration to code.
 
-`lando drush cex` or `drush cex`
+  `lando drush cex` or `drush cex`
 
 5. Commit and push changes.
 
@@ -171,6 +173,7 @@ The CircleCI integration is configured to deploy branches that start with `epic-
 
 To add a patch to drupal module foobar insert the patches section in the extra
 section of composer.json:
+
 ```json
 "extra": {
     "patches": {
