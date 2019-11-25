@@ -7,7 +7,7 @@ dependencies:
     - entity_browser.browser.file_wysiwyg
     - media.type.file
   content:
-    - 'file:file:c313db66-e5d8-4d29-9c66-7836f8bdba01'
+    - 'file:file:e1dd9543-0240-4df6-abbb-5887133f8424'
   module:
     - entity_embed
     - media
@@ -23,4 +23,4 @@ type_settings:
   entity_browser: file_wysiwyg
   entity_browser_settings:
     display_review: false
-icon_uuid: c313db66-e5d8-4d29-9c66-7836f8bdba01
+icon_uuid: e1dd9543-0240-4df6-abbb-5887133f8424
