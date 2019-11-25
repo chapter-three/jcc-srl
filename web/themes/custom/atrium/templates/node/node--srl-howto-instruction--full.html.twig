@@ -11,8 +11,8 @@
       }
     ],
     title: content.field_title_display|render ? content.field_title_display : label,
-    body: content.field_column_first,
-    column_content_right: content.field_column_second,
+    body: content.field_column_first|render ? content.field_column_first : '',
+    column_content_right: content.field_column_second|render ? content.field_column_second : '',
     column_variant: content.field_column_second|render ? 'has-two-columns-half' : 'has-two-columns-threequarter',
   } %}
 
@@ -27,16 +27,16 @@
   {% endif %}
 
   {% set right_column = '' %}
-  {% if node.field_blocks.value or node.field_forms.value %}
+  {% if content.field_blocks|render or content.field_forms|render %}
     {% set right_column %}
       {{ content.field_blocks }}
       {{ content.field_forms }}
     {% endset %}
   {% endif %}
 
-  {% if node.body.value %}
+  {% if content.body|render or right_column %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
-      column_content_left: content.body,
+      column_content_left: content.body|render ? content.body : '',
       column_content_right: right_column,
       column_variant: 'has-two-columns-threequarter',
       background_variant: 'has-background-color--transparent',
