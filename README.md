@@ -1,146 +1,147 @@
 # Judicial Council of California - Self-Represented Litigant (SRL) portal
+
 Drupal 8.
 
 Hosted on Pantheon.
 
-This project assumes [Lando](https://docs.devwithlando.io) for local development but any -AMP stack will do. Use lando commands when multiple options are given. 
+This project assumes [Lando](https://docs.devwithlando.io) for local development but any -AMP stack will do. Use lando commands when multiple options are given.
 
-## 1. Initial local set up.
+## Initial Local Set Up.
 
- 1. Clone this repo: 
+1. Clone this repo:
 
-    `git clone git@github.com:chapter-three/jcc-srl.git`
+   `git clone git@github.com:chapter-three/jcc-srl.git`
 
- 2. Move to root directory
+2. Move to root directory
 
-    `cd jcc-srl`
+   `cd jcc-srl`
 
- 3.  Start your local environment. 
+3.  Start your local environment.
 
-    `lando start` or equivalent
+   `lando start` or equivalent
 
- 4.  Install dependencies with Composer.
+4.  Install dependencies with Composer.
 
-    `lando composer install` or `composer install`
+   `lando composer install` or `composer install`
 
- 5. Import your database.
-   
-    - To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
-      ```bash
-   
-        # Go to Project root.
-        cd [this-directory]
-   
-        # Create a new backup.
-        terminus backup:create jcc-srl.develop --element=db
-   
-        # Get the download url
-        terminus backup:get jcc-srl.develop --element=db
-   
-        # Move db to project root.
-        mv [path-to-db] .
-   
-        # Import the database
-        lando db-import [filename]
-      ```
-   
- 6. Set up local options:
+5. Import your database.
 
-    ```bash
-    cd [this-directory]
-    cp examples/example.drush.yml drush/drush.yml
-    cp examples/example.settings.local.php web/sites/default/settings.local.php
-    cp examples/example.services.local.yml web/sites/default/services.local.yml
-    mkdir config-local
-    mkdir sites/default/files/private
-    ```
+   - To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
+     ```bash
 
-  7. Test setup by logging in.
-    
-    `lando drush uli` or `drush uli`
+       # Go to Project root.
+       cd [this-directory]
 
-## 2. Git Workflow. 
-  1. Checkout latest code.
+       # Create a new backup.
+       terminus backup:create jcc-srl.develop --element=db
 
-    `git checkout develop`
+       # Get the download url
+       terminus backup:get jcc-srl.develop --element=db
 
-  2. Create a feature branch. 
-  
-    `git checkout -b feature/[ticket-id]--short-description`
-  
-  3. Make commits. 
-      - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
-    
-  4. Rebase to origin and push feature branches.
+       # Move db to project root.
+       mv [path-to-db] .
 
-      `git rebase origin/develop`
-      `git push`
+       # Import the database
+       lando db-import [filename]
+     ```
 
-  5. Create Github Pull Request(PR) against `develop` for code review. 
+6. Set up local options:
 
-  6. CircleCI runs to deploy code, rebuild artifacts and caches, run database updates, and perform tests. 
+   ```bash
+   cd [this-directory]
+   cp examples/example.drush.yml drush/drush.yml
+   cp examples/example.settings.local.php web/sites/default/settings.local.php
+   cp examples/example.services.local.yml web/sites/default/services.local.yml
+   mkdir config-local
+   mkdir sites/default/files/private
+   ```
 
-  7. If CI passes, PRs should be approved and merged by another developer.
-  
-  
-## 3. Configuration Management.
+7. Test setup by logging in.
+
+   `lando drush uli` or `drush uli`
+
+## Git Workflow
+
+1. Checkout latest code.
+
+  `git checkout develop`
+
+2. Create a feature branch.
+
+  `git checkout -b feature/[ticket-id]--short-description`
+
+3. Make commits.
+    - All commits should begin with ticket id and specifically explain changes made. Ex: `[TW14842504] Updating README.md db import instructions and workflow notes.`
+
+4. Rebase to origin and push feature branches.
+
+    `git rebase origin/develop`
+    `git push`
+
+5. Create Github Pull Request(PR) against `develop` for code review.
+
+6. CircleCI runs to deploy code, rebuild artifacts and caches, run database updates, and perform tests.
+
+7. If CI passes, PRs should be approved and merged by another developer.
+
+## Configuration Management
+
 This site uses [config_split](http://drupal.org/project/config_split) and [config_exclude](http://drupal.org/project/config_exclude) to keep environment-specific and developer modules out of the repository. See [scripts/local/default/settings.local.php](scripts/local/default/settings.local.php) for example configuration.
 
 **Typical configuration workflow:**
-  1. Import database locally. (See above)
 
-  2. Import configuration from code into database.
+1. Import database locally. (See above)
 
-  `lando drush cim` or `drush cim`
+2. Import configuration from code into database.
 
-  3. Make changes locally.
+`lando drush cim` or `drush cim`
 
-  4. Export database configuration to code.
+3. Make changes locally.
 
-  `lando drush cex` or `drush cex` 
+4. Export database configuration to code.
 
-  5. Commit and push changes. 
+`lando drush cex` or `drush cex`
 
+5. Commit and push changes.
 
-## 4. Git Branches and Deployments
- - `master` - clean stable production code. Lives on the Pantheon "dev" environment.
-   - On Pantheon `master` branch is the default "dev" environment.
-   - We can deploy `master` to "Live" by tagging commits appropriately. (automated)
-   - Post-launch release branches may be used to deploy to live.
-   - **Do not commit directly to master**
- - `stage` - code that is ready for client review. Lives on the "stage" Multidev environment.
- - `develop` - Peer-reviewed test code for internal QA and integration testing. Lives on the "develop" multidev environment.
- 
+## Git Branches and Deployments
 
-## 5. Pantheon, Multidev and Epics
+- `master` - clean stable production code. Lives on the Pantheon "dev" environment.
+  - On Pantheon `master` branch is the default "dev" environment.
+  - We can deploy `master` to "Live" by tagging commits appropriately. (automated)
+  - Post-launch release branches may be used to deploy to live.
+  - **Do not commit directly to master**
+- `stage` - code that is ready for client review. Lives on the "stage" Multidev environment.
+- `develop` - Peer-reviewed test code for internal QA and integration testing. Lives on the "develop" multidev environment.
 
- - [Terminus](https://pantheon.io/docs/terminus) is a commandline tool for interaction with Pantheon.
-   - You can also use the web dashboard in place of most of these commands.
+## Pantheon, Multidev and Epics
+
+- [Terminus](https://pantheon.io/docs/terminus) is a commandline tool for interaction with Pantheon.
+  - You can also use the web dashboard in place of most of these commands.
 
 We're using a Parallel Git Workflow, rather than the standard Pantheon workflow, so we have the 3 environments described above. `develop` and `stage` are Pantheon "Multisite" environments.
 
- - Any new branches pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
- - Any Pull Requests on Github will also spawn a multidev on Pantheon, named for the Pull Request ID that spawned it.
- - Pantheon only allows 10 multidev environments at this service level so inactive `pr-` and `ci-` environments may need to be deleted manually.
+- Any new branches pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
+- Any Pull Requests on Github will also spawn a multidev on Pantheon, named for the Pull Request ID that spawned it.
+- Pantheon only allows 10 multidev environments at this service level so inactive `pr-` and `ci-` environments may need to be deleted manually.
 
 If you need a more persistent multidev for longer term development of a set of features, the workflow supports `epic` branches. Epics are for large features or a collection of features that depend on each other, that will be developed in parallel before being merged into the normal test environments.
 
 The CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev. Set it up like this:
 
- - Create multidev environment on Pantheon
-   - Terminus
-     - terminus multidev:create [site_env] [multidev]
-     - [site_env] = jcc-srl.live (The environment to clone.)
-     - [multidev] = epic-[description] (Any valid Pantheon branch name prefixed with `epic-`.)
-   - Web Dashboard
-     - On the Multidev Tab - Multidev overview
-     - Click `Create Multidev Environment`
-     - Enter multidev branch name prefixed with `epic-`
-     - Select the environment to clone. (dev)
- - Create an epic- branch from master in this working repo.
- - Push the epic branch to Github
-   - Circle CI will build and deploy it to the new multidev environment every time it's updated.
-
+- Create multidev environment on Pantheon
+  - Terminus
+    - terminus multidev:create [site_env] [multidev]
+    - [site_env] = jcc-srl.live (The environment to clone.)
+    - [multidev] = epic-[description] (Any valid Pantheon branch name prefixed with `epic-`.)
+  - Web Dashboard
+    - On the Multidev Tab - Multidev overview
+    - Click `Create Multidev Environment`
+    - Enter multidev branch name prefixed with `epic-`
+    - Select the environment to clone. (dev)
+- Create an epic- branch from master in this working repo.
+- Push the epic branch to Github
+  - Circle CI will build and deploy it to the new multidev environment every time it's updated.
 
 **About Epics**
 
@@ -150,25 +151,21 @@ The CircleCI integration is configured to deploy branches that start with `epic-
  - Once the epic is complete and ready for full internal QA and integration, the epic can Pull Request to `develop`.
  - If the epic passes QA and integration the epic can be merged to `stage` for User Acceptance and signoff for release.
 
-
-## 6. Module Management
+## Module Management
 
 **Adding Contrib Modules**
 
- - `lando composer require drupal/[package_name] --no-update` to add it to the composer.json without updating everything.
- - `lando composer update drupal/[package_name]` to fetch/update only the desired module.
-
+- `lando composer require drupal/[package_name] --no-update` to add it to the composer.json without updating everything.
+- `lando composer update drupal/[package_name]` to fetch/update only the desired module.
 
 **Updating Contrib Modules**
 
- - `lando composer update drupal/[package_name]`
-
+- `lando composer update drupal/[package_name]`
 
 **Removing Contrib Modules**
 
- - `lando composer remove [package] --no-update` will remove a package from require or require-dev, without running all updates.
- - `lando composer update [package]` will remove the package code.
-
+- `lando composer remove [package] --no-update` will remove a package from require or require-dev, without running all updates.
+- `lando composer update [package]` will remove the package code.
 
 **Applying patches**
 
@@ -184,21 +181,23 @@ section of composer.json:
 }
 ```
 
-## 7. Sensitive config:
+## Sensitive config:
+
 API keys (like SendGrid's) should be stored in the  private:// directory and managed with the key and config_split modules. Environment switches are set in settings.pantheon.php.
 
-## 8. Useful commands:
-   - Database updates: 
+## Useful commands:
 
-      `lando drush updb` or `drush updb`
+- Database updates:
 
-   - Rebuild Cache: 
+   `lando drush updb` or `drush updb`
 
-      `lando drush cr` or `drush cr`
+- Rebuild Cache:
 
-   - Grab a login link: 
+   `lando drush cr` or `drush cr`
 
-      `lando drush uli` or `drush uli`
+- Grab a login link:
 
-   - See list of available proxy urls for local Lando development.
-      `lando info` 
+   `lando drush uli` or `drush uli`
+
+- See list of available proxy urls for local Lando development.
+   `lando info`
