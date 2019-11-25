@@ -1,0 +1,28 @@
+uuid: 815b14fb-0d12-407b-82f8-34cc188733c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_forms
+    - media.type.jcc_form
+    - node.type.srl_howto_instruction
+id: node.srl_howto_instruction.field_forms
+field_name: field_forms
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Relevant Forms'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      jcc_form: jcc_form
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: file
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: ed48b341-ad00-43bb-8a3a-f367d9d6f2fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_pdf_private
+    - media.type.jcc_form
+  module:
+    - file
+id: media.jcc_form.field_pdf_private
+field_name: field_pdf_private
+entity_type: media
+bundle: jcc_form
+label: 'Unencrypted Private PDF'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: jcc_forms
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

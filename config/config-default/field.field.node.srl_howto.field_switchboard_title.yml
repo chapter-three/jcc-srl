@@ -1,0 +1,28 @@
+uuid: 0bbc5fd6-a107-4560-a8f2-cfe78018974a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_switchboard_title
+    - node.type.srl_howto
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.srl_howto.field_switchboard_title
+field_name: field_switchboard_title
+entity_type: node
+bundle: srl_howto
+label: 'Switchboard Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

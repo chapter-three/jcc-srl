@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Template for "field_columns" on "Flexible columns (flex)" Paragraph. Note
+ * that this template prints the most of the 'flex' Paragraph's content.
+ */
+#}
+{% set paragraph = element['#object'] %}
+{% set column_content_left = '' %}
+{% set column_content_right = '' %}
+
+{%- for item in items -%}
+  {% if loop.index == 1 and item.content|render %}
+    {% set column_content_left %}
+      {{- item.content -}}
+    {% endset %}
+  {% endif %}
+
+  {% if loop.index == 2 and item.content|render %}
+    {% set column_content_right %}
+      {{- item.content -}}
+    {% endset %}
+  {% endif %}
+{%- endfor -%}
+
+{% include '@organisms/sections/text-section/text-section.twig' with {
+  id: 'p' ~ paragraph.id(),
+  headergroup: {
+    title: paragraph.field_title_display.value ? paragraph.field_title_display|view : ''
+  },
+  column_content_left: column_content_left,
+  column_content_right: column_content_right,
+  column_variant: column_content_right ? 'has-two-columns-half' : ''
+} only %}

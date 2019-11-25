@@ -1,0 +1,19 @@
+uuid: c6fae2eb-bd58-44f7-910c-9e952c46310f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_overlay
+    - paragraphs.paragraphs_type.postcard
+id: paragraph.postcard.field_text_overlay
+field_name: field_text_overlay
+entity_type: paragraph
+bundle: postcard
+label: 'Image Overlay Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

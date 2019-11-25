@@ -1,0 +1,9 @@
+uuid: e20eeeae-e5c8-4fb0-9ad0-4b824b4ee381
+langcode: en
+status: true
+dependencies: {  }
+id: step
+label: Step
+icon_uuid: null
+description: 'An individual step within a vertical step container.'
+behavior_plugins: {  }

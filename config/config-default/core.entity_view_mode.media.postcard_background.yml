@@ -1,0 +1,10 @@
+uuid: da67bad3-4b03-40a4-91a4-5d0c78271215
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.postcard_background
+label: 'Postcard Background'
+targetEntityType: media
+cache: true

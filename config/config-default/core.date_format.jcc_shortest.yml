@@ -1,0 +1,8 @@
+uuid: ba80254a-dd91-45e8-a745-a7c79e4abcf0
+langcode: en
+status: true
+dependencies: {  }
+id: jcc_shortest
+label: 'JCC shortest date'
+locked: false
+pattern: m/d/y

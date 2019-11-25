@@ -1,0 +1,9 @@
+uuid: 7b9d8816-38cd-47e6-8535-e7c9fb86a703
+langcode: en
+status: true
+dependencies: {  }
+id: postcard
+label: Postcard
+icon_uuid: null
+description: 'Image and text component typically used to display PDF annotations.'
+behavior_plugins: {  }

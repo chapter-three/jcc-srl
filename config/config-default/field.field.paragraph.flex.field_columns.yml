@@ -1,0 +1,28 @@
+uuid: ce04e567-3b97-40c3-a018-341f4cb2a255
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_columns
+    - paragraphs.paragraphs_type.flex
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.flex.field_columns
+field_name: field_columns
+entity_type: paragraph
+bundle: flex
+label: Column(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

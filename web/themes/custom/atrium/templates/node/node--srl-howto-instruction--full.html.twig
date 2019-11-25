@@ -1,0 +1,58 @@
+{% extends 'node.html.twig' %}
+{% block content %}
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    breadcrumbs: [
+      {
+        url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
+        label: node.field_parent.entity.label,
+      },
+      {
+        label: label,
+      }
+    ],
+    title: content.field_title_display|render ? content.field_title_display : label,
+    body: content.field_column_first|render ? content.field_column_first : '',
+    column_content_right: content.field_column_second|render ? content.field_column_second : '',
+    column_variant: 'has-two-columns-threequarter',
+  } %}
+
+  {% if node.field_howto_tabs_title.value and node.field_howto_tabs.value %}
+    <div class="jcc-tab-section__container">
+      {{ attach_library('atrium/howtotabs') }}
+      <h4 class="jcc-header-group__title">
+        {{ content.field_howto_tabs_title }}
+      </h4>
+      {{ content.field_howto_tabs }}
+    </div>
+  {% endif %}
+
+  {% set right_column = '' %}
+  {% if content.field_blocks|render or content.field_forms|render %}
+    {% set right_column %}
+      {{ content.field_blocks }}
+      {{ content.field_forms }}
+    {% endset %}
+  {% endif %}
+
+  {% if content.body|render or right_column %}
+    {% include '@organisms/sections/text-section/text-section.twig' with {
+      column_content_left: content.body|render ? content.body : '',
+      column_content_right: right_column,
+      column_variant: 'has-two-columns-threequarter',
+      background_variant: 'has-background-color--transparent',
+    } only %}
+  {% endif %}
+
+  {{ content|without(
+    'body',
+    'field_blocks',
+    'field_column_first',
+    'field_column_second',
+    'field_forms',
+    'field_howto_body',
+    'field_howto_tabs',
+    'field_howto_tabs_title',
+    'field_parent',
+    'field_title_display'
+  )}}
+{% endblock %}

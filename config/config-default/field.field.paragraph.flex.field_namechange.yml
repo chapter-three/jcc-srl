@@ -1,0 +1,21 @@
+uuid: 66313649-8ae7-4b70-9182-6f6c820b4ca0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_namechange
+    - paragraphs.paragraphs_type.flex
+  module:
+    - options
+id: paragraph.flex.field_namechange
+field_name: field_namechange
+entity_type: paragraph
+bundle: flex
+label: 'Hide under the following name change scenarios'
+description: 'For Namechange Wayfinding Wizard only'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

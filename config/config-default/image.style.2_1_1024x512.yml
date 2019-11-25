@@ -1,0 +1,17 @@
+uuid: d8e8d329-e2b5-4c31-8b9e-676e0120ac91
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 2_1_1024x512
+label: '2:1 Ratio - 1024 x 512'
+effects:
+  a888297e-1c57-438d-a04b-947984f806ae:
+    uuid: a888297e-1c57-438d-a04b-947984f806ae
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 512
+      crop_type: focal_point

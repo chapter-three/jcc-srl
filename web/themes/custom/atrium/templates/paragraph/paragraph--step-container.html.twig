@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Template for "Step Container" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% if content.field_steps|render %}
+
+    {% set headergroup = {
+      brow: content.field_brow|render ? content.field_brow : '',
+      title: content.field_title_display|render ? content.field_title_display : '',
+      lead: content.field_description|render ? content.field_description : '',
+    } %}
+
+    {% set step_content = [] %}
+    {% set steps = paragraph.field_steps %}
+
+    {% for key, item in steps.value %}
+      {% set read_more = [] %}
+      {# ⇣ This check is important because Step fields are NOT required. Empty
+      Steps are possible, and would return the wrong data. #}
+      {% if steps.get(key).entity.field_title_display.value %}
+        {% set step = steps.get(key).entity %}
+
+        {# Prepare "Read more" toggle #}
+        {% if step.field_details.value %}
+          {% set read_more = {
+            id: 'read-more-' ~ step.id(),
+            title: step.field_details_link_text.value|default('Read more'|t),
+            content: step.field_details|view,
+          } %}
+        {% endif %}
+
+        {# Store each step in an array for the Pattern component. #}
+        {% set step_content = step_content|merge([{
+          title: step.field_title_display|view,
+          excerpt: step.field_description|view,
+          read_more: read_more
+        }]) %}
+      {% endif %}
+    {% endfor %}
+
+    {% include '@organisms/sections/steps/steps.twig' with {
+      id: paragraph_id,
+      headergroup: headergroup,
+      steps: step_content,
+      background_variant: 'has-background-color--transparent',
+    } only %}
+
+  {% endif %}
+
+  {{ content|without(
+    'field_brow',
+    'field_create_anchor',
+    'field_description',
+    'field_steps',
+    'field_title_display'
+  ) }}
+{% endblock %}

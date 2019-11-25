@@ -1,0 +1,11 @@
+uuid: bfe50e4c-b469-4309-896a-aa4b143825cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: media_type_remote_video
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

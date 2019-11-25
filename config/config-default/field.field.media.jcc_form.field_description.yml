@@ -1,0 +1,29 @@
+uuid: 0fb086f3-303e-445c-8b04-95c4a3ec2faf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_description
+    - media.type.jcc_form
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: media.jcc_form.field_description
+field_name: field_description
+entity_type: media
+bundle: jcc_form
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

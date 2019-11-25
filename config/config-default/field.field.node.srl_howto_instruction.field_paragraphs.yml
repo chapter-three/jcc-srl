@@ -1,0 +1,73 @@
+uuid: 922e37d8-8213-4d00-a869-afb41bf0c87b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.srl_howto_instruction
+    - paragraphs.paragraphs_type.flex
+    - paragraphs.paragraphs_type.srl_date_calculator
+    - paragraphs.paragraphs_type.step_container
+    - paragraphs.paragraphs_type.timeline
+  module:
+    - entity_reference_revisions
+id: node.srl_howto_instruction.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: srl_howto_instruction
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      flex: flex
+      step_container: step_container
+      timeline: timeline
+      srl_date_calculator: srl_date_calculator
+    target_bundles_drag_drop:
+      judgement_body_tab:
+        weight: -25
+        enabled: false
+      flex:
+        enabled: true
+        weight: -24
+      step_container:
+        enabled: true
+        weight: -23
+      timeline:
+        enabled: true
+        weight: -22
+      srl_date_calculator:
+        enabled: true
+        weight: -21
+      accordion:
+        weight: -20
+        enabled: false
+      accordion_container:
+        weight: -19
+        enabled: false
+      card:
+        weight: -18
+        enabled: false
+      code_section:
+        weight: -17
+        enabled: false
+      calculation_date:
+        weight: -16
+        enabled: false
+      postcard:
+        weight: -15
+        enabled: false
+      step:
+        weight: -14
+        enabled: false
+      timeline_item:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

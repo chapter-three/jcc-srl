@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains srl_date_calculator.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function srl_date_calculator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the srl_date_calculator module.
+    case 'help.page.srl_date_calculator':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a configurable component type that allows a user to enter a date, then calculates important future dates based on the configuration.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function srl_date_calculator_theme() {
+  return [
+    'paragraph__srl_date_calculator' => [
+      'template' => 'paragraph--srl-date-calculator',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__calculation_date' => [
+      'template' => 'paragraph--calculation-date',
+      'base hook' => 'paragraph',
+    ]
+  ];
+}
+
+/**
+ * Implments hook_preprocess_HOOK().
+ */
+function srl_date_calculator_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+
+  if ($paragraph->getType() == 'srl_date_calculator') {
+    // Inject the date form and attach our library.
+    $form = \Drupal::formBuilder()->getForm('\Drupal\srl_date_calculator\Form\SRLDateCalculatorForm');
+    // Don't add form or library if on the edit form, to prevent ajax issues.
+    if (\Drupal::routeMatch()->getRouteName() != 'entity.node.edit_form') {
+      $variables['content']['srl_date_calculator'] = $form;
+      $variables['#attached']['library'][] = 'srl_date_calculator/srl_date_calculator';
+    }
+  }
+}
+

@@ -1,0 +1,15 @@
+name: 'JCC SRL'
+mail: webdev@jud.ca.gov
+slogan: ''
+page:
+  403: /node/61
+  404: /node/62
+  front: /node/8
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: 04dOWvt81T7so5WnCFeVYCu7etzB3JXCsZj3wEUqc5g
+uuid: 3abe1189-7fb2-4570-86b2-eb781e86e221
+mail_notification: ''

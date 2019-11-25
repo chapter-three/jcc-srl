@@ -1,0 +1,22 @@
+uuid: 32f4826e-67b3-4184-ace0-101e1046a7b7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:01b742ee-1b17-4d52-a5d0-8a46bcbdd29e'
+  module:
+    - entity_embed
+    - node
+_core:
+  default_config_hash: xgvZUh-eaMilacE1XYCQ9nLH-2-meOjCyofXSO82gqg
+label: Node
+id: node
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles: {  }
+  display_plugins: {  }
+  entity_browser: ''
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 01b742ee-1b17-4d52-a5d0-8a46bcbdd29e

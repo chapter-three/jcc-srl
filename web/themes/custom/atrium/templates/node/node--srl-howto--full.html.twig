@@ -1,0 +1,76 @@
+{% extends 'node.html.twig' %}
+{% block content %}
+
+  {# Hero #}
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    breadcrumbs: [{ label: label }],
+    title: content.field_title_display|render ? content.field_title_display : label,
+    body: content.field_column_first|render ? content.field_column_first : '',
+    column_content_right: content.field_column_second|render ? content.field_column_second : '',
+    column_variant: content.field_column_second|render ? 'has-two-columns-half' : 'has-two-columns-threequarter',
+  } only %}
+
+  {# Switchboard items: Primary #}
+  {% if content.field_children_primary|render %}
+    {% set switchboard_tiles = [] %}
+    {% set primary = node.field_children_primary %}
+
+    {% for key, item in node.field_children_primary.value %}
+      {# ⇣ This check is important because Tile fields are NOT required. Empty
+      Tiles are possible, and would return the wrong data. #}
+      {% if primary.get(key).entity.field_page.value %}
+        {% set tile_target = primary.get(key).entity.field_page.entity %}
+
+        {# Store each tile in an array for the Pattern component. #}
+        {% set switchboard_tiles = switchboard_tiles|merge([{
+          brow: tile_target.label(),
+          title: primary.get(key).entity.field_statement|view,
+          url: path('entity.node.canonical', { 'node': tile_target.id() })
+        }]) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {# Switchboard items: Secondary #}
+  {% if content.field_children_secondary|render %}
+    {% set switchboard_tiles2 = [] %}
+    {% set secondary = node.field_children_secondary %}
+
+    {% for key, item in node.field_children_secondary.value %}
+      {# ⇣ This check is important because Tile fields are NOT required. Empty
+      Tiles are possible, and would return the wrong data. #}
+      {% if secondary.get(key).entity.field_page.value %}
+        {% set tile_target = secondary.get(key).entity.field_page.entity %}
+        {# Store each tile in an array for the Pattern component. #}
+        {% set switchboard_tiles2 = switchboard_tiles2|merge([{
+          brow: tile_target.label(),
+          title: secondary.get(key).entity.field_statement|view,
+          url: path('entity.node.canonical', { 'node': tile_target.id() })
+        }]) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if content.field_children_primary|render or content.field_children_secondary|render %}
+    {% include '@organisms/sections/switchboard/switchboard.twig' with {
+      headergroup: {
+        brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
+        title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
+      },
+      switchboard_tiles: switchboard_tiles,
+      switchboard_tiles2: switchboard_tiles2,
+      background_variant: 'has-background-color--dark',
+      tiles_variant: 'secondary'
+    } only %}
+  {% endif %}
+
+  {{ content|without(
+    'field_children_primary',
+    'field_children_secondary',
+    'field_column_first',
+    'field_column_second',
+    'field_switchboard_subtitle',
+    'field_switchboard_title',
+    'field_title_display'
+  )}}
+{% endblock %}

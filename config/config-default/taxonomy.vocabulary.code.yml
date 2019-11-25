@@ -1,0 +1,8 @@
+uuid: 4469e579-7cd4-4ef5-b27c-f08a058595fc
+langcode: en
+status: true
+dependencies: {  }
+name: Code
+vid: code
+description: 'A legal code, i.e: Family Code, Code of Civil Procedure, Government Code, etc.'
+weight: 0

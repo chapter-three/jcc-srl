@@ -1,0 +1,25 @@
+uuid: 9746eba2-8de0-4e9a-b65d-e958e07e1f57
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: hmxcPDoB0F4JtlDtNQ1cpB1wi37zYX-Qz4v70kr6i64
+id: local
+label: Local
+description: 'Local development environments.'
+folder: ../config/config-local
+module:
+  devel: 0
+  log_stdout: 0
+  webprofiler: 0
+theme: {  }
+blacklist:
+  - devel.settings
+  - devel.toolbar.settings
+graylist:
+  - system.file
+  - 'xmlsitemap.xmlsitemap.*'
+  - 'webform.webform.*'
+graylist_dependents: false
+graylist_skip_equal: true
+weight: 0

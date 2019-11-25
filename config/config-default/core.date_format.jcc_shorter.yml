@@ -1,0 +1,8 @@
+uuid: b7cd81b3-e6b2-4155-81ce-7728e9d79494
+langcode: en
+status: true
+dependencies: {  }
+id: jcc_shorter
+label: 'JCC shorter date'
+locked: false
+pattern: 'm/d/y H:i'

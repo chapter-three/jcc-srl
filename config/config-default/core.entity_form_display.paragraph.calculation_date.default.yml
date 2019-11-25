@@ -1,0 +1,33 @@
+uuid: 234ff629-09e4-485f-ada8-584af65b2fe8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.calculation_date.field_days
+    - field.field.paragraph.calculation_date.field_label
+    - paragraphs.paragraphs_type.calculation_date
+_core:
+  default_config_hash: u8iRai87ypf_sn-bw4oAmSK5HK1xaOh00vWlWTJBego
+id: paragraph.calculation_date.default
+targetEntityType: paragraph
+bundle: calculation_date
+mode: default
+content:
+  field_days:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

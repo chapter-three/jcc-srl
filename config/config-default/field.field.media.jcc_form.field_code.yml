@@ -1,0 +1,67 @@
+uuid: 4de2b0d3-ba2f-4484-993b-a9f3a321d836
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_code
+    - media.type.jcc_form
+    - paragraphs.paragraphs_type.code_section
+  module:
+    - entity_reference_revisions
+id: media.jcc_form.field_code
+field_name: field_code
+entity_type: media
+bundle: jcc_form
+label: 'Relevant Code Sections'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      code_section: code_section
+    target_bundles_drag_drop:
+      code_section:
+        enabled: true
+        weight: 2
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_container:
+        weight: 15
+        enabled: false
+      calculation_date:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      flex:
+        weight: 19
+        enabled: false
+      judgement_body_tab:
+        weight: 20
+        enabled: false
+      postcard:
+        weight: 21
+        enabled: false
+      srl_date_calculator:
+        weight: 22
+        enabled: false
+      step:
+        weight: 23
+        enabled: false
+      step_container:
+        weight: 24
+        enabled: false
+      timeline:
+        weight: 25
+        enabled: false
+      timeline_item:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

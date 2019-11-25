@@ -1,0 +1,9 @@
+uuid: a66003fb-f1bf-4d3e-a618-4386ce5e6816
+langcode: en
+status: true
+dependencies: {  }
+id: flex
+label: 'Flexible Columns'
+icon_uuid: null
+description: '1- or 2- column text areas.'
+behavior_plugins: {  }

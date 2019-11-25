@@ -1,0 +1,31 @@
+uuid: b6d4541d-7cd0-4903-b0d2-32e17264dc2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser
+  module:
+    - views
+name: meb_forms
+label: 'Media Entity Browser Forms'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select forms'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  ee08feba-543e-45d4-b85e-4fea3eff4294:
+    settings:
+      view: media_entity_browser
+      view_display: jcc_form_browser
+      submit_text: 'Select forms'
+      auto_select: false
+    uuid: ee08feba-543e-45d4-b85e-4fea3eff4294
+    weight: 1
+    label: Forms
+    id: view

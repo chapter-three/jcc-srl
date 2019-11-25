@@ -1,0 +1,28 @@
+uuid: ecbfbe99-099b-4561-a1fd-f1d0070e06fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent
+    - node.type.srl_howto
+    - node.type.srl_howto_instruction
+id: node.srl_howto_instruction.field_parent
+field_name: field_parent
+entity_type: node
+bundle: srl_howto_instruction
+label: 'SRL HowTo Parent'
+description: 'Ex: "Debt Collection". This field will be used to create the breadcrumb at the top of the page and the switchboard at the bottom of the page.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      srl_howto: srl_howto
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

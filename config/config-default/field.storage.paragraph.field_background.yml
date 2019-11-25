@@ -1,0 +1,30 @@
+uuid: 10e2ff53-bf13-4632-a912-37adf55f83ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_background
+field_name: field_background
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: has-background-image
+      label: 'Background Image'
+    -
+      value: has-background-color
+      label: 'Background Color'
+    -
+      value: default
+      label: 'Default (None)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

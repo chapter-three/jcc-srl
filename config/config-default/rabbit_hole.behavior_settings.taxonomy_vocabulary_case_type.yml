@@ -1,0 +1,11 @@
+uuid: 2043b2d3-a2a1-4e6a-b2e2-da600e8d2833
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_type
+id: taxonomy_vocabulary_case_type
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

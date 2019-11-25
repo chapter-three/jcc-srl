@@ -1,0 +1,26 @@
+uuid: 08811d2c-83ba-4331-9f54-b6627daec414
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.code
+    - field.field.paragraph.code_section.field_code
+    - field.field.paragraph.code_section.field_section
+    - field.field.paragraph.code_section.field_section_suffix
+    - paragraphs.paragraphs_type.code_section
+id: paragraph.code_section.code
+targetEntityType: paragraph
+bundle: code_section
+mode: code
+content:
+  field_code:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_section: true
+  field_section_suffix: true

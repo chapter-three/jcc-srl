@@ -1,37 +1,103 @@
-name: atrium
-description: A theme based on Radix.
-screenshot: screenshot.png
+name: Atrium
+description: A custom theme for JCC.
 core: 8.x
-# version: VERSION
-engine: twig
 type: theme
-base theme: radix
+base theme: classy
+logo: ../../../libraries/courtyard/source/images/jcc-logo.svg
 
 regions:
-  navbar_branding: Navbar branding
-  navbar_left:  Navbar left
-  navbar_right: Navbar right
+  logo: 'Logo'
   header: Header
+  header_node: 'Header > Hero (Node)'
+  title: Title
+  tabs: Tabs
   content: Content
-  page_bottom: Page bottom
+  content_below: 'Content: Below'
   footer: Footer
 
 libraries:
-  - radix/style
   - atrium/style
 
 libraries-override:
-  radix/bootstrap: false
+  core/normalize: false
+  classy/base:
+    css:
+      component:
+        css/components/action-links.css: false
+        css/components/breadcrumb.css: false
+        css/components/button.css: false
+        css/components/collapse-processed.css: false
+        css/components/details.css: false
+        css/components/exposed-filters.css: false
+        css/components/field.css: false
+        css/components/form.css: false
+        css/components/icons.css: false
+        css/components/inline-form.css: false
+        css/components/item-list.css: false
+        css/components/link.css: false
+        css/components/links.css: false
+        css/components/menu.css: false
+        css/components/messages.css: false
+        css/components/more-link.css: false
+        css/components/node.css: false
+        css/components/pager.css: false
+        css/components/tabledrag.css: false
+        css/components/tableselect.css: false
+        css/components/tablesort.css: false
+        css/components/tabs.css: false
+        css/components/textarea.css: false
+        css/components/ui-dialog.css: false
+        # The files listed below are those we have chosen to keep.
+        # css/components/container-inline.css: false
+  extlink/drupal.extlink:
+    css:
+      theme:
+        extlink.css: false
+  system/admin:
+    css:
+      theme:
+        /core/themes/stable/css/system/system.admin.css: false
+  system/base:
+    css:
+      component:
+        /core/themes/stable/css/system/components/details.module.css: false
+        /core/themes/stable/css/system/components/fieldgroup.module.css: false
+        /core/themes/stable/css/system/components/item-list.module.css: false
+        /core/themes/stable/css/system/components/nowrap.module.css: false
+        /core/themes/stable/css/system/components/progress.module.css: false
+        /core/themes/stable/css/system/components/reset-appearance.module.css: false
+        /core/themes/stable/css/system/components/sticky-header.module.css: false
+        /core/themes/stable/css/system/components/system-status-counter.css: false
+        /core/themes/stable/css/system/components/system-status-report-counters.css: false
+        /core/themes/stable/css/system/components/system-status-report-general-info.css: false
+        /core/themes/stable/css/system/components/tabledrag.module.css: false
+        /core/themes/stable/css/system/components/tree-child.module.css: false
+        # The files listed below are those we have chosen to keep.
+        # /core/themes/stable/css/system/components/align.module.css: false
+        # /core/themes/stable/css/system/components/ajax-progress.module.css: false
+        # /core/themes/stable/css/system/components/autocomplete-loading.module.css: false
+        # /core/themes/stable/css/system/components/clearfix.module.css: false
+        # /core/themes/stable/css/system/components/container-inline.module.css: false
+        # /core/themes/stable/css/system/components/hidden.module.css: false
+        # /core/themes/stable/css/system/components/js.module.css: false
+        # /core/themes/stable/css/system/components/position-container.module.css: false
+        # /core/themes/stable/css/system/components/resize.module.css: false
+        # /core/themes/stable/css/system/components/tablesort.module.css: false
 
 ckeditor_stylesheets:
   - assets/css/atrium.style.css
+  - ../../../libraries/courtyard/public/css/styles.min.css
 
 component-libraries:
-  atrium:
+  protons:
     paths:
-      - ./src/components
-
-# Information added by Drupal.org packaging script on 2019-09-08
-version: '8.x-4.5'
-project: 'radix'
-datestamp: 1567943303
+      - ../../../libraries/courtyard/source/_patterns/00-protons
+  atoms:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/01-atoms
+  molecules:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/02-molecules
+  organisms:
+    paths:
+      - ../../../libraries/courtyard/source/_patterns/03-organisms

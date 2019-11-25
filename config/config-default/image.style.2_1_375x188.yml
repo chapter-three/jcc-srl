@@ -1,0 +1,17 @@
+uuid: f9447869-8f59-4c40-84b4-03e009e228b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 2_1_375x188
+label: '2:1 Ratio - 375 x 188'
+effects:
+  757fe10a-1c86-4679-ad00-50e072a95e40:
+    uuid: 757fe10a-1c86-4679-ad00-50e072a95e40
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 375
+      height: 188
+      crop_type: focal_point

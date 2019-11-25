@@ -1,0 +1,19 @@
+uuid: 814143cb-e852-43ee-977e-b7c29dedfeaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - range
+id: paragraph.field_section
+field_name: field_section
+entity_type: paragraph
+type: range_float
+settings: {  }
+module: range
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

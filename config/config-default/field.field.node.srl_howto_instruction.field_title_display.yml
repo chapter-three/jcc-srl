@@ -1,0 +1,28 @@
+uuid: 6253ad46-066b-4fad-9dd9-25ed7a38a94b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title_display
+    - node.type.srl_howto_instruction
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.srl_howto_instruction.field_title_display
+field_name: field_title_display
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Display Title'
+description: 'Ex: "Filing a claim of exemption for wage garnishment"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

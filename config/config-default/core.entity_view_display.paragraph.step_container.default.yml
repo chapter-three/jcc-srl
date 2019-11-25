@@ -1,0 +1,60 @@
+uuid: 902cff05-3acb-42f0-85e9-b49878e3fe5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.step_container.field_brow
+    - field.field.paragraph.step_container.field_create_anchor
+    - field.field.paragraph.step_container.field_description
+    - field.field.paragraph.step_container.field_steps
+    - field.field.paragraph.step_container.field_title_display
+    - paragraphs.paragraphs_type.step_container
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.step_container.default
+targetEntityType: paragraph
+bundle: step_container
+mode: default
+content:
+  field_brow:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_create_anchor:
+    weight: 3
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_description:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_steps:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title_display:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

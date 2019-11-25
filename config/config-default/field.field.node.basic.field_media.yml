@@ -1,0 +1,38 @@
+uuid: a1679f72-810b-4a5d-9067-1943045b8a14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.basic
+_core:
+  default_config_hash: VzKKo0tNfwdNSNNhuMfwj1M1wi2jRhCJAxuf2OZJqEQ
+id: node.basic.field_media
+field_name: field_media
+entity_type: node
+bundle: basic
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+      file: file
+      image: image
+      remote_video: remote_video
+      video: video
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: audio
+field_type: entity_reference

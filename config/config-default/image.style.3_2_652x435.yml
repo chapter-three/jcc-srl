@@ -1,0 +1,17 @@
+uuid: ef9663aa-2ef8-4a44-8342-6549ff332759
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 3_2_652x435
+label: '3:2 Ratio - 652 x 435'
+effects:
+  757fe10a-1c86-4679-ad00-50e072a95e40:
+    uuid: 757fe10a-1c86-4679-ad00-50e072a95e40
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 652
+      height: 435
+      crop_type: focal_point

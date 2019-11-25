@@ -1,0 +1,28 @@
+uuid: 9a79e9a7-87bd-4f0c-ac56-943e206575d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_column_second
+    - node.type.srl_howto
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.srl_howto.field_column_second
+field_name: field_column_second
+entity_type: node
+bundle: srl_howto
+label: 'Hero - Second Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

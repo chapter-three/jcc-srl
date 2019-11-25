@@ -1,0 +1,21 @@
+uuid: 94f6e401-3034-4182-a88f-d85fcc028f1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - media
+    - paragraphs
+id: media.field_code
+field_name: field_code
+entity_type: media
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

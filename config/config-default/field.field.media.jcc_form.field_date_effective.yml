@@ -1,0 +1,21 @@
+uuid: 4b121c26-d1a5-4c6f-b7d5-a21bf660b425
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_date_effective
+    - media.type.jcc_form
+  module:
+    - datetime
+id: media.jcc_form.field_date_effective
+field_name: field_date_effective
+entity_type: media
+bundle: jcc_form
+label: 'Last RU-PRO Update / Effective Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

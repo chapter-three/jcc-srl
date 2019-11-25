@@ -1,0 +1,9 @@
+uuid: dbe670c1-2926-452e-a14b-e8c0bb321669
+langcode: en
+status: true
+dependencies: {  }
+id: timeline
+label: Timeline
+icon_uuid: null
+description: 'Container for horizontal timeline/flowmap component.'
+behavior_plugins: {  }

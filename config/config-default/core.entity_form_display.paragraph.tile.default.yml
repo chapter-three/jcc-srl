@@ -1,0 +1,43 @@
+uuid: b11309e2-830f-44f0-8da4-95aea8518c86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tile.field_page
+    - field.field.paragraph.tile.field_statement
+    - paragraphs.paragraphs_type.tile
+  module:
+    - allowed_formats
+    - maxlength
+    - text
+id: paragraph.tile.default
+targetEntityType: paragraph
+bundle: tile
+mode: default
+content:
+  field_page:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_statement:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true

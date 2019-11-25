@@ -1,0 +1,9 @@
+uuid: cba9e0e7-dcc2-4539-adea-7db534ae56ec
+langcode: en
+status: true
+dependencies: {  }
+id: timeline_item
+label: 'Timeline Item'
+icon_uuid: null
+description: 'An individual timeline item within the timeline container.'
+behavior_plugins: {  }

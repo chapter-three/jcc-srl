@@ -1,0 +1,18 @@
+uuid: 8f8ae690-7925-4f93-9794-d924d8a8d0bf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - atrium
+id: title
+theme: atrium
+region: title
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,9 @@
+uuid: 5cb9d226-ef9c-4058-9261-162ea2d8d472
+langcode: en
+status: true
+dependencies: {  }
+id: accordion_container
+label: 'Accordion Container'
+icon_uuid: null
+description: 'Set of Accordions'
+behavior_plugins: {  }

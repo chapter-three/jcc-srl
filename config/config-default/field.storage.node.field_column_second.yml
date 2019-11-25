@@ -1,0 +1,19 @@
+uuid: 879ecbc4-d3e7-423a-b6ed-760c8d6c8ae8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_column_second
+field_name: field_column_second
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

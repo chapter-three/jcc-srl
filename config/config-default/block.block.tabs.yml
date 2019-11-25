@@ -1,0 +1,20 @@
+uuid: d0381322-6aaf-4833-8213-476b3a38efb2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - atrium
+id: tabs
+theme: atrium
+region: tabs
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

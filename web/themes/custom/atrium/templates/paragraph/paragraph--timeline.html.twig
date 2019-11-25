@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Template for "Timeline" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% if content.field_timeline_items|render %}
+
+    {% set headergroup = {
+      brow: content.field_brow|render ? content.field_brow : '',
+      title: content.field_title_display|render ? content.field_title_display : '',
+      lead: content.field_description|render ? content.field_description : '',
+    } %}
+
+    {% set item_content = [] %}
+    {% set items = paragraph.field_timeline_items %}
+
+    {% for key, item in items.value %}
+      {% set read_more = [] %}
+      {# ⇣ This check is important because Timeline item fields are NOT required.
+      Empty Timeline items are possible, and would return the wrong data. #}
+      {% if items.get(key).entity.field_title_display.value %}
+        {% set timeline_item = items.get(key).entity %}
+
+        {# Prepare "Read more" toggle #}
+        {% if timeline_item.field_details.value %}
+
+          {% set read_more = {
+            id: 'read-more-' ~ item.id(),
+            title: timeline_item.field_details_link_text.value|default('Read more'|t),
+            content: timeline_item.field_details|view,
+          } %}
+        {% endif %}
+
+        {# Store each item in an array for the Pattern component. #}
+        {% set item_content = item_content|merge([{
+          title: timeline_item.field_title_display|view,
+          excerpt: timeline_item.field_description|view,
+          read_more: read_more
+        }]) %}
+      {% endif %}
+    {% endfor %}
+
+    {% include '@organisms/sections/timeline/timeline.twig' with {
+      id: paragraph_id,
+      headergroup: headergroup,
+      timeline: item_content,
+      background_variant: 'has-background-color--dark'
+    } only %}
+
+  {% endif %}
+
+  {{ content|without(
+    'field_brow',
+    'field_create_anchor',
+    'field_description',
+    'field_timeline_items',
+    'field_title_display'
+  ) }}
+{% endblock %}

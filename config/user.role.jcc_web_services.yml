@@ -1,9 +1,0 @@
-uuid: 3f4c1542-d9e7-40af-97b9-431ef253cad1
-langcode: en
-status: true
-dependencies: {  }
-id: jcc_web_services
-label: 'JCC Web Services'
-weight: 4
-is_admin: null
-permissions: {  }

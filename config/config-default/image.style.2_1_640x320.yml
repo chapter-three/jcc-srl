@@ -1,0 +1,17 @@
+uuid: d224ad21-3899-43d3-9353-f154da61a9e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 2_1_640x320
+label: '2:1 Ratio - 640 x 320'
+effects:
+  757fe10a-1c86-4679-ad00-50e072a95e40:
+    uuid: 757fe10a-1c86-4679-ad00-50e072a95e40
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 320
+      crop_type: focal_point

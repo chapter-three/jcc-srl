@@ -1,0 +1,28 @@
+uuid: 2ac28aac-f78d-4c17-b2de-43b6e26a6fdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media
+    - media.type.image
+    - paragraphs.paragraphs_type.postcard
+id: paragraph.postcard.field_media
+field_name: field_media
+entity_type: paragraph
+bundle: postcard
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

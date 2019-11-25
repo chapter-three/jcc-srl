@@ -1,0 +1,27 @@
+uuid: 4705e9a3-eaf2-496d-8605-900ab0094191
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.srl_onramp.field_case_type
+    - field.field.node.srl_onramp.field_description
+    - field.field.node.srl_onramp.field_hero_nav_title
+    - field.field.node.srl_onramp.field_paragraphs
+    - field.field.node.srl_onramp.field_title_display
+    - node.type.srl_onramp
+  module:
+    - user
+id: node.srl_onramp.teaser
+targetEntityType: node
+bundle: srl_onramp
+mode: teaser
+content: {  }
+hidden:
+  field_case_type: true
+  field_description: true
+  field_hero_nav_title: true
+  field_paragraphs: true
+  field_title_display: true
+  langcode: true
+  links: true

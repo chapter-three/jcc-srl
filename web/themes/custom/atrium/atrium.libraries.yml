@@ -1,5 +1,4 @@
 style:
-  version: VERSION
   css:
     theme:
       assets/css/atrium.style.css: {}
@@ -8,3 +7,15 @@ style:
   dependencies:
     - core/jquery
     - core/drupal
+    - atrium/patternlab
+
+patternlab:
+  css:
+    theme:
+      ../../../libraries/courtyard/public/css/styles.min.css: {}
+  js:
+    ../../../libraries/courtyard/public/js/scripts.min.js: { minified: true, preprocess: false }
+
+howtotabs:
+  js:
+    assets/js/howtotabs.js: {}

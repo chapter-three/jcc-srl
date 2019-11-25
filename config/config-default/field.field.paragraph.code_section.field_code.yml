@@ -1,0 +1,29 @@
+uuid: 831353b3-def3-48b3-b204-08e6c79edbf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_code
+    - paragraphs.paragraphs_type.code_section
+    - taxonomy.vocabulary.code
+id: paragraph.code_section.field_code
+field_name: field_code
+entity_type: paragraph
+bundle: code_section
+label: Code
+description: 'i.e.: Family Code, Government Code'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      code: code
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

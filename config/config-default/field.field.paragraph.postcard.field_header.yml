@@ -1,0 +1,23 @@
+uuid: 136a075e-83db-485b-9d2c-c95c871612c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - options
+id: paragraph.postcard.field_header
+field_name: field_header
+entity_type: paragraph
+bundle: postcard
+label: 'Header Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

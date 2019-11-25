@@ -1,0 +1,23 @@
+uuid: 50a86ce1-8bcc-4b00-a17f-11426d3b55de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_howto_tabs
+    - node.type.srl_howto_instruction
+  module:
+    - link
+id: node.srl_howto_instruction.field_howto_tabs
+field_name: field_howto_tabs
+entity_type: node
+bundle: srl_howto_instruction
+label: 'HowTo Tabs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 2
+field_type: link

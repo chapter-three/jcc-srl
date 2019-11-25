@@ -1,0 +1,26 @@
+uuid: c3bc4e74-3fd1-429c-a9d1-55e2308a7906
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embed
+    - entity_browser.browser.file_wysiwyg
+    - media.type.file
+  content:
+    - 'file:file:e1dd9543-0240-4df6-abbb-5887133f8424'
+  module:
+    - entity_embed
+    - media
+label: File
+id: file
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - file
+  display_plugins:
+    - 'view_mode:media.embed'
+  entity_browser: file_wysiwyg
+  entity_browser_settings:
+    display_review: false
+icon_uuid: e1dd9543-0240-4df6-abbb-5887133f8424

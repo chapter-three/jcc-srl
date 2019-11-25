@@ -1,0 +1,28 @@
+uuid: b13bbf82-d247-47a6-87e0-f534e222638d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_brow
+    - paragraphs.paragraphs_type.timeline
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.timeline.field_brow
+field_name: field_brow
+entity_type: paragraph
+bundle: timeline
+label: Brow
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

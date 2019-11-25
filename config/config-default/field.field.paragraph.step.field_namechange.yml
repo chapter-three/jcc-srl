@@ -1,0 +1,21 @@
+uuid: 60681daf-b88e-46f7-8c84-8da0a7e60400
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_namechange
+    - paragraphs.paragraphs_type.step
+  module:
+    - options
+id: paragraph.step.field_namechange
+field_name: field_namechange
+entity_type: paragraph
+bundle: step
+label: 'Hide under the following name change scenarios'
+description: 'For Namechange Wayfinding Wizard only'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
