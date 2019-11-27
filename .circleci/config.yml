@@ -35,6 +35,8 @@ defaults: &defaults
     ADMIN_USERNAME: admin
     # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
     TERM: dumb
+    # Environment to clone multidev environments from.
+    TERMINUS_PARENT_ENV: live
 
 version: 2
 jobs:
