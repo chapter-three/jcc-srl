@@ -108,24 +108,24 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
 
 ## Environments
 
-### `develop` Environment 
-- Tracks the `develop` branch. 
-- Most code will go here after a PR.
-
-### `dev` Environment
+### `live` environment 🚨
 - Tracks the `master` branch.
-- Production-ready code. 
-- Use this environment to stage deployments to live.
+- Production!
+- Content authoring happens here. 
 
-### `stage` Environment
+### `stage` environment
 - Tracks the `master` branch.
 - Production-ready code. 
 - JCC content team can use this environment for content testing
 
-### `live` Environment
+### `dev` environment
 - Tracks the `master` branch.
-- Production!
-- Content authoring happens here. 
+- Production-ready code. 
+- Use this environment to stage deployments to live.
+
+### `develop` environment 
+- Tracks the `develop` branch. 
+- Most code will go here after a PR.
 
 ### Other Environments
 - Circle CI can be used to spawn Pantheon multidevs as needed for various QA purposes. 
@@ -150,9 +150,24 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
   
 ## Deployments
 ### To Production (standard)
+1. Send code to `master` branch and `dev` environment.
 - Make sure develop is up-to-date with master
 - Create a (pull request in github)[https://github.com/chapter-three/jcc-srl/compare/master...develop] with base:master 
-- ...
+- After appropriate tests and reviews, merge.
+
+2. Get db and files on `dev` environment.
+- Wait for CI deployment to finish.
+- Clone database and files from `live` environment.
+- Smoke test `dev` environment.
+
+3. Push to `test` environment.
+- Deploy artifact code to `test` environment in Pantheon UI or with Terminus.
+- Clone database and files from `live` environment.
+  - Smoke test `dev` environment.
+
+4. Push to `live` (production) environment.
+- Deploy artifact code to `live` environment in Pantheon UI or with Terminus.
+- Celebrate!
 
 ## Module Management
 
