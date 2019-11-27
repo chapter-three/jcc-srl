@@ -31,12 +31,12 @@
             "type": "package",
             "package": {
                 "name": "exygy/courtyard",
-                "version": "1.0.1-alpha",
+                "version": "1.0.0-alpha.2",
                 "type": "drupal-library",
                 "source": {
                     "url": "https://github.com/exygy/courtyard.git",
                     "type": "git",
-                    "reference": "d22edff"
+                    "reference": "d3682e9"
                 }
             }
         },
@@ -139,7 +139,7 @@
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
-        "exygy/courtyard": "^1.0@alpha",
+        "exygy/courtyard": "1.0.0-alpha.2",
         "harvesthq/chosen": "^1.8.7",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
