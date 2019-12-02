@@ -30,8 +30,8 @@
 
           {% set read_more = {
             id: 'read-more-' ~ item.id(),
-            title: timeline_item.field_details_link_text.value|default('Read more'|t),
-            content: timeline_item.field_details|view,
+            label: timeline_item.field_details_link_text.value|default('Read more'|t),
+            modal_content: timeline_item.field_details|view,
           } %}
         {% endif %}
 
