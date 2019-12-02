@@ -11,7 +11,7 @@ entity_type: paragraph
 bundle: datefinder
 label: 'Group Label'
 description: 'Text above right column (Ex: <strong>Estimate Your Timing</strong>)'
-required: false
+required: true
 translatable: true
 default_value:
   -
