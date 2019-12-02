@@ -4,11 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion.field_body
+    - field.field.paragraph.accordion.field_postcard
     - field.field.paragraph.accordion.field_title_display
     - paragraphs.paragraphs_type.accordion
   module:
     - allowed_formats
+    - cc
     - maxlength
+    - paragraphs
     - text
 id: paragraph.accordion.default
 targetEntityType: paragraph
@@ -30,6 +33,20 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
+  field_postcard:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Postcard
+      title_plural: Postcards
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: postcard
+    third_party_settings:
+      cc:
+        status: 0
     region: content
   field_title_display:
     weight: 0

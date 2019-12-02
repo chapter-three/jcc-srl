@@ -1,0 +1,67 @@
+uuid: 21a7a7f0-b36f-483d-bc82-ae685437aa56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_postcard
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - entity_reference_revisions
+id: paragraph.accordion.field_postcard
+field_name: field_postcard
+entity_type: paragraph
+bundle: accordion
+label: Postcard
+description: 'For best results, do not use image background.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      postcard: postcard
+    target_bundles_drag_drop:
+      accordion:
+        weight: 14
+        enabled: false
+      accordion_container:
+        weight: 15
+        enabled: false
+      calculation_date:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      code_section:
+        weight: 18
+        enabled: false
+      flex:
+        weight: 19
+        enabled: false
+      postcard:
+        enabled: true
+        weight: 20
+      srl_date_calculator:
+        weight: 21
+        enabled: false
+      step:
+        weight: 22
+        enabled: false
+      step_container:
+        weight: 23
+        enabled: false
+      tile:
+        weight: 24
+        enabled: false
+      timeline:
+        weight: 25
+        enabled: false
+      timeline_item:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions
