@@ -7,9 +7,13 @@
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
 
-  {% if content.field_body|render %}
+  {% if content.field_body|render or content.field_title_display|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
+      id: paragraph_id,
       background_variant: 'has-background-color--dark',
+      headergroup: {
+        title: content.field_title_display|render ? content.field_title_display : '',
+      },
       body: content.field_body|render ? content.field_body : null,
     } only %}
   {% endif %}
@@ -35,7 +39,6 @@
     {% endfor %}
 
     {% include '@molecules/interactive/accordion/accordion.twig' with {
-      id: paragraph_id,
       full: true,
       accordion: accordion_content,
       attributes: create_attribute(),
@@ -45,6 +48,8 @@
 
   {{ content|without(
     'field_accordions',
-    'field_body'
+    'field_body',
+    'field_create_anchor',
+    'field_title_display'
   ) }}
 {% endblock %}
