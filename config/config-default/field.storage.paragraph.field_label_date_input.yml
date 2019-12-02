@@ -1,0 +1,20 @@
+uuid: 2ac1231e-f511-49b9-939d-a434a86d4341
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_label_date_input
+field_name: field_label_date_input
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

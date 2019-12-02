@@ -1,0 +1,31 @@
+uuid: cb60f45b-6710-4c4d-96b0-c3e86ebdb5aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label_date_input
+    - paragraphs.paragraphs_type.datefinder
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.datefinder.field_label_date_input
+field_name: field_label_date_input
+entity_type: paragraph
+bundle: datefinder
+label: 'Date Input Label'
+description: 'Text above date input box (Ex: <strong>Enter Your Filing Date</strong>)'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Enter Your Filing Date'
+    format: simple_html
+default_value_callback: ''
+settings: {  }
+field_type: text

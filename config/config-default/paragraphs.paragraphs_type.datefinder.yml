@@ -1,0 +1,11 @@
+uuid: 5f35a20c-b57c-4890-a7c2-cfd029afbeaf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: K7PJEDj7ccDZqRulkn4MghpQgZBYboartWEoWgmrdbk
+id: datefinder
+label: Datefinder
+icon_uuid: null
+description: 'Widget used to calculate important future dates based on a user entered date.'
+behavior_plugins: {  }

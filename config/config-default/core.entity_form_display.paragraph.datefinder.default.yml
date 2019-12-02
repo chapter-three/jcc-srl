@@ -1,0 +1,148 @@
+uuid: 34f3161f-5a48-44ef-93d4-1219525f9b26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.datefinder.field_body
+    - field.field.paragraph.datefinder.field_create_anchor
+    - field.field.paragraph.datefinder.field_days
+    - field.field.paragraph.datefinder.field_label
+    - field.field.paragraph.datefinder.field_label_date_input
+    - field.field.paragraph.datefinder.field_label_date_output
+    - field.field.paragraph.datefinder.field_title_display
+    - paragraphs.paragraphs_type.datefinder
+  module:
+    - allowed_formats
+    - field_group
+    - maxlength
+    - text
+third_party_settings:
+  field_group:
+    group_left:
+      children:
+        - field_title_display
+        - field_create_anchor
+        - field_body
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Left
+      region: content
+    group_right:
+      children:
+        - field_days
+        - field_label
+        - field_label_date_input
+        - field_label_date_output
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Right
+      region: content
+id: paragraph.datefinder.default
+targetEntityType: paragraph
+bundle: datefinder
+mode: default
+content:
+  field_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+        maxlength_js_truncate_html: false
+    type: text_textarea
+    region: content
+  field_create_anchor:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_days:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_label:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+    region: content
+  field_label_date_input:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: text_textfield
+    region: content
+  field_label_date_output:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: text_textfield
+    region: content
+  field_title_display:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true
