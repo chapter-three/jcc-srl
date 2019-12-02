@@ -1,0 +1,23 @@
+uuid: bc56084d-e9a1-4ddd-9638-e096c1b792e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_create_anchor
+    - paragraphs.paragraphs_type.card_list
+id: paragraph.card_list.field_create_anchor
+field_name: field_create_anchor
+entity_type: paragraph
+bundle: card_list
+label: 'Add To Hero Nav?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

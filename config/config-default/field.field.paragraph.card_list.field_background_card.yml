@@ -1,0 +1,21 @@
+uuid: 7d11e9ab-d0bf-4296-8133-aaac9c2cd537
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_card
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - options
+id: paragraph.card_list.field_background_card
+field_name: field_background_card
+entity_type: paragraph
+bundle: card_list
+label: Background
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

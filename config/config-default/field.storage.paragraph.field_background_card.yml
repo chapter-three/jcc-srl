@@ -1,0 +1,30 @@
+uuid: c3d24490-1382-4e4a-85cf-b0ff7c88cb6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_background_card
+field_name: field_background_card
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: dark
+      label: 'Dark Background'
+    -
+      value: light
+      label: 'Light Background'
+    -
+      value: default
+      label: 'Default (None)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.srl_onramp
     - paragraphs.paragraphs_type.accordion_container
+    - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.flex
     - paragraphs.paragraphs_type.postcard
   module:
@@ -28,6 +29,7 @@ settings:
       postcard: postcard
       flex: flex
       accordion_container: accordion_container
+      card_list: card_list
     target_bundles_drag_drop:
       postcard:
         enabled: true
@@ -47,13 +49,28 @@ settings:
       code_section:
         weight: -14
         enabled: false
-      judgement_body_tab:
-        weight: -13
-        enabled: false
       step:
         weight: -12
         enabled: false
       step_container:
         weight: -11
+        enabled: false
+      calculation_date:
+        weight: 17
+        enabled: false
+      card_list:
+        enabled: true
+        weight: 19
+      srl_date_calculator:
+        weight: 23
+        enabled: false
+      tile:
+        weight: 26
+        enabled: false
+      timeline:
+        weight: 27
+        enabled: false
+      timeline_item:
+        weight: 28
         enabled: false
 field_type: entity_reference_revisions
