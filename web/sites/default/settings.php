@@ -95,8 +95,24 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 
 $config_directories['sync'] = '../config/config-default';
 
+// Require HTTPS across all Pantheon environments.
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['HTTPS'] === 'OFF') && (php_sapi_name() != "cli")) {
+  if (!isset($_SERVER['HTTP_USER_AGENT_HTTPS']) || (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] != 'ON')) {
+
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+
+    // Name transaction "redirect" in New Relic for improved reporting (optional).
+    if (extension_loaded('newrelic')) {
+      newrelic_name_transaction("redirect");
+    }
+
+    exit();
+  }
+}
+
 /**
- * Set environment-specific config_split status.
+ * Set environment-specific configuration.
  */
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 
@@ -119,7 +135,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   // All other multidevs.
   else {
     $config['config_split.config_split.stage']['status'] = TRUE;
-    $config['environment_indicator.indicator']['bg_color'] = '#5b0ca3';
+    $config['environment_indicator.indicator']['bg_color'] = '#0a07a9';
     $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
   }
 }
