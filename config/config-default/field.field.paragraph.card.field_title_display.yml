@@ -1,0 +1,28 @@
+uuid: f0a45bf5-8fad-4393-91c8-27954c874541
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_display
+    - paragraphs.paragraphs_type.card
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.card.field_title_display
+field_name: field_title_display
+entity_type: paragraph
+bundle: card
+label: 'Display Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
