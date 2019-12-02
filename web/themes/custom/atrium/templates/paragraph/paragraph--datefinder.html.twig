@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Template for "Accordion Container" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+  {% set date_input %}
+    <form>
+      <label for="filing_date" class="jcc-datefinder__label" title="{{ content.field_label }}">{{ content.field_label }}</label>
+      <input type="date" class="usa-input usa-input--inline">
+    </form>
+  {% endset %}
+  {% set datefinder %}
+    {% include '@molecules/interactive/datefinder/datefinder.twig' with {
+      title: content.field_label,
+      date_input: date_input,
+      serve_date_label: content.field_label_date_output|render,
+      send_icon: {
+        icon_file: '../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg',
+        icon: 'send',
+        title: 'Send',
+        decorative: true,
+      },
+      serve_hidden: true
+    } only %}
+  {% endset %}
+
+  {% include '@organisms/sections/text-section/text-section.twig' with {
+    id: paragraph_id,
+    column_variant: "has-two-columns-threequarter",
+    headergroup: {
+      title: content.field_title_display|render ? content.field_title_display : '',
+    },
+    column_content_left: content.field_body|render ? content.field_body : null,
+    column_content_right: datefinder
+  } only %}
+{% endblock %}
