@@ -10,8 +10,8 @@ set -eo pipefail
 #
 
 # Create a new multidev site to test on
-terminus -n env:wake "$TERMINUS_SITE.develop"
-terminus -n build:env:create "$TERMINUS_SITE.develop" "$TERMINUS_ENV" --yes --clone-content --notify="$NOTIFY"
+terminus -n env:wake "$TERMINUS_SITE.$TERMINUS_PARENT_ENV"
+terminus -n build:env:create "$TERMINUS_SITE.$TERMINUS_PARENT_ENV" "$TERMINUS_ENV" --yes --clone-content --notify="$NOTIFY"
 
 # If any modules, or theme files have been moved around or reorganized, in order to avoid
 # "The website encountered an unexpected error. Please try again later." error on First Visit

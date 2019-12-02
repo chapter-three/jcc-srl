@@ -106,32 +106,35 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
 
 5. Commit and push changes.
 
-## Git Branches and Deployments
+## Environments
 
-- `master` - clean stable production code. Lives on the Pantheon "dev" environment.
-  - On Pantheon `master` branch is the default "dev" environment.
-  - We can deploy `master` to "Live" by tagging commits appropriately. (automated)
-  - Post-launch release branches may be used to deploy to live.
-  - **Do not commit directly to master**
-- `stage` - code that is ready for client review. Lives on the "stage" Multidev environment.
-- `develop` - Peer-reviewed test code for internal QA and integration testing. Lives on the "develop" multidev environment.
+### `live` environment 🚨
+- Tracks the `master` branch.
+- Production!
+- Content authoring happens here. 
 
-## Pantheon, Multidev and Epics
+### `stage` environment
+- Tracks the `master` branch.
+- Production-ready code. 
+- JCC content team can use this environment for content testing
 
-- [Terminus](https://pantheon.io/docs/terminus) is a commandline tool for interaction with Pantheon.
-  - You can also use the web dashboard in place of most of these commands.
+### `dev` environment
+- Tracks the `master` branch.
+- Production-ready code. 
+- Use this environment to stage deployments to live.
 
-We're using a Parallel Git Workflow, rather than the standard Pantheon workflow, so we have the 3 environments described above. `develop` and `stage` are Pantheon "Multisite" environments.
+### `develop` environment 
+- Tracks the `develop` branch. 
+- Most code will go here after a PR.
 
-- Any new branches pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
+### Other Environments
+- Circle CI can be used to spawn Pantheon multidevs as needed for various QA purposes. 
+- Any new code pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
 - Any Pull Requests on Github will also spawn a multidev on Pantheon, named for the Pull Request ID that spawned it.
 - Pantheon only allows 10 multidev environments at this service level so inactive `pr-` and `ci-` environments may need to be deleted manually.
+- If you need a more persistent multidev for longer term development, the CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev.
 
-If you need a more persistent multidev for longer term development of a set of features, the workflow supports `epic` branches. Epics are for large features or a collection of features that depend on each other, that will be developed in parallel before being merged into the normal test environments.
-
-The CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev. Set it up like this:
-
-- Create multidev environment on Pantheon
+### Create an epic- multidev environment on Pantheon
   - Terminus
     - terminus multidev:create [site_env] [multidev]
     - [site_env] = jcc-srl.live (The environment to clone.)
@@ -144,14 +147,27 @@ The CircleCI integration is configured to deploy branches that start with `epic-
 - Create an epic- branch from master in this working repo.
 - Push the epic branch to Github
   - Circle CI will build and deploy it to the new multidev environment every time it's updated.
+  
+## Deployments
+### To Production (standard)
+1. Send code to `master` branch and `dev` environment.
+- Make sure develop is up-to-date with master
+- Create a (pull request in github)[https://github.com/chapter-three/jcc-srl/compare/master...develop] with base:master 
+- After appropriate tests and reviews, merge.
 
-**About Epics**
+2. Get db and files on `dev` environment.
+- Wait for CI deployment to finish.
+- Clone database and files from `live` environment.
+- Smoke test `dev` environment.
 
- - Features that will be part of the epic can branch from the epic so they have the up do date work they depend on.
- - Epic features can Pull Request against the epic for code review.
- - Once merged to the epic, Circle CI will build and deploy the epic to Pantheon.
- - Once the epic is complete and ready for full internal QA and integration, the epic can Pull Request to `develop`.
- - If the epic passes QA and integration the epic can be merged to `stage` for User Acceptance and signoff for release.
+3. Push to `test` environment.
+- Deploy artifact code to `test` environment in Pantheon UI or with Terminus.
+- Clone database and files from `live` environment.
+  - Smoke test `dev` environment.
+
+4. Push to `live` (production) environment.
+- Deploy artifact code to `live` environment in Pantheon UI or with Terminus.
+- Celebrate!
 
 ## Module Management
 
