@@ -9,6 +9,7 @@
   {{ attach_library('atrium/datefinder') }}
   {% set date_input %}
     <form>
+      <input data-datefinder-value="days" hidden value="{{ paragraph.field_days.value }}">
       <label for="filing_date" class="jcc-datefinder__label" title="{{ content.field_label_date_input }}">{{ content.field_label_date_input }}</label>
       <input type="date" placeholder="{{ "Select Date"|t }}.." class="usa-input">
     </form>

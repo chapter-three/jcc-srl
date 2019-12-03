@@ -101,17 +101,20 @@
       var inputEl = $('input[type="date"]');
       var resultContainer = $('.jcc-datefinder__adjacent-dates');
       var resultTextEl = $('.jcc-datefinder__date');
-      var defaultDays = 30;
-      var prettyFormat = "F j, Y";
+      var daysToAdd = $('[data-datefinder-value="days"]').val();
+      var prettyFormat = "F j, Y"; // Use flatpickr js to create datepicker.
+
       flatpickr(inputEl, {
         altInput: true,
         altFormat: prettyFormat,
         dateFormat: "Y-m-d"
-      });
-      inputEl.on('change keyup', function () {
-        var resultDateAsMilisecs = new Date(Date.parse(inputEl.val()) + defaultDays * 60 * 60 * 24 * 1000);
+      }); // Calculate and display result date.
 
-        if (resultDateAsMilisecs != 'Invalid Date') {
+      inputEl.on('change keyup', function () {
+        // 60 sec * 60 min * 24 hours = 86400
+        var resultDateMilisecs = new Date(Date.parse(inputEl.val()) + daysToAdd * 86400 * 1000);
+
+        if (resultDateMilisecs != 'Invalid Date') {
           resultContainer.removeAttr('hidden');
           var resultDateString = flatpickr.formatDate(resultDateAsMilisecs, prettyFormat);
           resultTextEl.html(resultDateString);
