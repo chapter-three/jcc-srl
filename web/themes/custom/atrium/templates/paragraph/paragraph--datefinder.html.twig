@@ -6,6 +6,7 @@
 #}
 {% extends 'paragraph.html.twig' %}
 {% block content %}
+  {{ attach_library('atrium/datefinder') }}
   {% set date_input %}
     <form>
       <label for="filing_date" class="jcc-datefinder__label" title="{{ content.field_label }}">{{ content.field_label }}</label>

@@ -16,6 +16,12 @@ patternlab:
   js:
     ../../../libraries/courtyard/public/js/scripts.min.js: { minified: true, preprocess: false }
 
+datefinder:
+  js:
+    assets/js/datefinder.js: {}
+  dependencies:
+    - core/jquery.ui.datepicker
+
 howtotabs:
   js:
     assets/js/howtotabs.js: {}
