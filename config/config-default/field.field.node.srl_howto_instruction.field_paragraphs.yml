@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.srl_howto_instruction
-    - paragraphs.paragraphs_type.calculation_date
     - paragraphs.paragraphs_type.flex
     - paragraphs.paragraphs_type.step_container
     - paragraphs.paragraphs_type.timeline
@@ -29,7 +28,6 @@ settings:
       flex: flex
       step_container: step_container
       timeline: timeline
-      calculation_date: calculation_date
     target_bundles_drag_drop:
       judgement_body_tab:
         weight: -25
