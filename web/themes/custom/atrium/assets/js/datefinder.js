@@ -102,17 +102,19 @@
       var resultContainer = $('.jcc-datefinder__adjacent-dates');
       var resultTextEl = $('.jcc-datefinder__date');
       var defaultDays = 30;
+      var prettyFormat = "F j, Y";
       flatpickr(inputEl, {
         altInput: true,
-        altFormat: "F j, Y",
+        altFormat: prettyFormat,
         dateFormat: "Y-m-d"
       });
       inputEl.on('change keyup', function () {
-        var date = new Date(Date.parse(inputEl.val()) + defaultDays * 60 * 60 * 24 * 1000);
+        var resultDateAsMilisecs = new Date(Date.parse(inputEl.val()) + defaultDays * 60 * 60 * 24 * 1000);
 
-        if (date != 'Invalid Date') {
+        if (resultDateAsMilisecs != 'Invalid Date') {
           resultContainer.removeAttr('hidden');
-          resultTextEl.html(date);
+          var resultDateString = flatpickr.formatDate(resultDateAsMilisecs, prettyFormat);
+          resultTextEl.html(resultDateString);
         }
       });
     }
