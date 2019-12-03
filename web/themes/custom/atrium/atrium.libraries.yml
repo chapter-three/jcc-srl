@@ -19,8 +19,6 @@ patternlab:
 datefinder:
   js:
     assets/js/datefinder.js: {}
-  dependencies:
-    - core/jquery.ui.datepicker
 
 howtotabs:
   js:
