@@ -2,35 +2,35 @@ form_settings:
   block_content:
     default_value: true
     disable: true
-    hidden: true
+    hidden: false
   cc_user_input:
     default_value: true
     disable: true
-    hidden: true
+    hidden: false
   file:
-    default_value: false
     disable: true
-    hidden: true
+    default_value: false
+    hidden: false
   media:
-    default_value: false
     disable: true
-    hidden: true
+    default_value: false
+    hidden: false
   node:
     default_value: true
     disable: true
-    hidden: true
+    hidden: false
   taxonomy_term:
-    default_value: false
     disable: true
-    hidden: true
+    default_value: false
+    hidden: false
   menu_link_content:
     default_value: true
     disable: true
-    hidden: true
+    hidden: false
   paragraph:
     default_value: true
     disable: true
-    hidden: true
+    hidden: false
   crop:
     default_value: false
     disable: false
