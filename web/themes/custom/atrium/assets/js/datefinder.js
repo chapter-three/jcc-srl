@@ -97,7 +97,20 @@
   'use strict';
 
   Drupal.behaviors.datefinder = {
-    attach: function attach(context) {}
+    attach: function attach(context) {
+      var inputEl = $('input[type="date"]');
+      var resultContainer = $('.jcc-datefinder__adjacent-dates');
+      var resultTextEl = $('.jcc-datefinder__date');
+      var defaultDays = 30;
+      inputEl.on('change keyup', function () {
+        var date = new Date(Date.parse(inputEl.val()) + defaultDays * 60 * 60 * 24 * 1000);
+
+        if (date != 'Invalid Date') {
+          resultContainer.removeAttr('hidden');
+          resultTextEl.html(date);
+        }
+      });
+    }
   };
 })(jQuery, Drupal);
 
