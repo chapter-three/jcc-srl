@@ -40,7 +40,6 @@ permissions:
   - 'change own username'
   - 'clone node entity'
   - 'clone paragraph entity'
-  - 'clone taxonomy_term entity'
   - 'create audio media'
   - 'create basic content'
   - 'create content translations'
