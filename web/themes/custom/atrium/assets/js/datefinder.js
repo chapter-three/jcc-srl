@@ -116,7 +116,7 @@
 
         if (resultDateMilisecs != 'Invalid Date') {
           resultContainer.removeAttr('hidden');
-          var resultDateString = flatpickr.formatDate(resultDateAsMilisecs, prettyFormat);
+          var resultDateString = flatpickr.formatDate(resultDateMilisecs, prettyFormat);
           resultTextEl.html(resultDateString);
         }
       });
