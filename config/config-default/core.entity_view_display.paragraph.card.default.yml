@@ -3,26 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card.field_page
-    - field.field.paragraph.card.field_statement
+    - field.field.paragraph.card.field_body
+    - field.field.paragraph.card.field_icon
+    - field.field.paragraph.card.field_title_display
     - paragraphs.paragraphs_type.card
   module:
+    - options
     - text
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
 mode: default
 content:
-  field_page:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_icon:
     weight: 0
     label: hidden
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_label
+    type: list_key
     region: content
-  field_statement:
-    weight: 1
+  field_title_display:
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }

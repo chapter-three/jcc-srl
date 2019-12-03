@@ -1,10 +1,10 @@
-uuid: 9f31224f-fad3-4b1c-a29a-b0b221ad7daa
+uuid: cdcf6750-1946-485f-b74b-1c92a855761d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_statement
-    - paragraphs.paragraphs_type.card
+    - field.storage.paragraph.field_title_display
+    - paragraphs.paragraphs_type.card_list
   module:
     - allowed_formats
     - text
@@ -14,14 +14,14 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
-id: paragraph.card.field_statement
-field_name: field_statement
+id: paragraph.card_list.field_title_display
+field_name: field_title_display
 entity_type: paragraph
-bundle: card
-label: 'Action Statement'
+bundle: card_list
+label: 'Display Title'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

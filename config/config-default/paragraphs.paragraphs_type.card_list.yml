@@ -1,0 +1,9 @@
+uuid: ba038912-1035-44ec-b2ae-25d7d7cb7cda
+langcode: en
+status: true
+dependencies: {  }
+id: card_list
+label: 'Card List'
+icon_uuid: null
+description: 'A set of Cards.'
+behavior_plugins: {  }

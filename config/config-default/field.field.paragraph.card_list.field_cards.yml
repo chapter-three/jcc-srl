@@ -1,0 +1,70 @@
+uuid: 623c7043-5949-41c5-9c0d-18a03cfa3a67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - entity_reference_revisions
+id: paragraph.card_list.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: card_list
+label: Cards
+description: 'Create 2-3 cards.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card: card
+    target_bundles_drag_drop:
+      accordion:
+        weight: 15
+        enabled: false
+      accordion_container:
+        weight: 16
+        enabled: false
+      calculation_date:
+        weight: 17
+        enabled: false
+      card:
+        enabled: true
+        weight: 18
+      card_list:
+        weight: 19
+        enabled: false
+      code_section:
+        weight: 20
+        enabled: false
+      flex:
+        weight: 21
+        enabled: false
+      postcard:
+        weight: 22
+        enabled: false
+      srl_date_calculator:
+        weight: 23
+        enabled: false
+      step:
+        weight: 24
+        enabled: false
+      step_container:
+        weight: 25
+        enabled: false
+      tile:
+        weight: 26
+        enabled: false
+      timeline:
+        weight: 27
+        enabled: false
+      timeline_item:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions
