@@ -102,6 +102,11 @@
       var resultContainer = $('.jcc-datefinder__adjacent-dates');
       var resultTextEl = $('.jcc-datefinder__date');
       var defaultDays = 30;
+      flatpickr(inputEl, {
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d"
+      });
       inputEl.on('change keyup', function () {
         var date = new Date(Date.parse(inputEl.val()) + defaultDays * 60 * 60 * 24 * 1000);
 

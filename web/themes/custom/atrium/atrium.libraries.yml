@@ -17,7 +17,11 @@ patternlab:
     ../../../libraries/courtyard/public/js/scripts.min.js: { minified: true, preprocess: false }
 
 datefinder:
+  css:
+    theme:
+      //cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css: {}
   js:
+    //cdn.jsdelivr.net/npm/flatpickr: { type: external, minified: true }
     assets/js/datefinder.js: {}
 
 howtotabs:
