@@ -5,24 +5,6 @@
  * Contains jcc_datefinder.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
-
-/**
- * Implements hook_help().
- */
-function jcc_datefinder_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for the srl_date_calculator module.
-    case 'help.page.srl_date_calculator':
-      $output = '';
-      $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Provides a configurable component type that allows a user to enter a date, then calculates important future dates based on the configuration.') . '</p>';
-      return $output;
-
-    default:
-  }
-}
-
 /**
  * Implments hook_preprocess_HOOK().
  */
