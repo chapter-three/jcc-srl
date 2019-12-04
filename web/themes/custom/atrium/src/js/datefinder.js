@@ -8,7 +8,7 @@
       const inputEl = $('input[type="date"]');
       const resultContainer = $('.jcc-datefinder__adjacent-dates');
       const resultTextEl = $('.jcc-datefinder__date');
-      const daysToAdd = $('[data-datefinder-value="days"]').val();
+      const daysToAdd = $('[data-datefinder-value="days_to_add"]').val();
       const prettyFormat = "F j, Y";
       
       // Use flatpickr js to create datepicker.
