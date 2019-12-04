@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.datefinder.field_body
+    - field.field.paragraph.datefinder.field_brow
     - field.field.paragraph.datefinder.field_create_anchor
     - field.field.paragraph.datefinder.field_days
     - field.field.paragraph.datefinder.field_label
@@ -20,6 +21,13 @@ mode: default
 content:
   field_body:
     weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_brow:
+    weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
