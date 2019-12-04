@@ -98,10 +98,10 @@
 
   Drupal.behaviors.datefinder = {
     attach: function attach(context) {
-      var inputEl = $('input[type="date"]');
+      var inputEl = $('[data-drupal-selector="edit-input-date"]');
       var resultContainer = $('.jcc-datefinder__adjacent-dates');
       var resultTextEl = $('.jcc-datefinder__date');
-      var daysToAdd = $('[data-datefinder-value="days_to_add"]').val();
+      var daysToAdd = $('[data-drupal-selector="edit-days-to-add"]').val();
       var prettyFormat = "F j, Y"; // Use flatpickr js to create datepicker.
 
       flatpickr(inputEl, {

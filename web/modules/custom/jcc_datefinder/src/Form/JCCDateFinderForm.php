@@ -27,15 +27,16 @@ class JCCDateFinderForm extends FormBase {
       '#type' => 'hidden',
       '#weight' => '0',
       '#value' => $paragraph->field_days->value,
-      '#attributes' => [
-        'data-datefinder-value' => 'days_to_add'
-      ]
     ];
+
     $form['input_date'] = [
-      '#type' => 'date',
+      '#type' => 'textfield',
       '#weight' => '1',
       '#title' => $paragraph->field_label_date_input->value,
-      '#placeholder' => t('Select Date')
+      '#attributes' => [
+        'placeholder' => t('Select date'),
+        'aria-label' => $paragraph->field_label_date_input->value,
+      ]
     ];
 
     return $form;
