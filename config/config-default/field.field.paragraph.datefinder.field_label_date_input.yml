@@ -20,7 +20,7 @@ entity_type: paragraph
 bundle: datefinder
 label: 'Date Input Label'
 description: 'Text above date input box (Ex: <strong>Enter Your Filing Date</strong>)'
-required: false
+required: true
 translatable: false
 default_value:
   -

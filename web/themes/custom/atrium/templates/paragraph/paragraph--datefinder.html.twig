@@ -16,7 +16,7 @@
     {% include '@molecules/interactive/datefinder/datefinder.twig' with {
       title: content.field_label,
       date_input: date_input,
-      serve_date_label: content.field_label_date_output|render,
+      serve_date_label: content.field_label_date_output,
       send_icon: {
         icon_file: '../../../libraries/courtyard/source/images/icomoon/symbol-defs.svg',
         icon: 'send',
@@ -31,9 +31,10 @@
     id: paragraph_id,
     column_variant: "has-two-columns-threequarter",
     headergroup: {
+      brow: content.field_brow|render ? content.field_brow : '',
       title: content.field_title_display|render ? content.field_title_display : '',
     },
-    column_content_left: content.field_body|render ? content.field_body : null,
+    column_content_left: content.field_body|render ? content.field_body : ' ',
     column_content_right: datefinder
   } only %}
 {% endblock %}
