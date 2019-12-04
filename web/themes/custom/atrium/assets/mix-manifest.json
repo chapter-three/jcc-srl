@@ -1,5 +1,6 @@
 {
     "/js/atrium.script.js": "/js/atrium.script.js",
     "/css/atrium.style.css": "/css/atrium.style.css",
-    "/js/howtotabs.js": "/js/howtotabs.js"
+    "/js/howtotabs.js": "/js/howtotabs.js",
+    "/js/jump-nav.js": "/js/jump-nav.js"
 }

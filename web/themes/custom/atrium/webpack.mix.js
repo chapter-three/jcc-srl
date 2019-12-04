@@ -62,4 +62,5 @@ mix
  */
 mix
   .js('src/js/atrium.script.js', 'js')
-  .js('src/js/howtotabs.js', 'js');
+  .js('src/js/howtotabs.js', 'js')
+  .js('src/js/jump-nav.js', 'js');
