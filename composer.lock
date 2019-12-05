@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1659d7b99ea77c169a9bb1e80410184e",
+    "content-hash": "fe578786d948c6b085de65dd50cfdd3c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6981,7 +6981,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "9127502"
+                "reference": "034afec"
             },
             "type": "drupal-library"
         },
@@ -13825,6 +13825,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "require-dev dependencies from drupal/core",
+            "abandoned": "drupal/core-dev",
             "time": "2019-11-13T23:31:44+00:00"
         }
     ],
