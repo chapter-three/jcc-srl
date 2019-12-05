@@ -99,9 +99,9 @@
   Drupal.behaviors.datefinder = {
     attach: function attach(context) {
       var inputEl = $('[data-drupal-selector="edit-input-date"]');
-      var resultContainer = $('.jcc-datefinder__adjacent-dates');
-      var resultTextEl = $('.jcc-datefinder__date');
-      var daysToAdd = $('[data-drupal-selector="edit-days-to-add"]').val();
+      var resultContainerSelector = '.jcc-datefinder__adjacent-dates';
+      var resultTextSelector = '.jcc-datefinder__date';
+      var daysToAddSelector = '[data-drupal-selector="edit-days-to-add"]';
       var prettyFormat = "F j, Y"; // Use flatpickr js to create datepicker.
 
       flatpickr(inputEl, {
@@ -111,13 +111,16 @@
       }); // Calculate and display result date.
 
       inputEl.on('change keyup', function () {
-        // 60 sec * 60 min * 24 hours = 86400
-        var resultDateMilisecs = new Date(Date.parse(inputEl.val()) + daysToAdd * 86400 * 1000);
+        var id = $(this).closest('.datefinder').attr('id');
+        var idStr = '#' + id + ' ';
+        var daysToAdd = $(idStr + daysToAddSelector).val(); // 60 sec * 60 min * 24 hours = 86400
+
+        var resultDateMilisecs = new Date(Date.parse($(this).val()) + daysToAdd * 86400 * 1000);
 
         if (resultDateMilisecs != 'Invalid Date') {
-          resultContainer.removeAttr('hidden');
+          $(idStr + resultContainerSelector).removeAttr('hidden');
           var resultDateString = flatpickr.formatDate(resultDateMilisecs, prettyFormat);
-          resultTextEl.html(resultDateString);
+          $(idStr + resultTextSelector).html(resultDateString);
         }
       });
     }
