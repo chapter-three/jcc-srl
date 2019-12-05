@@ -62,7 +62,7 @@ mix
  */
 mix.styles([
   'node_modules/flatpickr/dist/flatpickr.min.css',
-], 'assets/css/flatpickr.css');
+], 'assets/css/flatpickr.min.css');
 
 /*
  |--------------------------------------------------------------------------

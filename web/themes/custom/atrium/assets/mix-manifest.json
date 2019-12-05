@@ -5,5 +5,5 @@
     "/js/flatpickr.min.js": "/js/flatpickr.min.js",
     "/js/howtotabs.js": "/js/howtotabs.js",
     "/js/jump-nav.js": "/js/jump-nav.js",
-    "/css/flatpickr.css": "/css/flatpickr.css"
+    "/css/flatpickr.min.css": "/css/flatpickr.min.css"
 }
