@@ -19,9 +19,9 @@ patternlab:
 datefinder:
   css:
     theme:
-      //cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css: {}
+      assets/cssflatpickr.min.css: {}
   js:
-    //cdn.jsdelivr.net/npm/flatpickr: { type: external, minified: true }
+    assets/js/flatpickr.min.js: {}
     assets/js/datefinder.js: {}
 
 howtotabs:
