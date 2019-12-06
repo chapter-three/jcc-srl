@@ -1,0 +1,11 @@
+uuid: bc32d777-41ce-4ac4-ba51-e0e958028e54
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_onramp
+id: node.srl_onramp
+target_entity_type_id: node
+target_bundle: srl_onramp
+default_langcode: site_default
+language_alterable: false

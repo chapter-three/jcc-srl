@@ -1,0 +1,22 @@
+uuid: 34781ba7-86f6-48d0-b6a8-54b1882ff9cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.handbook
+id: node.handbook.status
+field_name: status
+entity_type: node
+bundle: handbook
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
