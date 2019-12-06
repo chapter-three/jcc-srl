@@ -11,7 +11,7 @@ Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [C
 - Courtyard is installed via Composer as a [Drupal Library](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) to `web/libraries/courtyard`. See documentation for [updating](#updating-courtyard-within-drupal) as needed.
 - Source Twig templates are directly consumed by Drupal, with the help of [Components](https://www.drupal.org/project/components) module, and namespaces common to Courtyard and Atrium. See `component-libraries` in `atrium.info.yml`.
 - Courtyard's compiled assets are also directly consumed by Drupal, via a library definition in `atrium.libraries.yml`, which is loaded globally.
-- Atrium uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript.  For more information on how to work with Sass and JavaScript in this theme, see the following documentation:
+- Atrium uses [Laravel Mix](https://laravel-mix.com) and [Webpack](https://webpack.js.org) to compile and bundle SASS and JavaScript. For more information on how to work with Sass and JavaScript in this theme, see the following documentation:
 
   - Sass: [`src/sass/README.md`](./src/sass/README.md)
   - JavaScript: [`src/js/README.md`](./src/js/README.md)
@@ -22,7 +22,7 @@ Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [C
 
 ### 1. Prerequisites
 
-Ensure that [Node* and NPM are installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before proceeding.
+Ensure that [Node\* and NPM are installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before proceeding.
 
 _Note: While the Atrium build script works properly with the current Node LTS (recommended) version, currently `12.13.0`, the Pattern Lab instance requires the current version, currently `13.1.0`._
 
@@ -34,15 +34,15 @@ _Note: While the Atrium build script works properly with the current Node LTS (r
 
 3. Install Composer dependencies: `composer install` and complete the wizard:
 
-    | Question | Answer |
-    | :------- | :----: |
-    | _the path `./source/_twig-components/functions` already exists. merge or replace with the contents of pattern-lab/drupal-twig-components package? M/r_ | `M` |
-    | _the path `./source/_twig-components/filters` already exists. merge or replace with the contents of pattern-lab/drupal-twig-components package? M/r_ | `M` |
-    | _the path `./source/_twig-components/tags` already exists. merge or replace with the contents of pattern-lab/drupal-twig-components package? M/r_ | `M` |
-    | _update the config option `twigDebug (1)` with the value ? Y/n_ | `N` |
-    | _update the config option `twigAutoescape ()` with the value html?_ Y/n | `N` |
-    | _the path `./public/` already exists. merge or replace with the contents of `pattern-lab/styleguidekit-assets-default` package? M/r_ | `M` |
-    | _update the config option styleguideKitPath (`...web/libraries/courtyard/vendor/pattern-lab/styleguidekit-twig-default`) with the value `vendor/pattern-lab/styleguidekit-twig-default`? Y/n_ | `Y` |
+   | Question                                                                                                                                                                                      | Answer |
+   | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
+   | _the path `./source/_twig-components/functions` already exists. merge or replace with the contents of pattern-lab/drupal-twig-components package? M/r_                                        |  `M`   |
+   | _the path `./source/_twig-components/filters` already exists. merge or replace with the contents of pattern-lab/drupal-twig-components package? M/r_                                          |  `M`   |
+   | _the path `./source/_twig-components/tags` already exists. merge or replace with the contents of pattern-lab/drupal-twig-components package? M/r_                                             |  `M`   |
+   | _update the config option `twigDebug (1)` with the value ? Y/n_                                                                                                                               |  `N`   |
+   | _update the config option `twigAutoescape ()` with the value html?_ Y/n                                                                                                                       |  `N`   |
+   | _the path `./public/` already exists. merge or replace with the contents of `pattern-lab/styleguidekit-assets-default` package? M/r_                                                          |  `M`   |
+   | _update the config option styleguideKitPath (`...web/libraries/courtyard/vendor/pattern-lab/styleguidekit-twig-default`) with the value `vendor/pattern-lab/styleguidekit-twig-default`? Y/n_ |  `Y`   |
 
 4. Start the build script from the `web/libraries/courtyard` directory: `npm run start`
 
@@ -56,11 +56,11 @@ You'll need to be **very careful** to commit and push all outstanding Courtyard 
 
 1. The Courtyard repository needs to be cloned manually, and reinstalled (see instructions below), after updating the Drupal environment.
 
-    ```sh
-    cd web/libraries
-    rm -rf courtyard
-    git clone git@github.com:Exygy/courtyard.git
-    ```
+   ```sh
+   cd web/libraries
+   rm -rf courtyard
+   git clone git@github.com:Exygy/courtyard.git
+   ```
 
 2. Reinstall Courtyard's Composer and NPM dependencies described above.
 
@@ -88,3 +88,5 @@ Once Courtyard becomes stable, and has official releases, this process will chan
 1. Obtain the latest commit hash. This can be found on the [commits](https://github.com/Exygy/courtyard/commits/master) page, or by running the following command: `git ls-remote https://github.com/Exygy/courtyard.git HEAD | awk '{ print substr($1,1,7)}'`
 2. From the repository root, require the package with the hash, for example: `lando composer require exygy/courtyard:dev-master#0bfadb6`
 3. Update the lock file: `lando composer update --lock`
+
+   _\*Replace `HEAD` with `[branchname]` in Step 1 and `dev-master` with `dev-[branchname]` in Step 2 if not pulling from master branch._
