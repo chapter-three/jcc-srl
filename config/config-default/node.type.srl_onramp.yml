@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'SRL Onramp'
 type: srl_onramp
-description: ''
+description: 'Onranp provides information about a specific form or process.'
 help: ''
 new_revision: true
 preview_mode: 1
