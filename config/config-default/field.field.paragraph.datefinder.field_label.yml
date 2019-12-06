@@ -1,0 +1,21 @@
+uuid: 59e57cd1-f850-4925-a649-facbe97834da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.datefinder
+id: paragraph.datefinder.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: datefinder
+label: 'Group Label'
+description: 'Text above right column (Ex: <strong>Estimate Your Timing</strong>)'
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Estimate Your Timing'
+default_value_callback: ''
+settings: {  }
+field_type: string

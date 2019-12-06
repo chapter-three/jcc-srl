@@ -51,6 +51,7 @@ module:
   honeypot: 0
   image: 0
   inline_entity_form: 0
+  jcc_datefinder: 0
   jcc_forms: 0
   key: 0
   language: 0
@@ -82,7 +83,6 @@ module:
   serialization: 0
   shortcut: 0
   simple_block: 0
-  srl_date_calculator: 0
   srl_updates: 0
   system: 0
   taxonomy: 0

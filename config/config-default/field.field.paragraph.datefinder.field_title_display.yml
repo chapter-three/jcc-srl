@@ -1,10 +1,10 @@
-uuid: 8ea1702e-733b-4b20-bc11-e720d3417fc0
+uuid: 87cdd680-23b4-4b91-9324-c5fdf1c9576d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title_display
-    - paragraphs.paragraphs_type.srl_date_calculator
+    - paragraphs.paragraphs_type.datefinder
   module:
     - allowed_formats
     - text
@@ -14,14 +14,12 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
-_core:
-  default_config_hash: byfiu4YaOC6ksy_PmX4nM_nYFTAteGBW9tpPm7_Q6tg
-id: paragraph.srl_date_calculator.field_title_display
+id: paragraph.datefinder.field_title_display
 field_name: field_title_display
 entity_type: paragraph
-bundle: srl_date_calculator
+bundle: datefinder
 label: 'Display Title'
-description: 'Title of the Date Calculator that will appear on the page.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

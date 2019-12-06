@@ -6983,7 +6983,8 @@
                 "url": "https://github.com/exygy/courtyard.git",
                 "reference": "034afec"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2019-12-05T19:55:40+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

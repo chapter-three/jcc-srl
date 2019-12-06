@@ -1,6 +1,8 @@
 {
     "/js/atrium.script.js": "/js/atrium.script.js",
     "/css/atrium.style.css": "/css/atrium.style.css",
+    "/js/datefinder.js": "/js/datefinder.js",
     "/js/howtotabs.js": "/js/howtotabs.js",
-    "/js/jump-nav.js": "/js/jump-nav.js"
+    "/js/jump-nav.js": "/js/jump-nav.js",
+    "/css/flatpickr.min.css": "/css/flatpickr.min.css"
 }

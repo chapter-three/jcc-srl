@@ -1,0 +1,23 @@
+uuid: c6d10ba2-50c2-4790-9e22-85bdbe8e066f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_days
+    - paragraphs.paragraphs_type.datefinder
+id: paragraph.datefinder.field_days
+field_name: field_days
+entity_type: paragraph
+bundle: datefinder
+label: Days
+description: 'Number of days to calculate (Ex: <strong>30</strong>)'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
