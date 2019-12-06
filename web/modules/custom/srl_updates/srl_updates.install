@@ -158,7 +158,7 @@ function srl_updates_update_8003(&$sandbox) {
 /**
  * Update field_background values on paragraphs.
  */
-function srl_updates_update_8007(&$sandbox) {
+function srl_updates_update_8004(&$sandbox) {
   // Find paragraphs using `field_background` with `has-background-color`.
   $pids = \Drupal::entityQuery('paragraph')
     ->condition('field_background', 'has-background-color')
