@@ -8,6 +8,7 @@ use Drupal\cc\ConditionalDisplay;
 use Drupal\cc\Conditions;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Convert to cc module user input id from uuid.
@@ -152,4 +153,21 @@ function srl_updates_update_8003(&$sandbox) {
     ->getFieldStorageDefinition('items', 'cc_user_input');
   $definition_update_manager
     ->uninstallFieldStorageDefinition($field_storage_definition);
+}
+
+/**
+ * Update field_background values on paragraphs.
+ */
+function srl_updates_update_8004(&$sandbox) {
+  // Find paragraphs using `field_background` with `has-background-color`.
+  $pids = \Drupal::entityQuery('paragraph')
+    ->condition('field_background', 'has-background-color')
+    ->execute();
+
+  // Load results and set the values to 'light'.
+  $paragraphs = Paragraph::loadMultiple($pids);
+  /** @var \Drupal\paragraph\Entity\Paragraph $paragraph */
+  foreach ($paragraphs as $paragraph) {
+    $paragraph->set('field_background', 'light')->save();
+  }
 }
