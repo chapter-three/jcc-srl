@@ -21,7 +21,6 @@ datefinder:
     theme:
       assets/css/flatpickr.min.css: {}
   js:
-    assets/js/flatpickr.min.js: {}
     assets/js/datefinder.js: {}
 
 howtotabs:

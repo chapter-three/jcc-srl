@@ -1,3 +1,5 @@
+import flatpickr from 'flatpickr';
+
 (function ($) {
   
   'use strict';

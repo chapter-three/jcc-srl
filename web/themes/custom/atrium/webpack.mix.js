@@ -71,7 +71,6 @@ mix.styles([
  */
 mix
   .js('src/js/atrium.script.js', 'js')
-  .js('node_modules/flatpickr/dist/flatpickr.min.js', 'js')
   .js('src/js/datefinder.js', 'js')
   .js('src/js/howtotabs.js', 'js')
   .js('src/js/jump-nav.js', 'js');
