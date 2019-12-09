@@ -27,6 +27,7 @@ permissions:
   - 'administer content translation'
   - 'administer google analytics'
   - 'administer media'
+  - 'administer menu'
   - 'administer meta tags'
   - 'administer nodes'
   - 'administer pathauto'
