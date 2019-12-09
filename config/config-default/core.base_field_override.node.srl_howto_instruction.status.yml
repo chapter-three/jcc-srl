@@ -1,0 +1,22 @@
+uuid: 8d1bfa95-406d-4bd1-9908-b4aa2b84e45f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_howto_instruction
+id: node.srl_howto_instruction.status
+field_name: status
+entity_type: node
+bundle: srl_howto_instruction
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

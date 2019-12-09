@@ -1,0 +1,11 @@
+uuid: f5ca2dbc-2ab0-4d82-b0b8-a650f6b1a2ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_howto_instruction
+id: node.srl_howto_instruction
+target_entity_type_id: node
+target_bundle: srl_howto_instruction
+default_langcode: site_default
+language_alterable: false
