@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -108,8 +108,8 @@
         // Add the proper column variant class to the hero.
         $jumpList.parents('.jcc-hero').addClass('jcc-hero--has-two-columns-threequarter');
         $jumpItems.once('jump-nav').each(function (index, item) {
-          // Find the title, which could be an h2 or h3, and is a formatted text.
-          var itemTitle = $(item).find('.jcc-header-group__title').html(); // Append the item to the jump nav.
+          // Find the title, which could be an h2 or h3, and is formatted text.
+          var itemTitle = $(item).find('.jcc-header-group__title').html(); // Create a list item and append the item to the jump nav.
 
           if (itemTitle) {
             $jumpList.append("\n              <li class=\"usa-sidenav__item\">\n                <a href=\"#".concat($(item).attr('id'), "\">").concat(itemTitle, "</a>\n              </li>\n            "));
@@ -124,7 +124,7 @@
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./src/js/jump-nav.js ***!
   \**********************************/
