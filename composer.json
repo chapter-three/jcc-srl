@@ -10,11 +10,23 @@
         }
     ],
     "repositories": {
-        "0": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "1": {
+        "ckeditor/templates": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/templates",
+                "version": "4.13.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/templates/releases/templates_4.13.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        "enyo/dropzone": {
             "type": "package",
             "package": {
                 "name": "enyo/dropzone",
@@ -27,7 +39,7 @@
                 }
             }
         },
-        "2": {
+        "exygy/courtyard": {
             "type": "package",
             "package": {
                 "name": "exygy/courtyard",
@@ -40,7 +52,7 @@
                 }
             }
         },
-        "highlightjs": {
+        "components/highlightjs": {
             "type": "package",
             "package": {
                 "name": "components/highlightjs",
@@ -52,7 +64,7 @@
                 }
             }
         },
-        "d3": {
+        "d3/d3": {
             "type": "package",
             "package": {
                 "name": "d3/d3",
@@ -82,6 +94,7 @@
     },
     "require": {
         "php": ">=7.3",
+        "ckeditor-plugin/templates": "^4.13",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
@@ -91,6 +104,7 @@
         "drupal/autosave_form": "^1.0",
         "drupal/block_field": "^1.0@alpha",
         "drupal/chosen": "^2.8",
+        "drupal/ckeditor_templates": "^1.1",
         "drupal/components": "^1.1",
         "drupal/config_exclude": "1.x-dev",
         "drupal/config_ignore": "^2.1",
