@@ -28,10 +28,15 @@
       {% if accordions.get(key).entity.field_title_display.value %}
         {% set accordion = accordions.get(key).entity %}
 
+        {% set body %}
+          {{ accordion.field_body|view }}
+          {{ accordion.field_postcard|view }}
+        {% endset %}
+
         {# Store each accordion in an array for the Pattern component. #}
         {% set accordion_content = accordion_content|merge([{
           title: accordion.field_title_display|view,
-          body: accordion.field_body|view,
+          body: body,
           title_attributes: create_attribute(),
           content_attributes: create_attribute(),
         }]) %}

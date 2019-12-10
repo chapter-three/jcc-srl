@@ -99,6 +99,7 @@ module:
   content_translation: 10
   views: 10
   paragraphs: 11
+  jcc_admin: 20
   mega: 1000
 theme:
   stable: 0
