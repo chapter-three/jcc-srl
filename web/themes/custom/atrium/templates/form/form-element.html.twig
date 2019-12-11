@@ -57,13 +57,13 @@
   type == 'checkbox' ? 'usa-checkbox',
   type == 'radio' ? 'usa-radio',
   (type == 'select' and not element['#multiple']) ? 'jcc-dropdown' : ''
-] %}
+]|merge(classes|default([])) %}
 
 {% set description_classes = [
   'description',
   'usa-hint',
   description_display == 'invisible' ? 'visually-hidden',
-] %}
+]|merge(description_classes|default([])) %}
 
 <div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
