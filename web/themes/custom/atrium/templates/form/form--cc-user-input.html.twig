@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override for a 'cc_user_input' form.
+ */
+#}
+{% set node = element['#object'] %}
+
+<form{{ attributes.addClass('usa-form', 'jcc-form') }}>
+
+  {% set body %}
+    {{ node.field_description|view }}
+    <div class="jcc-form--inline">
+      {# I need the first form element in here. #}
+      {{ element.the_first_element }}
+    </div>
+  {% endset %}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    title: node.field_title_display.value ? node.field_title_display|view : node.label(),
+    body: body,
+    column_variant: 'has-one-column',
+  } %}
+
+  {# I need the rest here. #}
+  {{ element|without('the_first_item') }}
+</form>
