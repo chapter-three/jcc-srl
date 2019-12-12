@@ -62,8 +62,8 @@
   {# Submit button and other children elements. #}
   {% for item in form_children %}
     {% if item['#type'] == 'submit' %}
-      {# @todo This needs tweaking in the Pattern Lab as it introducds too much
-      vertical space. #}
+      {# @todo This needs tweaking in the Pattern Lab as it introduces too much
+      vertical whitespace. #}
       <div class="jcc-choice-section jcc-choice-section--has-background-color--transparent">
         <div class="jcc-choice-section__container">
           {{ item }}
