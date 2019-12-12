@@ -6,5 +6,8 @@
 #}
 {% extends 'node.html.twig' %}
 {% block content %}
-  {{ content }}
+  {{ content|without(
+    'field_title_display',
+    'field_description'
+  ) }}
 {% endblock %}
