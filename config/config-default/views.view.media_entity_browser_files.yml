@@ -17,7 +17,6 @@ description: 'Provides a list of "File" entities for use in the File WYSIWYG ent
 tag: ''
 base_table: media_field_data
 base_field: mid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -452,6 +451,9 @@ display:
           entity_field: bundle
           plugin_id: bundle
           group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
         name:
           id: name
           table: media_field_data
@@ -480,6 +482,8 @@ display:
               jcc_web_services: '0'
               administrator: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -523,6 +527,8 @@ display:
               jcc_web_services: '0'
               administrator: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -565,6 +571,8 @@ display:
               editor: '0'
               jcc_web_services: '0'
               administrator: '0'
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
