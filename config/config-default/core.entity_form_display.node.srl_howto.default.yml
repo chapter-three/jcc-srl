@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.srl_howto.field_children_secondary
     - field.field.node.srl_howto.field_column_first
     - field.field.node.srl_howto.field_column_second
+    - field.field.node.srl_howto.field_metatag
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
     - field.field.node.srl_howto.field_title_display
@@ -14,6 +15,7 @@ dependencies:
   module:
     - allowed_formats
     - maxlength
+    - metatag
     - paragraphs
     - path
     - text
@@ -86,6 +88,12 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
+  field_metatag:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_switchboard_subtitle:
     weight: 12

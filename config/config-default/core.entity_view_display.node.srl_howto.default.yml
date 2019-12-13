@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.srl_howto.field_children_secondary
     - field.field.node.srl_howto.field_column_first
     - field.field.node.srl_howto.field_column_second
+    - field.field.node.srl_howto.field_metatag
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
     - field.field.node.srl_howto.field_title_display
@@ -22,7 +23,7 @@ mode: default
 content:
   field_children_primary:
     type: entity_reference_revisions_entity_view
-    weight: 109
+    weight: 7
     label: hidden
     settings:
       view_mode: default
@@ -31,7 +32,7 @@ content:
     region: content
   field_children_secondary:
     type: entity_reference_revisions_entity_view
-    weight: 108
+    weight: 6
     label: hidden
     settings:
       view_mode: default
@@ -39,44 +40,45 @@ content:
     third_party_settings: {  }
     region: content
   field_column_first:
-    weight: 103
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_column_second:
-    weight: 104
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_switchboard_subtitle:
-    weight: 106
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_switchboard_title:
-    weight: 105
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_title_display:
-    weight: 102
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_metatag: true
   langcode: true

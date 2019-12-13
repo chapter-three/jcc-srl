@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.basic.body
     - field.field.node.basic.field_media
+    - field.field.node.basic.field_metatag
     - image.style.large
     - node.type.basic
   module:
@@ -35,5 +36,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_metatag: true
   langcode: true
   links: true
