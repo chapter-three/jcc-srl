@@ -483,11 +483,7 @@ display:
         - user
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.media.audio.media_library'
-        - extensions
         - 'config:core.entity_view_display.media.file.default'
-        - extensions
-        - 'config:core.entity_view_display.media.file.embed'
         - extensions
         - 'config:core.entity_view_display.media.file.media_library'
         - extensions
@@ -495,15 +491,19 @@ display:
         - extensions
         - 'config:core.entity_view_display.media.image.media_library'
         - extensions
+        - 'config:core.entity_view_display.media.jcc_form.default'
+        - extensions
+        - 'config:core.entity_view_display.media.jcc_form.media_library'
+        - extensions
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - extensions
+        - 'config:core.entity_view_display.media.file.embed'
+        - extensions
         - 'config:core.entity_view_display.media.image.postcard'
         - extensions
         - 'config:core.entity_view_display.media.image.postcard_background'
         - extensions
-        - 'config:core.entity_view_display.media.jcc_form.default'
-        - extensions
         - 'config:core.entity_view_display.media.jcc_form.full'
-        - extensions
-        - 'config:core.entity_view_display.media.jcc_form.media_library'
         - extensions
         - 'config:core.entity_view_display.media.remote_video.media_library'
         - extensions
@@ -516,7 +516,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/content/media-grid
+      path: admin/content/media
       fields:
         media_bulk_form:
           id: media_bulk_form
