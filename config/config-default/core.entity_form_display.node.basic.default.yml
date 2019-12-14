@@ -6,9 +6,11 @@ dependencies:
     - entity_browser.browser.meb
     - field.field.node.basic.body
     - field.field.node.basic.field_media
+    - field.field.node.basic.field_metatag
     - node.type.basic
   module:
     - entity_browser
+    - metatag
     - path
     - text
 _core:
@@ -47,6 +49,12 @@ content:
       field_widget_replace: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
+  field_metatag:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   langcode:
     type: language_select

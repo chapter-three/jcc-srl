@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.srl_onramp.field_case_type
     - field.field.node.srl_onramp.field_description
     - field.field.node.srl_onramp.field_hero_nav_title
+    - field.field.node.srl_onramp.field_metatag
     - field.field.node.srl_onramp.field_paragraphs
     - field.field.node.srl_onramp.field_title_display
     - node.type.srl_onramp
   module:
     - allowed_formats
     - maxlength
+    - metatag
     - paragraphs
     - path
     - text
@@ -64,6 +66,12 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: text_textfield
+    region: content
+  field_metatag:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_paragraphs:
     type: entity_reference_paragraphs
