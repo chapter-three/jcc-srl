@@ -132,24 +132,10 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
 - Any new code pushed to Github will spawn a multidev on Pantheon, named for the process ID that spawned it.
 - Any Pull Requests on Github will also spawn a multidev on Pantheon, named for the Pull Request ID that spawned it.
 - Pantheon only allows 10 multidev environments at this service level so inactive `pr-` and `ci-` environments may need to be deleted manually.
-- If you need a more persistent multidev for longer term development, the CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev.
-
-### Create an epic- multidev environment on Pantheon
-  - Terminus
-    - terminus multidev:create [site_env] [multidev]
-    - [site_env] = jcc-srl.live (The environment to clone.)
-    - [multidev] = epic-[description] (Any valid Pantheon branch name prefixed with `epic-`.)
-  - Web Dashboard
-    - On the Multidev Tab - Multidev overview
-    - Click `Create Multidev Environment`
-    - Enter multidev branch name prefixed with `epic-`
-    - Select the environment to clone. (dev)
-- Create an epic- branch from master in this working repo.
-- Push the epic branch to Github
-  - Circle CI will build and deploy it to the new multidev environment every time it's updated.
+- If you need a more persistent multidev for longer term development, the CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev.  
   
 ## Deployments
-### To Production (standard)
+### Deploy to Production (standard)
 1. Send code to `master` branch and `dev` environment.
 - Make sure develop is up-to-date with master
 - Create a (pull request in github)[https://github.com/chapter-three/jcc-srl/compare/master...develop] with base:master 
@@ -168,6 +154,21 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
 4. Push to `live` (production) environment.
 - Deploy artifact code to `live` environment in Pantheon UI or with Terminus.
 - Celebrate!
+
+### Deploy to Persistent Multidev (epic) on Pantheon
+1. Create multidev environment with Terminus or through the Pantheon dashboard.
+    
+    `terminus multidev:create jcc-srl.[env-to-clone] epic-[feature]`
+    [site_env] = jcc-srl.live (The environment to clone.)
+
+2. Create `epic-[feature]` branch from `master` in git.
+
+    ```bash
+    git checkout -b epic-[feature]
+    git push
+    ```
+
+Circle CI will build and deploy code to the new multidev environment every time the epic's branch updated. The database will not be synced/wiped automatically.
 
 ## Module Management
 
