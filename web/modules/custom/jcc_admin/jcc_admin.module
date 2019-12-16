@@ -33,3 +33,18 @@ function jcc_admin_field_widget_entity_reference_paragraphs_form_alter(&$element
     }
   }
 }
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function jcc_admin_local_tasks_alter(&$local_tasks) {
+
+  // Fix secondary tabs at admin/content/media after 8.8.0.
+  // Grid.
+  $local_tasks['media_library.grid']['route_name'] = 'view.media_library.page';
+  $local_tasks['media_library.grid']['weight'] = '10';
+
+  // Table.
+  $local_tasks['media_library.table']['route_name'] = 'view.media.media_page_list';
+  $local_tasks['media_library.table']['weight'] = '30';
+}
