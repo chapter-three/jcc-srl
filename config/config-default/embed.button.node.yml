@@ -2,8 +2,6 @@ uuid: 32f4826e-67b3-4184-ace0-101e1046a7b7
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'file:file:01b742ee-1b17-4d52-a5d0-8a46bcbdd29e'
   module:
     - entity_embed
     - node
@@ -19,4 +17,7 @@ type_settings:
   entity_browser: ''
   entity_browser_settings:
     display_review: false
-icon_uuid: 01b742ee-1b17-4d52-a5d0-8a46bcbdd29e
+icon:
+  data: ''
+  uri: 'public://embed_buttons/note.png'
+icon_uuid: null
