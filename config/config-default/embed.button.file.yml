@@ -6,8 +6,6 @@ dependencies:
     - core.entity_view_mode.media.embed
     - entity_browser.browser.file_wysiwyg
     - media.type.file
-  content:
-    - 'file:file:e1dd9543-0240-4df6-abbb-5887133f8424'
   module:
     - entity_embed
     - media
@@ -23,4 +21,7 @@ type_settings:
   entity_browser: file_wysiwyg
   entity_browser_settings:
     display_review: false
-icon_uuid: e1dd9543-0240-4df6-abbb-5887133f8424
+icon:
+  data: ''
+  uri: 'public://embed_buttons/file.png'
+icon_uuid: null
