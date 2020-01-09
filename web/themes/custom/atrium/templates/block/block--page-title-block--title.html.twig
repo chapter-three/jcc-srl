@@ -5,7 +5,8 @@
  */
 #}
 {%- include '@molecules/blocks/hero/hero.twig' with {
-  title: content|render|striptags|trim,
-  background_variant: 'has-background-color--light'
+  hero: {
+    title: content|render|striptags|trim,
+  }
 } -%}
 

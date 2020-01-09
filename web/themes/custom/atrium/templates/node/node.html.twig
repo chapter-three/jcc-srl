@@ -106,13 +106,13 @@
     {% endset %}
 
     {% include '@organisms/sections/text-section/text-section.twig' with {
-      background_variant: 'has-background-color--transparent',
-      column_content_left: body,
-      column_variant: 'two-columns-threequarter',
-      headergroup: {
-        tag: 'h1',
-        title: title
-      },
+      text_section: {
+        column_content_left: body,
+        headergroup: {
+          tag: 'h1',
+          title: title
+        },
+      }
     } only %}
   {% endblock %}
 </article>

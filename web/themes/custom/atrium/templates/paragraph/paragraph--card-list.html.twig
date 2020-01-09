@@ -14,7 +14,6 @@
       title: content.field_title_display|render ? content.field_title_display : ''
     } %}
 
-    {% set background_variant = 'has-background-color--transparent' %}
     {% if paragraph.field_background_card.value == 'light' %}
       {% set background_variant = 'has-background-color--light--secondary' %}
     {% elseif paragraph.field_background_card.value == 'dark' %}
@@ -57,11 +56,13 @@
     {% endif %}
 
     {% include '@organisms/sections/card-section/card-section.twig' with {
-      id: paragraph_id,
-      headergroup: headergroup,
-      cards: card_content,
-      background_variant: background_variant,
-      column_variant: column_variant,
+      card_section: {
+        id: paragraph_id,
+        background_variant: background_variant ? background_variant : null,
+        column_variant: column_variant,
+        headergroup: headergroup,
+        cards: card_content,
+      }
     } only %}
   {% endif %}
 

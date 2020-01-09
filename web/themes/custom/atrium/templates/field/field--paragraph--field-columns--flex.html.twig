@@ -31,11 +31,13 @@
 {% endif %}
 
 {% include '@organisms/sections/text-section/text-section.twig' with {
-  id: 'p' ~ paragraph_id,
-  headergroup: {
-    title: paragraph.field_title_display.value ? paragraph.field_title_display|view : ''
-  },
-  column_content_left: column_content_left,
-  column_content_right: column_content_right,
-  column_variant: column_content_right ? 'has-two-columns-half' : ''
+  text_section:{
+    id: 'p' ~ paragraph_id,
+    column_variant: column_content_right ? 'has-two-columns-half' : '',
+    headergroup: {
+      title: paragraph.field_title_display.value ? paragraph.field_title_display|view : ''
+    },
+    column_content_left: column_content_left,
+    column_content_right: column_content_right,
+  }
 } only %}

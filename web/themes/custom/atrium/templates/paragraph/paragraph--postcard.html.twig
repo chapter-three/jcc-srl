@@ -11,7 +11,7 @@
   {# Background Variants #}
   {% set background_variant = paragraph.field_background.value %}
   {% if paragraph.field_background.value == 'default' %}
-    {% set background_variant = 'has-background-color--transparent' %}
+    {% set background_variant = null %}
   {% elseif paragraph.field_background.value == 'light' %}
     {% set background_variant = 'has-background-color--light--secondary' %}
   {% elseif paragraph.field_background.value == 'dark' %}
@@ -37,24 +37,26 @@
   {% endif %}
 
   {% include '@molecules/blocks/postcard/postcard.twig' with {
-    id: paragraph_id,
-    background_variant: background_variant,
-    header_align_variant: 'has-header-left',
-    headergroup: {
-      title: content.field_title_display|render ? content.field_title_display : '',
-      body: body,
-      tag: paragraph.field_header.value,
-    },
-    tag: content.field_text_overlay|render ? content.field_text_overlay : '',
-    img: image,
+    postcard: {
+      id: paragraph_id,
+      background_variant: background_variant,
+      headergroup: {
+        title: content.field_title_display|render ? content.field_title_display : '',
+        body: body,
+        tag: paragraph.field_header.value,
+      },
+      tag: content.field_text_overlay|render ? content.field_text_overlay : '',
+      img: image,
+    }
   } only %}
 
   {% if content.field_additional|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
-      column_variant: 'two-columns-threequarter',
-      headergroup: {
-        lead: content.field_additional,
-      },
+      text_section: {
+        headergroup: {
+          lead: content.field_additional,
+        },
+      }
     } only %}
   {% endif %}
 
