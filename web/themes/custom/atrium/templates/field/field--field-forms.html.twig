@@ -8,23 +8,25 @@
 {% for key, item in items %}
   {% set media =  item.content["#media"] %}
   {% set files = files|merge([{
+    name: media.name.value,
     url: media.field_url.uri,
     url_title: 'Form ' ~ media.field_number.value,
-    name: media.name.value,
   }]) %}
 {% endfor %}
 
 <div class="margin-bottom-4">
   {% include '@molecules/blocks/list-block/list-block.twig' with {
-    title: label,
-    files_list: true,
-    list: {
-      items: files,
-      icon: {
-        icon_file: courtyard_icons,
-        icon: 'file',
-        title: 'File',
-        decorative: false,
+    list_block: {
+      title: label,
+      link_list: {
+        files_list: true,
+        items: files,
+        icon: {
+          file: courtyard_icons,
+          name: 'file',
+          title: 'File',
+          decorative: false,
+        }
       }
     }
   } %}

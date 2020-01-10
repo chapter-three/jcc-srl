@@ -3,16 +3,18 @@
 
   {# Hero #}
   {% include '@molecules/blocks/hero/hero.twig' with {
-    breadcrumbs: [{ label: label }],
-    title: content.field_title_display|render ? content.field_title_display : label,
-    body: content.field_column_first|render ? content.field_column_first : '',
-    column_content_right: content.field_column_second|render ? content.field_column_second : '',
-    column_variant: content.field_column_second|render ? 'has-two-columns-half' : 'has-two-columns-threequarter',
+    hero: {
+      column_variant: content.field_column_second|render ? 'has-two-columns-half' : 'has-two-columns-threequarter',
+      breadcrumbs: [{ label: label }],
+      title: content.field_title_display|render ? content.field_title_display : label,
+      body: content.field_column_first|render ? content.field_column_first : '',
+      column_content_right: content.field_column_second|render ? content.field_column_second : '',
+    }
   } only %}
 
   {# Switchboard items: Primary #}
   {% if content.field_children_primary|render %}
-    {% set switchboard_tiles = [] %}
+    {% set primary_items = [] %}
     {% set primary = node.field_children_primary %}
 
     {% for key, item in node.field_children_primary.value %}
@@ -22,7 +24,7 @@
         {% set tile_target = primary.get(key).entity.field_page.entity %}
 
         {# Store each tile in an array for the Pattern component. #}
-        {% set switchboard_tiles = switchboard_tiles|merge([{
+        {% set primary_items = primary_items|merge([{
           brow: tile_target.label(),
           title: primary.get(key).entity.field_statement|view,
           url: path('entity.node.canonical', { 'node': tile_target.id() })
@@ -33,7 +35,7 @@
 
   {# Switchboard items: Secondary #}
   {% if content.field_children_secondary|render %}
-    {% set switchboard_tiles2 = [] %}
+    {% set secondary_items = [] %}
     {% set secondary = node.field_children_secondary %}
 
     {% for key, item in node.field_children_secondary.value %}
@@ -42,7 +44,7 @@
       {% if secondary.get(key).entity.field_page.value %}
         {% set tile_target = secondary.get(key).entity.field_page.entity %}
         {# Store each tile in an array for the Pattern component. #}
-        {% set switchboard_tiles2 = switchboard_tiles2|merge([{
+        {% set secondary_items = secondary_items|merge([{
           brow: tile_target.label(),
           title: secondary.get(key).entity.field_statement|view,
           url: path('entity.node.canonical', { 'node': tile_target.id() })
@@ -53,14 +55,17 @@
 
   {% if content.field_children_primary|render or content.field_children_secondary|render %}
     {% include '@organisms/sections/switchboard/switchboard.twig' with {
-      headergroup: {
-        brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
-        title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
-      },
-      switchboard_tiles: switchboard_tiles,
-      switchboard_tiles2: switchboard_tiles2,
-      background_variant: 'has-background-color--dark',
-      tiles_variant: 'secondary'
+      switchboard: {
+        background_variant: 'has-background-color--dark',
+        headergroup: {
+          brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
+          title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
+        },
+        items: {
+          primary: primary_items,
+          secondary: secondary_items,
+        },
+      }
     } only %}
   {% endif %}
 

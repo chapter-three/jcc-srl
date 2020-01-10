@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb7f556a88fb0aaff0b95e1c7ca52e45",
+    "content-hash": "51c64fc88e8a4579be230cb152a1c8d0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6997,11 +6997,11 @@
         },
         {
             "name": "exygy/courtyard",
-            "version": "dev-development",
+            "version": "dev-refactor",
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "772b380"
+                "reference": "d16d604"
             },
             "type": "drupal-library"
         },
@@ -11120,6 +11120,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2019-08-06T17:53:53+00:00"
         },
         {
@@ -11165,6 +11166,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2019-09-05T20:03:20+00:00"
         },
         {
@@ -11228,6 +11230,7 @@
                 "feed",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-feed",
             "time": "2019-03-05T20:08:49+00:00"
         },
         {
@@ -11274,6 +11277,7 @@
                 "stdlib",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-stdlib",
             "time": "2018-08-28T21:34:05+00:00"
         }
     ],

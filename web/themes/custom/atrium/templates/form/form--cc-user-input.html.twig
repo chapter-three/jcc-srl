@@ -44,10 +44,11 @@
   {% endset %}
 
   {% include '@molecules/blocks/hero/hero.twig' with {
-    breadcrumbs: [{ label: node.field_title_display.value ? node.label() : '' }],
-    title: node.field_title_display.value ? node.field_title_display|view : node.label(),
-    body: body,
-    column_variant: 'has-one-column',
+    hero: {
+      breadcrumbs: [{ label: node.field_title_display.value ? node.label() : '' }],
+      title: node.field_title_display.value ? node.field_title_display|view : node.label(),
+      body: body,
+    }
   } %}
 
   {# Content #}

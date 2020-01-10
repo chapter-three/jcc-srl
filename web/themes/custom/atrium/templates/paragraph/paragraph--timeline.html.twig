@@ -29,9 +29,12 @@
         {% if timeline_item.field_details.value %}
 
           {% set read_more = {
-            id: 'read-more-' ~ item.id(),
-            label: timeline_item.field_details_link_text.value|default('Read more'|t),
-            modal_content: timeline_item.field_details|view,
+            type: 'modal',
+            modal: {
+              id: 'read-more-' ~ item.id(),
+              button_label: timeline_item.field_details_link_text.value|default('Read more'|t),
+              content: timeline_item.field_details|view,
+            }
           } %}
         {% endif %}
 
@@ -45,10 +48,12 @@
     {% endfor %}
 
     {% include '@organisms/sections/timeline/timeline.twig' with {
-      id: paragraph_id,
-      headergroup: headergroup,
-      timeline: item_content,
-      background_variant: 'has-background-color--dark'
+      timeline: {
+        id: paragraph_id,
+        background_variant: 'has-background-color--light--primary',
+        headergroup: headergroup,
+        items: item_content,
+      }
     } only %}
 
   {% endif %}
