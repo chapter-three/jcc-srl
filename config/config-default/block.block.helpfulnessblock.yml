@@ -1,0 +1,20 @@
+uuid: 5b672e97-8cb5-4857-96cc-b47a3a8d6098
+langcode: en
+status: true
+dependencies:
+  module:
+    - helpfulness
+  theme:
+    - atrium
+id: helpfulnessblock
+theme: atrium
+region: content_below
+weight: -2
+provider: null
+plugin: helpfulness_block
+settings:
+  id: helpfulness_block
+  label: 'Was this information helpful?'
+  provider: helpfulness
+  label_display: visible
+visibility: {  }

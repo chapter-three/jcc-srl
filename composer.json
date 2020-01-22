@@ -123,6 +123,7 @@
         "drupal/fixed_block_content": "^1.0",
         "drupal/focal_point": "^1.0",
         "drupal/google_tag": "^1.2",
+        "drupal/helpfulness": "^1.0@RC",
         "drupal/honeypot": "^1.29",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/key": "^1.10",

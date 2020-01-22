@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd6a6cdae9c057908034f233dace1513",
+    "content-hash": "9b29651c7ec20ae39db3b1068d3fa872",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4622,6 +4622,53 @@
             "homepage": "https://www.drupal.org/project/google_tag",
             "support": {
                 "source": "https://git.drupalcode.org/project/google_tag"
+            }
+        },
+        {
+            "name": "drupal/helpfulness",
+            "version": "1.0.0-rc2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/helpfulness.git",
+                "reference": "8.x-1.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/helpfulness-8.x-1.0-rc2.zip",
+                "reference": "8.x-1.0-rc2",
+                "shasum": "03a000a6babd8149632acb7d8e5df4f1327917d5"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc2",
+                    "datestamp": "1513285684",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "heymo",
+                    "homepage": "https://www.drupal.org/user/445520"
+                }
+            ],
+            "description": "Provides a block for the user to leave feedback",
+            "homepage": "https://www.drupal.org/project/helpfulness",
+            "support": {
+                "source": "https://git.drupalcode.org/project/helpfulness"
             }
         },
         {
@@ -11641,6 +11688,7 @@
         "drupal/dropzonejs": 15,
         "drupal/entity_clone": 10,
         "drupal/entity_embed": 5,
+        "drupal/helpfulness": 5,
         "drupal/inline_entity_form": 5,
         "drupal/maillog": 20,
         "drupal/maxlength": 10,

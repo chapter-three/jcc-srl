@@ -48,6 +48,7 @@ module:
   google_tag: 0
   hal: 0
   help: 0
+  helpfulness: 0
   history: 0
   honeypot: 0
   image: 0
