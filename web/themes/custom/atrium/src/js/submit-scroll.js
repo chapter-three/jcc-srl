@@ -3,37 +3,34 @@
 
   Drupal.behaviors.submitscroll = {
     attach: function(context) {
-      const submit = $(".jcc-choice-section input[type=submit]");
+      // Define button.
+      const $submitButton = $(".jcc-choice-section input[type=submit]");
 
+      // Send offset values to sessionStorage, then submit form.
+      $submitButton.click(function(e) {
+        sessionStorage.windowOffset = window.pageYOffset;
+        sessionStorage.submitPosition = $submitButton.offset().top;
+        $("form.cc-user-input").submit();
+      });
+
+      // Check sessionStorage for value.
       if (sessionStorage.windowOffset > 1) {
         var $newPosition = 0;
 
         if (
+          // Submit button is near the bottom of the window.
           sessionStorage.submitPosition - window.innerHeight >
           sessionStorage.windowOffset - 200
         ) {
           $newPosition = parseInt(sessionStorage.windowOffset) + 200;
-          console.log("1");
         } else {
+          // Submit button is not near the bottom of the window.
           $newPosition = sessionStorage.windowOffset;
-          console.log("2");
         }
 
-        $("html, body").animate(
-          {
-            scrollTop: $newPosition
-          },
-          200
-        );
-
-        sessionStorage.windowOffset = 0;
+        // Scroll based on offset values before submit.
+        $("html, body").animate({ scrollTop: $newPosition }, 200);
       }
-
-      submit.click(function(e) {
-        sessionStorage.windowOffset = window.pageYOffset;
-        sessionStorage.submitPosition = submit.offset().top;
-        $("form.cc-user-input").submit();
-      });
     }
   };
 })(jQuery, Drupal);
