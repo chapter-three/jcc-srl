@@ -41,5 +41,6 @@
         <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
       {% endif %}
     {% endfor %}
+    <optgroup></optgroup> {# Hack to force show all option text in iOS#}
   </select>
 {% endspaceless %}
