@@ -110,60 +110,52 @@
   /******/ /******/ __webpack_require__.p = "/"; // Load entry module and return exports
   /******/
   /******/
-  /******/ /******/ return __webpack_require__((__webpack_require__.s = 3));
+  /******/ /******/ return __webpack_require__((__webpack_require__.s = 2));
   /******/
 })(
   /************************************************************************/
   /******/ {
-    /***/ "./src/js/howtotabs.js":
-      /*!*****************************!*\
-  !*** ./src/js/howtotabs.js ***!
-  \*****************************/
+    /***/ "./src/js/submit-scroll.js":
+      /*!*********************************!*\
+  !*** ./src/js/submit-scroll.js ***!
+  \*********************************/
       /*! no static exports found */
       /***/ function(module, exports) {
-        (function($) {
+        (function($, Drupal) {
           "use strict";
 
-          Drupal.behaviors.howToTabs = {
+          Drupal.behaviors.submitscroll = {
             attach: function attach(context) {
-              // @todo Make this generic if we end up reusing this functionality.
-              // Define body.
-              var body = $(".jcc-tab-section__container + .jcc-text-section"); // Define paths and hashes.
+              // Define button.
+              var $submitButton = $(".jcc-choice-section input[type=submit]"); // Send offset values to sessionStorage, then submit form.
 
-              var path1 = "/debt-collection/bank-levy-bank-levied-my-account";
-              var path2 = "/debt-collection/bank-levy";
-              var hash = "#show-body"; // Define buttons.
+              $submitButton.click(function(e) {
+                sessionStorage.windowOffset = window.pageYOffset;
+                sessionStorage.submitPosition = $submitButton.offset().top;
+                $("form.cc-user-input").submit();
+              }); // Check sessionStorage for value.
 
-              var button1 = $('[role="tablist"] a[href="' + path1 + '"]');
-              var button2 = $(
-                '[role="tablist"] a[href="' + path2 + hash + '"]'
-              ); // Page load behavior.
+              if (sessionStorage.windowOffset > 1) {
+                var $newPosition = 0;
 
-              if (window.location.pathname === path1) {
-                button1.attr("aria-selected", "true");
-              } else if (
-                window.location.pathname === path2 &&
-                window.location.hash === ""
-              ) {
-                body.hide();
-                body.attr("aria-hidden", "true");
-              } else if (
-                window.location.pathname === path2 &&
-                window.location.hash === hash
-              ) {
-                button2.attr("aria-selected", "true");
-              } // Button click behavior.
+                if (
+                  // Submit button is near the bottom of the window.
+                  sessionStorage.submitPosition - window.innerHeight >
+                  sessionStorage.windowOffset - 200
+                ) {
+                  $newPosition = parseInt(sessionStorage.windowOffset) + 200;
+                } else {
+                  // Submit button is not near the bottom of the window.
+                  $newPosition = sessionStorage.windowOffset;
+                } // Scroll based on offset values before submit.
 
-              button2.click(function() {
-                button1.removeAttr("aria-selected");
-                button2.attr("aria-selected", "true");
-                body.show();
-                body.removeAttr("aria-hidden", "true");
-              });
-              button1.click(function() {
-                button1.attr("aria-selected", "true");
-                button2.removeAttr("aria-selected");
-              });
+                $("html, body").animate(
+                  {
+                    scrollTop: $newPosition
+                  },
+                  200
+                );
+              }
             }
           };
         })(jQuery, Drupal);
@@ -171,14 +163,14 @@
         /***/
       },
 
-    /***/ 3:
-      /*!***********************************!*\
-  !*** multi ./src/js/howtotabs.js ***!
-  \***********************************/
+    /***/ 2:
+      /*!***************************************!*\
+  !*** multi ./src/js/submit-scroll.js ***!
+  \***************************************/
       /*! no static exports found */
       /***/ function(module, exports, __webpack_require__) {
         module.exports = __webpack_require__(
-          /*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/howtotabs.js */ "./src/js/howtotabs.js"
+          /*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/submit-scroll.js */ "./src/js/submit-scroll.js"
         );
 
         /***/

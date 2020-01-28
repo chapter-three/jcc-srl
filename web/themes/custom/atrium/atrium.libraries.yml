@@ -30,3 +30,7 @@ howtotabs:
 jump-nav:
   js:
     assets/js/jump-nav.js: {}
+
+submit-scroll:
+  js:
+    assets/js/submit-scroll.js: {}
