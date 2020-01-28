@@ -110,105 +110,67 @@
   /******/ /******/ __webpack_require__.p = "/"; // Load entry module and return exports
   /******/
   /******/
-  /******/ /******/ return __webpack_require__((__webpack_require__.s = 0));
+  /******/ /******/ return __webpack_require__((__webpack_require__.s = 2));
   /******/
 })(
   /************************************************************************/
   /******/ {
-    /***/ "./src/js/atrium.script.js":
+    /***/ "./src/js/submit-scroll.js":
       /*!*********************************!*\
-  !*** ./src/js/atrium.script.js ***!
+  !*** ./src/js/submit-scroll.js ***!
   \*********************************/
-      /*! no exports provided */
-      /***/ function(module, __webpack_exports__, __webpack_require__) {
-        "use strict";
-        __webpack_require__.r(__webpack_exports__);
-        /* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-          /*! ./components/messages */ "./src/js/components/messages.js"
-        );
-        /* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/ __webpack_require__.n(
-          _components_messages__WEBPACK_IMPORTED_MODULE_0__
-        );
-
-        /***/
-      },
-
-    /***/ "./src/js/components/messages.js":
-      /*!***************************************!*\
-  !*** ./src/js/components/messages.js ***!
-  \***************************************/
       /*! no static exports found */
       /***/ function(module, exports) {
-        (function() {
+        (function($, Drupal) {
           "use strict";
 
-          Drupal.theme.message = function(_ref, _ref2) {
-            var text = _ref.text;
-            var type = _ref2.type,
-              id = _ref2.id;
-            var types = {
-              error: {
-                class: "error",
-                label: Drupal.t("Error message"),
-                role: "alert"
-              },
-              info: {
-                class: "info",
-                label: Drupal.t("Informational message"),
-                role: "status"
-              },
-              status: {
-                class: "success",
-                label: Drupal.t("Success message"),
-                role: "status"
-              },
-              warning: {
-                class: "warning",
-                label: Drupal.t("Warning message"),
-                role: "alert"
+          Drupal.behaviors.submitscroll = {
+            attach: function attach(context) {
+              var submit = $(".jcc-choice-section input[type=submit]");
+
+              if (sessionStorage.windowOffset > 1) {
+                var $newPosition = 0;
+
+                if (
+                  sessionStorage.submitPosition - window.innerHeight >
+                  sessionStorage.windowOffset - 200
+                ) {
+                  $newPosition = parseInt(sessionStorage.windowOffset) + 200;
+                  console.log("1");
+                } else {
+                  $newPosition = sessionStorage.windowOffset;
+                  console.log("2");
+                }
+
+                $("html, body").animate(
+                  {
+                    scrollTop: $newPosition
+                  },
+                  200
+                );
+                sessionStorage.windowOffset = 0;
               }
-            };
-            var messageWrapper = document.createElement("div");
-            messageWrapper.setAttribute(
-              "class",
-              "usa-alert usa-alert--".concat(types[type]["class"])
-            );
-            messageWrapper.setAttribute("role", types[type].role);
-            messageWrapper.setAttribute("aria-label", types[type].label);
-            messageWrapper.setAttribute("data-drupal-message-id", id);
-            messageWrapper.setAttribute("data-drupal-message-type", type);
-            messageWrapper.innerHTML = '\n      <div class="usa-alert__body">\n        <p class="usa-alert__text">\n          '.concat(
-              text,
-              "\n        </p>\n      </div>"
-            );
-            return messageWrapper;
+
+              submit.click(function(e) {
+                sessionStorage.windowOffset = window.pageYOffset;
+                sessionStorage.submitPosition = submit.offset().top;
+                $("form.cc-user-input").submit();
+              });
+            }
           };
         })(jQuery, Drupal);
 
         /***/
       },
 
-    /***/ "./src/sass/atrium.style.scss":
-      /*!************************************!*\
-  !*** ./src/sass/atrium.style.scss ***!
-  \************************************/
-      /*! no static exports found */
-      /***/ function(module, exports) {
-        // removed by extract-text-webpack-plugin
-        /***/
-      },
-
-    /***/ 0:
-      /*!********************************************************************!*\
-  !*** multi ./src/js/atrium.script.js ./src/sass/atrium.style.scss ***!
-  \********************************************************************/
+    /***/ 2:
+      /*!***************************************!*\
+  !*** multi ./src/js/submit-scroll.js ***!
+  \***************************************/
       /*! no static exports found */
       /***/ function(module, exports, __webpack_require__) {
-        __webpack_require__(
-          /*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/atrium.script.js */ "./src/js/atrium.script.js"
-        );
         module.exports = __webpack_require__(
-          /*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/sass/atrium.style.scss */ "./src/sass/atrium.style.scss"
+          /*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/submit-scroll.js */ "./src/js/submit-scroll.js"
         );
 
         /***/

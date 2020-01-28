@@ -6,6 +6,7 @@
 #}
 {% extends 'node.html.twig' %}
 {% block content %}
+  {{ attach_library('atrium/submit-scroll') }}
   {{ content|without(
     'field_title_display',
     'field_description'
