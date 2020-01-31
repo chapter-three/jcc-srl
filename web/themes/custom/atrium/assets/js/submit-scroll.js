@@ -135,14 +135,16 @@
               }); // Check sessionStorage for value.
 
               if (sessionStorage.submitted != undefined) {
-                var $newPosition = $submitButton.offset().top; // Scroll based so Submit button is near the top of the page.
+                var $newPosition = $submitButton.offset().top - 100; // Scroll based so Submit button is near the top of the page.
 
                 $("html, body").animate(
                   {
                     scrollTop: $newPosition
                   },
                   300
-                );
+                ); // Remove/reset session variable.
+
+                sessionStorage.removeItem(submitted);
               }
             }
           };
