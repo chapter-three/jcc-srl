@@ -8,19 +8,19 @@
 
       // Send status to sessionStorage, then submit form.
       $submitButton.click(function() {
-        sessionStorage.submitted = true;
+        sessionStorage.wayfinder_submitted = true;
         $("form.cc-user-input").submit();
       });
 
       // Check sessionStorage for value.
-      if (sessionStorage.submitted != undefined) {
+      if (sessionStorage.wayfinder_submitted != undefined) {
         var $newPosition = $submitButton.offset().top - 100;
 
         // Scroll based so Submit button is near the top of the page.
         $("html, body").animate({ scrollTop: $newPosition }, 300);
 
         // Remove/reset session variable.
-        sessionStorage.removeItem("submitted");
+        sessionStorage.removeItem("wayfinder_submitted");
       }
     }
   };
