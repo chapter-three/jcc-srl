@@ -144,7 +144,7 @@
                   300
                 ); // Remove/reset session variable.
 
-                sessionStorage.removeItem(submitted);
+                sessionStorage.removeItem("submitted");
               }
             }
           };

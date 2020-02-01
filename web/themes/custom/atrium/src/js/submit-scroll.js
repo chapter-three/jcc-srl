@@ -20,7 +20,7 @@
         $("html, body").animate({ scrollTop: $newPosition }, 300);
 
         // Remove/reset session variable.
-        sessionStorage.removeItem(submitted);
+        sessionStorage.removeItem("submitted");
       }
     }
   };
