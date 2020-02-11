@@ -1,0 +1,6 @@
+step_container:
+  js:
+    js/jcc_boilerplate.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
