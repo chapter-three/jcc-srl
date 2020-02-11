@@ -71,6 +71,12 @@ class BoilerplateParagraphsWidget extends InlineParagraphsWidget {
       }
     }
 
+    // Add Boilerplate button.
+    $add_more_elements['boilerplate'] = [
+      '#type' => "submit",
+      '#value' => t('Use Boilerplate'),
+    ];
+
     return $add_more_elements;
   }
 }
