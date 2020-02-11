@@ -1,5 +1,5 @@
 name: 'JCC Admin'
 type: module
-description: 'Customizations to adminsitrative UI/forms.'
+description: 'Customizations to administrative UI/forms.'
 core: 8.x
 package: 'Custom'
