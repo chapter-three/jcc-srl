@@ -18,11 +18,5 @@ function jcc_boilerplate_field_widget_entity_reference_paragraphs_form_alter(&$e
     // Add boilerplate library.
     $element['#attached']['library'][] = 'jcc_boilerplate/step_container';
 
-    // Create button.
-    $element['top']['links']['boilerplate'] = [
-        '#type' => "submit",
-        '#value' => t('Use Boilerplate'),
-      ]
-    ;
   }
 }
