@@ -2,6 +2,8 @@
 
 namespace Drupal\jcc_boilerplate\Plugin\Field\FieldWidget;
 
+use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\Plugin\Field\FieldWidget\InlineParagraphsWidget;
 
 /**
@@ -74,9 +76,47 @@ class BoilerplateParagraphsWidget extends InlineParagraphsWidget {
     // Add Boilerplate button.
     $add_more_elements['boilerplate'] = [
       '#type' => "submit",
-      '#value' => t('Use Boilerplate'),
+      '#name' => strtr($this->fieldIdPrefix, '-', '_') . '_' . $machine_name . '_add_more',
+      '#attributes' => ['class' => ['field-add-more-submit']],
+      '#value' => $this->t('Add Boilerplate @type', ['@type' => $label]),
+      '#limit_validation_errors' => [array_merge($this->fieldParents, [$field_name, 'add_more'])],
+      '#submit' => [[get_class($this), 'addMoreSubmit']],
+      '#ajax' => [
+        'callback' => [get_class($this), 'addMoreAjax'],
+        'wrapper' => $this->fieldWrapperId,
+        'effect' => 'fade',
+      ],
+      '#bundle_machine_name' => $machine_name,
     ];
 
     return $add_more_elements;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function addMoreSubmit(array $form, FormStateInterface $form_state) {
+    $button = $form_state->getTriggeringElement();
+
+    // Go one level up in the form, to the widgets container.
+    $element = NestedArray::getValue($form, array_slice($button['#array_parents'], 0, -2));
+    $field_name = $element['#field_name'];
+    $parents = $element['#field_parents'];
+
+    $widget_state = static::getWidgetState($parents, $field_name, $form_state);
+
+    // @todo make items_count dynamic based on Boilerplate properites.
+    $widget_state['items_count'] = 5;
+
+    if (isset($button['#bundle_machine_name'])) {
+      $widget_state['selected_bundle'] = $button['#bundle_machine_name'];
+    }
+    else {
+      $widget_state['selected_bundle'] = $element['add_more']['add_more_select']['#value'];
+    }
+
+    static::setWidgetState($parents, $field_name, $form_state, $widget_state);
+
+    $form_state->setRebuild();
   }
 }
