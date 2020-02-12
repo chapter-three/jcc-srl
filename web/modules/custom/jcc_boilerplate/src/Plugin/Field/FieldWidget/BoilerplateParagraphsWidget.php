@@ -105,7 +105,7 @@ class BoilerplateParagraphsWidget extends InlineParagraphsWidget {
 
     $widget_state = static::getWidgetState($parents, $field_name, $form_state);
 
-    // @todo make items_count dynamic based on Boilerplate properites.
+    // @todo make items_count dynamic based on Boilerplate properties.
     $widget_state['items_count'] = 5;
 
     if (isset($button['#bundle_machine_name'])) {
