@@ -3,6 +3,7 @@
 namespace Drupal\jcc_boilerplate\Plugin\Field\FieldWidget;
 
 use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\Plugin\Field\FieldWidget\InlineParagraphsWidget;
 
@@ -78,9 +79,9 @@ class BoilerplateParagraphsWidget extends InlineParagraphsWidget {
       '#type' => "submit",
       '#name' => strtr($this->fieldIdPrefix, '-', '_') . '_' . $machine_name . '_add_more',
       '#attributes' => ['class' => ['field-add-more-submit']],
-      '#value' => $this->t('Add Boilerplate @type', ['@type' => $label]),
+      '#value' => $this->t('Add Boilerplate Steps'),
       '#limit_validation_errors' => [array_merge($this->fieldParents, [$field_name, 'add_more'])],
-      '#submit' => [[get_class($this), 'addMoreSubmit']],
+      '#submit' => [[get_class($this), 'addMoreBoilerplateSubmit']],
       '#ajax' => [
         'callback' => [get_class($this), 'addMoreAjax'],
         'wrapper' => $this->fieldWrapperId,
@@ -95,7 +96,7 @@ class BoilerplateParagraphsWidget extends InlineParagraphsWidget {
   /**
    * {@inheritdoc}
    */
-  public static function addMoreSubmit(array $form, FormStateInterface $form_state) {
+  public static function addMoreBoilerplateSubmit(array $form, FormStateInterface $form_state) {
     $button = $form_state->getTriggeringElement();
 
     // Go one level up in the form, to the widgets container.
@@ -106,7 +107,7 @@ class BoilerplateParagraphsWidget extends InlineParagraphsWidget {
     $widget_state = static::getWidgetState($parents, $field_name, $form_state);
 
     // @todo make items_count dynamic based on Boilerplate properties.
-    $widget_state['items_count'] = 5;
+    $widget_state['items_count'] = $widget_state['real_item_count'] + 5;
 
     if (isset($button['#bundle_machine_name'])) {
       $widget_state['selected_bundle'] = $button['#bundle_machine_name'];
