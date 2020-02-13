@@ -6,17 +6,25 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Serialization\Yaml;
 
 /**
- * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  */
-function jcc_boilerplate_field_widget_entity_reference_paragraphs_form_alter(&$element, FormStateInterface $form_state, $context) {
+function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-  // Modify Step Container widget.
-  if ($element['#paragraph_type'] == 'step_container') {
+  $description_field = $form["field_paragraphs"]["widget"][1]["subform"]["field_steps"]["widget"][0]["subform"]["field_description"];
+  $trigger = $form_state->getUserInput()['_triggering_element_value'];
 
-    // Add boilerplate library.
-    $element['#attached']['library'][] = 'jcc_boilerplate/step_container';
 
+  $module_handler = \Drupal::service('module_handler');
+  $module_path = $module_handler->getModule('jcc_boilerplate')->getPath();
+  $boilerplate_text = Yaml::decode(file_get_contents($module_path .'/jcc_boilerplate.service.yml'));
+
+
+  if ($description_field && ($trigger == 'Add Boilerplate Step')) {
+
+    $form["field_paragraphs"]["widget"][1]["subform"]["field_steps"]["widget"][0]["subform"]["field_description"]["widget"][0]["#default_value"] = $boilerplate_text['step0']['description'];
+    $form["field_paragraphs"]["widget"][1]["subform"]["field_steps"]["widget"][1]["subform"]["field_description"]["widget"][0]["#default_value"] = $boilerplate_text['step1']['description'];
   }
 }
