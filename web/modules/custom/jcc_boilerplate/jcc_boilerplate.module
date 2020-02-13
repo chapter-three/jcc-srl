@@ -16,7 +16,7 @@ function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form,
   // Define Trigger.
   $trigger = $form_state->getUserInput()['_triggering_element_value'];
 
-  // Get and parse yml.
+  // Get and parse .yml.
   // @todo Handle multiple boilerplates.
   $module_handler = \Drupal::service('module_handler');
   $module_path = $module_handler->getModule('jcc_boilerplate')->getPath();
@@ -24,12 +24,28 @@ function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form,
 
   if ($trigger == 'Add Boilerplate Steps') {
 
-    // Send values to drupal fields.
-    foreach ($boilerplate_text as $i => $step) {
+    $form["field_paragraphs"]["widget"][1]["subform"]["field_title_display"]["widget"][0]["#default_value"] = $boilerplate_text['title_display'];
 
-      // Default field_description.
-      $form["field_paragraphs"]["widget"][1]["subform"]["field_steps"]["widget"][$i]["subform"]["field_description"]["widget"][0]["#default_value"] = $step['description'];
+    $steps = $boilerplate_text['steps'];
 
+    // Send values to Drupal fields.
+    foreach ($steps as $i => $step) {
+
+      $field_names = [
+        'description',
+        'title_display',
+        'details_link_text',
+        'details'
+      ];
+
+      foreach ($field_names as $field_name) {
+
+        // @todo Better to check for plain text field.
+        $value = ($field_name == 'details_link_text') ? null : $step[$field_name];
+
+        $form["field_paragraphs"]["widget"][1]["subform"]["field_steps"]["widget"][$i]["subform"]["field_" . $field_name]["widget"][0]["#default_value"] = $value;
+
+      }
     }
   }
 }
