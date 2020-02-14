@@ -1,7 +1,0 @@
-name: 'SRL Date Calculator'
-type: module
-description: 'Provides a configurable component type that allows a user to enter a date, then calculates important future dates based on the configuration.'
-core: 8.x
-package: 'Custom'
-dependencies:
-  - paragraphs
