@@ -45,11 +45,15 @@ function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form,
 
       foreach ($field_names as $field_name) {
 
-        // @todo Better to check for plain text field.
-        $value = ($field_name == 'details_link_text') ? t('Cat') : $step[$field_name];
+        if ($form["field_paragraphs"]["widget"][$paragraph_count]["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["value"]["#type"] ==
+        'textfield') {
 
-        $form["field_paragraphs"]["widget"][$paragraph_count]["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["#default_value"] = $value;
+          $form["field_paragraphs"]["widget"][$paragraph_count]["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["value"]["#default_value"] = $step[$field_name];
+        }
 
+        else {
+          $form["field_paragraphs"]["widget"][$paragraph_count]["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["#default_value"] = $step[$field_name];
+        }
       }
     }
   }
