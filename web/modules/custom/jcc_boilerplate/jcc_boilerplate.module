@@ -24,10 +24,17 @@ function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form,
 
   if ($trigger == 'Add Boilerplate Steps') {
 
-    $steps = $boilerplate_text['steps'];
+    $boilerplate_steps = $boilerplate_text['steps'];
+
+    // Count existing paragraphs and set to index 0.
+    $paragraph_count = count($form_state->getUserInput()["field_paragraphs"]);
+    $paragraph_count = $paragraph_count - 1;
+
+    // Count existing steps.
+    $step_count = count($form_state->getUserInput()["field_paragraphs"][0]["subform"]["field_steps"]);
 
     // Send values to Drupal fields.
-    foreach ($steps as $i => $step) {
+    foreach ($boilerplate_steps as $i => $step) {
 
       $field_names = [
         'description',
@@ -39,13 +46,9 @@ function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form,
       foreach ($field_names as $field_name) {
 
         // @todo Better to check for plain text field.
-        $value = ($field_name == 'details_link_text') ? null : $step[$field_name];
+        $value = ($field_name == 'details_link_text') ? t('Cat') : $step[$field_name];
 
-        // Count existing paragraphs and set to index 0.
-        $paragraph_count = count($form_state->getUserInput()["field_paragraphs"]);
-        $paragraph_count = $paragraph_count - 1;
-
-        $form["field_paragraphs"]["widget"][$paragraph_count]["subform"]["field_steps"]["widget"][$i]["subform"]["field_" . $field_name]["widget"][0]["#default_value"] = $value;
+        $form["field_paragraphs"]["widget"][$paragraph_count]["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["#default_value"] = $value;
 
       }
     }
