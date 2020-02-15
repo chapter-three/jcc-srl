@@ -13,27 +13,27 @@ use Drupal\Component\Serialization\Yaml;
  */
 function jcc_boilerplate_form_node_srl_howto_instruction_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-  // Define Trigger.
-  $trigger = $form_state->getUserInput()['_triggering_element_value'];
+  // Get user input array.
+  $user_input = $form_state->getUserInput();
 
-  // Get and parse .yml.
-  // @todo Handle multiple boilerplates.
-  $module_handler = \Drupal::service('module_handler');
-  $module_path = $module_handler->getModule('jcc_boilerplate')->getPath();
-  $boilerplate_text = Yaml::decode(file_get_contents($module_path .'/jcc_boilerplate.service.yml'));
+  if (isset($user_input['_triggering_element_value'])
+    && ($user_input['_triggering_element_value'] == 'Add Boilerplate Steps')) {
 
-  if ($trigger == 'Add Boilerplate Steps') {
-
-    $boilerplate_steps = $boilerplate_text['steps'];
+    // Get and parse .yml.
+    // @todo Handle multiple boilerplates.
+    $module_handler = \Drupal::service('module_handler');
+    $module_path = $module_handler->getModule('jcc_boilerplate')->getPath();
 
     // Count existing paragraphs and set to index 0.
-    $paragraph_count = count($form_state->getUserInput()["field_paragraphs"]);
+    $paragraph_count = count($user_input["field_paragraphs"]);
     $paragraph_count = $paragraph_count - 1;
 
     // Count existing steps.
-    $step_count = count($form_state->getUserInput()["field_paragraphs"][0]["subform"]["field_steps"]);
+    $step_count = count($user_input["field_paragraphs"][0]["subform"]["field_steps"]);
 
-    // Send values to Drupal fields.
+    // Send boilerplate step values to Drupal fields.
+    $boilerplate_text = Yaml::decode(file_get_contents($module_path .'/jcc_boilerplate.service.yml'));
+    $boilerplate_steps = $boilerplate_text['steps'];
     foreach ($boilerplate_steps as $i => $step) {
 
       $field_names = [
