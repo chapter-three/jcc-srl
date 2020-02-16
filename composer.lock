@@ -7006,9 +7006,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "e59e652"
+                "reference": "18c9558"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2020-02-13T18:57:08+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

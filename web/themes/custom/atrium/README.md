@@ -89,4 +89,18 @@ Once Courtyard becomes stable, and has official releases, this process will chan
 2. From the repository root, require the package with the hash, for example: `lando composer require exygy/courtyard:dev-master#0bfadb6`
 3. Update the lock file: `lando composer update --lock`
 
-   _\*Replace `HEAD` with `[branchname]` in Step 1 and `dev-master` with `dev-[branchname]` in Step 2 if not pulling from master branch._
+4. Quick commands:
+  ```bash
+  # Set target branch with `branch=[branch]`
+  branch=development 
+  
+  # Get hash
+  hash=$(git ls-remote  https://github.com/Exygy/courtyard.git $branch | awk '{ print substr($1,1,7)}')
+  
+  # Add to composer
+  lando composer require exygy/courtyard:dev-$branch#$hash
+  
+  # Update lock file.
+  lando composer update --lock
+  
+  ```
