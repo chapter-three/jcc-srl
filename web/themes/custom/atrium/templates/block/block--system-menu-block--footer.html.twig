@@ -4,18 +4,4 @@
  * Template for footer block.
  */
 #}
-{# @todo use include '@organisms/global/footer/footer.twig'#}
-<footer class="jcc-footer">
-  <div class="jcc-footer__container">
-    <div class="jcc-footer__row">
-      <div class="jcc-footer__menu">
-        {{ content }}
-      </div>
-      <div class="jcc-footer__copyright">
-        &#64;
-        {{ "now"|date("Y") }}
-        {{ footer.copyright_owner }}
-      </div>
-    </div>
-  </div>
-</footer>
+{%  include '@organisms/global/footer/footer.twig' with { content: content } %}
