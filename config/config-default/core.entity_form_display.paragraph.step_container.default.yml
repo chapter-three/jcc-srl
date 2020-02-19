@@ -12,8 +12,8 @@ dependencies:
   module:
     - allowed_formats
     - field_group
+    - jcc_boilerplate
     - maxlength
-    - paragraphs
     - text
 third_party_settings:
   field_group:
@@ -69,7 +69,7 @@ content:
     type: text_textarea
     region: content
   field_steps:
-    type: entity_reference_paragraphs
+    type: boilerplate_paragraphs_widget
     weight: 4
     settings:
       title: Step

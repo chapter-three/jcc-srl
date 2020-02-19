@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains jcc_boilerplate.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Serialization\Yaml;
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function jcc_boilerplate_field_widget_entity_reference_paragraphs_form_alter(&$element, FormStateInterface $form_state, $context) {
+
+  // Get user input array.
+  $user_input = $form_state->getUserInput();
+
+  if (
+    ($element['#entity_type'] == 'node') &&
+    ($element['#paragraph_type'] == 'step_container') &&
+    (isset($user_input['_triggering_element_value'])) &&
+    ($user_input['_triggering_element_value'] == 'Add Boilerplate Steps')
+  ) {
+
+    // Count existing steps.
+    $step_count = count($user_input["field_paragraphs"][0]["subform"]["field_steps"]);
+
+    // Get and parse .yml.
+    // @todo Handle multiple boilerplates.
+    $module_handler = \Drupal::service('module_handler');
+    $module_path = $module_handler->getModule('jcc_boilerplate')->getPath();
+
+    // Send boilerplate step values to Drupal fields.
+    $boilerplate_text = Yaml::decode(file_get_contents($module_path . '/jcc_boilerplate.service.yml'));
+    $boilerplate_steps = $boilerplate_text['steps'];
+    foreach ($boilerplate_steps as $i => $step) {
+
+      $field_names = [
+        'description',
+        'title_display',
+        'details_link_text',
+        'details'
+      ];
+
+      foreach ($field_names as $field_name) {
+
+        if ($element["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["value"]["#type"] ==
+          'textfield') {
+
+          $element["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["value"]["#default_value"] = $step[$field_name];
+        }
+
+        else {
+          $element["subform"]["field_steps"]["widget"][$i + $step_count]["subform"]["field_" . $field_name]["widget"][0]["#default_value"] = $step[$field_name];
+        }
+      }
+    }
+  }
+}
