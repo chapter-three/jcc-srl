@@ -48,6 +48,20 @@ function cc_theme($existing, $type, $theme, $path) {
 }
 
 /**
+ * Implements hook_token_info_alter().
+ */
+function cc_token_info_alter(&$data) {
+  $data['tokens']['cc_user_input-input_items']['id'] = [
+    'name' => t('Conditional Content: User input id'),
+    'description' => t('Id of the user input entity.'),
+  ];
+  $data['tokens']['cc_user_input']['input_items'] = [
+    'name' => t('Conditional Content: User input items'),
+    'description' => t('User input entity items.'),
+  ];
+}
+
+/**
  * Implements hook_field_widget_third_party_settings_form().
  */
 function cc_field_widget_third_party_settings_form(

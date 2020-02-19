@@ -3,20 +3,31 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.srl_wayfinder.field_description
+    - field.field.node.srl_wayfinder.field_metatag
     - field.field.node.srl_wayfinder.field_options
     - field.field.node.srl_wayfinder.field_paragraphs
+    - field.field.node.srl_wayfinder.field_title_display
     - node.type.srl_wayfinder
   module:
     - cc
     - entity_reference_revisions
+    - text
     - user
 id: node.srl_wayfinder.default
 targetEntityType: node
 bundle: srl_wayfinder
 mode: default
 content:
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_options:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -25,7 +36,7 @@ content:
     type: cc_user_input_revisions
     region: content
   field_paragraphs:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -33,10 +44,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
-  links:
-    weight: 0
-    region: content
+  field_title_display:
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    type: text_default
+    region: content
 hidden:
+  field_metatag: true
   langcode: true
+  links: true

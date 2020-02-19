@@ -7,10 +7,10 @@
 {% if site_logo %}
   <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="jcc-header__logo">
     {% include "@atoms/icons/logo.twig" with {
-      patternlab: true,
-      img: {
+      logo: {
         src: site_logo,
         alt: 'Logo'|t,
+        renderer: 'patternlab',
       }
     } %}
   </a>

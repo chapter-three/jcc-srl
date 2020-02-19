@@ -32,6 +32,10 @@ settings:
             - BulletedList
             - NumberedList
         -
+          name: Templates
+          items:
+            - Templates
+        -
           name: Media
           items:
             - file
@@ -54,9 +58,12 @@ settings:
             - Maximize
   plugins:
     stylescombo:
-      styles: "p.jcc-lead|Lead paragraph\r\nh2.jcc-title|Title (section)"
+      styles: "p.jcc-lead|Lead paragraph\r\nh2.jcc-title|Title: Section\r\na.usa-button|Button: Primary\r\na.usa-button.usa-button--secondary|Button: Secondary\r\na.usa-button.usa-button--accent-warm|Button: Accent Warm\r\n"
     language:
       language_list: un
+    templates:
+      template_path: /themes/custom/atrium/ckeditor/ckeditor_templates.js
+      replace_content: 0
     linkit:
       linkit_profile: default
 image_upload:

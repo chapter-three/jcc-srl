@@ -21,13 +21,13 @@
   errors ? 'usa-label--error'
 ] %}
 
-{% if element['#parent_element']['#type'] == 'checkbox' %}
+{% if element['#form_element_type'] == 'checkbox' %}
   {% set classes = classes|merge(['usa-checkbox__label']) %}
 
-{% elseif element['#parent_element']['#type'] == 'radio' %}
+{% elseif element['#form_element_type'] == 'radio' %}
   {% set classes = classes|merge(['usa-radio__label']) %}
 
-{% elseif element['#parent_element']['#type'] == 'select' %}
+{% elseif element['#form_element_type'] == 'select' %}
   {% set classes = classes|merge(['jcc-dropdown__Label']) %}
 
 {% else %}

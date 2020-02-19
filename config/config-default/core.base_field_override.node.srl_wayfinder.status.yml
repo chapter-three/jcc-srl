@@ -1,0 +1,22 @@
+uuid: 2a535cfd-b1bf-4724-89d5-7207659d5135
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_wayfinder
+id: node.srl_wayfinder.status
+field_name: status
+entity_type: node
+bundle: srl_wayfinder
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

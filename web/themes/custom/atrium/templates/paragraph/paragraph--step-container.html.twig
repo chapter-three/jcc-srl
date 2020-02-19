@@ -28,9 +28,12 @@
         {# Prepare "Read more" toggle #}
         {% if step.field_details.value %}
           {% set read_more = {
-            id: 'read-more-' ~ step.id(),
-            title: step.field_details_link_text.value|default('Read more'|t),
-            content: step.field_details|view,
+            type: 'toggle',
+            toggle: {
+              id: 'read-more-' ~ step.id(),
+              title: step.field_details_link_text.value|default('Read more'|t),
+              content: step.field_details|view
+            }
           } %}
         {% endif %}
 
@@ -44,10 +47,11 @@
     {% endfor %}
 
     {% include '@organisms/sections/steps/steps.twig' with {
-      id: paragraph_id,
-      headergroup: headergroup,
-      steps: step_content,
-      background_variant: 'has-background-color--transparent',
+      steps: {
+        id: paragraph_id,
+        headergroup: headergroup,
+        items: step_content,
+      }
     } only %}
 
   {% endif %}

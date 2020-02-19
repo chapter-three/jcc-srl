@@ -1,0 +1,31 @@
+uuid: b0b37014-6b6f-48bf-bfbf-fe561e269008
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label_date_output
+    - paragraphs.paragraphs_type.datefinder
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.datefinder.field_label_date_output
+field_name: field_label_date_output
+entity_type: paragraph
+bundle: datefinder
+label: 'Date Result Label'
+description: 'Text above calculated date (Ex: <strong>Ideally serve the other party by</strong>)'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Ideally serve the other party by'
+    format: simple_html
+default_value_callback: ''
+settings: {  }
+field_type: text

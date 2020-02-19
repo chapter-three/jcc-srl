@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
+    - field.field.node.srl_howto_instruction.field_metatag
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
     - field.field.node.srl_howto_instruction.field_title_display
@@ -26,14 +27,14 @@ bundle: srl_howto_instruction
 mode: default
 content:
   body:
-    weight: 10
+    weight: 9
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_blocks:
-    weight: 13
+    weight: 10
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -82,7 +83,7 @@ content:
     type: text_default
     region: content
   field_paragraphs:
-    weight: 9
+    weight: 8
     label: hidden
     settings:
       view_mode: default
@@ -111,4 +112,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_metatag: true
   langcode: true

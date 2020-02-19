@@ -1,0 +1,21 @@
+entity_type_groups:
+  media:
+    jcc_form:
+      basic: basic
+      advanced: advanced
+  node:
+    basic:
+      basic: basic
+      advanced: advanced
+    srl_howto:
+      basic: basic
+      advanced: advanced
+    srl_howto_instruction:
+      basic: basic
+      advanced: advanced
+    srl_onramp:
+      basic: basic
+      advanced: advanced
+    srl_wayfinder:
+      basic: basic
+      advanced: advanced

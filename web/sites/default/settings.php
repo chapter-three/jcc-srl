@@ -112,7 +112,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['HTTPS'] === 'OFF') && 
 }
 
 /**
- * Set environment-specific config_split status.
+ * Set environment-specific configuration.
  */
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 
@@ -135,7 +135,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   // All other multidevs.
   else {
     $config['config_split.config_split.stage']['status'] = TRUE;
-    $config['environment_indicator.indicator']['bg_color'] = '#5b0ca3';
+    $config['environment_indicator.indicator']['bg_color'] = '#0a07a9';
     $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
   }
 }

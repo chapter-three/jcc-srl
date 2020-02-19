@@ -12,7 +12,14 @@
  @todo: remove this file once https://www.drupal.org/node/1819284 is resolved.
  This is identical to core/modules/system/templates/container.html.twig
 #}
-<div{{attributes.addClass('form-checkboxes', 'usa-form-group', 'jcc-form-group__options')}}>
+{% set classes = [
+  'form-checkboxes',
+  'usa-form-group',
+  'jcc-form-group__options',
+  element['#form_id'] == 'cc_user_input' ? 'jcc-checkbox--bordered' : ''
+]|merge(classes|default([])) %}
+
+<div{{attributes.addClass(classes)}}>
   {{ children }}
 </div>
 

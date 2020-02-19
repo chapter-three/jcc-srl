@@ -10,6 +10,13 @@
  * @see template_preprocess_radios()
  */
 #}
-<div{{ attributes.addClass('form-radios', 'usa-form-group', 'jcc-form-group__options') }}>
+{% set classes = [
+  'form-radios',
+  'usa-form-group',
+  'jcc-form-group__options',
+  element['#form_id'] == 'cc_user_input' ? 'jcc-radio--bordered' : ''
+]|merge(classes|default([])) %}
+
+<div{{attributes.addClass(classes)}}>
   {{ children }}
 </div>

@@ -49,6 +49,10 @@
 
 {# Please DO NOT remove the id attribute. #}
 {% set paragraph_id = 'p' ~ paragraph.id() %}
+{% if paragraph.field_create_anchor.value == 1 %}
+  {% set paragraph_id = 'jump-' ~ paragraph.id() %}
+  {{ attach_library('atrium/jump-nav') }}
+{% endif %}
 
 {% block paragraph %}
   <div{{attributes.addClass(classes).setAttribute('id', paragraph_id) }}>

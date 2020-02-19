@@ -12,6 +12,14 @@ foreach (glob($includes_path) as $filename) {
 }
 
 /**
+ * Implements hook_preprocess().
+ */
+function atrium_preprocess(array &$variables, $hook) {
+  $variables['base_path'] = base_path();
+  $variables['courtyard_icons'] = base_path() . 'libraries/courtyard/source/images/icomoon/symbol-defs.svg';
+}
+
+/**
  * Helper function to facilitate rendering blocks within a node template.
  *
  * @see atrium_preprocess_node()

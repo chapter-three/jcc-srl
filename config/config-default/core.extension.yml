@@ -14,6 +14,7 @@ module:
   chosen: 0
   chosen_lib: 0
   ckeditor: 0
+  ckeditor_templates: 0
   color: 0
   components: 0
   config: 0
@@ -51,6 +52,7 @@ module:
   honeypot: 0
   image: 0
   inline_entity_form: 0
+  jcc_datefinder: 0
   jcc_forms: 0
   key: 0
   language: 0
@@ -64,11 +66,23 @@ module:
   media_library: 0
   menu_ui: 0
   metatag: 0
+  metatag_facebook: 0
+  metatag_google_cse: 0
+  metatag_google_plus: 0
+  metatag_hreflang: 0
+  metatag_mobile: 0
+  metatag_open_graph: 0
+  metatag_open_graph_products: 0
+  metatag_pinterest: 0
+  metatag_twitter_cards: 0
+  metatag_verification: 0
+  metatag_views: 0
   module_filter: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
+  path_alias: 0
   r4032login: 0
   rabbit_hole: 0
   range: 0
@@ -82,7 +96,6 @@ module:
   serialization: 0
   shortcut: 0
   simple_block: 0
-  srl_date_calculator: 0
   srl_updates: 0
   system: 0
   taxonomy: 0
@@ -96,9 +109,11 @@ module:
   extlink: 1
   menu_link_content: 1
   pathauto: 1
+  xmlsitemap: 1
   content_translation: 10
   views: 10
   paragraphs: 11
+  jcc_admin: 20
   mega: 1000
 theme:
   stable: 0

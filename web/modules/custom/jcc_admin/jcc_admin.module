@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains jcc_admin.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function jcc_admin_field_widget_entity_reference_paragraphs_form_alter(&$element, FormStateInterface $form_state, $context) {
+  // Adjustments for nested paragraphs. #emtity_type is 'node' at top level.
+  if ($element['#entity_type'] == 'paragraph') {
+
+    // Hide the "Add To Hero Nav?" checkbox for any nested Paragraphs.
+    if (!empty($element['subform']['field_create_anchor'])) {
+      $element['subform']['field_create_anchor']['#access'] = false;
+    }
+
+    // Postcard-specific adjustments.
+    if ($element['#paragraph_type'] == 'postcard') {
+      // When a Postcard is nested, prevent an h2 level header from being used.
+      $element['subform']['field_header']['widget']['#default_value'] = ['h3'];
+      $element['subform']['field_header']['#access'] = false;
+
+      // When a Postcard is nested in an Accordion, use 'default' background.
+      if ($element['#bundle'] == 'accordion') {
+        $element['subform']['field_background']['widget']['#default_value'] = ['default'];
+        $element['subform']['field_background']['#access'] = false;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function jcc_admin_local_tasks_alter(&$local_tasks) {
+
+  // Fix secondary tabs at admin/content/media after 8.8.0.
+  // Grid.
+  $local_tasks['media_library.grid']['route_name'] = 'view.media_library.page';
+  $local_tasks['media_library.grid']['weight'] = '10';
+
+  // Table.
+  $local_tasks['media_library.table']['route_name'] = 'view.media.media_page_list';
+  $local_tasks['media_library.table']['weight'] = '30';
+}

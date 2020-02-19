@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.srl_wayfinder
+    - paragraphs.paragraphs_type.datefinder
     - paragraphs.paragraphs_type.flex
     - paragraphs.paragraphs_type.postcard
-    - paragraphs.paragraphs_type.srl_date_calculator
     - paragraphs.paragraphs_type.step_container
     - paragraphs.paragraphs_type.timeline
   module:
@@ -28,8 +28,8 @@ settings:
     negate: 0
     target_bundles:
       flex: flex
+      datefinder: datefinder
       postcard: postcard
-      srl_date_calculator: srl_date_calculator
       step_container: step_container
       timeline: timeline
     target_bundles_drag_drop:
@@ -51,15 +51,15 @@ settings:
       flex:
         enabled: true
         weight: 19
-      judgement_body_tab:
+      datefinder:
+        enabled: true
         weight: 20
-        enabled: false
       postcard:
         enabled: true
         weight: 21
       srl_date_calculator:
-        enabled: true
         weight: 22
+        enabled: false
       step:
         weight: 23
         enabled: false
@@ -69,6 +69,9 @@ settings:
       timeline:
         enabled: true
         weight: 25
+      tile:
+        weight: 26
+        enabled: false
       timeline_item:
         weight: 26
         enabled: false

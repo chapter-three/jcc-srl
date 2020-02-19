@@ -36,7 +36,7 @@ defaults: &defaults
     # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
     TERM: dumb
     # Environment to clone multidev environments from.
-    TERMINUS_PARENT_ENV: live
+    TERMINUS_PARENT_ENV: epic-alpha2
 
 version: 2
 jobs:
@@ -107,46 +107,13 @@ jobs:
                 name: build assets
                 command: composer -n build-assets
 
-            #- run:
-                #name: create simplesamlphp symlink
-                #command: |
-                    #mkdir -p ./vendor/simplesamlphp
-                    #cd ./vendor/simplesamlphp
-                    #rm -r simplesamlphp
-                    #ln -Fs ../../web/private/simplesamlphp-1.17.0-rc3 simplesamlphp
-
-            #- run:
-                #name: add secrets
-                #command: |
-                    #echo $FILE_IDCSCERTIFICATEPEM | base64 --decode >> ./web/private/IDCSCertificate.pem
-                    #echo $FILE_SAMLCRT | base64 --decode >> ./web/private/saml.crt
-                    #echo $FILE_SAMLPEM | base64 --decode >> ./web/private/saml.pem
-                    #echo $FILE_SIMPLESAMLCONFIG | base64 --decode >> ./web/private/simplesaml_config.php
-                    #mkdir -p ./web/private/metadata
-                    #echo $FILE_SAML20IDPREMOTE | base64 --decode >> ./web/private/metadata/saml20-idp-remote.php
-                    #echo $FILE_SAML20SPREMOTE | base64 --decode >> ./web/private/metadata/saml20-sp-remote.php
-
             - run:
                 name: prepare database for site-under test
                 command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
-                # command: ./.circleci/scripts/pantheon/02-init-site-under-test-reinstall-new
 
             - run:
                 name: run composer install again to get dev dependencies
                 command: composer install
-
-            #- run:
-                #name: run functional tests with Behat
-                #command: ./tests/scripts/run-behat
-
-            #- run:
-                #name: post-test actions
-                #command: ./.circleci/scripts/pantheon/03-post-test
-
-            # master is handled by deploy_artifact job.
-            #- run:
-                #name: handle merge to master (if needed)
-                #command: ./.circleci/scripts/pantheon/04-merge-master
 
             - run:
                 name: remove transient test fixtures
@@ -179,11 +146,6 @@ jobs:
             - run:
                 name: Run Composer Install
                 command: composer install -o --no-dev
-
-            - run:
-                name: Build assets
-                command: echo "Not building theme."
-                # command: npm install --prefix web/themes/custom/atrium && npm run dev --prefix web/themes/custom/atrium
 
             - run:
                 name: Deploy Artifact

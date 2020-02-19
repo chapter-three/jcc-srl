@@ -1,0 +1,80 @@
+uuid: 6f5eb0b9-5595-4b6c-908f-9ce04526a2c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_list.field_background_card
+    - field.field.paragraph.card_list.field_brow
+    - field.field.paragraph.card_list.field_cards
+    - field.field.paragraph.card_list.field_create_anchor
+    - field.field.paragraph.card_list.field_title_display
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - allowed_formats
+    - cc
+    - maxlength
+    - paragraphs
+    - text
+id: paragraph.card_list.default
+targetEntityType: paragraph
+bundle: card_list
+mode: default
+content:
+  field_background_card:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_brow:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: text_textfield
+    region: content
+  field_cards:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Card
+      title_plural: Cards
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: extras
+      default_paragraph_type: card
+    third_party_settings:
+      cc:
+        status: 0
+    region: content
+  field_create_anchor:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_title_display:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true

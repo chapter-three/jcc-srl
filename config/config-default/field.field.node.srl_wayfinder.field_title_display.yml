@@ -1,0 +1,28 @@
+uuid: b9e66fb6-e0a0-44c7-a8ac-f5b988c3cf44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title_display
+    - node.type.srl_wayfinder
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.srl_wayfinder.field_title_display
+field_name: field_title_display
+entity_type: node
+bundle: srl_wayfinder
+label: 'Display Title'
+description: 'Example: Serving your papers'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

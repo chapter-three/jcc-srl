@@ -7,15 +7,21 @@
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
 
-  {% if content.field_body|render %}
+  {% if content.field_body|render or content.field_title_display|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
-      background_variant: 'has-background-color--dark',
-      body: content.field_body|render ? content.field_body : null,
+      text_section: {
+        background_variant: 'has-background-color--dark',
+        id: paragraph_id,
+        headergroup: {
+          title: content.field_title_display|render ? content.field_title_display : '',
+          body: content.field_body|render ? content.field_body : null,
+        },
+      }
     } only %}
   {% endif %}
 
   {% if content.field_accordions|render %}
-    {% set accordion_content = [] %}
+    {% set accordion_items = [] %}
     {% set accordions = paragraph.field_accordions %}
 
     {% for key, item in accordions.value %}
@@ -24,27 +30,32 @@
       {% if accordions.get(key).entity.field_title_display.value %}
         {% set accordion = accordions.get(key).entity %}
 
+        {% set body %}
+          {{ accordion.field_body|view }}
+          {{ accordion.field_postcard|view }}
+        {% endset %}
+
         {# Store each accordion in an array for the Pattern component. #}
-        {% set accordion_content = accordion_content|merge([{
+        {% set accordion_items = accordion_items|merge([{
           title: accordion.field_title_display|view,
-          body: accordion.field_body|view,
-          title_attributes: create_attribute(),
-          content_attributes: create_attribute(),
+          body: body,
         }]) %}
       {% endif %}
     {% endfor %}
 
     {% include '@molecules/interactive/accordion/accordion.twig' with {
-      id: paragraph_id,
-      full: true,
-      accordion: accordion_content,
-      attributes: create_attribute(),
+      accordion: {
+        full: true,
+        items: accordion_items,
+      }
     } only %}
 
   {% endif %}
 
   {{ content|without(
     'field_accordions',
-    'field_body'
+    'field_body',
+    'field_create_anchor',
+    'field_title_display'
   ) }}
 {% endblock %}

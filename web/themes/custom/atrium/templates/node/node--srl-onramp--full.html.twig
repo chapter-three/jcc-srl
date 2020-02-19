@@ -1,12 +1,21 @@
 {% extends 'node.html.twig' %}
 {% block content %}
 
+  {% set jump_nav %}
+    {% include '@molecules/navigation/jump-nav/jump-nav.twig' with {
+      jump_nav: {
+        title: content.field_hero_nav_title|render ? content.field_hero_nav_title : ''
+      }
+    } %}
+  {% endset %}
+
   {% include '@molecules/blocks/hero/hero.twig' with {
-    breadcrumbs: [{ label: label }],
-    title: content.field_title_display|render ? content.field_title_display : label,
-    body: content.field_description|render ? content.field_description : '',
-    column_content_right: header_node|render,
-    column_variant: header_node|render ? 'has-two-columns-threequarter' : ''
+    hero: {
+      breadcrumbs: [{ label: label }],
+      title: content.field_title_display|render ? content.field_title_display : label,
+      body: content.field_description|render ? content.field_description : '',
+      column_content_right: jump_nav,
+    }
   } %}
 
   {{ content|without(

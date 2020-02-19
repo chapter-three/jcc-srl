@@ -5,8 +5,10 @@
  */
 #}
 {% include '@molecules/interactive/read-more/read-more.twig' with {
-  block_variant: true,
-  id: derivative_plugin_id,
-  content: content,
-  title: label
+  read_more: {
+    block_variant: true,
+    id: derivative_plugin_id,
+    title: label,
+    content: content,
+  }
 } only %}

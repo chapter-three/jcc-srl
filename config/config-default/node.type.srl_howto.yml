@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'SRL HowTo'
 type: srl_howto
-description: ''
+description: 'Parent of a collection of pages.'
 help: ''
 new_revision: true
 preview_mode: 1

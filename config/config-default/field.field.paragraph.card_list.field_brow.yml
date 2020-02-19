@@ -1,0 +1,28 @@
+uuid: 5f1355a9-c271-444f-955e-135c5c6c9d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_brow
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.card_list.field_brow
+field_name: field_brow
+entity_type: paragraph
+bundle: card_list
+label: Brow
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

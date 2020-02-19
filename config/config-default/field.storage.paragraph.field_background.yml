@@ -15,8 +15,11 @@ settings:
       value: has-background-image
       label: 'Background Image'
     -
-      value: has-background-color
-      label: 'Background Color'
+      value: light
+      label: 'Light Background'
+    -
+      value: dark
+      label: 'Dark Background'
     -
       value: default
       label: 'Default (None)'

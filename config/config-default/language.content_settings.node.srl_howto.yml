@@ -1,0 +1,11 @@
+uuid: 730a06a7-fc6a-4d7e-a94e-9c758f34418b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_howto
+id: node.srl_howto
+target_entity_type_id: node
+target_bundle: srl_howto
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,84 @@
+uuid: cf32aff1-27b5-4941-957e-1977569af9e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.datefinder.field_body
+    - field.field.paragraph.datefinder.field_brow
+    - field.field.paragraph.datefinder.field_create_anchor
+    - field.field.paragraph.datefinder.field_days
+    - field.field.paragraph.datefinder.field_label
+    - field.field.paragraph.datefinder.field_label_date_input
+    - field.field.paragraph.datefinder.field_label_date_output
+    - field.field.paragraph.datefinder.field_title_display
+    - paragraphs.paragraphs_type.datefinder
+  module:
+    - text
+id: paragraph.datefinder.default
+targetEntityType: paragraph
+bundle: datefinder
+mode: default
+content:
+  field_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_brow:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_create_anchor:
+    weight: 6
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_days:
+    weight: 5
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_label:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_label_date_input:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_label_date_output:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title_display:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }
