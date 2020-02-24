@@ -1,0 +1,5 @@
+name: 'JCC Boilerplate'
+type: module
+description: 'Boilerplate content for JCC Paragraphs.'
+core: 8.x
+package: 'JCC'

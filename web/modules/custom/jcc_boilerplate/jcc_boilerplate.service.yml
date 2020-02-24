@@ -1,0 +1,19 @@
+title_display: "How to personally serve papers"
+steps:
+  0:
+    title_display: "Choose a server"
+    description: "<p>You can't serve papers yourself. Ask another adult to deliver the papers. This is your server.</p><p>Your server must be:</p><ul><li>18 or over, and</li><li>not part of your case.</li></ul><p>Your server can be someone you know or a professional process server you hire. In some counties, the Sheriff will serve court papers. The sheriff charges to serve papers unless you have a fee waiver.</p>"
+  1:
+    title_display: "Figure out your deadline to serve"
+    description: "[Case-specific content]"
+  2:
+    title_display: "Have the server deliver the papers"
+    description: "<p>The server must find the person and hand the papers to them by the deadline.</p><p>The server should note the address where they gave the party the papers, along with the date and time. They need this information to fill out the Proof of Service form.</p>"
+    details_link_text: "What if the person won’t take the papers?"
+    details: "If the other party won't take the papers, the server may leave them by the person and tell them what they are. For example, the server can leave them on the doorstep and say, \"These are important legal papers for you.\""
+  3:
+    title_display: "Fill out the Proof of Service form"
+    description: "<p>Use the Proof of Service form. It helps if you fill in the top part of the form with the case and court information.  </p><p>The server can then fill in the information about how, when, and where they served the papers. Then, the server must then sign the form and give it to you.</p>"
+  4:
+    title_display: "Copy and file the Proof of Service form "
+    description: "<ul><li>Make 2 copies of your Proof of Service form.</li><li>File the original and copies with the same court where you filed the papers. The court will stamp and return the copies.</li><li>Keep a copy of the Proof of Service for your records.</li></ul>"

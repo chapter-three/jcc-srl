@@ -8,14 +8,9 @@ id: local
 label: Local
 description: 'Local development environments.'
 folder: ../config/config-local
-module:
-  devel: 0
-  log_stdout: 0
-  webprofiler: 0
+module: {  }
 theme: {  }
-blacklist:
-  - devel.settings
-  - devel.toolbar.settings
+blacklist: {  }
 graylist:
   - system.file
   - 'xmlsitemap.xmlsitemap.*'

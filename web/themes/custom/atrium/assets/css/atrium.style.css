@@ -1986,3 +1986,10 @@ li.pager__item a:hover, li.pager__item.is-active a {
 li.pager__item__ellipsis {
   padding: 0.75rem 1.5rem;
 }
+
+.jcc-choice-section--submit {
+  padding-top: 0;
+}
+.usa-form .jcc-choice-section--submit .usa-button {
+  margin-top: 0;
+}

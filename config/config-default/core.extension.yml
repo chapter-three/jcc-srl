@@ -52,6 +52,7 @@ module:
   honeypot: 0
   image: 0
   inline_entity_form: 0
+  jcc_boilerplate: 0
   jcc_datefinder: 0
   jcc_forms: 0
   key: 0
@@ -92,6 +93,8 @@ module:
   rh_taxonomy: 0
   role_delegation: 0
   search: 0
+  search_api: 0
+  search_api_db: 0
   sendgrid_integration: 0
   serialization: 0
   shortcut: 0
