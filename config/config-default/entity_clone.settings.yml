@@ -2,52 +2,60 @@ form_settings:
   block_content:
     default_value: true
     disable: true
-    hidden: false
+    hidden: true
   cc_user_input:
     default_value: true
     disable: true
-    hidden: false
+    hidden: true
+  crop:
+    hidden: true
+    default_value: false
+    disable: false
+  entity_embed_fake_entity:
+    hidden: true
+    default_value: false
+    disable: false
   file:
     disable: true
+    hidden: true
     default_value: false
-    hidden: false
   media:
     disable: true
+    hidden: true
     default_value: false
-    hidden: false
   node:
     default_value: true
     disable: true
-    hidden: false
+    hidden: true
+  path_alias:
+    hidden: true
+    default_value: false
+    disable: false
+  redirect:
+    hidden: true
+    default_value: false
+    disable: false
+  search_api_task:
+    hidden: true
+    default_value: false
+    disable: false
+  shortcut:
+    hidden: true
+    default_value: false
+    disable: false
   taxonomy_term:
     disable: true
+    hidden: true
     default_value: false
-    hidden: false
+  user:
+    hidden: true
+    default_value: false
+    disable: false
   menu_link_content:
     default_value: true
     disable: true
-    hidden: false
+    hidden: true
   paragraph:
     default_value: true
     disable: true
-    hidden: false
-  crop:
-    default_value: false
-    disable: false
-    hidden: false
-  entity_embed_fake_entity:
-    default_value: false
-    disable: false
-    hidden: false
-  redirect:
-    default_value: false
-    disable: false
-    hidden: false
-  shortcut:
-    default_value: false
-    disable: false
-    hidden: false
-  user:
-    default_value: false
-    disable: false
-    hidden: false
+    hidden: true
