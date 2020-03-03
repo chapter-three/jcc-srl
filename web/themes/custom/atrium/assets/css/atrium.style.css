@@ -2046,6 +2046,9 @@ li.pager__item__ellipsis {
   display: block;
   text-align: right;
 }
+.jcc-feedback .jcc-feedback__trigger-container .button--secondary {
+  border: 1px solid #168092;
+}
 .jcc-feedback .icon-expand_more {
   height: 2rem;
   vertical-align: middle;

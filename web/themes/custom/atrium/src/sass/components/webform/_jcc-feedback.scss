@@ -52,6 +52,10 @@
   .jcc-feedback__trigger-container {
     display: block;
     text-align: right;
+
+    .button--secondary {
+      border: 1px solid #168092;
+    }
   }
 
   .icon-expand_more {
