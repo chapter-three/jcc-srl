@@ -1993,3 +1993,34 @@ li.pager__item__ellipsis {
 .usa-form .jcc-choice-section--submit .usa-button {
   margin-top: 0;
 }
+
+.jcc-feedback {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.jcc-feedback[open] {
+  border-width: 1px;
+  border-color: #a9aeb1;
+  border-style: solid;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.jcc-feedback[open] .jcc-feedback__trigger-container {
+  display: none;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.jcc-feedback dialog {
+  border: 0;
+  left: auto;
+  position: relative;
+}
+.jcc-feedback dialog label {
+  margin: 0 30px 10px 0;
+}
+.jcc-feedback .jcc-feedback__trigger-container {
+  text-align: right;
+  display: block;
+}

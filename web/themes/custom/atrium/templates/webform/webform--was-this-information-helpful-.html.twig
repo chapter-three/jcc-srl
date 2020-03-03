@@ -22,18 +22,32 @@
  */
 #}
 
-{% set webform %}
-  <form{{ attributes }}>
-  {{ title_prefix }}
-  {{ children }}
-  {{ title_suffix }}
-  </form>
-{% endset %}
+{% set id = element['#webform_id_trunc'] %}
+{% set title = element.elements.was_this_information_helpful_['#admin_title']%}
 
-{% include '@organisms/sections/modal/modal.twig' with {
-  modal: {
-    id: "jcc-feedback",
-    button_label: "Was this information Helpful?",
-    content: webform,
-  },
-} %}
+
+<div class="jcc-feedback" id="{{ id }}" data-feedback="container">
+
+  <dialog role="dialog" data-feedback="dialog">
+    <button  tabindex="-1" aria-label="{{ 'Close this dialog window'|t }}" data-feedback="trigger">
+      {% include '@atoms/icons/icon.twig' with {
+        icon: {
+          name: "close",
+          title: "Close"|t,
+          decorative: false,
+        }
+      } %}
+    </button>
+    <form{{ attributes.addClass('jcc__feedback').addAttributes('id', 'jcc-modal') }}>
+      {{ title_prefix }}
+      {{ children }}
+      {{ title_suffix }}
+    </form>
+  </dialog>
+
+  <div class="jcc-feedback__trigger-container">
+    <button class="usa-button button--secondary" data-feedback="trigger">
+      {{ title }}
+    </button>
+  </div>
+</div>

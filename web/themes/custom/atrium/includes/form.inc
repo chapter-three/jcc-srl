@@ -29,6 +29,16 @@ function atrium_preprocess_form_element(array &$variables) {
  */
 function atrium_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   atrium_attach_form_id($form, $form_id);
+
+  if (isset($form['#webform_id'])) {
+    $form['#webform_id_trunc'] = $form['#webform_id'];
+
+    foreach ($form as $key => $var) {
+      if ($key == $form['#webform_id_trunc']) {
+
+      }
+    }
+  }
 }
 
 /**

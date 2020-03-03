@@ -1,0 +1,33 @@
+.jcc-feedback {
+  @include u-position(fixed);
+  bottom: 20px;
+  right: 20px;
+
+  &[open] {
+    @include u-border(1px, base-light);
+    @include u-bg("white");
+    @include u-padding(3);
+    @include u-radius(lg);
+
+    .jcc-feedback__trigger-container {
+      display: none;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  dialog {
+    border: 0;
+    left: auto;
+    position: relative;
+
+    label {
+      margin: 0 30px 10px 0
+    }
+  }
+
+  .jcc-feedback__trigger-container {
+    text-align: right;
+    display: block;
+  }
+}
