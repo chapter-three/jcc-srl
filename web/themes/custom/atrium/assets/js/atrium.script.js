@@ -119,15 +119,28 @@ __webpack_require__.r(__webpack_exports__);
       var feedback_trigger = $('[data-feedback="trigger"]');
       var feedback_container = $('[data-feedback="container"]');
       var feedback_dialog = $('[data-feedback="dialog"]');
+      var feedback_confirmation = $('[data-feedback="container"] .webform-confirmation');
+
+      var feedbackOpen = function feedbackOpen() {
+        feedback_dialog.attr('open', 'open');
+        feedback_container.attr('open', 'open');
+      };
+
+      if (feedback_confirmation.length > 0) {
+        feedback_dialog.removeAttr('style');
+        feedbackOpen();
+      }
+
+      ;
       feedback_trigger.on('click', function (e) {
         e.preventDefault();
 
         if (feedback_dialog.attr('open')) {
+          feedback_container.css('transition', 'all .2s');
           feedback_dialog.removeAttr('open');
           feedback_container.removeAttr('open');
         } else {
-          feedback_dialog.attr('open', 'open');
-          feedback_container.attr('open', 'open');
+          feedbackOpen();
         }
       });
     }

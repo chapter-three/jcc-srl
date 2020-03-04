@@ -1998,8 +1998,6 @@ li.pager__item__ellipsis {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   z-index: 10000;
 }
 .jcc-feedback[open] {
@@ -2017,9 +2015,14 @@ li.pager__item__ellipsis {
 }
 .jcc-feedback dialog {
   border: 0;
+  display: block;
   left: auto;
   padding: 0;
   position: relative;
+  visibility: hidden;
+}
+.jcc-feedback dialog[open] {
+  visibility: visible;
 }
 .jcc-feedback dialog [data-feedback=trigger] {
   -webkit-appearance: none;

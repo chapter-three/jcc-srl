@@ -2,7 +2,6 @@
   @include u-position(fixed);
   bottom: 20px;
   right: 20px;
-  transition: all .5s;
   z-index: 10000;
 
   &[open] {
@@ -20,9 +19,16 @@
 
   dialog {
     border: 0;
+    display: block;
     left: auto;
     padding: 0;
     position: relative;
+    visibility: hidden;
+
+    &[open] {
+      visibility: visible;
+    }
+
 
     [data-feedback="trigger"] {
       appearance: none ;
