@@ -12,7 +12,7 @@ entity_type: node
 bundle: srl_howto_instruction
 label: 'SRL HowTo Parent'
 description: 'Ex: "Debt Collection". This field will be used to create the breadcrumb at the top of the page and the switchboard at the bottom of the page.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
