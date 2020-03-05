@@ -1,0 +1,25 @@
+uuid: 6c2dedb4-0ceb-46a0-8542-85828ffade68
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.was_this_information_helpful_
+  module:
+    - webform
+  theme:
+    - atrium
+id: webform
+theme: atrium
+region: footer
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: '0'
+  webform_id: was_this_information_helpful_
+  default_data: ''
+  redirect: false
+visibility: {  }

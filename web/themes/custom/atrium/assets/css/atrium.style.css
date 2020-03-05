@@ -1993,3 +1993,67 @@ li.pager__item__ellipsis {
 .usa-form .jcc-choice-section--submit .usa-button {
   margin-top: 0;
 }
+
+.jcc-feedback {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+.jcc-feedback[open] {
+  border-width: 1px;
+  border-color: #a9aeb1;
+  border-style: solid;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+.jcc-feedback[open] .jcc-feedback__trigger-container {
+  display: none;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.jcc-feedback dialog {
+  border: 0;
+  display: block;
+  left: auto;
+  padding: 0;
+  position: relative;
+  visibility: hidden;
+}
+.jcc-feedback dialog[open] {
+  visibility: visible;
+}
+.jcc-feedback dialog [data-feedback=trigger] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  text-align: right;
+}
+.jcc-feedback dialog [data-feedback=trigger] .icon-close {
+  color: #0d7ea2;
+  height: 2em;
+  width: 2em;
+}
+.jcc-feedback dialog .js-webform-webform-buttons label {
+  margin: 0 10px 30px 0;
+}
+.jcc-feedback dialog textarea {
+  margin-bottom: 20px;
+}
+.jcc-feedback .jcc-feedback__dialog-footer {
+  text-align: right;
+}
+.jcc-feedback .jcc-feedback__trigger-container {
+  display: block;
+  text-align: right;
+}
+.jcc-feedback .jcc-feedback__trigger-container .button--secondary {
+  border: 1px solid #168092;
+}
+.jcc-feedback .icon-expand_more {
+  height: 2rem;
+  vertical-align: middle;
+  width: 2rem;
+}

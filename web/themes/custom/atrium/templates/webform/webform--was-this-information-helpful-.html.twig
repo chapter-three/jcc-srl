@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme implementation for a 'webform' element.
+ *
+ * This is an copy of the webform.html.twig theme_wrapper which includes the
+ * 'title_prefix' and 'title_suffix' variables needed for
+ * contextual links to appear.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the webform.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_webform()
+ * @see _webform_form_after_build()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set id = element['#webform_id_trunc'] %}
+{% set title = element.elements.was_this_information_helpful_['#admin_title']%}
+
+<div class="jcc-feedback" id="{{ id }}" data-feedback="container">
+
+  <dialog role="dialog" data-feedback="dialog">
+    <form{{ attributes }}>
+      {{ title_prefix }}
+      {{ children }}
+      {{ title_suffix }}
+    </form>
+
+    <div class="jcc-feedback__dialog-footer">
+      <button tabindex="-1" aria-label="{{ 'Close this dialog window'|t }}" data-feedback="trigger">
+        {% include '@atoms/icons/icon.twig' with {
+          icon: {
+            name: "close",
+            title: "Close"|t,
+            decorative: false,
+          }
+        } %}
+      </button>
+    </div>
+  </dialog>
+
+  <div class="jcc-feedback__trigger-container">
+    <button class="usa-button button--secondary" data-feedback="trigger">
+      {{ title }}
+      {% include '@atoms/icons/icon.twig' with {
+        icon: {
+          name: "expand_more",
+          title: "Expand More"|t,
+          decorative: false,
+        }
+      } %}
+    </button>
+  </div>
+</div>

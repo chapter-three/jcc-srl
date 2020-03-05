@@ -166,6 +166,7 @@
         "d3/d3": "3.5.*",
         "drupal/devel": "^2.1",
         "drupal/log_stdout": "^1.1",
+        "drupal/search_kint": "^1.0",
         "drupal/stage_file_proxy": "^1.0@RC",
         "drupal/twig_xdebug": "^1.1"
     },
