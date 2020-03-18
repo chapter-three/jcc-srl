@@ -90,7 +90,7 @@ CKEDITOR.addTemplates('default', {
       title: 'Read More (Details)',
       image: 'read-more.png',
       description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
-      html:(function () {
+      template: function () {
         const randomId = +new Date();
         return`<p>Text Before</p>
           <div class="jcc-read-more">
@@ -103,6 +103,19 @@ CKEDITOR.addTemplates('default', {
             </div>
           </div>
           <p>Text After</p>`
-      })(),
-    },  ]
-} );
+      },
+    },
+  ]
+});
+
+const coreGetTemplates = CKEDITOR.getTemplates;
+
+CKEDITOR.getTemplates = function( name ) {
+  const coreTemplates = coreGetTemplates(name);
+  coreTemplates.templates.map(function (template) {
+    if (typeof template.template === `function`) {
+      template.html = template.template()
+    }
+  });
+  return coreTemplates;
+};
