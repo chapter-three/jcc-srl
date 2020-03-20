@@ -2041,14 +2041,14 @@ li.pager__item__ellipsis {
   height: auto;
   visibility: visible;
 }
-.jcc-feedback dialog [data-feedback="trigger"] {
+.jcc-feedback dialog [data-feedback^="trigger"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: 0;
   text-align: right;
 }
-.jcc-feedback dialog [data-feedback="trigger"] .icon-close {
+.jcc-feedback dialog [data-feedback^="trigger"] .icon-close {
   color: #0d7ea2;
   height: 2em;
   width: 2em;
