@@ -72,7 +72,7 @@ You'll need to be **very careful** to commit and push all outstanding Courtyard 
 
 3. Install NPM dependencies: `npm install`
 
-4. Start the build script, which will compile Sass and watch for changes: `npm run watch`
+4. Start the build script, which will compile Sass and watch for changes: `npm run start`
 
 #### Customizing the BrowserSync Proxy
 
