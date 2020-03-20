@@ -1,8 +1,15 @@
 .jcc-feedback {
   @include u-position(fixed);
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
   z-index: 10000;
+  width: 100%;
+
+  @include at-media(tablet) {
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+  }
 
   &[open] {
     @include u-border(1px, base-light);
@@ -20,18 +27,19 @@
   dialog {
     border: 0;
     display: block;
+    height: 0;
     left: auto;
     padding: 0;
     position: relative;
     visibility: hidden;
 
     &[open] {
+      height: auto;
       visibility: visible;
     }
 
-
     [data-feedback="trigger"] {
-      appearance: none ;
+      appearance: none;
       border: 0;
       text-align: right;
 
@@ -43,7 +51,7 @@
     }
 
     .js-webform-webform-buttons label {
-      margin: 0 10px 30px 0
+      margin: 0 10px 30px 0;
     }
 
     textarea {

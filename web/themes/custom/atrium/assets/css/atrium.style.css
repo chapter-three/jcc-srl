@@ -1747,7 +1747,8 @@ https://v2.designsystem.digital.gov/style-tokens
   padding-top: 80px;
   margin-bottom: 0;
 }
-.nav-tabs__wrapper, .nav-tabs__wrapper * {
+.nav-tabs__wrapper,
+.nav-tabs__wrapper * {
   font-size: 1rem;
   line-height: 3;
 }
@@ -1845,7 +1846,8 @@ https://v2.designsystem.digital.gov/style-tokens
   right: 0;
   z-index: 16;
 }
-.nav-tabs .nav-tabs__link:active, .nav-tabs .nav-tabs__link:hover {
+.nav-tabs .nav-tabs__link:active,
+.nav-tabs .nav-tabs__link:hover {
   text-decoration: underline;
 }
 .nav-tabs .nav-tabs__link:focus {
@@ -1881,7 +1883,8 @@ https://v2.designsystem.digital.gov/style-tokens
   z-index: 20;
 }
 
-.is-collapse-enabled .nav-tabs--primary:before, .is-horizontal .nav-tabs--primary:before {
+.is-collapse-enabled .nav-tabs--primary:before,
+.is-horizontal .nav-tabs--primary:before {
   border-color: #f3f3f3;
 }
 .nav-tabs--primary .nav-tabs__link {
@@ -1912,7 +1915,8 @@ https://v2.designsystem.digital.gov/style-tokens
 .nav-tabs--secondary {
   background: #f9f9f9;
 }
-.is-collapse-enabled .nav-tabs--secondary:before, .is-horizontal .nav-tabs--secondary:before {
+.is-collapse-enabled .nav-tabs--secondary:before,
+.is-horizontal .nav-tabs--secondary:before {
   border-color: #f3f3f3;
 }
 .nav-tabs--secondary .nav-tabs__link {
@@ -1951,11 +1955,11 @@ ul.pager__items {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1969,7 +1973,9 @@ li.pager__item {
   padding: 0;
   list-style: none;
 }
-li.pager__item a, li.pager__item a:link, li.pager__item a:visited {
+li.pager__item a,
+li.pager__item a:link,
+li.pager__item a:visited {
   border-radius: 3px;
   color: #2378c3;
   display: block;
@@ -1979,7 +1985,8 @@ li.pager__item a, li.pager__item a:link, li.pager__item a:visited {
   line-height: 1;
   text-decoration: none;
 }
-li.pager__item a:hover, li.pager__item.is-active a {
+li.pager__item a:hover,
+li.pager__item.is-active a {
   background: #2378c3;
   color: #fff;
 }
@@ -1996,9 +2003,17 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
   z-index: 10000;
+  width: 100%;
+}
+@media all and (min-width: 40em) {
+  .jcc-feedback {
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+  }
 }
 .jcc-feedback[open] {
   border-width: 1px;
@@ -2016,22 +2031,24 @@ li.pager__item__ellipsis {
 .jcc-feedback dialog {
   border: 0;
   display: block;
+  height: 0;
   left: auto;
   padding: 0;
   position: relative;
   visibility: hidden;
 }
 .jcc-feedback dialog[open] {
+  height: auto;
   visibility: visible;
 }
-.jcc-feedback dialog [data-feedback=trigger] {
+.jcc-feedback dialog [data-feedback="trigger"] {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   text-align: right;
 }
-.jcc-feedback dialog [data-feedback=trigger] .icon-close {
+.jcc-feedback dialog [data-feedback="trigger"] .icon-close {
   color: #0d7ea2;
   height: 2em;
   width: 2em;
