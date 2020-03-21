@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - media
 _core:
   default_config_hash: BnGlCo0vmNy0GkKYdERYcGBZQQmwaUrrTo4avO0YSpg
 name: 'Basic HTML'
@@ -17,7 +18,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ol start type> <li class="jcc-action-list"> <dl> <dt> <dd> <h4 id> <h5 id> <h6 id> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <a href hreflang !href accesskey id rel target title class="usa-button usa-button--primary usa-button--secondary usa-button--accent-warm"> <h3 id> <p class="jcc-lead"> <h2 id class=" jcc-title"> <ul type class="jcc-list-group jcc-action-list"> <div class="jcc-action-list__content jcc-action-list__action">'
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ol start type> <li class="jcc-action-list"> <dl> <dt> <dd> <h4 id> <h5 id> <h6 id> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <a href hreflang !href accesskey id rel target title class="usa-button usa-button--primary usa-button--secondary usa-button--accent-warm"> <h3 id> <p class="jcc-lead"> <h2 id class=" jcc-title"> <ul type class="jcc-list-group jcc-action-list"> <div class="jcc-action-list__content jcc-action-list__action"><div class="jcc-read-more"><button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more"><svg class="icon icon-expand_more" role="img" title="Expand"><use xlink:href="#i-expand_more"><div class="jcc-read-more__content" id="read-more">'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -50,3 +51,12 @@ filters:
     status: true
     weight: 100
     settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }
