@@ -149,50 +149,58 @@
           "use strict";
 
           Drupal.behaviors.feedback = {
-            attach: function attach(context) {
-              var feedback_trigger = $('[data-feedback^="trigger"]');
-              var feedback_container = $('[data-feedback="container"]');
-              var feedback_dialog = $('[data-feedback="dialog"]');
-              var feedback_confirmation = $(
+            attach: function attach() {
+              var $feedback_trigger = $('[data-feedback^="trigger"]');
+              var $feedback_container = $('[data-feedback="container"]');
+              var $feedback_dialog = $('[data-feedback="dialog"]');
+              var $feedback_confirmation = $(
                 '[data-feedback="container"] .webform-confirmation'
               );
 
               var feedbackOpen = function feedbackOpen() {
-                feedback_dialog.attr("open", "open");
-                feedback_container.attr("open", "open");
+                $feedback_dialog.attr("open", "open");
+                $feedback_container.attr("open", "open");
               };
 
               var feedbackDismiss = function feedbackDismiss() {
-                feedback_container.hide();
+                $feedback_container.hide();
               };
 
-              if (feedback_confirmation.length > 0) {
-                if (
-                  sessionStorage.feedback_dismissed_page ==
+              var feedbackDismissPath = function feedbackDismissPath() {
+                return sessionStorage.feedback_dismissed_page ==
                   window.location.pathname
-                ) {
+                  ? true
+                  : false;
+              };
+
+              var feedbackConfirmed = function feedbackConfirmed() {
+                return $feedback_confirmation.length > 0 ? true : false;
+              };
+
+              if (feedbackConfirmed() == true) {
+                if (feedbackDismissPath() == true) {
                   feedbackDismiss();
                 } else {
-                  feedback_dialog.removeAttr("style");
+                  $feedback_dialog.removeAttr("style");
                   feedbackOpen();
                 }
               }
 
-              feedback_trigger.on("click", function(e) {
-                e.preventDefault();
+              $feedback_trigger.on("click", function(e) {
+                e.preventDefault;
 
-                if (feedback_dialog.attr("open")) {
+                if ($feedback_dialog.attr("open")) {
                   if (
-                    feedback_confirmation.length > 0 &&
+                    feedbackConfirmed() &&
                     $(this).attr("data-feedback") == "trigger-close"
                   ) {
                     sessionStorage.feedback_dismissed_page =
                       window.location.pathname;
                     feedbackDismiss();
                   } else {
-                    feedback_container.css("transition", "all .2s");
-                    feedback_dialog.removeAttr("open");
-                    feedback_container.removeAttr("open");
+                    $feedback_container.css("transition", "all .2s");
+                    $feedback_dialog.removeAttr("open");
+                    $feedback_container.removeAttr("open");
                   }
                 } else {
                   feedbackOpen();
