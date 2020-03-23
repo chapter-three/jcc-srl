@@ -1,0 +1,11 @@
+# Prettier Ignore Configuration
+#
+# Under certain conditions, the git hooks generated from Husky in Courtyard
+# will run Prettier on the Drupal codebase on commit. Since the two projects
+# have different coding standards, we ignore prettier everywhere by default.
+*
+
+# More information:
+# - https://prettier.io
+# - https://github.com/azz/pretty-quick
+# - https://github.com/typicode/husky
