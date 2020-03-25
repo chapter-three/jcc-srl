@@ -11,7 +11,7 @@ field_name: field_parent
 entity_type: node
 bundle: srl_howto_instruction
 label: 'SRL HowTo Parent'
-description: 'Ex: "Debt Collection". This field will be used to create the breadcrumb at the top of the page and the switchboard at the bottom of the page.'
+description: '• <b>Set to - None - to remove Switchboard.</b><br/>• Ex: "Debt Collection". This field will be used to create the breadcrumb at the top of the page and the switchboard at the bottom of the page.'
 required: false
 translatable: false
 default_value: {  }
