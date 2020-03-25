@@ -14,11 +14,26 @@ dependencies:
     - node.type.srl_howto
   module:
     - allowed_formats
+    - field_group
     - maxlength
     - metatag
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_switchboard:
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      region: hidden
+      format_settings:
+        id: ''
+        classes: ''
+        description: 'This method of adding Switchboards is being deprecated.'
+        required_fields: true
+      label: 'Switchboard (DEPREACTED)'
 id: node.srl_howto.default
 targetEntityType: node
 bundle: srl_howto

@@ -1,0 +1,25 @@
+uuid: 260b5a50-9e45-4586-9fc7-c7e4ebdd2c19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.switchboard.field_tiles
+    - paragraphs.paragraphs_type.switchboard
+  module:
+    - entity_reference_revisions
+id: paragraph.switchboard.default
+targetEntityType: paragraph
+bundle: switchboard
+mode: default
+content:
+  field_tiles:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

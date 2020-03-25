@@ -1,0 +1,10 @@
+uuid: 23b8e310-b6b6-485c-a995-034760d4f022
+langcode: en
+status: true
+dependencies: {  }
+id: switchboard
+label: Switchboard
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

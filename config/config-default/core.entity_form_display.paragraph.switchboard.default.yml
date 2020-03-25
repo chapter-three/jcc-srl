@@ -1,0 +1,29 @@
+uuid: 03b1f056-3856-4cb1-a100-593bac12209c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.switchboard.field_tiles
+    - paragraphs.paragraphs_type.switchboard
+  module:
+    - paragraphs
+id: paragraph.switchboard.default
+targetEntityType: paragraph
+bundle: switchboard
+mode: default
+content:
+  field_tiles:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
