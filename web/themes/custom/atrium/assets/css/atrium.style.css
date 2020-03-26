@@ -1999,7 +1999,7 @@ li.pager__item__ellipsis {
   bottom: 0;
   opacity: 0;
   right: 0;
-  width: 75%;
+  min-width: 75%;
   z-index: 10000;
 }
 @media all and (min-width: 20em) {
@@ -2024,6 +2024,11 @@ li.pager__item__ellipsis {
   background-color: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
+}
+@media all and (min-width: 20em) {
+  .jcc-feedback[open] {
+    min-width: 0;
+  }
 }
 .jcc-feedback[open] .jcc-feedback__trigger-container {
   display: none;
@@ -2068,8 +2073,8 @@ li.pager__item__ellipsis {
   display: block;
   text-align: right;
 }
-.jcc-feedback .jcc-feedback__trigger-container .button--secondary {
-  border: 1px solid #168092;
+.jcc-feedback .jcc-feedback__trigger-container button {
+  margin-right: 0;
 }
 .jcc-feedback .icon-expand_more {
   height: 2rem;

@@ -3,7 +3,7 @@
   bottom: 0;
   opacity: 0;
   right: 0;
-  width: 75%;
+  min-width: 75%;
   z-index: 10000;
 
   @include at-media(mobile) {
@@ -25,6 +25,10 @@
     @include u-bg("white");
     @include u-padding(3);
     @include u-radius(lg);
+
+    @include at-media(mobile) {
+      min-width: 0;
+    }
 
     .jcc-feedback__trigger-container {
       display: none;
@@ -76,8 +80,12 @@
     display: block;
     text-align: right;
 
-    .button--secondary {
-      border: 1px solid #168092;
+    button {
+      margin-right: 0;
+
+      @include at-media(tablet) {
+      }
+
     }
   }
 
