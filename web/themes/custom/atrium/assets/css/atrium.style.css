@@ -1998,8 +1998,13 @@ li.pager__item__ellipsis {
   position: fixed;
   bottom: 0;
   right: 0;
+  width: 75%;
   z-index: 10000;
-  width: 100%;
+}
+@media all and (min-width: 20em) {
+  .jcc-feedback {
+    min-width: 310px;
+  }
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {

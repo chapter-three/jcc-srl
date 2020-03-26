@@ -2,8 +2,12 @@
   @include u-position(fixed);
   bottom: 0;
   right: 0;
+  width: 75%;
   z-index: 10000;
-  width: 100%;
+
+  @include at-media(mobile) {
+    min-width: 310px;
+  }
 
   @include at-media(tablet) {
     bottom: 20px;
