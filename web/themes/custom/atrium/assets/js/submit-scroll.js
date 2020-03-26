@@ -103,7 +103,7 @@
 
       $submitButton.click(function () {
         sessionStorage.wayfinder_submitted = true;
-        $("form.cc-user-input").submit();
+        $("form.cc-user-input").submit(console.log('Wayfinder submitted.'));
       }); // Check sessionStorage for value.
 
       if (sessionStorage.wayfinder_submitted != undefined) {

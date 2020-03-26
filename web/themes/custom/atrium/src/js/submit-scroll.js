@@ -9,7 +9,9 @@
       // Send status to sessionStorage, then submit form.
       $submitButton.click(function() {
         sessionStorage.wayfinder_submitted = true;
-        $("form.cc-user-input").submit();
+        $("form.cc-user-input").submit(
+          console.log('Wayfinder submitted.')
+        );
       });
 
       // Check sessionStorage for value.
