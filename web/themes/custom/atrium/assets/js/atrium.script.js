@@ -141,12 +141,12 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       var isScrolledToBottom = function isScrolledToBottom() {
-        var scrollAmount = $window.scrollTop();
+        var scrollPosition = $window.scrollTop();
         var windowHeight = $window.height();
-        var halfHeight = windowHeight / 2;
-        var scrollLocation = scrollAmount + windowHeight - halfHeight;
+        var windowHeightHalf = windowHeight / 2;
+        var scrollDiff = scrollPosition + windowHeight - windowHeightHalf;
         var halfPageHeight = $('.jcc-footer').offset().top / 2;
-        return scrollLocation >= halfPageHeight;
+        return scrollDiff >= halfPageHeight;
       };
 
       var isSmallScreen = function isSmallScreen() {
@@ -156,15 +156,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
       $window.on('scroll', function () {
-        console.log(isSmallScreen());
-        console.log(isScrolledToBottom());
-
         if (isScrolledToBottom() && isSmallScreen() || isSmallScreen() == false) {
           $feedback_container.attr('visible', 'visible');
         } else {
           $feedback_container.removeAttr('visible');
         }
-      }); // Allow User to dismiss completely if confirmation is visisble.
+      }); // Allow user to dismiss completely if confirmation is visible.
 
       if (feedbackConfirmed() == true) {
         if (feedbackDismissPath() == true) {

@@ -31,31 +31,26 @@
       const feedbackConfirmed = () => {
         return $feedback_confirmation.length > 0;
       };
-      
+
       const isScrolledToBottom = () => {
-        const scrollAmount = $window.scrollTop();
+        const scrollPosition = $window.scrollTop();
         const windowHeight = $window.height();
-        const halfHeight = windowHeight / 2;
-        const scrollLocation = (scrollAmount + windowHeight) - halfHeight ;
+        const windowHeightHalf = windowHeight / 2;
+        const scrollDiff = (scrollPosition + windowHeight) - windowHeightHalf ;
         const halfPageHeight = $('.jcc-footer').offset().top / 2 ;
         
-        return scrollLocation >= halfPageHeight;
-
+        return scrollDiff >= halfPageHeight;
       };
-  
+
       const isSmallScreen = () => {
         const mql = window.matchMedia('(max-width: 40em)');
         return mql.matches ? true : false;
-    
       };
       
       // Scroll.
       $window.on('scroll', function(){
-        console.log(isSmallScreen())
-        console.log(isScrolledToBottom())
-  
         if(
-          (isScrolledToBottom() && isSmallScreen() )
+          (isScrolledToBottom() && isSmallScreen())
           || isSmallScreen() == false
         ) {
           $feedback_container.attr('visible', 'visible');
@@ -64,7 +59,7 @@
         }
       });
   
-      // Allow User to dismiss completely if confirmation is visisble.
+      // Allow user to dismiss completely if confirmation is visible.
       if (feedbackConfirmed() == true) {
         if (feedbackDismissPath() == true) {
           feedbackDismiss();
