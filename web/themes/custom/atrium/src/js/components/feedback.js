@@ -3,6 +3,9 @@
 
   Drupal.behaviors.feedback = {
     attach: function() {
+
+      // Elements.
+      const $window = $(window);
       const $feedback_trigger = $('[data-feedback^="trigger"]');
       const $feedback_container = $('[data-feedback="container"]');
       const $feedback_dialog = $('[data-feedback="dialog"]');
@@ -10,6 +13,7 @@
         '[data-feedback="container"] .webform-confirmation'
       );
 
+      // Functions.
       const feedbackOpen = () => {
         $feedback_dialog.attr("open", "open");
         $feedback_container.attr("open", "open");
@@ -21,15 +25,41 @@
 
       const feedbackDismissPath = () => {
         return sessionStorage.feedback_dismissed_page ==
-          window.location.pathname
-          ? true
-          : false;
+          window.location.pathname;
       };
 
       const feedbackConfirmed = () => {
-        return $feedback_confirmation.length > 0 ? true : false;
+        return $feedback_confirmation.length > 0;
       };
 
+      const isScrolledToBottom = () => {
+        const scrollPosition = $window.scrollTop();
+        const windowHeight = $window.height();
+        const windowHeightHalf = windowHeight / 2;
+        const scrollDiff = (scrollPosition + windowHeight) - windowHeightHalf ;
+        const halfPageHeight = $('.jcc-footer').offset().top / 2 ;
+        
+        return scrollDiff >= halfPageHeight;
+      };
+
+      const isSmallScreen = () => {
+        const mql = window.matchMedia('(max-width: 40em)');
+        return mql.matches ? true : false;
+      };
+      
+      // Scroll.
+      $window.on('scroll', function(){
+        if(
+          (isScrolledToBottom() && isSmallScreen())
+          || isSmallScreen() == false
+        ) {
+          $feedback_container.attr('visible', 'visible');
+        } else{
+          $feedback_container.removeAttr('visible');
+        }
+      });
+  
+      // Allow user to dismiss completely if confirmation is visible.
       if (feedbackConfirmed() == true) {
         if (feedbackDismissPath() == true) {
           feedbackDismiss();
@@ -38,7 +68,8 @@
           feedbackOpen();
         }
       }
-
+  
+      // Click.
       $feedback_trigger.on("click", function(e) {
         e.preventDefault;
         if ($feedback_dialog.attr("open")) {

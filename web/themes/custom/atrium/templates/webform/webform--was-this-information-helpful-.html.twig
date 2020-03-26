@@ -25,7 +25,7 @@
 {% set id = element['#webform_id_trunc'] %}
 {% set title = element.elements.was_this_information_helpful_['#admin_title']%}
 
-<div class="jcc-feedback" id="{{ id }}" data-feedback="container">
+<div class="jcc-feedback" id="{{ id }}" data-feedback="container" visible="visible">
 
   <dialog role="dialog" data-feedback="dialog">
     <form{{ attributes }}>
@@ -48,7 +48,7 @@
   </dialog>
 
   <div class="jcc-feedback__trigger-container">
-    <button class="usa-button button--secondary" data-feedback="trigger">
+    <button class="usa-button usa-button--accent-warm" data-feedback="trigger">
       {{ title }}
       {% include '@atoms/icons/icon.twig' with {
         icon: {
