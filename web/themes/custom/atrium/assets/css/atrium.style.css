@@ -1997,6 +1997,7 @@ li.pager__item__ellipsis {
 .jcc-feedback {
   position: fixed;
   bottom: 0;
+  opacity: 0;
   right: 0;
   width: 75%;
   z-index: 10000;
@@ -2012,6 +2013,9 @@ li.pager__item__ellipsis {
     right: 20px;
     width: auto;
   }
+}
+.jcc-feedback[visible] {
+  opacity: 1;
 }
 .jcc-feedback[open] {
   border-width: 1px;

@@ -25,7 +25,7 @@
 {% set id = element['#webform_id_trunc'] %}
 {% set title = element.elements.was_this_information_helpful_['#admin_title']%}
 
-<div class="jcc-feedback" id="{{ id }}" data-feedback="container">
+<div class="jcc-feedback" id="{{ id }}" data-feedback="container" visible="visible">
 
   <dialog role="dialog" data-feedback="dialog">
     <form{{ attributes }}>

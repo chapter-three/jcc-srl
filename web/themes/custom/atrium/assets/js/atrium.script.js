@@ -116,10 +116,12 @@ __webpack_require__.r(__webpack_exports__);
 
   Drupal.behaviors.feedback = {
     attach: function attach() {
+      // Elements.
+      var $window = $(window);
       var $feedback_trigger = $('[data-feedback^="trigger"]');
       var $feedback_container = $('[data-feedback="container"]');
       var $feedback_dialog = $('[data-feedback="dialog"]');
-      var $feedback_confirmation = $('[data-feedback="container"] .webform-confirmation');
+      var $feedback_confirmation = $('[data-feedback="container"] .webform-confirmation'); // Functions.
 
       var feedbackOpen = function feedbackOpen() {
         $feedback_dialog.attr("open", "open");
@@ -131,12 +133,38 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       var feedbackDismissPath = function feedbackDismissPath() {
-        return sessionStorage.feedback_dismissed_page == window.location.pathname ? true : false;
+        return sessionStorage.feedback_dismissed_page == window.location.pathname;
       };
 
       var feedbackConfirmed = function feedbackConfirmed() {
-        return $feedback_confirmation.length > 0 ? true : false;
+        return $feedback_confirmation.length > 0;
       };
+
+      var isScrolledToBottom = function isScrolledToBottom() {
+        var scrollAmount = $window.scrollTop();
+        var windowHeight = $window.height();
+        var halfHeight = windowHeight / 2;
+        var scrollLocation = scrollAmount + windowHeight - halfHeight;
+        var halfPageHeight = $('.jcc-footer').offset().top / 2;
+        return scrollLocation >= halfPageHeight;
+      };
+
+      var isSmallScreen = function isSmallScreen() {
+        var mql = window.matchMedia('(max-width: 40em)');
+        return mql.matches ? true : false;
+      }; // Scroll.
+
+
+      $window.on('scroll', function () {
+        console.log(isSmallScreen());
+        console.log(isScrolledToBottom());
+
+        if (isScrolledToBottom() && isSmallScreen() || isSmallScreen() == false) {
+          $feedback_container.attr('visible', 'visible');
+        } else {
+          $feedback_container.removeAttr('visible');
+        }
+      }); // Allow User to dismiss completely if confirmation is visisble.
 
       if (feedbackConfirmed() == true) {
         if (feedbackDismissPath() == true) {
@@ -145,7 +173,8 @@ __webpack_require__.r(__webpack_exports__);
           $feedback_dialog.removeAttr("style");
           feedbackOpen();
         }
-      }
+      } // Click.
+
 
       $feedback_trigger.on("click", function (e) {
         e.preventDefault;
