@@ -10,6 +10,7 @@
       $submitButton.click(function() {
         sessionStorage.wayfinder_submitted = true;
         $("form.cc-user-input").submit(
+          // Not sure why but submit doesn't work without a parameter.
           console.log('Wayfinder submitted.')
         );
       });
