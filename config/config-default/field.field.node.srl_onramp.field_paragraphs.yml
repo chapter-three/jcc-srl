@@ -7,8 +7,12 @@ dependencies:
     - node.type.srl_onramp
     - paragraphs.paragraphs_type.accordion_container
     - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.datefinder
     - paragraphs.paragraphs_type.flex
     - paragraphs.paragraphs_type.postcard
+    - paragraphs.paragraphs_type.step_container
+    - paragraphs.paragraphs_type.switchboard
+    - paragraphs.paragraphs_type.timeline
   module:
     - entity_reference_revisions
 id: node.srl_onramp.field_paragraphs
@@ -26,51 +30,55 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      postcard: postcard
-      flex: flex
       accordion_container: accordion_container
       card_list: card_list
+      datefinder: datefinder
+      flex: flex
+      postcard: postcard
+      step_container: step_container
+      switchboard: switchboard
+      timeline: timeline
     target_bundles_drag_drop:
-      postcard:
-        enabled: true
-        weight: -19
-      flex:
-        enabled: true
-        weight: -18
       accordion_container:
         enabled: true
-        weight: -17
-      accordion:
-        weight: -16
-        enabled: false
-      card:
-        weight: -15
-        enabled: false
-      code_section:
-        weight: -14
-        enabled: false
-      step:
-        weight: -12
-        enabled: false
-      step_container:
-        weight: -11
-        enabled: false
-      calculation_date:
-        weight: 17
-        enabled: false
+        weight: -29
       card_list:
         enabled: true
-        weight: 19
-      srl_date_calculator:
-        weight: 23
+        weight: -28
+      datefinder:
+        enabled: true
+        weight: -27
+      flex:
+        enabled: true
+        weight: -26
+      postcard:
+        enabled: true
+        weight: -25
+      step_container:
+        enabled: true
+        weight: -24
+      switchboard:
+        enabled: true
+        weight: -23
+      timeline:
+        enabled: true
+        weight: -22
+      accordion:
+        weight: -21
+        enabled: false
+      card:
+        weight: -20
+        enabled: false
+      code_section:
+        weight: -19
+        enabled: false
+      step:
+        weight: -18
         enabled: false
       tile:
-        weight: 26
-        enabled: false
-      timeline:
-        weight: 27
+        weight: -17
         enabled: false
       timeline_item:
-        weight: 28
+        weight: -16
         enabled: false
 field_type: entity_reference_revisions

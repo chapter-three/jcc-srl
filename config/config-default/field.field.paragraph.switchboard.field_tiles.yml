@@ -1,0 +1,70 @@
+uuid: b8b5c0c6-3832-4b7e-a4f8-cfd963bdc38e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tiles
+    - paragraphs.paragraphs_type.switchboard
+    - paragraphs.paragraphs_type.tile
+  module:
+    - entity_reference_revisions
+id: paragraph.switchboard.field_tiles
+field_name: field_tiles
+entity_type: paragraph
+bundle: switchboard
+label: Tiles
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tile: tile
+    target_bundles_drag_drop:
+      accordion:
+        weight: 15
+        enabled: false
+      accordion_container:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      card_list:
+        weight: 18
+        enabled: false
+      code_section:
+        weight: 19
+        enabled: false
+      datefinder:
+        weight: 20
+        enabled: false
+      flex:
+        weight: 21
+        enabled: false
+      postcard:
+        weight: 22
+        enabled: false
+      step:
+        weight: 23
+        enabled: false
+      step_container:
+        weight: 24
+        enabled: false
+      switchboard:
+        weight: 25
+        enabled: false
+      tile:
+        enabled: true
+        weight: 26
+      timeline:
+        weight: 27
+        enabled: false
+      timeline_item:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions
