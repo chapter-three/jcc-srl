@@ -46,7 +46,7 @@
         const mql = window.matchMedia('(max-width: 40em)');
         return mql.matches ? true : false;
       };
-      
+
       // Scroll.
       $window.on('scroll', function(){
         if(
@@ -54,8 +54,10 @@
           || isSmallScreen() == false
         ) {
           $feedback_container.attr('visible', 'visible');
-        } else{
+          $feedback_container.attr('visible-small', 'visible-small');
+        } else {
           $feedback_container.removeAttr('visible');
+          $feedback_container.removeAttr('visible-small');
         }
       });
   
@@ -64,6 +66,7 @@
         if (feedbackDismissPath() == true) {
           feedbackDismiss();
         } else {
+          window.scrollTo(0, document.body.scrollHeight);
           $feedback_dialog.removeAttr("style");
           feedbackOpen();
         }

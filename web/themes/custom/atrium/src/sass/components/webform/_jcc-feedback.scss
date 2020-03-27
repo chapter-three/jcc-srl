@@ -1,9 +1,9 @@
 .jcc-feedback {
-  @include u-position(fixed);
+  @include u-position(relative);
   bottom: 0;
   opacity: 0;
   right: 0;
-  min-width: 75%;
+  max-width: 75%;
   z-index: 10000;
 
   @include at-media(mobile) {
@@ -11,12 +11,18 @@
   }
 
   @include at-media(tablet) {
+    @include u-position(fixed);
     bottom: 20px;
     right: 20px;
     width: auto;
   }
 
   &[visible] {
+    opacity: 1;
+  }
+
+  &[visible-small] {
+    @include u-position(fixed);
     opacity: 1;
   }
 
@@ -28,6 +34,7 @@
 
     @include at-media(mobile) {
       min-width: 0;
+      max-width: 100%;
     }
 
     .jcc-feedback__trigger-container {

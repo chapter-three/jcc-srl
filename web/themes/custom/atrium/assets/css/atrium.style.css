@@ -1995,11 +1995,11 @@ li.pager__item__ellipsis {
 }
 
 .jcc-feedback {
-  position: fixed;
+  position: relative;
   bottom: 0;
   opacity: 0;
   right: 0;
-  min-width: 75%;
+  max-width: 75%;
   z-index: 10000;
 }
 @media all and (min-width: 20em) {
@@ -2009,12 +2009,17 @@ li.pager__item__ellipsis {
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
+    position: fixed;
     bottom: 20px;
     right: 20px;
     width: auto;
   }
 }
 .jcc-feedback[visible] {
+  opacity: 1;
+}
+.jcc-feedback[visible-small] {
+  position: fixed;
   opacity: 1;
 }
 .jcc-feedback[open] {
@@ -2028,6 +2033,7 @@ li.pager__item__ellipsis {
 @media all and (min-width: 20em) {
   .jcc-feedback[open] {
     min-width: 0;
+    max-width: 100%;
   }
 }
 .jcc-feedback[open] .jcc-feedback__trigger-container {
