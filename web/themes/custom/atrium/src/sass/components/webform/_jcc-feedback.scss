@@ -1,19 +1,24 @@
+.page__footer {
+  @include u-position(relative);
+}
+
 .jcc-feedback {
-  @include u-position(fixed);
+  @include u-position(absolute);
   bottom: 0;
+  max-width: 75%;
   opacity: 0;
   right: 0;
-  min-width: 75%;
   z-index: 10000;
 
-  @include at-media(mobile) {
-    min-width: 310px;
-  }
-
   @include at-media(tablet) {
-    bottom: 20px;
+    bottom: 40px;
+    min-width: 310px;
     right: 20px;
     width: auto;
+  }
+
+  &[fixed] {
+    @include u-position(fixed);
   }
 
   &[visible] {
@@ -25,10 +30,8 @@
     @include u-bg("white");
     @include u-padding(3);
     @include u-radius(lg);
-
-    @include at-media(mobile) {
-      min-width: 0;
-    }
+    min-width: 0;
+    max-width: 100%;
 
     .jcc-feedback__trigger-container {
       display: none;
@@ -42,12 +45,14 @@
     display: block;
     height: 0;
     left: auto;
+    overflow: hidden;
     padding: 0;
     position: relative;
     visibility: hidden;
 
     &[open] {
       height: auto;
+      overflow: visible;
       visibility: visible;
     }
 
@@ -82,10 +87,8 @@
 
     button {
       margin-right: 0;
-
-      @include at-media(tablet) {
-      }
-
+      padding-left: 24px;
+      padding-right: 15px
     }
   }
 

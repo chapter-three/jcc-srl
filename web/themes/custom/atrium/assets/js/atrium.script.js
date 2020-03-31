@@ -140,13 +140,16 @@ __webpack_require__.r(__webpack_exports__);
         return $feedback_confirmation.length > 0;
       };
 
-      var isScrolledToBottom = function isScrolledToBottom() {
-        var scrollPosition = $window.scrollTop();
-        var windowHeight = $window.height();
-        var windowHeightHalf = windowHeight / 2;
-        var scrollDiff = scrollPosition + windowHeight - windowHeightHalf;
-        var halfPageHeight = $('.jcc-footer').offset().top / 2;
-        return scrollDiff >= halfPageHeight;
+      var isScrolledToBottom = function isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) {
+        var $windowHeightHalf = $windowHeight / 2;
+        var $scrollDiff = $scrollPosition + $windowHeight - $windowHeightHalf;
+        var $pageHeightHalf = $footPosition / 2;
+        return $scrollDiff >= $pageHeightHalf;
+      };
+
+      var pageIsShorterThanWindow = function pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition) {
+        var $scrollDiff = $footPosition - $windowHeight;
+        return $scrollDiff > $scrollPosition;
       };
 
       var isSmallScreen = function isSmallScreen() {
@@ -156,10 +159,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
       $window.on('scroll', function () {
-        if (isScrolledToBottom() && isSmallScreen() || isSmallScreen() == false) {
+        var $scrollPosition = $window.scrollTop();
+        var $windowHeight = $window.height();
+        var $footPosition = $('.jcc-footer').offset().top;
+
+        if (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen() || isSmallScreen() == false) {
           $feedback_container.attr('visible', 'visible');
         } else {
           $feedback_container.removeAttr('visible');
+        }
+
+        if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
+          $feedback_container.attr('fixed', 'fixed');
+        } else {
+          $feedback_container.removeAttr('fixed');
         }
       }); // Allow user to dismiss completely if confirmation is visible.
 
@@ -167,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
         if (feedbackDismissPath() == true) {
           feedbackDismiss();
         } else {
+          window.scrollTo(0, document.body.scrollHeight);
           $feedback_dialog.removeAttr("style");
           feedbackOpen();
         }

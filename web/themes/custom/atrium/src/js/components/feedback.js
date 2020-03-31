@@ -32,30 +32,45 @@
         return $feedback_confirmation.length > 0;
       };
 
-      const isScrolledToBottom = () => {
-        const scrollPosition = $window.scrollTop();
-        const windowHeight = $window.height();
-        const windowHeightHalf = windowHeight / 2;
-        const scrollDiff = (scrollPosition + windowHeight) - windowHeightHalf ;
-        const halfPageHeight = $('.jcc-footer').offset().top / 2 ;
+      const isScrolledToBottom = ($scrollPosition, $windowHeight, $footPosition) => {
+        const $windowHeightHalf = $windowHeight / 2;
+        const $scrollDiff = ($scrollPosition + $windowHeight) - $windowHeightHalf ;
+        const $pageHeightHalf =  $footPosition/ 2 ;
         
-        return scrollDiff >= halfPageHeight;
+        return $scrollDiff >= $pageHeightHalf;
+      };
+  
+      const pageIsShorterThanWindow = ($scrollPosition, $windowHeight, $footPosition) => {
+        const $scrollDiff = $footPosition - $windowHeight;
+
+        return $scrollDiff > $scrollPosition;
       };
 
       const isSmallScreen = () => {
         const mql = window.matchMedia('(max-width: 40em)');
         return mql.matches ? true : false;
       };
-      
+
       // Scroll.
       $window.on('scroll', function(){
+ 
+        const $scrollPosition = $window.scrollTop();
+        const $windowHeight = $window.height();
+        const $footPosition = $('.jcc-footer').offset().top;
+
         if(
-          (isScrolledToBottom() && isSmallScreen())
+          (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen())
           || isSmallScreen() == false
         ) {
           $feedback_container.attr('visible', 'visible');
-        } else{
+        } else {
           $feedback_container.removeAttr('visible');
+        }
+        
+        if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
+          $feedback_container.attr('fixed', 'fixed');
+        } else {
+          $feedback_container.removeAttr('fixed');
         }
       });
   
@@ -64,6 +79,7 @@
         if (feedbackDismissPath() == true) {
           feedbackDismiss();
         } else {
+          window.scrollTo(0, document.body.scrollHeight);
           $feedback_dialog.removeAttr("style");
           feedbackOpen();
         }

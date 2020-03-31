@@ -1994,25 +1994,28 @@ li.pager__item__ellipsis {
   margin-top: 0;
 }
 
+.page__footer {
+  position: relative;
+}
+
 .jcc-feedback {
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  max-width: 75%;
   opacity: 0;
   right: 0;
-  min-width: 75%;
   z-index: 10000;
-}
-@media all and (min-width: 20em) {
-  .jcc-feedback {
-    min-width: 310px;
-  }
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
-    bottom: 20px;
+    bottom: 40px;
+    min-width: 310px;
     right: 20px;
     width: auto;
   }
+}
+.jcc-feedback[fixed] {
+  position: fixed;
 }
 .jcc-feedback[visible] {
   opacity: 1;
@@ -2024,11 +2027,8 @@ li.pager__item__ellipsis {
   background-color: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
-}
-@media all and (min-width: 20em) {
-  .jcc-feedback[open] {
-    min-width: 0;
-  }
+  min-width: 0;
+  max-width: 100%;
 }
 .jcc-feedback[open] .jcc-feedback__trigger-container {
   display: none;
@@ -2040,12 +2040,14 @@ li.pager__item__ellipsis {
   display: block;
   height: 0;
   left: auto;
+  overflow: hidden;
   padding: 0;
   position: relative;
   visibility: hidden;
 }
 .jcc-feedback dialog[open] {
   height: auto;
+  overflow: visible;
   visibility: visible;
 }
 .jcc-feedback dialog [data-feedback^=trigger] {
@@ -2075,6 +2077,8 @@ li.pager__item__ellipsis {
 }
 .jcc-feedback .jcc-feedback__trigger-container button {
   margin-right: 0;
+  padding-left: 24px;
+  padding-right: 15px;
 }
 .jcc-feedback .icon-expand_more {
   height: 2rem;

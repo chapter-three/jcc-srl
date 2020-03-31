@@ -11,7 +11,7 @@ dependencies:
 id: webform
 theme: atrium
 region: footer
-weight: 0
+weight: -4
 provider: null
 plugin: webform_block
 settings:
