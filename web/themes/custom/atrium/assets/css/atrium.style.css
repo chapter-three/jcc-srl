@@ -1999,32 +1999,21 @@ li.pager__item__ellipsis {
 }
 
 .jcc-feedback {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
   opacity: 0;
+  right: 0;
+  z-index: 10000;
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
+    bottom: 20px;
+    right: 20px;
     width: auto;
   }
 }
 .jcc-feedback[fixed] {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 10000;
-}
-@media all and (min-width: 40em) {
-  .jcc-feedback[fixed] {
-    right: 20px;
-  }
 }
 .jcc-feedback[visible] {
   opacity: 1;
