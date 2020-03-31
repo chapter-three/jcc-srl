@@ -89,10 +89,8 @@
 
     button {
       margin-right: 0;
-
-      @include at-media(tablet) {
-      }
-
+      padding-left: 24px;
+      padding-right: 15px
     }
   }
 

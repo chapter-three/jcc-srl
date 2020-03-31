@@ -2081,6 +2081,8 @@ li.pager__item__ellipsis {
 }
 .jcc-feedback .jcc-feedback__trigger-container button {
   margin-right: 0;
+  padding-left: 24px;
+  padding-right: 15px;
 }
 .jcc-feedback .icon-expand_more {
   height: 2rem;
