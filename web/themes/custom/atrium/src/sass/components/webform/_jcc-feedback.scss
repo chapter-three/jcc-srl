@@ -7,6 +7,7 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+  margin-top: 10px;
   opacity: 0;
 
   @include at-media(tablet) {
@@ -28,10 +29,6 @@
     opacity: 1;
   }
 
-  &[visible-small] {
-    @include u-position(fixed);
-    opacity: 1;
-  }
 
   &[open] {
     @include u-border(1px, base-light);

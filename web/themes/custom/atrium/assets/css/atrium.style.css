@@ -2007,6 +2007,7 @@ li.pager__item__ellipsis {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-bottom: 10px;
+  margin-top: 10px;
   opacity: 0;
 }
 @media all and (min-width: 40em) {
@@ -2026,10 +2027,6 @@ li.pager__item__ellipsis {
   }
 }
 .jcc-feedback[visible] {
-  opacity: 1;
-}
-.jcc-feedback[visible-small] {
-  position: fixed;
   opacity: 1;
 }
 .jcc-feedback[open] {

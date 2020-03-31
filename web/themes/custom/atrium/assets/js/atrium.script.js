@@ -158,10 +158,8 @@ __webpack_require__.r(__webpack_exports__);
       $window.on('scroll', function () {
         if (isScrolledToBottom() && isSmallScreen() || isSmallScreen() == false) {
           $feedback_container.attr('visible', 'visible');
-          $feedback_container.attr('visible-small', 'visible-small');
         } else {
           $feedback_container.removeAttr('visible');
-          $feedback_container.removeAttr('visible-small');
         }
       }); // Allow user to dismiss completely if confirmation is visible.
 

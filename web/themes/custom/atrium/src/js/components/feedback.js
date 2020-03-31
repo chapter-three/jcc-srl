@@ -54,10 +54,8 @@
           || isSmallScreen() == false
         ) {
           $feedback_container.attr('visible', 'visible');
-          $feedback_container.attr('visible-small', 'visible-small');
         } else {
           $feedback_container.removeAttr('visible');
-          $feedback_container.removeAttr('visible-small');
         }
       });
   
