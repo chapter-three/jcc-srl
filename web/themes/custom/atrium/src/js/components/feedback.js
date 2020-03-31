@@ -6,12 +6,14 @@
 
       // Elements.
       const $window = $(window);
+      const $windowHeight = $window.height();
       const $feedback_trigger = $('[data-feedback^="trigger"]');
       const $feedback_container = $('[data-feedback="container"]');
       const $feedback_dialog = $('[data-feedback="dialog"]');
       const $feedback_confirmation = $(
         '[data-feedback="container"] .webform-confirmation'
       );
+      const $footPosition = $('.jcc-footer').offset().top;
 
       // Functions.
       const feedbackOpen = () => {
@@ -32,23 +34,18 @@
         return $feedback_confirmation.length > 0;
       };
 
-      const isScrolledToBottom = () => {
-        const scrollPosition = $window.scrollTop();
-        const windowHeight = $window.height();
-        const windowHeightHalf = windowHeight / 2;
-        const scrollDiff = (scrollPosition + windowHeight) - windowHeightHalf ;
-        const halfPageHeight = $('.jcc-footer').offset().top / 2 ;
+      const isScrolledToBottom = ($scrollPosition) => {
+        const $windowHeightHalf = $windowHeight / 2;
+        const $scrollDiff = ($scrollPosition + $windowHeight) - $windowHeightHalf ;
+        const $pageHeightHalf =  $footPosition/ 2 ;
         
-        return scrollDiff >= halfPageHeight;
+        return $scrollDiff >= $pageHeightHalf;
       };
   
-      const pageIsShorterThanWindow = () => {
-        const scrollPosition = $window.scrollTop();
-        const $windowHeight = $window.height();
-        const $footerPosition = $('.jcc-footer').offset().top;
-        const $diff = $footerPosition - $windowHeight
+      const pageIsShorterThanWindow = ($scrollPosition) => {
+        const $scrollDiff = $footPosition - $windowHeight;
 
-        return $diff >  scrollPosition;
+        return $scrollDiff > $scrollPosition;
       };
 
       const isSmallScreen = () => {
@@ -58,8 +55,11 @@
 
       // Scroll.
       $window.on('scroll', function(){
+ 
+        const $scrollPosition = $window.scrollTop();
+
         if(
-          (isScrolledToBottom() && isSmallScreen())
+          (isScrolledToBottom($scrollPosition) && isSmallScreen())
           || isSmallScreen() == false
         ) {
           $feedback_container.attr('visible', 'visible');
@@ -67,7 +67,7 @@
           $feedback_container.removeAttr('visible');
         }
         
-        if (pageIsShorterThanWindow()) {
+        if (pageIsShorterThanWindow($scrollPosition)) {
           $feedback_container.attr('fixed', 'fixed');
         } else {
           $feedback_container.removeAttr('fixed');
