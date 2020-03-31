@@ -2000,7 +2000,7 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: absolute;
-  bottom: 0;
+  bottom: 80px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -2016,6 +2016,12 @@ li.pager__item__ellipsis {
 }
 .jcc-feedback[fixed] {
   position: fixed;
+  bottom: 0;
+}
+@media all and (min-width: 40em) {
+  .jcc-feedback[fixed] {
+    bottom: 20px;
+  }
 }
 .jcc-feedback[visible] {
   opacity: 1;
