@@ -149,6 +149,12 @@ __webpack_require__.r(__webpack_exports__);
         return scrollDiff >= halfPageHeight;
       };
 
+      var pageIsShorterThanWindow = function pageIsShorterThanWindow() {
+        var $windowHeight = $window.height();
+        var $footerPosition = $('.jcc-footer').offset().top;
+        return $windowHeight < $footerPosition;
+      };
+
       var isSmallScreen = function isSmallScreen() {
         var mql = window.matchMedia('(max-width: 40em)');
         return mql.matches ? true : false;
@@ -160,6 +166,12 @@ __webpack_require__.r(__webpack_exports__);
           $feedback_container.attr('visible', 'visible');
         } else {
           $feedback_container.removeAttr('visible');
+        }
+
+        if (pageIsShorterThanWindow()) {
+          $feedback_container.attr('fixed', 'fixed');
+        } else {
+          $feedback_container.removeAttr('fixed');
         }
       }); // Allow user to dismiss completely if confirmation is visible.
 

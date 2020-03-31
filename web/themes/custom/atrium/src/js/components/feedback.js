@@ -41,6 +41,13 @@
         
         return scrollDiff >= halfPageHeight;
       };
+  
+      const pageIsShorterThanWindow = () => {
+        const $windowHeight = $window.height();
+        const $footerPosition = $('.jcc-footer').offset().top;
+
+        return $windowHeight < $footerPosition;
+      };
 
       const isSmallScreen = () => {
         const mql = window.matchMedia('(max-width: 40em)');
@@ -56,6 +63,12 @@
           $feedback_container.attr('visible', 'visible');
         } else {
           $feedback_container.removeAttr('visible');
+        }
+        
+        if (pageIsShorterThanWindow()) {
+          $feedback_container.attr('fixed', 'fixed');
+        } else {
+          $feedback_container.removeAttr('fixed');
         }
       });
   
