@@ -4,7 +4,7 @@
 
 .jcc-feedback {
   @include u-position(absolute);
-  bottom: 0;
+  bottom: 80px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -19,6 +19,12 @@
 
   &[fixed] {
     @include u-position(fixed);
+    bottom: 0;
+
+    @include at-media(tablet) {
+      bottom: 20px;
+
+    }
   }
 
   &[visible] {
