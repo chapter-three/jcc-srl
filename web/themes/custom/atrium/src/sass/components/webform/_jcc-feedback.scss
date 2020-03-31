@@ -5,12 +5,14 @@
 .jcc-feedback {
   @include u-position(absolute);
   bottom: 0;
+  max-width: 75%;
   opacity: 0;
   right: 0;
   z-index: 10000;
 
   @include at-media(tablet) {
     bottom: 40px;
+    min-width: 310px;
     right: 20px;
     width: auto;
   }
@@ -28,11 +30,8 @@
     @include u-bg("white");
     @include u-padding(3);
     @include u-radius(lg);
-
-    @include at-media(mobile) {
-      min-width: 0;
-      max-width: 100%;
-    }
+    min-width: 0;
+    max-width: 100%;
 
     .jcc-feedback__trigger-container {
       display: none;
@@ -82,12 +81,7 @@
 
   .jcc-feedback__trigger-container {
     display: block;
-    min-width: 75%;
     text-align: right;
-
-    @include at-media(mobile) {
-      min-width: 310px;
-    }
 
     button {
       margin-right: 0;
