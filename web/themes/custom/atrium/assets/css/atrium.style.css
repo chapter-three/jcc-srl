@@ -2040,12 +2040,14 @@ li.pager__item__ellipsis {
   display: block;
   height: 0;
   left: auto;
+  overflow: hidden;
   padding: 0;
   position: relative;
   visibility: hidden;
 }
 .jcc-feedback dialog[open] {
   height: auto;
+  overflow: visible;
   visibility: visible;
 }
 .jcc-feedback dialog [data-feedback^=trigger] {

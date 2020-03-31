@@ -45,12 +45,14 @@
     display: block;
     height: 0;
     left: auto;
+    overflow: hidden;
     padding: 0;
     position: relative;
     visibility: hidden;
 
     &[open] {
       height: auto;
+      overflow: visible;
       visibility: visible;
     }
 
