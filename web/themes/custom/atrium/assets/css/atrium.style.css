@@ -2007,7 +2007,7 @@ li.pager__item__ellipsis {
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
-    bottom: 20px;
+    bottom: 40px;
     right: 20px;
     width: auto;
   }

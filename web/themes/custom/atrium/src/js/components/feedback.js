@@ -43,10 +43,12 @@
       };
   
       const pageIsShorterThanWindow = () => {
+        const scrollPosition = $window.scrollTop();
         const $windowHeight = $window.height();
         const $footerPosition = $('.jcc-footer').offset().top;
+        const $diff = $footerPosition - $windowHeight
 
-        return $windowHeight < $footerPosition;
+        return $diff >  scrollPosition;
       };
 
       const isSmallScreen = () => {

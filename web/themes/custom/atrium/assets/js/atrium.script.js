@@ -150,9 +150,11 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       var pageIsShorterThanWindow = function pageIsShorterThanWindow() {
+        var scrollPosition = $window.scrollTop();
         var $windowHeight = $window.height();
         var $footerPosition = $('.jcc-footer').offset().top;
-        return $windowHeight < $footerPosition;
+        var $diff = $footerPosition - $windowHeight;
+        return $diff > scrollPosition;
       };
 
       var isSmallScreen = function isSmallScreen() {
