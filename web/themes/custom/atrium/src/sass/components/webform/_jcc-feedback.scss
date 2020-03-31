@@ -1,20 +1,27 @@
+.page__footer {
+  @include u-position(relative);
+}
+
 .jcc-feedback {
   @include u-position(relative);
-  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
   opacity: 0;
-  right: 0;
-  max-width: 75%;
-  z-index: 10000;
-
-  @include at-media(mobile) {
-    min-width: 310px;
-  }
 
   @include at-media(tablet) {
-    @include u-position(fixed);
-    bottom: 20px;
-    right: 20px;
     width: auto;
+  }
+
+  &[fixed] {
+    @include u-position(fixed);
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+
+    @include at-media(tablet) {
+      right: 20px;
+    }
   }
 
   &[visible] {
@@ -85,7 +92,12 @@
 
   .jcc-feedback__trigger-container {
     display: block;
+    min-width: 75%;
     text-align: right;
+
+    @include at-media(mobile) {
+      min-width: 310px;
+    }
 
     button {
       margin-right: 0;
