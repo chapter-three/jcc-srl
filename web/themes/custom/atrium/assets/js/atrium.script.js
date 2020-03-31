@@ -118,12 +118,10 @@ __webpack_require__.r(__webpack_exports__);
     attach: function attach() {
       // Elements.
       var $window = $(window);
-      var $windowHeight = $window.height();
       var $feedback_trigger = $('[data-feedback^="trigger"]');
       var $feedback_container = $('[data-feedback="container"]');
       var $feedback_dialog = $('[data-feedback="dialog"]');
-      var $feedback_confirmation = $('[data-feedback="container"] .webform-confirmation');
-      var $footPosition = $('.jcc-footer').offset().top; // Functions.
+      var $feedback_confirmation = $('[data-feedback="container"] .webform-confirmation'); // Functions.
 
       var feedbackOpen = function feedbackOpen() {
         $feedback_dialog.attr("open", "open");
@@ -142,14 +140,14 @@ __webpack_require__.r(__webpack_exports__);
         return $feedback_confirmation.length > 0;
       };
 
-      var isScrolledToBottom = function isScrolledToBottom($scrollPosition) {
+      var isScrolledToBottom = function isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) {
         var $windowHeightHalf = $windowHeight / 2;
         var $scrollDiff = $scrollPosition + $windowHeight - $windowHeightHalf;
         var $pageHeightHalf = $footPosition / 2;
         return $scrollDiff >= $pageHeightHalf;
       };
 
-      var pageIsShorterThanWindow = function pageIsShorterThanWindow($scrollPosition) {
+      var pageIsShorterThanWindow = function pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition) {
         var $scrollDiff = $footPosition - $windowHeight;
         return $scrollDiff > $scrollPosition;
       };
@@ -162,14 +160,16 @@ __webpack_require__.r(__webpack_exports__);
 
       $window.on('scroll', function () {
         var $scrollPosition = $window.scrollTop();
+        var $windowHeight = $window.height();
+        var $footPosition = $('.jcc-footer').offset().top;
 
-        if (isScrolledToBottom($scrollPosition) && isSmallScreen() || isSmallScreen() == false) {
+        if (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen() || isSmallScreen() == false) {
           $feedback_container.attr('visible', 'visible');
         } else {
           $feedback_container.removeAttr('visible');
         }
 
-        if (pageIsShorterThanWindow($scrollPosition)) {
+        if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
           $feedback_container.attr('fixed', 'fixed');
         } else {
           $feedback_container.removeAttr('fixed');

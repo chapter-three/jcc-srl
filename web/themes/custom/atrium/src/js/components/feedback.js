@@ -6,14 +6,12 @@
 
       // Elements.
       const $window = $(window);
-      const $windowHeight = $window.height();
       const $feedback_trigger = $('[data-feedback^="trigger"]');
       const $feedback_container = $('[data-feedback="container"]');
       const $feedback_dialog = $('[data-feedback="dialog"]');
       const $feedback_confirmation = $(
         '[data-feedback="container"] .webform-confirmation'
       );
-      const $footPosition = $('.jcc-footer').offset().top;
 
       // Functions.
       const feedbackOpen = () => {
@@ -34,7 +32,7 @@
         return $feedback_confirmation.length > 0;
       };
 
-      const isScrolledToBottom = ($scrollPosition) => {
+      const isScrolledToBottom = ($scrollPosition, $windowHeight, $footPosition) => {
         const $windowHeightHalf = $windowHeight / 2;
         const $scrollDiff = ($scrollPosition + $windowHeight) - $windowHeightHalf ;
         const $pageHeightHalf =  $footPosition/ 2 ;
@@ -42,7 +40,7 @@
         return $scrollDiff >= $pageHeightHalf;
       };
   
-      const pageIsShorterThanWindow = ($scrollPosition) => {
+      const pageIsShorterThanWindow = ($scrollPosition, $windowHeight, $footPosition) => {
         const $scrollDiff = $footPosition - $windowHeight;
 
         return $scrollDiff > $scrollPosition;
@@ -57,9 +55,11 @@
       $window.on('scroll', function(){
  
         const $scrollPosition = $window.scrollTop();
+        const $windowHeight = $window.height();
+        const $footPosition = $('.jcc-footer').offset().top;
 
         if(
-          (isScrolledToBottom($scrollPosition) && isSmallScreen())
+          (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen())
           || isSmallScreen() == false
         ) {
           $feedback_container.attr('visible', 'visible');
@@ -67,7 +67,7 @@
           $feedback_container.removeAttr('visible');
         }
         
-        if (pageIsShorterThanWindow($scrollPosition)) {
+        if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
           $feedback_container.attr('fixed', 'fixed');
         } else {
           $feedback_container.removeAttr('fixed');
