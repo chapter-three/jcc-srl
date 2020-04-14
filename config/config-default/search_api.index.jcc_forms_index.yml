@@ -1,0 +1,35 @@
+uuid: 9ecda8a9-ab81-4e0b-b1dd-3414c6fbf333
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.deafult
+  module:
+    - search_api
+    - media
+id: jcc_forms_index
+name: 'JCC Forms Index'
+description: 'Index for the forms lookup API'
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - jcc_form
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: deafult
