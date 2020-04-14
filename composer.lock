@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d162e676fb52509e95c2b356f01a6407",
+    "content-hash": "eb351429beebe5f39114b560699a9548",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7021,10 +7021,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/exygy/courtyard.git",
-                "reference": "b3551b4"
+                "reference": "050923a"
             },
             "type": "drupal-library",
-            "time": "2020-02-17T01:17:28+00:00"
+            "time": "2020-04-13T17:04:24+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -7500,6 +7500,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -7546,6 +7547,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -11782,5 +11784,6 @@
     "platform": {
         "php": ">=7.3"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
