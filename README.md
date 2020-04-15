@@ -1,8 +1,6 @@
 # Judicial Council of California - Self-Represented Litigant (SRL) portal
 
-Drupal 8.
-
-Hosted on Pantheon.
+Drupal 8. Hosted on Pantheon.
 
 This project assumes [Lando](https://docs.devwithlando.io) for local development but any -AMP stack will do. Use lando commands when multiple options are given.
 
