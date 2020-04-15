@@ -226,3 +226,6 @@ API keys (like SendGrid's) should be stored in the  private:// directory and man
 
 - See list of available proxy urls for local Lando development.
    `lando info`
+
+- Remote drush:
+   `lando drush @jcc-srl.[env] [command]`
