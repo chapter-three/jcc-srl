@@ -1495,7 +1495,7 @@ li.pager__item__ellipsis {
 }
 
 .jcc-choice-section--submit {
-  padding-top: 0;
+  padding-bottom: 3rem;
 }
 .usa-form .jcc-choice-section--submit .usa-button {
   margin-top: 0;

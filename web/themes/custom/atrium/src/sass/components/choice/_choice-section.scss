@@ -1,6 +1,6 @@
 // @todo This hack is better solved in the pattern library.
 .jcc-choice-section--submit {
-  padding-top: 0;
+  @include u-padding-bottom(6);
 
   .usa-form & .usa-button {
     margin-top: 0;
