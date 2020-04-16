@@ -1,0 +1,28 @@
+uuid: 3bcb18a2-7e32-4e1e-971f-774bbeb5fa07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_switchboard_title
+    - paragraphs.paragraphs_type.switchboard
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.switchboard.field_switchboard_title
+field_name: field_switchboard_title
+entity_type: paragraph
+bundle: switchboard
+label: 'Switchboard Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
