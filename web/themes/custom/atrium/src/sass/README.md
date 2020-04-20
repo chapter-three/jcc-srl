@@ -33,8 +33,8 @@ New Sass files should be used when their contents should be loaded conditionally
 
     ```diff
      mix
-       .sass('src/sass/atrium.style.scss', 'css', nodeSassOptions)
-    +  .sass('src/sass/new-file.scss', 'css', nodeSassOptions)
+       .sass('src/sass/atrium.style.scss')
+    +  .sass('src/sass/new-file.scss')
     ```
 
 4. Restart the build script:
