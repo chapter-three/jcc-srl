@@ -95,7 +95,7 @@
     "require": {
         "php": ">=7.3",
         "ckeditor-plugin/templates": "^4.13",
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.7.0",
         "cweagans/composer-patches": "^1.6.5",
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/adminimal_theme": "^1.5",
@@ -105,12 +105,12 @@
         "drupal/chosen": "^2.8",
         "drupal/ckeditor_templates": "^1.1",
         "drupal/components": "^1.1",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
         "drupal/config_exclude": "1.x-dev",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.9",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/core-vendor-hardening": "^8.8",
         "drupal/default_content": "^1.0@alpha",
@@ -155,7 +155,7 @@
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
-        "exygy/courtyard": "dev-development#050923a",
+        "exygy/courtyard": "dev-development#757949e",
         "harvesthq/chosen": "^1.8.7",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
@@ -255,9 +255,14 @@
             ]
         },
         "drupal-scaffold": {
-            "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
+            "allowed-packages": [
+                "pantheon-systems/drupal-integrations"
+            ],
+            "locations": {
+                "web-root": "./web"
+            },
+            "file-mapping": {
+                "[project-root]/.editorconfig": false
             }
         }
     }
