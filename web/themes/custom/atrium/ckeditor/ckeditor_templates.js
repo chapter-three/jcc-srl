@@ -110,7 +110,7 @@ CKEDITOR.addTemplates('default', {
       image: 'explainer.png',
       description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
       template: function () {
-        return `<div class="jcc-explainers-section--has-two-columns jcc-explainers-section">
+        return `<p>Text Before</p><div class="jcc-explainers-section--has-two-columns jcc-explainers-section">
           <div class="jcc-explainers__container">
             <ul class="jcc-explainers">
               <li class="jcc-explainers__item">
@@ -129,7 +129,8 @@ CKEDITOR.addTemplates('default', {
               </li>
             </ul>
           </div>
-        </div>`
+        </div>
+        <p>Text After</p>`
       }
     },
     {
@@ -137,7 +138,7 @@ CKEDITOR.addTemplates('default', {
       image: 'explainer.png',
       description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
       template: function () {
-        return `<div class="jcc-explainers-section--has-one-column jcc-explainers-section">
+        return `<p>Text Before</p><div class="jcc-explainers-section--has-one-column jcc-explainers-section">
           <div class="jcc-explainers__container">
             <ul class="jcc-explainers">
               <li class="jcc-explainers__item">
@@ -149,9 +150,107 @@ CKEDITOR.addTemplates('default', {
               </li>
             </ul>
           </div>
-        </div>`
+        </div>
+        <p>Text After</p>`
       }
     },
+    {
+      title: 'Callout Block',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `
+<p>Text Before</p><div class="jcc-callout  jcc-callout__block">
+  <div class="jcc-callout__content">
+    In general, after a divorce, you keep your separate property and divide your community property.
+  </div>
+</div><p>Text After</p>
+
+`
+      }
+    },
+    {
+      title: 'Callout Block - Italic',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `<p>Text Before</p><div class="jcc-callout  jcc-callout__italic">
+  <div class="jcc-callout__content">
+    In general, after a divorce, you keep your separate property and divide your community property.
+  </div>
+</div><p>Text After</p>`
+      }
+    },
+    {
+      title: 'Alert',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `<p>Text Before</p><div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon" id="alert-bar">
+  <div class="usa-alert__body jcc-alert__body  ">
+    <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
+    <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
+          <div class="jcc-alert__close" id="alert-close"></div>
+  </div>
+</div><p>Text After</p>`
+      }
+    },
+    
+    {
+      title: 'Options List - One Column',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `<p>Text Before</p><div class="jcc-options-list jcc-options-list--has-one-column">
+  <div class="jcc-options__container">
+    <ul class="jcc-options">
+              <li class="jcc-options__item">
+          <div class="jcc-option">
+        <h6>If you're suing a person (or people)</h6>
+          <div class="jcc-option__content">Serve each person you are suing.</div>
+  </div>
+        </li>
+              <li class="jcc-options__item">
+          <div class="jcc-option">
+        <h6>If you're suing a business or government</h6>
+          <div class="jcc-option__content">Business or agencies have a specific person you must serve, not just any employee. Follow these guidelines to make sure you are serving the right person.</div>
+  </div>
+        </li>
+          </ul>
+  </div>
+</div><p>Text After</p>`
+      }
+    },
+    
+    {
+      title: 'Options List - Two Column',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `<p>Text Before</p><div class="jcc-options-list jcc-options-list--has-two-columns">
+  <div class="jcc-options__container">
+
+    <ul class="jcc-options">
+              <li class="jcc-options__item">
+          <div class="jcc-option">
+
+        <h6>If you're suing a person (or people)</h6>
+          <div class="jcc-option__content">Serve each person you are suing.</div>
+  </div>
+        </li>
+              <li class="jcc-options__item">
+          <div class="jcc-option">
+
+        <h6>If you're suing a business or government</h6>
+          <div class="jcc-option__content">Business or agencies have a specific person you must serve, not just any employee. Follow these guidelines to make sure you are serving the right person.</div>
+  </div>
+        </li>
+          </ul>
+  </div>
+</div><p>Text After</p>`
+      }
+    },
+  
   ]
 });
 
