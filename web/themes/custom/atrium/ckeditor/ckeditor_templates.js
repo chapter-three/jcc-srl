@@ -132,6 +132,26 @@ CKEDITOR.addTemplates('default', {
         </div>`
       }
     },
+    {
+      title: 'One Column Explainer',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `<div class="jcc-explainers-section--has-one-column jcc-explainers-section">
+          <div class="jcc-explainers__container">
+            <ul class="jcc-explainers">
+              <li class="jcc-explainers__item">
+                <div class="jcc-explainer">
+                  <div class="jcc-explainer__brow">Wage Garnishment</div>
+                  <p class="jcc-explainer__content">
+                    Someone took money from my paycheck</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>`
+      }
+    },
   ]
 });
 
