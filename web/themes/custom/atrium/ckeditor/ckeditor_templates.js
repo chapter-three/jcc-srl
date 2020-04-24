@@ -105,6 +105,33 @@ CKEDITOR.addTemplates('default', {
           <p>Text After</p>`
       },
     },
+    {
+      title: 'Two Column Explainer',
+      image: 'explainer.png',
+      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      template: function () {
+        return `<div class="jcc-explainers-section--has-two-columns jcc-explainers-section">
+          <div class="jcc-explainers__container">
+            <ul class="jcc-explainers">
+              <li class="jcc-explainers__item">
+                <div class="jcc-explainer">
+                  <div class="jcc-explainer__brow">Wage Garnishment</div>
+                  <p class="jcc-explainer__content">
+                    Someone took money from my paycheck</p>
+                </div>
+              </li>
+              <li class="jcc-explainers__item">
+                <div class="jcc-explainer">
+                  <div class="jcc-explainer__brow">Wage Garnishment</div>
+                  <p class="jcc-explainer__content">
+                    If you bought a car with money that only you earned...</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>`
+      }
+    },
   ]
 });
 
