@@ -170,7 +170,7 @@ CKEDITOR.addTemplates('default', {
     },
     {
       title: 'Callout - Italic',
-      image: 'callout-italic.png',
+      image: 'callout.png',
       description: '',
       template: function () {
         return `<p>Text Before</p>
