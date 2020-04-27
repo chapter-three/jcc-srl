@@ -106,9 +106,30 @@ CKEDITOR.addTemplates('default', {
       },
     },
     {
-      title: 'Two Column Explainer',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      title: 'Explainer - One Column',
+      image: 'explainer-one.png',
+      description: '',
+      template: function () {
+        return `<p>Text Before</p><div class="jcc-explainers-section--has-one-column jcc-explainers-section">
+          <div class="jcc-explainers__container">
+            <ul class="jcc-explainers">
+              <li class="jcc-explainers__item">
+                <div class="jcc-explainer">
+                  <div class="jcc-explainer__brow">Wage Garnishment</div>
+                  <p class="jcc-explainer__content">
+                    Someone took money from my paycheck</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p>Text After</p>`
+      }
+    },
+    {
+      title: 'Explainer - Two Columns',
+      image: 'explainer-two.png',
+      description: '',
       template: function () {
         return `<p>Text Before</p><div class="jcc-explainers-section--has-two-columns jcc-explainers-section">
           <div class="jcc-explainers__container">
@@ -134,30 +155,9 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'One Column Explainer',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
-      template: function () {
-        return `<p>Text Before</p><div class="jcc-explainers-section--has-one-column jcc-explainers-section">
-          <div class="jcc-explainers__container">
-            <ul class="jcc-explainers">
-              <li class="jcc-explainers__item">
-                <div class="jcc-explainer">
-                  <div class="jcc-explainer__brow">Wage Garnishment</div>
-                  <p class="jcc-explainer__content">
-                    Someone took money from my paycheck</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <p>Text After</p>`
-      }
-    },
-    {
       title: 'Callout Block',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      image: 'callout.png',
+      description: '',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-callout  jcc-callout__block">
@@ -169,9 +169,9 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'Callout Block - Italic',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      title: 'Callout - Italic',
+      image: 'callout-italic.png',
+      description: '',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-callout  jcc-callout__italic">
@@ -183,8 +183,8 @@ CKEDITOR.addTemplates('default', {
     },
     {
       title: 'Alert',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      image: 'alert.png',
+      description: '',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon" id="alert-bar">
@@ -198,9 +198,9 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'Options List - One Column',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      title: 'Option List - One Column',
+      image: 'option-one.png',
+      description: '',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-options-list jcc-options-list--has-one-column">
@@ -226,8 +226,8 @@ CKEDITOR.addTemplates('default', {
     },
     {
       title: 'Options List - Two Column',
-      image: 'explainer.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      image: 'option-two.png',
+      description: '',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-options-list jcc-options-list--has-two-columns">
