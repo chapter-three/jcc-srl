@@ -1578,7 +1578,8 @@ li.pager__item__ellipsis {
 .jcc-feedback dialog .js-webform-webform-buttons label {
   margin: 0 10px 30px 0;
 }
-.jcc-feedback dialog textarea {
+.jcc-feedback dialog textarea,
+.jcc-feedback dialog input {
   margin-bottom: 20px;
 }
 .jcc-feedback .jcc-feedback__dialog-footer {
