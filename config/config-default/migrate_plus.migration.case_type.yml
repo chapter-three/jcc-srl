@@ -1,0 +1,26 @@
+uuid: 3c55e8a5-2967-4f59-a69c-d4d81b168d75
+langcode: en
+status: true
+dependencies: {  }
+id: case_type
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import case types used for tagging forms'
+source:
+  plugin: csv
+  path: case_types.csv
+  ids:
+    - case_type
+  fields:
+    -
+      name: case_type
+      label: 'Case Type'
+process:
+  name: case_type
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: case_type
+migration_dependencies: null
