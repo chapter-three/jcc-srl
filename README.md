@@ -56,7 +56,7 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
    cp examples/example.drush.yml drush/drush.yml
    cp examples/example.settings.local.php web/sites/default/settings.local.php
    cp examples/example.services.local.yml web/sites/default/services.local.yml
-   mkdir config-local
+   mkdir config/config-local
    mkdir web/sites/default/files/private
    mkdir web/sites/default/files/tmp
    ```
