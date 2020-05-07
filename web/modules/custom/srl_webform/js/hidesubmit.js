@@ -6,12 +6,11 @@
 
       const $formId = drupalSettings.srl_webform.id;
       const $formClass = ".webform-submission-"+$formId+"-form";
-      const $form = $($formClass);
-      const $submitButton = $($formClass+" #edit-wizard-next, "+$formClass+" #edit-submit");
+      const $submitButton = $($formClass+" #edit-wizard-next, "+$formClass+" #edit-submit", context);
       const $inputs = $($formClass+" .form-radios input")
-  
+
       $inputs.on('change', function() {
-        $form.submit()
+        $submitButton.trigger('click');
       });
       
       $submitButton.hide();

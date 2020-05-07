@@ -30,7 +30,7 @@ function srl_webform_webform_element_configuration_form_alter(&$form, FormStateI
     $form['wizard_page']['hide_submit'] = [
       '#type' => 'checkbox',
       '#title' => t('Hide submit button'),
-      '#description' => t("If checked, user will advance to the next page immediately after selecting an option."),
+      '#description' => t("If checked, user will advance to the next page immediately after selecting an option. <b>Only use this option when the page has one element with two options.</b>"),
     ];
   }
 }
@@ -41,7 +41,7 @@ function srl_webform_webform_element_configuration_form_alter(&$form, FormStateI
 function srl_webform_webform_element_alter(array &$element, FormStateInterface $form_state, array $context) {
   // Add data-custom to the element's attributes.
 
-  if (isset($element['#hide_submit']) && $element['#hide_submit'] == true ) {
+  if (isset($element['#hide_submit']) && $element['#hide_submit'] == false ) {
 
     $element['#attached']['drupalSettings']['srl_webform']['id'] = $element['#webform'];
     $element['#attached']['library'][] = 'srl_webform/hide_submit';
