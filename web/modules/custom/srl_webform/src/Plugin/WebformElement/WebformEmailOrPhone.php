@@ -48,11 +48,8 @@ class WebformEmailOrPhone extends WebformElementBase {
   public function prepare(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
     parent::prepare($element, $webform_submission);
 
-    // Here you can customize the webform element's properties.
-    // You can also customize the form/render element's properties via the
-    // FormElement.
-    //
-    // @see \Drupal\webform_example_element\Element\WebformExampleElement::processWebformElementExample
+    $element['#attached']['library'][] = 'srl_webform/validatePhoneOrEmail';
+
   }
 
   /**
