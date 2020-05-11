@@ -1,0 +1,7 @@
+name: 'srl_webform'
+type: module
+description: 'SRL Webform/Wayfinder'
+core: 8.x
+package: 'SRL'
+dependencies:
+  - webform
