@@ -8,88 +8,9 @@ CKEDITOR.addTemplates('default', {
 	// The templates definitions.
 	templates: [
     {
-      title: 'List group',
-      image: 'list-group.png',
-      description: 'The "List group" component from Courtyard. Each item contains a title and paragraph.',
-      html: '<ul class="jcc-list-group">' +
-              '<li>' +
-                '<p><strong>List item 1</strong></p>' +
-                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>' +
-              '</li>' +
-              '<li>' +
-                '<p><strong>List item 2</strong></p>' +
-                '<p>Pellentesque non nunc quis sem malesuada bibendum.</p>' +
-              '</li>' +
-              '<li>' +
-                '<p><strong>List item 3</strong></p>' +
-                '<p>Etiam a est in est mollis fringilla tristique gravida leo.</p>' +
-              '</li>' +
-              '<li>' +
-                '<p><strong>List item 4</strong></p>' +
-                '<p>Fusce tempor nunc vel tellus suscipit scelerisque sed sit amet neque.</p>' +
-              '</li>' +
-              '<li>' +
-                '<p><strong>List item 5</strong></p>' +
-                '<p>Integer commodo ex nec lorem ullamcorper, a tristique neque efficitur.</p>' +
-              '</li>' +
-            '</ul>'
-    },
-    {
-      title: 'Action list',
-      image: 'action-list.png',
-      description: 'The "Action list" component from Courtyard. Each item contains a title and brief description, followed by a button link.',
-      html: '<ul class="jcc-action-list">' +
-              '<li>' +
-                '<div class="jcc-action-list__content">' +
-                  '<p><strong>First brief sentence describing the action</strong></p>' +
-                  '<p>One to two sentences providing addition details about the action link.</p>' +
-                '</div>' +
-                '<div class="jcc-action-list__action">' +
-                  '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
-                '</div>' +
-              '</li>' +
-              '<li>' +
-                '<div class="jcc-action-list__content">' +
-                  '<p><strong>Second brief sentence describing the action</strong></p>' +
-                  '<p>One to two sentences providing addition details about the action link.</p>' +
-                '</div>' +
-                '<div class="jcc-action-list__action">' +
-                  '<a class="usa-button usa-button--secondary" href="#">Button text longer</a>' +
-                '</div>' +
-              '</li>' +
-              '<li>' +
-                '<div class="jcc-action-list__content">' +
-                  '<p><strong>Third brief sentence describing the action</strong></p>' +
-                  '<p>One to two sentences providing addition details about the action link.</p>' +
-                '</div>' +
-                '<div class="jcc-action-list__action">' +
-                  '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
-                '</div>' +
-              '</li>' +
-              '<li>' +
-                '<div class="jcc-action-list__content">' +
-                  '<p><strong>Third brief sentence describing the action</strong></p>' +
-                  '<p>One to two sentences providing addition details about the action link.</p>' +
-                '</div>' +
-                '<div class="jcc-action-list__action">' +
-                  '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
-                '</div>' +
-              '</li>' +
-              '<li>' +
-                '<div class="jcc-action-list__content">' +
-                  '<p><strong>Third brief sentence describing the action</strong></p>' +
-                  '<p>One to two sentences providing addition details about the action link.</p>' +
-                '</div>' +
-                '<div class="jcc-action-list__action">' +
-                  '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
-                '</div>' +
-              '</li>' +
-            '</ul>'
-    },
-    {
-      title: 'Read More (Details)',
+      title: 'Detail (Read more)',
       image: 'read-more.png',
-      description: 'The "Read More" molecule component from Courtyard. The component contains a trigger text and expanded text.',
+      description: 'Contains a trigger and expanded text. Use for exceptions and details not relevant to all readers.',
       template: function () {
         const randomId = +new Date();
         return`<p>Text Before</p>
@@ -106,9 +27,9 @@ CKEDITOR.addTemplates('default', {
       },
     },
     {
-      title: 'Explainer - One Column',
+      title: 'Example (Explainer) - One Column',
       image: 'explainer-one.png',
-      description: '',
+      description: 'Use to highlight real-world examples of concepts.',
       template: function () {
         return `<p>Text Before</p><div class="jcc-explainers-section--has-one-column jcc-explainers-section">
           <div class="jcc-explainers__container">
@@ -127,9 +48,9 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'Explainer - Two Columns',
+      title: 'Example (Explainer) - Two Columns',
       image: 'explainer-two.png',
-      description: '',
+      description: 'Use to highlight real-world examples of concepts.',
       template: function () {
         return `<p>Text Before</p><div class="jcc-explainers-section--has-two-columns jcc-explainers-section">
           <div class="jcc-explainers__container">
@@ -157,7 +78,7 @@ CKEDITOR.addTemplates('default', {
     {
       title: 'Callout Block',
       image: 'callout.png',
-      description: '',
+      description: 'Highlight or repeat important info (appears in right rail).',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-callout  jcc-callout__block">
@@ -171,7 +92,7 @@ CKEDITOR.addTemplates('default', {
     {
       title: 'Callout - Italic',
       image: 'callout.png',
-      description: '',
+      description: 'Highlight or repeat important info (appears in right rail).',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-callout  jcc-callout__italic">
@@ -184,7 +105,7 @@ CKEDITOR.addTemplates('default', {
     {
       title: 'Alert',
       image: 'alert.png',
-      description: '',
+      description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon" id="alert-bar">
@@ -200,7 +121,7 @@ CKEDITOR.addTemplates('default', {
     {
       title: 'Option List - One Column',
       image: 'option-one.png',
-      description: '',
+      description: 'Show two equally likely outcomes/actions in an "if then" format.',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-options-list jcc-options-list--has-one-column">
@@ -227,7 +148,7 @@ CKEDITOR.addTemplates('default', {
     {
       title: 'Options List - Two Column',
       image: 'option-two.png',
-      description: '',
+      description: 'Show two equally likely outcomes/actions in an "if then" format.',
       template: function () {
         return `<p>Text Before</p>
           <div class="jcc-options-list jcc-options-list--has-two-columns">
@@ -250,6 +171,85 @@ CKEDITOR.addTemplates('default', {
           </div>
           <p>Text After</p>`
       }
+    },
+    {
+      title: 'List group',
+      image: 'list-group.png',
+      description: 'The "List group" component from Courtyard. Each item contains a title and paragraph.',
+      html: '<ul class="jcc-list-group">' +
+        '<li>' +
+        '<p><strong>List item 1</strong></p>' +
+        '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>' +
+        '</li>' +
+        '<li>' +
+        '<p><strong>List item 2</strong></p>' +
+        '<p>Pellentesque non nunc quis sem malesuada bibendum.</p>' +
+        '</li>' +
+        '<li>' +
+        '<p><strong>List item 3</strong></p>' +
+        '<p>Etiam a est in est mollis fringilla tristique gravida leo.</p>' +
+        '</li>' +
+        '<li>' +
+        '<p><strong>List item 4</strong></p>' +
+        '<p>Fusce tempor nunc vel tellus suscipit scelerisque sed sit amet neque.</p>' +
+        '</li>' +
+        '<li>' +
+        '<p><strong>List item 5</strong></p>' +
+        '<p>Integer commodo ex nec lorem ullamcorper, a tristique neque efficitur.</p>' +
+        '</li>' +
+        '</ul>'
+    },
+    {
+      title: 'Action list',
+      image: 'action-list.png',
+      description: 'The "Action list" component from Courtyard. Each item contains a title and brief description, followed by a button link.',
+      html: '<ul class="jcc-action-list">' +
+        '<li>' +
+        '<div class="jcc-action-list__content">' +
+        '<p><strong>First brief sentence describing the action</strong></p>' +
+        '<p>One to two sentences providing addition details about the action link.</p>' +
+        '</div>' +
+        '<div class="jcc-action-list__action">' +
+        '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
+        '</div>' +
+        '</li>' +
+        '<li>' +
+        '<div class="jcc-action-list__content">' +
+        '<p><strong>Second brief sentence describing the action</strong></p>' +
+        '<p>One to two sentences providing addition details about the action link.</p>' +
+        '</div>' +
+        '<div class="jcc-action-list__action">' +
+        '<a class="usa-button usa-button--secondary" href="#">Button text longer</a>' +
+        '</div>' +
+        '</li>' +
+        '<li>' +
+        '<div class="jcc-action-list__content">' +
+        '<p><strong>Third brief sentence describing the action</strong></p>' +
+        '<p>One to two sentences providing addition details about the action link.</p>' +
+        '</div>' +
+        '<div class="jcc-action-list__action">' +
+        '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
+        '</div>' +
+        '</li>' +
+        '<li>' +
+        '<div class="jcc-action-list__content">' +
+        '<p><strong>Third brief sentence describing the action</strong></p>' +
+        '<p>One to two sentences providing addition details about the action link.</p>' +
+        '</div>' +
+        '<div class="jcc-action-list__action">' +
+        '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
+        '</div>' +
+        '</li>' +
+        '<li>' +
+        '<div class="jcc-action-list__content">' +
+        '<p><strong>Third brief sentence describing the action</strong></p>' +
+        '<p>One to two sentences providing addition details about the action link.</p>' +
+        '</div>' +
+        '<div class="jcc-action-list__action">' +
+        '<a class="usa-button usa-button--secondary" href="#">Button text</a>' +
+        '</div>' +
+        '</li>' +
+        '</ul>'
     },
   ]
 });
