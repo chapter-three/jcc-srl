@@ -16,6 +16,8 @@ module:
   chosen_lib: 0
   ckeditor: 0
   ckeditor_templates: 0
+  clientside_validation: 0
+  clientside_validation_jquery: 0
   color: 0
   components: 0
   config: 0

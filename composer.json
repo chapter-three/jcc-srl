@@ -104,6 +104,7 @@
         "drupal/block_field": "^1.0@alpha",
         "drupal/chosen": "^2.8",
         "drupal/ckeditor_templates": "^1.1",
+        "drupal/clientside_validation": "^1.2",
         "drupal/components": "^1.1",
         "drupal/config_exclude": "1.x-dev",
         "drupal/config_ignore": "^2.1",
