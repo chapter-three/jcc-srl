@@ -40,10 +40,19 @@ function srl_webform_webform_element_configuration_form_alter(&$form, FormStateI
  */
 function srl_webform_webform_element_alter(array &$element, FormStateInterface $form_state, array $context) {
 
+
   if (isset($element['#hide_submit']) && $element['#hide_submit'] == true ) {
 
-    $element['#attached']['drupalSettings']['srl_webform']['id'] = $element['#webform'];
     $element['#attached']['library'][] = 'srl_webform/hide_submit';
 
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter()
+ */
+function srl_webform_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+
+  // Make webform id available to javascript.
+  $form['#attached']['drupalSettings']['srl_webform']['id'] = $form['#webform_id'];
 }
