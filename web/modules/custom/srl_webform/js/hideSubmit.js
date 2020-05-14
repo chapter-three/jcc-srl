@@ -1,7 +1,7 @@
 (function($, Drupal) {
   "use strict";
   
-  Drupal.behaviors.hidesubmit = {
+  Drupal.behaviors.hideSubmit = {
     attach: function(context, drupalSettings) {
 
       const $formId = drupalSettings.srl_webform.id;
