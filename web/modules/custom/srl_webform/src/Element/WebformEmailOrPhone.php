@@ -57,10 +57,10 @@ class WebformEmailOrPhone extends FormElement {
     $form_state->setValueForElement($element, $value);
 
     if ($value !== '') {
-      if (
-        !(\Drupal::service('email.validator')->isValid($value) ||
-        \Drupal::service('srl_webform.usphone.validator')->isValid($value)
-      )) {
+      $email_test = \Drupal::service('email.validator')->isValid($value);
+      $phone_test = \Drupal::service('srl_webform.usphone.validator')->isValid($value);
+
+      if ((!$email_test && !$phone_test)) {
         $form_state->setError($element, t('The email or phone  address %mail is not valid.', ['%mail' => $value]));
 
       }

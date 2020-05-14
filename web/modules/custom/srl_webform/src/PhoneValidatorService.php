@@ -20,9 +20,6 @@ class PhoneValidatorService {
    *   TRUE if the address is valid.
    */
   public function isValid($phone) {
-    if ($phone) {
-      //do stuff ;
-    }
-    return false;
+    return preg_match("/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/", $phone) ? true : false;
   }
 }
