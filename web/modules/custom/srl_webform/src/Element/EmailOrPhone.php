@@ -2,7 +2,6 @@
 
 namespace Drupal\srl_webform\Element;
 
-use Drupal\Core\Render\Element;
 use Drupal\Core\Render\Element\FormElement;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -30,17 +29,17 @@ class EmailOrPhone extends FormElement {
         [$class, 'processAjaxForm'],
       ],
       '#element_validate' => [
-        [$class, 'validateWebformExampleElement'],
+        [$class, 'validateEmailOrPhoneElement'],
       ],
-      '#theme' => 'input__webform_example_element',
+      '#theme' => 'input__phoneoremail',
       '#theme_wrappers' => ['form_element'],
     ];
   }
 
   /**
-   * Webform element validation handler for #type 'webform_example_element'.
+   * Webform element validation handler for #type 'emailorphone'.
    */
-  public static function validateWebformExampleElement(&$element, FormStateInterface $form_state, &$complete_form) {
+  public static function validateEmailOrPhoneElement(&$element, FormStateInterface $form_state, &$complete_form) {
     $value = trim($element['#value']);
     $form_state->setValueForElement($element, $value);
 
@@ -50,9 +49,7 @@ class EmailOrPhone extends FormElement {
 
       if ((!$email_test && !$phone_test)) {
         $form_state->setError($element, t('The email or phone  address %mail is not valid.', ['%mail' => $value]));
-
       }
     }
-
   }
 }
