@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Plugin\WebformHandlerInterface;
 
 /**
  * Implements hook_webform_element_default_properties_alter().
@@ -46,4 +47,13 @@ function srl_webform_webform_element_alter(array &$element, FormStateInterface $
     $element['#attached']['library'][] = 'srl_webform/hideSubmit';
 
   }
+}
+
+/**
+ * Implements hook_webform_handler_invoke_alter().
+ */
+function srl_webform_webform_handler_invoke_alter(WebformHandlerInterface $handler, $method_name, array &$args) {
+  $webform = $handler->getWebform();
+  $webform->setSettingOverride('results_disabled', TRUE);
+  $webform->setSettingOverride('results_disabled_ignore', TRUE);
 }
