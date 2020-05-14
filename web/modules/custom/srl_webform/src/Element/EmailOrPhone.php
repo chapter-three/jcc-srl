@@ -41,7 +41,6 @@ class EmailOrPhone extends FormElement {
   }
 
 
-
   /**
    * Webform element validation handler for #type 'emailorphone'.
    */
