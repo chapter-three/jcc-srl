@@ -53,7 +53,19 @@ class WebformEmailOrPhone extends FormElement {
    * Webform element validation handler for #type 'webform_example_element'.
    */
   public static function validateWebformExampleElement(&$element, FormStateInterface $form_state, &$complete_form) {
-    // Here you can add custom validation logic.
+    $value = trim($element['#value']);
+    $form_state->setValueForElement($element, $value);
+
+    if ($value !== '') {
+      if (
+        !(\Drupal::service('email.validator')->isValid($value) ||
+        \Drupal::service('srl_webform.usphone.validator')->isValid($value)
+      )) {
+        $form_state->setError($element, t('The email or phone  address %mail is not valid.', ['%mail' => $value]));
+
+      }
+    }
+
   }
 
   /**
