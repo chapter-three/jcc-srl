@@ -54,6 +54,7 @@ module:
   honeypot: 0
   image: 0
   inline_entity_form: 0
+  inline_form_errors: 0
   jcc_boilerplate: 0
   jcc_datefinder: 0
   jcc_forms: 0

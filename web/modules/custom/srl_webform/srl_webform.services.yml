@@ -1,0 +1,7 @@
+services:
+  logger.channel.srl_webform:
+    parent: logger.channel_base
+    arguments: ['srl_webform']
+  srl_webform.usphone.validator:
+    class: Drupal\srl_webform\PhoneValidatorService
+    arguments: []
