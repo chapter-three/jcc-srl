@@ -1,7 +1,3 @@
 hide_submit:
   js:
     js/hidesubmit.js: {}
-
-validatePhoneOrEmail:
-  js:
-    js/validatePhoneOrEmail.js: {}

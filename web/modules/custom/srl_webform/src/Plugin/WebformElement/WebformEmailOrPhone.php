@@ -40,18 +40,6 @@ class WebformEmailOrPhone extends WebformElementBase {
       ] + parent::defineDefaultProperties();
   }
 
-  /****************************************************************************/
-
-  /**
-   * {@inheritdoc}
-   */
-  public function prepare(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
-    parent::prepare($element, $webform_submission);
-
-    $element['#attached']['library'][] = 'srl_webform/validatePhoneOrEmail';
-
-  }
-
   /**
    * {@inheritdoc}
    */
