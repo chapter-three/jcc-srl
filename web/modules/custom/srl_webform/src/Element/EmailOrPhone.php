@@ -2,6 +2,7 @@
 
 namespace Drupal\srl_webform\Element;
 
+use Drupal\Core\Render\Element;
 use Drupal\Core\Render\Element\FormElement;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -31,10 +32,15 @@ class EmailOrPhone extends FormElement {
       '#element_validate' => [
         [$class, 'validateEmailOrPhoneElement'],
       ],
+      '#pre_render' => [
+        [$class, 'preRenderEmailOrPhoneElement'],
+      ],
       '#theme' => 'input__phoneoremail',
       '#theme_wrappers' => ['form_element'],
     ];
   }
+
+
 
   /**
    * Webform element validation handler for #type 'emailorphone'.
@@ -51,5 +57,15 @@ class EmailOrPhone extends FormElement {
         $form_state->setError($element, t('The email or phone  address %mail is not valid.', ['%mail' => $value]));
       }
     }
+  }
+
+  /**
+   * Prepares render element for theme_element().
+   */
+  public static function preRenderEmailOrPhoneElement(array $element) {
+    $element['#attributes']['type'] = 'text';
+    Element::setAttributes($element, ['id', 'name', 'value', 'size', 'maxlength', 'placeholder']);
+    static::setAttributes($element, ['form-text']);
+    return $element;
   }
 }
