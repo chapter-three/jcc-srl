@@ -2,7 +2,7 @@
 
 /**
  * @file
- * .
+ * srl_webform.module
  */
 
 use Drupal\Core\Form\FormStateInterface;
@@ -54,6 +54,8 @@ function srl_webform_webform_element_alter(array &$element, FormStateInterface $
  */
 function srl_webform_webform_handler_invoke_alter(WebformHandlerInterface $handler, $method_name, array &$args) {
   $webform = $handler->getWebform();
+
+  // By default, do not collect webform submissions.
   $webform->setSettingOverride('results_disabled', TRUE);
   $webform->setSettingOverride('results_disabled_ignore', TRUE);
 }
