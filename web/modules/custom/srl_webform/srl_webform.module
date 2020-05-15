@@ -2,10 +2,11 @@
 
 /**
  * @file
- * .
+ * srl_webform.module
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Plugin\WebformHandlerInterface;
 
 /**
  * Implements hook_webform_element_default_properties_alter().
