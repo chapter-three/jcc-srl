@@ -48,14 +48,3 @@ function srl_webform_webform_element_alter(array &$element, FormStateInterface $
 
   }
 }
-
-/**
- * Implements hook_webform_handler_invoke_alter().
- */
-function srl_webform_webform_handler_invoke_alter(WebformHandlerInterface $handler, $method_name, array &$args) {
-  $webform = $handler->getWebform();
-
-  // By default, do not collect webform submissions.
-  $webform->setSettingOverride('results_disabled', TRUE);
-  $webform->setSettingOverride('results_disabled_ignore', TRUE);
-}

@@ -228,6 +228,9 @@
         "patches": {
             "drupal/core": {
                 "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch"
+            },
+            "drupal/webform": {
+                "By default, do not save submissions.": "patches/disable-results-by-default.patch"
             }
         },
         "installer-types": [
