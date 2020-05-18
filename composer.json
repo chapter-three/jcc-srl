@@ -95,9 +95,8 @@
     "require": {
         "php": ">=7.3",
         "ckeditor-plugin/templates": "^4.13",
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.7.0",
         "cweagans/composer-patches": "^1.6.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/adminimal_theme": "^1.5",
         "drupal/allowed_formats": "^1.1",
@@ -110,7 +109,10 @@
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.9",
-        "drupal/core": "^8.7.0",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
+        "drupal/core-recommended": "^8.8",
+        "drupal/core-vendor-hardening": "^8.8",
         "drupal/default_content": "^1.0@alpha",
         "drupal/diff": "^1.0@RC",
         "drupal/dropzonejs": "^2.0@alpha",
@@ -153,7 +155,7 @@
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
-        "exygy/courtyard": "dev-development#b3551b4",
+        "exygy/courtyard": "dev-development#f156f23",
         "harvesthq/chosen": "^1.8.7",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
@@ -226,6 +228,9 @@
         "patches": {
             "drupal/core": {
                 "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch"
+            },
+            "drupal/webform": {
+                "By default, do not save submissions.": "patches/disable-results-by-default.patch"
             }
         },
         "installer-types": [
@@ -253,9 +258,14 @@
             ]
         },
         "drupal-scaffold": {
-            "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
+            "allowed-packages": [
+                "pantheon-systems/drupal-integrations"
+            ],
+            "locations": {
+                "web-root": "./web"
+            },
+            "file-mapping": {
+                "[project-root]/.editorconfig": false
             }
         }
     }

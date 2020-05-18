@@ -1,0 +1,15 @@
+diff --git a/src/Entity/Webform.php b/src/Entity/Webform.php
+index 2e24a3ec0..a7dc1e707 100644
+--- a/src/Entity/Webform.php
++++ b/src/Entity/Webform.php
+@@ -1133,8 +1133,8 @@ class Webform extends ConfigEntityBundleBase implements WebformInterface {
+       'entity_limit_user_interval' => NULL,
+       'purge' => WebformSubmissionStorageInterface::PURGE_NONE,
+       'purge_days' => NULL,
+-      'results_disabled' => FALSE,
+-      'results_disabled_ignore' => FALSE,
++      'results_disabled' => TRUE,
++      'results_disabled_ignore' => TRUE,
+       'results_customize' => FALSE,
+       'token_view' => FALSE,
+       'token_update' => FALSE,

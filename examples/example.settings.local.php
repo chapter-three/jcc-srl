@@ -151,3 +151,6 @@ $settings['config_exclude_modules'] = [
 /* Store local configuration separately so it isn't tracked by git. */
 $config['config_split.config_split.local']['status'] = TRUE;
 $config['config_split.config_split.stage']['status'] = TRUE;
+
+require_once DRUPAL_ROOT . '/modules/contrib/devel/kint/kint/Kint.class.php';
+Kint::$maxLevels = 3;

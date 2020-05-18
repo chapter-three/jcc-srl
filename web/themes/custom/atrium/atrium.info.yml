@@ -86,7 +86,7 @@ libraries-override:
 
 ckeditor_stylesheets:
   - assets/css/atrium.style.css
-  - ../../../libraries/courtyard/public/css/styles.min.css
+  - ../../../libraries/courtyard/public/css/styles-srl.min.css
 
 component-libraries:
   protons:
