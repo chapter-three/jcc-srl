@@ -5,7 +5,7 @@ dependencies:
   config:
     - media.type.jcc_form
 id: media_type_jcc_form
-action: page_not_found
+action: display_page
 allow_override: 0
 redirect: ''
 redirect_code: 301

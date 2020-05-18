@@ -6,6 +6,16 @@
 #}
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      title: media.label ~ ' (' ~ media.field_number.value ~ ')',
+      lead: content.field_description ? content.field_description : '',
+      body: link("Download PDF"|t,  media.field_url.uri, { 'class':['usa-button']} ),
+      column_variant: 'has-two-columns-half'
+    }
+  } %}
+
   {% if content %}
     {% for item in content %}
       <div class="margin-4">
