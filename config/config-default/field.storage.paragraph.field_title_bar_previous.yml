@@ -1,0 +1,19 @@
+uuid: e33096fc-27a0-4563-a7d2-6c9f6cbfae07
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_title_bar_previous
+field_name: field_title_bar_previous
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
