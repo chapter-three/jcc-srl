@@ -1,3 +1,4 @@
+uuid: 99d1c151-6e6c-4665-b6d0-e56cc4ef7808
 langcode: en
 status: open
 dependencies: {  }
@@ -175,6 +176,41 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: 'jack.madans-t@jud.ca.gov, cyd.harrell-t@jud.ca.gov, christa.dahlstrom-t@jud.ca.gov,eric.nakano-t@jud.ca.gov,kelley.stieler@jud.ca.gov,benny.lichtner-t@jud.ca.gov,vvelikov1988@gmail.com'
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: webdev@jud.ca.gov
+      from_options: {  }
+      from_name: ''
+      subject: _default
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      theme_name: ''
+      parameters: {  }
 variants: {  }
-uuid: 99d1c151-6e6c-4665-b6d0-e56cc4ef7808

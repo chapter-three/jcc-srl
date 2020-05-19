@@ -1,18 +1,18 @@
-uuid: baba5de3-aa75-49df-a1d6-cf6c86a71d23
+uuid: ddee7c5e-a18a-4d5c-9b02-5c7b9c8e4a21
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 1
+uid: 11
 template: false
 archive: false
-id: wayfinder_demo
-title: 'Wayfinder Demo'
-description: 'This form is for demostration purposes only.'
+id: divorce_wayfinder
+title: 'Divorce Wayfinder'
+description: 'A wayfinder for divorce users.&nbsp;'
 category: ''
-elements: "page_1:\n  '#type': webform_wizard_page\n  '#title': 'Page 1'\n  checkboxes:\n    '#type': checkboxes\n    '#title': Checkboxes\n    '#description': 'Description text'\n    '#options':\n      'Option 1': 'Option 1'\n      'Option 2': 'Option 2'\n      'Option 3': 'Option 3'\n    '#required': true\n  horizontal_rule:\n    '#type': webform_horizontal_rule\n  select:\n    '#type': select\n    '#title': Select\n    '#options':\n      'Option 1': 'Option 1'\n      'Option 2': 'Option 2'\n      'Option 3': 'Option 3'\n  horizontal_rule_01:\n    '#type': webform_horizontal_rule\n  checkbox:\n    '#type': checkbox\n    '#title': 'Single Checkbox'\n  horizontal_rule_02:\n    '#type': webform_horizontal_rule\n  radios:\n    '#type': radios\n    '#title': Radios\n    '#options':\n      'Option 1': 'Option 1'\n      'Option 2': 'Option 2'\n      'Option 3': 'Option 3'\npage_2:\n  '#type': webform_wizard_page\n  '#title': 'Page 2'\n  markup:\n    '#type': webform_markup\n    '#markup': |\n      Pellentesque ut neque. Donec elit libero, sodales nec, <a href=\"https://google.com\">link to Google</a> a, suscipit non, turpis. Vivamus elementum semper nisi. Praesent congue erat at massa. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.<br />\n      &nbsp;"
+elements: "divorce_wayfinder_:\n  '#type': webform_wizard_page\n  '#title': Children\n  do_you_have_children_:\n    '#type': webform_buttons\n    '#title': 'Do you have children?'\n    '#options': yes_no\n    '#format_items': comma\n    '#format_items_html': ''\n    '#format_items_text': ''\ndivorce_wayfinder:\n  '#type': webform_wizard_page\n  '#title': 'Length of Marriage'\n  have_you_been_married_for_more_than_5_years_:\n    '#type': webform_buttons\n    '#title': 'Have you been married for more than 5 years?'\n    '#options': yes_no\n    '#format_items': comma\n    '#format_items_html': ''\n    '#format_items_text': ''\nresults:\n  '#type': webform_wizard_page\n  '#title': Results\n  quickdivorce:\n    '#type': webform_message\n    '#message_type': info\n    '#message_message': |\n      Based on your answers, you may be eligible for a Summary Dissolution - or a quick divorce.&nbsp;<br />\n      <br />\n      Go <a href=\"http://selfhelp.courts.ca.gov\">here</a> when you are ready to get started.&nbsp;"
 css: ''
 javascript: ''
 settings:
