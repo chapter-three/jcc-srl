@@ -1,0 +1,23 @@
+uuid: cb875524-c7b9-4d25-ac6e-14685e807b2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.complete.field_complete
+    - paragraphs.paragraphs_type.complete
+  module:
+    - text
+id: paragraph.complete.default
+targetEntityType: paragraph
+bundle: complete
+mode: default
+content:
+  field_complete:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true

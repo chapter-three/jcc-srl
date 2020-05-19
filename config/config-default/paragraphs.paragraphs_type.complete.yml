@@ -1,0 +1,10 @@
+uuid: c11389f3-1c85-49d6-8d40-72a827bb6d04
+langcode: en
+status: true
+dependencies: {  }
+id: complete
+label: Complete
+icon_uuid: null
+icon_default: null
+description: 'Textarea with Complete checkbox design.'
+behavior_plugins: {  }
