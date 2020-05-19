@@ -39,8 +39,19 @@
 
   {% include '@organisms/sections/timeline-dual/timeline-dual.twig' with {
     timeline_dual: {
+      id: paragraph_id,
+      top_title: "top_title",
+      bottom_title: "bottom_title",
       title_bar: {
-        title: paragraph.field_title_bar_title.value
+        title: paragraph.field_title_bar_title.value,
+        previous: {
+          url: "previousurl",
+          title: "previoustitle"
+        },
+        next: {
+          url: "nexturl",
+          title: "nexttile"
+        }
       },
       items: item_content,
     }
