@@ -1,0 +1,10 @@
+uuid: c5c21587-9abd-4801-9bf4-75b361575dbf
+langcode: en
+status: true
+dependencies: {  }
+id: timeline_dual_item
+label: 'Timeline Dual Item'
+icon_uuid: null
+icon_default: null
+description: 'Item in Timeline Dual. '
+behavior_plugins: {  }

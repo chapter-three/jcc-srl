@@ -1,0 +1,28 @@
+uuid: 57cbc695-5897-42a8-9049-fa3b12a0984e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bottom_excerpt
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.timeline_dual_item.field_bottom_excerpt
+field_name: field_bottom_excerpt
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Bottom Excerpt'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

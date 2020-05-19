@@ -1,0 +1,30 @@
+uuid: 8f35ee2b-b5e1-4528-a4e4-2b1c083d3e9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_timeline_dual_icon
+field_name: field_timeline_dual_icon
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: both
+      label: both
+    -
+      value: up
+      label: up
+    -
+      value: down
+      label: down
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

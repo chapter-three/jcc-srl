@@ -1,0 +1,21 @@
+uuid: 5ab2eb26-492d-48de-af83-3a7d384b8f05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timeline_dual_icon
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - options
+id: paragraph.timeline_dual_item.field_timeline_dual_icon
+field_name: field_timeline_dual_icon
+entity_type: paragraph
+bundle: timeline_dual_item
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

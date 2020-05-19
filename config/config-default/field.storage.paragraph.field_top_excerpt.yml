@@ -1,0 +1,19 @@
+uuid: f07a9751-d13a-42c9-9c52-e48002f649b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_top_excerpt
+field_name: field_top_excerpt
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
