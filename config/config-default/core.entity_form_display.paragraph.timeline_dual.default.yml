@@ -4,13 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.timeline_dual.field_bottom_title
+    - field.field.paragraph.timeline_dual.field_timeline_dual_items
     - field.field.paragraph.timeline_dual.field_title_bar_next
     - field.field.paragraph.timeline_dual.field_title_bar_previous
     - field.field.paragraph.timeline_dual.field_title_bar_title
     - field.field.paragraph.timeline_dual.field_top_title
     - paragraphs.paragraphs_type.timeline_dual
   module:
+    - cc
     - link
+    - paragraphs
 id: paragraph.timeline_dual.default
 targetEntityType: paragraph
 bundle: timeline_dual
@@ -23,6 +26,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_timeline_dual_items:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: 'Timeline Dual Item'
+      title_plural: 'Timeline Dual Items'
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: timeline_dual_item
+    third_party_settings:
+      cc:
+        status: 0
     region: content
   field_title_bar_next:
     weight: 2

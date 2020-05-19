@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.timeline_dual.field_bottom_title
+    - field.field.paragraph.timeline_dual.field_timeline_dual_items
     - field.field.paragraph.timeline_dual.field_title_bar_next
     - field.field.paragraph.timeline_dual.field_title_bar_previous
     - field.field.paragraph.timeline_dual.field_title_bar_title
     - field.field.paragraph.timeline_dual.field_top_title
     - paragraphs.paragraphs_type.timeline_dual
   module:
+    - entity_reference_revisions
     - link
 id: paragraph.timeline_dual.default
 targetEntityType: paragraph
@@ -23,6 +25,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_timeline_dual_items:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_title_bar_next:
     weight: 5
