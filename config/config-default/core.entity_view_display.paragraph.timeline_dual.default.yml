@@ -45,7 +45,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    type: link_separate
     region: content
   field_title_bar_previous:
     weight: 0
@@ -57,7 +57,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    type: link_separate
     region: content
   field_title_bar_title:
     weight: 1

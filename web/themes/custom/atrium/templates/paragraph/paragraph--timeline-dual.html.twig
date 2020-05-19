@@ -40,17 +40,17 @@
   {% include '@organisms/sections/timeline-dual/timeline-dual.twig' with {
     timeline_dual: {
       id: paragraph_id,
-      top_title: "top_title",
-      bottom_title: "bottom_title",
+      top_title: paragraph.field_top_title.value,
+      bottom_title: paragraph.field_bottom_title.value,
       title_bar: {
         title: paragraph.field_title_bar_title.value,
         previous: {
-          url: "previousurl",
-          title: "previoustitle"
+          url: content.field_title_bar_previous.0['#url_title'],
+          title: paragraph.field_title_bar_previous.title
         },
         next: {
-          url: "nexturl",
-          title: "nexttile"
+          url: content.field_title_bar_next.0['#url_title'],
+          title: paragraph.field_title_bar_next.title
         }
       },
       items: item_content,
