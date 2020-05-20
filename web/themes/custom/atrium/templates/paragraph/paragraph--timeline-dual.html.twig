@@ -29,14 +29,14 @@
         icon: "both",
         top: {
           excerpt: timeline_dual_item.field_top_excerpt|view,
-          number: timeline_dual_item.field_top_number|view,
-          deadline: timeline_dual_item.field_top_deadline|view,
+          number: timeline_dual_item.field_top_number.value,
+          deadline: timeline_dual_item.field_top_deadline.value,
           read_more: read_more
         },
         bottom: {
           excerpt: timeline_dual_item.field_bottom_excerpt|view,
-          number: timeline_dual_item.field_bottom_number|view,
-          deadline: timeline_dual_item.field_bottom_deadline|view,
+          number: timeline_dual_item.field_bottom_number.value,
+          deadline: timeline_dual_item.field_bottom_deadline.value,
           read_more: read_more
         }
       }]) %}
