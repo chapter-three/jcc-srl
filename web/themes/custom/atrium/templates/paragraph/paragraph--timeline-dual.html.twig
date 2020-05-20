@@ -24,22 +24,22 @@
       modal: timeline_dual_item.field_top_read_more_modal
     } %}
 
-      {# Store each item in an array for the Pattern component. #}
-      {% set item_content = item_content|merge([{
-        icon: "both",
-        top: {
-          excerpt: timeline_dual_item.field_top_excerpt.value,
-          number: timeline_dual_item.field_top_number.value,
-          deadline: timeline_dual_item.field_top_deadline.value,
-          read_more: top_read_more
-        },
-        bottom: {
-          excerpt: timeline_dual_item.field_bottom_excerpt|view,
-          number: timeline_dual_item.field_bottom_number.value,
-          deadline: timeline_dual_item.field_bottom_deadline.value,
-          read_more: bottom_read_more
-        }
-      }]) %}
+    {# Store each item in an array for the Pattern component. #}
+    {% set item_content = item_content|merge([{
+      icon: "both",
+      top: {
+        excerpt: timeline_dual_item.field_top_excerpt.value,
+        number: timeline_dual_item.field_top_number.value,
+        deadline: timeline_dual_item.field_top_deadline.value,
+        read_more: top_read_more
+      },
+      bottom: {
+        excerpt: timeline_dual_item.field_bottom_excerpt|view,
+        number: timeline_dual_item.field_bottom_number.value,
+        deadline: timeline_dual_item.field_bottom_deadline.value,
+        read_more: bottom_read_more
+      }
+    }]) %}
 
   {% endfor %}
 
