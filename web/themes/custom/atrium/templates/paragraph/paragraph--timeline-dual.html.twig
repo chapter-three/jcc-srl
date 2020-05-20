@@ -31,7 +31,7 @@
         }
       },
       bottom: {
-        excerpt: timeline_dual_item.field_bottom_excerpt|view,
+        excerpt: timeline_dual_item.field_bottom_excerpt.value ? timeline_dual_item.field_bottom_excerpt|view : null,
         number: timeline_dual_item.field_bottom_number.value,
         deadline: timeline_dual_item.field_bottom_deadline.value,
         read_more: {
