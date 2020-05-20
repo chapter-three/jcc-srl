@@ -16,19 +16,19 @@
 
     {# Prepare Top Read More link/toggletoggle #}
     {% set top_read_more = {
-      type: timeline_dual_item.field_top_read_more_type|view,
+      type: timeline_dual_item.field_top_read_more_type.value,
       link: {
-        label: timeline_dual_item.field_top_read_more_link.title,
-        url: timeline_dual_item.field_top_read_more_link.0['#url_title']
+        label: timeline_dual_item.field_top_read_more.title,
+        url: timeline_dual_item.field_top_read_more.0.url.toString(),
       },
-      modal: timeline_dual_item.field_top_read_more_modal
+      modal: timeline_dual_item.field_top_read_more_modal|view
     } %}
 
     {# Store each item in an array for the Pattern component. #}
     {% set item_content = item_content|merge([{
-      icon: "both",
+      icon: timeline_dual_item.field_timeline_dual_icon.value,
       top: {
-        excerpt: timeline_dual_item.field_top_excerpt.value,
+        excerpt: timeline_dual_item.field_top_excerpt.value ? timeline_dual_item.field_top_excerpt|view : null,
         number: timeline_dual_item.field_top_number.value,
         deadline: timeline_dual_item.field_top_deadline.value,
         read_more: top_read_more
@@ -37,9 +37,33 @@
         excerpt: timeline_dual_item.field_bottom_excerpt|view,
         number: timeline_dual_item.field_bottom_number.value,
         deadline: timeline_dual_item.field_bottom_deadline.value,
-        read_more: bottom_read_more
+        read_more: bottom_read_more,
       }
     }]) %}
+
+    {# Debugger
+
+    <hr>
+    {{ kint(loop.index) }}
+    {{ kint(timeline_dual_item.field_timeline_dual_icon.value) }}
+    <h6>top</h6>
+    {{ kint(timeline_dual_item.field_top_read_more_type.value) }}
+    {{ kint(timeline_dual_item.field_top_read_more.title) }}
+    {{ kint(timeline_dual_item.field_top_read_more.0.url.toString()) }}
+    {{ kint(timeline_dual_item.field_top_read_more_modal|view ) }}
+    {{ kint(timeline_dual_item.field_top_excerpt|view) }}
+    {{ kint(timeline_dual_item.field_top_number.value) }}
+    {{ kint(timeline_dual_item.field_top_deadline.value) }}
+    <h6>bottom</h6>
+    {{ kint(timeline_dual_item.field_bottom_read_more_type.value) }}
+    {{ kint(timeline_dual_item.field_bottom_read_more.title) }}
+    {{ kint(timeline_dual_item.field_bottom_read_more.0.url.toString()) }}
+    {{ kint(timeline_dual_item.field_bottom_read_more_modal|view ) }}
+    {{ kint(timeline_dual_item.field_bottom_excerpt|view) }}
+    {{ kint(timeline_dual_item.field_bottom_number.value) }}
+    {{ kint(timeline_dual_item.field_bottom_deadline.value) }}
+
+    #}
 
   {% endfor %}
 
