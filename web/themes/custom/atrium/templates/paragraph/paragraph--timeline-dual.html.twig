@@ -11,33 +11,33 @@
   {% set items = paragraph.field_timeline_dual_items %}
 
   {% for key, item in items.value %}
-    {% set read_more = [] %}
-      {% set timeline_dual_item = items.get(key).entity %}
 
-      {# Prepare "Read more" toggle #}
-      {% set read_more = {
-        type: 'modal',
-        modal: {
-          id: 'read-more-' ~ item.id(),
-          button_label: timeline_item.field_details_link_text.value|default('Read more'|t),
-          content: timeline_item.field_details|view,
-        }
-      } %}
+    {% set timeline_dual_item = items.get(key).entity %}
+
+    {# Prepare Top Read More link/toggletoggle #}
+    {% set top_read_more = {
+      type: timeline_dual_item.field_top_read_more_type|view,
+      link: {
+        label: timeline_dual_item.field_top_read_more_link.title,
+        url: timeline_dual_item.field_top_read_more_link.0['#url_title']
+      },
+      modal: timeline_dual_item.field_top_read_more_modal
+    } %}
 
       {# Store each item in an array for the Pattern component. #}
       {% set item_content = item_content|merge([{
         icon: "both",
         top: {
-          excerpt: timeline_dual_item.field_top_excerpt|view,
+          excerpt: timeline_dual_item.field_top_excerpt.value,
           number: timeline_dual_item.field_top_number.value,
           deadline: timeline_dual_item.field_top_deadline.value,
-          read_more: read_more
+          read_more: top_read_more
         },
         bottom: {
           excerpt: timeline_dual_item.field_bottom_excerpt|view,
           number: timeline_dual_item.field_bottom_number.value,
           deadline: timeline_dual_item.field_bottom_deadline.value,
-          read_more: read_more
+          read_more: bottom_read_more
         }
       }]) %}
 
