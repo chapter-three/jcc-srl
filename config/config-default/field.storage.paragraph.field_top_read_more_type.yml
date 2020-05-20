@@ -1,0 +1,27 @@
+uuid: 1eb32319-9ae7-409a-8418-c6c58b7eaf7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_top_read_more_type
+field_name: field_top_read_more_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: modal
+      label: modal
+    -
+      value: link
+      label: link
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

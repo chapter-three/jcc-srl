@@ -8,12 +8,14 @@ dependencies:
     - field.field.paragraph.timeline_dual_item.field_bottom_number
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
+    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
     - field.field.paragraph.timeline_dual_item.field_top_number
     - field.field.paragraph.timeline_dual_item.field_top_read_more
     - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
+    - field.field.paragraph.timeline_dual_item.field_top_read_more_type
     - paragraphs.paragraphs_type.timeline_dual_item
   module:
     - allowed_formats
@@ -26,7 +28,7 @@ bundle: timeline_dual_item
 mode: default
 content:
   field_bottom_deadline:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -34,7 +36,7 @@ content:
     type: string_textfield
     region: content
   field_bottom_excerpt:
-    weight: 10
+    weight: 12
     settings:
       rows: 2
       placeholder: ''
@@ -50,7 +52,7 @@ content:
     type: text_textarea
     region: content
   field_bottom_number:
-    weight: 7
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -58,7 +60,7 @@ content:
     type: string_textfield
     region: content
   field_bottom_read_more:
-    weight: 8
+    weight: 10
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -66,7 +68,7 @@ content:
     type: link_default
     region: content
   field_bottom_read_more_modal:
-    weight: 9
+    weight: 11
     settings:
       rows: 5
       placeholder: ''
@@ -80,6 +82,12 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
+  field_bottom_read_more_type:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_timeline_dual_icon:
     weight: 0
@@ -96,7 +104,7 @@ content:
     type: string_textfield
     region: content
   field_top_excerpt:
-    weight: 5
+    weight: 6
     settings:
       rows: 2
       placeholder: ''
@@ -120,7 +128,7 @@ content:
     type: string_textfield
     region: content
   field_top_read_more:
-    weight: 3
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -128,7 +136,7 @@ content:
     type: link_default
     region: content
   field_top_read_more_modal:
-    weight: 4
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -142,6 +150,12 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
+  field_top_read_more_type:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true

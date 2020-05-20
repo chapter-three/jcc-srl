@@ -1,0 +1,21 @@
+uuid: 93ad0e70-57be-49cd-9d0e-2dd90262eaba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_top_read_more_type
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - options
+id: paragraph.timeline_dual_item.field_top_read_more_type
+field_name: field_top_read_more_type
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Top Read More Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

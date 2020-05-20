@@ -1,0 +1,21 @@
+uuid: 4690d73a-0470-4398-9de6-dbf17e96a801
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bottom_read_more_type
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - options
+id: paragraph.timeline_dual_item.field_bottom_read_more_type
+field_name: field_bottom_read_more_type
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Bottom Read More Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

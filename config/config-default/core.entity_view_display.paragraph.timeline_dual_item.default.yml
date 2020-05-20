@@ -8,12 +8,14 @@ dependencies:
     - field.field.paragraph.timeline_dual_item.field_bottom_number
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
+    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
     - field.field.paragraph.timeline_dual_item.field_top_number
     - field.field.paragraph.timeline_dual_item.field_top_read_more
     - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
+    - field.field.paragraph.timeline_dual_item.field_top_read_more_type
     - paragraphs.paragraphs_type.timeline_dual_item
   module:
     - link
@@ -66,6 +68,13 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_bottom_read_more_type:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_timeline_dual_icon:
     weight: 11
     label: above
@@ -114,6 +123,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_top_read_more_type:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden:
   search_api_excerpt: true
