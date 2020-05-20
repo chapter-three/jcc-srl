@@ -48,21 +48,23 @@
     {# Debugger
 
     <hr>
-    {{ kint(loop.index) }}
+    <h2>all - {{ loop.index }}</h2>
     {{ kint(timeline_dual_item.field_timeline_dual_icon.value) }}
-    <h6>top</h6>
+    <h6>top - {{ loop.index }}</h6>
     {{ kint(timeline_dual_item.field_top_read_more_type.value) }}
     {{ kint(timeline_dual_item.field_top_read_more.title) }}
     {{ kint(timeline_dual_item.field_top_read_more.0.url.toString()) }}
     {{ kint(timeline_dual_item.field_top_read_more_modal|view ) }}
+    {{ kint(timeline_dual_item.field_top_excerpt.value) }}
     {{ kint(timeline_dual_item.field_top_excerpt|view) }}
     {{ kint(timeline_dual_item.field_top_number.value) }}
     {{ kint(timeline_dual_item.field_top_deadline.value) }}
-    <h6>bottom</h6>
+    <h6>bottom- {{ loop.index }}</h6>
     {{ kint(timeline_dual_item.field_bottom_read_more_type.value) }}
     {{ kint(timeline_dual_item.field_bottom_read_more.title) }}
     {{ kint(timeline_dual_item.field_bottom_read_more.0.url.toString()) }}
     {{ kint(timeline_dual_item.field_bottom_read_more_modal|view ) }}
+    {{ kint(timeline_dual_item.field_bottom_excerpt.value) }}
     {{ kint(timeline_dual_item.field_bottom_excerpt|view) }}
     {{ kint(timeline_dual_item.field_bottom_number.value) }}
     {{ kint(timeline_dual_item.field_bottom_deadline.value) }}
