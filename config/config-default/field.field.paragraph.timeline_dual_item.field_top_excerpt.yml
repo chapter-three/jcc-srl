@@ -10,8 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: basic_html
-    simple_html: '0'
+    simple_html: simple_html
+    basic_html: '0'
     full_html: '0'
     plain_text: '0'
 id: paragraph.timeline_dual_item.field_top_excerpt

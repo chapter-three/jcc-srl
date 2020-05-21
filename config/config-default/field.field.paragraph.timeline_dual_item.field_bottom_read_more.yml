@@ -11,8 +11,8 @@ id: paragraph.timeline_dual_item.field_bottom_read_more
 field_name: field_bottom_read_more
 entity_type: paragraph
 bundle: timeline_dual_item
-label: 'Bottom Read More'
-description: ''
+label: 'Bottom Read More Link.'
+description: 'This field will not display if ''modal'' is selected.'
 required: false
 translatable: false
 default_value: {  }

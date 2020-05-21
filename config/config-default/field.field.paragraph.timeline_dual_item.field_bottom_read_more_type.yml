@@ -12,7 +12,7 @@ field_name: field_bottom_read_more_type
 entity_type: paragraph
 bundle: timeline_dual_item
 label: 'Bottom Read More Type'
-description: ''
+description: 'Only one of the two fields below will display.'
 required: false
 translatable: false
 default_value: {  }
