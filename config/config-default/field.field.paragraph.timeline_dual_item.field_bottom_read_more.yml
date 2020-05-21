@@ -1,0 +1,23 @@
+uuid: c1d78aed-dc3d-4df0-81d5-248ed84b5433
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bottom_read_more
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - link
+id: paragraph.timeline_dual_item.field_bottom_read_more
+field_name: field_bottom_read_more
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Bottom Read More Link.'
+description: 'This field will not display if ''modal'' is selected.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

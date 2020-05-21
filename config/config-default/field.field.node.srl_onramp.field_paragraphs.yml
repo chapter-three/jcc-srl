@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.step_container
     - paragraphs.paragraphs_type.switchboard
     - paragraphs.paragraphs_type.timeline
+    - paragraphs.paragraphs_type.timeline_dual
   module:
     - entity_reference_revisions
 id: node.srl_onramp.field_paragraphs
@@ -40,50 +41,57 @@ settings:
       step_container: step_container
       switchboard: switchboard
       timeline: timeline
+      timeline_dual: timeline_dual
     target_bundles_drag_drop:
       accordion_container:
         enabled: true
-        weight: -31
+        weight: -35
       card_list:
         enabled: true
-        weight: -30
+        weight: -34
       complete:
         enabled: true
-        weight: -29
+        weight: -33
       datefinder:
         enabled: true
-        weight: -28
+        weight: -32
       flex:
         enabled: true
-        weight: -27
+        weight: -31
       postcard:
         enabled: true
-        weight: -26
+        weight: -30
       step_container:
         enabled: true
-        weight: -25
+        weight: -29
       switchboard:
         enabled: true
-        weight: -24
+        weight: -28
       timeline:
         enabled: true
-        weight: -23
+        weight: -27
+      timeline_dual:
+        enabled: true
+        weight: -26
       accordion:
-        weight: -22
+        weight: -25
         enabled: false
       card:
-        weight: -21
+        weight: -24
         enabled: false
       code_section:
-        weight: -20
+        weight: -23
         enabled: false
       step:
-        weight: -19
+        weight: -22
         enabled: false
       tile:
-        weight: -18
+        weight: -21
         enabled: false
       timeline_item:
-        weight: -17
+        weight: -20
+        enabled: false
+      timeline_dual_item:
+        weight: -19
         enabled: false
 field_type: entity_reference_revisions

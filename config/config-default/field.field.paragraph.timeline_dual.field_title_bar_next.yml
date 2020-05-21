@@ -1,0 +1,23 @@
+uuid: 3313b831-6a7f-4709-a063-bee786e3e040
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_bar_next
+    - paragraphs.paragraphs_type.timeline_dual
+  module:
+    - link
+id: paragraph.timeline_dual.field_title_bar_next
+field_name: field_title_bar_next
+entity_type: paragraph
+bundle: timeline_dual
+label: 'Title Bar Next'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

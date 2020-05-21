@@ -1,0 +1,19 @@
+uuid: 96e735eb-4f05-4860-a1e9-1c9cec7a5e1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_bar_title
+    - paragraphs.paragraphs_type.timeline_dual
+id: paragraph.timeline_dual.field_title_bar_title
+field_name: field_title_bar_title
+entity_type: paragraph
+bundle: timeline_dual
+label: 'Title Bar Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

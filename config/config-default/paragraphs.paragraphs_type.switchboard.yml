@@ -6,5 +6,5 @@ id: switchboard
 label: Switchboard
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Navigation component typically used at the bottom of pages.'
 behavior_plugins: {  }

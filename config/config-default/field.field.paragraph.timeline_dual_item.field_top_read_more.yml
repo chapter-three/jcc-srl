@@ -1,0 +1,23 @@
+uuid: 386310f1-6b9c-411a-85ad-0971fa0f2979
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_top_read_more
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - link
+id: paragraph.timeline_dual_item.field_top_read_more
+field_name: field_top_read_more
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Top Read More Link'
+description: 'This field will not display if ''modal'' is selected.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

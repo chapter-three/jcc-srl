@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * Template for "Timeline" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% set item_content = [] %}
+  {% set items = paragraph.field_timeline_dual_items %}
+
+  {% for key, item in items.value %}
+
+    {% set timeline_dual_item = items.get(key).entity %}
+
+    {# Store each item in an array for the Pattern component. #}
+    {% set item_content = item_content|merge([{
+      icon: timeline_dual_item.field_timeline_dual_icon.value,
+      top: {
+        excerpt: timeline_dual_item.field_top_excerpt.value ? timeline_dual_item.field_top_excerpt|view : null,
+        number: timeline_dual_item.field_top_number.value,
+        deadline: timeline_dual_item.field_top_deadline.value,
+        read_more: {
+          type: timeline_dual_item.field_top_read_more_type.value,
+          link: {
+            label: timeline_dual_item.field_top_read_more.title,
+            url: timeline_dual_item.field_top_read_more.0.url.toString(),
+          },
+          modal: timeline_dual_item.field_top_read_more_modal|view
+        }
+      },
+      bottom: {
+        excerpt: timeline_dual_item.field_bottom_excerpt.value ? timeline_dual_item.field_bottom_excerpt|view : null,
+        number: timeline_dual_item.field_bottom_number.value,
+        deadline: timeline_dual_item.field_bottom_deadline.value,
+        read_more: {
+          type: timeline_dual_item.field_bottom_read_more_type.value,
+          link: {
+            label: timeline_dual_item.field_bottom_read_more.title,
+            url: timeline_dual_item.field_bottom_read_more.0.url.toString(),
+          },
+          modal: timeline_dual_item.field_bottom_read_more_modal|view
+        }
+      }
+    }]) %}
+
+    {# Debugger
+
+    <hr>
+    <h2>all - {{ loop.index }}</h2>
+    {{ kint(timeline_dual_item.field_timeline_dual_icon.value) }}
+    <h6>top - {{ loop.index }}</h6>
+    {{ kint(timeline_dual_item.field_top_read_more_type.value) }}
+    {{ kint(timeline_dual_item.field_top_read_more.title) }}
+    {{ kint(timeline_dual_item.field_top_read_more.0.url.toString()) }}
+    {{ kint(timeline_dual_item.field_top_read_more_modal|view ) }}
+    {{ kint(timeline_dual_item.field_top_excerpt.value) }}
+    {{ kint(timeline_dual_item.field_top_excerpt|view) }}
+    {{ kint(timeline_dual_item.field_top_number.value) }}
+    {{ kint(timeline_dual_item.field_top_deadline.value) }}
+    <h6>bottom- {{ loop.index }}</h6>
+    {{ kint(timeline_dual_item.field_bottom_read_more_type.value) }}
+    {{ kint(timeline_dual_item.field_bottom_read_more.title) }}
+    {{ kint(timeline_dual_item.field_bottom_read_more.0.url.toString()) }}
+    {{ kint(timeline_dual_item.field_bottom_read_more_modal|view ) }}
+    {{ kint(timeline_dual_item.field_bottom_excerpt.value) }}
+    {{ kint(timeline_dual_item.field_bottom_excerpt|view) }}
+    {{ kint(timeline_dual_item.field_bottom_number.value) }}
+    {{ kint(timeline_dual_item.field_bottom_deadline.value) }}
+
+    #}
+
+  {% endfor %}
+
+  {% include '@organisms/sections/timeline-dual/timeline-dual.twig' with {
+    timeline_dual: {
+      id: paragraph_id,
+      top_title: paragraph.field_top_title.value,
+      bottom_title: paragraph.field_bottom_title.value,
+      title_bar: {
+        title: paragraph.field_title_bar_title.value,
+        previous: {
+          url: content.field_title_bar_previous.0['#url_title'],
+          title: paragraph.field_title_bar_previous.title
+        },
+        next: {
+          url: content.field_title_bar_next.0['#url_title'],
+          title: paragraph.field_title_bar_next.title
+        }
+      },
+      items: item_content,
+    }
+  } only %}
+
+  {{ content|without(
+    'field_bottom_title',
+    'field_timeline_dual_items',
+    'field_title_bar_next',
+    'field_title_bar_previous',
+    'field_title_bar_title',
+    'field_top_title'
+  ) }}
+{% endblock %}
