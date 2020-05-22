@@ -28,7 +28,7 @@ mode: default
 content:
   field_bottom_deadline:
     weight: 8
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -36,14 +36,14 @@ content:
     region: content
   field_bottom_excerpt:
     weight: 9
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_bottom_number:
     weight: 7
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -51,7 +51,7 @@ content:
     region: content
   field_bottom_read_more:
     weight: 10
-    label: inline
+    label: hidden
     settings:
       trim_length: null
       url_only: false
@@ -63,28 +63,28 @@ content:
     region: content
   field_bottom_read_more_modal:
     weight: 12
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_bottom_read_more_type:
     weight: 11
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_timeline_dual_icon:
     weight: 0
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_top_deadline:
     weight: 2
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -92,14 +92,14 @@ content:
     region: content
   field_top_excerpt:
     weight: 3
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_top_number:
     weight: 1
-    label: inline
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -107,7 +107,7 @@ content:
     region: content
   field_top_read_more:
     weight: 5
-    label: inline
+    label: hidden
     settings:
       trim_length: null
       url_only: false
@@ -119,14 +119,14 @@ content:
     region: content
   field_top_read_more_modal:
     weight: 6
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_top_read_more_type:
     weight: 4
-    label: inline
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
