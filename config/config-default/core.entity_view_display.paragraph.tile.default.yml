@@ -17,14 +17,14 @@ mode: default
 content:
   field_body:
     weight: 3
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_icon_link:
     weight: 2
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
