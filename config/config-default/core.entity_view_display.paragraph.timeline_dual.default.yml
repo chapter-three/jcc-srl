@@ -20,7 +20,7 @@ mode: default
 content:
   field_bottom_title:
     weight: 4
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -28,7 +28,7 @@ content:
     region: content
   field_timeline_dual_items:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -36,8 +36,8 @@ content:
     third_party_settings: {  }
     region: content
   field_title_bar_next:
-    weight: 5
-    label: above
+    weight: 3
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -48,8 +48,8 @@ content:
     type: link_separate
     region: content
   field_title_bar_previous:
-    weight: 0
-    label: above
+    weight: 2
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -61,15 +61,15 @@ content:
     region: content
   field_title_bar_title:
     weight: 1
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_top_title:
-    weight: 3
-    label: above
+    weight: 0
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }

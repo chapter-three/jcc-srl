@@ -1,0 +1,33 @@
+uuid: 2f10de46-0c68-4598-83b7-f537de2c47a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout_variant
+field_name: field_layout_variant
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: next-right-column
+      label: next-right-column
+    -
+      value: next-phase
+      label: next-phase
+    -
+      value: next
+      label: next
+    -
+      value: default
+      label: default
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

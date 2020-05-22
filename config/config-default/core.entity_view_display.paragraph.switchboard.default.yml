@@ -3,18 +3,35 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.switchboard.field_body
+    - field.field.paragraph.switchboard.field_layout_variant
     - field.field.paragraph.switchboard.field_switchboard_subtitle
     - field.field.paragraph.switchboard.field_switchboard_title
     - field.field.paragraph.switchboard.field_tiles
     - paragraphs.paragraphs_type.switchboard
   module:
     - entity_reference_revisions
+    - options
     - text
 id: paragraph.switchboard.default
 targetEntityType: paragraph
 bundle: switchboard
 mode: default
 content:
+  field_body:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_layout_variant:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_switchboard_subtitle:
     weight: 1
     label: hidden
