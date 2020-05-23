@@ -1,0 +1,23 @@
+uuid: 7f912c64-e219-472b-ac7f-2ffbba88398d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_vietnamese_url
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_vietnamese_url
+field_name: field_vietnamese_url
+entity_type: media
+bundle: jcc_form
+label: 'Vietnamese URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

@@ -1,0 +1,23 @@
+uuid: 21676965-0595-4907-880c-e22a212d4638
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_chinese_traditional_url
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_chinese_traditional_url
+field_name: field_chinese_traditional_url
+entity_type: media
+bundle: jcc_form
+label: 'Chinese Traditional URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

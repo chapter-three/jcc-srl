@@ -1,0 +1,19 @@
+uuid: d75b8f2f-46e9-4d81-bd24-5e5d36be9ef0
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_russian_url
+field_name: field_russian_url
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

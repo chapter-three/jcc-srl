@@ -1,0 +1,23 @@
+uuid: 3b69e7d1-230a-4f88-83f7-68882edd8e62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_cambodian_url
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_cambodian_url
+field_name: field_cambodian_url
+entity_type: media
+bundle: jcc_form
+label: 'Cambodian URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

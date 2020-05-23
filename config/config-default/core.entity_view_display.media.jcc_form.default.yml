@@ -3,14 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.jcc_form.field_arabic_url
+    - field.field.media.jcc_form.field_cambodian_url
     - field.field.media.jcc_form.field_case_type
+    - field.field.media.jcc_form.field_chinese_traditional_url
+    - field.field.media.jcc_form.field_chinese_url
     - field.field.media.jcc_form.field_code
     - field.field.media.jcc_form.field_date_effective
     - field.field.media.jcc_form.field_description
+    - field.field.media.jcc_form.field_farsi_url
+    - field.field.media.jcc_form.field_hmong_url
+    - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_media_file_1
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
+    - field.field.media.jcc_form.field_punjabi_url
+    - field.field.media.jcc_form.field_russian_url
+    - field.field.media.jcc_form.field_spanish_url
+    - field.field.media.jcc_form.field_tagalog_url
     - field.field.media.jcc_form.field_url
+    - field.field.media.jcc_form.field_vietnamese_url
     - media.type.jcc_form
   module:
     - link
@@ -19,6 +31,90 @@ targetEntityType: media
 bundle: jcc_form
 mode: default
 content:
+  field_arabic_url:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_cambodian_url:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_chinese_traditional_url:
+    weight: 6
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_chinese_url:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_farsi_url:
+    weight: 7
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_hmong_url:
+    weight: 8
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_korean_url:
+    weight: 9
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_number:
     weight: 1
     label: hidden
@@ -26,6 +122,54 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_punjabi_url:
+    weight: 10
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_russian_url:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_spanish_url:
+    weight: 12
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_tagalog_url:
+    weight: 13
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_url:
     type: link
@@ -39,6 +183,18 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
+  field_vietnamese_url:
+    weight: 14
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   name:
     type: string
     weight: 0
@@ -56,5 +212,6 @@ hidden:
   field_media_file_1: true
   field_pdf_private: true
   langcode: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true
