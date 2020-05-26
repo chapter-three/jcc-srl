@@ -8,13 +8,17 @@
      Tiles are possible, and would return the wrong data. #}
     {% if primary.get(key).entity.field_page.value %}
       {% set tile_target = primary.get(key).entity.field_page.entity %}
+      {% set tile = primary.get(key).entity %}
 
       {# Store each tile in an array for the Pattern component. #}
       {% set primary_items = primary_items|merge([{
         brow: tile_target.label(),
-        title: primary.get(key).entity.field_statement|view,
-        url: path('entity.node.canonical', { 'node': tile_target.id() })
+        title: tile.field_statement|view,
+        url: path('entity.node.canonical', { 'node': tile_target.id() }),
+        icon_link: tile.field_icon_link.value,
+        body: tile.field_body|view
       }]) %}
+
     {% endif %}
   {% endfor %}
 {% endif %}
@@ -22,10 +26,12 @@
 {% include '@organisms/sections/switchboard/switchboard.twig' with {
   switchboard: {
     background_variant: 'has-background-color--dark',
+    layout_variant: paragraph.field_layout_variant.value,
     headergroup: {
       brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
       title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
     },
+    body: paragraph.field_body|view,
     items: {
       primary: primary_items,
     },

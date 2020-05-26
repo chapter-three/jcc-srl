@@ -1,0 +1,23 @@
+uuid: ddfcf6db-4347-4a0a-8b95-aa0fc0fc384d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon_link
+    - paragraphs.paragraphs_type.tile
+id: paragraph.tile.field_icon_link
+field_name: field_icon_link
+entity_type: paragraph
+bundle: tile
+label: 'Icon Link'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

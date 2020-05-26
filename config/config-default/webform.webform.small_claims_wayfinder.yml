@@ -1,0 +1,180 @@
+uuid: 59e399cc-b555-463c-ba4b-dd821c51cb67
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 13
+template: false
+archive: false
+id: small_claims_wayfinder
+title: 'Small Claims Wayfinder'
+description: 'An eligibility checker for small claims court'
+category: ''
+elements: "who_is_suing:\n  '#type': webform_wizard_page\n  '#title': 'Who is suing?'\n  plaintiff_is:\n    '#type': radios\n    '#title': 'Who is filing the lawsuit?'\n    '#options':\n      Self: 'Me, on behalf of myself'\n      Sole_Proprietor: 'Me, on behalf of my sole proprietorship business.'\n      Corp_LLC: 'Me, on behalf of my corporation or LLC'\n    '#options__properties': ''\n    '#required': true\namount_of_lawsuit:\n  '#type': webform_wizard_page\n  '#title': 'Amount of lawsuit?'\n  amount:\n    '#type': radios\n    '#title': 'For how much are you suing?'\n    '#options':\n      2500: '$0 - $2,500.00'\n      5000: '$2,500.01 - $5,000.00'\n      10000: '$5,000.01 - $10,000.00'\n      10001: 'Over $10,000'\n    '#required': true\n    '#options__properties': ''\nprevious_cases:\n  '#type': webform_wizard_page\n  '#title': 'Previous small claims cases'\n  lawsuits_over:\n    '#type': radios\n    '#title': 'In this calendar year, how many cases over $2,500 have you filed in the small claims court?'\n    '#options':\n      - '0'\n      - '1'\n      - '2'\n    '#options__properties': ''\n    '#required': true\nnext_steps:\n  '#type': webform_wizard_page\n  '#title': 'Next steps'\n  small_claims_ok:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"plaintiff_is\"]':\n          '!value': Corp_LLC\n        ':input[name=\"amount\"]':\n          '!value': '10001'\n        ':input[name=\"lawsuits_over\"]':\n          '!value': '2'\n    '#text': |\n      <p>You may use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Before you continue, there are a few things you may wish to consider before going to small claims.</p>\n      \n      <p>First, as a plaintiff (the person bringing the lawsuit), you do not have a right to appeal a decision made in small claims court, although the other side, the defendant, does.</p>\n      \n      <p>Second, the ability to gather evidence from the other side and third parties (a process called \"discovery\") is very limited in small claims court. So, if you need to gather evidence from other sources, you may wish to gather it before filing your case or consider using a superior court case which allows for the extensive discovery of evidence.</p>\n      \n      <p>Finally, the small claims court generally can only deal with disputes with money damages, and can, for the most part, only order money to be paid as a judgment. If you require the court to order the other side to do something (other than pay you money), small claims might not be a good option.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This page is triggered by an individual or an individual suing as a sole proprietorship business who has not filed 2 cases over $2,500 in a calendar year, and is suing for $10,000 or less.</p>\n      \n    '#format': basic_html\n  small_claims_ok_2:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"plaintiff_is\"]':\n          value: Corp_LLC\n        ':input[name=\"amount\"]':\n          value: '5000'\n        ':input[name=\"lawsuits_over\"]':\n          '!value': '2'\n    '#text': |\n      <p>You may use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Before you continue, there are a few things you may wish to consider before going to small claims.</p>\n      \n      <p>First, as a plaintiff (the person bringing the lawsuit), you do not have a right to appeal a decision made in small claims court, although the other side, the defendant, does.</p>\n      \n      <p>Second, the ability to gather evidence from the other side and third parties (a process called \"discovery\") is very limited in small claims court. So, if you need to gather evidence from other sources, you may wish to gather it before filing your case or consider using a superior court case which allows for the extensive discovery of evidence.</p>\n      \n      <p>Finally, the small claims court generally can only deal with disputes with money damages, and can, for the most part, only order money to be paid as a judgment. If you require the court to order the other side to do something (other than pay you money), small claims might not be a good option.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This page is triggered by a corporation that is suing between $2,500.01 and $5,000, that has not filed 2 cases over $2,500.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  small_claims_ok_3:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"amount\"]':\n          value: '2500'\n        ':input[name=\"plaintiff_is\"]':\n          value: Corp_LLC\n    '#text': |\n      <p>You can use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Before you continue, there are a few things you may wish to consider before going to small claims.</p>\n      \n      <p>First, as a plaintiff (the person bringing the lawsuit), you do not have a right to appeal a decision made in small claims court, although the other side, the defendant, does.</p>\n      \n      <p>Second, the ability to gather evidence from the other side and third parties (a process called \"discovery\") is very limited in small claims court. So, if you need to gather evidence from other sources, you may wish to gather it before filing your case or consider using a superior court case which allows for the extensive discovery of evidence.</p>\n      \n      <p>Finally, the small claims court generally can only deal with disputes with money damages, and can, for the most part, only order money to be paid as a judgment. If you require the court to order the other side to do something (other than pay you money), small claims might not be a good option.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This is triggered by a corporation/llc suing for only $2,500.</p>\n      \n    '#format': basic_html\n  small_claims_ok_4:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"lawsuits_over\"]':\n          value: '2'\n        ':input[name=\"amount\"]':\n          value: '2500'\n        ':input[name=\"plaintiff_is\"]':\n          '!value': Corp_LLC\n    '#text': |\n      <p>You may use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Before you continue, there are a few things you may wish to consider before going to small claims.</p>\n      \n      <p>First, as a plaintiff (the person bringing the lawsuit), you do not have a right to appeal a decision made in small claims court, although the other side, the defendant, does.</p>\n      \n      <p>Second, the ability to gather evidence from the other side and third parties (a process called \"discovery\") is very limited in small claims court. So, if you need to gather evidence from other sources, you may wish to gather it before filing your case or consider using a superior court case which allows for the extensive discovery of evidence.</p>\n      \n      <p>Finally, the small claims court generally can only deal with disputes with money damages, and can, for the most part, only order money to be paid as a judgment. If you require the court to order the other side to do something (other than pay you money), small claims might not be a good option.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This is triggered by an individual or sole proprietorship that already filed 2 cases over $2,500, but is suing for $2,500 or less.</p>\n      \n    '#format': basic_html\n  small_claims_not_ok:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"amount\"]':\n          value: '10001'\n        ':input[name=\"plaintiff_is\"]':\n          '!value': Corp_LLC\n        ':input[name=\"lawsuits_over\"]':\n          '!value': '2'\n    '#text': |\n      <p>Unfortunately, you are not able to use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Individuals cannot file lawsuits over $10,000 in the small claims court. If your amount is not too much more than $10,000, you may consider limiting your claim to $10,000 to file in the small claims court.</p>\n      \n      <p><br />\n      This is triggered by an individual or sole proprietorship suing for more than $10,000 who has not already filed 2 cases over $2,500.</p>\n      \n    '#format': basic_html\n  small_claims_not_ok_2:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"plaintiff_is\"]':\n          value: Corp_LLC\n        ':input[name=\"amount\"]':\n          value:\n            greater: '5001'\n        ':input[name=\"lawsuits_over\"]':\n          '!value': '2'\n    '#text': |\n      <p>You may not use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Corporations, LLC's, and other legal entities are limited to bringing up to two lawsuits a year up to $5,000. You might consider limiting your claim to $5,000, and filing in the small claims court, or else bring your case in the superior court, where you may seek any amount of damages.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This is triggered by a corporation or LLC who has not filed 2 cases over $2,500, seeking to claim more than $5,000</p>\n      \n    '#format': basic_html\n  small_claims_not_ok_3:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"plaintiff_is\"]':\n          '!value': Corp_LLC\n        ':input[name=\"lawsuits_over\"]':\n          value: '2'\n        ':input[name=\"amount\"]':\n          value:\n            greater: '2501'\n    '#text': |\n      <p>Unfortunately, you cannot use the small claims court. Each individual, corporation, or LLC can file no more than 2 cases in excess of $2,500 in any given calendar year&nbsp;. In the next calendar year you may file a case up to $10,000, or you may file now and limit your damages to $2,500.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This is triggered by an individual or sole proprietorship seeking more than&nbsp;$2,500 who has already filed two cases over $2,500.</p>\n      \n    '#format': basic_html\n  small_claims_not_ok_4:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"plaintiff_is\"]':\n          value: Corp_LLC\n        ':input[name=\"lawsuits_over\"]':\n          value: '2'\n        ':input[name=\"amount\"]':\n          value:\n            greater: '2501'\n    '#text': |\n      <p>Unfortunately, you may not use the small claims court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Corporations are limited to filing only two lawsuits in excess of $2,500 in a calendar year. You may wait until the next calendar year and file a case for up to $5,000, or you may limit your damages to only $2,500 now. You may also seek unlimited damages through the superior court.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This is triggered by a corporation/LLC seeking more than $2,500, having filed 2 cases over $2,500 already.</p>\n      \n    '#format': basic_html"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_admin_theme: false
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

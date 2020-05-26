@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Template for "Complete" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% include '@molecules/blocks/complete/complete.twig' with {
+    complete: {
+      icon: 'check',
+      body: content.field_complete,
+    }
+  } only %}
+
+{% endblock %}

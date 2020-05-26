@@ -1,0 +1,79 @@
+uuid: bb806f30-33fe-48ca-b0e7-fac5bd04d070
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.timeline_dual.field_bottom_title
+    - field.field.paragraph.timeline_dual.field_timeline_dual_items
+    - field.field.paragraph.timeline_dual.field_title_bar_next
+    - field.field.paragraph.timeline_dual.field_title_bar_previous
+    - field.field.paragraph.timeline_dual.field_title_bar_title
+    - field.field.paragraph.timeline_dual.field_top_title
+    - paragraphs.paragraphs_type.timeline_dual
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.timeline_dual.default
+targetEntityType: paragraph
+bundle: timeline_dual
+mode: default
+content:
+  field_bottom_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_timeline_dual_items:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title_bar_next:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_title_bar_previous:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_title_bar_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_top_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

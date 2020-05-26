@@ -1,0 +1,10 @@
+uuid: 85d329a3-53b4-4955-97d6-fb71317794f3
+langcode: en
+status: true
+dependencies: {  }
+id: timeline_dual
+label: 'Timeline Dual'
+icon_uuid: null
+icon_default: null
+description: 'A component to track multi-step processes between two parties over time. '
+behavior_plugins: {  }

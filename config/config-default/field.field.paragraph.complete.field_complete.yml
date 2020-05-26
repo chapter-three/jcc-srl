@@ -1,0 +1,28 @@
+uuid: 771373e5-6bcc-4218-aea0-2f2adc299b83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_complete
+    - paragraphs.paragraphs_type.complete
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.complete.field_complete
+field_name: field_complete
+entity_type: paragraph
+bundle: complete
+label: Complete
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,135 @@
+uuid: a1686e1d-c2cb-4343-ab50-67981bffc38a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.timeline_dual_item.field_bottom_deadline
+    - field.field.paragraph.timeline_dual_item.field_bottom_excerpt
+    - field.field.paragraph.timeline_dual_item.field_bottom_number
+    - field.field.paragraph.timeline_dual_item.field_bottom_read_more
+    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
+    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
+    - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
+    - field.field.paragraph.timeline_dual_item.field_top_deadline
+    - field.field.paragraph.timeline_dual_item.field_top_excerpt
+    - field.field.paragraph.timeline_dual_item.field_top_number
+    - field.field.paragraph.timeline_dual_item.field_top_read_more
+    - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
+    - field.field.paragraph.timeline_dual_item.field_top_read_more_type
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - link
+    - options
+    - text
+id: paragraph.timeline_dual_item.default
+targetEntityType: paragraph
+bundle: timeline_dual_item
+mode: default
+content:
+  field_bottom_deadline:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_bottom_excerpt:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_bottom_number:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_bottom_read_more:
+    weight: 10
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_bottom_read_more_modal:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_bottom_read_more_type:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_timeline_dual_icon:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_top_deadline:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_top_excerpt:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_top_number:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_top_read_more:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_top_read_more_modal:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_top_read_more_type:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

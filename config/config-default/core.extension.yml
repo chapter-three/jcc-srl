@@ -54,6 +54,7 @@ module:
   honeypot: 0
   image: 0
   inline_entity_form: 0
+  inline_form_errors: 0
   jcc_boilerplate: 0
   jcc_datefinder: 0
   jcc_forms: 0
@@ -102,6 +103,7 @@ module:
   shortcut: 0
   simple_block: 0
   srl_updates: 0
+  srl_webform: 0
   system: 0
   taxonomy: 0
   text: 0

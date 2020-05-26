@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * srl_webform.module
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Plugin\WebformHandlerInterface;
+
+/**
+ * Implements hook_webform_element_default_properties_alter().
+ */
+function srl_webform_webform_element_default_properties_alter(array &$properties, array &$definition) {
+  if($definition['id'] == 'webform_wizard_page') {
+    $properties['hide_submit'] = false;
+  }
+}
+
+/**
+ * Implements hook_webform_element_configuration_form_alter().
+ */
+function srl_webform_webform_element_configuration_form_alter(&$form, FormStateInterface $form_state) {
+
+  /** @var Drupal\webform_ui\Form\WebformUiElementEditForm $form_object */
+  $form_object = $form_state->getFormObject();
+  $element_plugin = $form_object->getWebformElementPlugin();
+  $element_type = $element_plugin->getTypeName();
+
+  if($element_type == 'webform_wizard_page') {
+    $form['wizard_page']['hide_submit'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Hide submit button'),
+      '#description' => t("If checked, user will advance to the next page immediately after selecting an option. <b>Only use this option when the page has one element with two options.</b>"),
+    ];
+  }
+}
+
+/**
+ * Implements hook_webform_element_alter().
+ */
+function srl_webform_webform_element_alter(array &$element, FormStateInterface $form_state, array $context) {
+
+  if (isset($element['#hide_submit']) && $element['#hide_submit'] == true ) {
+
+    $element['#attached']['drupalSettings']['srl_webform']['id'] = $element['#webform'];
+    $element['#attached']['library'][] = 'srl_webform/hideSubmit';
+
+  }
+}
