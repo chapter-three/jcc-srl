@@ -9,25 +9,33 @@
 
   {# Prepare 'body' for hero.twig #}
   {% set body %}
-    <div class="jcc-form--link">
+    <div class="jcc-form--link border-primary-vivid">
       {% include '@atoms/icons/icon.twig' with {
         icon: {
-          name: "file_download"
+          name: "file_download",
+          width: 'width-2',
+          height: 'height-2',
+          color: 'text-primary-vivid'
         }
       } %}
       {{ link("Download PDF"|t,  media.field_url.uri) }}
     </div>
-    <div class="jcc-form--languages">
-      <label>{{ "Templates in other languages:"|t }}</label>
-      {% for language_link in language_links %}
-        <span>{{ language_link }}</span>
-      {% endfor %}
-    </div>
+
+    {% if language_links %}
+      <div class="jcc-form--languages">
+        <label>{{ "Templates in other languages:"|t }}</label>
+        {% for language_link in language_links %}
+          <span>{{ language_link }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
   {% endset %}
 
   {# Prepare 'column_content_right' for hero.twig. #}
   {% set column_content_right %}
-    <img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}">
+    <div class="jcc-form--thumbnail">
+      <img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}">
+    </div>
   {% endset %}
 
   {# Include hero component. #}
@@ -73,6 +81,7 @@
         switchboard: {
           background_variant: 'has-background-color--dark',
           layout_variant: 'next',
+          body: ' ',
           headergroup: {
             title: 'How to instructions for '|t ~ case_type.entity.label
           },

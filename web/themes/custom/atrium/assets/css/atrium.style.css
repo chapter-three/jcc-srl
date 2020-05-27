@@ -1249,6 +1249,39 @@ through all possible variants
   min-width: 12rem;
 }
 
+.jcc-form--link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  border: 1px solid;
+  display: inline-block;
+}
+.jcc-form--link > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.jcc-form--link a {
+  text-decoration: none;
+}
+
+.jcc-form--languages {
+  padding-top: 2rem;
+}
+.jcc-form--languages label {
+  padding-right: 1rem;
+}
+.jcc-form--languages span {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: inline-block;
+}
+
+.jcc-form--thumbnail img {
+  display: block;
+  margin: 0 auto;
+}
+
 .nav-tabs__wrapper {
   background: #e6e6e6;
   padding-top: 80px;
