@@ -17,7 +17,10 @@
       {{ link("Download PDF"|t,  media.field_url.uri) }}
     </div>
     <div class="jcc-form--languages">
-      {{ langauge_links }}
+      <label>{{ "Templates in other languages:"|t }}</label>
+      {% for language_link in language_links %}
+        <span>{{ language_link }}</span>
+      {% endfor %}
     </div>
   {% endset %}
 
