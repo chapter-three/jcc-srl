@@ -28,7 +28,6 @@ function jcc_forms_preprocess_media__jcc_form__full(&$variables, $hook) {
   $data = file_get_contents(drupal_get_path('module', 'jcc_forms'). '/jcc_forms-language-labels.json');
 
   $lang_props_sets = json_decode($data);
-  $links = [];
 
   /** @var Drupal\media\Entity\Media $media */
   $media = $variables['elements']['#media'];
@@ -46,11 +45,10 @@ function jcc_forms_preprocess_media__jcc_form__full(&$variables, $hook) {
       $link = Link::fromTextAndUrl($label_in_language, $field_url);
       $link_suffix = t(' (@label_default)', array('@label_default' => $label_default));
 
-      $variables['language_links'][$labels->label_default] =  [
+      $variables['language_links'][$labels->label_default] = [
         $link->toRenderable(),
         '#suffix' => $link_suffix
       ];
     }
   }
-
 }
