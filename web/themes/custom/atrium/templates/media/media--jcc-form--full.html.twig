@@ -44,14 +44,14 @@
     }
   } %}
 
-  {# Create an empty tiles array. #}
-  {% set tiles = [] %}
-
   {# Get Case Type taxonomy term entities. #}
   {% set case_types = media.field_case_type %}
 
   {# Each Case Type taxonomy term gets its own switchboard. #}
   {% for key, case_type in case_types %}
+
+    {# Create an empty tiles array. #}
+    {% set tiles = [] %}
 
     {# Each link gets its own tile. #}
     {% for key, link in case_type.entity.field_case_type_info_link.value %}
@@ -66,22 +66,24 @@
 
     {% endfor %}
 
+    {% if case_type.entity.field_case_type_info_link.value %}
 
-    {# Include switchboard component. #}
-    {% include '@organisms/sections/switchboard/switchboard.twig' with {
-      switchboard: {
-        background_variant: 'has-background-color--dark',
-        layout_variant: 'next',
-        headergroup: {
-          title: 'How to instructions for '|t ~ case_type.entity.label
-        },
-        items: {
-          primary: tiles,
-        },
-      }
-    } only %}
+      {# Include switchboard component. #}
+      {% include '@organisms/sections/switchboard/switchboard.twig' with {
+        switchboard: {
+          background_variant: 'has-background-color--dark',
+          layout_variant: 'next',
+          headergroup: {
+            title: 'How to instructions for '|t ~ case_type.entity.label
+          },
+          items: {
+            primary: tiles,
+          },
+        }
+      } only %}
+
+    {% endif %}
 
   {% endfor %}
-
 
 </article>
