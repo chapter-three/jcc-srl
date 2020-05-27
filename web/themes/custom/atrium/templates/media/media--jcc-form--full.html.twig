@@ -7,6 +7,7 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
 
+  {# Prepare 'body' for hero.twig #}
   {% set body %}
     <div class="jcc-form--link">
       {% include '@atoms/icons/icon.twig' with {
@@ -24,10 +25,12 @@
     </div>
   {% endset %}
 
+  {# Prepare 'column_content_right' for hero.twig. #}
   {% set column_content_right %}
     <img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}">
   {% endset %}
 
+  {# Include hero component. #}
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       breadcrumbs : {
@@ -41,14 +44,19 @@
     }
   } %}
 
+  {# Create an empty tiles array. #}
   {% set tiles = [] %}
+
+  {# Get Case Type taxonomy term entities. #}
   {% set case_types = media.field_case_type %}
 
-  {# Each Case Type taxonomy term gets its own Switchboard. #}
+  {# Each Case Type taxonomy term gets its own switchboard. #}
   {% for key, case_type in case_types %}
 
+    {# Each link gets its own tile. #}
     {% for key, link in case_type.entity.field_case_type_info_link.value %}
 
+      {# Prepare 'tiles' for switchboard.twig #}
       {% set tiles = tiles|merge([{
         brow: "Go to"|t,
         title: link.title,
@@ -58,6 +66,8 @@
 
     {% endfor %}
 
+
+    {# Include switchboard component. #}
     {% include '@organisms/sections/switchboard/switchboard.twig' with {
       switchboard: {
         background_variant: 'has-background-color--dark',
