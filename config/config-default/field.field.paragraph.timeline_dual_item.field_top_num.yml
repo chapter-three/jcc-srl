@@ -1,19 +1,21 @@
-uuid: e977fa91-1525-4762-87ec-469b829cac5f
+uuid: e68e0791-c514-4df5-950c-0c44f311b612
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_top_number
+    - field.storage.paragraph.field_top_num
     - paragraphs.paragraphs_type.timeline_dual_item
-id: paragraph.timeline_dual_item.field_top_number
-field_name: field_top_number
+  module:
+    - options
+id: paragraph.timeline_dual_item.field_top_num
+field_name: field_top_num
 entity_type: paragraph
 bundle: timeline_dual_item
-label: 'Top Number'
-description: 'Enter an integer or "wait"'
+label: 'Top Number/Wait'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: list_string

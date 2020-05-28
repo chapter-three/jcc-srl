@@ -5,14 +5,14 @@ dependencies:
   config:
     - field.field.paragraph.timeline_dual_item.field_bottom_deadline
     - field.field.paragraph.timeline_dual_item.field_bottom_excerpt
-    - field.field.paragraph.timeline_dual_item.field_bottom_number
+    - field.field.paragraph.timeline_dual_item.field_bottom_num
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
-    - field.field.paragraph.timeline_dual_item.field_top_number
+    - field.field.paragraph.timeline_dual_item.field_top_num
     - field.field.paragraph.timeline_dual_item.field_top_read_more
     - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
     - field.field.paragraph.timeline_dual_item.field_top_read_more_type
@@ -27,52 +27,55 @@ third_party_settings:
   field_group:
     group_top:
       children:
-        - field_top_number
+        - field_top_num
         - field_top_deadline
         - field_top_excerpt
         - group_top_read_more
+      parent_name: group_details
+      weight: 0
+      format_type: tab
+      region: content
+      format_settings:
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+        direction: vertical
+        formatter: closed
+        open: false
+      label: Top
+    group_bottom:
+      children:
+        - field_bottom_num
+        - field_bottom_deadline
+        - field_bottom_excerpt
+        - group_bottom_read_more
       parent_name: group_details
       weight: 2
       format_type: tab
       region: content
       format_settings:
-        description: ''
-        required_fields: true
-        id: ''
-        classes: ''
-        direction: vertical
-        formatter: closed
-      label: Top
-    group_bottom:
-      children:
-        - field_bottom_number
-        - field_bottom_deadline
-        - field_bottom_excerpt
-        - group_bottom_read_more
-      parent_name: group_details
-      weight: 3
-      format_type: tab
-      region: content
-      format_settings:
         id: ''
         classes: ''
         description: ''
         required_fields: true
         direction: vertical
         formatter: closed
+        open: false
       label: Bottom
     group_details:
       children:
         - group_top
+        - group_icon
         - group_bottom
       parent_name: ''
-      weight: 1
+      weight: 0
       format_type: tabs
       region: content
       format_settings:
+        direction: vertical
         id: ''
         classes: ''
-        direction: vertical
       label: Details
     group_top_read_more:
       children:
@@ -80,7 +83,7 @@ third_party_settings:
         - field_top_read_more
         - field_top_read_more_modal
       parent_name: group_top
-      weight: 6
+      weight: 20
       format_type: details
       region: content
       format_settings:
@@ -96,7 +99,7 @@ third_party_settings:
         - field_bottom_read_more
         - field_bottom_read_more_modal
       parent_name: group_bottom
-      weight: 13
+      weight: 20
       format_type: details
       region: content
       format_settings:
@@ -106,13 +109,28 @@ third_party_settings:
         open: false
         required_fields: true
       label: 'Bottom Read More'
+    group_icon:
+      children:
+        - field_timeline_dual_icon
+      parent_name: group_details
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+        open: false
+      label: Icon
 id: paragraph.timeline_dual_item.default
 targetEntityType: paragraph
 bundle: timeline_dual_item
 mode: default
 content:
   field_bottom_deadline:
-    weight: 11
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -120,7 +138,7 @@ content:
     type: string_textfield
     region: content
   field_bottom_excerpt:
-    weight: 12
+    weight: 19
     settings:
       rows: 1
       placeholder: ''
@@ -135,13 +153,11 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
-  field_bottom_number:
-    weight: 10
-    settings:
-      size: 60
-      placeholder: ''
+  field_bottom_num:
+    weight: 17
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: options_select
     region: content
   field_bottom_read_more:
     weight: 13
@@ -180,7 +196,7 @@ content:
     type: options_select
     region: content
   field_top_deadline:
-    weight: 4
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -188,7 +204,7 @@ content:
     type: string_textfield
     region: content
   field_top_excerpt:
-    weight: 5
+    weight: 19
     settings:
       rows: 1
       placeholder: ''
@@ -203,13 +219,11 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
-  field_top_number:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
+  field_top_num:
+    weight: 16
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: options_select
     region: content
   field_top_read_more:
     weight: 7

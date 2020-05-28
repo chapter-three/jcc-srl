@@ -12,8 +12,8 @@ dependencies:
     - paragraphs.paragraphs_type.timeline_dual
   module:
     - cc
+    - inline_entity_form
     - link
-    - paragraphs
 id: paragraph.timeline_dual.default
 targetEntityType: paragraph
 bundle: timeline_dual
@@ -28,15 +28,16 @@ content:
     type: string_textfield
     region: content
   field_timeline_dual_items:
-    type: entity_reference_paragraphs
+    type: inline_entity_form_simple
     weight: 5
     settings:
-      title: 'Timeline Dual Item'
-      title_plural: 'Timeline Dual Items'
-      edit_mode: preview
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: timeline_dual_item
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
     third_party_settings:
       cc:
         status: 0
