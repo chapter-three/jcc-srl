@@ -4,14 +4,26 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.jcc_form.field_arabic_url
+    - field.field.media.jcc_form.field_cambodian_url
     - field.field.media.jcc_form.field_case_type
+    - field.field.media.jcc_form.field_chinese_traditional_url
+    - field.field.media.jcc_form.field_chinese_url
     - field.field.media.jcc_form.field_code
     - field.field.media.jcc_form.field_date_effective
     - field.field.media.jcc_form.field_description
+    - field.field.media.jcc_form.field_farsi_url
+    - field.field.media.jcc_form.field_hmong_url
+    - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_media_file_1
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
+    - field.field.media.jcc_form.field_punjabi_url
+    - field.field.media.jcc_form.field_russian_url
+    - field.field.media.jcc_form.field_spanish_url
+    - field.field.media.jcc_form.field_tagalog_url
     - field.field.media.jcc_form.field_url
+    - field.field.media.jcc_form.field_vietnamese_url
     - image.style.medium
     - media.type.jcc_form
   module:
@@ -32,14 +44,27 @@ content:
     region: content
 hidden:
   created: true
+  field_arabic_url: true
+  field_cambodian_url: true
   field_case_type: true
+  field_chinese_traditional_url: true
+  field_chinese_url: true
   field_code: true
   field_date_effective: true
   field_description: true
+  field_farsi_url: true
+  field_hmong_url: true
+  field_korean_url: true
   field_media_file_1: true
   field_number: true
   field_pdf_private: true
+  field_punjabi_url: true
+  field_russian_url: true
+  field_spanish_url: true
+  field_tagalog_url: true
   field_url: true
+  field_vietnamese_url: true
   langcode: true
   name: true
+  search_api_excerpt: true
   uid: true

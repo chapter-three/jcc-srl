@@ -1,0 +1,23 @@
+uuid: d19347fd-355d-49ba-a664-5264a27f455f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_spanish_url
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_spanish_url
+field_name: field_spanish_url
+entity_type: media
+bundle: jcc_form
+label: 'Spanish URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

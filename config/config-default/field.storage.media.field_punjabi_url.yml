@@ -1,0 +1,19 @@
+uuid: 25f4a4e7-3c23-4b14-a1ef-ceddcc1d11ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_punjabi_url
+field_name: field_punjabi_url
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

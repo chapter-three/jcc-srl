@@ -1,0 +1,23 @@
+uuid: c8e342b8-edc9-4fa2-a1f5-33cd24773dae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_farsi_url
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_farsi_url
+field_name: field_farsi_url
+entity_type: media
+bundle: jcc_form
+label: 'Farsi URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

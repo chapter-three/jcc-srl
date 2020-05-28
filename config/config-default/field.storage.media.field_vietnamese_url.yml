@@ -1,0 +1,19 @@
+uuid: e150c664-8038-4713-86d0-0a2db0ef5f17
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_vietnamese_url
+field_name: field_vietnamese_url
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

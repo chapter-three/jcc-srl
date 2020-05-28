@@ -1,0 +1,99 @@
+uuid: d2d17403-6533-4b7c-af90-fb1f0d9c5413
+langcode: en
+status: true
+dependencies: {  }
+id: jcc_form
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Migrate jcc forms from csv'
+source:
+  plugin: csv
+  path: jcc_forms.csv
+  ids:
+    - form_number
+  fields:
+    -
+      name: form_name
+      label: 'Form Name'
+    -
+      name: form_number
+      label: 'Form Number'
+    -
+      name: form_case_types
+      label: 'Case Types'
+    -
+      name: form_description
+      label: 'Form Description'
+    -
+      name: form_url
+      label: 'Form URL'
+    -
+      name: form_arabic_url
+      label: 'Arabic URL'
+    -
+      name: form_cambodian_url
+      label: 'Cambodian URL'
+    -
+      name: form_chinese_url
+      label: 'Chinese URL'
+    -
+      name: form_chinese_traditional_url
+      label: 'Chinese Traditional URL'
+    -
+      name: form_farsi_url
+      label: 'Farsi URL'
+    -
+      name: form_hmong_url
+      label: 'Hmong URL'
+    -
+      name: form_korean_url
+      label: 'Korean URL'
+    -
+      name: form_punjabi_url
+      label: 'Punjabi URL'
+    -
+      name: form_russian_url
+      label: 'Russian URL'
+    -
+      name: form_spanish_url
+      label: 'Spanish URL'
+    -
+      name: form_tagalog_url
+      label: 'Tagalog URL'
+    -
+      name: form_vietnamese_url
+      label: 'Vietnamese URL'
+process:
+  name: form_name
+  field_number: form_number
+  field_description: form_description
+  field_url: form_url
+  field_case_type:
+    -
+      plugin: explode
+      delimiter: ', '
+      source: form_case_types
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle: case_type
+      value_key: name
+  field_arabic_url/uri: form_arabic_url
+  field_cambodian_url/uri: form_cambodian_url
+  field_chinese_url/uri: form_chinese_url
+  field_chinese_traditional_url/uri: form_chinese_traditional_url
+  field_farsi_url/uri: form_farsi_url
+  field_hmong_url/uri: form_hmong_url
+  field_korean_url/uri: form_korean_url
+  field_punjabi_url/uri: form_punjabi_url
+  field_russian_url/uri: form_russian_url
+  field_spanish_url/uri: form_spanish_url
+  field_tagalog_url/uri: form_tagalog_url
+  field_vietnamese_url/uri: form_vietnamese_url
+destination:
+  plugin: 'entity:media'
+  default_bundle: jcc_form
+migration_dependencies: null

@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -16,4 +18,37 @@ function jcc_forms_form_media_jcc_form_edit_form_alter(&$form, FormStateInterfac
 
   // Redirect to JCC Forms view on save.
   $form_state->setRedirect('view.media_jcc_forms.page_1');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function jcc_forms_preprocess_media__jcc_form__full(&$variables, $hook) {
+
+  $data = file_get_contents(drupal_get_path('module', 'jcc_forms'). '/jcc_forms-language-labels.json');
+
+  $lang_props_sets = json_decode($data);
+
+  /** @var Drupal\media\Entity\Media $media */
+  $media = $variables['elements']['#media'];
+
+  foreach ($lang_props_sets as $field_name => $labels ) {
+
+    if(isset($media->$field_name) && $media->$field_name->uri != null) {
+      $label_in_language = $labels->label_in_language;
+      $label_default = $labels->label_default;
+
+      /** @var Drupal\core\Url $field_url */
+      $field_url = Url::fromUri($media->$field_name->uri);
+
+      /** @var Drupal\Core\Link $link */
+      $link = Link::fromTextAndUrl($label_in_language, $field_url);
+      $link_suffix = t(' (@label_default)', array('@label_default' => $label_default));
+
+      $variables['language_links'][$labels->label_default] = [
+        $link->toRenderable(),
+        '#suffix' => $link_suffix
+      ];
+    }
+  }
 }

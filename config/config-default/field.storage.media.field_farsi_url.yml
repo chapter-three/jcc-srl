@@ -1,0 +1,19 @@
+uuid: cb99c828-9ca8-4c5f-9fb1-4c7b77c3b991
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_farsi_url
+field_name: field_farsi_url
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

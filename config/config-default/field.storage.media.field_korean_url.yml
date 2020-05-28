@@ -1,0 +1,19 @@
+uuid: 227d19c9-d2f1-4a7a-a719-f45e9b341797
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_korean_url
+field_name: field_korean_url
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

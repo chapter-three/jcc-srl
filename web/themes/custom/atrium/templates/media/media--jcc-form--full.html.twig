@@ -7,25 +7,92 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
 
+  {# Prepare 'body' for hero.twig #}
+  {% set body %}
+    <div class="jcc-form--link border-primary-vivid">
+      {% include '@atoms/icons/icon.twig' with {
+        icon: {
+          name: "file_download",
+          width: 'width-2',
+          height: 'height-2',
+          color: 'text-primary-vivid'
+        }
+      } %}
+      {{ link("Download PDF"|t,  media.field_url.uri) }}
+    </div>
+
+    {% if language_links %}
+      <div class="jcc-form--languages">
+        <label>{{ "Templates in other languages:"|t }}</label>
+        {% for language_link in language_links %}
+          <span>{{ language_link }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endset %}
+
+  {# Prepare 'column_content_right' for hero.twig. #}
+  {% set column_content_right %}
+    <div class="jcc-form--thumbnail">
+      <img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}">
+    </div>
+  {% endset %}
+
+  {# Include hero component. #}
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
+      breadcrumbs : {
+        1: {label: media.field_number.value},
+      },
       title: media.label ~ ' (' ~ media.field_number.value ~ ')',
       lead: content.field_description ? content.field_description : '',
-      body: link("Download PDF"|t,  media.field_url.uri, { 'class':['usa-button']} ),
-      column_variant: 'has-two-columns-half'
+      body: body,
+      column_variant: 'has-two-columns-half',
+      column_content_right: column_content_right
     }
   } %}
 
-  {% if content %}
-    {% for item in content %}
-      <div class="margin-4">
-        {#
-          @todo This is a temporary, quick and dirty solution
-          while we have no designs.
-        #}
-        <div><label class="jcc-form-group__title">{{ item['#title'] }}</label></div>
-        <div>{{ item }}</div>
-      </div>
+  {# Get Case Type taxonomy term entities. #}
+  {% set case_types = media.field_case_type %}
+
+  {# Each Case Type taxonomy term gets its own switchboard. #}
+  {% for key, case_type in case_types %}
+
+    {# Create an empty tiles array. #}
+    {% set tiles = [] %}
+
+    {# Each link gets its own tile. #}
+    {% for key, link in case_type.entity.field_case_type_info_link.value %}
+
+      {# Prepare 'tiles' for switchboard.twig #}
+      {% set tiles = tiles|merge([{
+        brow: "Go to"|t,
+        title: link.title,
+        url: link.uri,
+        icon_link: true,
+      }]) %}
+
     {% endfor %}
-  {% endif %}
+
+    {% if case_type.entity.field_case_type_info_link.value %}
+
+      {# Include switchboard component. #}
+      {% include '@organisms/sections/switchboard/switchboard.twig' with {
+        switchboard: {
+          background_variant: 'has-background-color--dark',
+          layout_variant: 'next',
+          body: ' ',
+          headergroup: {
+            title: 'How to instructions for '|t ~ case_type.entity.label
+          },
+          items: {
+            primary: tiles,
+          },
+        }
+      } only %}
+
+    {% endif %}
+
+  {% endfor %}
+
 </article>
