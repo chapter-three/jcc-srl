@@ -27,6 +27,25 @@ CKEDITOR.addTemplates('default', {
       },
     },
     {
+      title: 'Detail - Italic (Read more block)',
+      image: 'read-more.png',
+      description: 'Contains a trigger and expanded text. Use for exceptions and details not relevant to all readers.',
+      template: function () {
+        const randomId = +new Date();
+        return`<p>Text Before</p>
+          <div class="jcc-read-more jcc-read-more--block">
+            <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
+              What is a judgment
+              <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
+            </button>
+            <div class="jcc-read-more__content" id="read-more-${randomId}">
+              If your bank account is levied, you must act quickly! You have only ten days from the date of the levy to file a claim of exempltion (plus five days if the notice was sent be mail) with the sheriff performing the levy.
+            </div>
+          </div>
+          <p>Text After</p>`
+      },
+    },
+    {
       title: 'Example (Explainer) - One Column',
       image: 'explainer-one.png',
       description: 'Use to highlight real-world examples of concepts.',
