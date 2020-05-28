@@ -103,12 +103,12 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'Alert',
+      title: 'Alert - Warning',
       image: 'alert.png',
       description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
       template: function () {
         return `<p>Text Before</p>
-          <div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon" id="alert-bar">
+          <div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon active" id="alert-bar">
             <div class="usa-alert__body jcc-alert__body  ">
               <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
               <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
@@ -119,6 +119,37 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
+      title: 'Alert - Error',
+      image: 'alert.png',
+      description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
+      template: function () {
+        return `<p>Text Before</p>
+          <div class="jcc-alert usa-alert usa-alert--error usa-alert--no-icon active" id="alert-bar">
+            <div class="usa-alert__body jcc-alert__body  ">
+              <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
+              <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
+              <div class="jcc-alert__close" id="alert-close"></div>
+            </div>
+          </div>
+          <p>Text After</p>`
+      }
+    },
+    {
+      title: 'Alert - Success',
+      image: 'alert.png',
+      description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
+      template: function () {
+        return `<p>Text Before</p>
+          <div class="jcc-alert usa-alert usa-alert--success usa-alert--no-icon active" id="alert-bar">
+            <div class="usa-alert__body jcc-alert__body  ">
+              <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
+              <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
+              <div class="jcc-alert__close" id="alert-close"></div>
+            </div>
+          </div>
+          <p>Text After</p>`
+      }
+    },    {
       title: 'Option List - One Column',
       image: 'option-one.png',
       description: 'Show two equally likely outcomes/actions in an "if then" format.',
