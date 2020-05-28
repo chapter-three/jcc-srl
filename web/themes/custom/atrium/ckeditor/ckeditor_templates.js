@@ -27,6 +27,25 @@ CKEDITOR.addTemplates('default', {
       },
     },
     {
+      title: 'Detail - Italic (Read more block)',
+      image: 'read-more.png',
+      description: 'Contains a trigger and expanded text. Use for exceptions and details not relevant to all readers.',
+      template: function () {
+        const randomId = +new Date();
+        return`<p>Text Before</p>
+          <div class="jcc-read-more jcc-read-more--block">
+            <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
+              What is a judgment
+              <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
+            </button>
+            <div class="jcc-read-more__content" id="read-more-${randomId}">
+              If your bank account is levied, you must act quickly! You have only ten days from the date of the levy to file a claim of exempltion (plus five days if the notice was sent be mail) with the sheriff performing the levy.
+            </div>
+          </div>
+          <p>Text After</p>`
+      },
+    },
+    {
       title: 'Example (Explainer) - One Column',
       image: 'explainer-one.png',
       description: 'Use to highlight real-world examples of concepts.',
@@ -103,12 +122,12 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'Alert',
+      title: 'Alert - Warning',
       image: 'alert.png',
       description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
       template: function () {
         return `<p>Text Before</p>
-          <div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon" id="alert-bar">
+          <div class="jcc-alert usa-alert usa-alert--warning usa-alert--no-icon active" id="alert-bar">
             <div class="usa-alert__body jcc-alert__body  ">
               <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
               <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
@@ -119,6 +138,37 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
+      title: 'Alert - Error',
+      image: 'alert.png',
+      description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
+      template: function () {
+        return `<p>Text Before</p>
+          <div class="jcc-alert usa-alert usa-alert--error usa-alert--no-icon active" id="alert-bar">
+            <div class="usa-alert__body jcc-alert__body  ">
+              <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
+              <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
+              <div class="jcc-alert__close" id="alert-close"></div>
+            </div>
+          </div>
+          <p>Text After</p>`
+      }
+    },
+    {
+      title: 'Alert - Success',
+      image: 'alert.png',
+      description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
+      template: function () {
+        return `<p>Text Before</p>
+          <div class="jcc-alert usa-alert usa-alert--success usa-alert--no-icon active" id="alert-bar">
+            <div class="usa-alert__body jcc-alert__body  ">
+              <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
+              <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
+              <div class="jcc-alert__close" id="alert-close"></div>
+            </div>
+          </div>
+          <p>Text After</p>`
+      }
+    },    {
       title: 'Option List - One Column',
       image: 'option-one.png',
       description: 'Show two equally likely outcomes/actions in an "if then" format.',
