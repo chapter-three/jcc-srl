@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\pathauto\PathautoPattern;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -49,6 +50,35 @@ function jcc_forms_preprocess_media__jcc_form__full(&$variables, $hook) {
         $link->toRenderable(),
         '#suffix' => $link_suffix
       ];
+    }
+  }
+}
+
+/**
+ * Implements hook_pathauto_pattern_alter().
+ */
+function jcc_forms_pathauto_pattern_alter(PathautoPattern &$pattern, array $context) {
+  if ($context['module'] == 'media' && ($context['op'] == 'insert' || $context['op'] == 'update')) {
+    /** @var \Drupal\media\Entity\Media $media */
+    $media = $context['data']['media'];
+
+    $replacements = [];
+
+    switch ($media->getEntityType()) {
+      case 'jcc_form':
+
+        if (!empty($media->get('field_number')->getValue())) {
+          $number = $media->get('field_number')
+            ->first()
+            ->getValue();
+          if ($number) {
+            $replacements[] = '[media:field_number]';
+          }
+
+          $replacements = implode('/', $replacements);
+
+          $pattern->setPattern(preg_replace('/[^a-z0-9 -]+/', $replacements . '$1', $pattern->getPattern()));
+        }
     }
   }
 }
