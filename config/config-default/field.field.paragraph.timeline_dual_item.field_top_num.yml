@@ -1,0 +1,21 @@
+uuid: e68e0791-c514-4df5-950c-0c44f311b612
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_top_num
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - options
+id: paragraph.timeline_dual_item.field_top_num
+field_name: field_top_num
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Top Number/Wait'
+description: 'This field must have a value for any of the "bottom" fields to appear on this item.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

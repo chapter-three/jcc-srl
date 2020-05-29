@@ -1,8 +1,9 @@
-uuid: 2d816977-ca2f-4398-94b2-0364c287178e
+uuid: fac917da-1151-4e0b-afc1-f5bbf78970fb
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_form_mode.paragraph.extras
     - field.field.paragraph.timeline_dual_item.field_bottom_deadline
     - field.field.paragraph.timeline_dual_item.field_bottom_excerpt
     - field.field.paragraph.timeline_dual_item.field_bottom_num
@@ -33,7 +34,7 @@ third_party_settings:
         - group_top_read_more
       parent_name: group_details
       weight: 0
-      format_type: tab
+      format_type: details
       region: content
       format_settings:
         description: ''
@@ -52,7 +53,7 @@ third_party_settings:
         - group_bottom_read_more
       parent_name: group_details
       weight: 2
-      format_type: tab
+      format_type: details
       region: content
       format_settings:
         id: ''
@@ -69,9 +70,9 @@ third_party_settings:
         - group_icon
         - group_bottom
       parent_name: ''
-      weight: 0
+      weight: 4
       format_type: tabs
-      region: content
+      region: hidden
       format_settings:
         direction: vertical
         id: ''
@@ -114,7 +115,7 @@ third_party_settings:
         - field_timeline_dual_icon
       parent_name: group_details
       weight: 1
-      format_type: tab
+      format_type: details
       region: content
       format_settings:
         id: ''
@@ -124,10 +125,10 @@ third_party_settings:
         required_fields: true
         open: false
       label: Icon
-id: paragraph.timeline_dual_item.default
+id: paragraph.timeline_dual_item.extras
 targetEntityType: paragraph
 bundle: timeline_dual_item
-mode: default
+mode: extras
 content:
   field_bottom_deadline:
     weight: 18
