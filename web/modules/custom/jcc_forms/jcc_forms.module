@@ -52,3 +52,4 @@ function jcc_forms_preprocess_media__jcc_form__full(&$variables, $hook) {
     }
   }
 }
+
