@@ -18,33 +18,3 @@ function atrium_preprocess(array &$variables, $hook) {
   $variables['base_path'] = base_path();
   $variables['courtyard_icons'] = base_path() . 'libraries/courtyard/source/images/icomoon/symbol-defs.svg';
 }
-
-/**
- * Helper function to facilitate rendering blocks within a node template.
- *
- * @see atrium_preprocess_node()
- */
-function atrium_add_regions_to_node(array $regions, &$variables) {
-  // Retrieve active theme.
-  $theme = \Drupal::theme()->getActiveTheme()->getName();
-  $available_regions = system_region_list($theme);
-
-  // Validate allowed regions with available regions.
-  $regions = array_intersect(array_keys($available_regions), $regions);
-
-  foreach ($regions as $key => $region) {
-    $blocks = entity_load_multiple_by_properties('block', ['theme' => $theme, 'region' => $region]);
-    uasort($blocks, 'Drupal\block\Entity\Block::sort');
-
-    // Capture viewable blocks and their settings to $build.
-    $build = [];
-    foreach ($blocks as $key => $block) {
-      if ($block->access('view')) {
-        $build[$key] = entity_view($block, 'block');
-      }
-    }
-
-    // Add build to region.
-    $variables[$region] = $build;
-  }
-}
