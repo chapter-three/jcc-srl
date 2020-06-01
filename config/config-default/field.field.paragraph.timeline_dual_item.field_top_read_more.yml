@@ -14,7 +14,7 @@ bundle: timeline_dual_item
 label: 'Top Read More Link'
 description: 'This field will not display if ''modal'' is selected.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

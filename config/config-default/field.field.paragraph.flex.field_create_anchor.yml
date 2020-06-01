@@ -12,7 +12,7 @@ bundle: flex
 label: 'Add To Hero Nav?'
 description: 'For Wayfinding Boilerplate and Onramp nodes only.'
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

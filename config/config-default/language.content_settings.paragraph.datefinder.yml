@@ -1,0 +1,18 @@
+uuid: 80912dd6-b18e-4b50-b356-adcd2babe3b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.datefinder
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.datefinder
+target_entity_type_id: paragraph
+target_bundle: datefinder
+default_langcode: site_default
+language_alterable: false

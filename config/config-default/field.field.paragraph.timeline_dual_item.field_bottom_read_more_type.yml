@@ -14,7 +14,7 @@ bundle: timeline_dual_item
 label: 'Bottom Read More Type'
 description: 'Only one of the two fields below will display.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

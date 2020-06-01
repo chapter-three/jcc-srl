@@ -1,0 +1,22 @@
+uuid: 47decc2d-8351-496d-873e-b3300830f739
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.datefinder
+id: paragraph.datefinder.status
+field_name: status
+entity_type: paragraph
+bundle: datefinder
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

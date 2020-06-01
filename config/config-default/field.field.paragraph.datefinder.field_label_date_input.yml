@@ -21,7 +21,7 @@ bundle: datefinder
 label: 'Date Input Label'
 description: 'Text above date input box (Ex: <strong>Enter Your Filing Date</strong>)'
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     value: 'Enter Your Filing Date'

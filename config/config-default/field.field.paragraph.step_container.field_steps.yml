@@ -15,7 +15,7 @@ bundle: step_container
 label: Steps
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -34,22 +34,22 @@ settings:
       card:
         weight: 10
         enabled: false
+      code_section:
+        weight: 13
+        enabled: false
       flex:
         weight: 11
         enabled: false
       judgement_body_tab:
         weight: 12
         enabled: false
-      code_section:
-        weight: 13
-        enabled: false
       postcard:
         weight: 13
-        enabled: false
-      step_container:
-        weight: 14
         enabled: false
       step:
         enabled: true
         weight: 17
+      step_container:
+        weight: 14
+        enabled: false
 field_type: entity_reference_revisions

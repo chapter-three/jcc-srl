@@ -1,0 +1,18 @@
+uuid: 6fce3120-0ade-4deb-ac97-8c18d2af4169
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.postcard
+id: paragraph.postcard.created
+field_name: created
+entity_type: paragraph
+bundle: postcard
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

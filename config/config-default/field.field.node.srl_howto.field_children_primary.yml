@@ -15,7 +15,7 @@ bundle: srl_howto
 label: 'Primary Children'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -34,11 +34,20 @@ settings:
       card:
         weight: 11
         enabled: false
+      card_list:
+        weight: 21
+        enabled: false
+      code_section:
+        weight: 19
+        enabled: false
+      complete:
+        weight: 23
+        enabled: false
+      datefinder:
+        weight: 24
+        enabled: false
       flex:
         weight: 12
-        enabled: false
-      judgement_body_tab:
-        weight: 13
         enabled: false
       postcard:
         weight: 14
@@ -49,20 +58,20 @@ settings:
       step_container:
         weight: 16
         enabled: false
-      calculation_date:
-        weight: 17
-        enabled: false
-      code_section:
-        weight: 19
-        enabled: false
-      srl_date_calculator:
-        weight: 23
+      switchboard:
+        weight: 29
         enabled: false
       tile:
         enabled: true
         weight: 26
       timeline:
         weight: 27
+        enabled: false
+      timeline_dual:
+        weight: 32
+        enabled: false
+      timeline_dual_item:
+        weight: 33
         enabled: false
       timeline_item:
         weight: 28

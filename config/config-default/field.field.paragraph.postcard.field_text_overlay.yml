@@ -12,7 +12,7 @@ bundle: postcard
 label: 'Image Overlay Text'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

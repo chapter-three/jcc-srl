@@ -1,0 +1,18 @@
+uuid: bcf9e2cd-93f5-433d-b564-468b8726ae60
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.switchboard
+id: paragraph.switchboard.created
+field_name: created
+entity_type: paragraph
+bundle: switchboard
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

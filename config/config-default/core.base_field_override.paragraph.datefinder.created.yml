@@ -1,0 +1,18 @@
+uuid: 61d02665-e072-40e2-8f57-8d2e54f3bd07
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.datefinder
+id: paragraph.datefinder.created
+field_name: created
+entity_type: paragraph
+bundle: datefinder
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

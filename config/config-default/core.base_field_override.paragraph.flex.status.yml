@@ -1,0 +1,22 @@
+uuid: 4a465384-68f9-4ed3-900d-57380c2d9f40
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.flex
+id: paragraph.flex.status
+field_name: status
+entity_type: paragraph
+bundle: flex
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

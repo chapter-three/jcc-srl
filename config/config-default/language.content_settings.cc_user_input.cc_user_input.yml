@@ -1,0 +1,11 @@
+uuid: c4a53ed2-c899-4e80-a5a4-6f05802deba6
+langcode: en
+status: true
+dependencies:
+  module:
+    - cc
+id: cc_user_input.cc_user_input
+target_entity_type_id: cc_user_input
+target_bundle: cc_user_input
+default_langcode: site_default
+language_alterable: false

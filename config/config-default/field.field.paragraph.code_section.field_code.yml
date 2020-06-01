@@ -13,7 +13,7 @@ bundle: code_section
 label: Code
 description: 'i.e.: Family Code, Government Code'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,22 @@
+uuid: 7fe78cfc-ca4e-44ed-bc3f-4c31f7a5dc81
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.timeline_dual
+id: paragraph.timeline_dual.status
+field_name: status
+entity_type: paragraph
+bundle: timeline_dual
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

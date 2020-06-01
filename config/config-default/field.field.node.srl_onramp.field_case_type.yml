@@ -13,7 +13,7 @@ bundle: srl_onramp
 label: 'Case Type'
 description: 'Example: Legal Parentage'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

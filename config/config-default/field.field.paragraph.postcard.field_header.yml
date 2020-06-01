@@ -14,7 +14,7 @@ bundle: postcard
 label: 'Header Style'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     value: h2

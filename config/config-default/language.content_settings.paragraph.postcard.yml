@@ -1,0 +1,18 @@
+uuid: f8387a43-b436-4cc6-a198-524ee37d1944
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.postcard
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.postcard
+target_entity_type_id: paragraph
+target_bundle: postcard
+default_langcode: site_default
+language_alterable: false

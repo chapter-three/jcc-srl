@@ -1,0 +1,28 @@
+uuid: 1c5da134-fa78-41d9-8c0c-fdb32bdba064
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - user
+  theme:
+    - atrium
+id: languageswitcher
+theme: atrium
+region: header
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
