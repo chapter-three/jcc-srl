@@ -41,9 +41,7 @@
   {# Include hero component. #}
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
-      breadcrumbs : {
-        1: {label: media.field_number.value},
-      },
+      breadcrumbs : {},
       title: media.label ~ ' (' ~ media.field_number.value ~ ')',
       lead: content.field_description ? content.field_description : '',
       body: body,
