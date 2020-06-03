@@ -15,7 +15,7 @@ bundle: jcc_form
 label: 'Relevant Code Sections'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -25,9 +25,6 @@ settings:
     target_bundles:
       code_section: code_section
     target_bundles_drag_drop:
-      code_section:
-        enabled: true
-        weight: 2
       accordion:
         weight: 14
         enabled: false
@@ -40,6 +37,9 @@ settings:
       card:
         weight: 17
         enabled: false
+      code_section:
+        enabled: true
+        weight: 2
       flex:
         weight: 19
         enabled: false

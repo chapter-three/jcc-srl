@@ -15,7 +15,7 @@ bundle: accordion
 label: Postcard
 description: 'For best results, do not use image background.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

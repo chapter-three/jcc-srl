@@ -15,7 +15,7 @@ bundle: timeline
 label: 'Timeline Items'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -25,9 +25,6 @@ settings:
     target_bundles:
       timeline_item: timeline_item
     target_bundles_drag_drop:
-      step_container:
-        weight: 13
-        enabled: false
       accordion:
         weight: 14
         enabled: false
@@ -57,6 +54,9 @@ settings:
         enabled: false
       step:
         weight: 23
+        enabled: false
+      step_container:
+        weight: 13
         enabled: false
       timeline:
         weight: 24

@@ -21,7 +21,7 @@ bundle: datefinder
 label: 'Date Result Label'
 description: 'Text above calculated date (Ex: <strong>Ideally serve the other party by</strong>)'
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     value: 'Ideally serve the other party by'

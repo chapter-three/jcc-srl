@@ -14,7 +14,7 @@ bundle: postcard
 label: Background
 description: 'Set background appearance.'
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     value: default

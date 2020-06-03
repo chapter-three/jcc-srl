@@ -1,0 +1,18 @@
+uuid: c886e821-009f-40fa-bffb-a05b70d77fb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.switchboard
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.switchboard
+target_entity_type_id: paragraph
+target_bundle: switchboard
+default_langcode: site_default
+language_alterable: false

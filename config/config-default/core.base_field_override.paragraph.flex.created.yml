@@ -1,0 +1,18 @@
+uuid: b6106861-e240-48a9-a6d8-dc3d48bdfb8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.flex
+id: paragraph.flex.created
+field_name: created
+entity_type: paragraph
+bundle: flex
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

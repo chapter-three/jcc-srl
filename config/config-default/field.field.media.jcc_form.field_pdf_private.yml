@@ -14,7 +14,7 @@ bundle: jcc_form
 label: 'Unencrypted Private PDF'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

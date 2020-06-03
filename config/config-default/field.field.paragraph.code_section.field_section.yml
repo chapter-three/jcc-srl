@@ -14,7 +14,7 @@ bundle: code_section
 label: Section
 description: 'Use the same value in <em>From</em> and to  for single values.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

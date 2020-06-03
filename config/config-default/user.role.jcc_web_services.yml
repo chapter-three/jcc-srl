@@ -30,6 +30,7 @@ permissions:
   - 'administer blocks'
   - 'administer content translation'
   - 'administer google analytics'
+  - 'administer languages'
   - 'administer media'
   - 'administer menu'
   - 'administer meta tags'

@@ -1,0 +1,18 @@
+uuid: db156f95-e6db-4844-9ecb-e6979b16ddf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.step_container
+id: paragraph.step_container.created
+field_name: created
+entity_type: paragraph
+bundle: step_container
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

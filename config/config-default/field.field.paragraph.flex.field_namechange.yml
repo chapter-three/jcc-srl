@@ -14,7 +14,7 @@ bundle: flex
 label: 'Hide under the following name change scenarios'
 description: 'For Namechange Wayfinding Wizard only'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

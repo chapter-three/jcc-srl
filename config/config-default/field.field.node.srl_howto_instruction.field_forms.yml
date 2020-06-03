@@ -13,7 +13,7 @@ bundle: srl_howto_instruction
 label: 'Relevant Forms'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

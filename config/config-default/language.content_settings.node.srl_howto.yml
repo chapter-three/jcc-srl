@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - node.type.srl_howto
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: node.srl_howto
 target_entity_type_id: node
 target_bundle: srl_howto

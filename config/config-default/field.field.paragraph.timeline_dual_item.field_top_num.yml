@@ -14,7 +14,7 @@ bundle: timeline_dual_item
 label: 'Top Number/Wait'
 description: 'This field must have a value for any of the "bottom" fields to appear on this item.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

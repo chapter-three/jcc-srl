@@ -1,0 +1,22 @@
+uuid: 34ea54e2-362e-4322-b413-52e9d8dbc605
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.case_type
+id: taxonomy_term.case_type.status
+field_name: status
+entity_type: taxonomy_term
+bundle: case_type
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

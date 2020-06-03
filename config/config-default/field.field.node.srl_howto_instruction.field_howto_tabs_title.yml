@@ -21,7 +21,7 @@ bundle: srl_howto_instruction
 label: 'HowTo Tabs Title'
 description: 'Ex: <strong>What did the bank notice say?</strong> (This field is typically blank. See <a href="/node/4">Bank Levy</a> for its use)'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

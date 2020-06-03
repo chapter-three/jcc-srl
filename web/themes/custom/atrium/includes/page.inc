@@ -4,7 +4,7 @@ function atrium_preprocess_page(&$variables) {
 
   $current_path = \Drupal::service('path.current')->getPath();
   $path_segments = explode('/', $current_path);
-  $eid = $path_segments[2];
+  $eid = isset($path_segments[2]) ? $path_segments[2] : null;
 
   if ($path_segments[1] == 'media' || $path_segments[1] == 'node') {
     $entity_type = $path_segments[1];

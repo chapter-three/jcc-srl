@@ -14,7 +14,7 @@ bundle: timeline_dual
 label: 'Title Bar Next'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
