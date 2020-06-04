@@ -1,14 +1,18 @@
-uuid: 2ea615ff-078b-4eb1-8afb-05aa175b7393
+uuid: 7c7a6d2a-69cb-48be-9a40-ac75c7fda906
 langcode: en
 status: true
 dependencies:
   config:
     - paragraphs.paragraphs_type.switchboard
     - paragraphs.paragraphs_type.tile
+    - system.menu.admin
+    - user.role.administrator
+    - user.role.jcc_web_services
   module:
     - paragraphs
-id: para
-label: para
+    - user
+id: paragraphs
+label: 'Paragraph inventory'
 module: views
 description: ''
 tag: ''
@@ -22,8 +26,11 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: role
+        options:
+          role:
+            jcc_web_services: jcc_web_services
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -436,6 +443,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.roles
       tags: {  }
   page_1:
     display_plugin: page
@@ -443,8 +451,18 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: para
+      display_extenders:
+        metatag_display_extender: {  }
+      path: admin/content/paragraphs
+      menu:
+        type: normal
+        title: Paragraphs
+        description: ''
+        expanded: false
+        parent: system.admin_content
+        weight: 100
+        context: '0'
+        menu_name: admin
     cache_metadata:
       max-age: -1
       contexts:
@@ -452,4 +470,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.roles
       tags: {  }
