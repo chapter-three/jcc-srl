@@ -10,7 +10,7 @@ id: paragraph.tile.field_page
 field_name: field_page
 entity_type: paragraph
 bundle: tile
-label: 'Child Page'
+label: 'Child Page (DEPRECATED)'
 description: ''
 required: false
 translatable: true

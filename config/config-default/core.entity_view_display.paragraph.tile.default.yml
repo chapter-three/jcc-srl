@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.tile.field_body
     - field.field.paragraph.tile.field_icon_link
+    - field.field.paragraph.tile.field_link
     - field.field.paragraph.tile.field_page
     - field.field.paragraph.tile.field_statement
     - paragraphs.paragraphs_type.tile
   module:
+    - link
     - text
 id: paragraph.tile.default
 targetEntityType: paragraph
@@ -16,14 +18,14 @@ bundle: tile
 mode: default
 content:
   field_body:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_icon_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       format: default
@@ -31,6 +33,18 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
     region: content
   field_page:
     weight: 0
@@ -41,7 +55,7 @@ content:
     type: entity_reference_label
     region: content
   field_statement:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
