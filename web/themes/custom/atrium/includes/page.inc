@@ -12,8 +12,11 @@ function atrium_preprocess_page(&$variables) {
     /** @var $entity \Drupal\media\Entity\Media */
     /** @var $entity \Drupal\node\Entity\Node */
     $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($eid);
-    $entity_bundle = $entity->bundle();
-    $variables['entity_bundle'] = $entity_bundle;
+
+    if (isset($entity)) {
+      $entity_bundle = $entity->bundle();
+      $variables['entity_bundle'] = $entity_bundle;
+    }
   }
 
 }
