@@ -1,0 +1,32 @@
+uuid: 2ecfd6b5-dfd8-4706-87a4-d92ff4a2324c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.summary.field_paragraphs
+    - node.type.summary
+  module:
+    - entity_reference_revisions
+    - user
+id: node.summary.default
+targetEntityType: node
+bundle: summary
+mode: default
+content:
+  field_paragraphs:
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

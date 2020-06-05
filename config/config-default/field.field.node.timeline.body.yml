@@ -1,0 +1,30 @@
+uuid: ee428a1f-de2a-420d-a838-5f27549ec6e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.timeline
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.timeline.body
+field_name: body
+entity_type: node
+bundle: timeline
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

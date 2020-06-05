@@ -1,0 +1,79 @@
+uuid: 864e5f85-bf34-449a-bf9f-83fead053651
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.timeline
+    - paragraphs.paragraphs_type.timeline_dual
+  module:
+    - entity_reference_revisions
+id: node.timeline.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: timeline
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      timeline_dual: timeline_dual
+    target_bundles_drag_drop:
+      accordion:
+        weight: 18
+        enabled: false
+      accordion_container:
+        weight: 19
+        enabled: false
+      card:
+        weight: 20
+        enabled: false
+      card_list:
+        weight: 21
+        enabled: false
+      code_section:
+        weight: 22
+        enabled: false
+      complete:
+        weight: 23
+        enabled: false
+      datefinder:
+        weight: 24
+        enabled: false
+      flex:
+        weight: 25
+        enabled: false
+      postcard:
+        weight: 26
+        enabled: false
+      step:
+        weight: 27
+        enabled: false
+      step_container:
+        weight: 28
+        enabled: false
+      switchboard:
+        weight: 29
+        enabled: false
+      tile:
+        weight: 30
+        enabled: false
+      timeline:
+        weight: 31
+        enabled: false
+      timeline_dual:
+        enabled: true
+        weight: 32
+      timeline_dual_item:
+        weight: 33
+        enabled: false
+      timeline_item:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

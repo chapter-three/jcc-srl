@@ -1,0 +1,99 @@
+uuid: 0adce0ce-8ce3-4043-b1cb-0f96fc7643a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.summary.field_paragraphs
+    - node.type.summary
+  module:
+    - cc
+    - paragraphs
+    - path
+id: node.summary.default
+targetEntityType: node
+bundle: summary
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraphs:
+    weight: 9
+    settings:
+      title: Switchboard
+      title_plural: Switchboards
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: switchboard
+    third_party_settings:
+      cc:
+        status: 0
+    type: entity_reference_paragraphs
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 10
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

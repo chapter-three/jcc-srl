@@ -1,0 +1,18 @@
+uuid: 8f510ffc-3732-43f0-ba9f-50d939d6ecbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Case Summary'
+type: summary
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

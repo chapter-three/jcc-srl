@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.basic.body
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
+    - field.field.node.basic.field_paragraphs
     - image.style.large
     - node.type.basic
   module:
+    - entity_reference_revisions
     - media
     - text
     - user
@@ -35,7 +37,17 @@ content:
       image_link: ''
     third_party_settings: {  }
     region: content
+  field_paragraphs:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
 hidden:
   field_metatag: true
   langcode: true
   links: true
+  search_api_excerpt: true

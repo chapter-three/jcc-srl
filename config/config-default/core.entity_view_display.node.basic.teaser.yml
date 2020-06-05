@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.basic.body
     - field.field.node.basic.field_media
+    - field.field.node.basic.field_metatag
+    - field.field.node.basic.field_paragraphs
     - node.type.basic
   module:
     - text
@@ -18,14 +20,16 @@ bundle: basic
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_default
     weight: 0
     region: content
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_media: true
+  field_metatag: true
+  field_paragraphs: true
   langcode: true
   links: true
+  search_api_excerpt: true

@@ -1,0 +1,61 @@
+uuid: 14aa1887-0c19-441d-86fc-4f8843eefa4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.timeline.body
+    - field.field.node.timeline.field_column_content_right
+    - field.field.node.timeline.field_lead
+    - field.field.node.timeline.field_paragraphs
+    - node.type.timeline
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.timeline.default
+targetEntityType: node
+bundle: timeline
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_column_content_right:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_lead:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraphs:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  langcode:
+    type: language
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+hidden:
+  links: true
+  search_api_excerpt: true
