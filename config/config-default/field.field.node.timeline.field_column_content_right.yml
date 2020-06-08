@@ -1,0 +1,28 @@
+uuid: e5bf9ead-644d-4659-8d07-52c5d10d74cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_column_content_right
+    - node.type.timeline
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.timeline.field_column_content_right
+field_name: field_column_content_right
+entity_type: node
+bundle: timeline
+label: 'Column Content Right'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

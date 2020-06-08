@@ -1,24 +1,20 @@
-uuid: cc2fd6a8-cb45-4afb-94dc-8748087dceca
+uuid: 14aa1887-0c19-441d-86fc-4f8843eefa4e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.basic.body
-    - field.field.node.basic.field_media
-    - field.field.node.basic.field_metatag
-    - field.field.node.basic.field_paragraphs
-    - image.style.large
-    - node.type.basic
+    - field.field.node.timeline.body
+    - field.field.node.timeline.field_column_content_right
+    - field.field.node.timeline.field_lead
+    - field.field.node.timeline.field_paragraphs
+    - node.type.timeline
   module:
     - entity_reference_revisions
-    - media
     - text
     - user
-_core:
-  default_config_hash: yA_hyz2S6d-S09EOKJfahwBxv-tjADiCjwmhsWthkyg
-id: node.basic.default
+id: node.timeline.default
 targetEntityType: node
-bundle: basic
+bundle: timeline
 mode: default
 content:
   body:
@@ -28,17 +24,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_media:
-    type: media_thumbnail
+  field_column_content_right:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_lead:
     weight: 0
     label: hidden
-    settings:
-      image_style: large
-      image_link: ''
+    settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
   field_paragraphs:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       view_mode: default
@@ -47,7 +48,6 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
 hidden:
-  field_metatag: true
   langcode: true
   links: true
   search_api_excerpt: true

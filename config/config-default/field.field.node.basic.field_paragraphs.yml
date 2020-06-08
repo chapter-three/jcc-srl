@@ -1,0 +1,97 @@
+uuid: 72beda48-589f-4b28-bfd5-18143b807c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.basic
+    - paragraphs.paragraphs_type.accordion_container
+    - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.complete
+    - paragraphs.paragraphs_type.datefinder
+    - paragraphs.paragraphs_type.flex
+    - paragraphs.paragraphs_type.postcard
+    - paragraphs.paragraphs_type.step_container
+    - paragraphs.paragraphs_type.switchboard
+    - paragraphs.paragraphs_type.timeline
+    - paragraphs.paragraphs_type.timeline_dual
+  module:
+    - entity_reference_revisions
+id: node.basic.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: basic
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_container: accordion_container
+      card_list: card_list
+      complete: complete
+      datefinder: datefinder
+      flex: flex
+      postcard: postcard
+      step_container: step_container
+      switchboard: switchboard
+      timeline: timeline
+      timeline_dual: timeline_dual
+    target_bundles_drag_drop:
+      accordion:
+        weight: 18
+        enabled: false
+      accordion_container:
+        enabled: true
+        weight: 19
+      card:
+        weight: 20
+        enabled: false
+      card_list:
+        enabled: true
+        weight: 21
+      code_section:
+        weight: 22
+        enabled: false
+      complete:
+        enabled: true
+        weight: 23
+      datefinder:
+        enabled: true
+        weight: 24
+      flex:
+        enabled: true
+        weight: 25
+      postcard:
+        enabled: true
+        weight: 26
+      step:
+        weight: 27
+        enabled: false
+      step_container:
+        enabled: true
+        weight: 28
+      switchboard:
+        enabled: true
+        weight: 29
+      tile:
+        weight: 30
+        enabled: false
+      timeline:
+        enabled: true
+        weight: 31
+      timeline_dual:
+        enabled: true
+        weight: 32
+      timeline_dual_item:
+        weight: 33
+        enabled: false
+      timeline_item:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

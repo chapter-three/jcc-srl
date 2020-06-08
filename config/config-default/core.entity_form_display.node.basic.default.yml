@@ -7,10 +7,13 @@ dependencies:
     - field.field.node.basic.body
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
+    - field.field.node.basic.field_paragraphs
     - node.type.basic
   module:
+    - cc
     - entity_browser
     - metatag
+    - paragraphs
     - path
     - text
 _core:
@@ -53,9 +56,24 @@ content:
     region: content
   field_metatag:
     weight: 26
-    settings: {  }
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_paragraphs:
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings:
+      cc:
+        status: 0
+    type: entity_reference_paragraphs
     region: content
   langcode:
     type: language_select
@@ -84,6 +102,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

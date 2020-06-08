@@ -1,0 +1,28 @@
+uuid: 76e7ce6b-608f-4dae-b3f8-dd940b475dfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead
+    - node.type.timeline
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.timeline.field_lead
+field_name: field_lead
+entity_type: node
+bundle: timeline
+label: Lead
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

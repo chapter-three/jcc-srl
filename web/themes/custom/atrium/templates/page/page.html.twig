@@ -63,11 +63,13 @@
   {% endif %}
 
   {% set entities_with_hero = [
+    'jcc_form',
     'srl_howto_instruction',
     'srl_howto',
     'srl_onramp',
     'srl_wayfinder',
-    'jcc_form'
+    'summary',
+    'timeline'
   ] %}
 
   {% if page.title|render and entity_bundle not in entities_with_hero %}

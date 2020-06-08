@@ -1,0 +1,26 @@
+uuid: 9a9efab4-95a7-4efa-9997-3d9ba951f962
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.timeline.body
+    - field.field.node.timeline.field_column_content_right
+    - field.field.node.timeline.field_lead
+    - field.field.node.timeline.field_paragraphs
+    - node.type.timeline
+  module:
+    - user
+id: node.timeline.teaser
+targetEntityType: node
+bundle: timeline
+mode: teaser
+content: {  }
+hidden:
+  body: true
+  field_column_content_right: true
+  field_lead: true
+  field_paragraphs: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
