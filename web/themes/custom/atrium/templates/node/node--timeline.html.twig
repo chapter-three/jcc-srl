@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override to display a Part Timeline node.
+ *
+ * See node.html.twig and page.html.twig.
+ */
+#}
+
+{% extends 'node.html.twig' %}
+{% block content %}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      column_variant: 'has-two-columns-threequarter',
+      background_variant: 'has-background-color--dark',
+      breadcrumbs: breadcrumbs ? breadcrumbs : null,
+      title: label,
+      lead: content.field_lead|render ? content.field_lead : '',
+      body: content.body|render ? content.body : '',
+      column_content_right: content.field_column_content_right|render ? content.field_column_content_right : '',
+    }
+  } %}
+
+  {{ content|without(
+    'body',
+    'field_column_content_right',
+    'field_lead'
+  )}}
+{% endblock %}
