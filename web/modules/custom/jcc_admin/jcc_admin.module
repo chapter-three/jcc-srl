@@ -48,3 +48,14 @@ function jcc_admin_local_tasks_alter(&$local_tasks) {
   $local_tasks['media_library.table']['route_name'] = 'view.media.media_page_list';
   $local_tasks['media_library.table']['weight'] = '30';
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function jcc_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Flag all other translations as outdated by default.
+  if(isset($form["content_translation"]["retranslate"]["#default_value"])) {
+    $form["content_translation"]["retranslate"]["#default_value"] = true;
+  }
+}
