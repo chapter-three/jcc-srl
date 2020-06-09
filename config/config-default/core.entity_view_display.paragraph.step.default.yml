@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.step.field_description
-    - field.field.paragraph.step.field_details
-    - field.field.paragraph.step.field_details_link_text
     - field.field.paragraph.step.field_namechange
     - field.field.paragraph.step.field_title_display
     - paragraphs.paragraphs_type.step
@@ -24,21 +22,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_details:
-    weight: 3
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_details_link_text:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_namechange:
     weight: 4
     label: hidden
@@ -53,4 +36,5 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true
