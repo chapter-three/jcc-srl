@@ -30,8 +30,10 @@ hidden:
   field_forms: true
   field_howto_tabs: true
   field_howto_tabs_title: true
+  field_metatag: true
   field_paragraphs: true
   field_parent: true
   field_title_display: true
   langcode: true
   links: true
+  search_api_excerpt: true
