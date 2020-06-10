@@ -420,7 +420,19 @@ display:
             - form_name
             - form_number
           plugin_id: search_api_fulltext
-      sorts: {  }
+      sorts:
+        form_number:
+          id: form_number
+          table: search_api_index_jcc_forms_index
+          field: form_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       header: {  }
       footer: {  }
       empty: {  }
