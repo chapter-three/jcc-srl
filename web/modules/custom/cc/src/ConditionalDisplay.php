@@ -293,7 +293,7 @@ class ConditionalDisplay {
       $query->condition('revision_id', $revision_id);
     }
     if ($language_code) {
-      $query->condition('langcode', $language_code);
+      $query->condition('langcode', $language_code->getId());
     }
     return $query->execute();
   }
