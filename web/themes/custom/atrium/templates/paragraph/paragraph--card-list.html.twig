@@ -25,7 +25,7 @@
 
     {% for key, item in cards.value %}
       {% set icon = [] %}
-      {% set card = cards.get(key).entity %}
+      {% set card = cards.get(key).entity.getTranslation(cards.langcode) %}
 
       {# Prepare the icon for the Pattern component. #}
       {% if card.field_icon.value %}
