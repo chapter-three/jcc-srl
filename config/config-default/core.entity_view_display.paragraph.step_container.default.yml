@@ -18,14 +18,14 @@ bundle: step_container
 mode: default
 content:
   field_brow:
-    weight: 6
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_create_anchor:
-    weight: 3
+    weight: 0
     label: hidden
     settings:
       format: default
@@ -35,7 +35,7 @@ content:
     type: boolean
     region: content
   field_description:
-    weight: 4
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -43,7 +43,7 @@ content:
     region: content
   field_steps:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -57,4 +57,5 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true
