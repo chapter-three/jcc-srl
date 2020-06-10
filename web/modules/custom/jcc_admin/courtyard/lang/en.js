@@ -1,8 +1,8 @@
 CKEDITOR.plugins.setLang('youtube', 'en', {
 	button : 'Embed YouTube Video',
 	title : 'Embed YouTube Video',
-	txtEmbed : 'Paste Embed Code Here',
-	txtUrl : 'Paste YouTube Video URL',
+  txtUrl : 'Title',
+	txtEmbed : 'Body',
 	txtWidth : 'Width',
 	txtHeight : 'Height',
 	chkRelated : 'Show suggested videos at the video\'s end',

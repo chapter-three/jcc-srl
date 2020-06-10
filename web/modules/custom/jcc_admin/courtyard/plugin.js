@@ -41,12 +41,6 @@
 									id : 'txtEmbed',
 									type : 'textarea',
 									label : editor.lang.youtube.txtEmbed,
-									onChange : function (api) {
-										handleEmbedChange(this, api);
-									},
-									onKeyUp : function (api) {
-										handleEmbedChange(this, api);
-									},
 									validate : function () {
 										if (this.isEnabled()) {
 											if (!this.getValue()) {
@@ -345,16 +339,6 @@ function handleLinkChange(el, api) {
 		el.getDialog().getContentElement('youtubePlugin', 'txtStartAt').setValue(hms);
 	}
 }
-
-function handleEmbedChange(el, api) {
-	if (el.getValue().length > 0) {
-		el.getDialog().getContentElement('youtubePlugin', 'txtUrl').disable();
-	}
-	else {
-		el.getDialog().getContentElement('youtubePlugin', 'txtUrl').enable();
-	}
-}
-
 
 /**
  * JavaScript function to match (and return) the video Id
