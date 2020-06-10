@@ -26,8 +26,8 @@ source:
       label: 'Info Url Title'
 process:
   name: case_type
-  'field_case_type_info_link/uri': info_url
-  'field_case_type_info_link/title': info_url_title
+  field_case_type_info_link/uri: info_url
+  field_case_type_info_link/title: info_url_title
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: case_type
