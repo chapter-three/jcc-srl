@@ -23,7 +23,7 @@
       {# ⇣ This check is important because Step fields are NOT required. Empty
       Steps are possible, and would return the wrong data. #}
       {% if steps.get(key).entity.field_title_display.value %}
-        {% set step = steps.get(key).entity %}
+        {% set step = steps.get(key).entity.getTranslation(steps.langcode) %}
 
         {# Prepare "Read more" toggle #}
         {% if step.field_details.value %}
