@@ -28,7 +28,12 @@
       {# ⇣ This check is important because Accordion fields are NOT required.
       Empty accordions are possible, and would return the wrong data. #}
       {% if accordions.get(key).entity.field_title_display.value %}
-        {% set accordion = accordions.get(key).entity.getTranslation(accordions.langcode) %}
+        {% set accordion = accordions.get(key).entity %}
+
+        {# Get translated child if it exists. #}
+        {% if accordion.hasTranslation(accordions.langcode) %}
+          {% set accordion = accordion.getTranslation(accordions.langcode) %}
+        {% endif %}
 
         {% set body %}
           {{ accordion.field_body|view }}

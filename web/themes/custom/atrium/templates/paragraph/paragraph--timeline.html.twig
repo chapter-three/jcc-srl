@@ -24,6 +24,11 @@
       {% if items.get(key).entity.field_title_display.value %}
         {% set timeline_item = items.get(key).entity %}
 
+        {# Get translated child if it exists. #}
+        {% if timeline_item.hasTranslation(items.langcode) %}
+          {% set timeline_item = timeline_item.getTranslation(items.langcode) %}
+        {% endif %}
+
         {# Store each item in an array for the Pattern component. #}
         {% set item_content = item_content|merge([{
           title: timeline_item.field_title_display|view,

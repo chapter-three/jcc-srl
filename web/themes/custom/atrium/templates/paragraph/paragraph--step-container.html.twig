@@ -23,7 +23,12 @@
       {# ⇣ This check is important because Step fields are NOT required. Empty
       Steps are possible, and would return the wrong data. #}
       {% if steps.get(key).entity.field_title_display.value %}
-        {% set step = steps.get(key).entity.getTranslation(steps.langcode) %}
+        {% set step = steps.get(key).entity %}
+
+        {# Get translated child if it exists. #}
+        {% if step.hasTranslation(steps.langcode) %}
+          {% set step = step.getTranslation(steps.langcode) %}
+        {% endif %}
 
         {# Store each step in an array for the Pattern component. #}
         {% set step_content = step_content|merge([{
