@@ -1,4 +1,4 @@
-uuid: 8f510ffc-3732-43f0-ba9f-50d939d6ecbb
+uuid: aed5ac8d-c892-4a63-be21-0c1556b4f3af
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Case Summary'
-type: summary
+name: 'Case Overview'
+type: overview
 description: ''
 help: ''
 new_revision: true

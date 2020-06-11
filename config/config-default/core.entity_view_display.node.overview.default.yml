@@ -1,16 +1,16 @@
-uuid: 2ecfd6b5-dfd8-4706-87a4-d92ff4a2324c
+uuid: f69c36fc-c562-4cbe-851e-180c7d79cfb1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.summary.field_paragraphs
-    - node.type.summary
+    - field.field.node.overview.field_paragraphs
+    - node.type.overview
   module:
     - entity_reference_revisions
     - user
-id: node.summary.default
+id: node.overview.default
 targetEntityType: node
-bundle: summary
+bundle: overview
 mode: default
 content:
   field_paragraphs:
