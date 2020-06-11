@@ -1,17 +1,17 @@
-uuid: 1902b1b5-b09d-4dfd-853e-3f79bf417966
+uuid: 72461be4-e9d8-4e88-bc3c-cb9856a9594c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_paragraphs
-    - node.type.summary
+    - node.type.overview
     - paragraphs.paragraphs_type.switchboard
   module:
     - entity_reference_revisions
-id: node.summary.field_paragraphs
+id: node.overview.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
-bundle: summary
+bundle: overview
 label: Paragraphs
 description: ''
 required: false

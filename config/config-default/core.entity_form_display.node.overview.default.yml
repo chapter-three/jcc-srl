@@ -1,17 +1,17 @@
-uuid: 0adce0ce-8ce3-4043-b1cb-0f96fc7643a9
+uuid: c9736fda-b07d-409c-a8cf-5f57398df718
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.summary.field_paragraphs
-    - node.type.summary
+    - field.field.node.overview.field_paragraphs
+    - node.type.overview
   module:
     - cc
     - paragraphs
     - path
-id: node.summary.default
+id: node.overview.default
 targetEntityType: node
-bundle: summary
+bundle: overview
 mode: default
 content:
   created:
