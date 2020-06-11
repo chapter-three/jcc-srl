@@ -19,10 +19,24 @@
     {% set items = paragraph.field_timeline_items %}
 
     {% for key, item in items.value %}
+      {% set read_more = [] %}
       {# ⇣ This check is important because Timeline item fields are NOT required.
       Empty Timeline items are possible, and would return the wrong data. #}
       {% if items.get(key).entity.field_title_display.value %}
         {% set timeline_item = items.get(key).entity %}
+
+        {# Prepare "Read more" toggle #}
+        {% if timeline_item.field_details.value %}
+
+          {% set read_more = {
+            type: 'modal',
+            modal: {
+              id: 'read-more-' ~ item.id(),
+              button_label: timeline_item.field_details_link_text.value|default('Read more'|t),
+              content: timeline_item.field_details|view,
+            }
+          } %}
+        {% endif %}
 
         {# Get translated child if it exists. #}
         {% if timeline_item.hasTranslation(items.langcode) %}
@@ -33,6 +47,7 @@
         {% set item_content = item_content|merge([{
           title: timeline_item.field_title_display|view,
           excerpt: timeline_item.field_description|view,
+          read_more: read_more
         }]) %}
       {% endif %}
     {% endfor %}
