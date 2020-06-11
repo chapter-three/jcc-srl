@@ -41,18 +41,6 @@
                   id: 'txtEmbed',
                   type: 'textarea',
                   label: editor.lang.youtube.txtEmbed,
-                  validate: function () {
-                    if (this.isEnabled()) {
-                      if (!this.getValue()) {
-                        alert(editor.lang.youtube.noCode);
-                        return false;
-                      }
-                      else if (this.getValue().length === 0 || this.getValue().indexOf('//') === -1) {
-                        alert(editor.lang.youtube.invalidEmbed);
-                        return false;
-                      }
-                    }
-                  }
                 },
                   {
                     type: 'html',
@@ -73,22 +61,6 @@
                           onKeyUp: function (api) {
                             handleLinkChange(this, api);
                           },
-                          validate: function () {
-                            if (this.isEnabled()) {
-                              if (!this.getValue()) {
-                                alert(editor.lang.youtube.noCode);
-                                return false;
-                              }
-                              else {
-                                video = ytVidId(this.getValue());
-                                
-                                if (this.getValue().length === 0 || video === false) {
-                                  alert(editor.lang.youtube.invalidUrl);
-                                  return false;
-                                }
-                              }
-                            }
-                          }
                         },
                         {
                           type: 'text',
@@ -96,20 +68,6 @@
                           width: '60px',
                           label: editor.lang.youtube.txtWidth,
                           'default': editor.config.youtube_width != null ? editor.config.youtube_width : '640',
-                          validate: function () {
-                            if (this.getValue()) {
-                              var width = parseInt(this.getValue()) || 0;
-                              
-                              if (width === 0) {
-                                alert(editor.lang.youtube.invalidWidth);
-                                return false;
-                              }
-                            }
-                            else {
-                              alert(editor.lang.youtube.noWidth);
-                              return false;
-                            }
-                          }
                         },
                         {
                           type: 'text',
@@ -117,20 +75,6 @@
                           width: '60px',
                           label: editor.lang.youtube.txtHeight,
                           'default': editor.config.youtube_height != null ? editor.config.youtube_height : '360',
-                          validate: function () {
-                            if (this.getValue()) {
-                              var height = parseInt(this.getValue()) || 0;
-                              
-                              if (height === 0) {
-                                alert(editor.lang.youtube.invalidHeight);
-                                return false;
-                              }
-                            }
-                            else {
-                              alert(editor.lang.youtube.noHeight);
-                              return false;
-                            }
-                          }
                         }
                       ]
                   },
@@ -200,16 +144,6 @@
                           id: 'txtStartAt',
                           type: 'text',
                           label: editor.lang.youtube.txtStartAt,
-                          validate: function () {
-                            if (this.getValue()) {
-                              var str = this.getValue();
-                              
-                              if (!/^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/i.test(str)) {
-                                alert(editor.lang.youtube.invalidTime);
-                                return false;
-                              }
-                            }
-                          }
                         },
                         {
                           id: 'chkControls',
