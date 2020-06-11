@@ -20,21 +20,21 @@ bundle: datefinder
 mode: default
 content:
   field_body:
-    weight: 1
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_brow:
-    weight: 7
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_create_anchor:
-    weight: 6
+    weight: 2
     label: hidden
     settings:
       format: default
@@ -44,7 +44,7 @@ content:
     type: boolean
     region: content
   field_days:
-    weight: 5
+    weight: 7
     label: hidden
     settings:
       thousand_separator: ''
@@ -53,7 +53,7 @@ content:
     type: number_integer
     region: content
   field_label:
-    weight: 2
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -61,24 +61,25 @@ content:
     type: string
     region: content
   field_label_date_input:
-    weight: 3
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_label_date_output:
-    weight: 4
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_title_display:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

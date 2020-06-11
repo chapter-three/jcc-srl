@@ -6,7 +6,12 @@
   {% for key, item in paragraph.field_tiles.value %}
     {# ⇣ This check is important because Tile fields are NOT required. Empty
      Tiles are possible, and would return the wrong data. #}
-      {% set tile = primary.get(key).entity %}
+    {% set tile = primary.get(key).entity %}
+
+    {# Get translated child if it exists. #}
+    {% if tile.hasTranslation(primary.langcode) %}
+      {% set tile = tile.getTranslation(primary.langcode) %}
+    {% endif %}
 
     {# Store each tile in an array for the Pattern component. #}
     {% set primary_items = primary_items|merge([{

@@ -30,6 +30,11 @@
       {% if accordions.get(key).entity.field_title_display.value %}
         {% set accordion = accordions.get(key).entity %}
 
+        {# Get translated child if it exists. #}
+        {% if accordion.hasTranslation(accordions.langcode) %}
+          {% set accordion = accordion.getTranslation(accordions.langcode) %}
+        {% endif %}
+
         {% set body %}
           {{ accordion.field_body|view }}
           {{ accordion.field_postcard|view }}
