@@ -38,129 +38,27 @@
               expand: true,
               elements:
                 [{
+                  id: 'txtTitle',
+                  type: 'text',
+                  label: editor.lang.youtube.txtTitle,
+                },
+                {
                   id: 'txtEmbed',
                   type: 'textarea',
                   label: editor.lang.youtube.txtEmbed,
-                },
-                  {
-                    type: 'hbox',
-                    widths: ['70%', '15%', '15%'],
-                    children:
-                      [
-                        {
-                          id: 'txtUrl',
-                          type: 'text',
-                          label: editor.lang.youtube.txtUrl,
-                          onChange: function (api) {
-                            handleLinkChange(this, api);
-                          },
-                          onKeyUp: function (api) {
-                            handleLinkChange(this, api);
-                          },
-                        },
-                        {
-                          type: 'text',
-                          id: 'txtWidth',
-                          width: '60px',
-                          label: editor.lang.youtube.txtWidth,
-                          'default': editor.config.youtube_width != null ? editor.config.youtube_width : '640',
-                        },
-                        {
-                          type: 'text',
-                          id: 'txtHeight',
-                          width: '60px',
-                          label: editor.lang.youtube.txtHeight,
-                          'default': editor.config.youtube_height != null ? editor.config.youtube_height : '360',
-                        }
-                      ]
-                  },
-                  {
-                    type: 'hbox',
-                    widths: ['55%', '45%'],
-                    children:
-                      [
-                        {
-                          id: 'chkResponsive',
-                          type: 'checkbox',
-                          label: editor.lang.youtube.txtResponsive,
-                          'default': editor.config.youtube_responsive != null ? editor.config.youtube_responsive : false
-                        },
-                        {
-                          id: 'chkNoEmbed',
-                          type: 'checkbox',
-                          label: editor.lang.youtube.txtNoEmbed,
-                          'default': editor.config.youtube_noembed != null ? editor.config.youtube_noembed : false
-                        }
-                      ]
-                  },
-                  {
-                    type: 'hbox',
-                    widths: ['55%', '45%'],
-                    children:
-                      [
-                        {
-                          id: 'chkRelated',
-                          type: 'checkbox',
-                          'default': editor.config.youtube_related != null ? editor.config.youtube_related : true,
-                          label: editor.lang.youtube.chkRelated
-                        },
-                        {
-                          id: 'chkOlderCode',
-                          type: 'checkbox',
-                          'default': editor.config.youtube_older != null ? editor.config.youtube_older : false,
-                          label: editor.lang.youtube.chkOlderCode
-                        }
-                      ]
-                  },
-                  {
-                    type: 'hbox',
-                    widths: ['55%', '45%'],
-                    children:
-                      [
-                        {
-                          id: 'chkPrivacy',
-                          type: 'checkbox',
-                          label: editor.lang.youtube.chkPrivacy,
-                          'default': editor.config.youtube_privacy != null ? editor.config.youtube_privacy : false
-                        },
-                        {
-                          id: 'chkAutoplay',
-                          type: 'checkbox',
-                          'default': editor.config.youtube_autoplay != null ? editor.config.youtube_autoplay : false,
-                          label: editor.lang.youtube.chkAutoplay
-                        }
-                      ]
-                  },
-                  {
-                    type: 'hbox',
-                    widths: ['55%', '45%'],
-                    children:
-                      [
-                        {
-                          id: 'txtStartAt',
-                          type: 'text',
-                          label: editor.lang.youtube.txtStartAt,
-                        },
-                        {
-                          id: 'chkControls',
-                          type: 'checkbox',
-                          'default': editor.config.youtube_controls != null ? editor.config.youtube_controls : true,
-                          label: editor.lang.youtube.chkControls
-                        }
-                      ]
-                  }
-                ]
+                }]
             }
             ],
           onOk: function () {
             var content = '';
   
             if (this.getContentElement('youtubePlugin', 'txtEmbed').isEnabled()) {
+              const title = this.getValueOf('youtubePlugin', 'txtTitle');
               const body = this.getValueOf('youtubePlugin', 'txtEmbed');
               const randomId = +new Date();
               content += `<div class="jcc-read-more jcc-read-more--block">
                   <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
-                    Read More
+                    ${title}
                     <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
                   </button>
                   <div class="jcc-read-more__content" id="read-more-${randomId}">

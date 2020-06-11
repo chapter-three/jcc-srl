@@ -1,6 +1,7 @@
 CKEDITOR.plugins.setLang('youtube', 'en', {
 	button : 'Embed YouTube Video',
 	title : 'Embed YouTube Video',
+  txtTitle: 'Title',
   txtUrl : 'Title',
 	txtEmbed : 'Body',
 	txtWidth : 'Width',
