@@ -57,13 +57,9 @@
               const body = this.getValueOf('youtubePlugin', 'txtEmbed');
               const randomId = +new Date();
               content += `<div class="jcc-read-more jcc-read-more--block cke-rm-wrapper">
-                  <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
-                    ${title}
-                    <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
+                  <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">${title}<svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
                   </button>
-                  <div class="jcc-read-more__content" id="read-more-${randomId}">
-                    ${body}
-                  </div>
+                  <div class="jcc-read-more__content" id="read-more-${randomId}">${body}</div>
                 </div>`
             }
             
