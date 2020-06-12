@@ -20,16 +20,24 @@
       });
       
       CKEDITOR.dialog.add('youtube', function (instance) {
-        var video,
-          disabled = editor.config.youtube_disabled_fields || [];
-        
+
         return {
           title: editor.lang.youtube.title,
           minWidth: 510,
           minHeight: 200,
           onShow: function () {
-            for (var i = 0; i < disabled.length; i++) {
-              this.getContentElement('youtubePlugin', disabled[i]).disable();
+
+            var selection = editor.getSelection();
+            var wrapper = selection.getStartElement()
+
+            if (wrapper.$.classList.contains('cke-rm-wrapper')) {
+  
+              let title = wrapper.getChild(1).getText();
+              let body = wrapper.getChild(3).getText();
+  
+              this._.contents.youtubePlugin.txtTitle.setValue(title);
+              this._.contents.youtubePlugin.txtBody.setValue(body);
+              
             }
           },
           contents:
@@ -43,26 +51,24 @@
                   label: editor.lang.youtube.txtTitle,
                 },
                 {
-                  id: 'txtEmbed',
+                  id: 'txtBody',
                   type: 'textarea',
                   label: editor.lang.youtube.txtEmbed,
                 }]
             }
             ],
           onOk: function () {
-            var content = '';
   
-            if (this.getContentElement('youtubePlugin', 'txtEmbed').isEnabled()) {
-              const title = this.getValueOf('youtubePlugin', 'txtTitle');
-              const body = this.getValueOf('youtubePlugin', 'txtEmbed');
-              const randomId = +new Date();
-              content += `<div class="jcc-read-more jcc-read-more--block cke-rm-wrapper">
-                  <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">${title}<svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
-                  </button>
-                  <div class="jcc-read-more__content" id="read-more-${randomId}">${body}</div>
-                </div>`
-            }
+            const title = this.getValueOf('youtubePlugin', 'txtTitle');
+            const body = this.getValueOf('youtubePlugin', 'txtBody');
+            const randomId = +new Date();
+            const content = `<div class="jcc-read-more jcc-read-more--block cke-rm-wrapper">
+                <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">${title}<svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
+                </button>
+                <div class="jcc-read-more__content" id="read-more-${randomId}">${body}</div>
+              </div>`
             
+
             var element = CKEDITOR.dom.element.createFromHtml(content);
             var instance = this.getParentEditor();
             instance.insertElement(element);
@@ -89,24 +95,6 @@
     }
   });
 })();
-
-function handleLinkChange(el, api) {
-  var video = ytVidId(el.getValue());
-  var time = ytVidTime(el.getValue());
-  
-  if (el.getValue().length > 0) {
-    el.getDialog().getContentElement('youtubePlugin', 'txtEmbed').disable();
-  }
-  else if (!disabled.length || !disabled.includes('txtEmbed')) {
-    el.getDialog().getContentElement('youtubePlugin', 'txtEmbed').enable();
-  }
-  
-  if (video && time) {
-    var seconds = timeParamToSeconds(time);
-    var hms = secondsToHms(seconds);
-    el.getDialog().getContentElement('youtubePlugin', 'txtStartAt').setValue(hms);
-  }
-}
 
 /**
  * JavaScript function to match (and return) the video Id
