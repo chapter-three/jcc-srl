@@ -56,7 +56,7 @@
               const title = this.getValueOf('youtubePlugin', 'txtTitle');
               const body = this.getValueOf('youtubePlugin', 'txtEmbed');
               const randomId = +new Date();
-              content += `<div class="jcc-read-more jcc-read-more--block">
+              content += `<div class="jcc-read-more jcc-read-more--block cke-rm-wrapper">
                   <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
                     ${title}
                     <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
@@ -72,6 +72,23 @@
             instance.insertElement(element);
           }
         };
+      });
+  
+      editor.on('doubleclick', function (evt) {
+        const element = evt.data.element;
+        const ancestors = element.getParents()
+        let wrapper = null;
+  
+        ancestors.forEach((ancestor, index) => {
+          if (ancestor.$.classList.contains('cke-rm-wrapper')) {
+            wrapper = ancestors[index]
+          }
+        });
+    
+        if(wrapper != null) {
+          editor.getSelection().selectElement(wrapper);
+          editor.getCommand('youtube').exec();
+        }
       });
     }
   });
