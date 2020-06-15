@@ -1,4 +1,4 @@
-CKEDITOR.plugins.setLang('youtube', 'en', {
+CKEDITOR.plugins.setLang('courtyard', 'en', {
 	button : 'Embed YouTube Video',
 	title : 'Embed YouTube Video',
   txtTitle: 'Title',

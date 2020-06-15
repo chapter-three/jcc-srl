@@ -1,28 +1,22 @@
-/*
-* Youtube Embed Plugin
-*
-* @author Jonnas Fonini <jonnasfonini@gmail.com>
-* @version 2.1.14
-*/
 (function () {
-  CKEDITOR.plugins.add('youtube', {
-    lang: ['en', 'bg', 'pt', 'pt-br', 'ja', 'hu', 'it', 'fr', 'tr', 'ru', 'de', 'ar', 'nl', 'pl', 'vi', 'zh', 'el', 'he', 'es', 'nb', 'nn', 'fi', 'et', 'sk', 'cs', 'ko', 'eu', 'uk'],
+  CKEDITOR.plugins.add('courtyard', {
+    lang: ['en'],
     init: function (editor) {
-      editor.addCommand('youtube', new CKEDITOR.dialogCommand('youtube', {
+      editor.addCommand('courtyard', new CKEDITOR.dialogCommand('courtyard', {
         allowedContent: 'div{*}(*); iframe{*}[!width,!height,!src,!frameborder,!allowfullscreen,!allow]; object param[*]; a[*]; img[*]'
       }));
       
-      editor.ui.addButton('Youtube', {
-        label: editor.lang.youtube.button,
+      editor.ui.addButton('courtyard', {
+        label: editor.lang.courtyard.button,
         toolbar: 'insert',
-        command: 'youtube',
+        command: 'courtyard',
         icon: this.path + 'images/icon.png'
       });
       
-      CKEDITOR.dialog.add('youtube', function (instance) {
+      CKEDITOR.dialog.add('courtyard', function (instance) {
 
         return {
-          title: editor.lang.youtube.title,
+          title: editor.lang.courtyard.title,
           minWidth: 510,
           minHeight: 200,
           onShow: function () {
@@ -35,32 +29,32 @@
               let title = wrapper.getChild(1).getText();
               let body = wrapper.getChild(3).getText();
   
-              this._.contents.youtubePlugin.txtTitle.setValue(title);
-              this._.contents.youtubePlugin.txtBody.setValue(body);
+              this._.contents.courtyard.txtTitle.setValue(title);
+              this._.contents.courtyard.txtBody.setValue(body);
               
             }
           },
           contents:
             [{
-              id: 'youtubePlugin',
+              id: 'courtyard',
               expand: true,
               elements:
                 [{
                   id: 'txtTitle',
                   type: 'text',
-                  label: editor.lang.youtube.txtTitle,
+                  label: editor.lang.courtyard.txtTitle,
                 },
                 {
                   id: 'txtBody',
                   type: 'textarea',
-                  label: editor.lang.youtube.txtEmbed,
+                  label: editor.lang.courtyard.txtEmbed,
                 }]
             }
             ],
           onOk: function () {
   
-            const title = this.getValueOf('youtubePlugin', 'txtTitle');
-            const body = this.getValueOf('youtubePlugin', 'txtBody');
+            const title = this.getValueOf('courtyard', 'txtTitle');
+            const body = this.getValueOf('courtyard', 'txtBody');
             const randomId = +new Date();
             const content = `<div class="jcc-read-more jcc-read-more--block cke-rm-wrapper">
                 <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">${title}<svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
@@ -89,101 +83,9 @@
     
         if(wrapper != null) {
           editor.getSelection().selectElement(wrapper);
-          editor.getCommand('youtube').exec();
+          editor.getCommand('courtyard').exec();
         }
       });
     }
   });
 })();
-
-/**
- * JavaScript function to match (and return) the video Id
- * of any valid Youtube Url, given as input string.
- * @author: Stephan Schmitz <eyecatchup@gmail.com>
- * @url: http://stackoverflow.com/a/10315969/624466
- */
-function ytVidId(url) {
-  var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-  return (url.match(p)) ? RegExp.$1 : false;
-}
-
-/**
- * Matches and returns time param in YouTube Urls.
- */
-function ytVidTime(url) {
-  var p = /t=([0-9hms]+)/;
-  return (url.match(p)) ? RegExp.$1 : false;
-}
-
-/**
- * Converts time in hms format to seconds only
- */
-function hmsToSeconds(time) {
-  var arr = time.split(':'), s = 0, m = 1;
-  
-  while (arr.length > 0) {
-    s += m * parseInt(arr.pop(), 10);
-    m *= 60;
-  }
-  
-  return s;
-}
-
-/**
- * Converts seconds to hms format
- */
-function secondsToHms(seconds) {
-  var h = Math.floor(seconds / 3600);
-  var m = Math.floor((seconds / 60) % 60);
-  var s = seconds % 60;
-  
-  var pad = function (n) {
-    n = String(n);
-    return n.length >= 2 ? n : "0" + n;
-  };
-  
-  if (h > 0) {
-    return pad(h) + ':' + pad(m) + ':' + pad(s);
-  }
-  else {
-    return pad(m) + ':' + pad(s);
-  }
-}
-
-/**
- * Converts time in youtube t-param format to seconds
- */
-function timeParamToSeconds(param) {
-  var componentValue = function (si) {
-    var regex = new RegExp('(\\d+)' + si);
-    return param.match(regex) ? parseInt(RegExp.$1, 10) : 0;
-  };
-  
-  return componentValue('h') * 3600
-    + componentValue('m') * 60
-    + componentValue('s');
-}
-
-/**
- * Converts seconds into youtube t-param value, e.g. 1h4m30s
- */
-function secondsToTimeParam(seconds) {
-  var h = Math.floor(seconds / 3600);
-  var m = Math.floor((seconds / 60) % 60);
-  var s = seconds % 60;
-  var param = '';
-  
-  if (h > 0) {
-    param += h + 'h';
-  }
-  
-  if (m > 0) {
-    param += m + 'm';
-  }
-  
-  if (s > 0) {
-    param += s + 's';
-  }
-  
-  return param;
-}

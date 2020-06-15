@@ -11,7 +11,7 @@ use Drupal\editor\Entity\Editor;
  * Defines the "Courtyard" plugin, with a CKEditor.
  *
  * @CKEditorPlugin(
- *   id = "youtube",
+ *   id = "courtyard",
  *   label = @Translation("Courtyard Components")
  * )
  */
@@ -52,7 +52,7 @@ class Courtyard extends PluginBase implements CKEditorPluginInterface, CKEditorP
     $iconImage = drupal_get_path('module', 'jcc_admin') . '/courtyard/images/icon.png';
 
     return [
-      'Youtube' => [
+      'courtyard' => [
         'label' => t('Add Courtyard Components'),
         'image' => $iconImage,
       ]
