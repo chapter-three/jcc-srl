@@ -1,13 +1,19 @@
 (function () {
+  const buttonLabel = 'Courtyard';
+  const titleLabel = 'Add component';
+  const textInputLabel = 'Title';
+  const urlInputLabel = 'Url';
+  const wrapperClass = 'cke-eb-wrapper';
+
   CKEDITOR.plugins.add('externalbutton', {
     lang: ['en'],
     init: function (editor) {
       editor.addCommand('externalbutton', new CKEDITOR.dialogCommand('externalbutton', {
-        allowedContent: 'div{*}(*); iframe{*}[!width,!height,!src,!frameborder,!allowfullscreen,!allow]; object param[*]; a[*]; img[*]'
+        allowedContent: 'a[!href](usa-button, usa-button--external, external-button);div(cke-eb-wrapper)'
       }));
       
       editor.ui.addButton('externalbutton', {
-        label: editor.lang.courtyard.button,
+        label: buttonLabel,
         toolbar: 'insert',
         command: 'externalbutton',
         icon: this.path + 'images/externalbutton.png'
@@ -16,7 +22,7 @@
       CKEDITOR.dialog.add('externalbutton', function (instance) {
 
         return {
-          title: editor.lang.courtyard.title,
+          title: titleLabel,
           minWidth: 510,
           minHeight: 200,
           onShow: function () {
@@ -24,13 +30,13 @@
             var selection = editor.getSelection();
             var wrapper = selection.getStartElement()
 
-            if (wrapper.$.classList.contains('cke-eb-wrapper')) {
+            if (wrapper.$.classList.contains(wrapperClass)) {
   
-              let title = wrapper.getChild(1).getText();
-              let body = wrapper.getChild(3).getText();
+              let text = wrapper.getChild(1).getText();
+              let url = wrapper.getChild(3).getText();
   
-              this._.contents.externalbutton.txtTitle.setValue(title);
-              this._.contents.externalbutton.txtBody.setValue(body);
+              this._.contents.externalbutton.text.setValue(text);
+              this._.contents.externalbutton.url.setValue(url);
               
             }
           },
@@ -40,23 +46,23 @@
               expand: true,
               elements:
                 [{
-                  id: 'txtTitle',
+                  id: 'text',
                   type: 'text',
-                  label: editor.lang.courtyard.txtTitle,
+                  label: textInputLabel,
                 },
                 {
                   id: 'url',
                   type: 'text',
-                  label: editor.lang.courtyard.txtUrl,
+                  label: urlInputLabel,
                 }]
             }
             ],
           onOk: function () {
   
-            const title = this.getValueOf('externalbutton', 'txtTitle');
+            const text = this.getValueOf('externalbutton', 'text');
             const url = this.getValueOf('externalbutton', 'url');
             const content = `<div class="cke-eb-wrapper">
-<a class="usa-button usa-button--external external-button" href="${url}">${title}</a>
+<a class="usa-button usa-button--external external-button" href="${url}">${text}</a>
 </div>`
             
 
@@ -67,22 +73,22 @@
         };
       });
   
-      editor.on('doubleclick', function (evt) {
-        const element = evt.data.element;
-        const ancestors = element.getParents()
-        let wrapper = null;
-  
-        ancestors.forEach((ancestor, index) => {
-          if (ancestor.$.classList.contains('cke-eb-wrapper')) {
-            wrapper = ancestors[index]
-          }
-        });
-    
-        if(wrapper != null) {
-          editor.getSelection().selectElement(wrapper);
-          editor.getCommand('externalbutton').exec();
-        }
-      });
+      // editor.on('doubleclick', function (evt) {
+      //   const element = evt.data.element;
+      //   const ancestors = element.getParents()
+      //   let wrapper = null;
+      //
+      //   ancestors.forEach((ancestor, index) => {
+      //     if (ancestor.$.classList.contains(wrapperClass)) {
+      //       wrapper = ancestors[index]
+      //     }
+      //   });
+      //
+      //   if(wrapper != null) {
+      //     editor.getSelection().selectElement(wrapper);
+      //     editor.getCommand('externalbutton').exec();
+      //   }
+      // });
     }
   });
 })();
