@@ -3,7 +3,7 @@
     lang: ['en'],
     init: function (editor) {
       editor.addCommand('courtyard', new CKEDITOR.dialogCommand('courtyard', {
-        allowedContent: 'div{*}(*); iframe{*}[!width,!height,!src,!frameborder,!allowfullscreen,!allow]; object param[*]; a[*]; img[*]'
+        allowedContent: 'div(jcc-*, usa-*, cke-*);'
       }));
       
       editor.ui.addButton('courtyard', {
