@@ -2,7 +2,7 @@ CKEDITOR.plugins.setLang('courtyard', 'en', {
 	button : 'Embed YouTube Video',
 	title : 'Embed YouTube Video',
   txtTitle: 'Title',
-  txtUrl : 'Title',
+  txtUrl : 'Url',
 	txtEmbed : 'Body',
 	txtWidth : 'Width',
 	txtHeight : 'Height',

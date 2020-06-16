@@ -56,6 +56,8 @@ settings:
             - PasteFromWord
             - ShowBlocks
             - Maximize
+            - courtyard
+            - externalbutton
   plugins:
     stylescombo:
       styles: "p.jcc-lead|Lead paragraph\r\nh2.jcc-title|Title: Section\r\na.usa-button|Button: Primary\r\na.usa-button.usa-button--secondary|Button: Secondary\r\na.usa-button.usa-button--accent-warm|Button: Accent Warm\r\n"
