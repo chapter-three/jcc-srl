@@ -38,13 +38,7 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
      terminus backup:create jcc-srl.$env --element=db
 
      # Get the download url
-     terminus backup:get jcc-srl.$env --element=db
-  
-     # Open url and file will be downloaded.
-
-     # Move db to project root.
-     mv [path-to-db] .
-
+     terminus backup:get jcc-srl.$env --element=db --to=database.$env.sql.gz
      # Import the database
      lando db-import [filename]
    ```
@@ -139,25 +133,7 @@ This site uses [config_split](http://drupal.org/project/config_split) and [confi
 - If you need a more persistent multidev for longer term development, the CircleCI integration is configured to deploy branches that start with `epic-` to the corresponding multidev.  
   
 ## Deployments
-### Deploy to Production (standard)
-1. Send code to `master` branch and `dev` environment.
-- Make sure develop is up-to-date with master
-- Create a (pull request in github)[https://github.com/chapter-three/jcc-srl/compare/master...develop] with base:master 
-- After appropriate tests and reviews, merge.
-
-2. Get db and files on `dev` environment.
-- Wait for CI deployment to finish.
-- Clone database and files from `live` environment.
-- Smoke test `dev` environment.
-
-3. Push to `test` environment.
-- Deploy artifact code to `test` environment in Pantheon UI or with Terminus.
-- Clone database and files from `live` environment.
-  - Smoke test `dev` environment.
-
-4. Push to `live` (production) environment.
-- Deploy artifact code to `live` environment in Pantheon UI or with Terminus.
-- Celebrate!
+See [Deployment Notes](https://github.com/chapter-three/jcc-srl/wiki/Deployment-Notes) in wiki. 
 
 ### Deploy to Persistent Multidev (epic) on Pantheon
 1. Create multidev environment with Terminus or through the Pantheon dashboard.
