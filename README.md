@@ -27,12 +27,14 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
    To get latest database from Pantheon's develop environment using [Terminus](https://pantheon.io/docs/terminus/install]) and Lando:
 
    ```bash
-   
+     # Go to Project root.
+     cd [this-directory]
+     
      # Set environment variable
      env=develop # or env=epic-alpha2
 
-     # Go to Project root.
-     cd [this-directory]
+     # Remove existing file.
+     rm database.$env.sql.gz
 
      # Create a new backup.
      terminus backup:create jcc-srl.$env --element=db
@@ -40,7 +42,7 @@ This project assumes [Lando](https://docs.devwithlando.io) for local development
      # Get the download url
      terminus backup:get jcc-srl.$env --element=db --to=database.$env.sql.gz
      # Import the database
-     lando db-import [filename]
+     lando db-import database.$env.sql.gz
    ```
 
 6. Set up local options:
