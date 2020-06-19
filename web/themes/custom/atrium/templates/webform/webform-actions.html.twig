@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Overriede theme implementation of a webform actions.
+ *
+ * @see web/modules/contrib/webform/templates/webform-actions.html.twig
+ */
+#}
+
+{# @todo get path to webform home page. #}
+{% include '@molecules/navigation/button-pager/button-pager.twig' with {
+  button_pager: {
+    buttons: element|render,
+    reset: {
+      text: "Start Over"|t,
+        url: "#",
+      style: 'unstyled'
+    }
+  }
+} %}
