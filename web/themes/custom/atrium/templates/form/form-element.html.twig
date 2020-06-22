@@ -60,14 +60,15 @@
   (type == 'select' and not element['#multiple']) ? 'jcc-dropdown' : ''
 ]|merge(classes|default([])) %}
 
-{# Apply conditional classes. #}
-{% if element['#attributes']['data-webform-wizard-page-element'] == 1 %}
+{# Apply webform wizard classes. #}
+{% if
+  element['#attributes']['data-webform-wizard-page-element'] == 1 and
+  (type == 'radio' or type == 'checkbox') %}
   {% set classes = [
-    'usa-radio',
-    'jcc-radio--bordered',
-    'jcc-radio--big',
-    'jcc-radio--secondary',
-    'jcc-radio--button'
+    'jcc-' ~ type ~ '--bordered',
+    'jcc-' ~ type ~ '--big',
+    'jcc-' ~ type ~ '--secondary',
+    type == 'radio' ? 'jcc-radio--button'
   ]|merge(classes|default([])) %}
 {% endif %}
 

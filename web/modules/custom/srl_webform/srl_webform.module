@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\webform\Entity\Webform;
+use Drupal\webform\WebformEntityStorage;
 
 /**
  * Implements hook_webform_element_default_properties_alter().
@@ -52,7 +54,18 @@ function srl_webform_webform_element_webform_wizard_page_alter(array &$element, 
  * Implements hook_webform_element_ELEMENT_TYPE_alter().
  */
 function srl_webform_webform_element_radios_alter(array &$element, FormStateInterface $form_state, array $context) {
+  _srl_webform_set_wizard_attribute($element);
+}
 
+/**
+ * Implements hook_webform_element_ELEMENT_TYPE_alter().
+ */
+function srl_webform_webform_element_checkboxes_alter(array &$element, FormStateInterface $form_state, array $context) {
+
+  _srl_webform_set_wizard_attribute($element);
+}
+
+function _srl_webform_set_wizard_attribute(array &$element) {
   if(isset($element['#webform'])) {
     $webform_id = $element['#webform'];
 
