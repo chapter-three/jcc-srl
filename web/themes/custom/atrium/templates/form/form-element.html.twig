@@ -44,6 +44,7 @@
  * @see template_preprocess_form_element()
  */
 #}
+{# Apply default classes. #}
 {% set classes = [
   'js-form-item',
   'form-item',
@@ -58,6 +59,17 @@
   type == 'radio' ? 'usa-radio',
   (type == 'select' and not element['#multiple']) ? 'jcc-dropdown' : ''
 ]|merge(classes|default([])) %}
+
+{# Apply conditional classes. #}
+{% if element['#attributes']['data-webform-wizard-page-element'] == 1 %}
+  {% set classes = [
+    'usa-radio',
+    'jcc-radio--bordered',
+    'jcc-radio--big',
+    'jcc-radio--secondary',
+    'jcc-radio--button'
+  ]|merge(classes|default([])) %}
+{% endif %}
 
 {% set description_classes = [
   'description',
