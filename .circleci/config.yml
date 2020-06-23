@@ -48,7 +48,7 @@ jobs:
 
             - restore_cache:
                 keys:
-                    - composer-cache
+                    - v-2-composer-cache
                     - terminus-install
 
             - run:
@@ -62,7 +62,7 @@ jobs:
                 command: composer install
 
             - save_cache:
-                key: composer-cache
+                key: v-2-composer-cache
                 paths:
                     - $HOME/.composer/cache
 
@@ -90,7 +90,7 @@ jobs:
 
             - restore_cache:
                 keys:
-                    - composer-cache
+                    - v-2-composer-cache
                     - terminus-install
 
             - run:
@@ -130,7 +130,7 @@ jobs:
 
             - restore_cache:
                 keys:
-                    - composer-cache
+                    - v-2-composer-cache
                     - terminus-install
 
             - run:
