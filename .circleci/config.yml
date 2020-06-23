@@ -49,7 +49,7 @@ jobs:
             - restore_cache:
                 keys:
                     - v-2-composer-cache
-                    - terminus-install
+                    - v-2-terminus-install
 
             - run:
                 # Set TERMINUS_ENV and related environment variables.
@@ -67,7 +67,7 @@ jobs:
                     - $HOME/.composer/cache
 
             - save_cache:
-                key: terminus-install
+                key: v-2-terminus-install
                 paths:
                     - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
 
@@ -91,7 +91,7 @@ jobs:
             - restore_cache:
                 keys:
                     - v-2-composer-cache
-                    - terminus-install
+                    - v-2-terminus-install
 
             - run:
                 # Set TERMINUS_ENV and related environment variables.
@@ -131,7 +131,7 @@ jobs:
             - restore_cache:
                 keys:
                     - v-2-composer-cache
-                    - terminus-install
+                    - v-2-terminus-install
 
             - run:
                 # Set TERMINUS_ENV and related environment variables.
