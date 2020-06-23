@@ -39,14 +39,14 @@
                 }
             }
         },
-        "exygy/courtyard": {
+        "judicialcouncilofcalifornia/courtyard": {
             "type": "package",
             "package": {
-                "name": "exygy/courtyard",
+                "name": "judicialcouncilofcalifornia/courtyard",
                 "type": "drupal-library",
                 "version": "dev-development",
                 "source": {
-                    "url": "https://github.com/exygy/courtyard.git",
+                    "url": "https://github.com/judicialcouncilofcalifornia/courtyard.git",
                     "type": "git",
                     "reference": "development"
                 }
@@ -94,6 +94,7 @@
     },
     "require": {
         "php": ">=7.3",
+        "judicialcouncilofcalifornia/courtyard": "dev-development#48caec",
         "ckeditor-plugin/templates": "^4.13",
         "composer/installers": "^1.7.0",
         "cweagans/composer-patches": "^1.6.5",
@@ -158,7 +159,6 @@
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
-        "exygy/courtyard": "dev-development#bbfa800",
         "harvesthq/chosen": "^1.8.7",
         "league/csv": "^9.6",
         "oomphinc/composer-installers-extender": "^1.1",
