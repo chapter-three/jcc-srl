@@ -6,7 +6,7 @@
 
 ## About
 
-Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [Courtyard](https://github.com/Exygy/courtyard), a Pattern Lab instance.
+Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [Courtyard](https://github.com/judicialcouncilofcalifornia/courtyard), a Pattern Lab instance.
 
 - Courtyard is installed via Composer as a [Drupal Library](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) to `web/libraries/courtyard`. See documentation for [updating](#updating-courtyard-within-drupal) as needed.
 - Source Twig templates are directly consumed by Drupal, with the help of [Components](https://www.drupal.org/project/components) module, and namespaces common to Courtyard and Atrium. See `component-libraries` in `atrium.info.yml`.
@@ -59,7 +59,7 @@ You'll need to be **very careful** to commit and push all outstanding Courtyard 
    ```sh
    cd web/libraries
    rm -rf courtyard
-   git clone git@github.com:Exygy/courtyard.git
+   git clone git@github.com:judicialcouncilofcalifornia/courtyard.git
    ```
 
 2. Reinstall Courtyard's Composer and NPM dependencies described above.
@@ -85,8 +85,8 @@ Atrium's build script assumes you have setup your development environment using 
 
 Once Courtyard becomes stable, and has official releases, this process will change to require a given release. Until then, we are using commit hashes:
 
-1. Obtain the latest commit hash. This can be found on the [commits](https://github.com/Exygy/courtyard/commits/master) page, or by running the following command: `git ls-remote https://github.com/Exygy/courtyard.git HEAD | awk '{ print substr($1,1,7)}'`
-2. From the repository root, require the package with the hash, for example: `lando composer require exygy/courtyard:dev-master#0bfadb6`
+1. Obtain the latest commit hash. This can be found on the [commits](https://github.com/JudicialCouncilOfCalifornia/courtyard/commits/master) page, or by running the following command: `git ls-remote https://github.com/judicialcouncilofcalifornia/courtyard.git HEAD | awk '{ print substr($1,1,7)}'`
+2. From the repository root, require the package with the hash, for example: `lando composer require judicialcouncilofcalifornia/courtyard:dev-master#0bfadb6`
 3. Update the lock file: `lando composer update --lock`
 
 4. Quick commands:
@@ -95,10 +95,10 @@ Once Courtyard becomes stable, and has official releases, this process will chan
   branch=development 
   
   # Get hash
-  hash=$(git ls-remote  https://github.com/Exygy/courtyard.git $branch | awk '{ print substr($1,1,7)}')
+  hash=$(git ls-remote  https://github.com/judicialcouncilofcalifornia/courtyard.git $branch | awk '{ print substr($1,1,7)}')
   
   # Add to composer
-  lando composer require exygy/courtyard:dev-$branch#$hash
+  lando composer require judicialcouncilofcalifornia/courtyard:dev-$branch#$hash
   
   # Update lock file.
   lando composer update --lock

@@ -4,8 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "145ae30dcbdc79d2b9028966643d5ede",
+    "content-hash": "02cc19fbffb0f300bcdaf4e8d64fbb98",
     "packages": [
+        {
+            "name": "JudicialCouncilOfCalifornia/courtyard",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard.git",
+                "reference": "48caec"
+            },
+            "type": "drupal-library",
+            "time": "2020-06-18T17:33:37+00:00"
+        },
         {
             "name": "alchemy/zippy",
             "version": "0.4.9",
@@ -6972,17 +6983,6 @@
             "type": "drupal-library"
         },
         {
-            "name": "exygy/courtyard",
-            "version": "dev-development",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/exygy/courtyard.git",
-                "reference": "bbfa800"
-            },
-            "type": "drupal-library",
-            "time": "2020-06-23T18:16:52+00:00"
-        },
-        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.12.0",
             "source": {
@@ -12147,11 +12147,23 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/twig_xdebug"
             }
+        },
+        {
+            "name": "exygy/courtyard",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/exygy/courtyard.git",
+                "reference": "bbfa800"
+            },
+            "type": "drupal-library",
+            "time": "2020-06-23T18:16:52+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "judicialcouncilofcalifornia/courtyard": 20,
         "drupal/block_field": 15,
         "drupal/config_exclude": 20,
         "drupal/default_content": 15,
@@ -12167,7 +12179,6 @@
         "drupal/simple_block": 10,
         "drupal/views_aggregator": 15,
         "drupal/xmlsitemap": 15,
-        "exygy/courtyard": 20,
         "drupal/stage_file_proxy": 5
     },
     "prefer-stable": true,
