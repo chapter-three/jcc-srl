@@ -2,4 +2,4 @@ name: 'SRL Updates'
 type: module
 description: 'General update hook implementations.'
 core: 8.x
-package: 'Custom'
+package: 'JCC-SRL'

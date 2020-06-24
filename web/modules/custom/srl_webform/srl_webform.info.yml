@@ -2,6 +2,6 @@ name: 'SRL Webform'
 type: module
 description: 'SRL Webform/Wayfinder'
 core: 8.x
-package: 'SRL'
+package: 'JCC-SRL'
 dependencies:
   - webform

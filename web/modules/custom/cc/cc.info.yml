@@ -2,6 +2,6 @@ name: 'Conditional Content'
 type: module
 description: 'Content tailored to user input.'
 core: 8.x
-package: 'Content'
+package: 'JCC-SRL'
 dependencies:
   - inline_entity_form:inline_entity_form
