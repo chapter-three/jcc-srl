@@ -1,0 +1,48 @@
+uuid: 18320313-8483-41f1-8354-19958dbf15d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.courthouse.body
+    - field.field.node.courthouse.field_geolocation
+    - field.field.node.courthouse.field_zipcode
+    - node.type.courthouse
+  module:
+    - address
+    - geolocation
+    - text
+    - user
+id: node.courthouse.default
+targetEntityType: node
+bundle: courthouse
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_geolocation:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: geolocation_latlng
+    region: content
+  field_zipcode:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

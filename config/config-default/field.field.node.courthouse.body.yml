@@ -1,0 +1,23 @@
+uuid: 74733dcf-ccf7-450d-af0e-73503bf2bcd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.courthouse
+  module:
+    - text
+id: node.courthouse.body
+field_name: body
+entity_type: node
+bundle: courthouse
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

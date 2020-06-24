@@ -1,0 +1,16 @@
+uuid: 4f542a49-8bae-42b3-a59d-9f5f73024d7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.courthouse
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.courthouse
+target_entity_type_id: node
+target_bundle: courthouse
+default_langcode: site_default
+language_alterable: false

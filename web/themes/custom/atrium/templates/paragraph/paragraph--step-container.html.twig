@@ -30,10 +30,15 @@
           {% set step = step.getTranslation(steps.langcode) %}
         {% endif %}
 
+        {% set excerpt %}
+          {{ step.field_description|view }}
+          {{ step.field_offramp|view }}
+        {% endset %}
+
         {# Store each step in an array for the Pattern component. #}
         {% set step_content = step_content|merge([{
           title: step.field_title_display|view,
-          excerpt: step.field_description|view,
+          excerpt: excerpt,
         }]) %}
       {% endif %}
     {% endfor %}

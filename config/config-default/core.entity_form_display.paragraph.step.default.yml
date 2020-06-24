@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.step.field_description
     - field.field.paragraph.step.field_namechange
+    - field.field.paragraph.step.field_offramp
     - field.field.paragraph.step.field_title_display
     - paragraphs.paragraphs_type.step
   module:
     - allowed_formats
+    - block_field
     - maxlength
     - text
 id: paragraph.step.default
@@ -31,6 +33,15 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
+  field_offramp:
+    weight: 11
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
     region: content
   field_title_display:
     weight: 0

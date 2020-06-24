@@ -1,0 +1,28 @@
+uuid: 28360a97-98cb-4272-91e8-5f20eec7756a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_offramp
+    - paragraphs.paragraphs_type.step
+  module:
+    - block_field
+id: paragraph.step.field_offramp
+field_name: field_offramp
+entity_type: paragraph
+bundle: step
+label: Offramp
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    plugin_id: 'views_block:offramp-block_map'
+    settings: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_block:offramp-block_map': 'views_block:offramp-block_map'
+field_type: block_field

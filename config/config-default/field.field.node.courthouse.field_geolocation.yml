@@ -1,0 +1,38 @@
+uuid: 04ef4c24-e82f-44bb-bbcb-b2615ca0ed4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geolocation
+    - node.type.courthouse
+  module:
+    - geocoder_field
+    - geolocation
+third_party_settings:
+  geocoder_field:
+    method: geocode
+    weight: 0
+    skip_not_empty_value: 0
+    disabled: false
+    hidden: true
+    providers:
+      - bingmaps
+    dumper: geolocation_geocoder_v3
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+    field: field_zipcode
+    delta_handling: default
+id: node.courthouse.field_geolocation
+field_name: field_geolocation
+entity_type: node
+bundle: courthouse
+label: Geolocation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation
