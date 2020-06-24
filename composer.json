@@ -94,7 +94,6 @@
     },
     "require": {
         "php": ">=7.3",
-        "judicialcouncilofcalifornia/courtyard": "dev-development#48caec",
         "ckeditor-plugin/templates": "^4.13",
         "composer/installers": "^1.7.0",
         "cweagans/composer-patches": "^1.6.5",
@@ -160,6 +159,8 @@
         "drush/drush": "^9.0.0",
         "enyo/dropzone": "^5.5",
         "harvesthq/chosen": "^1.8.7",
+        "judicialcouncil/courtyard-artifact": "^0.0.108",
+        "judicialcouncilofcalifornia/courtyard": "dev-development#48caec",
         "league/csv": "^9.6",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
