@@ -157,6 +157,7 @@
         "drupal/smart_trim": "^1.1",
         "drupal/twig_tweak": "^2.4",
         "drupal/views_aggregator": "^1.0@alpha",
+        "drupal/viewsreference": "^1.4",
         "drupal/webform": "^5.4",
         "drupal/xmlsitemap": "^1.0@alpha",
         "drush/drush": "^9.0.0",
