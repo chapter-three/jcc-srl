@@ -9,9 +9,9 @@ dependencies:
     - field.field.paragraph.step.field_title_display
     - paragraphs.paragraphs_type.step
   module:
-    - block_field
     - options
     - text
+    - viewsreference
 id: paragraph.step.default
 targetEntityType: paragraph
 bundle: step
@@ -33,10 +33,19 @@ content:
     region: content
   field_offramp:
     weight: 5
-    label: above
-    settings: {  }
+    label: hidden
+    settings:
+      plugin_types:
+        page: page
+        block: block
+        default: 0
+        feed: 0
+        rest_export: 0
+        entity_browser: 0
+        attachment: 0
+        embed: 0
     third_party_settings: {  }
-    type: block_field
+    type: viewsreference_formatter
     region: content
   field_title_display:
     weight: 0

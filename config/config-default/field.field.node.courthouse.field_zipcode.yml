@@ -14,17 +14,17 @@ bundle: courthouse
 label: ZipCode
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
-    langcode: en
+    langcode: ''
     country_code: US
     administrative_area: null
     locality: null
     dependent_locality: null
     postal_code: ''
     sorting_code: null
-    address_line1: ''
+    address_line1: null
     address_line2: null
     organization: null
     given_name: null
