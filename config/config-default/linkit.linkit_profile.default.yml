@@ -38,3 +38,11 @@ matchers:
       result_description: Media
       bundles: {  }
       group_by_bundle: true
+  23a7e9ee-8fe0-4c82-bc7f-f8d5b5386b25:
+    uuid: 23a7e9ee-8fe0-4c82-bc7f-f8d5b5386b25
+    id: 'entity:webform'
+    weight: 0
+    settings:
+      result_description: Webform
+      bundles: null
+      group_by_bundle: null
