@@ -20,19 +20,31 @@
  * @see template_preprocess_fieldset()
  */
 #}
-
-{# Webform wizard version. #}
 {% if element['#attributes']['data-webform-wizard-page-element'] == 1 %}
-
-  {% include '@molecules/text/header-group/header-group.twig' with {
-    headergroup: {
-      title:  legend.title
-    }
-  } %}
+  {% set is_wizard_child = true %}
+{% endif %}
+{%
+  set classes = [
+  'js-form-item',
+  'form-item',
+  'js-form-wrapper',
+  'form-wrapper',
+  'usa-fieldset',
+]
+%}
+<fieldset{{ attributes.addClass(classes) }}>
+  {%
+    set legend_span_classes = [
+    'fieldset-legend',
+    required ? 'js-form-required',
+    required ? 'form-required',
+  ]
+  %}
+  {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
+  <legend{{ legend.attributes.addClass('usa-legend', 'jcc-form-group__title').addClass(is_wizard_child ? 'visually-hidden') }}>
+    <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
+  </legend>
   <div class="fieldset-wrapper">
-    {% if description.content %}
-      <div{{ description.attributes.addClass('description', 'usa-hint') }}>{{ description.content }}</div>
-    {% endif %}
     {% if errors %}
       <div class="form-item--error-message usa-error-message">
         <strong>{{ errors }}</strong>
@@ -45,48 +57,8 @@
     {% if suffix %}
       <span class="field-suffix">{{ suffix }}</span>
     {% endif %}
-
+    {% if description.content %}
+      <div{{ description.attributes.addClass('description', 'usa-hint') }}>{{ description.content }}</div>
+    {% endif %}
   </div>
-
-{# Standard version. #}
-{% else %}
-  {%
-    set classes = [
-    'js-form-item',
-    'form-item',
-    'js-form-wrapper',
-    'form-wrapper',
-    'usa-fieldset',
-  ]
-  %}
-  <fieldset{{ attributes.addClass(classes) }}>
-    {%
-      set legend_span_classes = [
-      'fieldset-legend',
-      required ? 'js-form-required',
-      required ? 'form-required',
-    ]
-    %}
-    {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-    <legend{{ legend.attributes.addClass('usa-legend', 'jcc-form-group__title') }}>
-      <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
-    </legend>
-    <div class="fieldset-wrapper">
-      {% if errors %}
-        <div class="form-item--error-message usa-error-message">
-          <strong>{{ errors }}</strong>
-        </div>
-      {% endif %}
-      {% if prefix %}
-        <span class="field-prefix">{{ prefix }}</span>
-      {% endif %}
-      {{ children }}
-      {% if suffix %}
-        <span class="field-suffix">{{ suffix }}</span>
-      {% endif %}
-      {% if description.content %}
-        <div{{ description.attributes.addClass('description', 'usa-hint') }}>{{ description.content }}</div>
-      {% endif %}
-    </div>
-  </fieldset>
-{% endif %}
+</fieldset>
