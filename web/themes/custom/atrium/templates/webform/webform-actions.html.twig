@@ -8,7 +8,7 @@
 #}
 
 {# @todo This logic should be reversed. If wayfinder is true, use pl component. #}
-{% if element['#webform'] = "was_this_information_helpful_" %}
+{% if element['#webform'] == "was_this_information_helpful_" %}
   {{ element }}
 {% else %}
 {# @todo get path to webform home page. #}
