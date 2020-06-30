@@ -7,14 +7,19 @@
  */
 #}
 
+{# @todo This logic should be reversed. If wayfinder is true, use pl component. #}
+{% if element['#webform'] = "was_this_information_helpful_" %}
+  {{ element }}
+{% else %}
 {# @todo get path to webform home page. #}
-{% include '@molecules/navigation/button-pager/button-pager.twig' with {
-  button_pager: {
-    buttons: element|render,
-    reset: {
-      text: "Start Over"|t,
-        url: "#",
-      style: 'unstyled'
+  {% include '@molecules/navigation/button-pager/button-pager.twig' with {
+    button_pager: {
+      buttons: element|render,
+      reset: {
+        text: "Start Over"|t,
+          url: "#",
+        style: 'unstyled'
+      }
     }
-  }
-} %}
+  } %}
+{% endif %}
