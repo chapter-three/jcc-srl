@@ -12,9 +12,9 @@ style:
 patternlab:
   css:
     theme:
-      ../../../libraries/courtyard-artifact/public/css/styles-srl.min.css: {}
+      ../../../libraries/courtyard/public/css/styles-srl.min.css: {}
   js:
-    ../../../libraries/courtyard-artifact/public/js/scripts.min.js: { minified: true, preprocess: false }
+    ../../../libraries/courtyard/public/js/scripts.min.js: { minified: true, preprocess: false }
 
 datefinder:
   css:

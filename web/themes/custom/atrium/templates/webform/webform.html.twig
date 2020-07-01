@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for a 'webform' element.
+ *
+ * @see web/modules/contrib/webform/templates/webform.html.twig
+ */
+#}
+<div class="jcc-wayfinder-section">
+  <div class="jcc-wayfinder-section__container">
+    <form{{ attributes.addClass('usa-form', 'jcc-form') }}>
+      {{ title_prefix }}
+      {{ children }}
+      {{ title_suffix }}
+    </form>
+  </div>
+</div>
