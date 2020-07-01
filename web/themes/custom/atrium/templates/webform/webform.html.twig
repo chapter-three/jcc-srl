@@ -6,6 +6,14 @@
  * @see web/modules/contrib/webform/templates/webform.html.twig
  */
 #}
+{%- include '@molecules/blocks/hero/hero.twig' with {
+  hero: {
+    title: content|render|striptags|trim,
+    height_variant: "minimum-height",
+    title_variant: "sr-only",
+    background_variant: "has-background-color--dark",
+  }
+} only -%}
 <div class="jcc-wayfinder-section">
   <div class="jcc-wayfinder-section__container">
     <form{{ attributes.addClass('usa-form', 'jcc-form') }}>

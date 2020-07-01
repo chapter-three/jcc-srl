@@ -82,3 +82,23 @@ function _srl_webform_set_wizard_attribute(array &$element) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function srl_webform_preprocess_webform_actions(&$variables) {
+
+  // Apply to webform wizard pager.
+  if ($variables['element']['#type'] == 'actions') {
+    $webform_id_part = str_replace('_add_form', '', $variables['element']['#form_id']);
+    $webform_id = str_replace('webform_submission_', '', $webform_id_part);
+
+    /** @var Drupal\webform\WebformEntityStorage $entity_manager */
+    $entity_manager = \Drupal::entityTypeManager()->getStorage('webform');
+
+    /** @var Drupal\webform\Entity\Webform $webform */
+    $webform = $entity_manager->load($webform_id);
+
+    $variables['webform_url'] = $webform->toUrl();
+  }
+}

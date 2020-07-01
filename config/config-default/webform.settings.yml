@@ -38,10 +38,10 @@ settings:
   default_share: false
   default_share_node: false
   default_share_theme_name: ''
-  default_ajax: false
-  default_ajax_progress_type: throbber
+  default_ajax: true
+  default_ajax_progress_type: fullscreen
   default_ajax_effect: fade
-  default_ajax_speed: 500
+  default_ajax_speed: null
   dialog_options:
     narrow:
       title: Narrow
