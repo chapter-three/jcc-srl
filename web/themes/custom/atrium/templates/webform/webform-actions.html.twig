@@ -4,6 +4,7 @@
  * Overriede theme implementation of a webform actions.
  *
  * @see web/modules/contrib/webform/templates/webform-actions.html.twig
+ * @see srl_webform_preprocess_webform_actions()
  */
 #}
 
@@ -17,7 +18,7 @@
       buttons: element|render,
       reset: {
         text: "Start Over"|t,
-          url: "#",
+          url: webform_url,
         style: 'unstyled'
       }
     }
