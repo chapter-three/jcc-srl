@@ -7,6 +7,11 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
 
+  {# Prepare 'title' for hero.twig #}
+  {% set title %}
+    {{media.label}} <span style="white-space: nowrap;">({{media.field_number.value}})</span>
+  {% endset %}
+
   {# Prepare 'body' for hero.twig #}
   {% set body %}
     <div class="jcc-form--link border-primary-vivid">
@@ -42,7 +47,7 @@
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       breadcrumbs : {},
-      title: media.label ~ ' (' ~ media.field_number.value ~ ')',
+      title: title,
       lead: content.field_description ? content.field_description : '',
       body: body,
       column_variant: 'has-two-columns-half',
