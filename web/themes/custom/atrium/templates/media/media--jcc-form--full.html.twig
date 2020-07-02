@@ -14,17 +14,18 @@
 
   {# Prepare 'body' for hero.twig #}
   {% set body %}
-    <div class="jcc-form--link border-primary-vivid">
+    <a href={{ media.field_url.uri }} class="jcc-form--link border-primary-vivid">
+      {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
       {% include '@atoms/icons/icon.twig' with {
         icon: {
-          name: "file_download",
+          name: 'file',
           width: 'width-2',
           height: 'height-2',
           color: 'text-primary-vivid'
         }
       } %}
-      {{ link("Download PDF"|t,  media.field_url.uri) }}
-    </div>
+      <span>View PDF</span>
+    </a>
 
     {% if language_links %}
       <div class="jcc-form--languages">

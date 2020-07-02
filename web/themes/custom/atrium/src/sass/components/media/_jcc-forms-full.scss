@@ -1,17 +1,18 @@
-.jcc-form--link {
+a.jcc-form--link {
   @include u-margin-top(2);
   @include u-padding-x(2);
   @include u-padding-y(1);
   border: 1px solid;
   display: inline-block;
+  text-decoration: none;
 
   > * {
     display: inline-block;
-    vertical-align: middle;
   }
 
-  a {
-    text-decoration: none;
+  svg {
+    vertical-align: text-top;
+    @include u-margin-right('05');
   }
 }
 
