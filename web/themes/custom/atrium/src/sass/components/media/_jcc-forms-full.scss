@@ -1,3 +1,12 @@
+article.jcc-form--hero-full-height {
+  .jcc-hero {
+    /* These variables should live somewhere else. */
+    $global-header-height: 84px;
+    $global-footer-height: 60px;
+    min-height: calc(100vh - #{$global-header-height} - #{$global-footer-height});
+  }
+}
+
 a.jcc-form--link {
   @include u-margin-top(2);
   @include u-padding-x(2);

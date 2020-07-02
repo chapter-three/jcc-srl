@@ -4,6 +4,31 @@
  * Template for "JCC Form" media type using "Full content" display mode.
  */
 #}
+
+{# Get Case Type taxonomy term entities. #}
+{% set case_types = media.field_case_type %}
+
+{# Create an empty tiles array. #}
+{% set switchboard_tiles = [] %}
+
+{# Each link in each case type gets its own tile. #}
+{% for key, case_type in case_types %}
+  {% for key, link in case_type.entity.field_case_type_info_link.value %}
+    {# Prepare 'switchboard_tiles' for switchboard.twig #}
+    {% set switchboard_tiles = switchboard_tiles|merge([{
+      brow: "Go to"|t,
+      title: link.title,
+      url: link.uri,
+      icon_link: true,
+    }]) %}
+  {% endfor %}
+{% endfor %}
+
+{# If there's no switchboard, add full-height class to the container #}
+{% if switchboard_tiles is empty %}
+  {% set classes = ['jcc-form--hero-full-height']|merge(classes|default([''])) %}
+{% endif %}
+
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
 
@@ -55,31 +80,7 @@
     }
   } %}
 
-  {# Get Case Type taxonomy term entities. #}
-  {% set case_types = media.field_case_type %}
-
-  {# Create an empty tiles array. #}
-  {% set tiles = [] %}
-
-  {# Each Case Type taxonomy term gets its own switchboard. #}
-  {% for key, case_type in case_types %}
-
-    {# Each link gets its own tile. #}
-    {% for key, link in case_type.entity.field_case_type_info_link.value %}
-
-      {# Prepare 'tiles' for switchboard.twig #}
-      {% set tiles = tiles|merge([{
-        brow: "Go to"|t,
-        title: link.title,
-        url: link.uri,
-        icon_link: true,
-      }]) %}
-
-    {% endfor %}
-
-  {% endfor %}
-
-  {% if tiles is not empty %}
+  {% if switchboard_tiles is not empty %}
 
     {# Include switchboard component. #}
     {% include '@organisms/sections/switchboard/switchboard.twig' with {
@@ -89,7 +90,7 @@
         body: ' ',
         headergroup: null,
         items: {
-          primary: tiles,
+          primary: switchboard_tiles,
         },
       }
     } only %}
