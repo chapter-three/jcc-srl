@@ -18,12 +18,8 @@
 .jcc-form--languages {
   @include u-padding-top(4);
 
-  label {
-    @include u-padding-right(2);
-  }
-
   span {
-    @include u-padding-x(2);
+    @include u-padding-right(2);
     display: inline-block;
   }
 }
