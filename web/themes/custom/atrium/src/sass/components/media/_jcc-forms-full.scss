@@ -26,6 +26,12 @@ a.jcc-form--link {
 }
 
 .jcc-form--thumbnail {
+  display: none;
+  
+  @include at-media(desktop) {
+    display: block;
+  }
+  
   img {
     @include u-shadow(1);
     max-height: 400px;
