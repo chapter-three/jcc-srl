@@ -62,6 +62,22 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  ignore_character:
+    all_fields: false
+    fields:
+      - form_number
+    ignorable: '-'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   ignorecase:
     all_fields: true
     fields:
