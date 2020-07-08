@@ -33,7 +33,9 @@
             label: timeline_dual_item.field_bottom_read_more.title,
             url: timeline_dual_item.field_bottom_read_more.0.url.toString(),
           },
-          modal: timeline_dual_item.field_bottom_read_more_modal|view
+          modal: {
+            content: timeline_dual_item.field_bottom_read_more_modal|view,
+          }
         }
       }
       %}
@@ -52,7 +54,9 @@
             label: timeline_dual_item.field_top_read_more.title,
             url: timeline_dual_item.field_top_read_more.0.url.toString(),
           },
-          modal: timeline_dual_item.field_top_read_more_modal|view
+          modal: {
+            content: timeline_dual_item.field_top_read_more_modal|view
+          }
         }
       },
       bottom: bottom
