@@ -12,15 +12,19 @@
 {% if element['#webform'] == "was_this_information_helpful_" %}
   {{ element }}
 {% else %}
-{# @todo get path to webform home page. #}
+  {% if element.wizard_prev is null %}
+    {% set reset = null %}
+  {% else %}
+    {% set reset = {
+      text: "Start Over"|t,
+      url: webform_url,
+      style: 'unstyled'
+    } %}
+  {% endif %}
   {% include '@molecules/navigation/button-pager/button-pager.twig' with {
     button_pager: {
       buttons: element|render,
-      reset: {
-        text: "Start Over"|t,
-          url: webform_url,
-        style: 'unstyled'
-      }
+      reset: reset
     }
   } %}
 {% endif %}
