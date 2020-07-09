@@ -11,6 +11,9 @@
 {# Create an empty tiles array. #}
 {% set switchboard_tiles = [] %}
 
+{# Add a class to the tile links so we can track these clicks separately in google tag manager #}
+{% set tile_url_attributes = create_attribute({'class': ['form-info-tile-link']}) %}
+
 {# Each link in each case type gets its own tile. #}
 {% for key, case_type in case_types %}
   {% for key, link in case_type.entity.field_case_type_info_link.value %}
@@ -20,6 +23,7 @@
       title: link.title,
       url: link.uri,
       icon_link: true,
+      url_attributes: tile_url_attributes
     }]) %}
   {% endfor %}
 {% endfor %}
