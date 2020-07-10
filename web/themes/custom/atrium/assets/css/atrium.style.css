@@ -1249,35 +1249,49 @@ through all possible variants
   min-width: 12rem;
 }
 
-.jcc-form--link {
+article.jcc-form--hero-full-height .jcc-hero {
+  /* These variables should live somewhere else. */
+  min-height: calc(100vh - 84px - 60px);
+}
+
+a.jcc-form--link {
+  margin-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   border: 1px solid;
   display: inline-block;
-}
-.jcc-form--link > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-.jcc-form--link a {
   text-decoration: none;
+}
+a.jcc-form--link > * {
+  display: inline-block;
+}
+a.jcc-form--link svg {
+  vertical-align: text-top;
+  margin-right: 0.25rem;
 }
 
 .jcc-form--languages {
   padding-top: 2rem;
 }
-.jcc-form--languages label {
-  padding-right: 1rem;
-}
 .jcc-form--languages span {
-  padding-left: 1rem;
   padding-right: 1rem;
   display: inline-block;
 }
 
+.jcc-form--thumbnail {
+  display: none;
+}
+@media all and (min-width: 64em) {
+  .jcc-form--thumbnail {
+    display: block;
+  }
+}
 .jcc-form--thumbnail img {
+  -webkit-box-shadow: 0 1px 0.25rem 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0.25rem 0 rgba(0, 0, 0, 0.1);
+  max-height: 400px;
   display: block;
   margin: 0 auto;
 }
