@@ -6,8 +6,6 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\webform\Entity\Webform;
-use Drupal\webform\WebformEntityStorage;
 
 /**
  * Implements hook_webform_element_default_properties_alter().
