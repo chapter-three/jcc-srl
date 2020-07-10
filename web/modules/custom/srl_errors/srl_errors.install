@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function srl_errors_install() {
+  module_set_weight('srl_errors', 21);
+}

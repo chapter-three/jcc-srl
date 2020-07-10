@@ -1,0 +1,4 @@
+services:
+  form_error_handler:
+    class: Drupal\srl_errors\SRLErrorsFormErrorHandler
+    arguments: []
