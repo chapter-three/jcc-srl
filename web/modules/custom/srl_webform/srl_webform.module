@@ -6,8 +6,6 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\webform\Entity\Webform;
-use Drupal\webform\WebformEntityStorage;
 
 /**
  * Implements hook_webform_element_default_properties_alter().
@@ -99,6 +97,13 @@ function srl_webform_preprocess_webform_actions(&$variables) {
     /** @var Drupal\webform\Entity\Webform $webform */
     $webform = $entity_manager->load($webform_id);
 
+    // Send root url to template.
     $variables['webform_url'] = $webform->toUrl();
+
+    // Change label to "Start" on first page.
+    if(!isset($variables['element']['wizard_prev'])) {
+      $variables['element']['wizard_next']['#value'] = t("Start");
+    }
+
   }
 }
