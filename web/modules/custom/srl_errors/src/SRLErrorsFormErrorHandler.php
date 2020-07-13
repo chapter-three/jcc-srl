@@ -3,6 +3,9 @@
 namespace Drupal\srl_errors;
 
 use Drupal\Core\Form\FormElementHelper;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\RendererInterface;
+use Drupal\Core\StringTranslation\TranslationInterface;
 use Drupal\inline_form_errors\FormErrorHandler;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
@@ -13,6 +16,10 @@ use Drupal\Core\Url;
  * Extends error handling from inline_form_errors.
  */
 class SRLErrorsFormErrorHandler extends FormErrorHandler {
+
+  public function __construct(TranslationInterface $string_translation, RendererInterface $renderer, MessengerInterface $messenger) {
+    parent::__construct($string_translation, $renderer, $messenger);
+  }
 
   /**
    * Print errors message without list of fields.
