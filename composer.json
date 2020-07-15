@@ -160,7 +160,7 @@
         "enyo/dropzone": "^5.5",
         "harvesthq/chosen": "^1.8.7",
         "judicialcouncil/courtyard-artifact": "^0.0.108",
-        "judicialcouncilofcalifornia/courtyard": "dev-development#ee88780",
+        "judicialcouncilofcalifornia/courtyard": "dev-development#a491ff5",
         "league/csv": "^9.6",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
