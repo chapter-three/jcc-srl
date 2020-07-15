@@ -20,25 +20,28 @@
  * @see template_preprocess_fieldset()
  */
 #}
+{% if element['#attributes']['data-webform-wizard-page-element'] == 1 %}
+  {% set is_wizard_child = true %}
+{% endif %}
 {%
   set classes = [
-    'js-form-item',
-    'form-item',
-    'js-form-wrapper',
-    'form-wrapper',
-    'usa-fieldset',
-  ]
+  'js-form-item',
+  'form-item',
+  'js-form-wrapper',
+  'form-wrapper',
+  'usa-fieldset',
+]
 %}
 <fieldset{{ attributes.addClass(classes) }}>
   {%
     set legend_span_classes = [
-      'fieldset-legend',
-      required ? 'js-form-required',
-      required ? 'form-required',
-    ]
+    'fieldset-legend',
+    required ? 'js-form-required',
+    required ? 'form-required',
+  ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  <legend{{ legend.attributes.addClass('usa-legend', 'jcc-form-group__title') }}>
+  <legend{{ legend.attributes.addClass('usa-legend', 'jcc-form-group__title').addClass(is_wizard_child ? 'visually-hidden') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
   </legend>
   <div class="fieldset-wrapper">

@@ -39,6 +39,7 @@ settings:
           name: Media
           items:
             - file
+            - DrupalMediaLibrary
             - Blockquote
         -
           name: Styles

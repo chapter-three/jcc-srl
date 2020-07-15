@@ -301,6 +301,38 @@ CKEDITOR.addTemplates('default', {
         '</li>' +
         '</ul>'
     },
+    {
+      title: '"Go to" link tile section',
+      image: 'explainer-two.png',
+      description: 'Use to wrap "go to" links.',
+      template: function () {
+        return `<p>Text Before</p>
+        <div class="jcc-tiles-section jcc-tiles-section--has-two-columns">
+          <ul class="jcc-tiles">
+            <li>Insert tile here</li>
+            <li>Insert tile here</li>
+            <li>Insert tile here</li>
+          </ul>
+        </div>
+        <p>Text After</p>`
+      }
+    },
+    {
+      title: '"Go to" link tile',
+      image: 'explainer-one.png',
+      description: 'Use to link to another page.',
+      template: function () {
+        return `<li class="jcc-tiles__item">
+          <div class="jcc-tile jcc-tile--hover">
+            <p class="jcc-tile__brow">Go to</p>
+            <h3 class="jcc-tile__title">
+              <a href="#">The title of the link tile</a>
+            </h3>
+            <div class="jcc-tile__icon-link"></div>
+          </div>
+        </li>`
+      }
+    },
   ]
 });
 
