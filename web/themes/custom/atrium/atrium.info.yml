@@ -3,7 +3,7 @@ description: A custom theme for JCC.
 core: 8.x
 type: theme
 base theme: classy
-logo: ../../../libraries/courtyard/source/images/jcc-logo.svg
+logo: ../../../libraries/courtyard/source/images/logos/jcc-logo.svg
 
 regions:
   logo: 'Logo'
