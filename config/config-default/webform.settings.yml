@@ -91,7 +91,7 @@ handler:
 variant:
   excluded_variants: {  }
 export:
-  exporter: table
+  exporter: delimited
   multiple_delimiter: ','
   header_format: label
   header_prefix: true
@@ -108,6 +108,7 @@ export:
   likert_answers_format: label
   signature_format: status
   archive_type: tar
+  delimiter: ','
   excel: true
   excluded_exporters: {  }
   temp_directory: ''
