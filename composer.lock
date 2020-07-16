@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32deae544a532bda16f96d30075f6466",
+    "content-hash": "682c10f61e145a3ecd572f48a147666d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6532,17 +6532,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.17.0",
+            "version": "5.19.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/webform.git",
-                "reference": "8.x-5.17"
+                "reference": "8.x-5.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.17.zip",
-                "reference": "8.x-5.17",
-                "shasum": "05ad1c707119279a11680751b8ca39fc2e331532"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.19.zip",
+                "reference": "8.x-5.19",
+                "shasum": "90a2084c2647bca791cc8b18a7e2a3b49f3da7ea"
             },
             "require": {
                 "drupal/core": "^8.8"
@@ -6581,8 +6581,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-5.17",
-                    "datestamp": "1592841189",
+                    "version": "8.x-5.19",
+                    "datestamp": "1593681136",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7459,6 +7459,46 @@
             ],
             "description": "Converts HTML to formatted plain text",
             "time": "2016-03-16T23:24:34+00:00"
+        },
+        {
+            "name": "joachim-n/composer-manifest",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joachim-n/composer-manifest.git",
+                "reference": "f9e6fdaeb0989c24ab325a196a3b3862af1e6709"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joachim-n/composer-manifest/zipball/f9e6fdaeb0989c24ab325a196a3b3862af1e6709",
+                "reference": "f9e6fdaeb0989c24ab325a196a3b3862af1e6709",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "symfony/yaml": "^3.4 || ^4.2"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0",
+                "symfony/var-dumper": "^4.2"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ComposerManifest\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ComposerManifest\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Joachim Noreiko",
+                    "email": "joachim@107701.no-reply.drupal.org"
+                }
+            ],
+            "time": "2019-07-29T14:53:08+00:00"
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
@@ -12109,9 +12149,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1502196543",
