@@ -35,6 +35,7 @@
           },
           modal: {
             content: timeline_dual_item.field_bottom_read_more_modal|view,
+            button_label: timeline_dual_item.field_bottom_excerpt.value ? timeline_dual_item.field_bottom_excerpt|view : null,
           }
         }
       }
@@ -55,7 +56,8 @@
             url: timeline_dual_item.field_top_read_more.0.url.toString(),
           },
           modal: {
-            content: timeline_dual_item.field_top_read_more_modal|view
+            content: timeline_dual_item.field_top_read_more_modal|view,
+            button_label: timeline_dual_item.field_top_excerpt.value ? timeline_dual_item.field_top_excerpt|view : null,
           }
         }
       },
