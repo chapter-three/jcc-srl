@@ -11,7 +11,7 @@ migration_group: null
 label: 'Migrate jcc forms from csv'
 source:
   plugin: csv
-  path: jcc_forms.csv
+  path: modules/custom/jcc_forms/jcc_forms.csv
   ids:
     - form_number
   fields:

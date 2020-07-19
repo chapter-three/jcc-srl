@@ -11,7 +11,7 @@ migration_group: null
 label: 'Import case types used for tagging forms'
 source:
   plugin: csv
-  path: case_types.csv
+  path: modules/custom/jcc_forms/case_types.csv
   ids:
     - case_type
   fields:
