@@ -1,0 +1,23 @@
+uuid: fe18e427-17b4-457f-9c2d-58a499a10324
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_category_info_link
+    - taxonomy.vocabulary.jcc_form_category
+  module:
+    - link
+id: taxonomy_term.jcc_form_category.field_category_info_link
+field_name: field_category_info_link
+entity_type: taxonomy_term
+bundle: jcc_form_category
+label: category_info_link
+description: 'This link gets rendered on the form info pages for forms tagged with this category. It should be a link to self-help information about this category.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
