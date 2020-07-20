@@ -71,6 +71,18 @@ process:
   field_number: form_number
   field_description: form_description
   field_url: form_url
+  field_form_prefix:
+    -
+      plugin: str_replace
+      regex: true
+      source: form_number
+      search: '/^([^-]+)-.+$/'
+      replace: $1
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      bundle: jcc_form_prefix
+      value_key: name
   field_form_category:
     -
       plugin: explode
