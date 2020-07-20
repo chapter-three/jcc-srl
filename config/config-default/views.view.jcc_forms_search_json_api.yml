@@ -14,8 +14,8 @@ dependencies:
     - search_api
     - serialization
     - text
-id: jcc_forms_search_test_json_api
-label: 'JCC Forms Search Test JSON API'
+id: jcc_forms_search_json_api
+label: 'JCC Forms Search JSON API'
 module: views
 description: ''
 tag: ''
