@@ -1,0 +1,11 @@
+uuid: 72db8a99-d658-4b34-b2a8-8fba0e845c1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.jcc_form_prefix
+id: taxonomy_term.jcc_form_prefix
+target_entity_type_id: taxonomy_term
+target_bundle: jcc_form_prefix
+default_langcode: site_default
+language_alterable: false

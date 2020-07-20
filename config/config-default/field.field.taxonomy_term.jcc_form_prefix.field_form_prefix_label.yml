@@ -1,0 +1,19 @@
+uuid: b53ef22b-a980-4234-86a9-28a51fa3a58a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_form_prefix_label
+    - taxonomy.vocabulary.jcc_form_prefix
+id: taxonomy_term.jcc_form_prefix.field_form_prefix_label
+field_name: field_form_prefix_label
+entity_type: taxonomy_term
+bundle: jcc_form_prefix
+label: 'Form Prefix Label'
+description: 'The full label associated with a form prefix. E.g. FL -> Family Law; DV -> Domestic Violence.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

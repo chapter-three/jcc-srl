@@ -1,0 +1,30 @@
+uuid: e97a7f54-4bb7-4f63-89ce-7a6f756c2152
+langcode: en
+status: true
+dependencies: {  }
+id: jcc_form_prefix
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import form number prefixes used for tagging forms'
+source:
+  plugin: csv
+  path: modules/custom/jcc_forms/jcc_form_prefixes.csv
+  fields:
+    -
+      name: form_prefix
+      label: 'Form Prefix'
+    -
+      name: form_prefix_label
+      label: 'Form Prefix Label'
+  ids:
+    - form_prefix
+process:
+  name: form_prefix
+  field_form_prefix_label: form_prefix_label
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: jcc_form_prefix
+migration_dependencies: null
