@@ -22,8 +22,8 @@ source:
       name: form_number
       label: 'Form Number'
     -
-      name: form_case_types
-      label: 'Case Types'
+      name: form_category_ids
+      label: 'Form Category IDs'
     -
       name: form_description
       label: 'Form Description'
@@ -71,16 +71,14 @@ process:
   field_number: form_number
   field_description: form_description
   field_url: form_url
-  field_case_type:
+  field_form_category:
     -
       plugin: explode
       delimiter: ', '
-      source: form_case_types
+      source: form_category_ids
     -
-      plugin: entity_lookup
-      entity_type: taxonomy_term
-      bundle: case_type
-      value_key: name
+      plugin: migration_lookup
+      migration: jcc_form_category
   field_arabic_url/uri: form_arabic_url
   field_cambodian_url/uri: form_cambodian_url
   field_chinese_url/uri: form_chinese_url
@@ -96,4 +94,7 @@ process:
 destination:
   plugin: 'entity:media'
   default_bundle: jcc_form
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - jcc_form_category
+    - jcc_form_prefix
