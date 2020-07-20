@@ -12,44 +12,7 @@ id: mark_my_place
 title: 'Mark my place'
 description: ''
 category: ''
-elements: |
-  '#attributes':
-    class:
-      - jcc-contact-group
-  container:
-    '#type': container
-    '#attributes':
-      class:
-        - jcc-contact-group__container
-    label:
-      '#type': label
-      '#title': 'Enter your email'
-      '#attributes':
-        class:
-          - usa-label
-    email:
-      '#type': email
-      '#title': Email
-      '#title_display': invisible
-      '#required': true
-      '#required_error': 'Email address is required'
-      '#attributes':
-        class:
-          - usa-input
-    actions:
-      '#type': webform_actions
-      '#title': 'Submit button(s)'
-      '#submit__label': 'Send Link'
-      '#submit__attributes':
-        class:
-          - 'usa-button usa-button--accent-warm'
-        style: 'margin-top:0;'
-    info:
-      '#type': webform_markup
-      '#wrapper_attributes':
-        class:
-          - jcc-contact-group__helper
-      '#markup': 'We&#39;ll only use this email to send this link'
+elements: "'#attributes':\n  class:\n    - jcc-contact-group\ncontainer:\n  '#type': container\n  '#attributes':\n    class:\n      - jcc-contact-group__container\n  label:\n    '#type': label\n    '#title': 'Enter your email'\n    '#attributes':\n      class:\n        - usa-label\n  email:\n    '#type': email\n    '#title': Email\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Email address is required'\n    '#attributes':\n      class:\n        - usa-input\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#submit__label': 'Send Link'\n    '#submit__attributes':\n      class:\n        - 'usa-button usa-button--accent-warm'\n      style: 'margin-top:0;'\n  info:\n    '#type': webform_markup\n    '#wrapper_attributes':\n      class:\n        - jcc-contact-group__helper\n    '#markup': 'We&#39;ll only use this email to send this link'\n"
 css: ''
 javascript: ''
 settings:
@@ -245,10 +208,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Mark my place'
-      body: |
-        <p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>
-        <p>{{ webform_token('[current-page:url]', webform_submission) }}</p>
-
+      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>\n<p>{{ webform_token('[current-page:url]', webform_submission) }}</p>\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
