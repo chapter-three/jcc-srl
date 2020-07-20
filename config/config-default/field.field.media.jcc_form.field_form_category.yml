@@ -1,0 +1,29 @@
+uuid: c3fd445d-991c-4f38-9d1a-0f8e78a307ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_form_category
+    - media.type.jcc_form
+    - taxonomy.vocabulary.jcc_form_category
+id: media.jcc_form.field_form_category
+field_name: field_form_category
+entity_type: media
+bundle: jcc_form
+label: 'Form Category'
+description: 'Category search terms associated with this form.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      jcc_form_category: jcc_form_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
