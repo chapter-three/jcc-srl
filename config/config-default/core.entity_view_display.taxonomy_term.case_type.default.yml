@@ -3,10 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.case_type.field_case_type_info_link
     - taxonomy.vocabulary.case_type
   module:
-    - link
     - text
 id: taxonomy_term.case_type.default
 targetEntityType: taxonomy_term
@@ -20,18 +18,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_case_type_info_link:
-    weight: 1
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
 hidden:
   langcode: true
   search_api_excerpt: true
