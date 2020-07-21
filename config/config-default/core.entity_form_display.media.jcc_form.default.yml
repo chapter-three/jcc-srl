@@ -12,6 +12,8 @@ dependencies:
     - field.field.media.jcc_form.field_date_effective
     - field.field.media.jcc_form.field_description
     - field.field.media.jcc_form.field_farsi_url
+    - field.field.media.jcc_form.field_form_category
+    - field.field.media.jcc_form.field_form_prefix
     - field.field.media.jcc_form.field_hmong_url
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_media_file_1
@@ -119,6 +121,26 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_form_category:
+    weight: 39
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_form_prefix:
+    weight: 38
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_hmong_url:
     weight: 31

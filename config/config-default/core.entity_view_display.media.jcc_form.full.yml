@@ -13,6 +13,8 @@ dependencies:
     - field.field.media.jcc_form.field_date_effective
     - field.field.media.jcc_form.field_description
     - field.field.media.jcc_form.field_farsi_url
+    - field.field.media.jcc_form.field_form_category
+    - field.field.media.jcc_form.field_form_prefix
     - field.field.media.jcc_form.field_hmong_url
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_media_file_1
@@ -129,6 +131,8 @@ hidden:
   field_chinese_traditional_url: true
   field_chinese_url: true
   field_farsi_url: true
+  field_form_category: true
+  field_form_prefix: true
   field_hmong_url: true
   field_korean_url: true
   field_punjabi_url: true

@@ -1,0 +1,50 @@
+uuid: 680fe026-7bf2-4d65-9871-0bc9914ab492
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.jcc_form_category.field_category_form_packets_link
+    - field.field.taxonomy_term.jcc_form_category.field_category_info_link
+    - taxonomy.vocabulary.jcc_form_category
+  module:
+    - link
+    - text
+id: taxonomy_term.jcc_form_category.default
+targetEntityType: taxonomy_term
+bundle: jcc_form_category
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_category_form_packets_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_category_info_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
