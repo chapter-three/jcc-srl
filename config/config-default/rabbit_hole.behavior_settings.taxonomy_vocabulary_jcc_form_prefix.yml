@@ -1,0 +1,11 @@
+uuid: c78b94bf-8b75-4f38-aa88-502188889a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.jcc_form_prefix
+id: taxonomy_vocabulary_jcc_form_prefix
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

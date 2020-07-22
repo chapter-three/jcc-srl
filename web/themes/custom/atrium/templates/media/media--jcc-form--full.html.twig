@@ -5,8 +5,8 @@
  */
 #}
 
-{# Get Case Type taxonomy term entities. #}
-{% set case_types = media.field_case_type %}
+{# Get Form Category taxonomy term entities. #}
+{% set form_categories = media.field_form_category %}
 
 {# Create an empty tiles array. #}
 {% set switchboard_tiles = [] %}
@@ -14,9 +14,22 @@
 {# Add a class to the tile links so we can track these clicks separately in google tag manager #}
 {% set tile_url_attributes = create_attribute({'class': ['form-info-tile-link']}) %}
 
-{# Each link in each case type gets its own tile. #}
-{% for key, case_type in case_types %}
-  {% for key, link in case_type.entity.field_case_type_info_link.value %}
+{# Each link in each form category gets its own tile. #}
+{% for key, form_category in form_categories %}
+  {# Form info links #}
+  {% for key, link in form_category.entity.field_category_info_link.value %}
+    {# Prepare 'switchboard_tiles' for switchboard.twig #}
+    {% set switchboard_tiles = switchboard_tiles|merge([{
+      brow: "Go to"|t,
+      title: link.title,
+      url: link.uri,
+      icon_link: true,
+      url_attributes: tile_url_attributes
+    }]) %}
+  {% endfor %}
+  
+  {# Form packets links #}
+  {% for key, link in form_category.entity.field_category_form_packets_link.value %}
     {# Prepare 'switchboard_tiles' for switchboard.twig #}
     {% set switchboard_tiles = switchboard_tiles|merge([{
       brow: "Go to"|t,
@@ -43,7 +56,9 @@
 
   {# Prepare 'body' for hero.twig #}
   {% set body %}
-    <a href={{ media.field_url.uri }} class="jcc-form--link border-primary-vivid">
+    <a href={{ media.field_url.uri }}
+       class="jcc-form--link border-primary-vivid"
+       aria-label="View {{media.field_number.value}} {{media.label}} form PDF">
       {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
       {% include '@atoms/icons/icon.twig' with {
         icon: {
@@ -68,7 +83,10 @@
   {# Prepare 'column_content_right' for hero.twig. #}
   {% set column_content_right %}
     <div class="jcc-form--thumbnail">
-      <a target="_blank" href="{{ media.field_url.uri }}"><img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}"></a>
+      <a href="{{ media.field_url.uri }}">
+        <img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}"
+             alt="View {{media.field_number.value}} {{media.label}} form PDF">
+      </a>
     </div>
   {% endset %}
 

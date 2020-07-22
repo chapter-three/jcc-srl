@@ -1,15 +1,16 @@
-uuid: 3e03d8fe-6949-47e2-ac97-ca4a2a88a9de
+uuid: 459f75da-c260-46df-a2b2-4e371b0af84c
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.case_type
+    - field.field.taxonomy_term.jcc_form_prefix.field_form_prefix_label
+    - taxonomy.vocabulary.jcc_form_prefix
   module:
     - path
     - text
-id: taxonomy_term.case_type.default
+id: taxonomy_term.jcc_form_prefix.default
 targetEntityType: taxonomy_term
-bundle: case_type
+bundle: jcc_form_prefix
 mode: default
 content:
   description:
@@ -20,6 +21,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_form_prefix_label:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 2
