@@ -5,7 +5,9 @@ dependencies:
   config:
     - entity_browser.browser.meb_forms
     - field.field.node.srl_howto_instruction.body
+    - field.field.node.srl_howto_instruction.field_actions
     - field.field.node.srl_howto_instruction.field_blocks
+    - field.field.node.srl_howto_instruction.field_case_types
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_metatag
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
+    - field.field.node.srl_howto_instruction.field_parties
     - field.field.node.srl_howto_instruction.field_title_display
     - node.type.srl_howto_instruction
   module:
@@ -34,7 +37,7 @@ third_party_settings:
         - field_howto_tabs_title
         - field_howto_tabs
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: details
       format_settings:
         description: 'Create horizontal tabs.'
@@ -66,7 +69,7 @@ third_party_settings:
         - field_blocks
         - field_forms
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         id: ''
@@ -75,6 +78,21 @@ third_party_settings:
         required_fields: true
       label: Body
       region: content
+    group_tags:
+      children:
+        - field_case_types
+        - field_actions
+        - field_parties
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: jcc-tag-set
+        description: ''
+        required_fields: true
+      label: Tags
 id: node.srl_howto_instruction.default
 targetEntityType: node
 bundle: srl_howto_instruction
@@ -102,10 +120,16 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_actions:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_blocks:
     weight: 11
     settings:
@@ -114,6 +138,12 @@ content:
       settings: {  }
     third_party_settings: {  }
     type: block_field_default
+    region: content
+  field_case_types:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_column_first:
     weight: 4
@@ -189,13 +219,14 @@ content:
     type: text_textfield
     region: content
   field_metatag:
-    weight: 26
-    settings: {  }
+    weight: 12
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   field_paragraphs:
-    weight: 4
+    weight: 5
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -208,6 +239,12 @@ content:
     region: content
   field_parent:
     weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_parties:
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -235,7 +272,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -243,7 +280,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -255,13 +292,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -270,7 +307,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

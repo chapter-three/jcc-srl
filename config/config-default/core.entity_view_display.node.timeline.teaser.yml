@@ -5,9 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.timeline.body
+    - field.field.node.timeline.field_actions
+    - field.field.node.timeline.field_case_types
     - field.field.node.timeline.field_column_content_right
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
+    - field.field.node.timeline.field_parties
     - node.type.timeline
   module:
     - user
@@ -18,9 +21,12 @@ mode: teaser
 content: {  }
 hidden:
   body: true
+  field_actions: true
+  field_case_types: true
   field_column_content_right: true
   field_lead: true
   field_paragraphs: true
+  field_parties: true
   langcode: true
   links: true
   search_api_excerpt: true

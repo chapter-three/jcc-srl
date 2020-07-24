@@ -1,0 +1,8 @@
+uuid: 82f3ab70-a804-4cee-83a2-908713072757
+langcode: en
+status: true
+dependencies: {  }
+name: Party
+vid: party
+description: ''
+weight: 0

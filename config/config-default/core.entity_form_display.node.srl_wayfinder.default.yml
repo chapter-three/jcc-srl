@@ -3,22 +3,43 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.srl_wayfinder.field_actions
+    - field.field.node.srl_wayfinder.field_case_types
     - field.field.node.srl_wayfinder.field_description
     - field.field.node.srl_wayfinder.field_metatag
     - field.field.node.srl_wayfinder.field_options
     - field.field.node.srl_wayfinder.field_paragraphs
+    - field.field.node.srl_wayfinder.field_parties
     - field.field.node.srl_wayfinder.field_title_display
     - node.type.srl_wayfinder
   module:
     - allowed_formats
     - cc
     - entity_browser_entity_form
+    - field_group
     - inline_entity_form
     - maxlength
     - metatag
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_tags:
+      children:
+        - field_case_types
+        - field_actions
+        - field_parties
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: jcc-tag-set
+        description: ''
+        required_fields: true
+      label: Tags
 id: node.srl_wayfinder.default
 targetEntityType: node
 bundle: srl_wayfinder
@@ -30,6 +51,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_actions:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_case_types:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_description:
     weight: 2
     settings:
@@ -47,8 +80,9 @@ content:
     type: text_textarea
     region: content
   field_metatag:
-    weight: 26
-    settings: {  }
+    weight: 12
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
@@ -86,6 +120,12 @@ content:
       cc:
         status: '1'
     type: entity_reference_paragraphs
+    region: content
+  field_parties:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_title_display:
     weight: 1
@@ -132,6 +172,11 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  translation:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 5

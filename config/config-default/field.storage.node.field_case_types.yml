@@ -1,0 +1,20 @@
+uuid: f30ffec5-1412-41b9-9342-e2c0b9e1e8b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_case_types
+field_name: field_case_types
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

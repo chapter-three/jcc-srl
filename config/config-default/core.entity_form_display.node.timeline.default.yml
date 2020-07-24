@@ -4,17 +4,38 @@ status: true
 dependencies:
   config:
     - field.field.node.timeline.body
+    - field.field.node.timeline.field_actions
+    - field.field.node.timeline.field_case_types
     - field.field.node.timeline.field_column_content_right
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
+    - field.field.node.timeline.field_parties
     - node.type.timeline
   module:
     - allowed_formats
     - cc
+    - field_group
     - maxlength
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_tags:
+      children:
+        - field_case_types
+        - field_actions
+        - field_parties
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: jcc-tag-set
+        description: ''
+        required_fields: true
+      label: Tags
 id: node.timeline.default
 targetEntityType: node
 bundle: timeline
@@ -46,6 +67,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_actions:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_case_types:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_column_content_right:
     weight: 3
     settings:
@@ -89,6 +122,12 @@ content:
       cc:
         status: 0
     type: entity_reference_paragraphs
+    region: content
+  field_parties:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select
