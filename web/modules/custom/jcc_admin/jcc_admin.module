@@ -59,3 +59,13 @@ function jcc_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) 
     $form["content_translation"]["retranslate"]["#default_value"] = true;
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function jcc_admin_page_attachments(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if ($is_admin) {
+    $attachments['#attached']['library'][] = 'jcc_admin/admin-css';
+  }
+}

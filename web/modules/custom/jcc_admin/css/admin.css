@@ -1,0 +1,12 @@
+fieldset.jcc-tag-set {
+  border: 3px solid #0071b8;
+}
+
+fieldset.jcc-tag-set .fieldset-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+fieldset.jcc-tag-set .fieldset-wrapper > div {
+  margin-right: 20px;
+}
