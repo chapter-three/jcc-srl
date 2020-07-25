@@ -12,7 +12,6 @@
         context
       );
       const $inputs = $(
-        $formClass + " .form-checkbox, " +
         $formClass + " select, " +
         $formClass + " .form-radios input"
       );
@@ -21,7 +20,9 @@
         $submitButton.trigger('click');
       });
 
-      $submitButton.hide();
+      if ($inputs.length) {
+        $submitButton.hide();
+      }
     }
   };
 })(jQuery, Drupal);
