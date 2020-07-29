@@ -1,0 +1,18 @@
+html,
+body {
+  height: 100%;
+}
+
+.dialog-off-canvas-main-canvas {
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
