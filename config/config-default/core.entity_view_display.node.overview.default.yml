@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.overview.field_actions
+    - field.field.node.overview.field_case_types
     - field.field.node.overview.field_paragraphs
+    - field.field.node.overview.field_parties
     - node.type.overview
   module:
     - entity_reference_revisions
@@ -14,7 +17,7 @@ bundle: overview
 mode: default
 content:
   field_paragraphs:
-    weight: 101
+    weight: 1
     label: above
     settings:
       view_mode: default
@@ -23,10 +26,13 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
+  field_actions: true
+  field_case_types: true
+  field_parties: true
   langcode: true
   search_api_excerpt: true

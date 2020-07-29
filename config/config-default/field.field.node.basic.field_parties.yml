@@ -1,0 +1,29 @@
+uuid: a79586b5-c182-4d72-8d23-4e1fc30f9f9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parties
+    - node.type.basic
+    - taxonomy.vocabulary.party
+id: node.basic.field_parties
+field_name: field_parties
+entity_type: node
+bundle: basic
+label: Parties
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      party: party
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

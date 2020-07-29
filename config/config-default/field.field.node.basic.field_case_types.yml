@@ -1,0 +1,29 @@
+uuid: 0c595e3c-c3c8-45d7-b185-ea7e87e8efad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_types
+    - node.type.basic
+    - taxonomy.vocabulary.case_type
+id: node.basic.field_case_types
+field_name: field_case_types
+entity_type: node
+bundle: basic
+label: 'Case types'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      case_type: case_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

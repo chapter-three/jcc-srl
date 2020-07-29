@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.handbook.body
+    - field.field.node.handbook.field_actions
+    - field.field.node.handbook.field_case_types
+    - field.field.node.handbook.field_parties
     - node.type.handbook
   module:
     - user
@@ -15,5 +18,9 @@ mode: teaser
 content: {  }
 hidden:
   body: true
+  field_actions: true
+  field_case_types: true
+  field_parties: true
   langcode: true
   links: true
+  search_api_excerpt: true
