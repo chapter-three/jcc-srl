@@ -14,6 +14,7 @@ dependencies:
     - field.field.media.jcc_form.field_farsi_url
     - field.field.media.jcc_form.field_form_category
     - field.field.media.jcc_form.field_form_prefix
+    - field.field.media.jcc_form.field_form_thumbnail
     - field.field.media.jcc_form.field_hmong_url
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_media_file_1
@@ -27,6 +28,7 @@ dependencies:
     - field.field.media.jcc_form.field_vietnamese_url
     - media.type.jcc_form
   module:
+    - image
     - link
 id: media.jcc_form.default
 targetEntityType: media
@@ -108,6 +110,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_form_thumbnail:
+    weight: 17
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_hmong_url:
     weight: 8

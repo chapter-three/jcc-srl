@@ -15,6 +15,7 @@ dependencies:
     - field.field.media.jcc_form.field_farsi_url
     - field.field.media.jcc_form.field_form_category
     - field.field.media.jcc_form.field_form_prefix
+    - field.field.media.jcc_form.field_form_thumbnail
     - field.field.media.jcc_form.field_hmong_url
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_media_file_1
@@ -57,6 +58,7 @@ hidden:
   field_farsi_url: true
   field_form_category: true
   field_form_prefix: true
+  field_form_thumbnail: true
   field_hmong_url: true
   field_korean_url: true
   field_media_file_1: true
