@@ -26,11 +26,14 @@ a.jcc-form--link {
 }
 
 .jcc-form--languages {
+  display: flex;
+  flex-wrap: wrap;
   @include u-padding-top(4);
+  @include u-padding-left(2);
 
-  span {
-    @include u-padding-right(2);
-    display: inline-block;
+  li {
+    min-width: 50%;
+    white-space: nowrap;
   }
 }
 
