@@ -1,50 +1,50 @@
 {
     "field_arabic_url": {
-      "label_default": "Arabic",
-      "label_in_language": "اَلْعَرَبِيَّةُ"
+      "label_default": "Guide — Arabic",
+      "label_in_language": "دليل — اَلْعَرَبِيَّةُ"
     },
     "field_cambodian_url": {
-        "label_default": "Cambodian",
-        "label_in_language": "ភាសាខ្មែរ"
+        "label_default": "Guide — Cambodian",
+        "label_in_language": "សេចក្តីណែនាំ — ភាសាខ្មែរ"
     },
     "field_chinese_traditional_url": {
-        "label_default": "Chinese",
-        "label_in_language": "汉语"
+        "label_default": "Guide — Chinese",
+        "label_in_language": "指南 — 汉语"
     },
     "field_chinese_url": {
-        "label_default": "Chinese Traditional",
-        "label_in_language": "漢語"
+        "label_default": "Guide — Chinese Traditional",
+        "label_in_language": "指南 — 漢語"
     },
     "field_farsi_url": {
-        "label_default": "Farsi",
-        "label_in_language": "فارسی"
+        "label_default": "Guide — Farsi",
+        "label_in_language": "راهنما — فارسی"
     },
     "field_hmong_url": {
-        "label_default": "Hmong",
-        "label_in_language": "Hmong"
+        "label_default": "Guide — Hmong",
+        "label_in_language": "Lus Taw Qhia — Hmong"
     },
     "field_korean_url": {
-        "label_default": "Korean",
+        "label_default": "Guide — Korean",
         "label_in_language": "한국어"
     },
     "field_punjabi_url": {
-        "label_default": "Punjabi",
-        "label_in_language": "ਪੰਜਾਬੀ"
+        "label_default": "Guide — Punjabi",
+        "label_in_language": "ਗਾਈਡ — ਪੰਜਾਬੀ"
     },
     "field_russian_url": {
-        "label_default": "Russian",
-        "label_in_language": "русский язык"
+        "label_default": "Guide — Russian",
+        "label_in_language": "инструкции — русский язык"
     },
     "field_spanish_url": {
-        "label_default": "Spanish",
-        "label_in_language": "español"
+        "label_default": "Guide — Spanish",
+        "label_in_language": "guía — español"
     },
     "field_tagalog_url": {
-        "label_default": "Tagalog",
-        "label_in_language": "Tagalog"
+        "label_default": "Guide — Tagalog",
+        "label_in_language": "gabay — Tagalog"
     },
     "field_vietnamese_url": {
-        "label_default": "Vietnamese",
-        "label_in_language": "Tiếng Việt"
+        "label_default": "Guide — Vietnamese",
+        "label_in_language": "hướng dẫn — Tiếng Việt"
     }
 }
