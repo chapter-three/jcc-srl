@@ -7536,7 +7536,8 @@
                 "url": "https://github.com/judicialcouncilofcalifornia/courtyard.git",
                 "reference": "0f0b02e"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2020-07-20T23:44:41+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",

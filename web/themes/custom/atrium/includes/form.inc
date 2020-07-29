@@ -66,6 +66,9 @@ function atrium_theme_suggestions_form_element_alter(array &$suggestions, array 
     $suggestions[] = 'form_element__' . $webform_suggestion;
     $suggestions[] = 'form_element__type__' . $element['#type'] . '__' . $webform_suggestion;
   }
+  if (isset($variables['element']['#webform'])) {
+    $suggestions[] = 'form_element__' . $variables['element']['#webform'] . '__' . $variables['element']['#type'];
+  }
 }
 
 /**
