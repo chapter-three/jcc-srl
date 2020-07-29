@@ -13,13 +13,24 @@
       {% set tile = tile.getTranslation(primary.langcode) %}
     {% endif %}
 
+    {# Use webform if it's set #}
+    {% if tile.field_webform.value %}
+      {% set body %}
+        {{ drupal_entity('webform', tile.field_webform.value, 'embed') }}
+      {% endset %}
+    {% else %}
+      {% set body %}
+        {{ tile.field_body|view }}
+      {% endset %}
+    {% endif %}
+
     {# Store each tile in an array for the Pattern component. #}
     {% set primary_items = primary_items|merge([{
       brow: tile.field_link.0.value.title,
       title: tile.field_statement|view,
       url: tile.field_link.0.url.toString(),
       icon_link: tile.field_icon_link.value,
-      body: tile.field_body|view
+      body: body
     }]) %}
 
   {% endfor %}

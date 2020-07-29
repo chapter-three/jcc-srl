@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.timeline.body
+    - field.field.node.timeline.field_actions
+    - field.field.node.timeline.field_case_types
     - field.field.node.timeline.field_column_content_right
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
+    - field.field.node.timeline.field_parties
     - node.type.timeline
   module:
     - entity_reference_revisions
@@ -48,6 +51,9 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
 hidden:
+  field_actions: true
+  field_case_types: true
+  field_parties: true
   langcode: true
   links: true
   search_api_excerpt: true

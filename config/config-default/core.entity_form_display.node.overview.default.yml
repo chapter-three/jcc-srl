@@ -3,12 +3,33 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.overview.field_actions
+    - field.field.node.overview.field_case_types
     - field.field.node.overview.field_paragraphs
+    - field.field.node.overview.field_parties
     - node.type.overview
   module:
     - cc
+    - field_group
     - paragraphs
     - path
+third_party_settings:
+  field_group:
+    group_tags:
+      children:
+        - field_case_types
+        - field_actions
+        - field_parties
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: jcc-tag-set
+        description: ''
+        required_fields: true
+      label: Tags
 id: node.overview.default
 targetEntityType: node
 bundle: overview
@@ -20,6 +41,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_actions:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_case_types:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_paragraphs:
     weight: 9
     settings:
@@ -33,6 +66,12 @@ content:
       cc:
         status: 0
     type: entity_reference_paragraphs
+    region: content
+  field_parties:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select

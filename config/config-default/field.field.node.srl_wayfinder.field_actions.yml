@@ -1,0 +1,29 @@
+uuid: 939a7d52-8ab1-4b82-a13f-022d3a9255e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_actions
+    - node.type.srl_wayfinder
+    - taxonomy.vocabulary.action
+id: node.srl_wayfinder.field_actions
+field_name: field_actions
+entity_type: node
+bundle: srl_wayfinder
+label: Actions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      action: action
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.handbook.body
+    - field.field.node.handbook.field_actions
+    - field.field.node.handbook.field_case_types
+    - field.field.node.handbook.field_parties
     - node.type.handbook
   module:
     - text
@@ -21,5 +24,9 @@ content:
     type: text_default
     region: content
 hidden:
+  field_actions: true
+  field_case_types: true
+  field_parties: true
   langcode: true
   links: true
+  search_api_excerpt: true

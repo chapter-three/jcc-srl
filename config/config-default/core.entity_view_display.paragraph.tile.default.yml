@@ -8,9 +8,11 @@ dependencies:
     - field.field.paragraph.tile.field_link
     - field.field.paragraph.tile.field_page
     - field.field.paragraph.tile.field_statement
+    - field.field.paragraph.tile.field_webform
     - paragraphs.paragraphs_type.tile
   module:
     - link
+    - options
     - text
 id: paragraph.tile.default
 targetEntityType: paragraph
@@ -60,6 +62,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_webform:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden:
   search_api_excerpt: true

@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.basic.body
+    - field.field.node.basic.field_actions
+    - field.field.node.basic.field_case_types
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
     - field.field.node.basic.field_paragraphs
+    - field.field.node.basic.field_parties
     - image.style.large
     - node.type.basic
   module:
@@ -47,7 +50,10 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
 hidden:
+  field_actions: true
+  field_case_types: true
   field_metatag: true
+  field_parties: true
   langcode: true
   links: true
   search_api_excerpt: true

@@ -3,11 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.srl_howto.field_actions
+    - field.field.node.srl_howto.field_case_types
     - field.field.node.srl_howto.field_children_primary
     - field.field.node.srl_howto.field_children_secondary
     - field.field.node.srl_howto.field_column_first
     - field.field.node.srl_howto.field_column_second
     - field.field.node.srl_howto.field_metatag
+    - field.field.node.srl_howto.field_parties
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
     - field.field.node.srl_howto.field_title_display
@@ -29,7 +32,7 @@ third_party_settings:
         - field_children_primary
         - field_children_secondary
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details
       region: content
       format_settings:
@@ -39,6 +42,21 @@ third_party_settings:
         required_fields: true
         open: false
       label: 'Switchboard (DEPREACTED)'
+    group_tags:
+      children:
+        - field_case_types
+        - field_actions
+        - field_parties
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: jcc-tag-set
+        description: ''
+        required_fields: true
+      label: Tags
 id: node.srl_howto.default
 targetEntityType: node
 bundle: srl_howto
@@ -50,6 +68,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_actions:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_case_types:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_children_primary:
     type: entity_reference_paragraphs
     weight: 15
@@ -75,7 +105,7 @@ content:
     third_party_settings: {  }
     region: content
   field_column_first:
-    weight: 10
+    weight: 11
     settings:
       rows: 9
       placeholder: ''
@@ -95,7 +125,7 @@ content:
     type: text_textarea_with_summary
     region: content
   field_column_second:
-    weight: 11
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -111,10 +141,17 @@ content:
     type: text_textarea
     region: content
   field_metatag:
-    weight: 17
-    settings: {  }
+    weight: 14
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_parties:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_switchboard_subtitle:
     weight: 14
@@ -202,9 +239,9 @@ content:
     third_party_settings: {  }
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 1
