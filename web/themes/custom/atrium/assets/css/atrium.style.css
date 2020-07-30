@@ -1282,7 +1282,7 @@ a.jcc-form--link svg {
   padding-left: 1rem;
 }
 .jcc-form--languages li {
-  min-width: 50%;
+  width: 380px;
   white-space: nowrap;
 }
 
