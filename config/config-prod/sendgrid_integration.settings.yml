@@ -3,8 +3,8 @@ test_defaults:
   to: hosting@chapterthree.com
   subject: 'Test Email from SendGrid Module'
   body:
-    value: 'Test Message for SendGrid.'
-    format: plain_text
+    value: "<p>Test <strong>Message</strong> for SendGrid.</p>\r\n"
+    format: basic_html
   from_name: ''
   to_name: ''
   reply_to: ''
