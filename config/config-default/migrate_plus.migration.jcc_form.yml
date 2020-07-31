@@ -66,6 +66,9 @@ source:
     -
       name: form_vietnamese_url
       label: 'Vietnamese URL'
+    -
+      name: form_filling_instructions_url
+      label: 'Form Filling Instructions URL'
 process:
   name: form_name
   field_number: form_number
@@ -109,6 +112,7 @@ process:
     migration: jcc_form_thumbnail_files
     source: form_number
     no_stub: true
+  field_form_filling_instructions_/uri: form_filling_instructions_url
 destination:
   plugin: 'entity:media'
   default_bundle: jcc_form
