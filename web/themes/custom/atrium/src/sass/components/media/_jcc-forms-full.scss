@@ -9,11 +9,18 @@ article.jcc-form--hero-full-height {
 
 a.jcc-form--link {
   @include u-margin-top(2);
+  @include u-margin-right(2);
   @include u-padding-x(2);
   @include u-padding-y(1);
   border: 1px solid;
   display: inline-block;
   text-decoration: none;
+  text-align: center;
+  width: 100%;
+
+  @include at-media(desktop) {
+    width: auto;
+  }
 
   > * {
     display: inline-block;

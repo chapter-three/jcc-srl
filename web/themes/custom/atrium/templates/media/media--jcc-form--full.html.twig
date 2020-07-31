@@ -56,20 +56,38 @@
 
   {# Prepare 'body' for hero.twig #}
   {% set body %}
-    <a href={{ media.field_url.uri }}
-       class="jcc-form--link border-primary-vivid"
-       aria-label="View {{media.field_number.value}} {{media.label}} form PDF">
-      {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
-      {% include '@atoms/icons/icon.twig' with {
-        icon: {
-          name: 'file',
-          width: 'width-2',
-          height: 'height-2',
-          color: 'text-primary-vivid'
-        }
-      } %}
-      <span>View PDF</span>
-    </a>
+    <div class="jcc-form--form-links">
+      <a href={{ media.field_url.uri }}
+         class="jcc-form--link border-primary-vivid"
+         aria-label="View {{media.field_number.value}} {{media.label}} form PDF">
+        {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
+        {% include '@atoms/icons/icon.twig' with {
+          icon: {
+            name: 'file',
+            width: 'width-2',
+            height: 'height-2',
+            color: 'text-primary-vivid'
+          }
+        } %}
+        <span>View form {{media.field_number.value}}</span>
+      </a>
+
+      {% if media.field_form_filling_instructions_.uri %}
+      <a href={{ media.field_form_filling_instructions_.uri }}
+         class="jcc-form--link border-primary-vivid"
+         aria-label="View instructions for filling {{media.field_number.value}} {{media.label}}">
+        {% include '@atoms/icons/icon.twig' with {
+          icon: {
+            name: 'file',
+            width: 'width-2',
+            height: 'height-2',
+            color: 'text-primary-vivid'
+          }
+        } %}
+        <span>View {{media.field_number.value}} instructions</span>
+      </a>        
+      {% endif %}
+    </div>
 
     {% if language_links %}
       <div class="jcc-form--languages">
