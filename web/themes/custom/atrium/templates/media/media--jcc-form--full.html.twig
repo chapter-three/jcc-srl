@@ -56,20 +56,38 @@
 
   {# Prepare 'body' for hero.twig #}
   {% set body %}
-    <a href={{ media.field_url.uri }}
-       class="jcc-form--link border-primary-vivid"
-       aria-label="View {{media.field_number.value}} {{media.label}} form PDF">
-      {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
-      {% include '@atoms/icons/icon.twig' with {
-        icon: {
-          name: 'file',
-          width: 'width-2',
-          height: 'height-2',
-          color: 'text-primary-vivid'
-        }
-      } %}
-      <span>View PDF</span>
-    </a>
+    <div class="jcc-form--form-links">
+      <a href={{ media.field_url.uri }}
+         class="jcc-form--link border-primary-vivid"
+         aria-label="View {{media.field_number.value}} {{media.label}} form PDF">
+        {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
+        {% include '@atoms/icons/icon.twig' with {
+          icon: {
+            name: 'file',
+            width: 'width-2',
+            height: 'height-2',
+            color: 'text-primary-vivid'
+          }
+        } %}
+        <span>Get form {{media.field_number.value}}</span>
+      </a>
+
+      {% if media.field_form_filling_instructions_.uri %}
+      <a href={{ media.field_form_filling_instructions_.uri }}
+         class="jcc-form--link border-primary-vivid"
+         aria-label="View instructions for filling {{media.field_number.value}} {{media.label}}">
+        {% include '@atoms/icons/icon.twig' with {
+          icon: {
+            name: 'file',
+            width: 'width-2',
+            height: 'height-2',
+            color: 'text-primary-vivid'
+          }
+        } %}
+        <span>Get instructions for form {{media.field_number.value}}</span>
+      </a>
+      {% endif %}
+    </div>
 
     {% if language_links %}
       <div class="jcc-form--languages">
@@ -82,9 +100,16 @@
 
   {# Prepare 'column_content_right' for hero.twig. #}
   {% set column_content_right %}
+
+    {% if media.field_form_thumbnail.entity.uri.value %}
+      {% set form_thumbnail_url = file_url(media.field_form_thumbnail.entity.uri.value) %}
+    {% else %}
+      {% set form_thumbnail_url = '/' ~ directory ~ '/assets/images/form-generic.jpg' %}
+    {% endif %}
+
     <div class="jcc-form--thumbnail">
       <a href="{{ media.field_url.uri }}">
-        <img src="/{{ directory ~ '/assets/images/form-generic.jpg' }}"
+        <img src="{{ form_thumbnail_url }}"
              alt="View {{media.field_number.value}} {{media.label}} form PDF">
       </a>
     </div>

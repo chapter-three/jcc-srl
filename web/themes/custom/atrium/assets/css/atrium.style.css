@@ -1282,6 +1282,7 @@ article.jcc-form--hero-full-height .jcc-hero {
 
 a.jcc-form--link {
   margin-top: 1rem;
+  margin-right: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 0.5rem;
@@ -1289,6 +1290,13 @@ a.jcc-form--link {
   border: 1px solid;
   display: inline-block;
   text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+@media all and (min-width: 64em) {
+  a.jcc-form--link {
+    width: auto;
+  }
 }
 a.jcc-form--link > * {
   display: inline-block;

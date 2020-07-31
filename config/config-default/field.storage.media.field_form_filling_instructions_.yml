@@ -1,0 +1,19 @@
+uuid: e5693ea6-6f4b-4f43-ac1d-868a694a91fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_form_filling_instructions_
+field_name: field_form_filling_instructions_
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
