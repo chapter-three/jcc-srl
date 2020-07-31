@@ -1299,11 +1299,17 @@ a.jcc-form--link svg {
 }
 
 .jcc-form--languages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-top: 2rem;
+  padding-left: 1rem;
 }
-.jcc-form--languages span {
-  padding-right: 1rem;
-  display: inline-block;
+.jcc-form--languages li {
+  width: 380px;
+  white-space: nowrap;
 }
 
 .jcc-form--thumbnail {

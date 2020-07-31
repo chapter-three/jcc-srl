@@ -74,7 +74,7 @@
     {% if language_links %}
       <div class="jcc-form--languages">
         {% for language_link in language_links %}
-          <span>{{ language_link }}</span>
+          <li>{{ language_link }}</li>
         {% endfor %}
       </div>
     {% endif %}
@@ -97,7 +97,7 @@
       title: title,
       lead: content.field_description ? content.field_description : '',
       body: body,
-      column_variant: 'has-two-columns-half',
+      column_variant: 'has-two-columns-threequarter',
       column_content_right: column_content_right
     }
   } %}
