@@ -112,7 +112,7 @@ The **Form Category ID** and **Form Category Label** columns are required. If yo
 1. **Add a new field** to [the JCC Form media type](https://selfhelp.courts.ca.gov/admin/structure/media/manage/jcc_form/fields) that will store the new information
 2. **Add a new column** to `jcc_forms.csv` where people will edit this new field
 3. **Update [the jcc_form migration](../../../../config/config-default/migrate_plus.migration.jcc_form.yml)** so that it maps data from the new column to the new field
-4. **Update [the form info twig template](../../../themes/custom/atrium/templates/media/media--jcc-form--full.html.twig) and [the form info stylesheet](../../../themes/custom/atrium/src/sass/components/media/_jcc-forms-full.scss)** so that it renders the information in the new field somewhere on the page
+4. **Update [the form info twig template](../../../themes/custom/atrium/templates/media/media--jcc-form--full.html.twig) and [the form info stylesheet](../../../themes/custom/atrium/src/sass/components/media/_jcc-forms-full.scss)** so that it renders the information in the new field somewhere on the page (see [the atrium docs](../../../themes/custom/atrium#3-atrium-installation) for how to build the stylesheet)
 
 See https://github.com/chapter-three/jcc-srl/pull/245 for a simple example where the form guide links were re-styled and re-labeled.
 
