@@ -1,4 +1,4 @@
-# JCC Forms Module
+# JCC Forms Drupal Module
 
 1. [JCC Form Media Type](#jcc-form-media-type)
 2. [Form Info Pages](#form-info-pages)
