@@ -87,6 +87,12 @@ Then run the JCC Form migration:
 terminus drush -- jcc-srl.<env> migrate-import jcc_form --update
 ```
 
+4) And finally, don't forget to clear the cache
+
+```
+terminus drush -- jcc-srl.<env> cache-rebuild
+```
+
 ### How to add links to translated forms
 
 Add a link to the corresponding column in [`jcc_forms.csv`](jcc_forms.csv), then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms). The current language columns are: **Arabic, Cambodian, Chinese, Chinese Traditional, Farsi, Hmong, Korean, Punjabi, Russian, Spanish, Tagalog, and Vietnamese**.
