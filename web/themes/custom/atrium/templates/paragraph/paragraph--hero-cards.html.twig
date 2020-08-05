@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Template for "Hero cards" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% if content.field_title_display|render or content.field_description|render %}
+    {% set hero = {
+      title: content.field_title_display|render,
+      lead: content.field_description|render,
+      background_variant: 'has-background-color--dark'
+    } %}
+  {% endif %}
+
+  {% if content.field_cards|render %}
+    {% set headergroup = {
+      title: content.field_brow|render,
+    } %}
+
+    {% set card_content = [] %}
+    {% set cards = paragraph.field_cards %}
+
+    {% for key, item in cards.value %}
+      {% set card = cards.get(key).entity %}
+
+      {# Get translated child if it exists. #}
+      {% if card.hasTranslation(cards.langcode) %}
+        {% set card = card.getTranslation(cards.langcode) %}
+      {% endif %}
+
+      {% set links = [] %}
+      {% for link in card.field_links %}
+        {% set links = links|merge([{
+          name: link.title,
+          url: link.url,
+        }]) %}
+      {% endfor %}
+
+      {# Store each card in an array for the Pattern component. #}
+      {% set card_content = card_content|merge([{
+        id: 'now'|date('U'),
+        title: card.field_title_display|view,
+        excerpt: card.field_body|view,
+        menu_label: card.field_title_display|view,
+        menu_items: links,
+      }]) %}
+    {% endfor %}
+  {% endif %}
+
+  {% include '@organisms/sections/hero-cards/hero-cards.twig' with {
+    hero_cards: {
+      hero: hero,
+      card_section: {
+        headergroup: headergroup,
+        border_variant: 'has-border',
+        column_variant: 'has-three-columns',
+        card_template: '@molecules/blocks/card-form/card-form.twig',
+        cards: card_content,
+      }
+    }
+  } only %}
+
+{% endblock %}

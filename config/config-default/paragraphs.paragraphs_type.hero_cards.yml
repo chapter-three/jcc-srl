@@ -1,0 +1,10 @@
+uuid: 5c439d92-3f92-4bdf-972a-156448c68dac
+langcode: en
+status: true
+dependencies: {  }
+id: hero_cards
+label: 'Hero Cards'
+icon_uuid: null
+icon_default: null
+description: 'A hero and cards.'
+behavior_plugins: {  }

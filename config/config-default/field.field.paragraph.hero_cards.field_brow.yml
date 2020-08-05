@@ -1,0 +1,28 @@
+uuid: 5ebf0e9e-b92b-4ca4-9f09-84c35c96c3b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_brow
+    - paragraphs.paragraphs_type.hero_cards
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.hero_cards.field_brow
+field_name: field_brow
+entity_type: paragraph
+bundle: hero_cards
+label: Brow
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
