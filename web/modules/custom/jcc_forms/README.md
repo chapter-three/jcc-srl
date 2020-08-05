@@ -89,15 +89,15 @@ terminus drush -- jcc-srl.<env> migrate-import jcc_form --update
 
 ### How to add links to translated forms
 
-Add a link to the corresponding column in `jcc_forms.csv`, then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms). The current language columns are: **Arabic, Cambodian, Chinese, Chinese Traditional, Farsi, Hmong, Korean, Punjabi, Russian, Spanish, Tagalog, and Vietnamese**.
+Add a link to the corresponding column in [`jcc_forms.csv`](jcc_forms.csv), then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms). The current language columns are: **Arabic, Cambodian, Chinese, Chinese Traditional, Farsi, Hmong, Korean, Punjabi, Russian, Spanish, Tagalog, and Vietnamese**.
 
 ### How to add form descriptions 
 
-In `jcc_forms.csv`, add a one-sentence description to the column labeled **Plain language description (1-2 sentences)**, then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms).
+In [`jcc_forms.csv`](jcc_forms.csv), add a one-sentence description to the column labeled **Plain language description (1-2 sentences)**, then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms).
 
 ### How to tag a form with a category
 
-In `jcc_forms.csv`, add a category id to the **Form category ids** column for a form, then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms).
+In [`jcc_forms.csv`](jcc_forms.csv), add a category id to the **Form category ids** column for a form, then follow the steps in [How to publish updates to forms](#how-to-publish-updates-to-forms).
 
 A form can be tagged with as many category ids as you like, and they must be separated by a comma and a space (look at how it is done for other forms if you are confused). You are only allowed to use category ids that already exist in [`jcc_form_categories.csv`](jcc_form_categories.csv).
 
@@ -110,7 +110,7 @@ The **Form Category ID** and **Form Category Label** columns are required. If yo
 ### How to add new elements to the Form Info pages
 
 1. **Add a new field** to [the JCC Form media type](https://selfhelp.courts.ca.gov/admin/structure/media/manage/jcc_form/fields) that will store the new information
-2. **Add a new column** to `jcc_forms.csv` where people will edit this new field
+2. **Add a new column** to [`jcc_forms.csv`](jcc_forms.csv) where people will edit this new field
 3. **Update [the jcc_form migration](../../../../config/config-default/migrate_plus.migration.jcc_form.yml)** so that it maps data from the new column to the new field
 4. **Update [the form info twig template](../../../themes/custom/atrium/templates/media/media--jcc-form--full.html.twig) and [the form info stylesheet](../../../themes/custom/atrium/src/sass/components/media/_jcc-forms-full.scss)** so that it renders the information in the new field somewhere on the page (see [the atrium docs](../../../themes/custom/atrium#3-atrium-installation) for how to build the stylesheet)
 
