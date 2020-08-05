@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Template for "Links" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% set links = [] %}
+  {% for link in paragraph.field_links %}
+    {% set links = links|merge([{
+      title: link.title,
+      url: link.url,
+    }]) %}
+  {% endfor %}
+
+  {% include '@organisms/sections/tile-section/tile-section.twig' with {
+    tile_section: {
+      headergroup: {
+        title: paragraph.field_title_display|view
+      },
+      column_variant: 'has-four-columns',
+      emphasis_variant: 'has-emphasis',
+      tiles: links
+    }
+  } only %}
+
+{% endblock %}
