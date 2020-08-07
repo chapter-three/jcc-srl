@@ -19,6 +19,12 @@ settings:
           items:
             - Bold
             - Italic
+            - '-'
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - '-'
             - Outdent
             - Indent
         -
