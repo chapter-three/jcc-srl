@@ -1,0 +1,15 @@
+uuid: 5715a291-4c83-47fd-8cd9-a51d08eefdcd
+langcode: en
+status: true
+dependencies: {  }
+name: 768x
+label: 768x
+effects:
+  5e06125e-3155-43b8-b109-019df570c519:
+    uuid: 5e06125e-3155-43b8-b109-019df570c519
+    id: image_scale
+    weight: 1
+    data:
+      width: 768
+      height: null
+      upscale: false

@@ -1,0 +1,15 @@
+uuid: 451158a7-dc3f-42f6-9ab4-0397fd20109e
+langcode: en
+status: true
+dependencies: {  }
+name: 640x
+label: 640x
+effects:
+  ab500821-3e18-441e-a646-91ba34a559c7:
+    uuid: ab500821-3e18-441e-a646-91ba34a559c7
+    id: image_scale
+    weight: 1
+    data:
+      width: 640
+      height: null
+      upscale: false
