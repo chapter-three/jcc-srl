@@ -1,0 +1,23 @@
+uuid: 07efe170-7bfd-4445-8f0e-be335d2e6619
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_link
+    - node.type.court
+  module:
+    - link
+id: node.court.field_main_link
+field_name: field_main_link
+entity_type: node
+bundle: court
+label: 'Main website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

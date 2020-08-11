@@ -1,0 +1,23 @@
+uuid: 57c31e69-d215-474c-bd37-631a87d20248
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_link
+    - node.type.court
+  module:
+    - link
+id: node.court.field_secondary_link
+field_name: field_secondary_link
+entity_type: node
+bundle: court
+label: 'Self help website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

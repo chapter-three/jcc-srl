@@ -1,0 +1,70 @@
+uuid: c8d6868e-1df7-45b9-a54d-865c258bd842
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.courthouse.field_address
+    - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_link
+    - field.field.node.courthouse.field_matters_served
+    - field.field.node.courthouse.field_phone
+    - node.type.courthouse
+  module:
+    - link
+    - text
+    - user
+id: node.courthouse.default
+targetEntityType: node
+bundle: courthouse
+mode: default
+content:
+  field_address:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_court:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_link:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_matters_served:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_phone:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

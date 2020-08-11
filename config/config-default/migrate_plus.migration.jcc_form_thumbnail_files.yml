@@ -23,7 +23,7 @@ source:
     - form_number
   constants:
     DRUPAL_FILE_DIRECTORY: 'public://images/jcc_form_thumbnails/'
-    THUMBNAIL_DIRECTORY: 'modules/custom/jcc_forms/jcc_form_thumbnails/'
+    THUMBNAIL_DIRECTORY: modules/custom/jcc_forms/jcc_form_thumbnails/
 process:
   pseudo_destination_filename:
     -

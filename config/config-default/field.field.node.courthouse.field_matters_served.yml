@@ -1,0 +1,19 @@
+uuid: 5cea8c7a-7a7b-4970-a76e-b32cebd4bf6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_matters_served
+    - node.type.courthouse
+id: node.courthouse.field_matters_served
+field_name: field_matters_served
+entity_type: node
+bundle: courthouse
+label: 'Matters served'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

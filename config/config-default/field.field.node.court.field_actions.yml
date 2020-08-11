@@ -1,0 +1,29 @@
+uuid: 362e72c9-1024-4f14-b797-5bc9e8f703bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_actions
+    - node.type.court
+    - taxonomy.vocabulary.action
+id: node.court.field_actions
+field_name: field_actions
+entity_type: node
+bundle: court
+label: Actions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      action: action
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,32 @@
+uuid: b6c85dd5-3e7d-4088-98ca-82c540653313
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.courthouse.field_address
+    - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_link
+    - field.field.node.courthouse.field_matters_served
+    - field.field.node.courthouse.field_phone
+    - node.type.courthouse
+  module:
+    - user
+id: node.courthouse.teaser
+targetEntityType: node
+bundle: courthouse
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_court: true
+  field_link: true
+  field_matters_served: true
+  field_phone: true
+  langcode: true
+  search_api_excerpt: true
