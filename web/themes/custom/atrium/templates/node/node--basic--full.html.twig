@@ -85,35 +85,21 @@
   {{ title_prefix }}
   {{ title_suffix }}
 
-  {% block content %}
-    {% if label and not page %}
-      {% set title %}
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      {% endset %}
-    {% endif %}
-
-    {% set body %}
-      {% if display_submitted %}
-        <footer class="node__meta">
-          {{ author_picture }}
-          <div{{ author_attributes.addClass('node__submitted') }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </footer>
-      {% endif %}
-      {{ content|without('field_paragraphs')}}
-    {% endset %}
-
-    {% include '@organisms/sections/text-section/text-section.twig' with {
-      text_section: {
-        column_content_left: body,
-        headergroup: {
-          tag: 'h1',
-          title: title
-        },
+  {% if content.field_header|render %}
+    {{ content.field_header }}
+  {% else %}
+    {% include '@molecules/blocks/hero/hero.twig' with {
+      hero: {
+        title: label,
       }
-    } only %}
-  {% endblock %}
+    } %}
+  {% endif %}
+
+  {% include '@organisms/sections/text-section/text-section.twig' with {
+    text_section: {
+      column_content_left: content|without('field_paragraphs', 'field_header'),
+    }
+  } only %}
 </article>
+
 {{ content.field_paragraphs }}

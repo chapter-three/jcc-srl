@@ -1,0 +1,10 @@
+uuid: 903a944f-e6ed-487c-984a-2c0a4cdbb829
+langcode: en
+status: true
+dependencies: {  }
+id: card_form
+label: 'Card Form'
+icon_uuid: null
+icon_default: null
+description: 'Text and form component.'
+behavior_plugins: {  }

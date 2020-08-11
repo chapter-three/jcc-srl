@@ -1,0 +1,85 @@
+uuid: 5ae0a0d3-9f60-4798-aaff-dd62dfe99f69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.card_form
+    - paragraphs.paragraphs_type.hero_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.hero_cards.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: hero_cards
+label: Cards
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card_form: card_form
+    target_bundles_drag_drop:
+      accordion:
+        weight: 19
+        enabled: false
+      accordion_container:
+        weight: 20
+        enabled: false
+      card:
+        weight: 21
+        enabled: false
+      card_form:
+        enabled: true
+        weight: 23
+      card_list:
+        weight: 22
+        enabled: false
+      code_section:
+        weight: 23
+        enabled: false
+      complete:
+        weight: 24
+        enabled: false
+      datefinder:
+        weight: 25
+        enabled: false
+      flex:
+        weight: 26
+        enabled: false
+      hero_cards:
+        weight: 27
+        enabled: false
+      postcard:
+        weight: 28
+        enabled: false
+      step:
+        weight: 29
+        enabled: false
+      step_container:
+        weight: 30
+        enabled: false
+      switchboard:
+        weight: 31
+        enabled: false
+      tile:
+        weight: 32
+        enabled: false
+      timeline:
+        weight: 33
+        enabled: false
+      timeline_dual:
+        weight: 34
+        enabled: false
+      timeline_dual_item:
+        weight: 35
+        enabled: false
+      timeline_item:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

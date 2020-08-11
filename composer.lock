@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18e5b74e09337c0bda084a7de9a4dd9c",
+    "content-hash": "2a80f0ca7b3bda3519b42457bdbfe2c0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7591,9 +7591,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/judicialcouncilofcalifornia/courtyard.git",
-                "reference": "0fba99f"
+                "reference": "3bef293"
             },
-            "type": "drupal-library"
+            "type": "drupal-library",
+            "time": "2020-08-05T22:13:00+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",

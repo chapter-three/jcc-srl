@@ -1,0 +1,50 @@
+uuid: 47cc4bd8-e624-49cf-bce0-7f1f2b0b05ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_cards.field_brow
+    - field.field.paragraph.hero_cards.field_cards
+    - field.field.paragraph.hero_cards.field_description
+    - field.field.paragraph.hero_cards.field_title_display
+    - paragraphs.paragraphs_type.hero_cards
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.hero_cards.default
+targetEntityType: paragraph
+bundle: hero_cards
+mode: default
+content:
+  field_brow:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cards:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title_display:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  search_api_excerpt: true
