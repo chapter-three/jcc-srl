@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.basic.body
     - field.field.node.basic.field_actions
     - field.field.node.basic.field_case_types
+    - field.field.node.basic.field_header
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
     - field.field.node.basic.field_paragraphs
@@ -32,6 +33,7 @@ content:
 hidden:
   field_actions: true
   field_case_types: true
+  field_header: true
   field_media: true
   field_metatag: true
   field_paragraphs: true

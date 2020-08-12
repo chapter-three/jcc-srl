@@ -1,0 +1,60 @@
+uuid: cdcd9807-81ae-48c5-a583-9e4266d5eefe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_form.field_body
+    - field.field.paragraph.card_form.field_links
+    - field.field.paragraph.card_form.field_title_display
+    - paragraphs.paragraphs_type.card_form
+  module:
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_form:
+      children:
+        - field_links
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Form
+id: paragraph.card_form.default
+targetEntityType: paragraph
+bundle: card_form
+mode: default
+content:
+  field_body:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_links:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title_display:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true

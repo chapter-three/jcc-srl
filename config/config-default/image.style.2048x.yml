@@ -1,0 +1,15 @@
+uuid: 1dfaa124-6c1c-427d-ad04-df766d80e857
+langcode: en
+status: true
+dependencies: {  }
+name: 2048x
+label: 2048x
+effects:
+  204cfdf5-78fb-40a6-a768-c950fa0e6f6b:
+    uuid: 204cfdf5-78fb-40a6-a768-c950fa0e6f6b
+    id: image_scale
+    weight: 1
+    data:
+      width: 2048
+      height: null
+      upscale: false

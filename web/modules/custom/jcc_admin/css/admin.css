@@ -10,3 +10,11 @@ fieldset.jcc-tag-set .fieldset-wrapper {
 fieldset.jcc-tag-set .fieldset-wrapper > div {
   margin-right: 20px;
 }
+
+fieldset:not(.fieldgroup).no-title {
+  padding-top: 6px;
+}
+
+fieldset:not(.fieldgroup).no-title > legend {
+  display: none;
+}

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.basic.body
     - field.field.node.basic.field_actions
     - field.field.node.basic.field_case_types
+    - field.field.node.basic.field_header
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
     - field.field.node.basic.field_paragraphs
@@ -29,6 +30,15 @@ content:
     type: text_default
     weight: 1
     settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_header:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     region: content
   field_media:
