@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Theme override to display a courthouse node.
+ *
+ * See node.html.twig and page.html.twig.
+ */
+#}
+
+{% extends 'node.html.twig' %}
+{% block content %}
+
+  {% set tags = [] %}
+  {% for tag in node.field_matters_served.value|split(',') %}
+    {% set tags = tags|merge([{
+      text: tag|trim
+    }]) %}
+  {% endfor %}
+
+  {% set location = {
+    brow: node.title.value ~ ' County'|t,
+    title: node.title.value,
+    address: content.field_address|render|remove_html_comments|trim,
+    phone: {
+      title: node.field_phone.0.value,
+      url: 'tel:' ~ node.field_phone.0.value|replace({'(': '', ')': '', ' ': '-'})|url_encode,
+    },
+    website: {
+      title: node.title.value,
+      url: content.field_link.0['#url']|render,
+    },
+    tags_label: 'Matters Served',
+    tags: tags,
+    hours_label: 'Hours'|t,
+    hours: [
+      {
+        label: 'Building'|t,
+        details: content.field_building_hours,
+      },
+      {
+        label: 'Clerks'|t,
+        details: content.field_filing_hours,
+      },
+      {
+        label: 'Self Help'|t,
+        details: content.field_self_help_hours,
+      },
+    ]
+    directions_title: 'Get Directions'|t,
+  } %}
+
+{% endblock %}
