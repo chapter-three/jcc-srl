@@ -1,0 +1,21 @@
+uuid: 4dabe2ec-7fb3-43e9-9385-52341b17d2b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_filing_hours
+    - node.type.courthouse
+  module:
+    - office_hours
+id: node.courthouse.field_filing_hours
+field_name: field_filing_hours
+entity_type: node
+bundle: courthouse
+label: 'Clerk/filing hours'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: office_hours

@@ -1,0 +1,21 @@
+uuid: f251b505-274b-4deb-a354-713bd3275e19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_self_help_hours
+    - node.type.courthouse
+  module:
+    - office_hours
+id: node.courthouse.field_self_help_hours
+field_name: field_self_help_hours
+entity_type: node
+bundle: courthouse
+label: 'Self help/resource center hours'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: office_hours

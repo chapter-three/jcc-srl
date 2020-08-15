@@ -10,7 +10,7 @@ field_name: field_matters_served
 entity_type: node
 bundle: courthouse
 label: 'Matters served'
-description: ''
+description: 'Separate items/tags with a comma ","'
 required: false
 translatable: false
 default_value: {  }

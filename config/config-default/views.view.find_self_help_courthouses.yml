@@ -1,0 +1,498 @@
+uuid: 2f6496fd-9b12-4716-ad78-ccc79bc6ce40
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.field_cities
+    - field.storage.node.field_zip_codes
+    - node.type.courthouse
+  module:
+    - node
+    - user
+id: find_self_help_courthouses
+label: 'Find self help courthouses'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: input_required
+        options:
+          submit_button: Search
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+      pager:
+        type: none
+        options:
+          items_per_page: null
+          offset: 0
+      style:
+        type: default
+      row:
+        type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      fields:
+        title_1:
+          id: title_1
+          table: node_field_data
+          field: title
+          relationship: field_court
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_cities:
+          id: field_cities
+          table: node__field_cities
+          field: field_cities
+          relationship: field_court
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_zip_codes:
+          id: field_zip_codes
+          table: node__field_zip_codes
+          field: field_zip_codes
+          relationship: field_court
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        rendered_entity:
+          id: rendered_entity
+          table: node
+          field: rendered_entity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          view_mode: teaser
+          entity_type: node
+          plugin_id: rendered_entity
+      filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            courthouse: courthouse
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: 'Enter city, county or zip code'
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: s
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              jcc_web_services: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            title_1: title_1
+            field_cities: field_cities
+            field_zip_codes: field_zip_codes
+          plugin_id: combine
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      title: 'Find Your Self Help Center'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<p class="jcc-lead">The Self-Help Center/Family Law Facilitator''s Office provides legal information and resources to self-represented court customers. Assistance may be in the form of walk in services, workshops, referrals and/or telephonic assistance.</p>'
+            format: basic_html
+          plugin_id: text
+      footer: {  }
+      empty: {  }
+      relationships:
+        field_court:
+          id: field_court
+          table: node__field_court
+          field: field_court
+          relationship: none
+          group_type: group
+          admin_label: 'field_court: Content'
+          required: false
+          plugin_id: standard
+      arguments: {  }
+      display_extenders:
+        metatag_display_extender: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:core.entity_view_display.node.basic.default'
+        - 'config:core.entity_view_display.node.basic.teaser'
+        - 'config:core.entity_view_display.node.court.default'
+        - 'config:core.entity_view_display.node.court.teaser'
+        - 'config:core.entity_view_display.node.courthouse.default'
+        - 'config:core.entity_view_display.node.courthouse.teaser'
+        - 'config:core.entity_view_display.node.handbook.default'
+        - 'config:core.entity_view_display.node.handbook.teaser'
+        - 'config:core.entity_view_display.node.overview.default'
+        - 'config:core.entity_view_display.node.overview.teaser'
+        - 'config:core.entity_view_display.node.srl_howto.default'
+        - 'config:core.entity_view_display.node.srl_howto.teaser'
+        - 'config:core.entity_view_display.node.srl_howto_instruction.default'
+        - 'config:core.entity_view_display.node.srl_howto_instruction.teaser'
+        - 'config:core.entity_view_display.node.srl_onramp.default'
+        - 'config:core.entity_view_display.node.srl_onramp.teaser'
+        - 'config:core.entity_view_display.node.srl_wayfinder.default'
+        - 'config:core.entity_view_display.node.srl_wayfinder.teaser'
+        - 'config:core.entity_view_display.node.timeline.default'
+        - 'config:core.entity_view_display.node.timeline.teaser'
+        - 'config:field.storage.node.field_cities'
+        - 'config:field.storage.node.field_zip_codes'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      path: self-help/find
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:core.entity_view_display.node.basic.default'
+        - 'config:core.entity_view_display.node.basic.teaser'
+        - 'config:core.entity_view_display.node.court.default'
+        - 'config:core.entity_view_display.node.court.teaser'
+        - 'config:core.entity_view_display.node.courthouse.default'
+        - 'config:core.entity_view_display.node.courthouse.teaser'
+        - 'config:core.entity_view_display.node.handbook.default'
+        - 'config:core.entity_view_display.node.handbook.teaser'
+        - 'config:core.entity_view_display.node.overview.default'
+        - 'config:core.entity_view_display.node.overview.teaser'
+        - 'config:core.entity_view_display.node.srl_howto.default'
+        - 'config:core.entity_view_display.node.srl_howto.teaser'
+        - 'config:core.entity_view_display.node.srl_howto_instruction.default'
+        - 'config:core.entity_view_display.node.srl_howto_instruction.teaser'
+        - 'config:core.entity_view_display.node.srl_onramp.default'
+        - 'config:core.entity_view_display.node.srl_onramp.teaser'
+        - 'config:core.entity_view_display.node.srl_wayfinder.default'
+        - 'config:core.entity_view_display.node.srl_wayfinder.teaser'
+        - 'config:core.entity_view_display.node.timeline.default'
+        - 'config:core.entity_view_display.node.timeline.teaser'
+        - 'config:field.storage.node.field_cities'
+        - 'config:field.storage.node.field_zip_codes'

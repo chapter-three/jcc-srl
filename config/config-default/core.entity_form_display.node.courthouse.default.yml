@@ -4,16 +4,53 @@ status: true
 dependencies:
   config:
     - field.field.node.courthouse.field_address
+    - field.field.node.courthouse.field_building_hours
     - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_filing_hours
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_self_help_hours
     - node.type.courthouse
   module:
+    - field_group
     - link
+    - office_hours
     - path
     - telephone
     - text
+third_party_settings:
+  field_group:
+    group_hours:
+      children:
+        - field_building_hours
+        - field_filing_hours
+        - field_self_help_hours
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      region: content
+      format_settings:
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+      label: Hours
+    group_location:
+      children:
+        - field_address
+        - field_phone
+        - field_link
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Location
 id: node.courthouse.default
 targetEntityType: node
 bundle: courthouse
@@ -21,30 +58,38 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
-    weight: 122
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_court:
-    weight: 121
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+  field_building_hours:
+    weight: 16
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: office_hours_default
+    region: content
+  field_court:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_filing_hours:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: office_hours_default
     region: content
   field_link:
-    weight: 124
+    weight: 14
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -52,7 +97,7 @@ content:
     type: link_default
     region: content
   field_matters_served:
-    weight: 125
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -60,22 +105,28 @@ content:
     type: string_textfield
     region: content
   field_phone:
-    weight: 123
+    weight: 13
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
+  field_self_help_hours:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: office_hours_default
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 5
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -83,39 +134,39 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 9
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 10
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 7
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -124,8 +175,8 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 12
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

@@ -87,6 +87,7 @@ module:
   migrate_tools: 0
   module_filter: 0
   node: 0
+  office_hours: 0
   options: 0
   page_cache: 0
   path: 0
@@ -98,6 +99,7 @@ module:
   responsive_image: 0
   rest: 0
   rh_media: 0
+  rh_node: 0
   rh_taxonomy: 0
   role_delegation: 0
   search: 0

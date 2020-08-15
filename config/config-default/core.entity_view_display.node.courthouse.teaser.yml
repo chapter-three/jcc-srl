@@ -5,10 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.courthouse.field_address
+    - field.field.node.courthouse.field_building_hours
     - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_filing_hours
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_self_help_hours
     - node.type.courthouse
   module:
     - user
@@ -24,9 +27,12 @@ content:
     region: content
 hidden:
   field_address: true
+  field_building_hours: true
   field_court: true
+  field_filing_hours: true
   field_link: true
   field_matters_served: true
   field_phone: true
+  field_self_help_hours: true
   langcode: true
   search_api_excerpt: true
