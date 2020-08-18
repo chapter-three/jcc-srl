@@ -23,21 +23,22 @@ bundle: courthouse
 mode: default
 content:
   field_address:
-    weight: 102
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_building_hours:
-    weight: 106
-    label: above
+    weight: 5
+    label: hidden
     settings:
-      day_format: long
-      time_format: G
-      compress: false
-      grouped: false
-      show_closed: all
+      show_closed: open
+      office_hours_first_day: ''
+      day_format: two_letter
+      time_format: g
+      compress: true
+      grouped: true
       closed_format: Closed
       separator:
         days: '<br />'
@@ -52,27 +53,27 @@ content:
       schema:
         enabled: false
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
     type: office_hours
     region: content
   field_court:
-    weight: 101
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_filing_hours:
-    weight: 107
-    label: above
+    weight: 6
+    label: hidden
     settings:
-      day_format: long
-      time_format: G
-      compress: false
-      grouped: false
-      show_closed: all
+      show_closed: open
+      office_hours_first_day: ''
+      day_format: two_letter
+      time_format: g
+      compress: true
+      grouped: true
       closed_format: Closed
       separator:
         days: '<br />'
@@ -87,13 +88,12 @@ content:
       schema:
         enabled: false
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
     type: office_hours
     region: content
   field_link:
-    weight: 104
-    label: above
+    weight: 3
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -104,30 +104,30 @@ content:
     type: link
     region: content
   field_matters_served:
-    weight: 105
-    label: above
+    weight: 4
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_phone:
-    weight: 103
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_self_help_hours:
-    weight: 108
-    label: above
+    weight: 7
+    label: hidden
     settings:
+      show_closed: open
+      office_hours_first_day: ''
       day_format: long
-      time_format: G
-      compress: false
-      grouped: false
-      show_closed: all
+      time_format: g
+      grouped: true
       closed_format: Closed
       separator:
         days: '<br />'
@@ -139,18 +139,14 @@ content:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
+      compress: false
       schema:
         enabled: false
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
     type: office_hours
     region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true
