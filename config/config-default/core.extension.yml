@@ -59,6 +59,7 @@ module:
   jcc_boilerplate: 0
   jcc_datefinder: 0
   jcc_forms: 0
+  jcc_twig: 0
   key: 0
   language: 0
   link: 0
