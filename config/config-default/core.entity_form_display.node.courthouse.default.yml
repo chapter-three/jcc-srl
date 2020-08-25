@@ -4,43 +4,45 @@ status: true
 dependencies:
   config:
     - field.field.node.courthouse.field_address
-    - field.field.node.courthouse.field_building_hours
+    - field.field.node.courthouse.field_building_hours_friday
+    - field.field.node.courthouse.field_building_hours_monday
+    - field.field.node.courthouse.field_building_hours_summary
+    - field.field.node.courthouse.field_building_hours_thursday
+    - field.field.node.courthouse.field_building_hours_tuesday
+    - field.field.node.courthouse.field_building_hours_wednesday
     - field.field.node.courthouse.field_court
-    - field.field.node.courthouse.field_filing_hours
+    - field.field.node.courthouse.field_filing_hours_friday
+    - field.field.node.courthouse.field_filing_hours_monday
+    - field.field.node.courthouse.field_filing_hours_summary
+    - field.field.node.courthouse.field_filing_hours_thursday
+    - field.field.node.courthouse.field_filing_hours_tuesday
+    - field.field.node.courthouse.field_filing_hours_wednesday
+    - field.field.node.courthouse.field_image
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
-    - field.field.node.courthouse.field_self_help_hours
+    - field.field.node.courthouse.field_selfhelp_hours_friday
+    - field.field.node.courthouse.field_selfhelp_hours_monday
+    - field.field.node.courthouse.field_selfhelp_hours_summary
+    - field.field.node.courthouse.field_selfhelp_hours_thursday
+    - field.field.node.courthouse.field_selfhelp_hours_tuesday
+    - field.field.node.courthouse.field_selfhelp_hours_wednesday
     - node.type.courthouse
   module:
     - field_group
     - link
-    - office_hours
+    - media_library
     - path
     - telephone
     - text
 third_party_settings:
   field_group:
-    group_hours:
-      children:
-        - field_building_hours
-        - field_filing_hours
-        - field_self_help_hours
-      parent_name: ''
-      weight: 4
-      format_type: fieldset
-      region: content
-      format_settings:
-        description: ''
-        id: ''
-        classes: ''
-        required_fields: false
-      label: Hours
     group_location:
       children:
         - field_address
         - field_phone
         - field_link
+        - field_image
       parent_name: ''
       weight: 3
       format_type: fieldset
@@ -51,6 +53,60 @@ third_party_settings:
         description: ''
         required_fields: false
       label: Location
+    group_self_help_hours:
+      children:
+        - field_selfhelp_hours_monday
+        - field_selfhelp_hours_tuesday
+        - field_selfhelp_hours_wednesday
+        - field_selfhelp_hours_thursday
+        - field_selfhelp_hours_friday
+        - field_selfhelp_hours_summary
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Self help hours'
+    group_clerk_filing_hours:
+      children:
+        - field_filing_hours_monday
+        - field_filing_hours_tuesday
+        - field_filing_hours_wednesday
+        - field_filing_hours_thursday
+        - field_filing_hours_friday
+        - field_filing_hours_summary
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Clerk/filing hours'
+    group_building_hours:
+      children:
+        - field_building_hours_monday
+        - field_building_hours_tuesday
+        - field_building_hours_wednesday
+        - field_building_hours_thursday
+        - field_building_hours_friday
+        - field_building_hours_summary
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Building hours'
 id: node.courthouse.default
 targetEntityType: node
 bundle: courthouse
@@ -58,7 +114,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -70,11 +126,53 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_building_hours:
-    weight: 16
-    settings: {  }
+  field_building_hours_friday:
+    weight: 18
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: office_hours_default
+    type: string_textfield
+    region: content
+  field_building_hours_monday:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_building_hours_summary:
+    weight: 19
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_building_hours_thursday:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_building_hours_tuesday:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_building_hours_wednesday:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_court:
     weight: 1
@@ -82,11 +180,60 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_filing_hours:
-    weight: 17
-    settings: {  }
+  field_filing_hours_friday:
+    weight: 25
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: office_hours_default
+    type: string_textfield
+    region: content
+  field_filing_hours_monday:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_filing_hours_summary:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_filing_hours_thursday:
+    weight: 24
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_filing_hours_tuesday:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_filing_hours_wednesday:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    type: media_library_widget
+    weight: 15
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_link:
     weight: 14
@@ -111,22 +258,64 @@ content:
     third_party_settings: {  }
     type: telephone_default
     region: content
-  field_self_help_hours:
-    weight: 18
-    settings: {  }
+  field_selfhelp_hours_friday:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: office_hours_default
+    type: string_textfield
+    region: content
+  field_selfhelp_hours_monday:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_selfhelp_hours_summary:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_selfhelp_hours_thursday:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_selfhelp_hours_tuesday:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_selfhelp_hours_wednesday:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
-    weight: 5
+    weight: 8
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -134,21 +323,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 12
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 16
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 13
     region: content
     third_party_settings: {  }
   title:
@@ -160,13 +349,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 7
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -175,7 +364,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }

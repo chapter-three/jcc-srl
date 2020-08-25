@@ -4,17 +4,32 @@ status: true
 dependencies:
   config:
     - field.field.node.courthouse.field_address
-    - field.field.node.courthouse.field_building_hours
+    - field.field.node.courthouse.field_building_hours_friday
+    - field.field.node.courthouse.field_building_hours_monday
+    - field.field.node.courthouse.field_building_hours_summary
+    - field.field.node.courthouse.field_building_hours_thursday
+    - field.field.node.courthouse.field_building_hours_tuesday
+    - field.field.node.courthouse.field_building_hours_wednesday
     - field.field.node.courthouse.field_court
-    - field.field.node.courthouse.field_filing_hours
+    - field.field.node.courthouse.field_filing_hours_friday
+    - field.field.node.courthouse.field_filing_hours_monday
+    - field.field.node.courthouse.field_filing_hours_summary
+    - field.field.node.courthouse.field_filing_hours_thursday
+    - field.field.node.courthouse.field_filing_hours_tuesday
+    - field.field.node.courthouse.field_filing_hours_wednesday
+    - field.field.node.courthouse.field_image
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
-    - field.field.node.courthouse.field_self_help_hours
+    - field.field.node.courthouse.field_selfhelp_hours_friday
+    - field.field.node.courthouse.field_selfhelp_hours_monday
+    - field.field.node.courthouse.field_selfhelp_hours_summary
+    - field.field.node.courthouse.field_selfhelp_hours_thursday
+    - field.field.node.courthouse.field_selfhelp_hours_tuesday
+    - field.field.node.courthouse.field_selfhelp_hours_wednesday
     - node.type.courthouse
   module:
     - link
-    - office_hours
     - text
     - user
 id: node.courthouse.default
@@ -29,32 +44,52 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_building_hours:
-    weight: 5
+  field_building_hours_friday:
+    weight: 12
     label: hidden
     settings:
-      show_closed: open
-      office_hours_first_day: ''
-      day_format: two_letter
-      time_format: g
-      compress: true
-      grouped: true
-      closed_format: Closed
-      separator:
-        days: '<br />'
-        grouped_days: ' - '
-        day_hours: ': '
-        hours_hours: '-'
-        more_hours: ', '
-      current_status:
-        position: ''
-        open_text: 'Currently open!'
-        closed_text: 'Currently closed'
-      schema:
-        enabled: false
-      timezone_field: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: office_hours
+    type: string
+    region: content
+  field_building_hours_monday:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_building_hours_summary:
+    weight: 23
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_building_hours_thursday:
+    weight: 11
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_building_hours_tuesday:
+    weight: 9
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_building_hours_wednesday:
+    weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_court:
     weight: 0
@@ -64,32 +99,61 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_filing_hours:
-    weight: 6
+  field_filing_hours_friday:
+    weight: 17
     label: hidden
     settings:
-      show_closed: open
-      office_hours_first_day: ''
-      day_format: two_letter
-      time_format: g
-      compress: true
-      grouped: true
-      closed_format: Closed
-      separator:
-        days: '<br />'
-        grouped_days: ' - '
-        day_hours: ': '
-        hours_hours: '-'
-        more_hours: ', '
-      current_status:
-        position: ''
-        open_text: 'Currently open!'
-        closed_text: 'Currently closed'
-      schema:
-        enabled: false
-      timezone_field: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: office_hours
+    type: string
+    region: content
+  field_filing_hours_monday:
+    weight: 14
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_filing_hours_summary:
+    weight: 24
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_filing_hours_thursday:
+    weight: 16
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_filing_hours_tuesday:
+    weight: 15
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_filing_hours_wednesday:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 26
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     region: content
   field_link:
     weight: 3
@@ -119,32 +183,52 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_self_help_hours:
-    weight: 7
+  field_selfhelp_hours_friday:
+    weight: 22
     label: hidden
     settings:
-      show_closed: open
-      office_hours_first_day: ''
-      day_format: long
-      time_format: g
-      grouped: true
-      closed_format: Closed
-      separator:
-        days: '<br />'
-        grouped_days: ' - '
-        day_hours: ': '
-        hours_hours: '-'
-        more_hours: ', '
-      current_status:
-        position: ''
-        open_text: 'Currently open!'
-        closed_text: 'Currently closed'
-      compress: false
-      schema:
-        enabled: false
-      timezone_field: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: office_hours
+    type: string
+    region: content
+  field_selfhelp_hours_monday:
+    weight: 19
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_selfhelp_hours_summary:
+    weight: 25
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_selfhelp_hours_thursday:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_selfhelp_hours_tuesday:
+    weight: 20
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_selfhelp_hours_wednesday:
+    weight: 18
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   langcode: true
