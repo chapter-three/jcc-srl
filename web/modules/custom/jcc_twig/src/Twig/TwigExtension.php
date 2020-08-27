@@ -2,24 +2,23 @@
 
 namespace Drupal\jcc_twig\Twig;
 
-use DateTimeZone;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Template\TwigEnvironment;
-use Drupal\taxonomy\Entity\Term;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
+/**
+ * Additional twig extensions.
+ */
 class TwigExtension extends \Twig_Extension {
   use ContainerAwareTrait;
-
-
 
   /**
    * {@inheritdoc}
    */
   public function getFilters() {
     return [
-      new \Twig_SimpleFilter('trim_empty', [$this, 'trimEmpty']),
+      new \Twig_SimpleFilter('remove_empty', [$this, 'removeEmpty']),
       new \Twig_SimpleFilter('clean_unique_id', [$this, 'uniqueId']),
       new \Twig_SimpleFilter('i18n_format_date', [$this, 'formatDate'], ['needs_environment' => TRUE]),
       new \Twig_SimpleFilter('remove_html_comments', [$this, 'removeHtmlComments']),
@@ -32,18 +31,14 @@ class TwigExtension extends \Twig_Extension {
    */
   public function getFunctions() {
     return [
-      new \Twig_SimpleFunction('term_field_from_id', [$this, 'termFieldFromId'], ['is_safe' => array('html')]),
+      new \Twig_SimpleFunction('term_field_from_id', [$this, 'termFieldFromId'], ['is_safe' => ['html']]),
     ];
   }
 
   /**
    * Remove empty items from an array.
-   *
-   * @param $array
-   *
-   * @return array
    */
-  public function trimEmpty($array) {
+  public function removeEmpty($array) {
     if (is_array($array)) {
       $array = array_filter($array);
     }
@@ -53,11 +48,8 @@ class TwigExtension extends \Twig_Extension {
 
   /**
    * Prepares a string for use as a valid HTML ID and guarantees uniqueness.
+   *
    * See Html::getUniqueId()
-   *
-   * @param $id
-   *
-   * @return string
    */
   public function uniqueId($id) {
     return Html::getUniqueId($id);
@@ -99,7 +91,7 @@ class TwigExtension extends \Twig_Extension {
    *   contain user input, this value should be escaped when output.
    */
   public function formatDate(TwigEnvironment $env, $date, $type = 'medium', $format = '', $timezone = NULL, $langcode = NULL) {
-    // Use user's timezone so date/time gets rendered without timezone adjustment.
+    // Use user's timezone so date/time is rendered without timezone adjustment.
     $account = \Drupal::currentUser();
     $timezone = $account->getTimeZone() ?? 'America/Los_Angeles';
 
@@ -118,16 +110,15 @@ class TwigExtension extends \Twig_Extension {
 
   /**
    * Removes html comments from string.
-   *
-   * @param $string
-   *
-   * @return string|null
    */
   public function removeHtmlComments($string) {
     $output = preg_replace('/<!--(.|\s)*?-->/', '', $string);
     return $output;
   }
 
+  /**
+   * Gets a field value from a taxonomy term.
+   */
   public function termFieldFromId($id, $field_name) {
     if (!is_numeric($id)) {
       return '';
@@ -135,7 +126,6 @@ class TwigExtension extends \Twig_Extension {
 
     $field = '';
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($id);
-    // $term = Term::load($id);
 
     if (!empty($term)) {
       $field = $term->{$field_name}->value;
@@ -144,14 +134,15 @@ class TwigExtension extends \Twig_Extension {
     return $field;
   }
 
+  /**
+   * Decodes all HTML entities including numerical ones to regular UTF-8 bytes.
+   */
   public function unescape($value) {
     return Html::decodeEntities($value);
   }
 
   /**
    * Returns the language manager service.
-   *
-   * @return \Drupal\Core\Language\LanguageManagerInterface
    */
   protected function getLanguageManager() {
     return $this->container->get('language_manager');
@@ -159,8 +150,6 @@ class TwigExtension extends \Twig_Extension {
 
   /**
    * Provides a service to handle various date related functionality.
-   *
-   * @return \Drupal\Core\Datetime\DateFormatterInterface
    */
   protected function getDateFormatter() {
     return $this->container->get('date.formatter');
