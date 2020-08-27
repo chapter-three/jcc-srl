@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ * Template for "Find the Right Court" view.
+ */
+#}
+
+{% extends 'views-view.html.twig' %}
+
+{% block header %}
+  {% set search_form %}
+    <div class="jcc-find-courts-search-group">
+      <div class="jcc-find-courts-search-group__container">
+        {{ exposed }}
+      </div>
+    </div>
+  {% endset %}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      background_variant: 'has-background-color--light--secondary',
+      column_variant: 'has-one-column',
+      title: drupal_title(),
+      lead: header,
+      column_content_right: search_form,
+    }
+  } %}
+{% endblock %}
+
+{% block exposed %}
+  {# "Unset" this block since exposed is used in the header block #}
+{% endblock %}
+
+
+{% block content %}
+  <pre>
+    {{ dump(exposed.s['#value']) }}
+    {# {{ dump(exposed|keys) }} #}
+  </pre>
+  {% set courts = rows.0['#rows'].0['#view'].result %}
+
+  {% if exposed.s['#value'] is empty %}
+    {# If no search term, don't display results #}
+    <h3>no results</h3>
+
+  {% elseif courts|length == 1 %}
+    {# One court, so display courthouses view #}
+    <h3>1 result</h3>
+    {% set court = courts.0._entity %}
+    {% include '@molecules/blocks/court-summary/court-summary.twig' with {
+      court_summary: {
+        title: 'The jurisdiction for %s% is %t% County Superior Court.'|replace({'%s%': exposed.s['#value'], '%t%': court.title.value}),
+        read_more: {
+          id: 'read-more',
+          title: 'Do I go to my county courthouse?',
+          content: '<p>There are rules about where you can file your case. Some rules say you can file where you live, others say you must file where the other person lives or where a dispute happened. A judge may not be able to hear your case if you file in the wrong Court. Here are some general rules:</p><ol><li><strong>Is there an open case about this issue?</strong> If yes, then file in the county where that case is active.</li><li>If a case hasn’t been started:<ul style="list-style-type: lower-alpha;"><li>Divorce - the county where you or your spouse has lived for the last 3 months (you must have lived in California for the last 6 months in order to file).</li><li>Child custody or support (parents not married) - you can usually file where the child lives, with some exceptions</li><li>Guardianship - where the minor lives</li><li>Conservatorship - where the person to be conserved lives</li><li>Small claims - where the defendant lives, where the business is officially located, where an accident or dispute took place.</li><li>Restraining orders - where the person accused of abuse lives or where the abuse took place.</li><li>Eviction - where the property is located.</li></ul></li></ol><p>NOTE! These rules cover common situations. Sometimes there are exceptions or other rules that apply to your case. For cases about minors or small claims, please speak to your local court Self-Help Center staff, or a lawyer referral service for assistance.</p>'
+        }
+      }
+    } %}
+    {{ drupal_view('find_courthouses', 'block', court.nid.value) }}
+
+  {% elseif courts|length > 1 %}
+    <h3>multiple results</h3>
+    {# reload view with nid from court link???? #}
+  {% endif %}
+  <ol>
+    {% for row in courts %}
+      {# {% set entity = row['#view'].result.0._entity %} #}
+      <li>{{ row._entity.nid.value }}: {{ row._entity.title.value }}</li>
+    {% endfor %}
+  </ol>
+  {# {% set court_search %}
+  {% endset %} #}
+{% endblock %}
