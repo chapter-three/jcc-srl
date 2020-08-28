@@ -65,7 +65,7 @@
         entity.field_building_hours_wednesday.value ? 'W'|t ~ ': ' ~  entity.field_building_hours_wednesday.value,
         entity.field_building_hours_thursday.value ? 'Thu'|t ~ ': ' ~  entity.field_building_hours_thursday.value,
         entity.field_building_hours_friday.value ? 'F'|t ~ ': ' ~  entity.field_building_hours_friday.value,
-      ]|trim_empty|join('<br>') %}
+      ]|remove_empty|join('<br>') %}
     {% endif %}
 
     {# Filing hours #}
@@ -78,7 +78,7 @@
         entity.field_filing_hours_wednesday.value ? 'W'|t ~ ': ' ~  entity.field_filing_hours_wednesday.value,
         entity.field_filing_hours_thursday.value ? 'Thu'|t ~ ': ' ~  entity.field_filing_hours_thursday.value,
         entity.field_filing_hours_friday.value ? 'F'|t ~ ': ' ~  entity.field_filing_hours_friday.value,
-      ]|trim_empty|join('<br>') %}
+      ]|remove_empty|join('<br>') %}
     {% endif %}
 
     {# Self help hours #}
@@ -92,7 +92,7 @@
           entity.field_selfhelp_hours_wednesday.value ? 'W'|t ~ ': ' ~ entity.field_selfhelp_hours_wednesday.value,
           entity.field_selfhelp_hours_thursday.value ? 'Thu'|t ~ ': ' ~ entity.field_selfhelp_hours_thursday.value,
           entity.field_selfhelp_hours_friday.value ? 'F'|t ~ ': ' ~ entity.field_selfhelp_hours_friday.value,
-        ]|trim_empty %}
+        ]|remove_empty %}
           {{ item }}<br>
         {% endfor %}
       {% endif %}
@@ -130,20 +130,18 @@
           label: 'Self Help'|t,
           details: selfhelp_hours,
         },
-      ]|trim_empty
+      ]|remove_empty
     } %}
 
     {% set items = items|merge([location]) %}
   {% endfor %}
-<pre>
-  {{ dump(court.field_description.0|keys) }}
-</pre>
-  {% include '@molecules/blocks/court-summary/court-summary.twig' with {
+
+  {# {% include '@molecules/blocks/court-summary/court-summary.twig' with {
     court_summary: {
       quantity: 'There are %q% Courthouse Locations.'|replace({'%q%': courthouses|length}),
       body: court.field_description.0.value|check_markup(court.field_description.0.format)
     }
-  } %}
+  } %} #}
 
   {% include '@organisms/sections/locations/locations.twig' with {
     locations: {
