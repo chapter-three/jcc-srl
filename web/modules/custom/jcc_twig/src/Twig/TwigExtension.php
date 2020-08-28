@@ -23,6 +23,7 @@ class TwigExtension extends \Twig_Extension {
       new \Twig_SimpleFilter('i18n_format_date', [$this, 'formatDate'], ['needs_environment' => TRUE]),
       new \Twig_SimpleFilter('remove_html_comments', [$this, 'removeHtmlComments']),
       new \Twig_SimpleFilter('unescape', [$this, 'unescape']),
+      new \Twig_SimpleFilter('auto_convert_urls', [$this, 'autoConvertUrls']),
     ];
   }
 
@@ -139,6 +140,51 @@ class TwigExtension extends \Twig_Extension {
    */
   public function unescape($value) {
     return Html::decodeEntities($value);
+  }
+
+  /**
+   * Finds different occurrences of urls or email addresses in a string.
+   */
+  public function autoConvertUrls($string) {
+    $pattern = '/(href="|src=")?([-a-zA-Zа-яёА-ЯЁ0-9@:%_\+.~#?&\*\/\/=]{2,256}\.[a-zа-яё]{2,4}\b(\/?[-\p{L}0-9@:%_\+.~#?&\*\/\/=\(\),;]*)?)/u';
+    $stringFiltered = preg_replace_callback($pattern, [$this, 'callbackReplace'], $string);
+
+    return $stringFiltered;
+  }
+
+  /**
+   * Replace text from autoConvertUrls.
+   */
+  public function callbackReplace($matches) {
+    if ($matches[1] !== '') {
+      // Don't modify existing <a href="">links</a> and <img src="">.
+      return $matches[0];
+    }
+
+    $url = $matches[2];
+    $urlWithPrefix = $matches[2];
+
+    if (strpos($url, '@') !== FALSE) {
+      $urlWithPrefix = 'mailto:' . $url;
+    }
+    elseif (strpos($url, 'https://') === 0) {
+      $urlWithPrefix = $url;
+    }
+    elseif (strpos($url, 'http://') !== 0) {
+      $urlWithPrefix = 'http://' . $url;
+    }
+
+    // Ignore tailing special characters.
+    if (preg_match("/^(.*)(\.|\,|\?)$/", $urlWithPrefix, $matches)) {
+      $urlWithPrefix = $matches[1];
+      $url = substr($url, 0, -1);
+      $punctuation = $matches[2];
+    }
+    else {
+      $punctuation = '';
+    }
+
+    return '<a href="' . $urlWithPrefix . '">' . $url . '</a>' . $punctuation;
   }
 
   /**
