@@ -490,7 +490,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Find the Right Court'
+      title: 'Find Your Self Help Center'
       header:
         area:
           id: area
@@ -665,12 +665,50 @@ display:
   full_page:
     display_plugin: page
     id: full_page
-    display_title: Page
+    display_title: 'Full page'
     position: 2
     display_options:
       display_extenders:
         metatag_display_extender: {  }
       path: self-help/find
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_cities'
+        - 'config:field.storage.node.field_zip_codes'
+  self_help_page:
+    display_plugin: page
+    id: self_help_page
+    display_title: 'Self help page'
+    position: 2
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      path: self-help/find-self-help
+      display_description: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<p class="jcc-lead">The Self-Help Center/Family Law Facilitator''s Office provides legal information and resources to self-represented court customers. Assistance may be in the form of walk in services, workshops, referrals and/or telephonic assistance.</p>'
+            format: basic_html
+          plugin_id: text
+      defaults:
+        header: false
     cache_metadata:
       max-age: -1
       contexts:

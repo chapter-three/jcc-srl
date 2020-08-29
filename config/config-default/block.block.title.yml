@@ -20,6 +20,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /self-help/find
+    pages: "/self-help/find\r\n/self-help/find-self-help"
     negate: true
     context_mapping: {  }
