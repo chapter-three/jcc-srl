@@ -1,0 +1,84 @@
+{#
+/**
+ * @file
+ * Template for "Find Your Self Help Center" view.
+ *
+ * This shows the `courthouse` nodes of a single `court` node. The `court` nid
+ * variable is given in `views-view--find-courts--self-help-page.html.twig`.
+ */
+#}
+
+{% extends 'views-view.html.twig' %}
+
+{% block content %}
+  {% set items = [] %}
+  {% set courthouses = rows.0['#rows'].0['#view'].result %}
+  {% set court = rows.0['#rows'].0['#view'].result.0._relationship_entities.field_court %}
+
+  {% for row in courthouses %}
+    {% set entity = row._entity %}
+
+    {# address needs to be rendered at the same time the nl2br filter is used
+       or the <br> will be escaped #}
+    {% set address %}
+      {{ entity.field_address.value|nl2br }}
+    {% endset %}
+
+    {# tags/field_matters_served are not used #}
+    {# Building hours are not used #}
+    {# Filing hours are not used #}
+
+    {# Self help hours #}
+    {% set selfhelp_hours %}
+      {% if entity.field_selfhelp_hours_summary.value %}
+        {{ entity.field_selfhelp_hours_summary.value }}
+      {% else %}
+        {{ [
+          entity.field_selfhelp_hours_monday.value ? 'M'|t ~ ': ' ~ entity.field_selfhelp_hours_monday.value,
+          entity.field_selfhelp_hours_tuesday.value ? 'Tu'|t ~ ': ' ~ entity.field_selfhelp_hours_tuesday.value,
+          entity.field_selfhelp_hours_wednesday.value ? 'W'|t ~ ': ' ~ entity.field_selfhelp_hours_wednesday.value,
+          entity.field_selfhelp_hours_thursday.value ? 'Thu'|t ~ ': ' ~ entity.field_selfhelp_hours_thursday.value,
+          entity.field_selfhelp_hours_friday.value ? 'F'|t ~ ': ' ~ entity.field_selfhelp_hours_friday.value,
+        ]|remove_empty|join('<br>')|check_markup('basic_html') }}
+      {% endif %}
+    {% endset %}
+
+    {% set location = {
+      brow: entity.field_court.0.entity.title.value ~ ' County'|t,
+      title: entity.title.value,
+      address: address,
+      phone: {
+        title: entity.field_phone.0.value,
+        url: 'tel:' ~ entity.field_phone.0.value|replace({'(': '', ')': '', ' ': '-'})|url_encode,
+      },
+      website: {
+        title: entity.title.value ~ ' ' ~ 'Website'|t,
+        url: entity.field_link.0.url,
+      },
+      directions_title: 'Get Directions'|t,
+      map: {
+        src: file_url(entity.field_image.0.entity.field_media_image.entity.uri.value),
+      },
+      hours_label: 'Hours'|t,
+      hours: [
+        selfhelp_hours|trim ? {
+          label: 'Self Help'|t,
+          details: selfhelp_hours,
+        },
+      ]|remove_empty,
+      has_selfhelp_hours: selfhelp_hours|trim ? 'yes' : 'no'
+    } %}
+
+    {# Only display courthouses that have self help hours #}
+    {% if location.has_selfhelp_hours == 'yes' %}
+      {% set items = items|merge([location]) %}
+    {% endif %}
+  {% endfor %}
+
+
+  {% include '@organisms/sections/locations/locations.twig' with {
+    locations: {
+      items: items
+    }
+  } %}
+{% endblock %}
