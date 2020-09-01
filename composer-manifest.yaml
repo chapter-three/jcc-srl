@@ -109,6 +109,7 @@ packages:
     drupal/twig_tweak: 2.6.0
     drupal/twig_xdebug: 1.2.0
     drupal/views_aggregator: 1.0.0-beta1
+    drupal/views_ajax_history: 1.5.0
     drupal/webform: 5.19.0
     drupal/xmlsitemap: 1.0.0-rc1
     drush/drush: 9.7.2

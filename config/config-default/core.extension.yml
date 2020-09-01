@@ -121,6 +121,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  views_ajax_history: 0
   views_ui: 0
   webform: 0
   webform_jqueryui_buttons: 0
