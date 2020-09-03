@@ -11,23 +11,25 @@
 {% block content %}
 
   {% set tags = [] %}
-  {% for tag in node.field_matters_served.value|split(',') %}
-    {% set tags = tags|merge([{
-      text: tag|trim
-    }]) %}
-  {% endfor %}
+  {% if node.field_matters_served.value %}
+    {% for tag in node.field_matters_served.value|split(',') %}
+      {% set tags = tags|merge([{
+        text: tag|trim
+      }]) %}
+    {% endfor %}
+  {% endif %}
 
   {% set location = {
     brow: node.title.value ~ ' County'|t,
     title: node.title.value,
     address: content.field_address|render|remove_html_comments|trim,
-    phone: {
+    phone: node.field_phone.0 ? {
       title: node.field_phone.0.value,
       url: 'tel:' ~ node.field_phone.0.value|replace({'(': '', ')': '', ' ': '-'})|url_encode,
     },
-    website: {
+    website: node.field_link.0 ? {
       title: node.title.value,
-      url: content.field_link.0['#url']|render,
+      url: node.field_link.0.url,
     },
     tags_label: 'Matters Served',
     tags: tags,

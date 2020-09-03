@@ -4,7 +4,7 @@
  * Template for "Find Your Self Help Center" view.
  *
  * This shows the `courthouse` nodes of a single `court` node. The `court` nid
- * variable is given in `views-view--find-courts--self-help-page.html.twig`.
+ * variable is given in `views-view--find-courts--self-help-block.html.twig`.
  */
 #}
 
@@ -15,8 +15,11 @@
   {% set courthouses = rows.0['#rows'].0['#view'].result %}
   {% set court = rows.0['#rows'].0['#view'].result.0._relationship_entities.field_court %}
 
-  {% for row in courthouses %}
-    {% set entity = row._entity %}
+  {% if courthouses|length > 0 %}
+    {#
+      Only the first result is used in this view even though the view returns multiple results
+    #}
+    {% set entity = courthouses.0._entity %}
 
     {# address needs to be rendered at the same time the nl2br filter is used
        or the <br> will be escaped #}
@@ -44,6 +47,7 @@
     {% endset %}
 
     {% set location = {
+      layout: 'mini',
       brow: entity.field_court.0.entity.title.value ~ ' County'|t,
       title: entity.title.value,
       address: address,
@@ -73,12 +77,13 @@
     {% if location.has_selfhelp_hours == 'yes' %}
       {% set items = items|merge([location]) %}
     {% endif %}
-  {% endfor %}
+  {% endif %}
 
 
   {% include '@organisms/sections/locations/locations.twig' with {
     locations: {
-      items: items
+      items: items,
+      layout: 'inner',
     }
   } %}
 {% endblock %}

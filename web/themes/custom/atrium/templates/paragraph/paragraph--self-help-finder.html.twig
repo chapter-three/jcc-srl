@@ -7,7 +7,6 @@
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
 
-
   {% if paragraph.field_self_help_finder_type.0.value =='basic' %}
     {# Homepage search #}
     {% include '@organisms/sections/locate-section/locate-section.twig' with {
@@ -36,7 +35,7 @@
 
   {% elseif paragraph.field_self_help_finder_type.0.value =='enhanced' %}
     {# In-step real-time search #}
-
+    {{ drupal_view('find_courts', 'self_help_block') }}
 
   {% endif %}
 

@@ -12,7 +12,7 @@
 
 {% block header %}
   {% set search_form %}
-    <div class="jcc-search-group">
+    <div class="jcc-search-group jcc-search-group--vertical">
       <div class="jcc-search-group__container">
         {{ exposed }}
       </div>
@@ -47,6 +47,7 @@
     {# If no search term, don't display results #}
 
   {% elseif courts|length == 0 %}
+    {# <h3>zero courts</h3> #}
     {# A search ws performed, but there are no results #}
     <div class="grid-container-widescreen padding-y-5">
       <div class="jcc-lead maxw-tablet-lg">
@@ -55,12 +56,11 @@
     </div>
 
   {% elseif courts|length == 1 %}
-    {# <h3>one result</h3> #}
+    {# <h3>one court</h3> #}
     {# One court, so display summary & courthouses view #}
     {% set court = courts.0._entity %}
-    {% set num_courthouses %}
-      {{ drupal_view_result('find_courthouses', 'full_block', court.nid.value)|length }}
-    {% endset %}
+    {% set num_courthouses = drupal_view_result('find_courthouses', 'full_block', court.nid.value)|length %}
+
     {% set body %}
       {{ court.field_description.0.value|auto_convert_urls }}
     {% endset %}
@@ -101,7 +101,7 @@
     {{ drupal_view('find_courthouses', 'full_block', court.nid.value) }}
 
   {% elseif courts|length > 1 %}
-    {# <h3>multiple results</h3> #}
+    {# <h3>multiple courts</h3> #}
     {# Multiple court results. Display results as links that will reload view with nid from court node #}
     <div class="grid-container-widescreen padding-y-5">
       <div class="jcc-lead maxw-tablet-lg">

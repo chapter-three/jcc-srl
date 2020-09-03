@@ -34,3 +34,7 @@ jump-nav:
 submit-scroll:
   js:
     assets/js/submit-scroll.js: {}
+
+self-help-mini-block:
+  js:
+    assets/js/self-help-mini-block.js: {}

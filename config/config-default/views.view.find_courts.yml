@@ -526,14 +526,37 @@ display:
       tags:
         - 'config:field.storage.node.field_cities'
         - 'config:field.storage.node.field_zip_codes'
-  block:
+  full_page:
+    display_plugin: page
+    id: full_page
+    display_title: 'Full page'
+    position: 2
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      path: self-help/find
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_cities'
+        - 'config:field.storage.node.field_zip_codes'
+  self_help_block:
     display_plugin: block
-    id: block
+    id: self_help_block
     display_title: Block
     position: 3
     display_options:
       display_extenders:
         metatag_display_extender: {  }
+        ajax_history:
+          enable_history: true
       title: ''
       defaults:
         title: false
@@ -541,6 +564,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        arguments: false
       display_description: ''
       use_ajax: true
       filters:
@@ -646,32 +670,62 @@ display:
             field_cities: field_cities
             field_zip_codes: field_zip_codes
           plugin_id: combine
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: nid_op
+            label: ID
+            description: ''
+            use_operator: false
+            operator: nid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              jcc_web_services: '0'
+              administrator: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: nid
+          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
           1: AND
       header: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_cities'
-        - 'config:field.storage.node.field_zip_codes'
-  full_page:
-    display_plugin: page
-    id: full_page
-    display_title: 'Full page'
-    position: 2
-    display_options:
-      display_extenders:
-        metatag_display_extender: {  }
-      path: self-help/find
-      display_description: ''
+      arguments: {  }
     cache_metadata:
       max-age: -1
       contexts:

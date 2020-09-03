@@ -81,53 +81,64 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/submit-scroll.js":
-/*!*********************************!*\
-  !*** ./src/js/submit-scroll.js ***!
-  \*********************************/
+/***/ "./src/js/self-help-mini-block.js":
+/*!****************************************!*\
+  !*** ./src/js/self-help-mini-block.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 (function ($, Drupal) {
-  "use strict";
+  'use strict';
+  /**
+   * When there are multiple `court` results from a search, the user
+   * will need to pick one of the results (called $court_links below).
+   * Update the search's exposed form with the link's data.
+   *
+   * See views-view--find-courts--self-help-block.html.twig for more
+   */
 
-  Drupal.behaviors.submitscroll = {
+  Drupal.behaviors.selfHelpMiniBlock = {
     attach: function attach(context) {
-      // Define button.
-      var $submitButton = $(".jcc-choice-section input[type=submit]"); // Send status to sessionStorage, then submit form.
+      $.each(Drupal.views.instances, function (i, view) {
+        if (view.settings.view_name == 'find_courts' && view.settings.view_display_id == 'self_help_block') {
+          var $view = $(view.element_settings.selector);
+          var $court_links = $view.find('.court-links a');
+          $court_links.on('click', function (event) {
+            event.preventDefault();
+            var nid = $(this).attr('data-nid');
+            $view.find('input[name=id]').val(nid);
+            $view.find('input[type=submit]').click();
+          }); // Clear the id/nid form element (since it's hidden) so the search
+          // only uses what the user typed
 
-      $submitButton.click(function () {
-        sessionStorage.wayfinder_submitted = true;
-      }); // Check sessionStorage for value.
-
-      if (sessionStorage.wayfinder_submitted != undefined) {
-        var $newPosition = $submitButton.offset().top - 100; // Scroll based so Submit button is near the top of the page.
-
-        $("html, body").animate({
-          scrollTop: $newPosition
-        }, 300); // Remove/reset session variable.
-
-        sessionStorage.removeItem("wayfinder_submitted");
-      }
+          $view.find('.form-item-s input').on('keydown', function () {
+            $view.find('.form-item-id input').val('');
+          });
+          $view.find('input.form-submit').on('mousedown', function (event) {
+            $view.find('.form-item-id input').val('');
+          });
+        }
+      });
     }
   };
 })(jQuery, Drupal);
 
 /***/ }),
 
-/***/ 2:
-/*!***************************************!*\
-  !*** multi ./src/js/submit-scroll.js ***!
-  \***************************************/
+/***/ 5:
+/*!**********************************************!*\
+  !*** multi ./src/js/self-help-mini-block.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/rob/work/c3/jcc/srl/web/themes/custom/atrium/src/js/submit-scroll.js */"./src/js/submit-scroll.js");
+module.exports = __webpack_require__(/*! /Users/rob/work/c3/jcc/srl/web/themes/custom/atrium/src/js/self-help-mini-block.js */"./src/js/self-help-mini-block.js");
 
 
 /***/ })
