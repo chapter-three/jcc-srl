@@ -534,8 +534,12 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
+        ajax_history: {  }
       path: self-help/find
       display_description: ''
+      title: 'Find the Right Court'
+      defaults:
+        title: false
     cache_metadata:
       max-age: -1
       contexts:
