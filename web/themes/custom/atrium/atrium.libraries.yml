@@ -35,6 +35,6 @@ submit-scroll:
   js:
     assets/js/submit-scroll.js: {}
 
-self-help-mini-block:
+find-courts:
   js:
-    assets/js/self-help-mini-block.js: {}
+    assets/js/find-courts.js: {}
