@@ -60,8 +60,22 @@
     {# <h3>one court</h3> #}
     {# One court, so display courthouses view #}
     {% set court = courts.0._entity %}
+    {% set num_courthouses = drupal_view_result('find_courthouses', 'self_help_block', court.nid.value)|length %}
 
-    {{ drupal_view('find_courthouses', 'self_help_block', court.nid.value) }}
+    {% if num_courthouses == 0 %}
+      {# <h3>zero courthouses</h3> #}
+      {# No courthouses with self help hours #}
+      <div class="grid-container-widescreen padding-y-5">
+        <div class="jcc-lead maxw-tablet-lg">
+          {{ 'We’re sorry, but %t% County does not have any self help centers.'|t|replace({'%t%': court.title.value}) }}
+        </div>
+      </div>
+
+    {% elseif num_courthouses > 1 %}
+      {# <h3>one or more courthouses</h3> #}
+      {# One or more courthouses, so display them #}
+      {{ drupal_view('find_courthouses', 'self_help_block', court.nid.value) }}
+    {% endif %}
 
   {% elseif courts|length > 1 %}
     {# <h3>multiple courts</h3> #}
