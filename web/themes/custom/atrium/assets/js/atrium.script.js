@@ -276,8 +276,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
-module.exports = __webpack_require__(/*! /Users/zakiya/Sites/jcc-srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
+__webpack_require__(/*! /Users/rob/work/c3/jcc/srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
+module.exports = __webpack_require__(/*! /Users/rob/work/c3/jcc/srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
 
 
 /***/ })

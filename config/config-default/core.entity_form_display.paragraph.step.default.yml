@@ -5,11 +5,14 @@ dependencies:
   config:
     - field.field.paragraph.step.field_description
     - field.field.paragraph.step.field_namechange
+    - field.field.paragraph.step.field_paragraphs
     - field.field.paragraph.step.field_title_display
     - paragraphs.paragraphs_type.step
   module:
     - allowed_formats
+    - cc
     - maxlength
+    - paragraphs
     - text
 id: paragraph.step.default
 targetEntityType: paragraph
@@ -32,6 +35,20 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 11
+    settings:
+      title: 'Additional item'
+      title_plural: 'Additional items'
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings:
+      cc:
+        status: 0
+    region: content
   field_title_display:
     weight: 0
     settings:
@@ -48,9 +65,9 @@ content:
     region: content
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   field_namechange: true

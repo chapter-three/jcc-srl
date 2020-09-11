@@ -1,0 +1,18 @@
+uuid: bba62fab-cc35-4731-a7cb-e4b0281b03d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.courthouse
+id: node.courthouse.title
+field_name: title
+entity_type: node
+bundle: courthouse
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

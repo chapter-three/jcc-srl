@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.flex
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.postcard
+    - paragraphs.paragraphs_type.self_help_finder
     - paragraphs.paragraphs_type.step_container
     - paragraphs.paragraphs_type.switchboard
     - paragraphs.paragraphs_type.timeline
@@ -25,7 +26,7 @@ bundle: basic
 label: Paragraphs
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -41,9 +42,10 @@ settings:
       postcard: postcard
       step_container: step_container
       switchboard: switchboard
-      links: links
       timeline: timeline
+      links: links
       timeline_dual: timeline_dual
+      self_help_finder: self_help_finder
     target_bundles_drag_drop:
       accordion:
         weight: 18
@@ -81,6 +83,9 @@ settings:
       postcard:
         enabled: true
         weight: 26
+      self_help_finder:
+        enabled: true
+        weight: 34
       step:
         weight: 27
         enabled: false

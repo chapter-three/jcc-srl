@@ -1,0 +1,40 @@
+uuid: f4c0de3d-95da-4616-a808-4b1f8ce36e6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.court.field_actions
+    - field.field.node.court.field_case_types
+    - field.field.node.court.field_cities
+    - field.field.node.court.field_counties
+    - field.field.node.court.field_description
+    - field.field.node.court.field_main_link
+    - field.field.node.court.field_parties
+    - field.field.node.court.field_secondary_link
+    - field.field.node.court.field_zip_codes
+    - node.type.court
+  module:
+    - user
+id: node.court.teaser
+targetEntityType: node
+bundle: court
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_actions: true
+  field_case_types: true
+  field_cities: true
+  field_counties: true
+  field_description: true
+  field_main_link: true
+  field_parties: true
+  field_secondary_link: true
+  field_zip_codes: true
+  langcode: true
+  search_api_excerpt: true

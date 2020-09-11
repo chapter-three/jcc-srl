@@ -1,0 +1,10 @@
+uuid: 84f50aed-9040-4711-b3d1-2bcd27f136fb
+langcode: en
+status: true
+dependencies: {  }
+id: self_help_finder
+label: 'Self help finder'
+icon_uuid: null
+icon_default: null
+description: 'A form to start the search for a self help courthouse.'
+behavior_plugins: {  }
