@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.accordion_container.field_accordion_style
     - field.field.paragraph.accordion_container.field_accordions
     - field.field.paragraph.accordion_container.field_body
     - field.field.paragraph.accordion_container.field_create_anchor
@@ -49,4 +50,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  field_accordion_style: true
+  search_api_excerpt: true
