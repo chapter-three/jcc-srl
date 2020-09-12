@@ -6,6 +6,7 @@ dependencies:
     - field.storage.media.field_description
     - field.storage.media.field_number
     - field.storage.media.field_form_category
+    - field.storage.taxonomy_term.field_synonyms
     - field.storage.media.field_form_prefix
     - field.storage.taxonomy_term.field_form_prefix_label
     - search_api.server.deafult
@@ -18,6 +19,17 @@ name: 'JCC Forms Index'
 description: 'Index for the forms lookup API'
 read_only: false
 field_settings:
+  field_synonyms:
+    label: 'Form Category » Taxonomy term » Synonyms'
+    datasource_id: 'entity:media'
+    property_path: 'field_form_category:entity:field_synonyms'
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_form_category
+        - field.storage.taxonomy_term.field_synonyms
+      module:
+        - taxonomy
   form_category:
     label: 'Form Category » Taxonomy term » Name'
     datasource_id: 'entity:media'
@@ -108,6 +120,7 @@ processor_settings:
   ignorecase:
     all_fields: true
     fields:
+      - field_synonyms
       - form_category
       - form_description
       - form_name
