@@ -1,0 +1,16 @@
+uuid: 987cd220-0387-4228-89ff-4789ecd0efcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.courthouse
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.courthouse
+target_entity_type_id: node
+target_bundle: courthouse
+default_langcode: site_default
+language_alterable: false

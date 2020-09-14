@@ -1,0 +1,22 @@
+uuid: c47b4c25-92c8-4dc2-84bc-77cc5df36dad
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.courthouse
+id: node.courthouse.promote
+field_name: promote
+entity_type: node
+bundle: courthouse
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

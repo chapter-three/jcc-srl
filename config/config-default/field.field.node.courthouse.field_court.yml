@@ -1,0 +1,28 @@
+uuid: 212f008e-17f4-4b11-810f-0ae22c799dab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_court
+    - node.type.court
+    - node.type.courthouse
+id: node.courthouse.field_court
+field_name: field_court
+entity_type: node
+bundle: courthouse
+label: Court
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      court: court
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

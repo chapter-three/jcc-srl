@@ -1,0 +1,11 @@
+uuid: dde028f4-5be6-4ea3-88e1-60d7d8d09ea3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.court
+id: node_type_court
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

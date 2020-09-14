@@ -1,0 +1,19 @@
+uuid: 7a346d85-4983-4293-8e4c-de8eba60e3e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_filing_hours_friday
+    - node.type.courthouse
+id: node.courthouse.field_filing_hours_friday
+field_name: field_filing_hours_friday
+entity_type: node
+bundle: courthouse
+label: Friday
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
