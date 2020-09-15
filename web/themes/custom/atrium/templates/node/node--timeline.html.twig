@@ -14,7 +14,10 @@
     hero: {
       column_variant: 'has-two-columns-threequarter',
       background_variant: 'has-background-color--dark',
-      breadcrumbs: breadcrumbs ? breadcrumbs : null,
+      breadcrumbs: breadcrumbs ? {
+        show_back_button: true,
+        items: breadcrumbs,
+      },
       title: label,
       lead: content.field_lead|render ? content.field_lead : '',
       body: content.body|render ? content.body : '',
