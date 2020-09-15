@@ -11,8 +11,8 @@
 
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
-      breadcrumbs: [{ label: label }],
-      title: content.field_title_display|render ? content.field_title_display : label,
+      brow: node.field_brow.0.value,
+      title: label,
       body: content.field_description|render ? content.field_description : '',
       column_content_right: jump_nav,
     }
@@ -22,6 +22,6 @@
     'field_case_type',
     'field_description',
     'field_hero_nav_title',
-    'field_title_display'
+    'field_brow'
   )}}
 {% endblock %}
