@@ -48,11 +48,11 @@ packages:
     drupal/console-core: 1.9.4
     drupal/console-en: 1.9.4
     drupal/console-extend-plugin: 0.9.3
-    drupal/core: 8.9.1
-    drupal/core-composer-scaffold: 8.9.1
+    drupal/core: 8.9.6
+    drupal/core-composer-scaffold: 8.9.6
     drupal/core-project-message: 8.9.1
-    drupal/core-recommended: 8.9.1
-    drupal/core-vendor-hardening: 8.9.1
+    drupal/core-recommended: 8.9.6
+    drupal/core-vendor-hardening: 8.9.6
     drupal/crop: 2.1.0
     drupal/ctools: 3.4.0
     drupal/default_content: 1.0.0-alpha9
@@ -172,7 +172,7 @@ packages:
     symfony/filesystem: v3.4.42
     symfony/finder: v3.4.42
     symfony/http-foundation: v3.4.41
-    symfony/http-kernel: v3.4.41
+    symfony/http-kernel: v3.4.44
     symfony/polyfill-ctype: v1.17.0
     symfony/polyfill-iconv: v1.17.0
     symfony/polyfill-intl-idn: v1.17.0
