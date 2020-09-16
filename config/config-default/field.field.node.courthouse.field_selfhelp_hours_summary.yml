@@ -1,0 +1,28 @@
+uuid: 6924d91f-e867-4a71-93f3-d3e0d627c2d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_selfhelp_hours_summary
+    - node.type.courthouse
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.courthouse.field_selfhelp_hours_summary
+field_name: field_selfhelp_hours_summary
+entity_type: node
+bundle: courthouse
+label: Summary
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

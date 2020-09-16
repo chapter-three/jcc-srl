@@ -1,0 +1,70 @@
+uuid: b6c85dd5-3e7d-4088-98ca-82c540653313
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.courthouse.field_address
+    - field.field.node.courthouse.field_building_hours_friday
+    - field.field.node.courthouse.field_building_hours_monday
+    - field.field.node.courthouse.field_building_hours_summary
+    - field.field.node.courthouse.field_building_hours_thursday
+    - field.field.node.courthouse.field_building_hours_tuesday
+    - field.field.node.courthouse.field_building_hours_wednesday
+    - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_filing_hours_friday
+    - field.field.node.courthouse.field_filing_hours_monday
+    - field.field.node.courthouse.field_filing_hours_summary
+    - field.field.node.courthouse.field_filing_hours_thursday
+    - field.field.node.courthouse.field_filing_hours_tuesday
+    - field.field.node.courthouse.field_filing_hours_wednesday
+    - field.field.node.courthouse.field_image
+    - field.field.node.courthouse.field_link
+    - field.field.node.courthouse.field_matters_served
+    - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_selfhelp_hours_friday
+    - field.field.node.courthouse.field_selfhelp_hours_monday
+    - field.field.node.courthouse.field_selfhelp_hours_summary
+    - field.field.node.courthouse.field_selfhelp_hours_thursday
+    - field.field.node.courthouse.field_selfhelp_hours_tuesday
+    - field.field.node.courthouse.field_selfhelp_hours_wednesday
+    - node.type.courthouse
+  module:
+    - user
+id: node.courthouse.teaser
+targetEntityType: node
+bundle: courthouse
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_building_hours_friday: true
+  field_building_hours_monday: true
+  field_building_hours_summary: true
+  field_building_hours_thursday: true
+  field_building_hours_tuesday: true
+  field_building_hours_wednesday: true
+  field_court: true
+  field_filing_hours_friday: true
+  field_filing_hours_monday: true
+  field_filing_hours_summary: true
+  field_filing_hours_thursday: true
+  field_filing_hours_tuesday: true
+  field_filing_hours_wednesday: true
+  field_image: true
+  field_link: true
+  field_matters_served: true
+  field_phone: true
+  field_selfhelp_hours_friday: true
+  field_selfhelp_hours_monday: true
+  field_selfhelp_hours_summary: true
+  field_selfhelp_hours_thursday: true
+  field_selfhelp_hours_tuesday: true
+  field_selfhelp_hours_wednesday: true
+  langcode: true
+  search_api_excerpt: true

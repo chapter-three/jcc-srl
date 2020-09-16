@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Template for "Self help finder" Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% if paragraph.field_self_help_finder_type.0.value =='basic' %}
+    {# Homepage search #}
+    {% include '@organisms/sections/locate-section/locate-section.twig' with {
+      locate_section: {
+        background_variant: 'has-background-color--light',
+        headergroup: {
+          title: 'Self-Help Locations'|t,
+          lead: 'The Self-Help Center/Family Law Facilitator\'s Office provides legal information and resources to self-represented court customers.'|t
+        },
+        search_group: {
+          label: 'Enter city, county or Zipcode'|t,
+          button: {
+            text: 'Search'|t,
+            style: 'primary',
+          },
+          url: '/self-help/find-self-help',
+          attribute: 's',
+        },
+        footer: 'Assistance may be in the form of walk in services, workshops, referrals and/or telephonic assistance.'|t,
+        image: {
+          src: '/libraries/courtyard/public/images/graphics/locate-section.png',
+          alt: 'California map'|t,
+        }
+      }
+    } only %}
+
+  {% elseif paragraph.field_self_help_finder_type.0.value =='enhanced' %}
+    {# In-step real-time search #}
+    {{ drupal_view('find_courts', 'self_help_block') }}
+
+  {% endif %}
+
+{% endblock %}

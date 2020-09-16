@@ -1,10 +1,10 @@
-uuid: 3b1d1ca7-75a4-4e10-b078-6b15768be00a
+uuid: 8355bf65-893c-4ba1-9232-bdccdaeaee68
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_title_display
-    - node.type.srl_onramp
+    - field.storage.node.field_address
+    - node.type.courthouse
   module:
     - allowed_formats
     - text
@@ -14,15 +14,15 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
-id: node.srl_onramp.field_title_display
-field_name: field_title_display
+id: node.courthouse.field_address
+field_name: field_address
 entity_type: node
-bundle: srl_onramp
-label: 'Display Title'
-description: 'Example: FL-201/FL-200'
-required: false
+bundle: courthouse
+label: Address
+description: ''
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: text_long

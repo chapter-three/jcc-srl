@@ -1,0 +1,19 @@
+uuid: 25c1e3cf-af06-45ce-8eef-85306235141b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cities
+    - node.type.court
+id: node.court.field_cities
+field_name: field_cities
+entity_type: node
+bundle: court
+label: Cities
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

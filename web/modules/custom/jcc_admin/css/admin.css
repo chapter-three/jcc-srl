@@ -18,3 +18,7 @@ fieldset:not(.fieldgroup).no-title {
 fieldset:not(.fieldgroup).no-title > legend {
   display: none;
 }
+
+.seven-details__wrapper {
+  overflow: auto;
+}

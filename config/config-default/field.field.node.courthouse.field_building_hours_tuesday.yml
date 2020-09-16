@@ -1,0 +1,19 @@
+uuid: 7bf1696d-d143-434b-834f-35a76daedd58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_building_hours_tuesday
+    - node.type.courthouse
+id: node.courthouse.field_building_hours_tuesday
+field_name: field_building_hours_tuesday
+entity_type: node
+bundle: courthouse
+label: Tuesday
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -34,3 +34,7 @@ jump-nav:
 submit-scroll:
   js:
     assets/js/submit-scroll.js: {}
+
+find-courts:
+  js:
+    assets/js/find-courts.js: {}

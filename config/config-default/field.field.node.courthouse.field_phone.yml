@@ -1,0 +1,21 @@
+uuid: e51ee9a1-7b01-4316-8be5-3149438d014e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.courthouse
+  module:
+    - telephone
+id: node.courthouse.field_phone
+field_name: field_phone
+entity_type: node
+bundle: courthouse
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -59,6 +59,7 @@ module:
   jcc_boilerplate: 0
   jcc_datefinder: 0
   jcc_forms: 0
+  jcc_twig: 0
   key: 0
   language: 0
   link: 0
@@ -98,6 +99,7 @@ module:
   responsive_image: 0
   rest: 0
   rh_media: 0
+  rh_node: 0
   rh_taxonomy: 0
   role_delegation: 0
   search: 0
@@ -111,12 +113,14 @@ module:
   srl_webform: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   token: 0
   toolbar: 0
   twig_tweak: 0
   update: 0
   user: 0
+  views_ajax_history: 0
   views_ui: 0
   webform: 0
   webform_jqueryui_buttons: 0

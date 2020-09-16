@@ -34,6 +34,7 @@
         {% set step_content = step_content|merge([{
           title: step.field_title_display|view,
           excerpt: step.field_description|view,
+          additional: step.field_paragraphs|view,
         }]) %}
       {% endif %}
     {% endfor %}

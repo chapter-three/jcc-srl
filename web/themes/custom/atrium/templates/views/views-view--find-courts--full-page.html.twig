@@ -1,0 +1,121 @@
+{#
+/**
+ * @file
+ * Template for "Find the Right Court" view.
+ *
+ * This shows a `court` node based off of a search. Its corresponding `courthouse`
+ * nodes are displayed below via `views-view--find-courthouses--full-block.html.twig`.
+ */
+#}
+
+{% extends 'views-view.html.twig' %}
+
+{% block header %}
+  {% set search_form %}
+    <div class="jcc-search-group jcc-search-group--vertical">
+      <div class="jcc-search-group__container">
+        {{ exposed }}
+      </div>
+    </div>
+  {% endset %}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      background_variant: 'has-background-color--light--secondary',
+      column_variant: 'has-one-column',
+      title: drupal_title(),
+      lead: header,
+      column_content_right: search_form,
+    }
+  } %}
+{% endblock %}
+
+{% block exposed %}
+  {# "Unset" this block since exposed is used in the header block #}
+  {#
+    Info:
+      - `exposed.s` is the "search" term. This textbox is visible to the user.
+      - `exposed.id` is the nid of a court node. This textbox is hidden (via css) from the user.
+  #}
+{% endblock %}
+
+
+{% block content %}
+  {{ attach_library('atrium/find-courts') }}
+  {% set courts = rows.0['#rows'].0['#view'].result %}
+
+  {% if exposed.s['#value'] is empty %}
+    {# If no search term, don't display results #}
+
+  {% elseif courts|length == 0 %}
+    {# <h3>zero courts</h3> #}
+    {# A search ws performed, but there are no results #}
+    <div class="grid-container-widescreen padding-y-5">
+      <div class="jcc-lead maxw-tablet-lg">
+        {{ 'We’re sorry, this search does not match any California locations in our database. Please enter a 5-digit California zip code (e.g. 92110) or city name (e.g. Oakland).'|t }}
+      </div>
+    </div>
+
+  {% elseif courts|length == 1 %}
+    {# <h3>one court</h3> #}
+    {# One court, so display summary & courthouses view #}
+    {% set court = courts.0._entity %}
+    {% set num_courthouses = drupal_view_result('find_courthouses', 'full_block', court.nid.value)|length %}
+
+    {% set body %}
+      {{ court.field_description.0.value|auto_convert_urls }}
+    {% endset %}
+    {% set links = [] %}
+    {% if court.field_main_link %}
+      {% set links = links|merge([{
+        url: court.field_main_link.0.url|render,
+        title: '%t% County Superior Court Website'|t|replace({'%t%': court.title.value}),
+      }]) %}
+    {% endif %}
+    {% if court.field_secondary_link %}
+      {% set links = links|merge([{
+        url: court.field_secondary_link.0.url|render,
+        title: '%t% County Superior Court Self Help Website'|t|replace({'%t%': court.title.value}),
+      }]) %}
+    {% endif %}
+    {% set read_more %}
+      {{ '<p>There are rules about where you can file your case. Some rules say you can file where you live, others say you must file where the other person lives or where a dispute happened. A judge may not be able to hear your case if you file in the wrong Court. Here are some general rules:</p><ol><li><strong>Is there an open case about this issue?</strong> If yes, then file in the county where that case is active.</li><li>If a case hasn’t been started:<ul style="list-style-type: lower-alpha;"><li>Divorce - the county where you or your spouse has lived for the last 3 months (you must have lived in California for the last 6 months in order to file).</li><li>Child custody or support (parents not married) - you can usually file where the child lives, with some exceptions</li><li>Guardianship - where the minor lives</li><li>Conservatorship - where the person to be conserved lives</li><li>Small claims - where the defendant lives, where the business is officially located, where an accident or dispute took place.</li><li>Restraining orders - where the person accused of abuse lives or where the abuse took place.</li><li>Eviction - where the property is located.</li></ul></li></ol><p>NOTE! These rules cover common situations. Sometimes there are exceptions or other rules that apply to your case. For cases about minors or small claims, please speak to your local court Self-Help Center staff, or a lawyer referral service for assistance.</p>'|t }}
+    {% endset %}
+
+    {% include '@molecules/blocks/court-summary/court-summary.twig' with {
+      court_summary: {
+        title: 'The jurisdiction for <strong>%s%</strong> is %t% County Superior Court.'|t|replace({'%s%': exposed.s['#value'], '%t%': court.title.value})|check_markup('basic_html'),
+        quantity: 'There are %q% Courthouse Locations.'|t|replace({'%q%': num_courthouses}),
+        body: court.field_description.0.value|auto_convert_urls|check_markup(court.field_description.0.format),
+        links: links,
+        checkbox: {
+          label: '%t% County Superior Court Self Help Services'|t|replace({'%t%': court.title.value}),
+        },
+        read_more: {
+          id: 'read-more',
+          title: 'Do I go to my county courthouse?'|t,
+          content: read_more
+        }
+      }
+    } %}
+
+    {{ drupal_view('find_courthouses', 'full_block', court.nid.value) }}
+
+  {% elseif courts|length > 1 %}
+    {# <h3>multiple courts</h3> #}
+    {# Multiple court results. Display results as links that will reload view with nid from court node #}
+    <div class="grid-container-widescreen padding-y-5">
+      <div class="jcc-lead maxw-tablet-lg">
+        {{ 'The search term <strong>%s%</strong> falls into multiple counties. Please select a county.'|t|replace({'%s%': exposed.s['#value']})|check_markup('basic_html') }}
+      </div>
+
+      <ol>
+        {% for row in courts %}
+          <li>
+            <a href="{{ url('<current>', {'s': exposed.s['#value'], 'id': row._entity.nid.value}) }}">{{ row._entity.title.value }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+uuid: 170520da-dd54-4e55-a0f6-d87cb69a6a49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.courthouse
+  module:
+    - link
+id: node.courthouse.field_link
+field_name: field_link
+entity_type: node
+bundle: courthouse
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

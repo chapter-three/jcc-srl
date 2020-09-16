@@ -1,0 +1,91 @@
+uuid: 1d6a6cb5-2465-4458-8748-791e9626bb54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.self_help_finder
+    - paragraphs.paragraphs_type.step
+  module:
+    - entity_reference_revisions
+id: paragraph.step.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: step
+label: Additional
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      self_help_finder: self_help_finder
+    target_bundles_drag_drop:
+      accordion:
+        weight: 22
+        enabled: false
+      accordion_container:
+        weight: 23
+        enabled: false
+      card:
+        weight: 24
+        enabled: false
+      card_form:
+        weight: 25
+        enabled: false
+      card_list:
+        weight: 26
+        enabled: false
+      code_section:
+        weight: 27
+        enabled: false
+      complete:
+        weight: 28
+        enabled: false
+      datefinder:
+        weight: 29
+        enabled: false
+      flex:
+        weight: 30
+        enabled: false
+      hero_cards:
+        weight: 31
+        enabled: false
+      links:
+        weight: 32
+        enabled: false
+      postcard:
+        weight: 33
+        enabled: false
+      self_help_finder:
+        enabled: true
+        weight: 34
+      step:
+        weight: 35
+        enabled: false
+      step_container:
+        weight: 36
+        enabled: false
+      switchboard:
+        weight: 37
+        enabled: false
+      tile:
+        weight: 38
+        enabled: false
+      timeline:
+        weight: 39
+        enabled: false
+      timeline_dual:
+        weight: 40
+        enabled: false
+      timeline_dual_item:
+        weight: 41
+        enabled: false
+      timeline_item:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions
