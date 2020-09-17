@@ -5,7 +5,10 @@
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       column_variant: content.field_column_second|render ? 'has-two-columns-half' : 'has-two-columns-threequarter',
-      breadcrumbs: [{ label: label }],
+      breadcrumbs: {
+        show_back_button: true,
+        items: [{ label: label }],
+      },
       title: content.field_title_display|render ? content.field_title_display : label,
       body: content.field_column_first|render ? content.field_column_first : '',
       column_content_right: content.field_column_second|render ? content.field_column_second : '',
