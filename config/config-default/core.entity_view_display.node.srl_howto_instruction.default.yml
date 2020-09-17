@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_parent
     - field.field.node.srl_howto_instruction.field_parties
     - field.field.node.srl_howto_instruction.field_title_display
+    - field.field.node.srl_howto_instruction.field_watchers
     - node.type.srl_howto_instruction
   module:
     - block_field
@@ -119,5 +120,6 @@ hidden:
   field_case_types: true
   field_metatag: true
   field_parties: true
+  field_watchers: true
   langcode: true
   search_api_excerpt: true

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.srl_onramp.field_metatag
     - field.field.node.srl_onramp.field_paragraphs
     - field.field.node.srl_onramp.field_parties
+    - field.field.node.srl_onramp.field_watchers
     - node.type.srl_onramp
   module:
     - allowed_formats
@@ -29,6 +30,7 @@ third_party_settings:
         - field_case_types
         - field_actions
         - field_parties
+        - field_watchers
       parent_name: ''
       weight: 7
       format_type: fieldset
@@ -133,6 +135,12 @@ content:
     region: content
   field_parties:
     weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_watchers:
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_select

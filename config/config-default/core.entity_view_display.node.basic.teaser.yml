@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.basic.field_metatag
     - field.field.node.basic.field_paragraphs
     - field.field.node.basic.field_parties
+    - field.field.node.basic.field_watchers
     - node.type.basic
   module:
     - text
@@ -38,6 +39,7 @@ hidden:
   field_metatag: true
   field_paragraphs: true
   field_parties: true
+  field_watchers: true
   langcode: true
   links: true
   search_api_excerpt: true

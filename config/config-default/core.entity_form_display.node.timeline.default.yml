@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
     - field.field.node.timeline.field_parties
+    - field.field.node.timeline.field_watchers
     - node.type.timeline
   module:
     - allowed_formats
@@ -26,6 +27,7 @@ third_party_settings:
         - field_case_types
         - field_actions
         - field_parties
+        - field_watchers
       parent_name: ''
       weight: 12
       format_type: fieldset
@@ -125,6 +127,12 @@ content:
     region: content
   field_parties:
     weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_watchers:
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select

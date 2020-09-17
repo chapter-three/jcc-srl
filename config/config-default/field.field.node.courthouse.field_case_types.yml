@@ -1,0 +1,29 @@
+uuid: 636eeb56-683a-402d-9a20-7fd09fa2a3e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_types
+    - node.type.courthouse
+    - taxonomy.vocabulary.case_type
+id: node.courthouse.field_case_types
+field_name: field_case_types
+entity_type: node
+bundle: courthouse
+label: 'Case types'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      case_type: case_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

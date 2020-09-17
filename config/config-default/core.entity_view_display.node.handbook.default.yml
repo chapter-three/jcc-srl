@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.handbook.field_actions
     - field.field.node.handbook.field_case_types
     - field.field.node.handbook.field_parties
+    - field.field.node.handbook.field_watchers
     - node.type.handbook
   module:
     - text
@@ -27,6 +28,7 @@ hidden:
   field_actions: true
   field_case_types: true
   field_parties: true
+  field_watchers: true
   langcode: true
   links: true
   search_api_excerpt: true

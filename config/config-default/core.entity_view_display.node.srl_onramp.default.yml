@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.srl_onramp.field_metatag
     - field.field.node.srl_onramp.field_paragraphs
     - field.field.node.srl_onramp.field_parties
+    - field.field.node.srl_onramp.field_watchers
     - node.type.srl_onramp
   module:
     - entity_reference_revisions
@@ -71,5 +72,6 @@ hidden:
   field_case_types: true
   field_metatag: true
   field_parties: true
+  field_watchers: true
   langcode: true
   search_api_excerpt: true

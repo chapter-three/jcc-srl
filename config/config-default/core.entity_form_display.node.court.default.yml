@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
+    - field.field.node.court.field_watchers
     - field.field.node.court.field_zip_codes
     - node.type.court
   module:
@@ -53,6 +54,7 @@ third_party_settings:
         - field_case_types
         - field_actions
         - field_parties
+        - field_watchers
       parent_name: ''
       weight: 4
       format_type: fieldset
@@ -123,6 +125,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_watchers:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_zip_codes:
     weight: 30

@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.srl_wayfinder.field_paragraphs
     - field.field.node.srl_wayfinder.field_parties
     - field.field.node.srl_wayfinder.field_title_display
+    - field.field.node.srl_wayfinder.field_watchers
     - node.type.srl_wayfinder
   module:
     - allowed_formats
@@ -30,6 +31,7 @@ third_party_settings:
         - field_case_types
         - field_actions
         - field_parties
+        - field_watchers
       parent_name: ''
       weight: 14
       format_type: fieldset
@@ -140,6 +142,12 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: text_textfield
+    region: content
+  field_watchers:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select
