@@ -1,0 +1,5 @@
+xlsx.mapping:
+  title: 'Spreadsheets'
+  route_name: xlsx.mapping
+  description: 'Spreadsheets data mapping tool.'
+  parent: system.admin_structure
