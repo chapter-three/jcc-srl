@@ -36,7 +36,7 @@ class FieldsForm extends BaseForm {
 
     $worksheet = $entity_mapping[$curr_index]['worksheet'];
     $entity = $entity_mapping[$curr_index]['entity'];
-    $tmp_mapping = $this->getFieldMapping($curr_index);
+    $tmp_mapping = $this->getFieldMapping($worksheet['index']);
 
     $form['mapping'] = [
       '#type' => 'table',
@@ -67,7 +67,7 @@ class FieldsForm extends BaseForm {
           '#type' => 'select',
           '#title' => '',
           '#empty_option' => $this->t('- Select Column -'),
-          '#options' => $this->getXLSXColumnsByIndex($curr_index),
+          '#options' => $this->getXLSXColumnsByIndex($worksheet['index']),
           '#default_value' => (isset($tmp_value['column']) && strlen(trim($tmp_value['column'])) != 0) ? $tmp_value['column'] : '',
         ];
       }
