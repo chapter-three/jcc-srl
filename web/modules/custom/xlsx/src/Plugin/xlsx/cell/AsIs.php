@@ -16,4 +16,15 @@ use Drupal\xlsx\Plugin\XlsxCellBase;
  */
 class AsIs extends XlsxCellBase {
 
+  /**
+   * {@inheritdoc}
+   */
+  public function import($entity, $field_name, $value) {
+    $sval = trim($value);
+    if ($sval == 'N/A') {
+      return '';
+    }
+    return $value;
+  }
+
 }

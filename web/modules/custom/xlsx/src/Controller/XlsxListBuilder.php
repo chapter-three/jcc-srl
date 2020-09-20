@@ -98,22 +98,15 @@ class XlsxListBuilder extends ConfigEntityListBuilder {
    */
   public function getDefaultOperations(EntityInterface $entity) {
     $operations = parent::getDefaultOperations($entity);
-    $ajax_attributes = [
-      'class' => ['use-ajax'],
-      'data-dialog-type' => 'modal',
-      'data-dialog-options' => Json::encode(['width' => 700]),
-    ];
     if (!$entity->isExportOnly()) {
       $operations['import'] = [
         'title' => $this->t('Import'),
         'url' => $this->ensureDestination($entity->toUrl('import')),
-        'attributes' => $ajax_attributes,
       ];
     }
     $operations['export'] = [
       'title' => $this->t('Export'),
       'url' => $this->ensureDestination($entity->toUrl('export')),
-      'attributes' => $ajax_attributes,
     ];
     $operations['edit'] = [
       'title' => $this->t('Edit'),
@@ -122,12 +115,10 @@ class XlsxListBuilder extends ConfigEntityListBuilder {
     $operations['purge'] = [
       'title' => $this->t('Purge'),
       'url' => $this->ensureDestination($entity->toUrl('purge')),
-      'attributes' => $ajax_attributes,
     ];
     $operations['delete'] = [
       'title' => $this->t('Delete'),
       'url' => $this->ensureDestination($entity->toUrl('delete')),
-      'attributes' => $ajax_attributes,
     ];
     return $operations;
   }

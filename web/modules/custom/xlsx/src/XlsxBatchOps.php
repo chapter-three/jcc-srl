@@ -51,10 +51,12 @@ class XlsxBatchOps {
     foreach ($mapping['field_mapping'][$worksheet_index] as $drupal_field => $info) {
       $value = !empty($data_array[0][$info['column']]) ? $data_array[0][$info['column']] : NULL;
       // Load cell transformer plugin.
-      $xlsx_cell = !empty($data_array[0][$info['cell_plugin']]) ? $data_array[0][$info['cell_plugin']] : 'as_is';
+      $xlsx_cell = !empty($info['cell_plugin']) ? $info['cell_plugin'] : 'as_is';
       if ($value) {
         if ($plugin = \Drupal::service('plugin.manager.xlsx_cell')->createInstance($xlsx_cell)) {
-          $entity->set($drupal_field, $plugin->import($entity, $drupal_field, $value));
+          if ($plugin_value = $plugin->import($entity, $drupal_field, $value)) {
+            $entity->set($drupal_field, $plugin_value);
+          }
         }
       }
     }
