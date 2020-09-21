@@ -22,6 +22,8 @@ dependencies:
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_self_help_appointment
+    - field.field.node.courthouse.field_self_help_workshop
     - field.field.node.courthouse.field_selfhelp_hours_friday
     - field.field.node.courthouse.field_selfhelp_hours_monday
     - field.field.node.courthouse.field_selfhelp_hours_summary
@@ -60,6 +62,8 @@ hidden:
   field_link: true
   field_matters_served: true
   field_phone: true
+  field_self_help_appointment: true
+  field_self_help_workshop: true
   field_selfhelp_hours_friday: true
   field_selfhelp_hours_monday: true
   field_selfhelp_hours_summary: true

@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.court.field_actions
     - field.field.node.court.field_case_types
     - field.field.node.court.field_cities
-    - field.field.node.court.field_counties
     - field.field.node.court.field_description
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
@@ -30,7 +29,6 @@ hidden:
   field_actions: true
   field_case_types: true
   field_cities: true
-  field_counties: true
   field_description: true
   field_main_link: true
   field_parties: true

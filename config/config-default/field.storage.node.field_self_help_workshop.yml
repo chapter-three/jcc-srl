@@ -1,16 +1,16 @@
-uuid: 5cc31266-d89a-4eff-8aea-b38944c8fc11
+uuid: eb2531c3-55f9-45f9-b0f3-da520a8dda66
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_counties
-field_name: field_counties
+id: node.field_self_help_workshop
+field_name: field_self_help_workshop
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

@@ -21,6 +21,8 @@ dependencies:
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_self_help_appointment
+    - field.field.node.courthouse.field_self_help_workshop
     - field.field.node.courthouse.field_selfhelp_hours_friday
     - field.field.node.courthouse.field_selfhelp_hours_monday
     - field.field.node.courthouse.field_selfhelp_hours_summary
@@ -107,6 +109,20 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Building hours'
+    group_self_help:
+      children:
+        - field_self_help_workshop
+        - field_self_help_appointment
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Self help'
 id: node.courthouse.default
 targetEntityType: node
 bundle: courthouse
@@ -127,7 +143,7 @@ content:
     type: text_textarea
     region: content
   field_building_hours_friday:
-    weight: 18
+    weight: 19
     settings:
       size: 60
       placeholder: ''
@@ -143,7 +159,7 @@ content:
     type: string_textfield
     region: content
   field_building_hours_summary:
-    weight: 19
+    weight: 20
     settings:
       rows: 5
       placeholder: ''
@@ -257,6 +273,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
+    region: content
+  field_self_help_appointment:
+    weight: 18
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_self_help_workshop:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_selfhelp_hours_friday:
     weight: 30

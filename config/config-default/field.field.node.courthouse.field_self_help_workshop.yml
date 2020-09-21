@@ -1,0 +1,23 @@
+uuid: 625a7176-0519-4a7c-8d91-c52722595610
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_self_help_workshop
+    - node.type.courthouse
+  module:
+    - link
+id: node.courthouse.field_self_help_workshop
+field_name: field_self_help_workshop
+entity_type: node
+bundle: courthouse
+label: 'Sign up for workshop'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

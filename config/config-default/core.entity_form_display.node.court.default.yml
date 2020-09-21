@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.court.field_actions
     - field.field.node.court.field_case_types
     - field.field.node.court.field_cities
-    - field.field.node.court.field_counties
     - field.field.node.court.field_description
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
@@ -89,14 +88,6 @@ content:
     region: content
   field_cities:
     weight: 29
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_counties:
-    weight: 28
     settings:
       rows: 5
       placeholder: ''
