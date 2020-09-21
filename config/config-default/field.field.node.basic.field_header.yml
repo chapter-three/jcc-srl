@@ -7,7 +7,12 @@ dependencies:
     - node.type.basic
     - paragraphs.paragraphs_type.hero_cards
   module:
+    - datalayer
     - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_header
 id: node.basic.field_header
 field_name: field_header
 entity_type: node

@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_counties
     - node.type.court
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_counties
 id: node.court.field_counties
 field_name: field_counties
 entity_type: node

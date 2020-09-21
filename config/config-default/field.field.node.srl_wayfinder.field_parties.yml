@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_parties
     - node.type.srl_wayfinder
     - taxonomy.vocabulary.party
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_parties
 id: node.srl_wayfinder.field_parties
 field_name: field_parties
 entity_type: node

@@ -25,6 +25,7 @@ module:
   contextual: 0
   crop: 0
   ctools: 0
+  datalayer: 0
   datetime: 0
   dblog: 0
   default_content: 0
@@ -105,6 +106,7 @@ module:
   search: 0
   search_api: 0
   search_api_db: 0
+  sendgrid_integration: 0
   serialization: 0
   shortcut: 0
   simple_block: 0
