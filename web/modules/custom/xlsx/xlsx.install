@@ -34,7 +34,7 @@ function xlsx_uninstall() {
 /**
  * Implements hook_schema().
  */
-function xlsx_install() {
+function xlsx_schema() {
   $schema['xlsx_json_data'] = [
     'description' => 'Store JSON file data.',
     'fields' => [
