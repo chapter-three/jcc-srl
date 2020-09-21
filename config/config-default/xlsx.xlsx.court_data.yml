@@ -1,6 +1,9 @@
+uuid: bbb7cef0-b3e4-4e39-b491-0fdee1975c7e
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 7vZNq8_8mR48oONNtFxg1L4uQuxMC--R9vx_QcKI-Rw
 id: court_data
 label: 'Court Data'
 mapping:
