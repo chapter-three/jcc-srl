@@ -21,7 +21,7 @@ class Court extends XlsxCellBase {
   /**
    * {@inheritdoc}
    */
-  public function import($entity, $field_name, $value) {
+  public function import($entity, $field_name, $value, $mapped_fields) {
     if ($entity->hasField($field_name)) {
       $courts = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
         'title' => trim($value),

@@ -20,4 +20,9 @@ function xlsx_entity_delete(EntityInterface $entity) {
   $event_type = XlsxEventType::DELETE_ENTITY;
   $dispatcher = \Drupal::service('event_dispatcher')
     ->dispatch($event_type, new XlsxEntityEvent($event_type, $entity));
+
+  \Drupal::database()->delete('xlsx_entity_mapping')
+    ->condition('entity_type', $entity->getEntityTypeId() . ':' . $entity->bundle())
+    ->condition('entity_id', $entity->id())
+    ->execute();
 }

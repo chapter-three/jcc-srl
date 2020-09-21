@@ -49,21 +49,6 @@ class ExportXlsxForm extends BaseForm {
         '#default_value' => !empty($default_value[0]) ? $default_value[0] : NULL,
         '#required' => TRUE,
       ];
-      $form['password_protected'] = [
-        '#type' => 'checkbox',
-        '#title' => $this->t('Export as password protected Zip file'),
-      ];
-      $form['password'] = [
-        '#type' => 'textfield',
-        '#title' => $this->t('Set ZIP password'),
-        '#description' => $this->t('If you are using Mac please try <strong>use The Unarchiver</strong> app, default Archive Utility app might not accept this password to unzip.'),
-        '#size' => 25,
-        '#states' => [
-          'visible' => [
-            'input[name="password_protected"]' => ['checked' => TRUE],
-          ],
-        ],
-      ];
       $export_plugins = $xlsx->getExportPlugins();
       foreach ($export_plugins as $plugin_id) {
         if ($xlsx_export = $this->xlsxExportManager->createInstance($plugin_id)) {

@@ -146,3 +146,11 @@ xlsx.new.review:
         converter: paramconverter.xlsx_source
   requirements:
     _permission: 'add xlsx mapping'
+
+xlsx.json_file.counties:
+  path: '/admin/structure/xlsx/json'
+  defaults:
+    _title: 'Counties, Cities and Zip Codes'
+    _form: '\Drupal\xlsx\Form\JsonFileForm'
+  requirements:
+    _permission: 'administer xlsx mapping'

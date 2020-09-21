@@ -36,32 +36,31 @@ class XlsxBatchOps {
     $mapping = $xlsx->getMapping();
     $entity_fields = [];
     $data_array = array_values($data);
-    $raw_data_row = [];
+    $mapped_fields = [];
     $entity_mapping = $mapping['entity_mapping'];
     $entity = \Drupal::entityTypeManager()->getStorage($destination['type'])->create(['type' => $destination['bundle']]);
     foreach ($mapping['field_mapping'][$worksheet_index] as $drupal_field => $info) {
-      $value = !empty($data_array[0][$info['column']]) ? $data_array[0][$info['column']] : NULL;
+      $value = !empty($data_array[0][$info['column']]) ? $data_array[0][$info['column']] : '';
       if ($value) {
-        $raw_data_row[] = $value;
+        $mapped_fields[$drupal_field] = $value;
         $entity->set($drupal_field, $value);
       }
     }
+
     // We need this loop to apply XLSX Cell plugin tranformation.
     // Second loop will have access to the complete entity with all the mapping fields populated.
     foreach ($mapping['field_mapping'][$worksheet_index] as $drupal_field => $info) {
-      $value = !empty($data_array[0][$info['column']]) ? $data_array[0][$info['column']] : NULL;
+      $value = !empty($mapped_fields[$drupal_field]) ? $mapped_fields[$drupal_field] : '';
       // Load cell transformer plugin.
       $xlsx_cell = !empty($info['cell_plugin']) ? $info['cell_plugin'] : 'as_is';
-      if ($value) {
-        if ($plugin = \Drupal::service('plugin.manager.xlsx_cell')->createInstance($xlsx_cell)) {
-          if ($plugin_value = $plugin->import($entity, $drupal_field, $value)) {
-            $entity->set($drupal_field, $plugin_value);
-          }
+      if ($plugin = \Drupal::service('plugin.manager.xlsx_cell')->createInstance($xlsx_cell)) {
+        if ($plugin_value = $plugin->import($entity, $drupal_field, $value, $mapped_fields)) {
+          $entity->set($drupal_field, $plugin_value);
         }
       }
     }
 
-    if (!empty($raw_data_row)) {
+    if (!empty($mapped_fields)) {
       $entity->save();
       $xlsx_data = \Drupal::entityTypeManager()->getStorage('xlsx_data')->create(['type' => 'xlsx_data']);
       $xlsx_data->set('mapping_id', $xlsx->id());
@@ -69,7 +68,7 @@ class XlsxBatchOps {
       $xlsx_data->set('entity_id', $entity->id());
       $xlsx_data->set('entity_type_id', $destination['type']);
       $xlsx_data->set('bundle', $destination['bundle']);
-      $xlsx_data->set('hash', md5(serialize($raw_data_row)));
+      $xlsx_data->set('hash', md5(serialize($mapped_fields)));
       $xlsx_data->save();
       $context['message'] = t('Importing %name ...', ['%name' => $entity->label()]);
       $context['results'][] = $entity->id();

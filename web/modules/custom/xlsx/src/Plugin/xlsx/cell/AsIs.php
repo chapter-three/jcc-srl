@@ -19,7 +19,7 @@ class AsIs extends XlsxCellBase {
   /**
    * {@inheritdoc}
    */
-  public function import($entity, $field_name, $value) {
+  public function import($entity, $field_name, $value, $mapped_fields) {
     $sval = trim($value);
     if ($sval == 'N/A') {
       return '';

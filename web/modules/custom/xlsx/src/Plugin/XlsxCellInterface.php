@@ -35,7 +35,7 @@ interface XlsxCellInterface extends PluginInspectionInterface {
    *
    * @return mixed
    */
-  public function import($entity, $field_name, $value);
+  public function import($entity, $field_name, $value, $mapped_fields);
 
   /**
    * Process data for XLSX cell.

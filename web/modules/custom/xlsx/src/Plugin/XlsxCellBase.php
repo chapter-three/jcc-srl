@@ -35,7 +35,7 @@ class XlsxCellBase extends PluginBase implements XlsxCellInterface {
   /**
    * {@inheritdoc}
    */
-  public function import($entity, $field_name, $value) {
+  public function import($entity, $field_name, $value, $mapped_fields) {
     return $value;
   }
 

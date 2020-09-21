@@ -54,7 +54,11 @@ class FieldsForm extends BaseForm {
       foreach ($fields as $field_name => $info) {
         $tmp_value = !empty($tmp_mapping[$field_name]) ? $tmp_mapping[$field_name] : [];
         $form['mapping'][$field_name]['worksheet'] = [
-          '#plain_text' => $this->t('@label (@name)', ['@label' => $info['label'], '@name' => $field_name]),
+          '#plain_text' => $this->t('@label (@name) (@type)', [
+            '@label' => $info['label'],
+            '@name' => $field_name,
+            '@type' => $info['type']
+          ]),
         ];
         $form['mapping'][$field_name]['cell_plugin'] = [
           '#type' => 'select',

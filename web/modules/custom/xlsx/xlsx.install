@@ -28,4 +28,85 @@ function xlsx_uninstall() {
   // Cleanup state variables.
   \Drupal::state()->delete('xlsx.import');
   \Drupal::state()->delete('xlsx.export');
+  \Drupal::state()->delete('xlsx_json_file_id');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function xlsx_install() {
+  $schema['xlsx_json_data'] = [
+    'description' => 'Store JSON file data.',
+    'fields' => [
+      'id'      => [
+        'description' => 'ID',
+        'type'        => 'serial',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+      ],
+      'city' => [
+        'description' => 'City',
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+      'county' => [
+        'description' => 'County',
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+      'zip' => [
+        'description' => 'Zip code',
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'id'  => ['id'],
+    ],
+  ];
+  $schema['xlsx_entity_mapping'] = [
+    'description' => 'Store entity mapping.',
+    'fields' => [
+      'id'      => [
+        'description' => 'ID',
+        'type'        => 'serial',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+      ],
+      'entity_type' => [
+        'description' => 'Entity type',
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+      'entity_id' => [
+        'description' => 'Entity ID',
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 0,
+      ],
+      'hash' => [
+        'description' => 'Hash to match',
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'id'  => ['id'],
+      'entity_id'  => ['entity_id'],
+    ],
+  ];
+  return $schema;
 }

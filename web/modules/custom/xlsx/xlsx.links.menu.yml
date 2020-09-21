@@ -3,3 +3,9 @@ xlsx.mapping:
   route_name: xlsx.mapping
   description: 'Spreadsheets data mapping tool.'
   parent: system.admin_structure
+
+xlsx.json_file.counties:
+  title: 'Json'
+  route_name: xlsx.json_file.counties
+  description: 'Counties, Cities and Zip Codes.'
+  parent: xlsx.mapping
