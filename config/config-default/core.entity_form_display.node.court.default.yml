@@ -22,7 +22,6 @@ third_party_settings:
   field_group:
     group_location:
       children:
-        - field_counties
         - field_cities
         - field_zip_codes
       parent_name: ''
