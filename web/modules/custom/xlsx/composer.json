@@ -3,6 +3,6 @@
   "type": "drupal-module",
   "description": "Spreadsheets (XLSX) import/export module.",
   "require": {
-    "phpoffice/phpspreadsheet": "^1.11",
+    "phpoffice/phpspreadsheet": "^1.11"
   }
 }
