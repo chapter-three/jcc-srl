@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_secondary_link
     - node.type.court
   module:
+    - datalayer
     - link
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_secondary_link
 id: node.court.field_secondary_link
 field_name: field_secondary_link
 entity_type: node

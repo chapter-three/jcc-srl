@@ -7,6 +7,7 @@ dependencies:
     - node.type.courthouse
   module:
     - allowed_formats
+    - datalayer
     - text
 third_party_settings:
   allowed_formats:
@@ -14,6 +15,9 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
+  datalayer:
+    expose: 1
+    label: field_building_hours_summary
 id: node.courthouse.field_building_hours_summary
 field_name: field_building_hours_summary
 entity_type: node

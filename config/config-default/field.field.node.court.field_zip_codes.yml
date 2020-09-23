@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_zip_codes
     - node.type.court
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_zip_codes
 id: node.court.field_zip_codes
 field_name: field_zip_codes
 entity_type: node

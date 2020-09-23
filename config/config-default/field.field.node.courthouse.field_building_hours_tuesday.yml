@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_building_hours_tuesday
     - node.type.courthouse
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_building_hours_tuesday
 id: node.courthouse.field_building_hours_tuesday
 field_name: field_building_hours_tuesday
 entity_type: node

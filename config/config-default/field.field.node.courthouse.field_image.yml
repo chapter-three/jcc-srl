@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_image
     - media.type.image
     - node.type.courthouse
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_image
 id: node.courthouse.field_image
 field_name: field_image
 entity_type: node

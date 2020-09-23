@@ -7,7 +7,12 @@ dependencies:
     - node.type.srl_howto
     - paragraphs.paragraphs_type.tile
   module:
+    - datalayer
     - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_children_secondary
 id: node.srl_howto.field_children_secondary
 field_name: field_children_secondary
 entity_type: node

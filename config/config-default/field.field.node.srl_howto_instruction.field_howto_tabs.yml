@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_howto_tabs
     - node.type.srl_howto_instruction
   module:
+    - datalayer
     - link
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_howto_tabs
 id: node.srl_howto_instruction.field_howto_tabs
 field_name: field_howto_tabs
 entity_type: node

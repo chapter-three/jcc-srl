@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_parties
     - node.type.court
     - taxonomy.vocabulary.party
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_parties
 id: node.court.field_parties
 field_name: field_parties
 entity_type: node

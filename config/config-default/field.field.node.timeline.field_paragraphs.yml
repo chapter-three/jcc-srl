@@ -7,7 +7,12 @@ dependencies:
     - node.type.timeline
     - paragraphs.paragraphs_type.timeline_dual
   module:
+    - datalayer
     - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_paragraphs
 id: node.timeline.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
