@@ -10,6 +10,12 @@ dependencies:
     - media.type.remote_video
     - media.type.video
     - node.type.basic
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_media
 _core:
   default_config_hash: VzKKo0tNfwdNSNNhuMfwj1M1wi2jRhCJAxuf2OZJqEQ
 id: node.basic.field_media

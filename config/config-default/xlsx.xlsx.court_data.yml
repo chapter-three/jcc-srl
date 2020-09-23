@@ -1,0 +1,170 @@
+uuid: bbb7cef0-b3e4-4e39-b491-0fdee1975c7e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7vZNq8_8mR48oONNtFxg1L4uQuxMC--R9vx_QcKI-Rw
+id: court_data
+label: 'Court Data'
+mapping:
+  source: xlsx_file
+  source_name: 'Offramp to Court Data Set_For Importer.xlsx'
+  csv: null
+  export:
+    - xlsx
+  export_only: false
+  entity_mapping:
+    -
+      worksheet:
+        index: 0
+        name: Courts
+      entity:
+        xlsx_data_plugin: node
+        type: node
+        bundle: court
+    -
+      worksheet:
+        index: 1
+        name: Courthouses
+      entity:
+        xlsx_data_plugin: node
+        type: node
+        bundle: courthouse
+  field_mapping:
+    -
+      title:
+        column: A
+        cell_plugin: as_is
+      field_cities:
+        column: E
+        cell_plugin: json_city
+      field_main_link:
+        column: B
+        cell_plugin: link
+      field_zip_codes:
+        column: F
+        cell_plugin: json_zip
+      field_secondary_link:
+        column: C
+        cell_plugin: link
+      field_description:
+        column: D
+        cell_plugin: as_is
+    -
+      title:
+        column: B
+        cell_plugin: as_is
+      field_address:
+        column: C
+        cell_plugin: as_is
+      field_building_hours_friday:
+        column: K
+        cell_plugin: as_is
+      field_building_hours_monday:
+        column: G
+        cell_plugin: as_is
+      field_building_hours_summary:
+        column: L
+        cell_plugin: as_is
+      field_building_hours_thursday:
+        column: J
+        cell_plugin: as_is
+      field_building_hours_tuesday:
+        column: H
+        cell_plugin: as_is
+      field_building_hours_wednesday:
+        column: I
+        cell_plugin: as_is
+      field_filing_hours_friday:
+        column: Q
+        cell_plugin: as_is
+      field_filing_hours_monday:
+        column: M
+        cell_plugin: as_is
+      field_filing_hours_summary:
+        column: R
+        cell_plugin: as_is
+      field_filing_hours_thursday:
+        column: P
+        cell_plugin: as_is
+      field_filing_hours_tuesday:
+        column: 'N'
+        cell_plugin: as_is
+      field_filing_hours_wednesday:
+        column: O
+        cell_plugin: as_is
+      field_link:
+        column: E
+        cell_plugin: link
+      field_matters_served:
+        column: F
+        cell_plugin: as_is
+      field_phone:
+        column: D
+        cell_plugin: as_is
+      field_selfhelp_hours_friday:
+        column: W
+        cell_plugin: as_is
+      field_selfhelp_hours_monday:
+        column: S
+        cell_plugin: as_is
+      field_selfhelp_hours_summary:
+        column: X
+        cell_plugin: as_is
+      field_selfhelp_hours_thursday:
+        column: V
+        cell_plugin: as_is
+      field_selfhelp_hours_tuesday:
+        column: T
+        cell_plugin: as_is
+      field_selfhelp_hours_wednesday:
+        column: U
+        cell_plugin: as_is
+      field_court:
+        column: A
+        cell_plugin: court
+      field_image:
+        column: AA
+        cell_plugin: save_as_media
+      field_self_help_appointment:
+        column: 'Y'
+        cell_plugin: link
+      field_self_help_workshop:
+        column: Z
+        cell_plugin: link
+  sheet_columns:
+    Courts:
+      A: 'Superior Court of California, County of '
+      B: 'Court website URL'
+      C: 'Self Help website page URL'
+      D: 'Matter distribution summary'
+      E: Cities
+      F: 'Zip Codes'
+    Courthouses:
+      A: 'Superior Court of California, County of '
+      B: 'Courthouse Name'
+      C: Address
+      D: 'Phone Number'
+      E: 'Courthouse page URL (if present)'
+      F: 'Matters served'
+      G: 'M (Building)'
+      H: 'T (Building)'
+      I: 'W (Building)'
+      J: 'Th (Building)'
+      K: 'F (Building)'
+      L: 'Summary (Building)'
+      M: 'M (Clerk/filing)'
+      'N': 'T (Clerk/filing)'
+      O: 'W (Clerk/filing)'
+      P: 'Th (Clerk/filing)'
+      Q: 'F (Clerk/filing)'
+      R: 'Summary (Clerk/filing)'
+      S: 'M (self help/resource center)'
+      T: 'T (self help/resource center)'
+      U: 'W (self help/resource center)'
+      V: 'Th (self help/resource center)'
+      W: 'F (self help/resource center)'
+      X: 'Summary (self help/resource center)'
+      'Y': 'Self Help Schedule Self Help Appointment Link'
+      Z: 'Self Help Sign Up for Workshop Link'
+      AA: 'Map image filename'

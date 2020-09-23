@@ -7,6 +7,7 @@ dependencies:
     - node.type.basic
   module:
     - allowed_formats
+    - datalayer
     - text
 third_party_settings:
   allowed_formats:
@@ -14,6 +15,9 @@ third_party_settings:
     simple_html: '0'
     full_html: '0'
     plain_text: '0'
+  datalayer:
+    expose: 1
+    label: body
 _core:
   default_config_hash: 3CV8O7axlnzMXG79wJtpA5ZNv_y0bJyjJ8k0v3J_ix4
 id: node.basic.body

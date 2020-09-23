@@ -25,6 +25,7 @@ module:
   contextual: 0
   crop: 0
   ctools: 0
+  datalayer: 0
   datetime: 0
   dblog: 0
   default_content: 0
@@ -125,6 +126,7 @@ module:
   webform: 0
   webform_jqueryui_buttons: 0
   webform_ui: 0
+  xlsx: 0
   extlink: 1
   menu_link_content: 1
   pathauto: 1

@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_case_type
     - node.type.srl_onramp
     - taxonomy.vocabulary.case_type
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_case_type
 id: node.srl_onramp.field_case_type
 field_name: field_case_type
 entity_type: node
