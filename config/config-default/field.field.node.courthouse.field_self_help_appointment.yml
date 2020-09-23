@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_self_help_appointment
     - node.type.courthouse
   module:
+    - datalayer
     - link
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_self_help_appointment
 id: node.courthouse.field_self_help_appointment
 field_name: field_self_help_appointment
 entity_type: node

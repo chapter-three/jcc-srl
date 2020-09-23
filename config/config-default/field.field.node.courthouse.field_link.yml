@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_link
     - node.type.courthouse
   module:
+    - datalayer
     - link
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_link
 id: node.courthouse.field_link
 field_name: field_link
 entity_type: node

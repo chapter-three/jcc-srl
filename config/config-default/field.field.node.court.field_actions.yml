@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_actions
     - node.type.court
     - taxonomy.vocabulary.action
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_actions
 id: node.court.field_actions
 field_name: field_actions
 entity_type: node

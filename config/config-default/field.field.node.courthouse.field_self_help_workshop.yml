@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_self_help_workshop
     - node.type.courthouse
   module:
+    - datalayer
     - link
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_self_help_workshop
 id: node.courthouse.field_self_help_workshop
 field_name: field_self_help_workshop
 entity_type: node

@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_case_types
     - node.type.srl_wayfinder
     - taxonomy.vocabulary.case_type
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_case_types
 id: node.srl_wayfinder.field_case_types
 field_name: field_case_types
 entity_type: node

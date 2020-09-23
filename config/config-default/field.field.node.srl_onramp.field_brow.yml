@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_brow
     - node.type.srl_onramp
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_brow
 id: node.srl_onramp.field_brow
 field_name: field_brow
 entity_type: node
