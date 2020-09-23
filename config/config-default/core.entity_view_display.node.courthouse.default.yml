@@ -21,6 +21,8 @@ dependencies:
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
     - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_self_help_appointment
+    - field.field.node.courthouse.field_self_help_workshop
     - field.field.node.courthouse.field_selfhelp_hours_friday
     - field.field.node.courthouse.field_selfhelp_hours_monday
     - field.field.node.courthouse.field_selfhelp_hours_summary
@@ -182,6 +184,30 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_self_help_appointment:
+    weight: 29
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_self_help_workshop:
+    weight: 28
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
     region: content
   field_selfhelp_hours_friday:
     weight: 22

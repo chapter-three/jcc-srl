@@ -86,7 +86,7 @@
       court_summary: {
         title: 'The jurisdiction for <strong>%s%</strong> is %t% County Superior Court.'|t|replace({'%s%': exposed.s['#value'], '%t%': court.title.value})|check_markup('basic_html'),
         quantity: 'There are %q% Courthouse Locations.'|t|replace({'%q%': num_courthouses}),
-        body: court.field_description.0.value|auto_convert_urls|check_markup(court.field_description.0.format),
+        body: court.field_description.0.value|auto_convert_urls|check_markup('basic_html'),
         links: links,
         checkbox: {
           label: '%t% County Superior Court Self Help Services'|t|replace({'%t%': court.title.value}),
