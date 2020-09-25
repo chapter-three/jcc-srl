@@ -12,7 +12,7 @@ field_name: field_top_num
 entity_type: paragraph
 bundle: timeline_dual_item
 label: 'Top Number/Wait'
-description: 'This field must have a value for any of the "bottom" fields to appear on this item.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

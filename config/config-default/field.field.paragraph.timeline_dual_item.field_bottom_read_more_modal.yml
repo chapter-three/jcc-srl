@@ -19,7 +19,7 @@ field_name: field_bottom_read_more_modal
 entity_type: paragraph
 bundle: timeline_dual_item
 label: 'Bottom Read More Modal'
-description: 'This field will not display if ''link'' is selected.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

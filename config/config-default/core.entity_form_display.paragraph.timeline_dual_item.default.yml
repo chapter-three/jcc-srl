@@ -9,6 +9,10 @@ dependencies:
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
+    - field.field.paragraph.timeline_dual_item.field_markup1
+    - field.field.paragraph.timeline_dual_item.field_markup2
+    - field.field.paragraph.timeline_dual_item.field_markup3
+    - field.field.paragraph.timeline_dual_item.field_markup4
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
@@ -21,15 +25,16 @@ dependencies:
     - allowed_formats
     - field_group
     - link
+    - markup
     - maxlength
     - text
 third_party_settings:
   field_group:
     group_top:
       children:
-        - field_top_num
         - field_top_deadline
-        - field_top_excerpt
+        - field_markup1
+        - group_top_inner
         - group_top_read_more
       parent_name: group_details
       weight: 0
@@ -46,9 +51,9 @@ third_party_settings:
       label: Top
     group_bottom:
       children:
-        - field_bottom_num
         - field_bottom_deadline
-        - field_bottom_excerpt
+        - field_markup2
+        - group_bottom_inner
         - group_bottom_read_more
       parent_name: group_details
       weight: 2
@@ -80,10 +85,8 @@ third_party_settings:
     group_top_read_more:
       children:
         - field_top_read_more_type
-        - field_top_read_more
-        - field_top_read_more_modal
       parent_name: group_top
-      weight: 20
+      weight: 13
       format_type: details
       region: content
       format_settings:
@@ -96,10 +99,8 @@ third_party_settings:
     group_bottom_read_more:
       children:
         - field_bottom_read_more_type
-        - field_bottom_read_more
-        - field_bottom_read_more_modal
       parent_name: group_bottom
-      weight: 20
+      weight: 7
       format_type: details
       region: content
       format_settings:
@@ -124,13 +125,183 @@ third_party_settings:
         required_fields: true
         open: false
       label: Icon
+    group_top_fields:
+      children:
+        - group_top_info
+        - group_top_excerpt
+        - group_top_link
+        - group_top_modal
+      parent_name: group_top_inner
+      weight: 12
+      format_type: tabs
+      region: content
+      format_settings:
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: 'Top fields'
+    group_top_excerpt:
+      children:
+        - field_top_excerpt
+      parent_name: group_top_fields
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        required_fields: true
+        description: ''
+      label: Excerpt
+    group_top_link:
+      children:
+        - field_top_read_more
+      parent_name: group_top_fields
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        required_fields: true
+        description: ''
+      label: Link
+    group_top_modal:
+      children:
+        - field_top_read_more_modal
+      parent_name: group_top_fields
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        required_fields: true
+        description: ''
+      label: Modal
+    group_top_inner:
+      children:
+        - field_top_num
+        - group_top_fields
+      parent_name: group_top
+      weight: 12
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: no-title
+        description: ''
+        required_fields: false
+      label: 'Top inner'
+    group_bottom_inner:
+      children:
+        - field_bottom_num
+        - group_bottom_fields
+      parent_name: group_bottom
+      weight: 6
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: no-title
+        description: ''
+        required_fields: false
+      label: 'Bottom inner'
+    group_bottom_fields:
+      children:
+        - group_bottom_info
+        - group_bottom_excerpt
+        - group_bottom_link
+        - group_bottom_modal
+      parent_name: group_bottom_inner
+      weight: 4
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Bottom fields'
+    group_bottom_excerpt:
+      children:
+        - field_bottom_excerpt
+      parent_name: group_bottom_fields
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Excerpt
+    group_bottom_link:
+      children:
+        - field_bottom_read_more
+      parent_name: group_bottom_fields
+      weight: 5
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Link
+    group_bottom_modal:
+      children:
+        - field_bottom_read_more_modal
+      parent_name: group_bottom_fields
+      weight: 6
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Modal
+    group_top_info:
+      children:
+        - field_markup3
+      parent_name: group_top_fields
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Info
+    group_bottom_info:
+      children:
+        - field_markup4
+      parent_name: group_bottom_fields
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Info
 id: paragraph.timeline_dual_item.default
 targetEntityType: paragraph
 bundle: timeline_dual_item
 mode: default
 content:
   field_bottom_deadline:
-    weight: 18
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -138,7 +309,7 @@ content:
     type: string_textfield
     region: content
   field_bottom_excerpt:
-    weight: 19
+    weight: 6
     settings:
       rows: 1
       placeholder: ''
@@ -154,7 +325,7 @@ content:
     type: text_textarea
     region: content
   field_bottom_num:
-    weight: 17
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -189,14 +360,38 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_markup1:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_markup2:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_markup3:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
+  field_markup4:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: markup
+    region: content
   field_timeline_dual_icon:
-    weight: 0
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_top_deadline:
-    weight: 18
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -204,7 +399,7 @@ content:
     type: string_textfield
     region: content
   field_top_excerpt:
-    weight: 19
+    weight: 10
     settings:
       rows: 1
       placeholder: ''
@@ -220,7 +415,7 @@ content:
     type: text_textarea
     region: content
   field_top_num:
-    weight: 16
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -250,16 +445,16 @@ content:
     type: text_textarea
     region: content
   field_top_read_more_type:
-    weight: 6
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   translation:
-    weight: 10
+    weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   status: true

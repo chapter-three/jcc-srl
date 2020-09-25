@@ -1,0 +1,25 @@
+uuid: bd2ab3ed-b17b-48be-9180-01d4dfba2885
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_markup1
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - markup
+id: paragraph.timeline_dual_item.field_markup1
+field_name: field_markup1
+entity_type: paragraph
+bundle: timeline_dual_item
+label: Or
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: "<p class=\"text-align-center\"><strong>--- OR ---</strong></p>\r\n"
+    format: basic_html
+field_type: markup

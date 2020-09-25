@@ -12,7 +12,7 @@ field_name: field_top_read_more
 entity_type: paragraph
 bundle: timeline_dual_item
 label: 'Top Read More Link'
-description: 'This field will not display if ''modal'' is selected.'
+description: ''
 required: false
 translatable: true
 default_value: {  }
