@@ -48,12 +48,21 @@ settings:
       timeline: timeline
       timeline_dual: timeline_dual
     target_bundles_drag_drop:
+      accordion:
+        weight: -25
+        enabled: false
       accordion_container:
         enabled: true
         weight: -35
+      card:
+        weight: -24
+        enabled: false
       card_list:
         enabled: true
         weight: -34
+      code_section:
+        weight: -23
+        enabled: false
       complete:
         enabled: true
         weight: -33
@@ -66,37 +75,28 @@ settings:
       postcard:
         enabled: true
         weight: -30
+      step:
+        weight: -22
+        enabled: false
       step_container:
         enabled: true
         weight: -29
       switchboard:
         enabled: true
         weight: -28
+      tile:
+        weight: -21
+        enabled: false
       timeline:
         enabled: true
         weight: -27
       timeline_dual:
         enabled: true
         weight: -26
-      accordion:
-        weight: -25
-        enabled: false
-      card:
-        weight: -24
-        enabled: false
-      code_section:
-        weight: -23
-        enabled: false
-      step:
-        weight: -22
-        enabled: false
-      tile:
-        weight: -21
+      timeline_dual_item:
+        weight: -19
         enabled: false
       timeline_item:
         weight: -20
-        enabled: false
-      timeline_dual_item:
-        weight: -19
         enabled: false
 field_type: entity_reference_revisions
