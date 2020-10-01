@@ -69,7 +69,7 @@ packages:
     drupal/entity_reference_revisions: 1.8.0
     drupal/environment_indicator: 3.7.0
     drupal/extlink: 1.3.0
-    drupal/field_group: 'dev-3.x:80ff5992b2d7f9a3c3b8614f54d33f80ada7d11e'
+    drupal/field_group: '3.x-dev:80ff5992b2d7f9a3c3b8614f54d33f80ada7d11e'
     drupal/fixed_block_content: 1.1.0
     drupal/focal_point: 1.4.0
     drupal/google_tag: 1.4.0
