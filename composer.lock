@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d049346c0d8bfc85043030a44c5f8fab",
+    "content-hash": "3deec2a414823e6b26fe0a734df10bc0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5142,7 +5142,7 @@
                 "shasum": "41fea535c0770caa2fc4eca7216bbafb796b4d17"
             },
             "require": {
-                "drupal/core": "^8",
+                "drupal/core": "*",
                 "drupal/entity_browser": "*",
                 "drupal/entity_browser_entity_form": "*",
                 "drupal/inline_entity_form": "*"
@@ -7701,10 +7701,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/judicialcouncilofcalifornia/courtyard.git",
-                "reference": "4061349"
+                "reference": "0937674"
             },
             "type": "drupal-library",
-            "time": "2020-09-22T19:08:22+00:00"
+            "time": "2020-10-01T18:51:34+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -12823,6 +12823,7 @@
     "stability-flags": {
         "drupal/block_field": 15,
         "drupal/config_exclude": 20,
+        "drupal/datalayer": 10,
         "drupal/default_content": 15,
         "drupal/diff": 5,
         "drupal/dropzonejs": 15,

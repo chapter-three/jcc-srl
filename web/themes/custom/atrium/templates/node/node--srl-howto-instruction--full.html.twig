@@ -35,7 +35,31 @@
     </div>
   {% endif %}
 
-  {% set right_column = '' %}
+  {% set right_column %}
+    {% include '@molecules/blocks/share/share.twig' with {
+      social_links: {
+        items: [
+          {
+            id: "print",
+            title: "Print",
+            src: "/libraries/courtyard/public/images/graphics/print.svg",
+            label: "Print current page",
+            renderer: 'patternlab',
+          },
+          {
+            id: "email",
+            title: "Email",
+            src: "/libraries/courtyard/public/images/graphics/email.svg",
+            label: "Email page to yourself",
+            uses_modal: true,
+            modal_content: drupal_entity('webform', 'mark_my_place'),
+            renderer: 'patternlab',
+          },
+        ]
+      }
+    } only %}
+  {% endset %}
+
   {% if content.field_blocks|render or content.field_forms|render %}
     {% set right_column %}
       {{ content.field_blocks }}
