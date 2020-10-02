@@ -5,10 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.timeline_dual_item.field_bottom_deadline
     - field.field.paragraph.timeline_dual_item.field_bottom_excerpt
+    - field.field.paragraph.timeline_dual_item.field_bottom_modal_label
     - field.field.paragraph.timeline_dual_item.field_bottom_num
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
-    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
     - field.field.paragraph.timeline_dual_item.field_markup1
     - field.field.paragraph.timeline_dual_item.field_markup2
     - field.field.paragraph.timeline_dual_item.field_markup3
@@ -16,10 +16,10 @@ dependencies:
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
+    - field.field.paragraph.timeline_dual_item.field_top_modal_label
     - field.field.paragraph.timeline_dual_item.field_top_num
     - field.field.paragraph.timeline_dual_item.field_top_read_more
     - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
-    - field.field.paragraph.timeline_dual_item.field_top_read_more_type
     - paragraphs.paragraphs_type.timeline_dual_item
   module:
     - link
@@ -44,6 +44,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_bottom_modal_label:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_bottom_num:
     weight: 7
@@ -71,13 +79,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_bottom_read_more_type:
-    weight: 11
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_timeline_dual_icon:
     weight: 0
     label: hidden
@@ -99,6 +100,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_top_modal_label:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_top_num:
     weight: 1
@@ -125,13 +134,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_top_read_more_type:
-    weight: 4
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
 hidden:
   field_markup1: true

@@ -6,10 +6,10 @@ dependencies:
     - core.entity_form_mode.paragraph.extras
     - field.field.paragraph.timeline_dual_item.field_bottom_deadline
     - field.field.paragraph.timeline_dual_item.field_bottom_excerpt
+    - field.field.paragraph.timeline_dual_item.field_bottom_modal_label
     - field.field.paragraph.timeline_dual_item.field_bottom_num
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
-    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
     - field.field.paragraph.timeline_dual_item.field_markup1
     - field.field.paragraph.timeline_dual_item.field_markup2
     - field.field.paragraph.timeline_dual_item.field_markup3
@@ -17,10 +17,10 @@ dependencies:
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
+    - field.field.paragraph.timeline_dual_item.field_top_modal_label
     - field.field.paragraph.timeline_dual_item.field_top_num
     - field.field.paragraph.timeline_dual_item.field_top_read_more
     - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
-    - field.field.paragraph.timeline_dual_item.field_top_read_more_type
     - paragraphs.paragraphs_type.timeline_dual_item
   module:
     - allowed_formats
@@ -188,12 +188,6 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
-  field_bottom_read_more_type:
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_timeline_dual_icon:
     weight: 0
     settings: {  }
@@ -254,12 +248,6 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
-  field_top_read_more_type:
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   translation:
     weight: 10
     settings: {  }
@@ -267,8 +255,10 @@ content:
     region: content
 hidden:
   created: true
+  field_bottom_modal_label: true
   field_markup1: true
   field_markup2: true
   field_markup3: true
   field_markup4: true
+  field_top_modal_label: true
   status: true
