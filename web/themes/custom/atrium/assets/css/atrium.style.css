@@ -1686,3 +1686,11 @@ li.pager__item__ellipsis {
   vertical-align: middle;
   width: 2rem;
 }
+
+.jcc-share--mobile .jcc-share {
+  padding-bottom: 0;
+}
+
+.jcc-share--desktop .jcc-share {
+  padding-top: 0;
+}
