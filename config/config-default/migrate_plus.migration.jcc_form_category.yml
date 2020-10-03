@@ -31,15 +31,18 @@ source:
     -
       name: forms_packet_url_label
       label: 'Forms Packet URL Label'
+    -
+      name: synonyms
+      label: 'Synonyms'
   ids:
     - form_category_id
 process:
-  tid: form_category_id
   name: form_category_label
   field_category_info_link/uri: info_url
   field_category_info_link/title: info_url_label
   field_category_form_packets_link/uri: forms_packet_url
   field_category_form_packets_link/title: forms_packet_url_label
+  field_synonyms: synonyms
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: jcc_form_category
