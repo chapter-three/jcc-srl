@@ -1687,10 +1687,45 @@ li.pager__item__ellipsis {
   width: 2rem;
 }
 
-.jcc-share--mobile .jcc-share {
+.jcc-share__container {
+  position: relative;
+  left: 0;
+  right: unset;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share__container {
+    position: absolute;
+    left: unset;
+    right: 0;
+    width: 37%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .jcc-share__container {
+    width: 39%;
+  }
+}
+.jcc-share__container .jcc-share {
+  max-width: 87.5rem;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share__container .jcc-share {
+    padding-bottom: 2rem;
+  }
 }
 
-.jcc-share--desktop .jcc-share {
-  padding-top: 0;
+.jcc-share--spacer {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share--spacer {
+    display: block;
+    margin-bottom: 8rem;
+  }
 }

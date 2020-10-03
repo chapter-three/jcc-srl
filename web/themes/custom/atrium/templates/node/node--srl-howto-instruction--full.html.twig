@@ -36,39 +36,7 @@
   {% endif %}
 
   {% set right_column %}
-    <div class="mobile:display-none jcc-share--desktop">
-      {% include '@molecules/blocks/share/share.twig' with {
-        social_links: {
-          items: [
-            {
-              id: "print",
-              title: "Print",
-              src: "/libraries/courtyard/public/images/graphics/print.svg",
-              label: "Print current page",
-              renderer: 'patternlab',
-            },
-            {
-              id: "email",
-              title: "Email",
-              src: "/libraries/courtyard/public/images/graphics/email.svg",
-              label: "Email page to yourself",
-              uses_modal: true,
-              modal_content: drupal_entity('webform', 'mark_my_place'),
-              renderer: 'patternlab',
-            },
-            {
-              id: "text",
-              title: "Text",
-              src: "/libraries/courtyard/public/images/graphics/text.svg",
-              label: "Email page to yourself",
-              uses_modal: true,
-              modal_content: drupal_entity('webform', 'mark_my_place'),
-              renderer: 'patternlab',
-            },
-          ]
-        }
-      } only %}
-    </div>
+    <div class="jcc-share--spacer"></div>
 
     {% if content.field_blocks|render or content.field_forms|render %}
       {{ content.field_blocks }}
@@ -76,41 +44,36 @@
     {% endif %}
   {% endset %}
 
-  <div class="desktop:display-none jcc-share--mobile">
-    {% include '@molecules/blocks/share/share.twig' with {
-      social_links: {
-        items: [
-          {
-            id: "print-mobile",
-            title: "Print",
-            src: "/libraries/courtyard/public/images/graphics/print.svg",
-            label: "Print current page",
-            renderer: 'patternlab',
-          },
-          {
-            id: "email-mobile",
-            title: "Email",
-            src: "/libraries/courtyard/public/images/graphics/email.svg",
-            label: "Email page to yourself",
-            uses_modal: true,
-            modal_content: drupal_entity('webform', 'mark_my_place'),
-            renderer: 'patternlab',
-          },
-          {
-            id: "text-mobile",
-            title: "Text",
-            src: "/libraries/courtyard/public/images/graphics/text.svg",
-            label: "Email page to yourself",
-            uses_modal: true,
-            modal_content: drupal_entity('webform', 'mark_my_place'),
-            renderer: 'patternlab',
-          },
-        ]
-      }
-    } only %}
-  </div>
-
   {% if content.body|render or right_column %}
+    <div class="jcc-share__container">
+      {% include '@molecules/blocks/share/share.twig' with {
+        social_links: {
+          items: [
+            {
+              id: "print",
+              action: "print",
+              src: "/libraries/courtyard-artifact/public/images/graphics/print.svg",
+              label: "Print current page",
+            },
+            {
+              id: "email",
+              action: "email",
+              src: "/libraries/courtyard-artifact/public/images/graphics/email.svg",
+              label: "Email page to yourself",
+              uses_modal: true,
+              modal_content: drupal_entity('webform', 'share_this_page'),
+            },
+            {
+              id: "text",
+              action: "email",
+              src: "/libraries/courtyard-artifact/public/images/graphics/text.svg",
+              label: "Email page to yourself",
+            },
+          ]
+        }
+      } only %}
+    </div>
+
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
         column_content_left: content.body|render ? content.body : '',

@@ -1,11 +1,39 @@
-.jcc-share--mobile {
+.jcc-share__container {
+  position: relative;
+  left: 0;
+  right: unset;
+  width: 100%;
+
+  @media only screen and (min-width: 1024px) {
+    position: absolute;
+    left: unset;
+    right: 0;
+    width: 37%;
+  }
+
+  @media only screen and (min-width: 1800px) {
+    width: 39%;
+  }
+
   .jcc-share {
+    max-width: 87.5rem;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @media only screen and (min-width: 1024px) {
+      padding-bottom: 2rem;
+    }
   }
 }
 
-.jcc-share--desktop {
-  .jcc-share {
-    padding-top: 0;
+.jcc-share--spacer {
+  display: none;
+
+  @media only screen and (min-width: 1024px) {
+    display: block;
+    margin-bottom: 8rem;
   }
 }
