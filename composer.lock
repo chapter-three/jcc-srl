@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d049346c0d8bfc85043030a44c5f8fab",
+    "content-hash": "2d3a538724b7c716b6b30806d2371930",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7669,16 +7669,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.0.108",
+            "version": "0.0.154",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "3e0f5f39696341bd7c27838b493906234fb0baa2"
+                "reference": "3ec7b2a3d998574545aba4390b6d9525301ce531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/3e0f5f39696341bd7c27838b493906234fb0baa2",
-                "reference": "3e0f5f39696341bd7c27838b493906234fb0baa2",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/3ec7b2a3d998574545aba4390b6d9525301ce531",
+                "reference": "3ec7b2a3d998574545aba4390b6d9525301ce531",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -7693,18 +7693,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2020-06-23T20:17:27+00:00"
-        },
-        {
-            "name": "judicialcouncilofcalifornia/courtyard",
-            "version": "dev-development",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/judicialcouncilofcalifornia/courtyard.git",
-                "reference": "4061349"
-            },
-            "type": "drupal-library",
-            "time": "2020-09-22T19:08:22+00:00"
+            "time": "2020-09-30T22:30:05+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -12411,16 +12400,16 @@
         },
         {
             "name": "zaporylie/composer-drupal-optimizations",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zaporylie/composer-drupal-optimizations.git",
-                "reference": "fb231d92adc862a2c9276bccbc90f684816dc75d"
+                "reference": "0d6ebd8bc03679d312f99a1e4e950685dbf0ff18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zaporylie/composer-drupal-optimizations/zipball/fb231d92adc862a2c9276bccbc90f684816dc75d",
-                "reference": "fb231d92adc862a2c9276bccbc90f684816dc75d",
+                "url": "https://api.github.com/repos/zaporylie/composer-drupal-optimizations/zipball/0d6ebd8bc03679d312f99a1e4e950685dbf0ff18",
+                "reference": "0d6ebd8bc03679d312f99a1e4e950685dbf0ff18",
                 "shasum": ""
             },
             "require": {
@@ -12450,7 +12439,7 @@
                 }
             ],
             "description": "Composer plugin to improve composer performance for Drupal projects",
-            "time": "2019-10-02T17:01:11+00:00"
+            "time": "2020-10-06T10:41:00+00:00"
         }
     ],
     "packages-dev": [
@@ -12823,6 +12812,7 @@
     "stability-flags": {
         "drupal/block_field": 15,
         "drupal/config_exclude": 20,
+        "drupal/datalayer": 10,
         "drupal/default_content": 15,
         "drupal/diff": 5,
         "drupal/dropzonejs": 15,
@@ -12837,7 +12827,6 @@
         "drupal/simple_block": 10,
         "drupal/views_aggregator": 15,
         "drupal/xmlsitemap": 15,
-        "judicialcouncilofcalifornia/courtyard": 20,
         "drupal/stage_file_proxy": 5
     },
     "prefer-stable": true,
