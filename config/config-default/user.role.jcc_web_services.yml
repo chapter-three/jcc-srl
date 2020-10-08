@@ -26,6 +26,7 @@ permissions:
   - 'access user profiles'
   - 'access webform overview'
   - 'access webform submission user'
+  - 'access workbench'
   - 'add user input entities'
   - 'administer blocks'
   - 'administer content translation'
