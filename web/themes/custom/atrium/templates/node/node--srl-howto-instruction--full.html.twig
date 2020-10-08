@@ -35,15 +35,29 @@
     </div>
   {% endif %}
 
-  {% set right_column = '' %}
-  {% if content.field_blocks|render or content.field_forms|render %}
-    {% set right_column %}
+  {% set right_column %}
+    <div class="jcc-share--spacer"></div>
+
+    {% if content.field_blocks|render or content.field_forms|render %}
       {{ content.field_blocks }}
       {{ content.field_forms }}
-    {% endset %}
-  {% endif %}
+    {% endif %}
+  {% endset %}
 
   {% if content.body|render or right_column %}
+    <div class="jcc-share__container">
+      {% include '@organisms/sections/share/share.twig' with {
+        share: {
+          email_modal: drupal_entity('webform', 'share_this_page'),
+          custom: [
+            {
+              link: '<button id="text" class="jcc-share__button jcc-modal__trigger" aria-label="Text page to yourself" data-a11y-dialog-show="email"><span class="jcc-share__text"></span></button>',
+            },
+          ]
+        }
+      } only %}
+    </div>
+
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
         column_content_left: content.body|render ? content.body : '',
