@@ -1,21 +1,21 @@
-uuid: 54bfb481-0930-4f72-b0e2-5dd4fb3a9b08
+uuid: dfc48afc-214d-4a92-9406-4ba2eb247cd1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_bottom_deadline
+    - field.storage.paragraph.field_top_modal_label
     - paragraphs.paragraphs_type.timeline_dual_item
   module:
     - datalayer
 third_party_settings:
   datalayer:
     expose: 0
-    label: field_bottom_deadline
-id: paragraph.timeline_dual_item.field_bottom_deadline
-field_name: field_bottom_deadline
+    label: field_top_modal_label
+id: paragraph.timeline_dual_item.field_top_modal_label
+field_name: field_top_modal_label
 entity_type: paragraph
 bundle: timeline_dual_item
-label: Deadline
+label: 'Modal Link Label'
 description: ''
 required: false
 translatable: true

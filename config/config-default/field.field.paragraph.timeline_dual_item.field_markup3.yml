@@ -1,0 +1,25 @@
+uuid: dbd43a29-1c09-4d37-94f2-a5742b16a9a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_markup3
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - markup
+id: paragraph.timeline_dual_item.field_markup3
+field_name: field_markup3
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Choose 1'
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: "<p>Only <strong>one</strong> of these items will be displayed, and in this order:</p>\r\n\r\n<ol>\r\n\t<li>Excerpt</li>\r\n\t<li>Link</li>\r\n\t<li>Modal</li>\r\n</ol>\r\n"
+    format: basic_html
+field_type: markup
