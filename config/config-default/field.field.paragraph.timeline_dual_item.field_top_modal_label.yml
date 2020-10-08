@@ -1,0 +1,25 @@
+uuid: dfc48afc-214d-4a92-9406-4ba2eb247cd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_top_modal_label
+    - paragraphs.paragraphs_type.timeline_dual_item
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_top_modal_label
+id: paragraph.timeline_dual_item.field_top_modal_label
+field_name: field_top_modal_label
+entity_type: paragraph
+bundle: timeline_dual_item
+label: 'Modal Link Label'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

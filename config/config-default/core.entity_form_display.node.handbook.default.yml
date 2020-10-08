@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.handbook.field_actions
     - field.field.node.handbook.field_case_types
     - field.field.node.handbook.field_parties
+    - field.field.node.handbook.field_watchers
     - node.type.handbook
   module:
     - allowed_formats
@@ -21,6 +22,7 @@ third_party_settings:
         - field_case_types
         - field_actions
         - field_parties
+        - field_watchers
       parent_name: ''
       weight: 10
       format_type: fieldset
@@ -76,6 +78,12 @@ content:
     region: content
   field_parties:
     weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_watchers:
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: options_select

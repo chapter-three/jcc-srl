@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
     - field.field.node.srl_howto.field_title_display
+    - field.field.node.srl_howto.field_watchers
     - node.type.srl_howto
   module:
     - user
@@ -35,6 +36,7 @@ hidden:
   field_switchboard_subtitle: true
   field_switchboard_title: true
   field_title_display: true
+  field_watchers: true
   langcode: true
   links: true
   search_api_excerpt: true

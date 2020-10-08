@@ -5,17 +5,21 @@ dependencies:
   config:
     - field.field.paragraph.timeline_dual_item.field_bottom_deadline
     - field.field.paragraph.timeline_dual_item.field_bottom_excerpt
+    - field.field.paragraph.timeline_dual_item.field_bottom_modal_label
     - field.field.paragraph.timeline_dual_item.field_bottom_num
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more
     - field.field.paragraph.timeline_dual_item.field_bottom_read_more_modal
-    - field.field.paragraph.timeline_dual_item.field_bottom_read_more_type
+    - field.field.paragraph.timeline_dual_item.field_markup1
+    - field.field.paragraph.timeline_dual_item.field_markup2
+    - field.field.paragraph.timeline_dual_item.field_markup3
+    - field.field.paragraph.timeline_dual_item.field_markup4
     - field.field.paragraph.timeline_dual_item.field_timeline_dual_icon
     - field.field.paragraph.timeline_dual_item.field_top_deadline
     - field.field.paragraph.timeline_dual_item.field_top_excerpt
+    - field.field.paragraph.timeline_dual_item.field_top_modal_label
     - field.field.paragraph.timeline_dual_item.field_top_num
     - field.field.paragraph.timeline_dual_item.field_top_read_more
     - field.field.paragraph.timeline_dual_item.field_top_read_more_modal
-    - field.field.paragraph.timeline_dual_item.field_top_read_more_type
     - paragraphs.paragraphs_type.timeline_dual_item
   module:
     - link
@@ -27,7 +31,7 @@ bundle: timeline_dual_item
 mode: default
 content:
   field_bottom_deadline:
-    weight: 10
+    weight: 8
     label: hidden
     settings:
       link_to_entity: false
@@ -35,21 +39,29 @@ content:
     type: string
     region: content
   field_bottom_excerpt:
-    weight: 11
+    weight: 9
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_bottom_modal_label:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_bottom_num:
-    weight: 9
+    weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_bottom_read_more:
-    weight: 12
+    weight: 10
     label: hidden
     settings:
       trim_length: null
@@ -61,18 +73,11 @@ content:
     type: link_separate
     region: content
   field_bottom_read_more_modal:
-    weight: 14
+    weight: 12
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_bottom_read_more_type:
-    weight: 13
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
     region: content
   field_timeline_dual_icon:
     weight: 0
@@ -82,7 +87,7 @@ content:
     type: list_default
     region: content
   field_top_deadline:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
@@ -90,21 +95,29 @@ content:
     type: string
     region: content
   field_top_excerpt:
-    weight: 4
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_top_modal_label:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_top_num:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_top_read_more:
-    weight: 6
+    weight: 5
     label: hidden
     settings:
       trim_length: null
@@ -116,18 +129,15 @@ content:
     type: link_separate
     region: content
   field_top_read_more_modal:
-    weight: 7
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_top_read_more_type:
-    weight: 5
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
 hidden:
+  field_markup1: true
+  field_markup2: true
+  field_markup3: true
+  field_markup4: true
   search_api_excerpt: true

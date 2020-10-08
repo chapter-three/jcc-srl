@@ -33,7 +33,7 @@ source:
       label: 'Forms Packet URL Label'
     -
       name: synonyms
-      label: 'Synonyms'
+      label: Synonyms
   ids:
     - form_category_id
 process:

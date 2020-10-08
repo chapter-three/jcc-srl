@@ -15,6 +15,7 @@ permissions:
   - 'access media overview'
   - 'access media_entity_browser_modal entity browser pages'
   - 'access media_entity_browser_wysiwyg entity browser pages'
+  - 'access workbench'
   - 'administer media'
   - 'administer meta tags'
   - 'administer url aliases'

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d049346c0d8bfc85043030a44c5f8fab",
+    "content-hash": "92dbe89ba6dd198e1d06495e0b086806",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4400,11 +4400,17 @@
         },
         {
             "name": "drupal/field_group",
-            "version": "dev-3.x",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "80ff5992b2d7f9a3c3b8614f54d33f80ada7d11e"
+                "reference": "8.x-3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.1.zip",
+                "reference": "8.x-3.1",
+                "shasum": "8a719eaea594f0ba874172831cb28da93c66b77a"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -4414,15 +4420,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-3.1+0-dev",
-                    "datestamp": "1591740591",
+                    "version": "8.x-3.1",
+                    "datestamp": "1591772567",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -4506,6 +4509,82 @@
             "support": {
                 "source": "https://cgit.drupalcode.org/fixed_block_content",
                 "issues": "https://drupal.org/project/issues/fixed_block_content"
+            }
+        },
+        {
+            "name": "drupal/flag",
+            "version": "4.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/flag.git",
+                "reference": "8.x-4.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/flag-8.x-4.0-beta2.zip",
+                "reference": "8.x-4.0-beta2",
+                "shasum": "6f180b6f65e0e778e6fccebd07de9f9c689f6a1f"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-4.0-beta2",
+                    "datestamp": "1595273815",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "fago",
+                    "homepage": "https://www.drupal.org/user/16747"
+                },
+                {
+                    "name": "fubhy",
+                    "homepage": "https://www.drupal.org/user/761344"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "merlinofchaos",
+                    "homepage": "https://www.drupal.org/user/26979"
+                },
+                {
+                    "name": "mooffie",
+                    "homepage": "https://www.drupal.org/user/78454"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                },
+                {
+                    "name": "shabana.navas",
+                    "homepage": "https://www.drupal.org/user/1311398"
+                },
+                {
+                    "name": "socketwench",
+                    "homepage": "https://www.drupal.org/user/65793"
+                }
+            ],
+            "description": "Create customized flags that users can set on entities.",
+            "homepage": "https://www.drupal.org/project/flag",
+            "support": {
+                "source": "https://git.drupalcode.org/project/flag"
             }
         },
         {
@@ -5021,6 +5100,74 @@
             "homepage": "https://www.drupal.org/project/mailsystem",
             "support": {
                 "source": "https://git.drupalcode.org/project/mailsystem"
+            }
+        },
+        {
+            "name": "drupal/markup",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/markup.git",
+                "reference": "8.x-1.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/markup-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "65fb464c32910cfa26ac0a166a83152e2811d177"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1592814517",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "Deciphered",
+                    "homepage": "https://www.drupal.org/user/103796"
+                },
+                {
+                    "name": "bcostlow",
+                    "homepage": "https://www.drupal.org/user/1340686"
+                },
+                {
+                    "name": "cYu",
+                    "homepage": "https://www.drupal.org/user/202205"
+                },
+                {
+                    "name": "ebeyrent",
+                    "homepage": "https://www.drupal.org/user/23897"
+                },
+                {
+                    "name": "mqanneh",
+                    "homepage": "https://www.drupal.org/user/2833163"
+                },
+                {
+                    "name": "mrfelton",
+                    "homepage": "https://www.drupal.org/user/305669"
+                }
+            ],
+            "description": "Defines a field type for markup.",
+            "homepage": "https://www.drupal.org/project/markup",
+            "support": {
+                "source": "https://git.drupalcode.org/project/markup"
             }
         },
         {
@@ -6701,6 +6848,129 @@
             }
         },
         {
+            "name": "drupal/views_bulk_edit",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_bulk_edit.git",
+                "reference": "8.x-2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_edit-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "039ebf9c6ae3cdd0555c7bfb97c629ebfee61ddb"
+            },
+            "require": {
+                "drupal/core": "^8",
+                "drupal/views_bulk_operations": "~1.0 | ~2.0 | ~3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1570030085",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Grabias",
+                    "homepage": "https://www.drupal.org/u/graber"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                }
+            ],
+            "description": "Allows bulk edition of entity field values.",
+            "homepage": "https://www.drupal.org/project/views_bulk_edit",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_bulk_edit",
+                "issues": "https://www.drupal.org/project/issues/views_bulk_edit?version=8.x"
+            }
+        },
+        {
+            "name": "drupal/views_bulk_operations",
+            "version": "3.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
+                "reference": "8.x-3.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-8.x-3.9.zip",
+                "reference": "8.x-3.9",
+                "shasum": "d7f6e50c31d21ff32f21e8f4aaedb52f6dee2da8"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "require-dev": {
+                "drush/drush": "^10"
+            },
+            "suggest": {
+                "drush/drush": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.9",
+                    "datestamp": "1597319021",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Grabias",
+                    "homepage": "https://www.drupal.org/u/graber"
+                },
+                {
+                    "name": "Jon Pugh",
+                    "homepage": "https://www.drupal.org/user/17028"
+                },
+                {
+                    "name": "bojanz",
+                    "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "infojunkie",
+                    "homepage": "https://www.drupal.org/user/48424"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
+                }
+            ],
+            "description": "Adds an ability to perform bulk operations on selected entities from view results. Provides an API to create such operations.",
+            "homepage": "https://www.drupal.org/project/views_bulk_operations",
+            "support": {
+                "source": "https://git.drupalcode.org/project/views_bulk_operations/-/tree/8.x-3.x",
+                "issues": "https://www.drupal.org/project/issues/views_bulk_operations?version=8.x",
+                "docs": "https://www.drupal.org/docs/8/modules/views-bulk-operations-vbo"
+            }
+        },
+        {
             "name": "drupal/webform",
             "version": "5.19.0",
             "source": {
@@ -6823,6 +7093,74 @@
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
                 "docs": "https://www.drupal.org/docs/8/modules/webform",
                 "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+            }
+        },
+        {
+            "name": "drupal/workbench",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/workbench.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/workbench-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "643d5f27503d7fceda8673812ca9a3bc25ed53e5"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1590419810",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "bbinkovitz",
+                    "homepage": "https://www.drupal.org/user/161263"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                },
+                {
+                    "name": "caroltron",
+                    "homepage": "https://www.drupal.org/user/171342"
+                },
+                {
+                    "name": "robeano",
+                    "homepage": "https://www.drupal.org/user/67660"
+                },
+                {
+                    "name": "stevector",
+                    "homepage": "https://www.drupal.org/user/179805"
+                }
+            ],
+            "description": "Provides convenient dashboards and shortcuts for editors.",
+            "homepage": "https://www.drupal.org/project/workbench",
+            "support": {
+                "source": "https://git.drupalcode.org/project/workbench"
             }
         },
         {
@@ -7669,16 +8007,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.0.108",
+            "version": "0.0.164",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "3e0f5f39696341bd7c27838b493906234fb0baa2"
+                "reference": "4095b01bfe81b2346e8bb081a6b09066b02ccc41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/3e0f5f39696341bd7c27838b493906234fb0baa2",
-                "reference": "3e0f5f39696341bd7c27838b493906234fb0baa2",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/4095b01bfe81b2346e8bb081a6b09066b02ccc41",
+                "reference": "4095b01bfe81b2346e8bb081a6b09066b02ccc41",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -7693,18 +8031,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2020-06-23T20:17:27+00:00"
-        },
-        {
-            "name": "judicialcouncilofcalifornia/courtyard",
-            "version": "dev-development",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/judicialcouncilofcalifornia/courtyard.git",
-                "reference": "4061349"
-            },
-            "type": "drupal-library",
-            "time": "2020-09-22T19:08:22+00:00"
+            "time": "2020-10-08T00:35:06+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -12411,16 +12738,16 @@
         },
         {
             "name": "zaporylie/composer-drupal-optimizations",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zaporylie/composer-drupal-optimizations.git",
-                "reference": "fb231d92adc862a2c9276bccbc90f684816dc75d"
+                "reference": "0d6ebd8bc03679d312f99a1e4e950685dbf0ff18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zaporylie/composer-drupal-optimizations/zipball/fb231d92adc862a2c9276bccbc90f684816dc75d",
-                "reference": "fb231d92adc862a2c9276bccbc90f684816dc75d",
+                "url": "https://api.github.com/repos/zaporylie/composer-drupal-optimizations/zipball/0d6ebd8bc03679d312f99a1e4e950685dbf0ff18",
+                "reference": "0d6ebd8bc03679d312f99a1e4e950685dbf0ff18",
                 "shasum": ""
             },
             "require": {
@@ -12450,7 +12777,7 @@
                 }
             ],
             "description": "Composer plugin to improve composer performance for Drupal projects",
-            "time": "2019-10-02T17:01:11+00:00"
+            "time": "2020-10-06T10:41:00+00:00"
         }
     ],
     "packages-dev": [
@@ -12823,21 +13150,22 @@
     "stability-flags": {
         "drupal/block_field": 15,
         "drupal/config_exclude": 20,
+        "drupal/datalayer": 10,
         "drupal/default_content": 15,
         "drupal/diff": 5,
         "drupal/dropzonejs": 15,
         "drupal/entity_clone": 10,
         "drupal/entity_embed": 5,
-        "drupal/field_group": 20,
+        "drupal/flag": 10,
         "drupal/inline_entity_form": 5,
         "drupal/maillog": 20,
+        "drupal/markup": 10,
         "drupal/maxlength": 10,
         "drupal/mimemail": 15,
         "drupal/rabbit_hole": 10,
         "drupal/simple_block": 10,
         "drupal/views_aggregator": 15,
         "drupal/xmlsitemap": 15,
-        "judicialcouncilofcalifornia/courtyard": 20,
         "drupal/stage_file_proxy": 5
     },
     "prefer-stable": true,

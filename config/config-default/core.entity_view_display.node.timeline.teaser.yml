@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
     - field.field.node.timeline.field_parties
+    - field.field.node.timeline.field_watchers
     - node.type.timeline
   module:
     - user
@@ -27,6 +28,7 @@ hidden:
   field_lead: true
   field_paragraphs: true
   field_parties: true
+  field_watchers: true
   langcode: true
   links: true
   search_api_excerpt: true
