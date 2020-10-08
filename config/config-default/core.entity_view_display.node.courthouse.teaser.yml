@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.courthouse.field_actions
     - field.field.node.courthouse.field_address
     - field.field.node.courthouse.field_building_hours_friday
     - field.field.node.courthouse.field_building_hours_monday
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.courthouse.field_building_hours_thursday
     - field.field.node.courthouse.field_building_hours_tuesday
     - field.field.node.courthouse.field_building_hours_wednesday
+    - field.field.node.courthouse.field_case_types
     - field.field.node.courthouse.field_court
     - field.field.node.courthouse.field_filing_hours_friday
     - field.field.node.courthouse.field_filing_hours_monday
@@ -21,6 +23,7 @@ dependencies:
     - field.field.node.courthouse.field_image
     - field.field.node.courthouse.field_link
     - field.field.node.courthouse.field_matters_served
+    - field.field.node.courthouse.field_parties
     - field.field.node.courthouse.field_phone
     - field.field.node.courthouse.field_self_help_appointment
     - field.field.node.courthouse.field_self_help_workshop
@@ -30,6 +33,7 @@ dependencies:
     - field.field.node.courthouse.field_selfhelp_hours_thursday
     - field.field.node.courthouse.field_selfhelp_hours_tuesday
     - field.field.node.courthouse.field_selfhelp_hours_wednesday
+    - field.field.node.courthouse.field_watchers
     - node.type.courthouse
   module:
     - user
@@ -44,6 +48,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_actions: true
   field_address: true
   field_building_hours_friday: true
   field_building_hours_monday: true
@@ -51,6 +56,7 @@ hidden:
   field_building_hours_thursday: true
   field_building_hours_tuesday: true
   field_building_hours_wednesday: true
+  field_case_types: true
   field_court: true
   field_filing_hours_friday: true
   field_filing_hours_monday: true
@@ -61,6 +67,7 @@ hidden:
   field_image: true
   field_link: true
   field_matters_served: true
+  field_parties: true
   field_phone: true
   field_self_help_appointment: true
   field_self_help_workshop: true
@@ -70,5 +77,6 @@ hidden:
   field_selfhelp_hours_thursday: true
   field_selfhelp_hours_tuesday: true
   field_selfhelp_hours_wednesday: true
+  field_watchers: true
   langcode: true
   search_api_excerpt: true

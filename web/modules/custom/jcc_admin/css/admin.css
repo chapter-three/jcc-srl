@@ -22,3 +22,8 @@ fieldset:not(.fieldgroup).no-title > legend {
 .seven-details__wrapper {
   overflow: auto;
 }
+
+#vbo-action-form-wrapper {
+  margin-top: 16px;
+  border-top: 1px solid #bfbfbf;
+}

@@ -1,0 +1,28 @@
+uuid: e6f5a9f5-0a29-4e8c-900f-fb0ebd3bd7cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_watchers
+    - node.type.courthouse
+id: node.courthouse.field_watchers
+field_name: field_watchers
+entity_type: node
+bundle: courthouse
+label: Watchers
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference
