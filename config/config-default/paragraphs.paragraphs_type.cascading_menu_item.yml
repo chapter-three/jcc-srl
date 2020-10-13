@@ -1,0 +1,10 @@
+uuid: e7044f69-ec68-4890-a137-2873503915fd
+langcode: en
+status: true
+dependencies: {  }
+id: cascading_menu_item
+label: 'Cascading menu item'
+icon_uuid: null
+icon_default: null
+description: 'Single cascading menu item'
+behavior_plugins: {  }

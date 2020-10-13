@@ -1,20 +1,25 @@
-uuid: 08a6b9aa-a587-4303-95ab-3c952b3188b3
+uuid: 139334dc-f14f-4011-9072-36e000443f3a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_links
-    - paragraphs.paragraphs_type.card_form
+    - paragraphs.paragraphs_type.menu_links
   module:
+    - datalayer
     - link
-id: paragraph.card_form.field_links
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_links
+id: paragraph.menu_links.field_links
 field_name: field_links
 entity_type: paragraph
-bundle: card_form
+bundle: menu_links
 label: Links
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

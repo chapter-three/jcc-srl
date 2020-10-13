@@ -1,0 +1,46 @@
+uuid: 5bae6eb5-6097-48c2-be09-42a0388a717c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cascading_menu_item.field_label
+    - field.field.paragraph.cascading_menu_item.field_links
+    - field.field.paragraph.cascading_menu_item.field_top_title
+    - paragraphs.paragraphs_type.cascading_menu_item
+  module:
+    - link
+id: paragraph.cascading_menu_item.default
+targetEntityType: paragraph
+bundle: cascading_menu_item
+mode: default
+content:
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_links:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_top_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

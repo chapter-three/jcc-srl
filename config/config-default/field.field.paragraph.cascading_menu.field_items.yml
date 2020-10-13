@@ -1,0 +1,105 @@
+uuid: 586a9beb-585c-4ee3-8665-7301de292fbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_items
+    - paragraphs.paragraphs_type.cascading_menu
+    - paragraphs.paragraphs_type.cascading_menu_item
+  module:
+    - datalayer
+    - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_items
+id: paragraph.cascading_menu.field_items
+field_name: field_items
+entity_type: paragraph
+bundle: cascading_menu
+label: 'Menu items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cascading_menu_item: cascading_menu_item
+    target_bundles_drag_drop:
+      accordion:
+        weight: 25
+        enabled: false
+      accordion_container:
+        weight: 26
+        enabled: false
+      card:
+        weight: 27
+        enabled: false
+      card_form:
+        weight: 28
+        enabled: false
+      card_form_links:
+        weight: 29
+        enabled: false
+      card_list:
+        weight: 30
+        enabled: false
+      cascading_menu:
+        weight: 31
+        enabled: false
+      cascading_menu_item:
+        enabled: true
+        weight: 32
+      code_section:
+        weight: 33
+        enabled: false
+      complete:
+        weight: 34
+        enabled: false
+      datefinder:
+        weight: 35
+        enabled: false
+      flex:
+        weight: 36
+        enabled: false
+      hero_cards:
+        weight: 37
+        enabled: false
+      links:
+        weight: 38
+        enabled: false
+      postcard:
+        weight: 39
+        enabled: false
+      self_help_finder:
+        weight: 40
+        enabled: false
+      step:
+        weight: 41
+        enabled: false
+      step_container:
+        weight: 42
+        enabled: false
+      switchboard:
+        weight: 43
+        enabled: false
+      tile:
+        weight: 44
+        enabled: false
+      timeline:
+        weight: 45
+        enabled: false
+      timeline_dual:
+        weight: 46
+        enabled: false
+      timeline_dual_item:
+        weight: 47
+        enabled: false
+      timeline_item:
+        weight: 48
+        enabled: false
+field_type: entity_reference_revisions
