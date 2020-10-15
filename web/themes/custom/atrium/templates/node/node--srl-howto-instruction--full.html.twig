@@ -14,7 +14,7 @@
 
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
-      column_variant: 'has-two-columns-threequarter',
+      column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
       breadcrumbs: breadcrumbs ? {
         show_back_button: true,
         items: breadcrumbs,
@@ -22,6 +22,7 @@
       title: content.field_title_display|render ? content.field_title_display : label,
       body: content.field_column_first|render ? content.field_column_first : '',
       column_content_right: content.field_column_second|render ? content.field_column_second : '',
+      banner_image: node.field_image.0 ? file_url(node.field_image.0.entity.field_media_image.entity.uri.value),
     }
   } %}
 
@@ -76,6 +77,7 @@
     'field_howto_tabs',
     'field_howto_tabs_title',
     'field_parent',
-    'field_title_display'
+    'field_title_display',
+    'field_image'
   )}}
 {% endblock %}
