@@ -30,6 +30,7 @@ packages:
     doctrine/common: v2.7.3
     doctrine/inflector: v1.2.0
     doctrine/lexer: 1.0.2
+    drupal/access_unpublished: 1.0.0
     drupal/admin_toolbar: 2.3.0
     drupal/adminimal_admin_toolbar: 1.11.0
     drupal/adminimal_theme: 1.5.0
