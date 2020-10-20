@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.hero_cards.field_brow
     - field.field.paragraph.hero_cards.field_cards
     - field.field.paragraph.hero_cards.field_description
+    - field.field.paragraph.hero_cards.field_media
     - field.field.paragraph.hero_cards.field_title_display
     - paragraphs.paragraphs_type.hero_cards
   module:
@@ -38,6 +39,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_media:
+    weight: 6
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_title_display:
     weight: 4
