@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.original
     - core.entity_view_mode.media.wysiwyg
   module:
     - editor
@@ -63,4 +64,5 @@ filters:
       allowed_media_types:
         image: image
       allowed_view_modes:
+        original: original
         wysiwyg: wysiwyg
