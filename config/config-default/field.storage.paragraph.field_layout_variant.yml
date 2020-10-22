@@ -13,16 +13,16 @@ settings:
   allowed_values:
     -
       value: next-right-column
-      label: next-right-column
+      label: 'Tiles Right'
     -
       value: next-phase
-      label: next-phase
+      label: 'Tiles Bottom (sans) or deprecate'
     -
       value: next
-      label: next
+      label: 'Duplicate of (default)'
     -
       value: default
-      label: default
+      label: 'Tiles bottom'
   allowed_values_function: ''
 module: options
 locked: false
