@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_form.field_body
-    - field.field.paragraph.card_form.field_links
+    - field.field.paragraph.card_form.field_item
     - field.field.paragraph.card_form.field_title_display
     - paragraphs.paragraphs_type.card_form
   module:
-    - link
+    - entity_reference_revisions
     - text
 id: paragraph.card_form.default
 targetEntityType: paragraph
@@ -22,17 +22,14 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_links:
-    weight: 2
+  field_item:
+    type: entity_reference_revisions_entity_view
+    weight: 3
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: link
     region: content
   field_title_display:
     weight: 0

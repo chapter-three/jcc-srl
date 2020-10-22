@@ -1,0 +1,25 @@
+uuid: 55beed19-89f7-4d52-8810-c6dad5d0d435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.menu_links
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_label
+id: paragraph.menu_links.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: menu_links
+label: 'Default text (in dropdown)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
