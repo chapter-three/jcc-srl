@@ -8,10 +8,15 @@
 {% block paragraph %}
 
   {% if content.field_title_display|render or content.field_description|render %}
+    {% set image %}
+      <img src="{{ file_url(paragraph.field_media.0.entity.field_media_image.entity.uri.value) }}">
+    {% endset %}
     {% set hero = {
       title: content.field_title_display|render,
       lead: content.field_description|render,
-      background_variant: 'has-background-color--dark'
+      background_variant: 'has-background-color--dark',
+      column_variant: paragraph.field_media.0 ? 'has-two-columns-threequarter',
+      column_content_right: paragraph.field_media.0 ? image
     } %}
   {% endif %}
 
