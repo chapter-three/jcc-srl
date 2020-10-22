@@ -1,0 +1,41 @@
+uuid: 061d4fc0-b11d-4e47-8009-2c9c6f4f2fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cascading_menu.field_items
+    - field.field.paragraph.cascading_menu.field_label
+    - paragraphs.paragraphs_type.cascading_menu
+  module:
+    - cc
+    - paragraphs
+id: paragraph.cascading_menu.default
+targetEntityType: paragraph
+bundle: cascading_menu
+mode: default
+content:
+  field_items:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: 'Menu item'
+      title_plural: 'Menu items'
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings:
+      cc:
+        status: 0
+    region: content
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

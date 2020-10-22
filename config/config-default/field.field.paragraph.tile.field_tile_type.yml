@@ -1,0 +1,28 @@
+uuid: 73f4fe48-ef6b-4e57-b138-e0f41bda78b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tile_type
+    - paragraphs.paragraphs_type.tile
+  module:
+    - datalayer
+    - options
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_tile_type
+id: paragraph.tile.field_tile_type
+field_name: field_tile_type
+entity_type: paragraph
+bundle: tile
+label: 'Tile type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: none
+default_value_callback: ''
+settings: {  }
+field_type: list_string

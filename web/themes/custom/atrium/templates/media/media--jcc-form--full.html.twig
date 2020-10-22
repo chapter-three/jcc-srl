@@ -23,11 +23,11 @@
       brow: "Go to"|t,
       title: link.title,
       url: link.uri,
-      icon_link: true,
+      embellishment: 'icon-top-right',
       url_attributes: tile_url_attributes
     }]) %}
   {% endfor %}
-  
+
   {# Form packets links #}
   {% for key, link in form_category.entity.field_category_form_packets_link.value %}
     {# Prepare 'switchboard_tiles' for switchboard.twig #}
@@ -35,7 +35,7 @@
       brow: "Go to"|t,
       title: link.title,
       url: link.uri,
-      icon_link: true,
+      embellishment: 'icon-top-right',
       url_attributes: tile_url_attributes
     }]) %}
   {% endfor %}
