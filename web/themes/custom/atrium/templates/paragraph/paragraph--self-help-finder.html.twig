@@ -7,7 +7,10 @@
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
 
-  {% if paragraph.field_self_help_finder_type.0.value =='basic' %}
+  {# This paragraph's parent (either a node or another paragraph) #}
+  {% set parent = paragraph._referringItem.parent.parent.entity %}
+
+  {% if paragraph.field_self_help_finder_type.0.value == 'basic' %}
     {# Homepage search #}
     {% include '@organisms/sections/locate-section/locate-section.twig' with {
       locate_section: {
@@ -33,9 +36,18 @@
       }
     } only %}
 
-  {% elseif paragraph.field_self_help_finder_type.0.value =='enhanced' %}
+  {% elseif paragraph.field_self_help_finder_type.0.value == 'enhanced' %}
     {# In-step real-time search #}
-    {{ drupal_view('find_courts', 'self_help_block') }}
+    {% if parent.nid %}
+      {# This paragraph's parent is a node, so it needs a wrapper #}
+      <div class="jcc-text-section">
+        <div class="jcc-text-section__container">
+          {{ drupal_view('find_courts', 'self_help_block') }}
+        </div>
+      </div>
+    {% else %}
+      {{ drupal_view('find_courts', 'self_help_block') }}
+    {% endif %}
 
   {% endif %}
 
