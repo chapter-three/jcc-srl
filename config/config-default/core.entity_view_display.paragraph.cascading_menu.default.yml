@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.cascading_menu.field_items
     - field.field.paragraph.cascading_menu.field_label
+    - field.field.paragraph.cascading_menu.field_label2
     - paragraphs.paragraphs_type.cascading_menu
   module:
     - entity_reference_revisions
@@ -24,6 +25,14 @@ content:
     region: content
   field_label:
     weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_label2:
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false

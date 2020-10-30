@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.cascading_menu.field_items
     - field.field.paragraph.cascading_menu.field_label
+    - field.field.paragraph.cascading_menu.field_label2
     - paragraphs.paragraphs_type.cascading_menu
   module:
     - cc
@@ -16,7 +17,7 @@ mode: default
 content:
   field_items:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 2
     settings:
       title: 'Menu item'
       title_plural: 'Menu items'
@@ -30,6 +31,14 @@ content:
     region: content
   field_label:
     weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_label2:
+    weight: 1
     settings:
       size: 60
       placeholder: ''

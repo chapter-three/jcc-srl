@@ -54,6 +54,7 @@
       {% elseif type == 'cascading_menu' %}
         {% set menu_type = 'cascading' %}
         {% set menu_default_option = menu.field_label.value ?: '' %}
+        {% set menu_default_child_option = menu.field_label2.value ?: '' %}
         {% for key, item in menu.field_items %}
           {% set cascading_menu = menu.field_items.get(key).entity %}
           {% set cascading_links = [] %}
@@ -79,6 +80,7 @@
         menu_label: card.field_title_display|view,
         menu_type: menu_type,
         menu_default_option: menu_default_option,
+        menu_default_child_option: menu_default_child_option,
         menu_items: links,
       }]) %}
     {% endfor %}
