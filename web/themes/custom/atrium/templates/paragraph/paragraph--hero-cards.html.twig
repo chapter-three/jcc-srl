@@ -15,8 +15,8 @@
       title: content.field_title_display|render,
       lead: content.field_description|render,
       background_variant: 'has-background-color--dark',
-      column_variant: paragraph.field_media.0 ? 'has-two-columns-threequarter',
-      column_content_right: paragraph.field_media.0 ? image
+      column_variant: paragraph.field_media.0 ? 'has-banner-image-half' : 'has-two-columns-threequarter',
+      banner_image: paragraph.field_media.0 ? file_url(paragraph.field_media.0.entity.field_media_image.entity.uri.value)
     } %}
   {% endif %}
 
@@ -54,6 +54,7 @@
       {% elseif type == 'cascading_menu' %}
         {% set menu_type = 'cascading' %}
         {% set menu_default_option = menu.field_label.value ?: '' %}
+        {% set menu_default_child_option = menu.field_label2.value ?: '' %}
         {% for key, item in menu.field_items %}
           {% set cascading_menu = menu.field_items.get(key).entity %}
           {% set cascading_links = [] %}
@@ -79,6 +80,7 @@
         menu_label: card.field_title_display|view,
         menu_type: menu_type,
         menu_default_option: menu_default_option,
+        menu_default_child_option: menu_default_child_option,
         menu_items: links,
       }]) %}
     {% endfor %}

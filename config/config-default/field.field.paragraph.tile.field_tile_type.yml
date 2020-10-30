@@ -16,7 +16,7 @@ id: paragraph.tile.field_tile_type
 field_name: field_tile_type
 entity_type: paragraph
 bundle: tile
-label: 'Tile type'
+label: 'Tile Type'
 description: ''
 required: true
 translatable: false

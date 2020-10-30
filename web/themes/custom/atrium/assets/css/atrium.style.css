@@ -1270,6 +1270,11 @@ main {
           flex: 1 0 auto;
 }
 
+footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;
@@ -1338,7 +1343,6 @@ a.jcc-form--link svg {
 
 .nav-tabs__wrapper {
   background: #e6e6e6;
-  padding-top: 80px;
   margin-bottom: 0;
 }
 .nav-tabs__wrapper, .nav-tabs__wrapper * {
@@ -1594,7 +1598,7 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: absolute;
-  bottom: 80px;
+  bottom: 20px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -1602,7 +1606,6 @@ li.pager__item__ellipsis {
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
-    bottom: 40px;
     min-width: 310px;
     right: 20px;
     width: auto;
