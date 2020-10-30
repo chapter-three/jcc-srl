@@ -36,10 +36,10 @@
         const $windowHeightHalf = $windowHeight / 2;
         const $scrollDiff = ($scrollPosition + $windowHeight) - $windowHeightHalf ;
         const $pageHeightHalf =  $footPosition/ 2 ;
-        
+
         return $scrollDiff >= $pageHeightHalf;
       };
-  
+
       const pageIsShorterThanWindow = ($scrollPosition, $windowHeight, $footPosition) => {
         const $scrollDiff = $footPosition - $windowHeight;
 
@@ -53,10 +53,10 @@
 
       // Scroll.
       $window.on('scroll', function(){
- 
+
         const $scrollPosition = $window.scrollTop();
         const $windowHeight = $window.height();
-        const $footPosition = $('.jcc-footer').offset().top;
+        const $footPosition = $('.page__footer').offset().top;
 
         if(
           (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen())
@@ -66,14 +66,14 @@
         } else {
           $feedback_container.removeAttr('visible');
         }
-        
+
         if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
           $feedback_container.attr('fixed', 'fixed');
         } else {
           $feedback_container.removeAttr('fixed');
         }
       });
-  
+
       // Allow user to dismiss completely if confirmation is visible.
       if (feedbackConfirmed() == true) {
         if (feedbackDismissPath() == true) {
@@ -84,7 +84,7 @@
           feedbackOpen();
         }
       }
-  
+
       // Click.
       $feedback_trigger.on("click", function(e) {
         e.preventDefault;
