@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.step
   module:
     - allowed_formats
+    - datalayer
     - text
 third_party_settings:
   allowed_formats:
@@ -14,11 +15,14 @@ third_party_settings:
     simple_html: '0'
     full_html: '0'
     plain_text: '0'
+  datalayer:
+    expose: 0
+    label: field_description
 id: paragraph.step.field_description
 field_name: field_description
 entity_type: paragraph
 bundle: step
-label: Description
+label: Instruction
 description: ''
 required: false
 translatable: true
