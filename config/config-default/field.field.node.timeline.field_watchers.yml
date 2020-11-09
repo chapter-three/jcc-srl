@@ -1,0 +1,28 @@
+uuid: 086ebc9e-2aa3-46c0-b9c9-f944036f871f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_watchers
+    - node.type.timeline
+id: node.timeline.field_watchers
+field_name: field_watchers
+entity_type: node
+bundle: timeline
+label: Watchers
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -12,11 +12,11 @@ id: divorce_wayfinder
 title: 'Divorce Wayfinder'
 description: 'A wayfinder for divorce users.&nbsp;'
 category: ''
-elements: "divorce_wayfinder_:\n  '#type': webform_wizard_page\n  '#title': Children\n  do_you_have_children_:\n    '#type': webform_buttons\n    '#title': 'Do you have children?'\n    '#options': yes_no\n    '#format_items': comma\n    '#format_items_html': ''\n    '#format_items_text': ''\ndivorce_wayfinder:\n  '#type': webform_wizard_page\n  '#title': 'Length of Marriage'\n  have_you_been_married_for_more_than_5_years_:\n    '#type': webform_buttons\n    '#title': 'Have you been married for more than 5 years?'\n    '#options': yes_no\n    '#format_items': comma\n    '#format_items_html': ''\n    '#format_items_text': ''\nresults:\n  '#type': webform_wizard_page\n  '#title': Results\n  quickdivorce:\n    '#type': webform_message\n    '#message_type': info\n    '#message_message': |\n      Based on your answers, you may be eligible for a Summary Dissolution - or a quick divorce.&nbsp;<br />\n      <br />\n      Go <a href=\"http://selfhelp.courts.ca.gov\">here</a> when you are ready to get started.&nbsp;"
+elements: "divorce_wayfinder_:\n  '#type': webform_wizard_page\n  '#title': Children\n  do_you_have_children_:\n    '#type': webform_buttons\n    '#title': 'Do you have children?'\n    '#options': yes_no\n    '#format_items': comma\n    '#format_items_html': ''\n    '#format_items_text': ''\ndivorce_wayfinder:\n  '#type': webform_wizard_page\n  '#title': 'Length of Marriage'\n  have_you_been_married_for_more_than_5_years_:\n    '#type': webform_buttons\n    '#title': 'Have you been married for more than 5 years?'\n    '#description': 'This more info&nbsp;'\n    '#options': yes_no\n    '#format_items': comma\n    '#format_items_html': ''\n    '#format_items_text': ''\nresults:\n  '#type': webform_wizard_page\n  '#title': Results\n  quickdivorce:\n    '#type': webform_message\n    '#message_type': info\n    '#message_message': |\n      Based on your answers, you may be eligible for a Summary Dissolution - or a quick divorce.&nbsp;<br />\n      <br />\n      Go <a href=\"http://selfhelp.courts.ca.gov\">here</a> when you are ready to get started.&nbsp;"
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
@@ -24,7 +24,7 @@ settings:
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  page_admin_theme: false
+  page_theme_name: ''
   form_title: both
   form_submit_once: false
   form_exception_message: ''
@@ -54,6 +54,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
   submission_label: ''
   submission_log: false
   submission_views: {  }
@@ -79,11 +84,17 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
+  wizard_auto_forward: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
   wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
   preview: 0
   preview_label: ''
   preview_title: ''

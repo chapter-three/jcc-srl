@@ -1,0 +1,17 @@
+uuid: 3e0f1ad1-c8b0-414c-9796-be4027a1fd33
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Court
+type: court
+description: 'A county-based court'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

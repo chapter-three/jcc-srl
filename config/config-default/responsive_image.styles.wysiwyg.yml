@@ -1,0 +1,29 @@
+uuid: 841b0eab-9fde-4309-b6b3-641b41cb5f61
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1024x
+    - image.style.1600x
+    - image.style.2048x
+    - image.style.375x
+    - image.style.640x
+    - image.style.768x
+id: wysiwyg
+label: WYSIWYG
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 1024x
+        - 1600x
+        - 2048x
+        - 375x
+        - 640x
+        - 768x
+breakpoint_group: responsive_image
+fallback_image_style: 1600x

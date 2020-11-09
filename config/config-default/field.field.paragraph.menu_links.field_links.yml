@@ -1,0 +1,28 @@
+uuid: 139334dc-f14f-4011-9072-36e000443f3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links
+    - paragraphs.paragraphs_type.menu_links
+  module:
+    - datalayer
+    - link
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_links
+id: paragraph.menu_links.field_links
+field_name: field_links
+entity_type: paragraph
+bundle: menu_links
+label: Links
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

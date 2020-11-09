@@ -1,0 +1,11 @@
+uuid: ddf33bf7-df24-48f8-aa67-fda1cec559e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.courthouse
+id: node_type_courthouse
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

@@ -3,10 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.case_type.field_case_type_info_link
     - taxonomy.vocabulary.case_type
   module:
-    - link
     - path
     - text
 id: taxonomy_term.case_type.default
@@ -22,14 +20,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_case_type_info_link:
-    weight: 101
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   langcode:
     type: language_select
     weight: 2

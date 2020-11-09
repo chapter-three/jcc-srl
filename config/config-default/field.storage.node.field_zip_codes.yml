@@ -1,0 +1,19 @@
+uuid: 5de97e6c-9074-4865-9672-b1ad3554e420
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_zip_codes
+field_name: field_zip_codes
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

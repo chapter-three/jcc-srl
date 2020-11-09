@@ -1,0 +1,11 @@
+uuid: 151f9529-020e-445c-a340-3e73556d4d6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.party
+id: taxonomy_vocabulary_party
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

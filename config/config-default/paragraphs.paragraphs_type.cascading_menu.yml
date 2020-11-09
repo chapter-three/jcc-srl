@@ -1,0 +1,10 @@
+uuid: 202a9cda-ad5c-4671-9191-cc3206482b08
+langcode: en
+status: true
+dependencies: {  }
+id: cascading_menu
+label: 'Cascading menu'
+icon_uuid: null
+icon_default: null
+description: 'A set of <em>cascading menu items</em>.'
+behavior_plugins: {  }

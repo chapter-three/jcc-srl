@@ -1244,47 +1244,105 @@ through all possible variants
 */
 /* prettier-ignore */
 /* prettier-ignore */
+html,
+body {
+  height: 100%;
+}
+
+.dialog-off-canvas-main-canvas {
+  height: 100%;
+}
+
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;
 }
 
-.jcc-form--link {
+article.jcc-form--hero-full-height .jcc-hero {
+  /* These variables should live somewhere else. */
+  min-height: calc(100vh - 84px - 60px);
+}
+
+a.jcc-form--link {
+  margin-top: 1rem;
+  margin-right: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
   border: 1px solid;
   display: inline-block;
-}
-.jcc-form--link > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-.jcc-form--link a {
   text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+@media all and (min-width: 64em) {
+  a.jcc-form--link {
+    width: auto;
+  }
+}
+a.jcc-form--link > * {
+  display: inline-block;
+}
+a.jcc-form--link svg {
+  vertical-align: text-top;
+  margin-right: 0.25rem;
 }
 
 .jcc-form--languages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-top: 2rem;
-}
-.jcc-form--languages label {
-  padding-right: 1rem;
-}
-.jcc-form--languages span {
   padding-left: 1rem;
-  padding-right: 1rem;
-  display: inline-block;
+}
+.jcc-form--languages li {
+  width: 380px;
+  white-space: nowrap;
 }
 
+.jcc-form--thumbnail {
+  display: none;
+}
+@media all and (min-width: 64em) {
+  .jcc-form--thumbnail {
+    display: block;
+  }
+}
 .jcc-form--thumbnail img {
+  -webkit-box-shadow: 0 1px 0.25rem 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0.25rem 0 rgba(0, 0, 0, 0.1);
+  max-height: 400px;
   display: block;
   margin: 0 auto;
 }
 
 .nav-tabs__wrapper {
   background: #e6e6e6;
-  padding-top: 80px;
   margin-bottom: 0;
 }
 .nav-tabs__wrapper, .nav-tabs__wrapper * {
@@ -1540,7 +1598,7 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: absolute;
-  bottom: 80px;
+  bottom: 20px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -1548,7 +1606,6 @@ li.pager__item__ellipsis {
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
-    bottom: 40px;
     min-width: 310px;
     right: 20px;
     width: auto;
@@ -1631,4 +1688,47 @@ li.pager__item__ellipsis {
   height: 2rem;
   vertical-align: middle;
   width: 2rem;
+}
+
+.jcc-share__container {
+  position: relative;
+  left: 0;
+  right: unset;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share__container {
+    position: absolute;
+    left: unset;
+    right: 0;
+    width: 37%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .jcc-share__container {
+    width: 39%;
+  }
+}
+.jcc-share__container .jcc-share {
+  max-width: 87.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share__container .jcc-share {
+    padding-bottom: 2rem;
+  }
+}
+
+.jcc-share--spacer {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share--spacer {
+    display: block;
+    margin-bottom: 8rem;
+  }
 }

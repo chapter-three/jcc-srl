@@ -1,0 +1,18 @@
+uuid: 49a38845-3c56-4392-9825-df9c500e2158
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.court
+id: node.court.title
+field_name: title
+entity_type: node
+bundle: court
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

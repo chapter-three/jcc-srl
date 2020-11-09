@@ -1,0 +1,54 @@
+{% if page.footer %}
+  <div class="page__footer" role="contentinfo">
+    {{ page.footer }}
+  </div>
+{% endif %}
+
+{% include '@organisms/global/footer-base/footer-base.twig' with {
+  footer_base: {
+    height_variant: 'simple',
+    background_variant: 'inverted',
+    title: 'Self Help Center',
+    global_bar: {
+      logo_text: {
+        title: 'Judicial Branch of California',
+        url: 'https://www.courts.ca.gov',
+      },
+      logo: '/libraries/courtyard-artifact/public/images/logos/jcc-logo-branch-text-white.svg',
+      secondary_nav: {
+        items: [
+          {
+            name: 'Terms of Use',
+            url: 'https://www.courts.ca.gov/11529.htm?rdeLocaleAttr=en',
+          },
+          {
+            name: 'Privacy Policy',
+            url: 'https://www.courts.ca.gov/11530.htm?rdeLocaleAttr=en',
+          },
+        ]
+      }
+    },
+    social_links: {
+      items: [
+        {
+          title: 'Youtube',
+          url: 'https://www.youtube.com/user/CaliforniaCourts',
+          icon: {
+            name: 'youtube',
+            title: 'Youtube',
+            decorative: false,
+          },
+        },
+        {
+          title: 'Twitter',
+          url: 'https://twitter.com/CalCourts',
+          icon: {
+            name: 'twitter',
+            title: 'Twitter',
+            decorative: false,
+          },
+        },
+      ]
+    }
+  }
+} %}

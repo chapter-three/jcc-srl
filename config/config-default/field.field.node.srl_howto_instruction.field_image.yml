@@ -1,0 +1,34 @@
+uuid: 2ad4054d-7776-4a65-83aa-b0e64511fd02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.srl_howto_instruction
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_image
+id: node.srl_howto_instruction.field_image
+field_name: field_image
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Banner image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

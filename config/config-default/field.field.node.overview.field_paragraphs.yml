@@ -7,7 +7,12 @@ dependencies:
     - node.type.overview
     - paragraphs.paragraphs_type.switchboard
   module:
+    - datalayer
     - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_paragraphs
 id: node.overview.field_paragraphs
 field_name: field_paragraphs
 entity_type: node

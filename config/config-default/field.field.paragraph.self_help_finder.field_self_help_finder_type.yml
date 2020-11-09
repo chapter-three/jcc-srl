@@ -1,0 +1,21 @@
+uuid: ff0977aa-cba7-4c76-9858-0f2c7f8b828c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_self_help_finder_type
+    - paragraphs.paragraphs_type.self_help_finder
+  module:
+    - options
+id: paragraph.self_help_finder.field_self_help_finder_type
+field_name: field_self_help_finder_type
+entity_type: paragraph
+bundle: self_help_finder
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

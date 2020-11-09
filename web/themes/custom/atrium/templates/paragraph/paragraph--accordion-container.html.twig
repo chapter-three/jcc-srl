@@ -50,7 +50,8 @@
 
     {% include '@molecules/interactive/accordion/accordion.twig' with {
       accordion: {
-        full: true,
+        full: paragraph.field_accordion_style.0.value == 'default' ? false : true,
+        container: paragraph.field_accordion_style.0.value == 'default',
         items: accordion_items,
       }
     } only %}

@@ -1,0 +1,34 @@
+uuid: bd1dc4cd-1ed7-4716-bc31-45e683e55550
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_column_first
+    - node.type.basic
+  module:
+    - allowed_formats
+    - datalayer
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+  datalayer:
+    expose: 1
+    label: field_column_first
+id: node.basic.field_column_first
+field_name: field_column_first
+entity_type: node
+bundle: basic
+label: 'Hero - First Column'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

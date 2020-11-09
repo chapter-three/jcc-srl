@@ -1,0 +1,32 @@
+uuid: dc9c1d59-acaa-4f44-acb2-e80ba1730657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.jcc_form_prefix.field_form_prefix_label
+    - taxonomy.vocabulary.jcc_form_prefix
+  module:
+    - text
+id: taxonomy_term.jcc_form_prefix.default
+targetEntityType: taxonomy_term
+bundle: jcc_form_prefix
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_form_prefix_label:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

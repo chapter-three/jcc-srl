@@ -2,6 +2,8 @@ uuid: 8f8ae690-7925-4f93-9794-d924d8a8d0bf
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - atrium
 id: title
@@ -15,4 +17,9 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/self-help/find\r\n/self-help/find-self-help"
+    negate: true
+    context_mapping: {  }

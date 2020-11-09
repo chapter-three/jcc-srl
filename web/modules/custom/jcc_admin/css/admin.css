@@ -1,0 +1,29 @@
+fieldset.jcc-tag-set {
+  border: 3px solid #0071b8;
+}
+
+fieldset.jcc-tag-set .fieldset-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+fieldset.jcc-tag-set .fieldset-wrapper > div {
+  margin-right: 20px;
+}
+
+fieldset:not(.fieldgroup).no-title {
+  padding-top: 6px;
+}
+
+fieldset:not(.fieldgroup).no-title > legend {
+  display: none;
+}
+
+.seven-details__wrapper {
+  overflow: auto;
+}
+
+#vbo-action-form-wrapper {
+  margin-top: 16px;
+  border-top: 1px solid #bfbfbf;
+}

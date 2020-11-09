@@ -1,0 +1,10 @@
+uuid: 6aebfaf8-ab03-4f12-84c1-5a6442e121af
+langcode: en
+status: true
+dependencies: {  }
+id: links
+label: 'Links (tiles)'
+icon_uuid: null
+icon_default: null
+description: 'A set of links.'
+behavior_plugins: {  }

@@ -4,16 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.srl_howto_instruction.body
+    - field.field.node.srl_howto_instruction.field_actions
     - field.field.node.srl_howto_instruction.field_blocks
+    - field.field.node.srl_howto_instruction.field_case_types
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
+    - field.field.node.srl_howto_instruction.field_image
     - field.field.node.srl_howto_instruction.field_metatag
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
+    - field.field.node.srl_howto_instruction.field_parties
     - field.field.node.srl_howto_instruction.field_title_display
+    - field.field.node.srl_howto_instruction.field_watchers
     - node.type.srl_howto_instruction
   module:
     - block_field
@@ -82,6 +87,15 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_image:
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_paragraphs:
     weight: 8
     label: hidden
@@ -112,6 +126,10 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_actions: true
+  field_case_types: true
   field_metatag: true
+  field_parties: true
+  field_watchers: true
   langcode: true
   search_api_excerpt: true

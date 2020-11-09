@@ -1,0 +1,28 @@
+uuid: a4d99cfc-6302-4f09-ab00-0f8055f365c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_watchers
+    - node.type.basic
+id: node.basic.field_watchers
+field_name: field_watchers
+entity_type: node
+bundle: basic
+label: Watchers
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

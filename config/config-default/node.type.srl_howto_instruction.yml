@@ -9,7 +9,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'SRL HowTo Instruction'
+name: 'SRL Step by Step'
 type: srl_howto_instruction
 description: 'Children within a collection of pages.'
 help: ''

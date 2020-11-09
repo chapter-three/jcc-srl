@@ -1,0 +1,8 @@
+uuid: fc57b47c-0206-46bd-93d1-a8713ab27123
+langcode: en
+status: true
+dependencies: {  }
+name: Action
+vid: action
+description: ''
+weight: 0

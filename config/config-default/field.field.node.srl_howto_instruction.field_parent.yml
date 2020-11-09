@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_parent
     - node.type.srl_howto
     - node.type.srl_howto_instruction
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_parent
 id: node.srl_howto_instruction.field_parent
 field_name: field_parent
 entity_type: node

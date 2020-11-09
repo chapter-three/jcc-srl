@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.switchboard
   module:
     - allowed_formats
+    - datalayer
     - text
 third_party_settings:
   allowed_formats:
@@ -14,11 +15,14 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
+  datalayer:
+    expose: 0
+    label: field_switchboard_subtitle
 id: paragraph.switchboard.field_switchboard_subtitle
 field_name: field_switchboard_subtitle
 entity_type: paragraph
 bundle: switchboard
-label: 'Switchboard Subtitle'
+label: Title
 description: ''
 required: false
 translatable: true

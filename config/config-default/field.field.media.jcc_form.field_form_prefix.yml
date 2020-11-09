@@ -1,0 +1,29 @@
+uuid: 4714fb7f-2672-4ab8-b44c-1d18ca28c3ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_form_prefix
+    - media.type.jcc_form
+    - taxonomy.vocabulary.jcc_form_prefix
+id: media.jcc_form.field_form_prefix
+field_name: field_form_prefix
+entity_type: media
+bundle: jcc_form
+label: 'Form Prefix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      jcc_form_prefix: jcc_form_prefix
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

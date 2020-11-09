@@ -1,0 +1,10 @@
+uuid: 14f38b8e-09de-42f3-84d3-308c45185d26
+langcode: en
+status: true
+dependencies: {  }
+id: menu_links
+label: 'Menu links'
+icon_uuid: null
+icon_default: null
+description: 'Menu links form.'
+behavior_plugins: {  }

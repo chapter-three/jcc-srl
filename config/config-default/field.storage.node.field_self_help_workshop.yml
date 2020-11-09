@@ -1,0 +1,19 @@
+uuid: eb2531c3-55f9-45f9-b0f3-da520a8dda66
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_self_help_workshop
+field_name: field_self_help_workshop
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

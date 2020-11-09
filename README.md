@@ -206,3 +206,7 @@ API keys (like SendGrid's) should be stored in the  private:// directory and man
 
 - Remote drush:
    `lando drush @jcc-srl.[env] [command]`
+
+## Forms Module Docs
+
+See [the JCC Forms Drupal Module](web/modules/custom/jcc_forms) and [the javascript front-end](https://github.com/JudicialCouncilOfCalifornia/forms-lookup/).

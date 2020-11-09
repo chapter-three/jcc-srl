@@ -6,7 +6,7 @@ function atrium_preprocess_page(&$variables) {
   $path_segments = explode('/', $current_path);
   $eid = isset($path_segments[2]) ? $path_segments[2] : null;
 
-  if ($path_segments[1] == 'media' || $path_segments[1] == 'node') {
+  if ($path_segments[1] == 'media' || $path_segments[1] == 'node' || $path_segments[1] == 'webform') {
     $entity_type = $path_segments[1];
 
     /** @var $entity \Drupal\media\Entity\Media */
@@ -18,5 +18,4 @@ function atrium_preprocess_page(&$variables) {
       $variables['entity_bundle'] = $entity_bundle;
     }
   }
-
 }

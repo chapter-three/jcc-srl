@@ -1,0 +1,25 @@
+uuid: 1f88309e-9abf-4bf1-8506-26ff654e6e57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_top_title
+    - paragraphs.paragraphs_type.cascading_menu_item
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_top_title
+id: paragraph.cascading_menu_item.field_top_title
+field_name: field_top_title
+entity_type: paragraph
+bundle: cascading_menu_item
+label: 'Topic (in parent dropdown)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

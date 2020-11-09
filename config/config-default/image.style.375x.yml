@@ -1,0 +1,15 @@
+uuid: 672c802b-40e4-46ef-ab6b-7719b024da0f
+langcode: en
+status: true
+dependencies: {  }
+name: 375x
+label: 375x
+effects:
+  c58d3a34-eb88-4808-ab9c-15f7c6ccc20d:
+    uuid: c58d3a34-eb88-4808-ab9c-15f7c6ccc20d
+    id: image_scale
+    weight: 1
+    data:
+      width: 375
+      height: null
+      upscale: false

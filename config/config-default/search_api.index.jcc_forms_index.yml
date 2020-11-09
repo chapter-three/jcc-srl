@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_case_type
     - field.storage.media.field_description
     - field.storage.media.field_number
+    - field.storage.media.field_form_category
+    - field.storage.taxonomy_term.field_synonyms
+    - field.storage.media.field_form_prefix
+    - field.storage.taxonomy_term.field_form_prefix_label
     - search_api.server.deafult
   module:
     - taxonomy
@@ -16,14 +19,25 @@ name: 'JCC Forms Index'
 description: 'Index for the forms lookup API'
 read_only: false
 field_settings:
-  form_case_types:
-    label: 'Case Type » Taxonomy term » Name'
+  field_synonyms:
+    label: 'Form Category » Taxonomy term » Synonyms'
     datasource_id: 'entity:media'
-    property_path: 'field_case_type:entity:name'
+    property_path: 'field_form_category:entity:field_synonyms'
     type: text
     dependencies:
       config:
-        - field.storage.media.field_case_type
+        - field.storage.media.field_form_category
+        - field.storage.taxonomy_term.field_synonyms
+      module:
+        - taxonomy
+  form_category:
+    label: 'Form Category » Taxonomy term » Name'
+    datasource_id: 'entity:media'
+    property_path: 'field_form_category:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_form_category
       module:
         - taxonomy
   form_description:
@@ -31,6 +45,7 @@ field_settings:
     datasource_id: 'entity:media'
     property_path: field_description
     type: text
+    boost: !!float 0
     dependencies:
       config:
         - field.storage.media.field_description
@@ -39,6 +54,7 @@ field_settings:
     datasource_id: 'entity:media'
     property_path: name
     type: text
+    boost: !!float 0
     dependencies:
       module:
         - media
@@ -47,9 +63,32 @@ field_settings:
     datasource_id: 'entity:media'
     property_path: field_number
     type: text
+    boost: !!float 2
     dependencies:
       config:
         - field.storage.media.field_number
+  form_prefix:
+    label: 'Form Prefix » Taxonomy term » Name'
+    datasource_id: 'entity:media'
+    property_path: 'field_form_prefix:entity:name'
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.media.field_form_prefix
+      module:
+        - taxonomy
+  form_prefix_category:
+    label: 'Form Prefix » Taxonomy term » Form Prefix Label'
+    datasource_id: 'entity:media'
+    property_path: 'field_form_prefix:entity:field_form_prefix_label'
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_form_prefix
+        - field.storage.taxonomy_term.field_form_prefix_label
+      module:
+        - taxonomy
 datasource_settings:
   'entity:media':
     bundles:
@@ -62,13 +101,32 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  ignore_character:
+    all_fields: false
+    fields:
+      - form_number
+    ignorable: '-'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   ignorecase:
     all_fields: true
     fields:
-      - form_case_types
+      - field_synonyms
+      - form_category
       - form_description
       - form_name
       - form_number
+      - form_prefix
+      - form_prefix_category
     weights:
       preprocess_index: -20
       preprocess_query: -20

@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * Template for "Find Your Self Help Center" view.
+ *
+ * This shows a `court` node based off of a search. Its corresponding `courthouse`
+ * nodes are displayed below via `views-view--find-courthouses--self-help-mini-block.html.twig`.
+ */
+#}
+
+
+{% extends 'views-view.html.twig' %}
+
+{% block exposed %}
+  {#
+    Info:
+      - `exposed.s` is the "search" term. This textbox is visible to the user.
+      - `exposed.id` is the nid of a court node. This textbox is hidden (via css) from the user.
+  #}
+  <div class="jcc-search-group jcc-search-group--horizontal">
+    <h5 class="jcc-search-group__title">{{ 'Find a self help center'|t }}</h5>
+    <div class="jcc-search-group__container">
+      {{ exposed }}
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+  {{ attach_library('atrium/find-courts') }}
+  {% set courts = rows.0['#rows'].0['#view'].result %}
+
+  {% if exposed.s['#value'] is empty %}
+    {# If no search term, don't display results #}
+
+  {% elseif courts|length == 0 %}
+    {# <h3>zero courts</h3> #}
+    {# A search ws performed, but there are no results #}
+    <div class="padding-y-5">
+      <div class="jcc-lead maxw-tablet-lg">
+        {{ 'We’re sorry, this search does not match any California locations in our database. Please enter a 5-digit California zip code (e.g. 92110) or city name (e.g. Oakland).'|t }}
+      </div>
+    </div>
+
+  {% elseif courts|length == 1 %}
+    {# <h3>one court</h3> #}
+    {# One court, so display courthouses view #}
+    {% set court = courts.0._entity %}
+    {% set num_courthouses = drupal_view_result('find_courthouses', 'self_help_mini_block', court.nid.value)|length %}
+
+    {% if num_courthouses == 0 %}
+      {# <h3>zero courthouses</h3> #}
+      {# No courthouses with self help hours #}
+      <div class="padding-y-5">
+        <div class="jcc-lead maxw-tablet-lg">
+          {{ 'We’re sorry, but %t% County does not have any self help centers.'|t|replace({'%t%': court.title.value}) }}
+        </div>
+      </div>
+
+    {% elseif num_courthouses == 1 %}
+      {# <h3>one courthouse</h3> #}
+      {# One courthouse, so display it #}
+      <div class="padding-y-5">
+        {{ drupal_view('find_courthouses', 'self_help_mini_block', court.nid.value) }}
+      </div>
+
+    {% elseif num_courthouses > 1 %}
+      {# <h3>multiple courthouses</h3> #}
+      {# Multiple courthouses, so display the first and a button for more #}
+      <div class="padding-top-5">
+        {{ drupal_view('find_courthouses', 'self_help_mini_block', court.nid.value) }}
+      </div>
+
+      <div class="padding-y-2">
+        <div class="jcc-lead maxw-tablet-lg">
+          {% include '@atoms/buttons/link-button.twig' with {
+            link_button: {
+              url: '/self-help/find-self-help?s=%s%&id=%id%'|replace({'%s%': exposed.s['#value'], '%id%': court.nid.value}),
+              text: 'More Locations'|t,
+              style: 'accent-warm',
+            }
+          } only %}
+        </div>
+      </div>
+    {% endif %}
+
+  {% elseif courts|length > 1 %}
+    {# <h3>multiple courts</h3> #}
+    {# Multiple court results. Display results as links that will reload view with nid from court node #}
+    <div class="padding-y-5">
+      <div class="jcc-lead maxw-tablet-lg">
+        {{ 'The search term <strong>%s%</strong> falls into multiple counties. Please select a county.'|t|replace({'%s%': exposed.s['#value']})|check_markup('basic_html') }}
+      </div>
+
+      <ol class="court-links">
+        {% for row in courts %}
+          <li>
+            <a href="#" data-nid="{{ row._entity.nid.value }}">{{ row._entity.title.value }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  {% endif %}
+{% endblock %}

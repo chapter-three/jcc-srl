@@ -1,0 +1,6 @@
+services:
+  srl_errors.srl_form_error_handler:
+    class: Drupal\srl_errors\SRLErrorsFormErrorHandler
+    decorates: form_error_handler
+    decoration_priority:  2
+    arguments: ['@string_translation', '@renderer','@messenger' ]

@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.srl_wayfinder.field_actions
+    - field.field.node.srl_wayfinder.field_case_types
     - field.field.node.srl_wayfinder.field_description
     - field.field.node.srl_wayfinder.field_metatag
     - field.field.node.srl_wayfinder.field_options
     - field.field.node.srl_wayfinder.field_paragraphs
+    - field.field.node.srl_wayfinder.field_parties
     - field.field.node.srl_wayfinder.field_title_display
+    - field.field.node.srl_wayfinder.field_watchers
     - node.type.srl_wayfinder
   module:
     - cc
@@ -52,6 +56,11 @@ content:
     type: text_default
     region: content
 hidden:
+  field_actions: true
+  field_case_types: true
   field_metatag: true
+  field_parties: true
+  field_watchers: true
   langcode: true
   links: true
+  search_api_excerpt: true

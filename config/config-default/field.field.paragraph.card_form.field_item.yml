@@ -1,0 +1,107 @@
+uuid: a8898082-dbf5-4b80-9a9a-3ac36c6755ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_item
+    - paragraphs.paragraphs_type.card_form
+    - paragraphs.paragraphs_type.cascading_menu
+    - paragraphs.paragraphs_type.menu_links
+  module:
+    - datalayer
+    - entity_reference_revisions
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_item
+id: paragraph.card_form.field_item
+field_name: field_item
+entity_type: paragraph
+bundle: card_form
+label: Menu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      menu_links: menu_links
+      cascading_menu: cascading_menu
+    target_bundles_drag_drop:
+      accordion:
+        weight: -47
+        enabled: false
+      accordion_container:
+        weight: -46
+        enabled: false
+      card:
+        weight: -45
+        enabled: false
+      card_form:
+        weight: -44
+        enabled: false
+      card_list:
+        weight: -43
+        enabled: false
+      cascading_menu:
+        enabled: true
+        weight: -48
+      cascading_menu_item:
+        weight: -42
+        enabled: false
+      code_section:
+        weight: -41
+        enabled: false
+      complete:
+        weight: -40
+        enabled: false
+      datefinder:
+        weight: -39
+        enabled: false
+      flex:
+        weight: -38
+        enabled: false
+      hero_cards:
+        weight: -37
+        enabled: false
+      links:
+        weight: -36
+        enabled: false
+      menu_links:
+        enabled: true
+        weight: -49
+      postcard:
+        weight: -35
+        enabled: false
+      self_help_finder:
+        weight: -34
+        enabled: false
+      step:
+        weight: -33
+        enabled: false
+      step_container:
+        weight: -32
+        enabled: false
+      switchboard:
+        weight: -31
+        enabled: false
+      tile:
+        weight: -30
+        enabled: false
+      timeline:
+        weight: -29
+        enabled: false
+      timeline_dual:
+        weight: -28
+        enabled: false
+      timeline_dual_item:
+        weight: -27
+        enabled: false
+      timeline_item:
+        weight: -26
+        enabled: false
+field_type: entity_reference_revisions

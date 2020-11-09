@@ -1,0 +1,15 @@
+uuid: ad01a27a-64fd-4ca4-a5a3-8d35b52ebb25
+langcode: en
+status: true
+dependencies: {  }
+name: 1600x
+label: 1600x
+effects:
+  2004c378-180c-4a91-8d96-cbed67b64146:
+    uuid: 2004c378-180c-4a91-8d96-cbed67b64146
+    id: image_scale
+    weight: 1
+    data:
+      width: 1600
+      height: null
+      upscale: false

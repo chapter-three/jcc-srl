@@ -1,0 +1,21 @@
+uuid: 5d6e905c-2860-428e-be10-5012ee3756f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.self_help_finder.field_self_help_finder_type
+    - paragraphs.paragraphs_type.self_help_finder
+id: paragraph.self_help_finder.default
+targetEntityType: paragraph
+bundle: self_help_finder
+mode: default
+content:
+  field_self_help_finder_type:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

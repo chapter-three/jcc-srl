@@ -1,0 +1,24 @@
+uuid: 7dedb39f-c2be-4d05-bc88-431a3c5deafb
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_webform
+field_name: field_webform
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: mark_my_place
+      label: 'Mark my place'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

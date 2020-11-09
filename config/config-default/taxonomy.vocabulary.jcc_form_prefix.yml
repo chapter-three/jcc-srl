@@ -1,0 +1,8 @@
+uuid: 8faa673a-3d00-4d20-b93b-033fd0623fdc
+langcode: en
+status: true
+dependencies: {  }
+name: 'JCC Form Prefix'
+vid: jcc_form_prefix
+description: 'Used to define form categories based on the form number prefix, e.g. FL, DV, GC, etc.'
+weight: 0

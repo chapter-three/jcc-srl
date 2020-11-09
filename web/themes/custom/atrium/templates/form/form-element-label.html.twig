@@ -25,7 +25,7 @@
   {% set classes = classes|merge(['usa-checkbox__label']) %}
 
 {% elseif element['#form_element_type'] == 'radio' %}
-  {% set classes = classes|merge(['usa-radio__label']) %}
+  {% set classes = classes|merge(['usa-radio__label usa-button usa-button--secondary usa-button--big--desktop usa-button--round usa-button--outline']) %}
 
 {% elseif element['#form_element_type'] == 'select' %}
   {% set classes = classes|merge(['jcc-dropdown__Label']) %}

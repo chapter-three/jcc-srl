@@ -1,0 +1,16 @@
+entity.xlsx.new:
+  route_name: entity.xlsx.new
+  title: 'New Mapping'
+  appears_on:
+    - xlsx.mapping
+xlsx.import.list:
+  route_name: xlsx.import.list
+  title: 'Import'
+  appears_on:
+    - xlsx.mapping
+
+xlsx.export.list:
+  route_name: xlsx.export.list
+  title: 'Export'
+  appears_on:
+    - xlsx.mapping

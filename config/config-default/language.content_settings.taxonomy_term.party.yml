@@ -1,0 +1,11 @@
+uuid: f8a23f93-3993-490e-93c8-651fc65fcc89
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.party
+id: taxonomy_term.party
+target_entity_type_id: taxonomy_term
+target_bundle: party
+default_langcode: site_default
+language_alterable: false

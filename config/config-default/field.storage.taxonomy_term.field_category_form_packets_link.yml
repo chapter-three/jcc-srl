@@ -1,0 +1,19 @@
+uuid: 7e50d67c-c5f1-4b18-be7e-1a309fc0bdaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.field_category_form_packets_link
+field_name: field_category_form_packets_link
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -8,9 +8,12 @@ description: 'Intended for Pantheon multidev and local environments'
 folder: ../config/config-stage
 module:
   maillog: 0
+  mailsystem: 0
+  mimemail: 0
 theme: {  }
 blacklist:
   - mailsystem.settings
+  - system.mail
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

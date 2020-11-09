@@ -12,11 +12,11 @@ id: was_this_information_helpful_
 title: 'Was this information helpful?'
 description: ''
 category: ''
-elements: "was_this_information_helpful_:\n  '#type': webform_buttons\n  '#title': 'Was this information helpful?'\n  '#description': 'did this information help you with your case?'\n  '#description_display': tooltip\n  '#options': yes_no\nany_additional_feedback_:\n  '#type': textarea\n  '#title': 'Any Additional Feedback?'\n  '#autocomplete': 'off'\n  '#states':\n    visible-slide:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true"
+elements: "was_this_information_helpful_:\n  '#type': webform_buttons\n  '#title': 'Was this information helpful?'\n  '#description': 'did this information help you with your case?'\n  '#description_display': tooltip\n  '#options': yes_no\nany_additional_feedback_:\n  '#type': textarea\n  '#title': 'Any Additional Feedback?'\n  '#autocomplete': 'off'\n  '#states':\n    visible-slide:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nemail_optional_:\n  '#type': email\n  '#title': 'Email (optional)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true"
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
@@ -24,7 +24,7 @@ settings:
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  page_admin_theme: false
+  page_theme_name: ''
   form_title: both
   form_submit_once: false
   form_exception_message: ''
@@ -54,6 +54,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
   submission_label: ''
   submission_log: false
   submission_views: {  }
@@ -79,11 +84,17 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
+  wizard_auto_forward: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
   wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
   preview: 0
   preview_label: ''
   preview_title: ''

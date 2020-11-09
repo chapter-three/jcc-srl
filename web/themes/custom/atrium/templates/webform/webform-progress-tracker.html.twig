@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform wizard progress tracker.
+ *
+ * See: /modules/contrib/webform/templates/webform-progress-tracker.html.twig
+ */
+#}
+{{ attach_library('webform/webform.progress.tracker') }}
+ {% for index, page in progress %}
+    {% set is_completed = index < current_index %}
+    {% set is_active = index == current_index %}
+    {%
+      set classes = [
+        'progress-step',
+
+        is_completed ? 'is-complete',
+        is_active ? 'is-active' : 'visually-hidden',
+      ]
+    %}
+    {%
+      set attributes = create_attribute()
+        .setAttribute('data-webform-' ~ page.type, page.name)
+        .setAttribute('title', page.title)
+        .setAttribute('class', '')
+        .addClass(classes)
+        .removeClass('progress-step')
+    %}
+    <div{{ attributes }}>
+      {% if is_active %}
+
+        {% include '@molecules/text/header-group/header-group.twig' with {
+          headergroup: {
+            title:  page.title
+          }
+        } %}
+
+
+      {% endif %}
+    </div>
+  {% endfor %}

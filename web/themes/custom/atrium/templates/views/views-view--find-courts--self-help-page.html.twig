@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Template for "Find Your Self Help Center" view.
+ *
+ * This shows a `court` node based off of a search. Its corresponding `courthouse`
+ * nodes are displayed below via `views-view--find-courthouses--self-help-block.html.twig`.
+ */
+#}
+
+{% extends 'views-view.html.twig' %}
+
+{% block header %}
+  {% set search_form %}
+    <div class="jcc-search-group jcc-search-group--vertical">
+      <div class="jcc-search-group__container">
+        {{ exposed }}
+      </div>
+    </div>
+  {% endset %}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      background_variant: 'has-background-color--light--secondary',
+      column_variant: 'has-one-column',
+      title: drupal_title(),
+      lead: header,
+      column_content_right: search_form,
+    }
+  } %}
+{% endblock %}
+
+{% block exposed %}
+  {# "Unset" this block since exposed is used in the header block #}
+  {#
+    Info:
+      - `exposed.s` is the "search" term. This textbox is visible to the user.
+      - `exposed.id` is the nid of a court node. This textbox is hidden (via css) from the user.
+  #}
+{% endblock %}
+
+
+{% block content %}
+  {{ attach_library('atrium/find-courts') }}
+  {% set courts = rows.0['#rows'].0['#view'].result %}
+
+  {% if exposed.s['#value'] is empty %}
+    {# If no search term, don't display results #}
+
+  {% elseif courts|length == 0 %}
+    {# <h3>zero courts</h3> #}
+    {# A search ws performed, but there are no results #}
+    <div class="grid-container-widescreen padding-y-5">
+      <div class="jcc-lead maxw-tablet-lg">
+        {{ 'We’re sorry, this search does not match any California locations in our database. Please enter a 5-digit California zip code (e.g. 92110) or city name (e.g. Oakland).'|t }}
+      </div>
+    </div>
+
+  {% elseif courts|length == 1 %}
+    {# <h3>one court</h3> #}
+    {# One court, so display courthouses view #}
+    {% set court = courts.0._entity %}
+    {% set num_courthouses = drupal_view_result('find_courthouses', 'self_help_block', court.nid.value)|length %}
+
+    {% if num_courthouses == 0 %}
+      {# <h3>zero courthouses</h3> #}
+      {# No courthouses with self help hours #}
+      <div class="grid-container-widescreen padding-y-5">
+        <div class="jcc-lead maxw-tablet-lg">
+          {{ 'We’re sorry, but %t% County does not have any self help centers.'|t|replace({'%t%': court.title.value}) }}
+        </div>
+      </div>
+
+    {% elseif num_courthouses > 1 %}
+      {# <h3>one or more courthouses</h3> #}
+      {# One or more courthouses, so display them #}
+      {{ drupal_view('find_courthouses', 'self_help_block', court.nid.value) }}
+    {% endif %}
+
+  {% elseif courts|length > 1 %}
+    {# <h3>multiple courts</h3> #}
+    {# Multiple court results. Display results as links that will reload view with nid from court node #}
+    <div class="grid-container-widescreen padding-y-5">
+      <div class="jcc-lead maxw-tablet-lg">
+        {{ 'The search term <strong>%s%</strong> falls into multiple counties. Please select a county.'|t|replace({'%s%': exposed.s['#value']})|check_markup('basic_html') }}
+      </div>
+
+      <ol>
+        {% for row in courts %}
+          <li>
+            <a href="{{ url('<current>', {'s': exposed.s['#value'], 'id': row._entity.nid.value}) }}">{{ row._entity.title.value }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  {% endif %}
+{% endblock %}

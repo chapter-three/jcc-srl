@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.tile
   module:
     - allowed_formats
+    - datalayer
     - text
 third_party_settings:
   allowed_formats:
@@ -14,11 +15,14 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
+  datalayer:
+    expose: 0
+    label: field_statement
 id: paragraph.tile.field_statement
 field_name: field_statement
 entity_type: paragraph
 bundle: tile
-label: 'Action Statement'
+label: 'Tile Title'
 description: ''
 required: false
 translatable: true

@@ -7,6 +7,7 @@ dependencies:
     - node.type.srl_howto_instruction
   module:
     - allowed_formats
+    - datalayer
     - text
 third_party_settings:
   allowed_formats:
@@ -14,6 +15,9 @@ third_party_settings:
     basic_html: '0'
     full_html: '0'
     plain_text: '0'
+  datalayer:
+    expose: 1
+    label: field_title_display
 id: node.srl_howto_instruction.field_title_display
 field_name: field_title_display
 entity_type: node

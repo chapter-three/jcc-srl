@@ -6,6 +6,12 @@ dependencies:
     - field.storage.node.field_forms
     - media.type.jcc_form
     - node.type.srl_howto_instruction
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_forms
 id: node.srl_howto_instruction.field_forms
 field_name: field_forms
 entity_type: node

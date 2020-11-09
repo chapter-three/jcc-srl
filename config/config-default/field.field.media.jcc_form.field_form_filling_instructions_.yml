@@ -1,0 +1,23 @@
+uuid: 16a5606c-0968-4f4d-baec-0b30625be78d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_form_filling_instructions_
+    - media.type.jcc_form
+  module:
+    - link
+id: media.jcc_form.field_form_filling_instructions_
+field_name: field_form_filling_instructions_
+entity_type: media
+bundle: jcc_form
+label: 'Form Filling Instructions URL'
+description: 'A URL pointing to instructions specifically for how to fill out this form. Note: form-filling is different than other kinds of instructions, e.g. how to move forward with your court case. Only use this field for a link to instructions on how to fill out this form in particular.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

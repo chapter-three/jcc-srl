@@ -41,6 +41,9 @@ settings:
     -
       value: wait
       label: wait
+    -
+      value: line
+      label: line
   allowed_values_function: ''
 module: options
 locked: false

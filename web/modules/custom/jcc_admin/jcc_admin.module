@@ -59,3 +59,25 @@ function jcc_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) 
     $form["content_translation"]["retranslate"]["#default_value"] = true;
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function jcc_admin_page_attachments(array &$attachments) {
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if ($is_admin) {
+    $attachments['#attached']['library'][] = 'jcc_admin/admin-css';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function jcc_admin_theme($existing, $type, $theme, $path) {
+  return [
+    'views_exposed_form__content__page_1' => [
+      'base hook' => 'form',
+      'template' => 'views-exposed-form--content--page-1'
+    ],
+  ];
+}
