@@ -108,6 +108,7 @@ packages:
     drupal/simple_block: 1.0.0-beta1
     drupal/smart_trim: 1.3.0
     drupal/stage_file_proxy: 1.0.0
+    drupal/tmgmt: 1.11.0
     drupal/token: 1.7.0
     drupal/twig_tweak: 2.6.0
     drupal/twig_xdebug: 1.2.0
