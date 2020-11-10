@@ -71,7 +71,7 @@
         </div>
       </div>
 
-    {% elseif num_courthouses > 1 %}
+    {% elseif num_courthouses >= 1 %}
       {# <h3>one or more courthouses</h3> #}
       {# One or more courthouses, so display them #}
       {{ drupal_view('find_courthouses', 'self_help_block', court.nid.value) }}
