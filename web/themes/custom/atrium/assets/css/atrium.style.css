@@ -1598,7 +1598,7 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: absolute;
-  bottom: 20px;
+  bottom: -40px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -1609,6 +1609,11 @@ li.pager__item__ellipsis {
     min-width: 310px;
     right: 20px;
     width: auto;
+  }
+}
+@media all and (min-width: 64em) {
+  .jcc-feedback {
+    bottom: 20px;
   }
 }
 .jcc-feedback[fixed] {
