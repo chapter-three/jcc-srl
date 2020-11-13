@@ -100,7 +100,7 @@
 
   {% include '@organisms/sections/text-section/text-section.twig' with {
     text_section: {
-      column_content_left: content|without('field_paragraphs', 'field_header', 'field_image'),
+      column_content_left: content|without('field_paragraphs', 'field_header', 'field_image', 'field_title_display'),
     }
   } only %}
 </article>

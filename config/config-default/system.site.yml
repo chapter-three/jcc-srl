@@ -1,10 +1,10 @@
-name: 'JCC SRL'
+name: 'CA Courts Self Help'
 mail: webdev@jud.ca.gov
 slogan: ''
 page:
   403: /node/61
   404: /node/62
-  front: /node/8
+  front: /node/276
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

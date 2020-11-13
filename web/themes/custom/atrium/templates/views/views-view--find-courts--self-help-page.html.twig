@@ -71,8 +71,25 @@
         </div>
       </div>
 
-    {% elseif num_courthouses > 1 %}
+    {% elseif num_courthouses >= 1 %}
       {# <h3>one or more courthouses</h3> #}
+
+      {% set alert_text %}
+        <br>
+        {{ 'Courts have reduced services due to health and safety guidelines.<br>For up-to-date information, go to'|t }}
+        <a href="{{ court.field_main_link.0.url }}">{{ 'your court\'s main website'|t }}</a>.
+      {% endset %}
+      <div class="grid-container-widescreen padding-top-5">
+        {% include '@molecules/blocks/alert/alert.twig' with {
+          alert: {
+            type: 'info',
+            icon: true,
+            heading: 'COVID-19 and Court Services',
+            text: alert_text,
+          }
+        } %}
+      </div>
+
       {# One or more courthouses, so display them #}
       {{ drupal_view('find_courthouses', 'self_help_block', court.nid.value) }}
     {% endif %}
