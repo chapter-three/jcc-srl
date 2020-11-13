@@ -1685,6 +1685,7 @@ li.pager__item__ellipsis {
   text-align: right;
 }
 .jcc-feedback .jcc-feedback__trigger-container button {
+  width: inherit;
   margin-right: 0;
   padding-left: 24px;
   padding-right: 15px;
