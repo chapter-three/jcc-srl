@@ -4,6 +4,6 @@ srl_court_finder.court_finder_settings_form:
     _form: '\Drupal\srl_court_finder\Form\CourtFinderSettingsForm'
     _title: 'Court Finder'
   requirements:
-    _permission: 'access administration pages'
+    _permission: 'administer court finder'
   options:
     _admin_route: TRUE
