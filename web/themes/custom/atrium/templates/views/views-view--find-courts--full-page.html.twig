@@ -82,22 +82,24 @@
       {{ '<p>There are rules about where you can file your case. Some rules say you can file where you live, others say you must file where the other person lives or where a dispute happened. A judge may not be able to hear your case if you file in the wrong Court. Here are some general rules:</p><ol><li><strong>Is there an open case about this issue?</strong> If yes, then file in the county where that case is active.</li><li>If a case hasn’t been started:<ul style="list-style-type: lower-alpha;"><li>Divorce - the county where you or your spouse has lived for the last 3 months (you must have lived in California for the last 6 months in order to file).</li><li>Child custody or support (parents not married) - you can usually file where the child lives, with some exceptions</li><li>Guardianship - where the minor lives</li><li>Conservatorship - where the person to be conserved lives</li><li>Small claims - where the defendant lives, where the business is officially located, where an accident or dispute took place.</li><li>Restraining orders - where the person accused of abuse lives or where the abuse took place.</li><li>Eviction - where the property is located.</li></ul></li></ol><p>NOTE! These rules cover common situations. Sometimes there are exceptions or other rules that apply to your case. For cases about minors or small claims, please speak to your local court Self-Help Center staff, or a lawyer referral service for assistance.</p>'|t }}
     {% endset %}
 
-
-    {% set alert_text %}
-      <br>
-      {{ 'Courts have reduced services due to health and safety guidelines.<br>For up-to-date information, go to'|t }}
-      <a href="{{ court.field_main_link.0.url }}">{{ 'your court\'s main website'|t }}</a>.
-    {% endset %}
-    <div class="grid-container-widescreen padding-top-5 bg-base-lightest">
-      {% include '@molecules/blocks/alert/alert.twig' with {
-        alert: {
-          type: 'info',
-          icon: true,
-          heading: 'COVID-19 and Court Services',
-          text: alert_text,
-        }
-      } %}
-    </div>
+    {% if alert_enabled %}
+      {%- set link -%}
+        <a href="{{ court.field_main_link.0.url }}">{{ alert_link_text }}</a>
+      {%- endset -%}
+      {%- set text -%}
+        <br>{{ alert_text|replace({'\n': '<br>'})|replace({'%link%': link})|raw }}
+      {%- endset -%}
+      <div class="grid-container-widescreen padding-top-5">
+        {% include '@molecules/blocks/alert/alert.twig' with {
+          alert: {
+            type: 'info',
+            icon: true,
+            heading: alert_title,
+            text: text,
+          }
+        } %}
+      </div>
+    {% endif %}
 
     {% include '@molecules/blocks/court-summary/court-summary.twig' with {
       court_summary: {
