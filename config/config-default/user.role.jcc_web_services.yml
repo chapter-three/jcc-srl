@@ -30,6 +30,7 @@ permissions:
   - 'add user input entities'
   - 'administer blocks'
   - 'administer content translation'
+  - 'administer court finder'
   - 'administer google analytics'
   - 'administer languages'
   - 'administer media'

@@ -111,6 +111,7 @@ module:
   serialization: 0
   shortcut: 0
   simple_block: 0
+  srl_court_finder: 0
   srl_errors: 0
   srl_updates: 0
   srl_webform: 0
