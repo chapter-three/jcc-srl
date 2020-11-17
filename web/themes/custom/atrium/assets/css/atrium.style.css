@@ -1705,7 +1705,7 @@ li.pager__item__ellipsis {
 @media only screen and (min-width: 1024px) {
   .jcc-share__container {
     position: absolute;
-    left: unset;
+    left: auto;
     right: 0;
     width: 37%;
   }
