@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.srl_howto.field_column_first
     - field.field.node.srl_howto.field_column_second
     - field.field.node.srl_howto.field_metatag
+    - field.field.node.srl_howto.field_parent
     - field.field.node.srl_howto.field_parties
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
@@ -87,6 +88,7 @@ hidden:
   field_actions: true
   field_case_types: true
   field_metatag: true
+  field_parent: true
   field_parties: true
   field_watchers: true
   langcode: true
