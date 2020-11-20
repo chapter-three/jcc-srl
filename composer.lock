@@ -2245,9 +2245,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.9",
                     "datestamp": "1576963005",
@@ -2320,9 +2317,6 @@
             },
             "type": "metapackage",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.9",
                     "datestamp": "1576963005",
@@ -2554,9 +2548,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.5",
                     "datestamp": "1572542288",
@@ -2682,9 +2673,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.4",
                     "datestamp": "1537971780",
@@ -3835,9 +3823,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.1",
                     "datestamp": "1585662324",
@@ -3871,6 +3856,10 @@
                     "name": "See other contributors",
                     "homepage": "https://www.drupal.org/node/1998478/committers",
                     "role": "contributor"
+                },
+                {
+                    "name": "jungle",
+                    "homepage": "https://www.drupal.org/user/2919723"
                 },
                 {
                     "name": "slashrsm",
@@ -5348,7 +5337,7 @@
                 "shasum": "41fea535c0770caa2fc4eca7216bbafb796b4d17"
             },
             "require": {
-                "drupal/core": "*",
+                "drupal/core": "^8",
                 "drupal/entity_browser": "*",
                 "drupal/entity_browser_entity_form": "*",
                 "drupal/inline_entity_form": "*"
@@ -5362,9 +5351,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.0-alpha2",
                     "datestamp": "1558337585",
@@ -5382,6 +5368,10 @@
                 {
                     "name": "Sam152",
                     "homepage": "https://www.drupal.org/user/1485048"
+                },
+                {
+                    "name": "acbramley",
+                    "homepage": "https://www.drupal.org/user/1036766"
                 },
                 {
                     "name": "benjy",
@@ -5430,7 +5420,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.13",
-                    "datestamp": "1587478404",
+                    "datestamp": "1587550202",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6575,19 +6565,16 @@
                 "shasum": "3a3555e580993ee1600b6e2eb01ab481ff8d9caa"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
                     "datestamp": "1485418683",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -6596,6 +6583,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Neslee Canil Pinto",
+                    "homepage": "https://www.drupal.org/user/3580850"
+                },
                 {
                     "name": "claudiu.cristea",
                     "homepage": "https://www.drupal.org/user/56348"
@@ -7246,9 +7237,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.0-rc1",
                     "datestamp": "1576705928",
@@ -8067,16 +8055,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.0.199",
+            "version": "0.0.204",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "fd14f7af0c976dca226059cdc0e129926d233059"
+                "reference": "40fad4194f64cbb1a4e52385af106dfccb24fae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/fd14f7af0c976dca226059cdc0e129926d233059",
-                "reference": "fd14f7af0c976dca226059cdc0e129926d233059",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/40fad4194f64cbb1a4e52385af106dfccb24fae6",
+                "reference": "40fad4194f64cbb1a4e52385af106dfccb24fae6",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8091,7 +8079,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2020-11-16T23:55:24+00:00"
+            "time": "2020-11-20T18:37:48+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
