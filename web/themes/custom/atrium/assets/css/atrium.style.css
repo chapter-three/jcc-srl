@@ -1275,6 +1275,10 @@ footer {
       flex-shrink: 0;
 }
 
+.path-frontpage .jcc-header-base {
+  display: none;
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;
