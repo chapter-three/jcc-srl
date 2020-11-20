@@ -1,5 +1,7 @@
 {# Switchboard items: Primary #}
 {%  if content.field_tiles|render %}
+  {% set background = paragraph.field_switchboard_background.value ?: 'dark' %}
+
   {% set primary_items = [] %}
   {% set primary = paragraph.field_tiles %}
 
@@ -34,19 +36,19 @@
     }]) %}
 
   {% endfor %}
-{% endif %}
 
-{% include '@organisms/sections/switchboard/switchboard.twig' with {
-  switchboard: {
-    background_variant: 'has-background-color--dark',
-    layout_variant: paragraph.field_layout_variant.value,
-    headergroup: {
-      brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
-      title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
-    },
-    body: paragraph.field_body|view,
-    items: {
-      primary: primary_items,
-    },
-  }
-} only %}
+  {% include '@organisms/sections/switchboard/switchboard.twig' with {
+    switchboard: {
+      background_variant: 'has-background-color--' ~ background,
+      layout_variant: paragraph.field_layout_variant.value,
+      headergroup: {
+        brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
+        title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
+      },
+      body: paragraph.field_body|view,
+      items: {
+        primary: primary_items,
+      },
+    }
+  } only %}
+{% endif %}

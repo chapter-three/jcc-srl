@@ -1,9 +1,9 @@
-uuid: c2fe5b13-0cb5-4032-91eb-ca73a773f74b
+uuid: 0236618b-874b-4ae5-a51e-85b247ea6311
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_layout_variant
+    - field.storage.paragraph.field_switchboard_background
     - paragraphs.paragraphs_type.switchboard
   module:
     - datalayer
@@ -11,18 +11,18 @@ dependencies:
 third_party_settings:
   datalayer:
     expose: 0
-    label: field_layout_variant
-id: paragraph.switchboard.field_layout_variant
-field_name: field_layout_variant
+    label: field_switchboard_background
+id: paragraph.switchboard.field_switchboard_background
+field_name: field_switchboard_background
 entity_type: paragraph
 bundle: switchboard
-label: 'Tiles Layout'
+label: 'Background Color'
 description: ''
 required: true
 translatable: true
 default_value:
   -
-    value: default
+    value: dark
 default_value_callback: ''
 settings: {  }
 field_type: list_string

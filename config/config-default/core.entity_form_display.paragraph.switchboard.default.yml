@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.switchboard.field_body
     - field.field.paragraph.switchboard.field_layout_variant
+    - field.field.paragraph.switchboard.field_switchboard_background
     - field.field.paragraph.switchboard.field_switchboard_subtitle
     - field.field.paragraph.switchboard.field_switchboard_title
     - field.field.paragraph.switchboard.field_tiles
@@ -20,7 +21,7 @@ bundle: switchboard
 mode: default
 content:
   field_body:
-    weight: 3
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -36,13 +37,19 @@ content:
     type: text_textarea
     region: content
   field_layout_variant:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_switchboard_background:
     weight: 0
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_switchboard_subtitle:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -56,7 +63,7 @@ content:
     type: text_textfield
     region: content
   field_switchboard_title:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -71,7 +78,7 @@ content:
     region: content
   field_tiles:
     type: entity_reference_paragraphs
-    weight: 4
+    weight: 5
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -81,6 +88,11 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
+  translation:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
