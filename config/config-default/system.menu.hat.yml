@@ -1,0 +1,8 @@
+uuid: d6eaa77f-8ffe-4535-a590-85cc17aceac6
+langcode: en
+status: true
+dependencies: {  }
+id: hat
+label: 'Hat (above header)'
+description: 'Links in the hat (above header)'
+locked: false

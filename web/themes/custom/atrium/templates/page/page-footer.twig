@@ -16,35 +16,53 @@
       },
       logo: '/libraries/courtyard-artifact/public/images/logos/jcc-logo-branch-text-white.svg',
       secondary_nav: {
-        items: [
-          {
-            name: 'Terms of Use',
-            url: 'https://www.courts.ca.gov/11529.htm?rdeLocaleAttr=en',
-          },
-          {
-            name: 'Privacy Policy',
-            url: 'https://www.courts.ca.gov/11530.htm?rdeLocaleAttr=en',
-          },
-        ]
+        items: menu_footer
       }
     },
     social_links: {
       items: [
-        {
-          title: 'Youtube',
-          url: 'https://www.youtube.com/user/CaliforniaCourts',
+        social.facebook ? {
+          title: 'Facebook',
+          url: social.facebook,
           icon: {
-            name: 'youtube',
-            title: 'Youtube',
+            name: 'facebook2',
+            title: 'Facebook',
             decorative: false,
           },
         },
-        {
+        social.flickr ? {
+          title: 'Flickr',
+          url: social.flickr,
+          icon: {
+            name: 'flickr',
+            title: 'Flickr',
+            decorative: false,
+          },
+        },
+        social.linkedin ? {
+          title: 'LinkedIn',
+          url: social.linkedin,
+          icon: {
+            name: 'linkedin2',
+            title: 'LinkedIn',
+            decorative: false,
+          },
+        },
+        social.twitter ? {
           title: 'Twitter',
-          url: 'https://twitter.com/CalCourts',
+          url: social.twitter,
           icon: {
             name: 'twitter',
             title: 'Twitter',
+            decorative: false,
+          },
+        },
+        social.youtube ? {
+          title: 'YouTube',
+          url: social.youtube,
+          icon: {
+            name: 'youtube',
+            title: 'YouTube',
             decorative: false,
           },
         },

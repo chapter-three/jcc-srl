@@ -29,7 +29,19 @@ function atrium_preprocess_page(&$variables) {
     }
   }
 
+  // Drupal menus.
   $variables['menu_main'] = _atrium_get_menutree('main');
+  $variables['menu_hat'] = _atrium_get_menutree('hat');
+  $variables['menu_footer'] = _atrium_get_menutree('footer');
+
+  // Social links for footer.
+  $social = [];
+  $social['facebook'] = theme_get_setting('facebook');
+  $social['flickr'] = theme_get_setting('flickr');
+  $social['linkedin'] = theme_get_setting('linkedin');
+  $social['twitter'] = theme_get_setting('twitter');
+  $social['youtube'] = theme_get_setting('youtube');
+  $variables['social'] = $social;
 }
 
 /**
@@ -68,17 +80,25 @@ function _atrium_get_menutree($menu_name) {
             $child_title = $child->link->getTitle();
             $child_url_obj = $child->link->getUrlObject();
             $child_url = $child_url_obj->toString();
+            // Using text/name & href/url ↓ due to inconsistencies in
+            // Pattern Lab components.
             $children[] = [
               'text' => $child_title,
+              'name' => $child_title,
               'href' => $child_url,
+              'url' => $child_url,
             ];
           }
         }
       }
 
+      // Using text/name & href/url ↓ due to inconsistencies in
+      // Pattern Lab components.
       $menu_items[] = [
         'text' => $parent_title,
+        'name' => $parent_title,
         'href' => $parent_url,
+        'url' => $parent_url,
         'id' => Html::getId($parent_title),
         'links' => $children,
       ];
