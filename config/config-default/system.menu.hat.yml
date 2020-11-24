@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: hat
-label: 'Hat (above header)'
+label: Hat
 description: 'Links in the hat (above header)'
 locked: false
