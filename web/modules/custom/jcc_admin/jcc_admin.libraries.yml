@@ -2,3 +2,7 @@ admin-css:
   css:
     theme:
       css/admin.css: {}
+
+toolbar:
+  js:
+    js/toolbar.js: {}
