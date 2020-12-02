@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
     - field.field.node.basic.field_paragraphs
+    - field.field.node.basic.field_parent
     - field.field.node.basic.field_parties
     - field.field.node.basic.field_title_display
     - field.field.node.basic.field_watchers
@@ -47,6 +48,7 @@ third_party_settings:
     group_title_or_hero:
       children:
         - title
+        - field_parent
         - field_title_display
         - field_column_first
         - field_image
@@ -97,7 +99,7 @@ content:
     type: options_select
     region: content
   field_column_first:
-    weight: 2
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
@@ -108,7 +110,7 @@ content:
     region: content
   field_header:
     type: entity_reference_paragraphs
-    weight: 4
+    weight: 5
     settings:
       title: Header
       title_plural: Header
@@ -121,7 +123,7 @@ content:
         status: 0
     region: content
   field_image:
-    weight: 3
+    weight: 4
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -163,6 +165,16 @@ content:
         status: 0
     type: entity_reference_paragraphs
     region: content
+  field_parent:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_parties:
     weight: 15
     settings: {  }
@@ -170,7 +182,7 @@ content:
     type: options_select
     region: content
   field_title_display:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''

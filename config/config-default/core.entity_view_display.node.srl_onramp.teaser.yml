@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.srl_onramp.field_hero_nav_title
     - field.field.node.srl_onramp.field_metatag
     - field.field.node.srl_onramp.field_paragraphs
+    - field.field.node.srl_onramp.field_parent
     - field.field.node.srl_onramp.field_parties
     - field.field.node.srl_onramp.field_watchers
     - node.type.srl_onramp
@@ -31,6 +32,7 @@ hidden:
   field_hero_nav_title: true
   field_metatag: true
   field_paragraphs: true
+  field_parent: true
   field_parties: true
   field_watchers: true
   langcode: true

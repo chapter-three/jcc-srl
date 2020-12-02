@@ -1,4 +1,4 @@
-uuid: ecbfbe99-099b-4561-a1fd-f1d0070e06fd
+uuid: 9fe4cb0b-d3ba-4b82-90cc-eb0694dfe749
 langcode: en
 status: true
 dependencies:
@@ -20,12 +20,12 @@ third_party_settings:
   datalayer:
     expose: 1
     label: field_parent
-id: node.srl_howto_instruction.field_parent
+id: node.srl_howto.field_parent
 field_name: field_parent
 entity_type: node
-bundle: srl_howto_instruction
+bundle: srl_howto
 label: Parent
-description: 'This field will be used to create the breadcrumb at the top of the page. '
+description: 'This field will be used to create the breadcrumb at the top of the page.'
 required: false
 translatable: true
 default_value: {  }

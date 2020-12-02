@@ -5,13 +5,9 @@
       {
         url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
         label: node.field_parent.entity.label,
-      },
-      {
-        label: label,
       }
     ] %}
   {% endif %}
-
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
