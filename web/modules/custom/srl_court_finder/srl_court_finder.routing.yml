@@ -1,0 +1,9 @@
+srl_court_finder.court_finder_settings_form:
+  path: '/admin/config/system/srl/court-finder'
+  defaults:
+    _form: '\Drupal\srl_court_finder\Form\CourtFinderSettingsForm'
+    _title: 'Court Finder'
+  requirements:
+    _permission: 'administer court finder'
+  options:
+    _admin_route: TRUE

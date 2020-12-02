@@ -20,3 +20,9 @@ main {
 footer {
   flex-shrink: 0;
 }
+
+.jcc-header-base {
+  .path-frontpage & {
+    display: none;
+  }
+}

@@ -1275,6 +1275,10 @@ footer {
       flex-shrink: 0;
 }
 
+.path-frontpage .jcc-header-base {
+  display: none;
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;
@@ -1705,7 +1709,7 @@ li.pager__item__ellipsis {
 @media only screen and (min-width: 1024px) {
   .jcc-share__container {
     position: absolute;
-    left: unset;
+    left: auto;
     right: 0;
     width: 37%;
   }
