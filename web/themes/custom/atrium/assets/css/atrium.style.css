@@ -1275,8 +1275,19 @@ footer {
       flex-shrink: 0;
 }
 
+@media all and (max-width: 63.99em) {
+  .jcc-header-hat .jcc-global__menu {
+    display: none;
+  }
+}
+
 .path-frontpage .jcc-header-base {
   display: none;
+}
+@media all and (min-width: 64em) {
+  .jcc-header-base .jcc-nav-secondary__menu {
+    display: none;
+  }
 }
 
 .caption {
