@@ -72,12 +72,16 @@
         {% endfor %}
       {% endif %}
 
+      {% set title %}
+        {{ card.field_title_display|view }}
+      {% endset %}
+
       {# Store each card in an array for the Pattern component. #}
       {% set card_content = card_content|merge([{
-        id: 'now'|date('U'),
-        title: card.field_title_display|view,
+        id: title|remove_html_comments|trim|clean_class,
+        title: title,
         excerpt: card.field_body|view,
-        menu_label: card.field_title_display|view,
+        menu_label: title,
         menu_type: menu_type,
         menu_default_option: menu_default_option,
         menu_default_child_option: menu_default_child_option,
