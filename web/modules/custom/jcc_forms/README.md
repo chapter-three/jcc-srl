@@ -63,15 +63,19 @@ This is why they do not have their own rows in `jcc_forms.csv`.
 
 ### How to publish updates to forms
 
-1) In the jcc-srl repo, update [`web/modules/custom/jcc_forms/jcc_forms.csv`](jcc_forms.csv). Commit your change, push to github, and deploy to live.
+1) In the jcc-srl repo, update [`web/modules/custom/jcc_forms/jcc_forms.csv`](jcc_forms.csv).
 
-2) Log in with `terminus`:
+2) Update [`web/modules/custom/jcc_forms/jcc_form_thumbnails.csv`](jcc_form_thumbnails.csv) and add in updated thumbnail images into [`web/modules/custom/jcc_forms/jcc_form_thumbnails`](jcc_form_thumbnails). Follow steps in [How to create form thumbnails](#how to create form thumbnails) if you need to create the form thumbnails.
+
+3) Commit your change, push to github, and deploy to live.
+
+4) Log in with `terminus`:
 
 ```
 terminus auth:login
 ```
 
-3) Run the migrations:
+5) Run the migrations:
 
 If there are modifications to [`web/modules/custom/jcc_forms/jcc_form_categories.csv`](jcc_form_categories.csv), run the jcc_form_category migration first:
 
@@ -81,13 +85,19 @@ Replace `<env>` with the name of the environment where you want to run the migra
 terminus drush -- jcc-srl.<env> migrate-import jcc_form_category --update
 ```
 
+Then update the JCC Form thumbnails:
+
+```
+terminus drush -- jcc-srl.<env> migrate-import jcc_form_thumbnail_files --update
+```
+
 Then run the JCC Form migration:
 
 ```
 terminus drush -- jcc-srl.<env> migrate-import jcc_form --update
 ```
 
-4) And finally, don't forget to clear the cache
+6) And finally, don't forget to clear the cache
 
 ```
 terminus drush -- jcc-srl.<env> cache-rebuild
@@ -129,3 +139,7 @@ See https://github.com/chapter-three/jcc-srl/pull/248 for a more complex example
 The sorting of the forms search results is configured in [the JSON REST view page](https://selfhelp.courts.ca.gov/admin/structure/views/view/jcc_forms_search_json_api/edit/rest_export_1) under `SORT CRITERIA`. At the time of writing, it is sorted first **alphabetically by form number**, and second by **search relevance**.
 
 Search relevance is configured in [the JCC Forms Index page](https://selfhelp.courts.ca.gov/admin/config/search/search-api/index/jcc_forms_index/fields). This is where you control which fields are indexed (i.e. searchable). You can use the **boost** dropdowns to control how much the relevance score increases for each match. At the time of writing it is configured so that Form Prefix > Form Number > Form Category and Form Prefix Category.
+
+### How to create form thumbnails
+
+Form thumbnails can be created easily using Adobe Acrobat DC by using the unlocked PDF version. Open the form and go to File -> Export to -> Image -> JPG and save locally. Resize using a image processing program of your choice and set to 425 px width (normally thumbnails will be 425 x 550 px). Make sure the file name of the image is the form number with the .jpg extension.
