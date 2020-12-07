@@ -6,7 +6,7 @@
  * @see web/modules/contrib/webform/templates/webform.html.twig
  */
 #}
-{% if title %}
+{% if content %}
   {%- include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       title: content|render|striptags|trim,
