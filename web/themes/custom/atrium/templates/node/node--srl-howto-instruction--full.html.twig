@@ -46,11 +46,7 @@
       {% include '@organisms/sections/share/share.twig' with {
         share: {
           email_modal: drupal_entity('webform', 'share_this_page'),
-          custom: [
-            {
-              link: '<button id="text" class="jcc-share__button jcc-modal__trigger" aria-label="Text page to yourself" data-a11y-dialog-show="email"><span class="jcc-share__text"></span></button>',
-            },
-          ]
+          text_modal: drupal_entity('webform', 'mark_my_place_text_message')
         }
       } only %}
     </div>
