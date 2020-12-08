@@ -1,0 +1,32 @@
+uuid: 0df59342-5401-4915-aa52-b31b63f27a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.snippet.field_media_text
+    - image.style.medium
+    - media.type.snippet
+  module:
+    - image
+id: media.snippet.media_library
+targetEntityType: media
+bundle: snippet
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_text: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

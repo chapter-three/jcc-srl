@@ -1,0 +1,28 @@
+uuid: 0c7913db-8a92-4e1b-8266-2120cdaa1756
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.snippet.field_media_text
+    - media.type.snippet
+  module:
+    - text
+id: media.snippet.default
+targetEntityType: media
+bundle: snippet
+mode: default
+content:
+  field_media_text:
+    label: visually_hidden
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
