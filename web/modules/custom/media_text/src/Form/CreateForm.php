@@ -17,7 +17,7 @@ class CreateForm extends AddFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return $this->getBaseFormId() . '_upload';
+    return $this->getBaseFormId() . '_text';
   }
 
   /**
@@ -64,7 +64,10 @@ class CreateForm extends AddFormBase {
    *   The form state.
    */
   public function addButtonSubmit(array $form, FormStateInterface $form_state) {
-    $this->processInputValues([$form_state->getValue('field_media_text')], $form, $form_state);
+    $mapping = $this->getMediaType($form_state)->getFieldMap();
+    if (!empty($mapping['text'])) {
+      $this->processInputValues([$form_state->getValue($mapping['text'])], $form, $form_state);
+    }
   }
 
   /**

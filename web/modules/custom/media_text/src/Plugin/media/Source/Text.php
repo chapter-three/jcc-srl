@@ -40,6 +40,9 @@ class Text extends MediaSourceBase {
       case 'default_name':
         return 'Text';
 
+      case 'text':
+        return $media->get($this->configuration['source_field'])->getValue();
+
       default:
         return parent::getMetadata($media, $attribute_name);
     }
