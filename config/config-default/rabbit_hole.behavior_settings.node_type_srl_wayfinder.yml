@@ -1,0 +1,11 @@
+uuid: a46fa692-188b-4c5e-aba5-df32bdf074cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_wayfinder
+id: node_type_srl_wayfinder
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
