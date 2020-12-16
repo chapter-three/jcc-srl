@@ -102,6 +102,8 @@ packages:
     drupal/range: 1.2.0
     drupal/redirect: 1.6.0
     drupal/role_delegation: 1.1.0
+    drupal/scheduler: 1.3.0
+    drupal/scheduler_content_moderation_integration: 1.3.0
     drupal/search404: 1.0.0
     drupal/search_api: 1.17.0
     drupal/search_api_autocomplete: 1.3.0
