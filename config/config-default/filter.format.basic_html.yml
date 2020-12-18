@@ -63,6 +63,7 @@ filters:
       default_view_mode: wysiwyg
       allowed_media_types:
         image: image
+        snippet: snippet
       allowed_view_modes:
         original: original
         wysiwyg: wysiwyg
