@@ -1,18 +1,18 @@
-uuid: 3492b46d-023e-4853-b029-35d3e9855f0e
+uuid: fa874a2e-1a51-40f6-96b4-a262e8bd252a
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 1
+uid: 189
 template: false
 archive: false
-id: mark_my_place
-title: 'Mark my place'
+id: divorce_basics
+title: 'Divorce Basics'
 description: ''
 category: ''
-elements: "'#attributes':\n  class:\n    - jcc-contact-group\ncontainer:\n  '#type': container\n  '#attributes':\n    class:\n      - jcc-contact-group__container\n  label:\n    '#type': label\n    '#title': 'Enter your email'\n    '#attributes':\n      class:\n        - usa-label\n  email:\n    '#type': email\n    '#title': Email\n    '#title_display': invisible\n    '#required': true\n    '#required_error': 'Email address is required'\n    '#attributes':\n      class:\n        - usa-input\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#submit__label': 'Send Link'\n    '#submit__attributes':\n      class:\n        - 'usa-button usa-button--accent-warm'\n      style: 'margin-top:0;'\n  info:\n    '#type': webform_markup\n    '#wrapper_attributes':\n      class:\n        - jcc-contact-group__helper\n    '#markup': 'We&#39;ll only use this email to send this link'\n"
+elements: "divorce_basics:\n  '#type': webform_wizard_page\n  '#title': 'Property & Children'\n  '#next_button_label': Next\n  property_children:\n    '#type': processed_text\n    '#text': |\n      <h5>You'll need to make decisions about property and children (if you have them)</h5>\n      \n      <p>Once you file and officially let your spouse know about the case (called&nbsp;<em><strong>serving&nbsp;court papers</strong></em>),&nbsp;decisions need to be made about&nbsp;</p>\n      \n      <ul>\n      \t<li>\n      \t<p>How to split any property or debts&nbsp;</p>\n      \t</li>\n      \t<li>\n      \t<p>Whether one of you needs spousal support and how much&nbsp;</p>\n      \t</li>\n      \t<li>\n      \t<p>The care and support of your children (if you have them)&nbsp;&nbsp;</p>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\ndo_we_need_to_both_agree_:\n  '#type': webform_wizard_page\n  '#title': 'Do we need to both agree?'\n  spouse_participation:\n    '#type': processed_text\n    '#text': |\n      <h5>Your spouse may participate, but doesn't have to</h5>\n      \n      <p>&nbsp;If your spouse chooses to participate in the divorce process, you and your spouse can agree about these things.&nbsp;<strong>If&nbsp;you don’t&nbsp;agree,&nbsp;you can&nbsp;use a court process to have the court decide.</strong>&nbsp;If your spouse doesn’t participate, you can ask the court to decide.&nbsp;</p>\n      \n      <p>Once&nbsp;these issues are decided, you submit final paperwork to the court&nbsp;so&nbsp;your divorce&nbsp;can&nbsp;become final.&nbsp;<strong>This whole process takes at least 6 months, often longer.&nbsp;</strong></p>\n      \n    '#format': basic_html\nyou_need_to_live_in_california:\n  '#type': webform_wizard_page\n  '#title': 'You need to live in California'\n  residency_requirement:\n    '#type': processed_text\n    '#text': |\n      <p>You can file for divorce in California if:&nbsp;&nbsp;&nbsp; &nbsp;</p>\n      \n      <ul>\n      \t<li>\n      \t<p>You or your spouse have lived in California for the last 6 months&nbsp;<em><strong>AND</strong></em></p>\n      \t</li>\n      \t<li>\n      \t<p>You or your spouse have lived in&nbsp;your county&nbsp;for at least 3 months<span>&nbsp;</span></p>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\nfiguring_out_your_path:\n  '#type': webform_wizard_page\n  '#title': 'Figuring out your path'\n  '#hide_submit': true\n  questions:\n    '#type': processed_text\n    '#text': |\n      <h5>There are different processes for getting a divorce depending on your situation</h5>\n      \n      <p>Depending on how long you’ve been married, whether or not you have children, and several other factors, the process you need to follow to get a divorce will differ.&nbsp;</p>\n      \n      <p><strong>You can find out what process you need to follow by answering 2-3 questions.</strong></p>\n      \n      <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class=\"usa-button usa-button--secondary\" href=\"https://selfhelp.courts.ca.gov/form/divorce-wayfinder\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get My Steps for Divorce&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>&nbsp; &nbsp; &nbsp;&nbsp;</p>\n      \n    '#format': basic_html"
 css: ''
 javascript: ''
 settings:
@@ -110,9 +110,9 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: message
+  confirmation_type: page
   confirmation_title: ''
-  confirmation_message: 'An email has been sent to&nbsp;[webform_submission:values:email]'
+  confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -187,41 +187,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  recipient:
-    id: email
-    label: Email
-    handler_id: recipient
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: '[webform_submission:values:email:raw]'
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: noreply@courtinfo.ca.gov
-      from_options: {  }
-      from_name: _default
-      subject: 'Mark my place'
-      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>\r\n<p>{{ webform_token('[current-page:url]', webform_submission) }}</p>\r\n"
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
+handlers: {  }
 variants: {  }

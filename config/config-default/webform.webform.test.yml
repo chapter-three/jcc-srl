@@ -1,27 +1,22 @@
-uuid: 99d1c151-6e6c-4665-b6d0-e56cc4ef7808
+uuid: b5af98a5-27b9-4b09-9227-1cb09a36c769
 langcode: en
 status: open
-dependencies:
-  module:
-    - honeypot
-third_party_settings:
-  honeypot:
-    honeypot: true
+dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 1
+uid: 11
 template: false
 archive: false
-id: was_this_information_helpful_
-title: 'Was this information helpful?'
+id: test
+title: Test
 description: ''
 category: ''
-elements: "was_this_information_helpful_:\n  '#type': webform_buttons\n  '#title': 'Was this helpful?'\n  '#description': 'did this information help you with your case?'\n  '#description_display': tooltip\n  '#options': yes_no\n  '#format_items': comma\n  '#format_items_html': ''\n  '#format_items_text': ''\nany_additional_feedback_:\n  '#type': textarea\n  '#title': 'Any Additional Feedback?'\n  '#autocomplete': 'off'\n  '#states':\n    visible-slide:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nemail_optional_:\n  '#type': email\n  '#title': 'Email (optional)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true"
+elements: null
 css: ''
 javascript: ''
 settings:
-  ajax: true
+  ajax: false
   ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
@@ -115,12 +110,12 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: inline
+  confirmation_type: page
   confirmation_title: ''
-  confirmation_message: 'Thank you for your feedback!'
+  confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
-  confirmation_back: false
+  confirmation_back: true
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
   confirmation_exclude_query: false
@@ -140,8 +135,8 @@ settings:
   entity_limit_user_interval: null
   purge: none
   purge_days: null
-  results_disabled: false
-  results_disabled_ignore: false
+  results_disabled: true
+  results_disabled_ignore: true
   results_customize: false
   token_view: false
   token_update: false
@@ -192,41 +187,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  email:
-    id: email
-    label: current-pageEmail
-    handler_id: email
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: _default
-      to_options: {  }
-      cc_mail: 'jack.madans-t@jud.ca.gov, cyd.harrell-t@jud.ca.gov, christa.dahlstrom-t@jud.ca.gov,eric.nakano-t@jud.ca.gov,kelley.stieler@jud.ca.gov,benny.lichtner-t@jud.ca.gov,vvelikov1988@gmail.com'
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: noreply@courtinfo.ca.gov
-      from_options: {  }
-      from_name: ''
-      subject: _default
-      body: "Submitted on [webform_submission:created]<br />\r\n<br />\r\nSubmitted by: [webform_submission:user]<br />\r\n<br />\r\n<br />\r\nSubmitted values are:<br />\r\n<br />\r\nPage: [webform_submission:source-title]<br />\r\n<br />\r\nURL: [current-page:url:absolute]<br />\r\n<br />\r\nFeedback: [webform_submission:values]"
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: atrium
-      parameters: {  }
+handlers: {  }
 variants: {  }
