@@ -1,0 +1,11 @@
+uuid: 7af37448-c523-4c4e-a26e-106601ab05d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.handbook
+id: node_type_handbook
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

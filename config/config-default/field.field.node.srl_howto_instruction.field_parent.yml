@@ -4,8 +4,16 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_parent
+    - node.type.basic
+    - node.type.court
+    - node.type.courthouse
+    - node.type.handbook
+    - node.type.overview
     - node.type.srl_howto
     - node.type.srl_howto_instruction
+    - node.type.srl_onramp
+    - node.type.srl_wayfinder
+    - node.type.timeline
   module:
     - datalayer
 third_party_settings:
@@ -16,8 +24,8 @@ id: node.srl_howto_instruction.field_parent
 field_name: field_parent
 entity_type: node
 bundle: srl_howto_instruction
-label: 'SRL HowTo Parent'
-description: '• <b>Set to - None - to remove Switchboard.</b><br/>• Ex: "Debt Collection". This field will be used to create the breadcrumb at the top of the page and the switchboard at the bottom of the page.'
+label: Parent
+description: 'This field will be used to create the breadcrumb at the top of the page. '
 required: false
 translatable: true
 default_value: {  }
@@ -26,9 +34,18 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      basic: basic
+      overview: overview
+      court: court
+      courthouse: courthouse
+      handbook: handbook
+      timeline: timeline
       srl_howto: srl_howto
+      srl_onramp: srl_onramp
+      srl_howto_instruction: srl_howto_instruction
+      srl_wayfinder: srl_wayfinder
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: basic
 field_type: entity_reference

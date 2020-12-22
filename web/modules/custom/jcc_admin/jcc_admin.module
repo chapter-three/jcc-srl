@@ -68,6 +68,9 @@ function jcc_admin_page_attachments(array &$attachments) {
   if ($is_admin) {
     $attachments['#attached']['library'][] = 'jcc_admin/admin-css';
   }
+
+  // Always load the toolbar tweak.
+  $attachments['#attached']['library'][] = 'jcc_admin/toolbar';
 }
 
 /**

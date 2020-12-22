@@ -1,0 +1,6 @@
+srl_court_finder.court_finder_settings_form:
+  title: 'Court Finder'
+  route_name: srl_court_finder.court_finder_settings_form
+  description: 'Manage court finder.'
+  parent: system.admin_config_system
+  weight: 99

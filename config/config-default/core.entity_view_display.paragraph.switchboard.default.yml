@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.switchboard.field_body
     - field.field.paragraph.switchboard.field_layout_variant
+    - field.field.paragraph.switchboard.field_switchboard_background
     - field.field.paragraph.switchboard.field_switchboard_subtitle
     - field.field.paragraph.switchboard.field_switchboard_title
     - field.field.paragraph.switchboard.field_tiles
@@ -27,6 +28,13 @@ content:
     region: content
   field_layout_variant:
     weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_switchboard_background:
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }

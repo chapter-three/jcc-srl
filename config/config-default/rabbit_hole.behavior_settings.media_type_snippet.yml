@@ -1,0 +1,11 @@
+uuid: e2922e51-2b3a-4423-9d07-11f94bd588c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.snippet
+id: media_type_snippet
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

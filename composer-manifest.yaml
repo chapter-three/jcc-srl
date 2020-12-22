@@ -34,6 +34,7 @@ packages:
     drupal/admin_toolbar: 2.3.0
     drupal/adminimal_admin_toolbar: 1.11.0
     drupal/adminimal_theme: 1.5.0
+    drupal/advagg: 4.1.0
     drupal/allowed_formats: 1.3.0
     drupal/autosave_form: 1.2.0
     drupal/block_field: 1.0.0-rc1
@@ -49,11 +50,11 @@ packages:
     drupal/console-core: 1.9.4
     drupal/console-en: 1.9.4
     drupal/console-extend-plugin: 0.9.3
-    drupal/core: 8.9.6
-    drupal/core-composer-scaffold: 8.9.6
+    drupal/core: 8.9.10
+    drupal/core-composer-scaffold: 8.9.10
     drupal/core-project-message: 8.9.1
-    drupal/core-recommended: 8.9.6
-    drupal/core-vendor-hardening: 8.9.6
+    drupal/core-recommended: 8.9.10
+    drupal/core-vendor-hardening: 8.9.10
     drupal/crop: 2.1.0
     drupal/ctools: 3.4.0
     drupal/datalayer: 1.0.0-beta2
@@ -92,13 +93,17 @@ packages:
     drupal/migrate_tools: 5.0.0
     drupal/mimemail: 1.0.0-alpha3
     drupal/module_filter: 3.1.0
+    drupal/pantheon_advanced_page_cache: 1.1.0
     drupal/paragraphs: 1.12.0
     drupal/pathauto: 1.8.0
+    drupal/quicklink: 1.3.0
     drupal/r4032login: 1.1.0
     drupal/rabbit_hole: 1.0.0-beta7
     drupal/range: 1.2.0
     drupal/redirect: 1.6.0
     drupal/role_delegation: 1.1.0
+    drupal/scheduler: 1.3.0
+    drupal/scheduler_content_moderation_integration: 1.3.0
     drupal/search404: 1.0.0
     drupal/search_api: 1.17.0
     drupal/search_api_autocomplete: 1.3.0
@@ -132,7 +137,7 @@ packages:
     harvesthq/chosen: 1.8.7
     html2text/html2text: 4.0.1
     joachim-n/composer-manifest: 1.0.4
-    judicialcouncil/courtyard-artifact: 0.0.186
+    judicialcouncil/courtyard-artifact: 0.0.213
     kub-at/php-simple-html-dom-parser: 1.9.1
     laminas/laminas-diactoros: 1.8.7p2
     laminas/laminas-escaper: 2.6.1
@@ -150,7 +155,7 @@ packages:
     nikic/php-parser: v4.5.0
     oomphinc/composer-installers-extender: v1.1.2
     paragonie/random_compat: v9.99.99
-    pear/archive_tar: 1.4.9
+    pear/archive_tar: 1.4.11
     pear/console_getopt: v1.4.3
     pear/pear-core-minimal: v1.10.10
     pear/pear_exception: v1.0.1

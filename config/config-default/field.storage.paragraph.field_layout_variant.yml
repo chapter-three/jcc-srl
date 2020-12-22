@@ -12,17 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: default
+      label: 'Case Overview - Landscape (tiles bottom: 3 column)'
+    -
+      value: next-phase
+      label: 'Next Steps (tiles Bottom: 4 column)'
+    -
       value: next-right-column
       label: 'Tiles Right'
     -
-      value: next-phase
-      label: 'Tiles Bottom (sans) or deprecate'
-    -
       value: next
-      label: 'Duplicate of (default)'
-    -
-      value: default
-      label: 'Tiles bottom'
+      label: 'Deprecated (duplicate of ''Case Overview - Landscape'')'
   allowed_values_function: ''
 module: options
 locked: false

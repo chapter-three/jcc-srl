@@ -26,6 +26,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/form/*'
+    pages: "/form/*\r\n<front>\r\n"
     negate: true
     context_mapping: {  }

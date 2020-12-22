@@ -1,0 +1,11 @@
+uuid: 59b6d5c5-af62-4498-81a9-02d716af6de2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.srl_howto
+id: node_type_srl_howto
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

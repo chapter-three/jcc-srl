@@ -20,3 +20,15 @@ main {
 footer {
   flex-shrink: 0;
 }
+
+.jcc-header-base {
+  .path-frontpage & {
+    display: none;
+  }
+
+  .jcc-nav-secondary__menu {
+    @include at-media(desktop) {
+      display: none;
+    }
+  }
+}

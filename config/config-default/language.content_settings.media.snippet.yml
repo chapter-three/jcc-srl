@@ -1,0 +1,11 @@
+uuid: ec4bdb9d-f9ec-4231-901e-03ff4ab344c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.snippet
+id: media.snippet
+target_entity_type_id: media
+target_bundle: snippet
+default_langcode: site_default
+language_alterable: false

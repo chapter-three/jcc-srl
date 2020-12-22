@@ -1,0 +1,11 @@
+uuid: 29d29eb2-378d-49cb-b116-2abfa430826c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.timeline
+id: node_type_timeline
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

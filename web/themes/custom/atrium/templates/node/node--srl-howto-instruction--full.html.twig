@@ -5,13 +5,9 @@
       {
         url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
         label: node.field_parent.entity.label,
-      },
-      {
-        label: label,
       }
     ] %}
   {% endif %}
-
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
@@ -50,11 +46,7 @@
       {% include '@organisms/sections/share/share.twig' with {
         share: {
           email_modal: drupal_entity('webform', 'share_this_page'),
-          custom: [
-            {
-              link: '<button id="text" class="jcc-share__button jcc-modal__trigger" aria-label="Text page to yourself" data-a11y-dialog-show="email"><span class="jcc-share__text"></span></button>',
-            },
-          ]
+          text_modal: drupal_entity('webform', 'mark_my_place_text_message')
         }
       } only %}
     </div>

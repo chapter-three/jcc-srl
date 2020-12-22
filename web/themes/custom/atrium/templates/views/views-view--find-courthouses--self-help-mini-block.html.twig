@@ -55,9 +55,9 @@
         title: entity.field_phone.0.value,
         url: 'tel:' ~ entity.field_phone.0.value|replace({'(': '', ')': '', ' ': '-'})|url_encode,
       },
-      website: entity.field_link.0 ? {
-        title: entity.title.value ~ ' ' ~ 'Website'|t,
-        url: entity.field_link.0.url,
+      website: court.field_secondary_link.0 ? {
+        title: court.title.value ~ ' ' ~ 'County Self Help Website'|t,
+        url: court.field_secondary_link.0.url,
       },
       directions_title: 'Get Directions'|t,
       map: entity.field_image.0 ? {

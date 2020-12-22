@@ -1275,6 +1275,15 @@ footer {
       flex-shrink: 0;
 }
 
+.path-frontpage .jcc-header-base {
+  display: none;
+}
+@media all and (min-width: 64em) {
+  .jcc-header-base .jcc-nav-secondary__menu {
+    display: none;
+  }
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;
@@ -1598,7 +1607,7 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: absolute;
-  bottom: 20px;
+  bottom: -40px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -1609,6 +1618,11 @@ li.pager__item__ellipsis {
     min-width: 310px;
     right: 20px;
     width: auto;
+  }
+}
+@media all and (min-width: 64em) {
+  .jcc-feedback {
+    bottom: 20px;
   }
 }
 .jcc-feedback[fixed] {
@@ -1680,6 +1694,7 @@ li.pager__item__ellipsis {
   text-align: right;
 }
 .jcc-feedback .jcc-feedback__trigger-container button {
+  width: inherit;
   margin-right: 0;
   padding-left: 24px;
   padding-right: 15px;
@@ -1699,7 +1714,7 @@ li.pager__item__ellipsis {
 @media only screen and (min-width: 1024px) {
   .jcc-share__container {
     position: absolute;
-    left: unset;
+    left: auto;
     right: 0;
     width: 37%;
   }
