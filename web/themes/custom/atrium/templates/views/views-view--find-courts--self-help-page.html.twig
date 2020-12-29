@@ -71,8 +71,28 @@
         </div>
       </div>
 
-    {% elseif num_courthouses > 1 %}
+    {% elseif num_courthouses >= 1 %}
       {# <h3>one or more courthouses</h3> #}
+
+      {% if alert_enabled %}
+        {%- set link -%}
+          <a href="{{ court.field_main_link.0.url }}">{{ alert_link_text }}</a>
+        {%- endset -%}
+        {%- set text -%}
+          <br>{{ alert_text|replace({'\n': '<br>'})|replace({'%link%': link})|raw }}
+        {%- endset -%}
+        <div class="grid-container-widescreen padding-top-5">
+          {% include '@molecules/blocks/alert/alert.twig' with {
+            alert: {
+              type: 'info',
+              icon: true,
+              heading: alert_title,
+              text: text,
+            }
+          } %}
+        </div>
+      {% endif %}
+
       {# One or more courthouses, so display them #}
       {{ drupal_view('find_courthouses', 'self_help_block', court.nid.value) }}
     {% endif %}

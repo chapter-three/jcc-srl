@@ -88,16 +88,31 @@
   {% if content.field_header|render %}
     {{ content.field_header }}
   {% else %}
+    {% if node.field_parent.value is not empty %}
+      {% set breadcrumbs =  [
+        {
+          url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
+          label: node.field_parent.entity.label,
+        }
+      ] %}
+    {% endif %}
     {% include '@molecules/blocks/hero/hero.twig' with {
       hero: {
-        title: label,
+        column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
+        breadcrumbs: breadcrumbs ? {
+          show_back_button: true,
+          items: breadcrumbs,
+        },
+        title: content.field_title_display|render ? content.field_title_display : label,
+        body: content.field_column_first|render ? content.field_column_first : '',
+        banner_image: node.field_image.0 ? file_url(node.field_image.0.entity.field_media_image.entity.uri.value),
       }
     } %}
   {% endif %}
 
   {% include '@organisms/sections/text-section/text-section.twig' with {
     text_section: {
-      column_content_left: content|without('field_paragraphs', 'field_header'),
+      column_content_left: content|without('field_paragraphs', 'field_header', 'field_image', 'field_title_display'),
     }
   } only %}
 </article>

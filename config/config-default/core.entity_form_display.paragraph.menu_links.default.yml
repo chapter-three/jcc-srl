@@ -1,0 +1,34 @@
+uuid: c74b4551-b60b-4401-b673-2a9573ed5412
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.menu_links.field_label
+    - field.field.paragraph.menu_links.field_links
+    - paragraphs.paragraphs_type.menu_links
+  module:
+    - link
+id: paragraph.menu_links.default
+targetEntityType: paragraph
+bundle: menu_links
+mode: default
+content:
+  field_label:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_links:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

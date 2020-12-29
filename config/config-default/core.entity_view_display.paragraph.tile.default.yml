@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.tile.field_body
-    - field.field.paragraph.tile.field_icon_link
     - field.field.paragraph.tile.field_link
     - field.field.paragraph.tile.field_page
     - field.field.paragraph.tile.field_statement
+    - field.field.paragraph.tile.field_tile_type
     - field.field.paragraph.tile.field_webform
     - paragraphs.paragraphs_type.tile
   module:
@@ -25,16 +25,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_icon_link:
-    weight: 3
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
     region: content
   field_link:
     weight: 1
@@ -62,6 +52,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_tile_type:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_webform:
     weight: 5

@@ -4,18 +4,19 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_form.field_body
-    - field.field.paragraph.card_form.field_links
+    - field.field.paragraph.card_form.field_item
     - field.field.paragraph.card_form.field_title_display
     - paragraphs.paragraphs_type.card_form
   module:
+    - cc
     - field_group
-    - link
+    - paragraphs
     - text
 third_party_settings:
   field_group:
     group_form:
       children:
-        - field_links
+        - field_item
       parent_name: ''
       weight: 2
       format_type: fieldset
@@ -39,13 +40,19 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_links:
-    weight: 3
+  field_item:
+    type: entity_reference_paragraphs
+    weight: 4
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
+      title: Menu
+      title_plural: Menu
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings:
+      cc:
+        status: 0
     region: content
   field_title_display:
     weight: 0

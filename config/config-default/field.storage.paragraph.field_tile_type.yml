@@ -1,0 +1,36 @@
+uuid: 12ff5261-b64c-4d39-a219-e35e61ec2e57
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_tile_type
+field_name: field_tile_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: icon-top-right
+      label: 'Top right icon'
+    -
+      value: icon-bottom-left
+      label: 'Bottom left icon'
+    -
+      value: arrow-left
+      label: 'Large left arrow'
+    -
+      value: arrow-right
+      label: 'Large right arrow'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

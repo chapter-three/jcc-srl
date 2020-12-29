@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.tile.field_body
-    - field.field.paragraph.tile.field_icon_link
     - field.field.paragraph.tile.field_link
     - field.field.paragraph.tile.field_page
     - field.field.paragraph.tile.field_statement
+    - field.field.paragraph.tile.field_tile_type
     - field.field.paragraph.tile.field_webform
     - paragraphs.paragraphs_type.tile
   module:
@@ -21,7 +21,7 @@ bundle: tile
 mode: default
 content:
   field_body:
-    weight: 5
+    weight: 6
     settings:
       rows: 2
       placeholder: ''
@@ -36,15 +36,8 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
-  field_icon_link:
-    weight: 0
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_link:
-    weight: 2
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -52,7 +45,7 @@ content:
     type: link_default
     region: content
   field_page:
-    weight: 3
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -62,7 +55,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_statement:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -75,14 +68,20 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: text_textfield
     region: content
+  field_tile_type:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_webform:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   translation:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -4,17 +4,20 @@
 
 .jcc-feedback {
   @include u-position(absolute);
-  bottom: 80px;
+  bottom: -40px;
   max-width: 75%;
   opacity: 0;
   right: 0;
   z-index: 10000;
 
   @include at-media(tablet) {
-    bottom: 40px;
     min-width: 310px;
     right: 20px;
     width: auto;
+  }
+
+  @include at-media(desktop) {
+    bottom: 20px;
   }
 
   &[fixed] {
@@ -23,7 +26,6 @@
 
     @include at-media(tablet) {
       bottom: 20px;
-
     }
   }
 
@@ -93,6 +95,7 @@
     text-align: right;
 
     button {
+      width: inherit;
       margin-right: 0;
       padding-left: 24px;
       padding-right: 15px

@@ -161,7 +161,7 @@ __webpack_require__.r(__webpack_exports__);
       $window.on('scroll', function () {
         var $scrollPosition = $window.scrollTop();
         var $windowHeight = $window.height();
-        var $footPosition = $('.jcc-footer').offset().top;
+        var $footPosition = $('.page__footer').offset().top;
 
         if (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen() || isSmallScreen() == false) {
           $feedback_container.attr('visible', 'visible');

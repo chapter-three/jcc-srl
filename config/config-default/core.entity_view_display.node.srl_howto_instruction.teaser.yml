@@ -13,11 +13,13 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
+    - field.field.node.srl_howto_instruction.field_image
     - field.field.node.srl_howto_instruction.field_metatag
     - field.field.node.srl_howto_instruction.field_paragraphs
     - field.field.node.srl_howto_instruction.field_parent
     - field.field.node.srl_howto_instruction.field_parties
     - field.field.node.srl_howto_instruction.field_title_display
+    - field.field.node.srl_howto_instruction.field_watchers
     - node.type.srl_howto_instruction
   module:
     - user
@@ -36,11 +38,13 @@ hidden:
   field_forms: true
   field_howto_tabs: true
   field_howto_tabs_title: true
+  field_image: true
   field_metatag: true
   field_paragraphs: true
   field_parent: true
   field_parties: true
   field_title_display: true
+  field_watchers: true
   langcode: true
   links: true
   search_api_excerpt: true

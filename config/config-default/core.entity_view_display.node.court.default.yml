@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
+    - field.field.node.court.field_watchers
     - field.field.node.court.field_zip_codes
     - node.type.court
   module:
@@ -21,22 +22,6 @@ targetEntityType: node
 bundle: court
 mode: default
 content:
-  field_actions:
-    weight: 5
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_case_types:
-    weight: 6
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_cities:
     weight: 1
     label: hidden
@@ -52,7 +37,7 @@ content:
     type: text_default
     region: content
   field_main_link:
-    weight: 8
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -63,16 +48,8 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_parties:
-    weight: 7
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_secondary_link:
-    weight: 9
+    weight: 5
     label: hidden
     settings:
       trim_length: 80
@@ -91,6 +68,10 @@ content:
     type: basic_string
     region: content
 hidden:
+  field_actions: true
+  field_case_types: true
+  field_parties: true
+  field_watchers: true
   langcode: true
   links: true
   search_api_excerpt: true

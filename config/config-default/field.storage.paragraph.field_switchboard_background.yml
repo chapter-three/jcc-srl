@@ -1,22 +1,22 @@
-uuid: 3b3f8e47-2c79-4b8c-bf5c-8030d7943245
+uuid: efc849b9-6723-4f4b-9fdb-18d97d3e11c6
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_bottom_read_more_type
-field_name: field_bottom_read_more_type
+id: paragraph.field_switchboard_background
+field_name: field_switchboard_background
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: modal
-      label: modal
+      value: dark
+      label: 'Dark blue (default)'
     -
-      value: link
-      label: link
+      value: light
+      label: 'Light blue'
   allowed_values_function: ''
 module: options
 locked: false

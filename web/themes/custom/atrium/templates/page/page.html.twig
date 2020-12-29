@@ -47,14 +47,7 @@
 ]|merge(classes|default([])) %}
 
 <div{{ attributes.addClass(classes) }}>
-  {% if page.header|render or page.logo|render %}
-    <header class="page__header jcc-header">
-      <div class="jcc-header__container">
-        {{ page.logo }}
-        {{ page.header }}
-      </div>
-    </header>
-  {% endif %}
+  {% include base_path ~ directory ~ '/templates/page/page-header.twig' %}
 
   {% if page.tabs|render %}
     <div class="page__tabs">
@@ -75,7 +68,6 @@
   ] %}
 
   {% if page.title|render and entity_bundle not in entities_with_hero %}
-
     <div class="page__title">
       {{ page.title }}
     </div>
@@ -95,9 +87,5 @@
     {% endif %}
   </main>
 
-  {% if page.footer %}
-    <footer class="page__footer" role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  {% include base_path ~ directory ~ '/templates/page/page-footer.twig' %}
 </div>

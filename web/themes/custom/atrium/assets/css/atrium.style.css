@@ -1270,6 +1270,20 @@ main {
           flex: 1 0 auto;
 }
 
+footer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.path-frontpage .jcc-header-base {
+  display: none;
+}
+@media all and (min-width: 64em) {
+  .jcc-header-base .jcc-nav-secondary__menu {
+    display: none;
+  }
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;
@@ -1338,7 +1352,6 @@ a.jcc-form--link svg {
 
 .nav-tabs__wrapper {
   background: #e6e6e6;
-  padding-top: 80px;
   margin-bottom: 0;
 }
 .nav-tabs__wrapper, .nav-tabs__wrapper * {
@@ -1594,7 +1607,7 @@ li.pager__item__ellipsis {
 
 .jcc-feedback {
   position: absolute;
-  bottom: 80px;
+  bottom: -40px;
   max-width: 75%;
   opacity: 0;
   right: 0;
@@ -1602,10 +1615,14 @@ li.pager__item__ellipsis {
 }
 @media all and (min-width: 40em) {
   .jcc-feedback {
-    bottom: 40px;
     min-width: 310px;
     right: 20px;
     width: auto;
+  }
+}
+@media all and (min-width: 64em) {
+  .jcc-feedback {
+    bottom: 20px;
   }
 }
 .jcc-feedback[fixed] {
@@ -1677,6 +1694,7 @@ li.pager__item__ellipsis {
   text-align: right;
 }
 .jcc-feedback .jcc-feedback__trigger-container button {
+  width: inherit;
   margin-right: 0;
   padding-left: 24px;
   padding-right: 15px;
@@ -1685,4 +1703,47 @@ li.pager__item__ellipsis {
   height: 2rem;
   vertical-align: middle;
   width: 2rem;
+}
+
+.jcc-share__container {
+  position: relative;
+  left: 0;
+  right: unset;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share__container {
+    position: absolute;
+    left: auto;
+    right: 0;
+    width: 37%;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .jcc-share__container {
+    width: 39%;
+  }
+}
+.jcc-share__container .jcc-share {
+  max-width: 87.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share__container .jcc-share {
+    padding-bottom: 2rem;
+  }
+}
+
+.jcc-share--spacer {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .jcc-share--spacer {
+    display: block;
+    margin-bottom: 8rem;
+  }
 }

@@ -1,0 +1,72 @@
+{% if page.footer %}
+  <div class="page__footer" role="contentinfo">
+    {{ page.footer }}
+  </div>
+{% endif %}
+
+{% include '@organisms/global/footer-base/footer-base.twig' with {
+  footer_base: {
+    height_variant: 'simple',
+    background_variant: 'inverted',
+    title: 'Self-Help Guide Home',
+    global_bar: {
+      logo_text: {
+        title: 'Judicial Branch of California',
+        url: 'https://www.courts.ca.gov',
+      },
+      logo: '/libraries/courtyard-artifact/public/images/logos/jcc-logo-branch-text-white.svg',
+      secondary_nav: {
+        items: menu_footer
+      }
+    },
+    social_links: {
+      items: [
+        social.facebook ? {
+          title: 'Facebook',
+          url: social.facebook,
+          icon: {
+            name: 'facebook2',
+            title: 'Facebook',
+            decorative: false,
+          },
+        },
+        social.flickr ? {
+          title: 'Flickr',
+          url: social.flickr,
+          icon: {
+            name: 'flickr',
+            title: 'Flickr',
+            decorative: false,
+          },
+        },
+        social.linkedin ? {
+          title: 'LinkedIn',
+          url: social.linkedin,
+          icon: {
+            name: 'linkedin2',
+            title: 'LinkedIn',
+            decorative: false,
+          },
+        },
+        social.twitter ? {
+          title: 'Twitter',
+          url: social.twitter,
+          icon: {
+            name: 'twitter',
+            title: 'Twitter',
+            decorative: false,
+          },
+        },
+        social.youtube ? {
+          title: 'YouTube',
+          url: social.youtube,
+          icon: {
+            name: 'youtube',
+            title: 'YouTube',
+            decorative: false,
+          },
+        },
+      ]
+    }
+  }
+} %}

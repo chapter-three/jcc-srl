@@ -1,6 +1,14 @@
 {% extends 'node.html.twig' %}
 {% block content %}
 
+  {% if node.field_parent.value is not empty %}
+    {% set breadcrumbs =  [
+      {
+        url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
+        label: node.field_parent.entity.label,
+      }
+    ] %}
+  {% endif %}
   {% set jump_nav %}
     {% include '@molecules/navigation/jump-nav/jump-nav.twig' with {
       jump_nav: {
@@ -11,6 +19,10 @@
 
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
+      breadcrumbs: breadcrumbs ? {
+        show_back_button: true,
+        items: breadcrumbs,
+      },
       brow: node.field_brow.0.value,
       title: label,
       body: content.field_description|render ? content.field_description : '',

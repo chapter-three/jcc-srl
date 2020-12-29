@@ -64,10 +64,10 @@ settings:
             - ShowBlocks
             - Maximize
   plugins:
-    stylescombo:
-      styles: "p.jcc-lead|Lead paragraph\r\nh2.jcc-title|Title: Section\r\na.usa-button|Button: Primary\r\na.usa-button.usa-button--secondary|Button: Secondary\r\na.usa-button.usa-button--accent-warm|Button: Accent Warm\r\na.usa-button.usa-button--external.external-button|Button: External"
     language:
       language_list: un
+    stylescombo:
+      styles: "p.jcc-lead|Lead paragraph\r\nh2.h-responsive-h5|H2 sized as H5\r\nh2.jcc-title|Title: Section\r\na.usa-button|Button: Primary\r\na.usa-button.usa-button--secondary|Button: Secondary\r\na.usa-button.usa-button--accent-warm|Button: Accent Warm\r\na.usa-button.usa-button--external.external-button|Button: External"
     templates:
       template_path: /themes/custom/atrium/ckeditor/ckeditor_templates.js
       replace_content: 0

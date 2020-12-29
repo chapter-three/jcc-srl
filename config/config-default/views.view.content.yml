@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_actions
     - field.storage.node.field_case_types
     - field.storage.node.field_parties
+    - field.storage.node.field_watchers
     - taxonomy.vocabulary.action
     - taxonomy.vocabulary.case_type
     - taxonomy.vocabulary.party
@@ -13,6 +14,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_bulk_operations
 _core:
   default_config_hash: tS8PbpJX90aRFC3-UTgXzdqkq7_2frk2pz4TMijEebM
 id: content
@@ -164,22 +166,82 @@ display:
       row:
         type: fields
       fields:
-        node_bulk_form:
-          id: node_bulk_form
-          table: node
-          field: node_bulk_form
+        views_bulk_operations_bulk_form:
+          id: views_bulk_operations_bulk_form
+          table: views
+          field: views_bulk_operations_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
           label: ''
           exclude: false
           alter:
             alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
           element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          plugin_id: node_bulk_form
-          entity_type: node
+          batch: true
+          batch_size: 10
+          form_step: true
+          buttons: false
+          clear_on_exposed: true
+          action_title: Action
+          selected_actions:
+            1:
+              action_id: node_unpublish_action
+            2:
+              action_id: node_publish_action
+            4:
+              action_id: node_assign_owner_action
+            6:
+              action_id: node_save_action
+            7:
+              action_id: node_make_sticky_action
+            8:
+              action_id: node_make_unsticky_action
+            9:
+              action_id: views_bulk_edit
+              preconfiguration:
+                get_bundles_from_results: 1
+            10:
+              action_id: views_bulk_operations_delete_entity
+            11:
+              action_id: pathauto_update_alias
+          plugin_id: views_bulk_operations_bulk_form
         title:
           id: title
           table: node_field_data
@@ -503,6 +565,69 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
+        field_watchers:
+          id: field_watchers
+          table: node__field_watchers
+          field: field_watchers
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Watchers
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         content_translation_outdated:
           id: content_translation_outdated
           table: node_field_data
@@ -1177,6 +1302,51 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
+        uid_1:
+          id: uid_1
+          table: users_field_data
+          field: uid
+          relationship: field_watchers
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_1_op
+            label: Watcher
+            description: ''
+            use_operator: false
+            operator: uid_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: watcher
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              jcc_web_services: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: user
+          entity_field: uid
+          plugin_id: user_name
       sorts: {  }
       title: Content
       empty:
@@ -1195,6 +1365,15 @@ display:
           field: uid
           admin_label: author
           required: true
+          plugin_id: standard
+        field_watchers:
+          id: field_watchers
+          table: node__field_watchers
+          field: field_watchers
+          relationship: none
+          group_type: group
+          admin_label: 'watchers user'
+          required: false
           plugin_id: standard
       show_admin_links: false
       filter_groups:
@@ -1221,6 +1400,7 @@ display:
         - 'config:field.storage.node.field_actions'
         - 'config:field.storage.node.field_case_types'
         - 'config:field.storage.node.field_parties'
+        - 'config:field.storage.node.field_watchers'
   page_1:
     display_options:
       path: admin/content/node
@@ -1256,3 +1436,4 @@ display:
         - 'config:field.storage.node.field_actions'
         - 'config:field.storage.node.field_case_types'
         - 'config:field.storage.node.field_parties'
+        - 'config:field.storage.node.field_watchers'

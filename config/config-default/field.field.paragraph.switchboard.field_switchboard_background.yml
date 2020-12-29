@@ -1,0 +1,28 @@
+uuid: 0236618b-874b-4ae5-a51e-85b247ea6311
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_switchboard_background
+    - paragraphs.paragraphs_type.switchboard
+  module:
+    - datalayer
+    - options
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_switchboard_background
+id: paragraph.switchboard.field_switchboard_background
+field_name: field_switchboard_background
+entity_type: paragraph
+bundle: switchboard
+label: 'Background Color'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: dark
+default_value_callback: ''
+settings: {  }
+field_type: list_string

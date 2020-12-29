@@ -2,6 +2,9 @@ style:
   css:
     theme:
       assets/css/atrium.style.css: {}
+      https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap:
+        type: external
+        minified: true
   js:
     assets/js/atrium.script.js: {}
   dependencies:
@@ -12,9 +15,9 @@ style:
 patternlab:
   css:
     theme:
-      ../../../libraries/courtyard/public/css/styles-srl.min.css: {}
+      ../../../libraries/courtyard-artifact/public/css/styles-srl.min.css: {}
   js:
-    ../../../libraries/courtyard/public/js/scripts.min.js: { minified: true, preprocess: false }
+    ../../../libraries/courtyard-artifact/public/js/scripts.min.js: { minified: true, preprocess: false }
 
 datefinder:
   css:

@@ -1,0 +1,36 @@
+{% include '@organisms/global/header-base/header-base.twig' with {
+  header_base: {
+    height_variant: 'basic',
+    background_variant: 'inverted',
+    skip: 'Skip to main content',
+    global_bar: {
+      logo_text: {
+        title: 'Judicial Branch of California',
+        url: 'https://www.courts.ca.gov',
+      },
+      logo: '/libraries/courtyard-artifact/public/images/logos/jcc-logo-branch-text-white.svg',
+      secondary_nav: {
+        items: menu_hat,
+      },
+    },
+    title: 'Self-Help Guide Home',
+    logo: '',
+    menu_icon: {
+      name: 'menu',
+      title: "Menu",
+      decorative: false,
+    },
+    close_icon: {
+      name: 'close',
+      title: "close",
+      decorative: false,
+    },
+    primary_nav: {
+      mega: false,
+      links: menu_main,
+    },
+    secondary_nav: {
+      items: menu_hat,
+    },
+  }
+} %}

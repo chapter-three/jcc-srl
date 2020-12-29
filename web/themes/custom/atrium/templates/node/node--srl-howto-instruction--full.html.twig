@@ -5,16 +5,12 @@
       {
         url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
         label: node.field_parent.entity.label,
-      },
-      {
-        label: label,
       }
     ] %}
   {% endif %}
-
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
-      column_variant: 'has-two-columns-threequarter',
+      column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
       breadcrumbs: breadcrumbs ? {
         show_back_button: true,
         items: breadcrumbs,
@@ -22,6 +18,7 @@
       title: content.field_title_display|render ? content.field_title_display : label,
       body: content.field_column_first|render ? content.field_column_first : '',
       column_content_right: content.field_column_second|render ? content.field_column_second : '',
+      banner_image: node.field_image.0 ? file_url(node.field_image.0.entity.field_media_image.entity.uri.value),
     }
   } %}
 
@@ -35,15 +32,25 @@
     </div>
   {% endif %}
 
-  {% set right_column = '' %}
-  {% if content.field_blocks|render or content.field_forms|render %}
-    {% set right_column %}
+  {% set right_column %}
+    <div class="jcc-share--spacer"></div>
+
+    {% if content.field_blocks|render or content.field_forms|render %}
       {{ content.field_blocks }}
       {{ content.field_forms }}
-    {% endset %}
-  {% endif %}
+    {% endif %}
+  {% endset %}
 
   {% if content.body|render or right_column %}
+    <div class="jcc-share__container">
+      {% include '@organisms/sections/share/share.twig' with {
+        share: {
+          email_modal: drupal_entity('webform', 'share_this_page'),
+          text_modal: drupal_entity('webform', 'mark_my_place_text_message')
+        }
+      } only %}
+    </div>
+
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
         column_content_left: content.body|render ? content.body : '',
@@ -62,6 +69,7 @@
     'field_howto_tabs',
     'field_howto_tabs_title',
     'field_parent',
-    'field_title_display'
+    'field_title_display',
+    'field_image'
   )}}
 {% endblock %}

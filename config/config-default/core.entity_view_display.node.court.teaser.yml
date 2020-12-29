@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
+    - field.field.node.court.field_watchers
     - field.field.node.court.field_zip_codes
     - node.type.court
   module:
@@ -33,6 +34,7 @@ hidden:
   field_main_link: true
   field_parties: true
   field_secondary_link: true
+  field_watchers: true
   field_zip_codes: true
   langcode: true
   search_api_excerpt: true
