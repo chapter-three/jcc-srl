@@ -256,6 +256,9 @@
             },
             "drupal/webform": {
                 "By default, do not save submissions.": "patches/disable-results-by-default.patch"
+            },
+            "drupal/entity_clone": {
+                "Parent ID of original paragraph assigned to cloned node id.": "https://www.drupal.org/files/issues/2020-12-11/entity_clone-corrupted-paragraph-cloning-3060223-35.patch"
             }
         },
         "installer-types": [
