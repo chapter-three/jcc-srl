@@ -124,6 +124,7 @@ module:
   simple_block: 0
   srl_court_finder: 0
   srl_errors: 0
+  srl_ga_gtm: 0
   srl_updates: 0
   srl_webform: 0
   system: 0
