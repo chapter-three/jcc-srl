@@ -204,11 +204,11 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: _default
+      from_mail: noreply@courtinfo.ca.gov
       from_options: {  }
       from_name: _default
       subject: 'Mark my place'
-      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>\n<p>{{ webform_token('[current-page:url]', webform_submission) }}</p>\n"
+      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>\r\n<p>{{ webform_token('[current-page:url]', webform_submission) }}</p>\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true

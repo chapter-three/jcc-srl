@@ -25,4 +25,10 @@ footer {
   .path-frontpage & {
     display: none;
   }
+
+  .jcc-nav-secondary__menu {
+    @include at-media(desktop) {
+      display: none;
+    }
+  }
 }

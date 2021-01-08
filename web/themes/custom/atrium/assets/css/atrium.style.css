@@ -1278,6 +1278,11 @@ footer {
 .path-frontpage .jcc-header-base {
   display: none;
 }
+@media all and (min-width: 64em) {
+  .jcc-header-base .jcc-nav-secondary__menu {
+    display: none;
+  }
+}
 
 .caption {
   margin-bottom: 1rem;

@@ -1,0 +1,191 @@
+uuid: b14da498-a2cc-46cc-9a6c-adef0c5ca4e2
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 28
+template: false
+archive: false
+id: eviction_wayfinder
+title: 'Eviction Wayfinder'
+description: ''
+category: ''
+elements: "did_you_receive_a_complaint_or_a_notice:\n  '#type': webform_wizard_page\n  '#title': 'What kind of document did you receive from your landlord?'\n  '#hide_submit': true\n  processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>For a landlord to evict you legally, they have to first give you a notice to move out or give you a chance to fix the problem (like paying the rent). This is called an <strong>eviction notice.&nbsp;</strong></p>\n      \n      <p>&nbsp;</p>\n      \n      <p>If you do not do what the notice asks before the time in the notice runs out, the landlord can file a case against you in court. When this case is filed, the landlord will give you what is called a <strong>Summons and Complaint</strong>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Have you received an <strong>eviction notice</strong> or a <strong>Summons and Complaint</strong>?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  what_kind_of_document_have_you_received_from_your_landlord_:\n    '#type': radios\n    '#title': 'What kind of document have you received from your landlord?'\n    '#options':\n      ev: 'An eviction notice'\n      sc: 'A Summons and Complaint'\n      evsc: 'Both an eviction notice and a Summons and Complaint'\n      dontknow: 'I''m not sure what kind of document I got'\n    '#options__properties': ''\nwhat_does_it_say_at_the_top_of_the_document_:\n  '#type': webform_wizard_page\n  '#title': 'What does it say at the top of the document?'\n  '#states':\n    visible:\n      ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n        value: dontknow\n  processed_text_01:\n    '#type': processed_text\n    '#text': |\n      <p>Select the option that is closest to the title of your document.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  what_does_the_document_say:\n    '#type': radios\n    '#title': 'What does it say at the top of the document?'\n    '#options':\n      rent: 'Notice to Pay Rent or Quit'\n      covenants: 'Notice to Perform Covenants or Quit'\n      quit: 'Notice to Quit'\n      summons: Summons\n      sum130: SUM-130\n      complaint: 'Complaint Unlawful Detainer'\n      ud100: UD-100\n      dontknow: 'I don''t see any of these on the document'\n    '#options__properties': ''\ndoes_the_document_say_you_are_being_sued_or_you_have_been_sued_:\n  '#type': webform_wizard_page\n  '#title': 'Does the document say you are being sued or you have been sued?'\n  '#states':\n    visible:\n      ':input[name=\"what_does_the_document_say\"]':\n        value: dontknow\n  'yes':\n    '#type': radios\n    '#title': 'Yes'\n    '#options': yes_no\n    '#options__properties': ''\ndoes_the_title_of_the_document_include_a_number_of_days_:\n  '#type': webform_wizard_page\n  '#title': 'Does the title of the document include a number of days? '\n  '#states':\n    visible:\n      ':input[name=\"what_does_the_document_say\"]':\n        value: dontknow\n  processed_text_02:\n    '#type': processed_text\n    '#text': |\n      <p>For example, \"60 Day Notice to Pay Rent or Quit\" or \"Three Day Notice?\"</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  yesnodates:\n    '#type': radios\n    '#title': 'Yes'\n    '#options': yes_no\n    '#options__properties': ''\nbased_on_your_answers:\n  '#type': webform_wizard_page\n  '#title': 'Based on your answers'\n  processed_text_03:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"yes\"]':\n            value: 'No'\n        - or\n        - ':input[name=\"yesnodates\"]':\n            value: 'yes'\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: covenants\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: rent\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: quit\n        - or\n        - ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n            value: ev\n    '#text': |\n      <p>You have an <strong>Eviction Notice</strong>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This means that the landlord is telling you that you have to take some action to fix a problem or you will have to move out. The problem could be that you are behind on rent, or there is some damage to the home.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>There are different types of eviction notices for different situations. For example, if the landlord is telling you to leave because you haven't paid rent, they will usually give you a \"3-Day Notice to Pay Rent or Quit.\"&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>When you have been given an Eviction Notice, <strong>you have options.</strong></p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/eviction-notice-options\">Explore your options</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  summons_complaint_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: sum130\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: summons\n        - or\n        - ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n            value: sc\n        - or\n        - ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n            value: evsc\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: complaint\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: ud100\n        - or\n        - ':input[name=\"yes\"]':\n            value: 'Yes'\n    '#text': |\n      <p>You received a Summons and Complaint</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>[Description to come]</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>You have options for what to do.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/summons-and-complaint-options\">Explore your options</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: true
+  results_disabled_ignore: true
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

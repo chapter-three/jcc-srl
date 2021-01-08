@@ -1,0 +1,13 @@
+format: basic_html
+name: 'JCC SRL'
+mail: webdev@jud.ca.gov
+linkonly: false
+textonly: false
+sitestyle: true
+simple_address: false
+preserve_class: false
+advanced:
+  incoming: false
+  key: qe8vA9DycP0d_6IIAXih0Av_kUQxobPXFzleb4r8DIU
+_core:
+  default_config_hash: rLKGzzC9TqjbEZiBoiyMpOSyZgldADa5SzvbA2gQDxE
