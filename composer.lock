@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "228ddd74d12cf6fca2e739f4a9c504f7",
+    "content-hash": "99e15a9679c9f1fc791d2591236868d7",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4256,6 +4256,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Parent ID of original paragraph assigned to cloned node id.": "https://www.drupal.org/files/issues/2020-12-11/entity_clone-corrupted-paragraph-cloning-3060223-35.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8461,16 +8464,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.0.224",
+            "version": "0.0.225",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "0013b96e51c0ea94157b820f379437c20e8620d5"
+                "reference": "3eccb79961de03d9c240dff052858618e19b98f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/0013b96e51c0ea94157b820f379437c20e8620d5",
-                "reference": "0013b96e51c0ea94157b820f379437c20e8620d5",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/3eccb79961de03d9c240dff052858618e19b98f9",
+                "reference": "3eccb79961de03d9c240dff052858618e19b98f9",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8485,7 +8488,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2020-12-22T23:08:46+00:00"
+            "time": "2021-01-07T18:57:15+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
