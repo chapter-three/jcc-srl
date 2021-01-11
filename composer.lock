@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5e4794da59c5fa3c313bd713c6620bd",
+    "content-hash": "5fcdb85d4e5a134ee48643bd9530ec5a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3268,7 +3268,8 @@
                 "patches_applied": {
                     "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch",
                     "Media embed javascript error": "https://www.drupal.org/files/issues/2019-12-10/3097338-47.patch",
-                    "Media library edit": "https://www.drupal.org/files/issues/2021-01-04/3168868-9.patch"
+                    "Media library edit": "https://www.drupal.org/files/issues/2021-01-04/3168868-9.patch",
+                    "Media name reverts to default": "https://www.drupal.org/files/issues/2020-10-28/3157183_20.patch"
                 }
             },
             "autoload": {
