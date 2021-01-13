@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "639c9c512484a8ca41120df9a1922585",
+    "content-hash": "5fcdb85d4e5a134ee48643bd9530ec5a",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3267,7 +3267,9 @@
                 },
                 "patches_applied": {
                     "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch",
-                    "Media embed javascript error": "https://www.drupal.org/files/issues/2019-12-10/3097338-47.patch"
+                    "Media embed javascript error": "https://www.drupal.org/files/issues/2019-12-10/3097338-47.patch",
+                    "Media library edit": "https://www.drupal.org/files/issues/2021-01-04/3168868-9.patch",
+                    "Media name reverts to default": "https://www.drupal.org/files/issues/2020-10-28/3157183_20.patch"
                 }
             },
             "autoload": {
@@ -4256,6 +4258,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Parent ID of original paragraph assigned to cloned node id.": "https://www.drupal.org/files/issues/2020-12-11/entity_clone-corrupted-paragraph-cloning-3060223-35.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8391,16 +8396,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.0.213",
+            "version": "0.0.225",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "dd8e958253c4cab063df1f7312a51cb20b03f475"
+                "reference": "3eccb79961de03d9c240dff052858618e19b98f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/dd8e958253c4cab063df1f7312a51cb20b03f475",
-                "reference": "dd8e958253c4cab063df1f7312a51cb20b03f475",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/3eccb79961de03d9c240dff052858618e19b98f9",
+                "reference": "3eccb79961de03d9c240dff052858618e19b98f9",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8415,7 +8420,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2020-12-09T00:35:30+00:00"
+            "time": "2021-01-07T18:57:15+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
