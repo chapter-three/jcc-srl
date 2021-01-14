@@ -110,9 +110,12 @@
     } %}
   {% endif %}
 
-  {% set column_content_left = {field_media: content.field_media, body: content.body} %}
+  {% set column_content_left %}
+    {{ content.field_media  }}
+    {{ content.body }}
+  {% endset %}
 
-  {% if column_content_left|render %}
+  {% if column_content_left|render|striptags|trim %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
         column_content_left: column_content_left
