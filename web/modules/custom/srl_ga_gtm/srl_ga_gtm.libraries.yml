@@ -1,3 +1,7 @@
+drupal-form-submit-track:
+  js:
+    src/js/drupalFormSubmitTrack.js: {}
+
 hero-card-jump-nav-click-track:
   js:
     src/js/heroCardJumpNavClickTrack.js: {}
@@ -5,4 +9,3 @@ hero-card-jump-nav-click-track:
 locate-section-click-track:
   js:
     src/js/locateSectionClickTrack.js: {}
-
