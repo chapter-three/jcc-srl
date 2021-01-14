@@ -31,10 +31,12 @@
       function addEventToDataLayer(event) {
         const form = this.closest('form');
         const slug = form ? slugify(form.getAttribute('action')) : null;
+        const input = form.querySelector('input#input-type-text').value;
 
         // Push selected option to dataLayer for Google Analytics/Tag Manager.
         window.dataLayer.push({
           event: 'gtm.click',
+          'gtm.value': input,
           'gtm.elementId': slug
         });
       }

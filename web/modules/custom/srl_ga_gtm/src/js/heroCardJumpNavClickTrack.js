@@ -44,8 +44,8 @@
           category = parent.querySelector('select.jcc-cascading-jump-menu__parent');
           select = parent.querySelector('select.jcc-cascading-jump-menu__child');
         }
-        const selectedCategory = category.options && category.options[category.selectedIndex] ? category.options[category.selectedIndex].value : null;
-        const selectedElement = select.options && select.options[select.selectedIndex] ? select.options[select.selectedIndex].value : null;
+        const selectedCategory = category.options && category.options[category.selectedIndex] ? category.options[category.selectedIndex].text : null;
+        const selectedElement = select.options && select.options[select.selectedIndex] ? select.options[select.selectedIndex].text : null;
 
         // Push selected option to dataLayer for Google Analytics/Tag Manager.
         window.dataLayer.push({
