@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: default
-      label: 'Case Overview - Landscape (tiles bottom: 3 column)'
+      label: 'Tiles bottom: 3 column'
     -
       value: next-phase
-      label: 'Next Steps (tiles Bottom: 4 column)'
+      label: 'Tiles Bottom: 4 Column'
     -
       value: next-right-column
       label: 'Tiles Right'

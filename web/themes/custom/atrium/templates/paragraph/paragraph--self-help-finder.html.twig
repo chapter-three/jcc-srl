@@ -10,6 +10,9 @@
   {# This paragraph's parent (either a node or another paragraph) #}
   {% set parent = paragraph._referringItem.parent.parent.entity %}
 
+  {# Attach JS for GA/GTM tracking of the selected jump-nav item on click. #}
+  {{ attach_library('srl_ga_gtm/locate-section-click-track') }}
+
   {% if paragraph.field_self_help_finder_type.0.value == 'basic' %}
     {# Homepage search #}
     {% include '@organisms/sections/locate-section/locate-section.twig' with {

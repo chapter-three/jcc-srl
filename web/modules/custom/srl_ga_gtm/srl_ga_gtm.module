@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for SRL GA GTM module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter.
+ */
+function srl_ga_gtm_form_alter(&$form, FormStateInterface $form_state) {
+  // Add add unique class to submit buttons to assist form submission tracking.
+  if (!empty($form['submit'])) {
+    $form['#attached']['library'][] = 'srl_ga_gtm/drupal-form-submit-track';
+    $form['submit']['#attributes']['class'][] = 'gtm-submit';
+  }
+  if (!empty($form['actions']['submit'])) {
+    $form['#attached']['library'][] = 'srl_ga_gtm/drupal-form-submit-track';
+    $form['actions']['submit']['#attributes']['class'][] = 'gtm-submit';
+  }
+}
+

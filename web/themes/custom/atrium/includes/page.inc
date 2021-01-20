@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -65,6 +66,17 @@ function _atrium_get_menutree($menu_name) {
   ];
   $tree = $menu_tree_service->transform($tree, $manipulators);
 
+  // Get the current node's `case type` taxonomy term(s) to set the
+  // active_trail on menu items.
+  $node_tids = [];
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (isset($node)) {
+    $terms = $node->get('field_case_types')->referencedEntities();
+    foreach ($terms as $term) {
+      $node_tids[] = $term->id();
+    }
+  }
+
   $menu_items = [];
   foreach ($tree as $item) {
     if ($item->link->isEnabled()) {
@@ -77,16 +89,32 @@ function _atrium_get_menutree($menu_name) {
       if ($item->hasChildren) {
         foreach ($item->subtree as $child) {
           if ($child->link->isEnabled()) {
-            $child_title = $child->link->getTitle();
-            $child_url_obj = $child->link->getUrlObject();
+            /** @var \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent $link */
+            $link = $child->link;
+
+            // Set the active_trail if this menu item has the same term as the
+            // current node.
+            $active_trail = FALSE;
+            if ($link instanceof MenuLinkContent) {
+              $uuid = $link->getDerivativeId();
+              $entity = \Drupal::service('entity.repository')->loadEntityByUuid('menu_link_content', $uuid);
+              $tid = $entity->field_case_type[0]->target_id ?? NULL;
+              if (in_array($tid, $node_tids)) {
+                $active_trail = TRUE;
+              }
+            }
+
+            $child_title = $link->getTitle();
+            $child_url_obj = $link->getUrlObject();
             $child_url = $child_url_obj->toString();
-            // Using text/name & href/url ↓ due to inconsistencies in
+            // Using both text/name & href/url ↓ due to inconsistencies in
             // Pattern Lab components.
             $children[] = [
               'text' => $child_title,
               'name' => $child_title,
               'href' => $child_url,
               'url' => $child_url,
+              'is_current' => $active_trail,
             ];
           }
         }

@@ -25,6 +25,7 @@
 .vscode
 .favorites.json
 *.code-workspace
+.DS_Store
 
 # Ignore .env files as they are personal
 /.env

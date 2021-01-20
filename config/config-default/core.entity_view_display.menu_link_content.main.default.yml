@@ -1,0 +1,28 @@
+uuid: cccd74f3-4209-4019-872f-06b9fef4d0dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_case_type
+    - system.menu.main
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  children:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_case_type:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
