@@ -20,5 +20,9 @@ function srl_ga_gtm_form_alter(&$form, FormStateInterface $form_state) {
     $form['#attached']['library'][] = 'srl_ga_gtm/drupal-form-submit-track';
     $form['actions']['submit']['#attributes']['class'][] = 'gtm-submit';
   }
+
+  if ($form['#id'] == 'views-exposed-form-find-courts-self-help-page') {
+    $form['#attached']['library'][] = 'srl_ga_gtm/locate-section-click-track';
+  }
 }
 

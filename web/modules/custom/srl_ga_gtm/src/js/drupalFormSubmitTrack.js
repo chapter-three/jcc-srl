@@ -30,7 +30,11 @@
       // Attach tracker to gtm-submit buttons.
       const buttons = document.querySelectorAll('.gtm-submit');
       for (const button of buttons) {
-        button.addEventListener('click', addEventToDataLayer);
+        const tracked = button.classList.contains('js-submit-track');
+        if (!tracked) {
+          button.classList.add('js-submit-track');
+          button.addEventListener('click', addEventToDataLayer);
+        }
       }
     }
   }
