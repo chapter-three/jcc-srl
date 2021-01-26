@@ -58,7 +58,11 @@
       // Attach tracker to jump-menu buttons.
       const jumpButtons = document.querySelectorAll('.jcc-jump-menu button, .jcc-cascading-jump-menu button');
       for (const button of jumpButtons) {
-        button.addEventListener('click', addEventToDataLayer);
+        const tracked = button.classList.contains('js-submit-track');
+        if (!tracked) {
+          button.classList.add('js-submit-track');
+          button.addEventListener('click', addEventToDataLayer);
+        }
       }
     }
   }

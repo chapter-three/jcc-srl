@@ -31,7 +31,7 @@
       function addEventToDataLayer(event) {
         const form = this.closest('form');
         const slug = form ? slugify(form.getAttribute('action')) : null;
-        const input = form.querySelector('input#input-type-text').value;
+        const input = form.querySelectorAll('input#input-type-text, input#edit-s')[0].value;
 
         // Push selected option to dataLayer for Google Analytics/Tag Manager.
         window.dataLayer.push({
@@ -42,9 +42,13 @@
       }
 
       // Attach tracker to locate-section button.
-      const searchButtons = document.querySelectorAll('.jcc-locate-section button');
+      const searchButtons = document.querySelectorAll('.jcc-locate-section button, #views-exposed-form-find-courts-self-help-page .form-submit');
       for (const button of searchButtons) {
-        button.addEventListener('click', addEventToDataLayer);
+        const tracked = button.classList.contains('js-locate-track');
+        if (!tracked) {
+          button.classList.add('js-locate-track');
+          button.addEventListener('click', addEventToDataLayer);
+        }
       }
     }
   }
