@@ -1,0 +1,11 @@
+# Custom module library for general purposes.
+a2p:
+  js:
+    https://bot.vcsc.courts.ca.gov/js/a2p.js: {}
+
+chatbot:
+  js:
+    js/chatbot.js: {}
+  css:
+    component:
+      https://bot.vcsc.courts.ca.gov/styles/input.css: {}
