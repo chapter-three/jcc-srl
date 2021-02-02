@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.postcard
     - paragraphs.paragraphs_type.step_container
     - paragraphs.paragraphs_type.switchboard
+    - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.timeline
     - paragraphs.paragraphs_type.timeline_dual
   module:
@@ -47,6 +48,7 @@ settings:
       switchboard: switchboard
       timeline: timeline
       timeline_dual: timeline_dual
+      text: text
     target_bundles_drag_drop:
       accordion:
         weight: -25
@@ -57,9 +59,18 @@ settings:
       card:
         weight: -24
         enabled: false
+      card_form:
+        weight: 29
+        enabled: false
       card_list:
         enabled: true
         weight: -34
+      cascading_menu:
+        weight: 31
+        enabled: false
+      cascading_menu_item:
+        weight: 32
+        enabled: false
       code_section:
         weight: -23
         enabled: false
@@ -72,9 +83,21 @@ settings:
       flex:
         enabled: true
         weight: -31
+      hero_cards:
+        weight: 37
+        enabled: false
+      links:
+        weight: 38
+        enabled: false
+      menu_links:
+        weight: 39
+        enabled: false
       postcard:
         enabled: true
         weight: -30
+      self_help_finder:
+        weight: 41
+        enabled: false
       step:
         weight: -22
         enabled: false
@@ -84,6 +107,9 @@ settings:
       switchboard:
         enabled: true
         weight: -28
+      text:
+        enabled: true
+        weight: 45
       tile:
         weight: -21
         enabled: false

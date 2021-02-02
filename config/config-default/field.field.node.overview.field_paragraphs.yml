@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.overview
     - paragraphs.paragraphs_type.switchboard
+    - paragraphs.paragraphs_type.text
   module:
     - datalayer
     - entity_reference_revisions
@@ -29,6 +30,7 @@ settings:
     negate: 0
     target_bundles:
       switchboard: switchboard
+      text: text
     target_bundles_drag_drop:
       accordion:
         weight: 18
@@ -39,8 +41,17 @@ settings:
       card:
         weight: 20
         enabled: false
+      card_form:
+        weight: 29
+        enabled: false
       card_list:
         weight: 21
+        enabled: false
+      cascading_menu:
+        weight: 31
+        enabled: false
+      cascading_menu_item:
+        weight: 32
         enabled: false
       code_section:
         weight: 22
@@ -54,8 +65,20 @@ settings:
       flex:
         weight: 25
         enabled: false
+      hero_cards:
+        weight: 37
+        enabled: false
+      links:
+        weight: 38
+        enabled: false
+      menu_links:
+        weight: 39
+        enabled: false
       postcard:
         weight: 26
+        enabled: false
+      self_help_finder:
+        weight: 41
         enabled: false
       step:
         weight: 27
@@ -66,6 +89,9 @@ settings:
       switchboard:
         enabled: true
         weight: 29
+      text:
+        enabled: true
+        weight: 45
       tile:
         weight: 30
         enabled: false
