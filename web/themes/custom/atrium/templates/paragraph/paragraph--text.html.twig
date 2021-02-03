@@ -39,11 +39,11 @@
  */
 #}
 
-<div class="jcc-text-section grid-container-widescreen">
-  <div class="jcc-text-section__heading margin-bottom-4">
-    <h2 class="h-dash text-primary-dark">{{ content.field_heading }}</h2>
-  </div>
-  <div class="jcc-text-section__body usa-prose">
-    {{ content.field_body }}
-  </div>
-</div>
+{% include '@organisms/sections/text-section/text-section.twig' with {
+  text_section: {
+    headergroup: {
+      title: content.field_heading
+    },
+    column_content_left: content.field_body
+  }
+} only %}
