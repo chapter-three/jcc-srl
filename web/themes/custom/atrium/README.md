@@ -6,6 +6,10 @@
 
 ## About
 
+Requirements:
+
+  - Node 12 - there's an `.nvmrc` file.
+
 Atrium is a custom Drupal theme developed for the JCC SRL project, which uses [Courtyard](https://github.com/judicialcouncilofcalifornia/courtyard), a Pattern Lab instance.
 
 - Courtyard is installed via Composer as a [Drupal Library](https://www.drupal.org/docs/8/theming/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme) to `web/libraries/courtyard-artifact`. See documentation for [updating](#updating-courtyard-within-drupal) as needed.

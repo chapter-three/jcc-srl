@@ -41,3 +41,7 @@ submit-scroll:
 find-courts:
   js:
     assets/js/find-courts.js: {}
+
+js-back-button:
+  js:
+    assets/js/jsBackButton.js: {}
