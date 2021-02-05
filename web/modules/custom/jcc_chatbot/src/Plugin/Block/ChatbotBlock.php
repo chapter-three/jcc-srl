@@ -25,10 +25,7 @@ class ChatbotBlock extends BlockBase {
     $build['content'] = [
       '#type' => 'inline_template',
       '#template' => '
-        <select class="js-chatbot-language" onchange="postStateToChatBot2(this)">
-          <option value="EN">English</option>
-          <option value="ES">Español</option>
-        </select>
+        <div id="jcc-chatbot"></div>
       ',
     ];
     $build['content']['#attached']['library'][] = 'jcc_chatbot/chatbot';

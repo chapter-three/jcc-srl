@@ -7,7 +7,7 @@
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.6.0
+USWDS 2.9.0
 ----------------------------------------
 GENERAL SETTINGS
 ----------------------------------------
@@ -74,13 +74,13 @@ Icons
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.6.0
+USWDS 2.9.0
 ----------------------------------------
 TYPOGRAPHY SETTINGS
 ----------------------------------------
 Read more about settings and
 USWDS typography tokens in the documentation:
-https://designsystem.digital.gov/design-tokens/typography
+https://designsystem.digital.gov/design-tokens/typesetting/overview/
 ----------------------------------------
 */
 /*
@@ -361,7 +361,7 @@ none:    none
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.6.0
+USWDS 2.9.0
 ----------------------------------------
 COLOR SETTINGS
 ----------------------------------------
@@ -394,7 +394,7 @@ General colors
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.6.0
+USWDS 2.9.0
 ----------------------------------------
 SPACING SETTINGS
 ----------------------------------------
@@ -464,7 +464,7 @@ Site
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.6.0
+USWDS 2.9.0
 ----------------------------------------
 UTILITIES SETTINGS
 ----------------------------------------
@@ -512,7 +512,7 @@ Values
 ========================================
 ========================================
 ----------------------------------------
-USWDS 2.6.0
+USWDS 2.9.0
 ----------------------------------------
 COMPONENT SETTINGS
 ----------------------------------------
@@ -838,6 +838,75 @@ functions and mixins.
 */
 /*
 ----------------------------------------
+pow()
+----------------------------------------
+Raises a unitless number to the power
+of another unitless number
+
+Includes helper functions
+----------------------------------------
+*/
+/*
+----------------------------------------
+decompose()
+----------------------------------------
+Convert a color token into into a list
+of form [family], [grade], [variant]
+
+Vivid variants return "vivid" as the
+variant.
+
+If neither grade nor variant exists,
+returns 'null'
+----------------------------------------
+*/
+/*
+----------------------------------------
+test-colors()
+----------------------------------------
+Check to see if all system colors
+fall between the proper relative
+luminance range for their grade.
+
+Has a couple quirks, as the luminance()
+function returns slightly different
+results than expected.
+----------------------------------------
+*/
+/*
+----------------------------------------
+str-split()
+----------------------------------------
+Split a string at a given separator
+and convert into a lisrt of substrings
+----------------------------------------
+*/
+/*
+----------------------------------------
+str-replace()
+----------------------------------------
+Replace any substring with another
+string
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-color-token-assignment()
+----------------------------------------
+Get the system token equivalent of any
+theme color token
+----------------------------------------
+*/
+/*
+----------------------------------------
+get-color-grade()
+----------------------------------------
+Derive the grade equivalent any color,
+even non-token colors
+----------------------------------------
+*/
+/*
+----------------------------------------
 color()
 ----------------------------------------
 Derive a color from a color shortcode
@@ -1041,6 +1110,11 @@ fonts.
 */
 /*
 ----------------------------------------
+Luminance ranges
+----------------------------------------
+*/
+/*
+----------------------------------------
 Colors
 ----------------------------------------
 */
@@ -1104,6 +1178,11 @@ Collect project cap heights
 */
 /*
 ----------------------------------------
+Theme color families and grades
+----------------------------------------
+*/
+/*
+----------------------------------------
 Theme color map
 ----------------------------------------
 */
@@ -1135,6 +1214,11 @@ Grid
 /*
 ----------------------------------------
 Aspect Ratios
+----------------------------------------
+*/
+/*
+----------------------------------------
+Easing
 ----------------------------------------
 */
 /*
@@ -1251,28 +1335,6 @@ body {
 
 .dialog-off-canvas-main-canvas {
   height: 100%;
-}
-
-.page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-}
-
-main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-}
-
-footer {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 .path-frontpage .jcc-header-base {
@@ -1605,35 +1667,6 @@ li.pager__item__ellipsis {
   position: relative;
 }
 
-.jcc-feedback {
-  position: absolute;
-  bottom: -40px;
-  max-width: 75%;
-  opacity: 0;
-  right: 0;
-  z-index: 10000;
-}
-@media all and (min-width: 40em) {
-  .jcc-feedback {
-    min-width: 310px;
-    right: 20px;
-    width: auto;
-  }
-}
-@media all and (min-width: 64em) {
-  .jcc-feedback {
-    bottom: 20px;
-  }
-}
-.jcc-feedback[fixed] {
-  position: fixed;
-  bottom: 0;
-}
-@media all and (min-width: 40em) {
-  .jcc-feedback[fixed] {
-    bottom: 20px;
-  }
-}
 .jcc-feedback[visible] {
   opacity: 1;
 }
@@ -1690,7 +1723,6 @@ li.pager__item__ellipsis {
   text-align: right;
 }
 .jcc-feedback .jcc-feedback__trigger-container {
-  display: block;
   text-align: right;
 }
 .jcc-feedback .jcc-feedback__trigger-container button {
@@ -1703,6 +1735,55 @@ li.pager__item__ellipsis {
   height: 2rem;
   vertical-align: middle;
   width: 2rem;
+}
+
+.region--drawer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 0;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  bottom: -40px;
+  right: 0;
+  z-index: 10000;
+}
+@media all and (min-width: 40em) {
+  .region--drawer {
+    min-width: 310px;
+    right: 20px;
+    width: auto;
+  }
+}
+@media all and (min-width: 64em) {
+  .region--drawer {
+    bottom: 20px;
+  }
+}
+.region--drawer[fixed] {
+  position: fixed;
+  margin-bottom: 0;
+  margin-right: 0;
+  bottom: 0;
+}
+@media all and (min-width: 40em) {
+  .region--drawer[fixed] {
+    bottom: 20px;
+  }
+}
+.region--drawer__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.region--drawer__inner > * + * {
+  margin-left: 0.75rem;
 }
 
 .jcc-share__container {

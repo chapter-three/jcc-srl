@@ -75,4 +75,5 @@ mix
   .js("src/js/submit-scroll.js", "js")
   .js("src/js/howtotabs.js", "js")
   .js("src/js/jump-nav.js", "js")
-  .js("src/js/find-courts.js", "js");
+  .js("src/js/find-courts.js", "js")
+  .js("src/js/components/drawer.js", "js");

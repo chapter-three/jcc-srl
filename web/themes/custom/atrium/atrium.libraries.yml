@@ -41,3 +41,7 @@ submit-scroll:
 find-courts:
   js:
     assets/js/find-courts.js: {}
+
+drawer:
+  js:
+    assets/js/drawer.js: {}

@@ -3,32 +3,6 @@
 }
 
 .jcc-feedback {
-  @include u-position(absolute);
-  bottom: -40px;
-  max-width: 75%;
-  opacity: 0;
-  right: 0;
-  z-index: 10000;
-
-  @include at-media(tablet) {
-    min-width: 310px;
-    right: 20px;
-    width: auto;
-  }
-
-  @include at-media(desktop) {
-    bottom: 20px;
-  }
-
-  &[fixed] {
-    @include u-position(fixed);
-    bottom: 0;
-
-    @include at-media(tablet) {
-      bottom: 20px;
-    }
-  }
-
   &[visible] {
     opacity: 1;
   }
@@ -91,7 +65,6 @@
   }
 
   .jcc-feedback__trigger-container {
-    display: block;
     text-align: right;
 
     button {

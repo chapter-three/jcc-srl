@@ -138,43 +138,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var feedbackConfirmed = function feedbackConfirmed() {
         return $feedback_confirmation.length > 0;
-      };
+      }; // Allow user to dismiss completely if confirmation is visible.
 
-      var isScrolledToBottom = function isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) {
-        var $windowHeightHalf = $windowHeight / 2;
-        var $scrollDiff = $scrollPosition + $windowHeight - $windowHeightHalf;
-        var $pageHeightHalf = $footPosition / 2;
-        return $scrollDiff >= $pageHeightHalf;
-      };
-
-      var pageIsShorterThanWindow = function pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition) {
-        var $scrollDiff = $footPosition - $windowHeight;
-        return $scrollDiff > $scrollPosition;
-      };
-
-      var isSmallScreen = function isSmallScreen() {
-        var mql = window.matchMedia('(max-width: 40em)');
-        return mql.matches ? true : false;
-      }; // Scroll.
-
-
-      $window.on('scroll', function () {
-        var $scrollPosition = $window.scrollTop();
-        var $windowHeight = $window.height();
-        var $footPosition = $('.page__footer').offset().top;
-
-        if (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen() || isSmallScreen() == false) {
-          $feedback_container.attr('visible', 'visible');
-        } else {
-          $feedback_container.removeAttr('visible');
-        }
-
-        if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
-          $feedback_container.attr('fixed', 'fixed');
-        } else {
-          $feedback_container.removeAttr('fixed');
-        }
-      }); // Allow user to dismiss completely if confirmation is visible.
 
       if (feedbackConfirmed() == true) {
         if (feedbackDismissPath() == true) {
@@ -276,8 +241,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/rob/work/c3/jcc/srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
-module.exports = __webpack_require__(/*! /Users/rob/work/c3/jcc/srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
+__webpack_require__(/*! /Users/calvintyndall/Sites/_c3/jcc/srl/web/themes/custom/atrium/src/js/atrium.script.js */"./src/js/atrium.script.js");
+module.exports = __webpack_require__(/*! /Users/calvintyndall/Sites/_c3/jcc/srl/web/themes/custom/atrium/src/sass/atrium.style.scss */"./src/sass/atrium.style.scss");
 
 
 /***/ })
