@@ -86,86 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/components/drawer.js":
-/*!*************************************!*\
-  !*** ./src/js/components/drawer.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function ($) {
-  "use strict";
-
-  Drupal.behaviors.drawer = {
-    attach: function attach() {
-      // Elements.
-      var $window = $(window);
-      var $feedback_trigger = $('[data-feedback^="trigger"]');
-      var $feedback_container = $('[data-feedback="container"]');
-      var $drawer = $('.region--drawer');
-      var $feedback_dialog = $('[data-feedback="dialog"]');
-
-      var isScrolledToBottom = function isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) {
-        var $windowHeightHalf = $windowHeight / 2;
-        var $scrollDiff = $scrollPosition + $windowHeight - $windowHeightHalf;
-        var $pageHeightHalf = $footPosition / 2;
-        return $scrollDiff >= $pageHeightHalf;
-      };
-
-      var pageIsShorterThanWindow = function pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition) {
-        var $scrollDiff = $footPosition - $windowHeight;
-        return $scrollDiff > $scrollPosition;
-      };
-
-      var isSmallScreen = function isSmallScreen() {
-        var mql = window.matchMedia('(max-width: 40em)');
-        return mql.matches ? true : false;
-      }; // Scroll.
-
-
-      $window.on('scroll', function () {
-        var $scrollPosition = $window.scrollTop();
-        var $windowHeight = $window.height();
-        var $footPosition = $('footer').offset().top;
-
-        if (isScrolledToBottom($scrollPosition, $windowHeight, $footPosition) && isSmallScreen() || isSmallScreen() == false) {
-          $drawer.attr('visible', 'visible');
-        } else {
-          $drawer.removeAttr('visible');
-        }
-
-        if (pageIsShorterThanWindow($scrollPosition, $windowHeight, $footPosition)) {
-          $drawer.attr('fixed', 'fixed');
-        } else {
-          $drawer.removeAttr('fixed');
-        }
-      }); // Click.
-
-      $feedback_trigger.on("click", function (e) {
-        e.preventDefault;
-
-        if ($feedback_dialog.attr("open")) {
-          $('#jcc-chatbot').hide();
-        } else {
-          $('#jcc-chatbot').show();
-        }
-      }); // Hide when chatbot opens.
-
-      window.addEventListener('chat-open', function (e) {
-        $feedback_trigger.hide();
-        $feedback_container.hide();
-      }, false); // Show when chatbot closes.
-
-      window.addEventListener('chat-close', function (e) {
-        $feedback_trigger.show();
-        $feedback_container.show();
-      }, false);
-    }
-  };
-})(jQuery, Drupal);
-
-/***/ }),
-
 /***/ 6:
 /*!*******************************************!*\
   !*** multi ./src/js/components/drawer.js ***!
@@ -173,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/calvintyndall/Sites/_c3/jcc/srl/web/themes/custom/atrium/src/js/components/drawer.js */"./src/js/components/drawer.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '/Users/calvintyndall/Sites/_c3/jcc/srl/web/themes/custom/atrium/src/js/components/drawer.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })

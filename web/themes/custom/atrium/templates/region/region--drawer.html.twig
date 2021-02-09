@@ -13,10 +13,10 @@
  */
 #}
 
-{{ attach_library('atrium/drawer') }}
-
-<div class="region--drawer">
-  <div class="region--drawer__inner">
-    {{ content }}
-  </div>
-</div>
+{# We send feedback the rendered form which uses its own template. #}
+{% include '@organisms/sections/drawer/drawer.twig' with {
+  drawer: {
+    feedback: elements.webform,
+    chatbot: elements.jccchatbot
+  }
+} %}
