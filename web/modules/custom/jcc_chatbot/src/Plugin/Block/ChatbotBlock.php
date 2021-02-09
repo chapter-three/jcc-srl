@@ -80,7 +80,7 @@ class ChatbotBlock extends BlockBase implements ContainerFactoryPluginInterface 
     if ($node instanceof NodeInterface) {
       $vid = 'case_type';
       $valid_case_types = [
-        $this->getTidByName('Change of Name and Gender', $vid),
+        $this->getTidByName('Name change', $vid),
       ];
 
       if ($case_types = $node->field_case_types) {
@@ -90,9 +90,8 @@ class ChatbotBlock extends BlockBase implements ContainerFactoryPluginInterface 
           }
         }
       }
-
-      return AccessResult::forbidden();
     }
+    return AccessResult::forbidden();
   }
 
   /**
