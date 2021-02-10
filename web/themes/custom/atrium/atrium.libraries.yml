@@ -45,3 +45,7 @@ find-courts:
 js-back-button:
   js:
     assets/js/jsBackButton.js: {}
+
+drawer:
+  js:
+    assets/js/drawer.js: {}
