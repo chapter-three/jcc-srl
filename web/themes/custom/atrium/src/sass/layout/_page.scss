@@ -7,6 +7,22 @@ body {
   height: 100%;
 }
 
+// These flex styles keep the footer at the bottom,
+// even if the main content is too short.
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 .jcc-header-base {
   .path-frontpage & {
     display: none;
