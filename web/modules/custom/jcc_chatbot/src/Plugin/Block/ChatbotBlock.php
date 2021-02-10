@@ -61,8 +61,8 @@ class ChatbotBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function build() {
-    // Empty block because the chatbot just sticks an iframe at the end of
-    // the body. We just want to control block access.
+    // Empty block because markup is provided by a template.
+    // We just want to control block access.
     $build['content'] = [
       '#markup' => '',
     ];
@@ -77,8 +77,10 @@ class ChatbotBlock extends BlockBase implements ContainerFactoryPluginInterface 
     // We currently only want the chatbot available on content tagged with the
     // following taxonomy terms. This may expand in the future.
     $node = $this->routeMatch->getParameter('node');
+
     if ($node instanceof NodeInterface) {
       $vid = 'case_type';
+      // Add additional terms to the array as necessary.
       $valid_case_types = [
         $this->getTidByName('Name change', $vid),
       ];
@@ -91,6 +93,7 @@ class ChatbotBlock extends BlockBase implements ContainerFactoryPluginInterface 
         }
       }
     }
+
     return AccessResult::forbidden();
   }
 
