@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.embed
+    - core.entity_view_mode.media.icon
     - core.entity_view_mode.media.original
     - core.entity_view_mode.media.wysiwyg
   module:
@@ -27,7 +29,7 @@ filters:
   filter_align:
     id: filter_align
     provider: filter
-    status: false
+    status: true
     weight: 7
     settings: {  }
   filter_caption:
@@ -60,10 +62,13 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: wysiwyg
+      default_view_mode: embed
       allowed_media_types:
         image: image
         snippet: snippet
       allowed_view_modes:
+        default: default
+        embed: embed
+        icon: icon
         original: original
         wysiwyg: wysiwyg

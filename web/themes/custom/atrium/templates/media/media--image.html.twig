@@ -4,4 +4,10 @@
  * Template for "Image" media.
  */
 #}
-{{ content }}
+{% set classes = [
+  'media-library--image',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ content|without('name') }}
+</div>
