@@ -8466,16 +8466,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.0.229",
+            "version": "0.0.245",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "44dcbf61b0ed7dff5fd09ccc3d129424b985bb99"
+                "reference": "2a4e0dd02883cac72ed419215ea284146a5f030a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/44dcbf61b0ed7dff5fd09ccc3d129424b985bb99",
-                "reference": "44dcbf61b0ed7dff5fd09ccc3d129424b985bb99",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/2a4e0dd02883cac72ed419215ea284146a5f030a",
+                "reference": "2a4e0dd02883cac72ed419215ea284146a5f030a",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8490,7 +8490,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-01-20T21:34:23+00:00"
+            "time": "2021-02-10T18:56:05+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -13105,12 +13105,12 @@
             "version": "1.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "9dc4f203e36f2b486149058bade43c851dd97451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/9dc4f203e36f2b486149058bade43c851dd97451",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/9dc4f203e36f2b486149058bade43c851dd97451",
                 "reference": "9dc4f203e36f2b486149058bade43c851dd97451",
                 "shasum": ""
             },

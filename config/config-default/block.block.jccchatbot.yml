@@ -1,0 +1,20 @@
+uuid: 2f8a7e36-6f34-4bca-976a-59cce7ebe0ac
+langcode: en
+status: false
+dependencies:
+  module:
+    - jcc_chatbot
+  theme:
+    - atrium
+id: jccchatbot
+theme: atrium
+region: drawer
+weight: 0
+provider: null
+plugin: jcc_chatbot
+settings:
+  id: jcc_chatbot
+  label: 'JCC Chatbot'
+  provider: jcc_chatbot
+  label_display: visible
+visibility: {  }
