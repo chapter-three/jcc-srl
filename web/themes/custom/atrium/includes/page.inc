@@ -43,6 +43,9 @@ function atrium_preprocess_page(&$variables) {
   $social['twitter'] = theme_get_setting('twitter');
   $social['youtube'] = theme_get_setting('youtube');
   $variables['social'] = $social;
+
+  // Add js-back-button functionality to all pages.
+  $variables['#attached']['library'][] = 'atrium/js-back-button';
 }
 
 /**

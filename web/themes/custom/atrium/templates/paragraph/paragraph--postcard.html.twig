@@ -53,9 +53,7 @@
   {% if content.field_additional|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
-        headergroup: {
-          lead: content.field_additional,
-        },
+        column_content_left: content.field_additional,
       }
     } only %}
   {% endif %}
