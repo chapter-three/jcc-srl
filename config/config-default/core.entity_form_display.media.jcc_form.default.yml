@@ -27,6 +27,7 @@ dependencies:
     - field.field.media.jcc_form.field_tagalog_url
     - field.field.media.jcc_form.field_url
     - field.field.media.jcc_form.field_vietnamese_url
+    - field.field.media.jcc_form.field_weight
     - image.style.thumbnail
     - media.type.jcc_form
   module:
@@ -247,6 +248,12 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_weight:
+    weight: 42
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select

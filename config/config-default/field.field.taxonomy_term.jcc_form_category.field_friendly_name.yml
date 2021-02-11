@@ -1,0 +1,25 @@
+uuid: 4ce9c70b-298f-4ffb-ae4f-f14f0205b1d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_friendly_name
+    - taxonomy.vocabulary.jcc_form_category
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_friendly_name
+id: taxonomy_term.jcc_form_category.field_friendly_name
+field_name: field_friendly_name
+entity_type: taxonomy_term
+bundle: jcc_form_category
+label: 'Friendly name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

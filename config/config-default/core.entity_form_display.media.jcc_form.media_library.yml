@@ -28,6 +28,7 @@ dependencies:
     - field.field.media.jcc_form.field_tagalog_url
     - field.field.media.jcc_form.field_url
     - field.field.media.jcc_form.field_vietnamese_url
+    - field.field.media.jcc_form.field_weight
     - media.type.jcc_form
 id: media.jcc_form.media_library
 targetEntityType: media
@@ -72,6 +73,7 @@ hidden:
   field_tagalog_url: true
   field_url: true
   field_vietnamese_url: true
+  field_weight: true
   name: true
   path: true
   status: true
