@@ -55,10 +55,6 @@ jobs:
         steps:
             - checkout
 
-            - run:
-                name: check tags
-                command: git tag --points-at HEAD
-
             - restore_cache:
                 keys:
                     - composer-cache
@@ -172,6 +168,8 @@ jobs:
                 working_directory: ''
 
             - run:
+                # You will get full benefit of end to end / behavioral tests
+                # when run after deployment even on master/live.
                 name: Run CI specs.
                 command: .circleci/scripts/cypress/cypress-ci.sh << parameters.site >>
                 no_output_timeout: 10m
@@ -193,17 +191,12 @@ jobs:
                 path: /root/project/test/cypress/screenshots
                 destination: /screenshots
 
-
 workflows:
   version: 2.1
   build_and_test:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
       - build_test
-      - cypress:
-          matrix:
-            parameters:
-              site: ["srl"]
       - deploy:
           matrix:
             parameters:
@@ -217,6 +210,7 @@ workflows:
                 - stage
                 - master
                 - /^epic-.*/
+      # End to End and Visual Regression Tests
       - cypress:
           matrix:
             parameters:

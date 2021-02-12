@@ -3,6 +3,9 @@
 set -e
 
 DIR=$PWD
+source_tag=$(git tag --points-at HEAD | grep '^[0-9]\.[0-9]\.[0-9]')
+echo
+echo "@debug ${source_tag}"
 
 # Loop over files to find project- config files and deploy each.
 # If this times out due to too many projects we may have to go back to calling
@@ -67,6 +70,13 @@ for name in "$@" ; do
     echo "Tagging master branch for production (Live): $pantheon_prefix$pantheon_new"
 
     git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon live release."
+
+    # Also add a source tag if present.
+    if [ ! -z source_tag ] ; then
+      echo
+      echo "Tagging master branch with ${source_tag}."
+    fi
+
   fi
 
   # Disable strict host checking so we can run drush on all envs.
