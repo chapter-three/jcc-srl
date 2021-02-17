@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_svg
     - image.style.thumbnail
     - media.type.image
   module:
     - focal_point
+    - svg_image_field
 _core:
   default_config_hash: sDoOoVTI7AiTJzWQLTvDmH_-prKYaSKSbeGbX2QXiKM
 id: media.image.default
@@ -25,9 +27,18 @@ content:
       preview_link: true
       offsets: '50,50'
     third_party_settings: {  }
+  field_media_svg:
+    weight: 2
+    settings:
+      preview_image_max_width: 100
+      preview_image_max_height: 100
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: svg_image_field_widget
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true

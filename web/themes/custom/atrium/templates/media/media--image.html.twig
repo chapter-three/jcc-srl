@@ -9,5 +9,9 @@
 ] %}
 
 <div{{ attributes.addClass(classes) }}>
-  {{ content|without('name') }}
+  {% if media.field_media_image.0 %}
+    {{ content|without('name', 'field_media_svg') }}
+  {% else %}
+    {{ content|without('name', 'field_media_image', 'thumbnail') }}
+  {% endif %}
 </div>

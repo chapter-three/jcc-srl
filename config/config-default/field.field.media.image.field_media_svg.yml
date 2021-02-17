@@ -1,27 +1,22 @@
-uuid: 50762d03-9edc-4178-8b6c-63e9826fdde6
+uuid: 46c274fa-165a-4c22-8ef2-5c29bc60c8de
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_media_image
+    - field.storage.media.field_media_svg
     - media.type.image
-  enforced:
-    module:
-      - media
   module:
     - datalayer
-    - image
+    - svg_image_field
 third_party_settings:
   datalayer:
     expose: 0
-    label: field_media_image
-_core:
-  default_config_hash: pzPA-2JwyxlJ3qMb4L9viAnhNhbEhl2couH8A3FO020
-id: media.image.field_media_image
-field_name: field_media_image
+    label: field_media_svg
+id: media.image.field_media_svg
+field_name: field_media_svg
 entity_type: media
 bundle: image
-label: Image
+label: SVG
 description: ''
 required: false
 translatable: false
@@ -29,10 +24,8 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
+  file_extensions: svg
   max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
   alt_field: true
   alt_field_required: true
   title_field: false
@@ -41,8 +34,6 @@ settings:
     uuid: ''
     alt: ''
     title: ''
-    width: null
-    height: null
   handler: 'default:file'
   handler_settings: {  }
-field_type: image
+field_type: svg_image_field

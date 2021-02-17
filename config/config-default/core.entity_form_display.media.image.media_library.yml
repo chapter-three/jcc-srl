@@ -5,10 +5,12 @@ dependencies:
   config:
     - core.entity_form_mode.media.media_library
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_svg
     - image.style.thumbnail
     - media.type.image
   module:
     - image
+    - svg_image_field
 _core:
   default_config_hash: BMLrK4zKp8-FFnMseBdT_6h6YipUsKRfbDf_3WUB5HA
 id: media.image.media_library
@@ -18,11 +20,20 @@ mode: media_library
 content:
   field_media_image:
     type: image_image
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_media_svg:
+    type: svg_image_field_widget
+    weight: 1
+    region: content
+    settings:
+      preview_image_max_width: 100
+      preview_image_max_height: 100
+      progress_indicator: throbber
     third_party_settings: {  }
   langcode:
     type: language_select
