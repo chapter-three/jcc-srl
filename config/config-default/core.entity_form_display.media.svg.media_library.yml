@@ -1,38 +1,30 @@
-uuid: 51605cd1-72f1-4f46-a2e1-6c2cd5c60b62
+uuid: 40b505ea-2fb5-446e-b8db-ee0438c54630
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
-    - field.field.media.image.field_media_image
+    - field.field.media.svg.field_media_image
     - image.style.thumbnail
-    - media.type.image
+    - media.type.svg
   module:
     - image
-_core:
-  default_config_hash: BMLrK4zKp8-FFnMseBdT_6h6YipUsKRfbDf_3WUB5HA
-id: media.image.media_library
+id: media.svg.media_library
 targetEntityType: media
-bundle: image
+bundle: svg
 mode: media_library
 content:
   field_media_image:
-    type: image_image
-    weight: 0
-    region: content
+    weight: -50
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
+    type: image_image
     region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
 hidden:
   created: true
+  langcode: true
   name: true
   path: true
   status: true

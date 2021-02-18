@@ -127,7 +127,7 @@ module:
   srl_ga_gtm: 0
   srl_updates: 0
   srl_webform: 0
-  svg_image_field: 0
+  svg_image: 0
   system: 0
   taxonomy: 0
   telephone: 0

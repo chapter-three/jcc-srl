@@ -66,6 +66,7 @@ filters:
       allowed_media_types:
         image: image
         snippet: snippet
+        svg: svg
       allowed_view_modes:
         default: default
         embed: embed

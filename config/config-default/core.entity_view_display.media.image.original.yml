@@ -5,11 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.media.original
     - field.field.media.image.field_media_image
-    - field.field.media.image.field_media_svg
     - media.type.image
   module:
     - image
-    - svg_image_field
 _core:
   default_config_hash: 1QgVN6gol01eilaqPYzS0WWmcGeOQxZqIAG3RDY875I
 id: media.image.original
@@ -17,20 +15,6 @@ targetEntityType: media
 bundle: image
 mode: original
 content:
-  field_media_svg:
-    type: svg_image_field_formatter
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      apply_dimensions: true
-      width: 100
-      height: 100
-      enable_alt: true
-      enable_title: true
-      link: ''
-      inline: false
-    third_party_settings: {  }
   thumbnail:
     type: image
     weight: 0
