@@ -16,5 +16,5 @@ foreach (glob($includes_path) as $filename) {
  */
 function atrium_preprocess(array &$variables, $hook) {
   $variables['base_path'] = base_path();
-  $variables['courtyard_icons'] = base_path() . 'libraries/courtyard-artifact/public/images/icomoon/symbol-defs.svg';
+  $variables['courtyard_icons'] = base_path() . 'libraries/courtyard-artifact/1.x/public/images/icomoon/symbol-defs.svg';
 }
