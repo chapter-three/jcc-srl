@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.self_help_finder
     - paragraphs.paragraphs_type.step_container
     - paragraphs.paragraphs_type.switchboard
+    - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.timeline
     - paragraphs.paragraphs_type.timeline_dual
   module:
@@ -49,6 +50,7 @@ settings:
       timeline: timeline
       timeline_dual: timeline_dual
       self_help_finder: self_help_finder
+      text: text
     target_bundles_drag_drop:
       accordion:
         weight: -25
@@ -107,6 +109,9 @@ settings:
       switchboard:
         enabled: true
         weight: -28
+      text:
+        enabled: true
+        weight: 45
       tile:
         weight: -21
         enabled: false

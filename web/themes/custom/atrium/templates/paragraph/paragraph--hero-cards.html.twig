@@ -86,6 +86,8 @@
     {% endfor %}
   {% endif %}
 
+  {# Attach JS for GA/GTM tracking of the selected jump-nav item on click. #}
+  {{ attach_library('srl_ga_gtm/hero-card-jump-nav-click-track') }}
   {% include '@organisms/sections/hero-cards/hero-cards.twig' with {
     hero_cards: {
       hero: hero,

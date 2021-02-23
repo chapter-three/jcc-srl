@@ -13,6 +13,7 @@ regions:
   tabs: Tabs
   content: Content
   content_below: 'Content: Below'
+  drawer: Drawer
   footer: Footer
 
 libraries:

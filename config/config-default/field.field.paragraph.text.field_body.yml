@@ -1,0 +1,32 @@
+uuid: 5268bc37-3b38-45c8-a4aa-50e52483ae31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.text
+  module:
+    - allowed_formats
+    - datalayer
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    simple_html: '0'
+    full_html: '0'
+    plain_text: '0'
+  datalayer:
+    expose: 0
+    label: field_body
+id: paragraph.text.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: text
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

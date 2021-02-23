@@ -1,0 +1,10 @@
+uuid: 57a7e69a-54b1-40d1-b074-bd069fdcfe6c
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: Text
+icon_uuid: null
+icon_default: null
+description: 'A text WYSIWYG with optional heading field.'
+behavior_plugins: {  }

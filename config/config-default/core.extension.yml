@@ -62,6 +62,7 @@ module:
   inline_entity_form: 0
   inline_form_errors: 0
   jcc_boilerplate: 0
+  jcc_chatbot: 0
   jcc_datefinder: 0
   jcc_forms: 0
   jcc_twig: 0
@@ -70,13 +71,13 @@ module:
   link: 0
   linkit: 0
   login_emailusername: 0
-  mailsystem: 0
   markup: 0
   maxlength: 0
   media: 0
   media_entity_browser: 0
   media_library: 0
   media_text: 0
+  menu_item_extras: 0
   menu_ui: 0
   metatag: 0
   metatag_facebook: 0
@@ -94,7 +95,6 @@ module:
   migrate_plus: 0
   migrate_source_csv: 0
   migrate_tools: 0
-  mimemail: 0
   module_filter: 0
   node: 0
   options: 0
@@ -124,6 +124,7 @@ module:
   simple_block: 0
   srl_court_finder: 0
   srl_errors: 0
+  srl_ga_gtm: 0
   srl_updates: 0
   srl_webform: 0
   system: 0

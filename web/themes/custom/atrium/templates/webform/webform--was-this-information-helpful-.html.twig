@@ -22,41 +22,15 @@
  */
 #}
 
-{% set id = element['#webform_id_trunc'] %}
-{% set title = element.elements.was_this_information_helpful_['#admin_title']%}
-
-<div class="jcc-feedback" id="{{ id }}" data-feedback="container" visible="visible">
-
-  <dialog role="dialog" data-feedback="dialog">
-    <form{{ attributes }}>
-      {{ title_prefix }}
-      {{ children }}
-      {{ title_suffix }}
-    </form>
-
-    <div class="jcc-feedback__dialog-footer">
-      <button tabindex="-1" aria-label="{{ 'Close this dialog window'|t }}" data-feedback="trigger-close">
-        {% include '@atoms/icons/icon.twig' with {
-          icon: {
-            name: "close",
-            title: "Close"|t,
-            decorative: false,
-          }
-        } %}
-      </button>
-    </div>
-  </dialog>
-
-  <div class="jcc-feedback__trigger-container">
-    <button class="usa-button usa-button--accent-warm" data-feedback="trigger">
-      {{ title }}
-      {% include '@atoms/icons/icon.twig' with {
-        icon: {
-          name: "expand_more",
-          title: "Expand More"|t,
-          decorative: false,
-        }
-      } %}
-    </button>
-  </div>
-</div>
+{% include '@molecules/blocks/feedback/feedback.twig' with {
+  feedback: {
+    id: element['#webform_id_trunc'],
+    form: {
+      attributes: attributes,
+      children: children
+    },
+    button: {
+      title: element.elements.was_this_information_helpful_['#admin_title']
+    }
+  }
+} %}

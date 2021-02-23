@@ -1,0 +1,32 @@
+uuid: c5c0f942-1fb8-4c8e-8f46-b0374b89e42e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.text
+  module:
+    - allowed_formats
+    - datalayer
+    - text
+third_party_settings:
+  allowed_formats:
+    simple_html: simple_html
+    basic_html: '0'
+    full_html: '0'
+    plain_text: '0'
+  datalayer:
+    expose: 0
+    label: field_heading
+id: paragraph.text.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: text
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
