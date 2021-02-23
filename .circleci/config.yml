@@ -148,6 +148,10 @@ jobs:
                 command: composer install -o --no-dev
 
             - run:
+                name: Build Theme
+                command: npm install --prefix/web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+
+            - run:
                 name: Deploy Artifact
                 command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
 
