@@ -117,6 +117,7 @@
         "drupal/core-vendor-hardening": "^8.8",
         "drupal/datalayer": "^1.0@beta",
         "drupal/default_content": "^1.0@alpha",
+        "drupal/devel": "^4.1",
         "drupal/diff": "^1.0@RC",
         "drupal/dropzonejs": "^2.0@alpha",
         "drupal/editor_advanced_link": "^1.8",
@@ -187,7 +188,6 @@
     "require-dev": {
         "components/highlightjs": "9.7.*",
         "d3/d3": "3.5.*",
-        "drupal/devel": "^2.1",
         "drupal/log_stdout": "^1.1",
         "drupal/search_kint": "^1.0",
         "drupal/stage_file_proxy": "^1.0@RC",
