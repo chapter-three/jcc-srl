@@ -77,7 +77,6 @@ module:
   media_entity_browser: 0
   media_library: 0
   media_text: 0
-  menu_item_extras: 0
   menu_ui: 0
   metatag: 0
   metatag_facebook: 0
