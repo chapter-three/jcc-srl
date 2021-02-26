@@ -168,6 +168,7 @@ jobs:
                 working_directory: ''
 
             - run:
+<<<<<<< HEAD
                 # You will get full benefit of end to end / behavioral tests
                 # when run after deployment even on master/live.
                 name: Run CI specs.
@@ -190,6 +191,14 @@ jobs:
             - store_artifacts:
                 path: /root/project/test/cypress/screenshots
                 destination: /screenshots
+=======
+                name: Build Theme
+                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+
+            - run:
+                name: Deploy Artifact
+                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
+>>>>>>> feature/SRL-401--update-theme-for-courtyard-changes
 
 workflows:
   version: 2.1
