@@ -48,7 +48,6 @@ cypress: &cypress
 version: 2.1
 
 jobs:
-    # @todo: common initialization: 'composer install' for the site-under-test
     build_test:
         <<: *defaults
         description: Build and Linting/Static Test
@@ -58,12 +57,6 @@ jobs:
             - restore_cache:
                 keys:
                     - composer-cache
-
-            - run:
-                # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: environment
-                command: /build-tools-ci/scripts/set-environment
 
             - run:
                 name: run composer install to get the vendor directory
@@ -168,7 +161,6 @@ jobs:
                 working_directory: ''
 
             - run:
-<<<<<<< HEAD
                 # You will get full benefit of end to end / behavioral tests
                 # when run after deployment even on master/live.
                 name: Run CI specs.
@@ -191,14 +183,14 @@ jobs:
             - store_artifacts:
                 path: /root/project/test/cypress/screenshots
                 destination: /screenshots
-=======
+            
+            - run:
                 name: Build Theme
                 command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 
             - run:
                 name: Deploy Artifact
                 command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
->>>>>>> feature/SRL-401--update-theme-for-courtyard-changes
 
 workflows:
   version: 2.1
