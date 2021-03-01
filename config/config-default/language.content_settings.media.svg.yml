@@ -1,0 +1,11 @@
+uuid: 45d91cac-8c21-4242-a946-0e4bc408a33c
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.svg
+id: media.svg
+target_entity_type_id: media
+target_bundle: svg
+default_langcode: site_default
+language_alterable: false

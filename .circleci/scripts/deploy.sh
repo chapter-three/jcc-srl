@@ -3,7 +3,8 @@
 set -e
 
 get_source_tag() {
-  source_tag=$(git tag --points-at HEAD | grep '^[0-9]\.[0-9]\.[0-9]')
+  git fetch
+  source_tag=$(git tag --points-at HEAD | grep '^[0-9]*\.[0-9]*\.[0-9]*')
 }
 
 DIR=$PWD
@@ -75,7 +76,7 @@ for name in "$@" ; do
     git tag -a $pantheon_prefix$pantheon_new -m "Tagging new pantheon live release."
 
     # Also add a source tag if present.
-    if [ ! -z source_tag ] ; then
+    if [ -n "$source_tag" ] ; then
       echo
       echo "Tagging master branch with ${source_tag}."
       git tag -a $source_tag -m "${source_tag}"

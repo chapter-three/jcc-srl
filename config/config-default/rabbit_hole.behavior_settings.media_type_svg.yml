@@ -1,0 +1,11 @@
+uuid: dd651a98-4611-45a0-8d57-9ed5a6b10301
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.svg
+id: media_type_svg
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

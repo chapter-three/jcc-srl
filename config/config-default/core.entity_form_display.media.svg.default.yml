@@ -1,33 +1,29 @@
-uuid: 8aaad8d5-e876-4260-82d4-7eb868af5b1e
+uuid: 2bd84843-9b9d-4a38-8065-49a5cce06f71
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_media_image
+    - field.field.media.svg.field_media_image
     - image.style.thumbnail
-    - media.type.image
+    - media.type.svg
   module:
-    - focal_point
-_core:
-  default_config_hash: sDoOoVTI7AiTJzWQLTvDmH_-prKYaSKSbeGbX2QXiKM
-id: media.image.default
+    - svg_image
+id: media.svg.default
 targetEntityType: media
-bundle: image
+bundle: svg
 mode: default
 content:
   field_media_image:
-    type: image_focal_point
     weight: 1
-    region: content
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
-      preview_link: true
-      offsets: '50,50'
+      progress_indicator: throbber
     third_party_settings: {  }
+    type: image_image
+    region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 2
     region: content
     settings:
       include_locked: true

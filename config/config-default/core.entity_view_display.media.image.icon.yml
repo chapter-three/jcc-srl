@@ -1,32 +1,32 @@
-uuid: a8ae450e-ed21-433b-91d1-daaf0ad41923
+uuid: 7a076c06-4564-48cf-8eec-86ddc6e6606d
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.embed
+    - core.entity_view_mode.media.icon
     - field.field.media.image.field_media_image
-    - image.style.medium
+    - image.style.icon
     - media.type.image
   module:
     - image
 _core:
   default_config_hash: 1QgVN6gol01eilaqPYzS0WWmcGeOQxZqIAG3RDY875I
-id: media.image.embed
+id: media.image.icon
 targetEntityType: media
 bundle: image
-mode: embed
+mode: icon
 content:
   thumbnail:
     type: image
     weight: 0
     label: hidden
     settings:
-      image_style: medium
+      image_style: icon
       image_link: ''
       svg_render_as_image: true
       svg_attributes:
-        width: 220
-        height: 220
+        width: 50
+        height: 50
     region: content
     third_party_settings: {  }
 hidden:
