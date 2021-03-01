@@ -1,0 +1,5 @@
+# Used in code sync to artifact to ensure artifact ignores extraneous files.
+.DS_Store
+config/config-local
+web/sites/default/files
+web/sites/default/*.local.*
