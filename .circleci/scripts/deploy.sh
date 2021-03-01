@@ -2,10 +2,14 @@
 
 set -e
 
+get_source_tag() {
+  source_tag=$(git tag --points-at HEAD | grep '^[0-9]\.[0-9]\.[0-9]')
+}
+
 DIR=$PWD
-source_tag=$(git tag --points-at HEAD | grep '^[0-9]\.[0-9]\.[0-9]')
+get_source_tag || true
 echo
-echo "@debug ${source_tag}"
+echo ${source_tag}
 
 # Loop over files to find project- config files and deploy each.
 # If this times out due to too many projects we may have to go back to calling
@@ -29,7 +33,7 @@ for name in "$@" ; do
   git config --global user.email "$GIT_EMAIL"
   git config --global user.name "Ch3-P0"
 
-  echo "\nClone artifact.\n"
+  echo -e "\nClone artifact.\n"
   mkdir -p data
   # Remove existing artifact to start fresh.
   if [ -d data/artifact ] ; then
@@ -37,21 +41,20 @@ for name in "$@" ; do
   fi
   cd data
   git clone $ARTIFACT_GIT artifact
-  echo "\nCheckout $CIRCLE_BRANCH\n"
+  echo -e "\nCheckout $CIRCLE_BRANCH\n"
   cd artifact
   git fetch origin && git checkout $CIRCLE_BRANCH
   git pull origin $CIRCLE_BRANCH
-  echo "\nSync to artifact.\n"
+  echo -e "\nSync to artifact.\n"
   cd ../.. && composer -n artifact-sync
   # Make sure there's a gitignore file in the artifact.
   cp -n scripts/_artifact.gitignore data/artifact/.gitignore
   cd data/artifact
   git add .
   git commit -am "Built assets. $TIMESTAMP"
-  echo "\n@todo- Work out release taging.\n"
 
   # Tag for master.
-  if [ $CIRCLE_BRANCH == 'master' ] && $LIVE ; then
+  if [[ $CIRCLE_BRANCH == "master" && $LIVE == "true" ]] ; then
     # For drush reset.
     PANTHEON_ENV=live
 
@@ -75,6 +78,7 @@ for name in "$@" ; do
     if [ ! -z source_tag ] ; then
       echo
       echo "Tagging master branch with ${source_tag}."
+      git tag -a $source_tag -m "${source_tag}"
     fi
 
   fi
