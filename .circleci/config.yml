@@ -104,7 +104,7 @@ jobs:
 
             - run:
                 name: Build Theme(s)
-                command: npm install --prefix=/web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 
             - run:
                 name: Deploying << parameters.site >>
