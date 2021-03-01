@@ -160,14 +160,6 @@ jobs:
                 working_directory: ''
 
             - run:
-<<<<<<< HEAD
-                name: Build Theme
-                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
-
-            - run:
-                name: Deploy Artifact
-                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
-=======
                 # You will get full benefit of end to end / behavioral tests
                 # when run after deployment even on master/live.
                 name: Run CI specs.
@@ -190,7 +182,6 @@ jobs:
             - store_artifacts:
                 path: /root/project/test/cypress/screenshots
                 destination: /screenshots
->>>>>>> feature/SRL-382--automated-testing
 
 workflows:
   version: 2.1
