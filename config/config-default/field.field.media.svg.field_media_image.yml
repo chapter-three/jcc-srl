@@ -1,35 +1,36 @@
-uuid: 50762d03-9edc-4178-8b6c-63e9826fdde6
+uuid: 0e4f9a69-59ed-44e9-b83c-30fbda7a75e6
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_image
-    - media.type.image
-  enforced:
-    module:
-      - media
+    - media.type.svg
   module:
+    - content_translation
     - datalayer
     - image
 third_party_settings:
   datalayer:
     expose: 0
     label: field_media_image
-_core:
-  default_config_hash: pzPA-2JwyxlJ3qMb4L9viAnhNhbEhl2couH8A3FO020
-id: media.image.field_media_image
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
+id: media.svg.field_media_image
 field_name: field_media_image
 entity_type: media
-bundle: image
+bundle: svg
 label: Image
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
+  file_extensions: svg
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''

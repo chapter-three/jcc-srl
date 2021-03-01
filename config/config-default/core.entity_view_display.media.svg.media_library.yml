@@ -1,24 +1,21 @@
-uuid: a8ae450e-ed21-433b-91d1-daaf0ad41923
+uuid: 7e40a9dc-f50e-4996-a9b9-a9be7fa3ef55
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.embed
-    - field.field.media.image.field_media_image
+    - core.entity_view_mode.media.media_library
+    - field.field.media.svg.field_media_image
     - image.style.medium
-    - media.type.image
+    - media.type.svg
   module:
-    - image
-_core:
-  default_config_hash: 1QgVN6gol01eilaqPYzS0WWmcGeOQxZqIAG3RDY875I
-id: media.image.embed
+    - svg_image
+id: media.svg.media_library
 targetEntityType: media
-bundle: image
-mode: embed
+bundle: svg
+mode: media_library
 content:
   thumbnail:
     type: image
-    weight: 0
     label: hidden
     settings:
       image_style: medium
@@ -27,8 +24,9 @@ content:
       svg_attributes:
         width: 220
         height: 220
-    region: content
+    weight: 0
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   field_media_image: true
