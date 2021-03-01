@@ -31,7 +31,6 @@ defaults: &defaults
     # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
     #======================================================================================================================================
 
-    NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
     ADMIN_USERNAME: admin
     # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
     TERM: dumb
@@ -105,7 +104,7 @@ jobs:
 
             - run:
                 name: Build Theme(s)
-                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+                command: npm install --prefix=/web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 
             - run:
                 name: Deploying << parameters.site >>
@@ -183,14 +182,6 @@ jobs:
             - store_artifacts:
                 path: /root/project/test/cypress/screenshots
                 destination: /screenshots
-            
-            - run:
-                name: Build Theme
-                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
-
-            - run:
-                name: Deploy Artifact
-                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
 
 workflows:
   version: 2.1
