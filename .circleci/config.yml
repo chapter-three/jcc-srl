@@ -108,7 +108,7 @@ jobs:
 
             - run:
                 name: Deploying << parameters.site >>
-                command: .circleci/scripts/deploy.sh << parameters.site >>
+                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh << parameters.site >>
 
     cypress:
         <<: *cypress
