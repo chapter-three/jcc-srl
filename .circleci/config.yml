@@ -31,31 +31,31 @@ defaults: &defaults
     # See: https://discuss.circleci.com/t/circle-2-0-global-environment-variables/8681
     #======================================================================================================================================
 
-    NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
     ADMIN_USERNAME: admin
     # BUILD_TOOLS_VERSION: ^2.0.0-alpha4
     TERM: dumb
     # Environment to clone multidev environments from.
     TERMINUS_PARENT_ENV: live
 
-version: 2
+cypress: &cypress
+  docker:
+    - image: cypress/base:10
+  working_directory: ~/project
+  environment:
+    CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
+
+version: 2.1
+
 jobs:
-    # @todo: common initialization: 'composer install' for the site-under-test
-    build:
+    build_test:
         <<: *defaults
+        description: Build and Linting/Static Test
         steps:
             - checkout
 
             - restore_cache:
                 keys:
                     - composer-cache
-                    - terminus-install
-
-            - run:
-                # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: environment
-                command: /build-tools-ci/scripts/set-environment
 
             - run:
                 name: run composer install to get the vendor directory
@@ -65,11 +65,6 @@ jobs:
                 key: composer-cache
                 paths:
                     - $HOME/.composer/cache
-
-            - save_cache:
-                key: terminus-install
-                paths:
-                    - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
 
             - run:
                 name: lint php code for syntax errors
@@ -83,44 +78,15 @@ jobs:
                 name: run unit tests
                 command: composer -n unit-test
 
-    build_deploy_and_test:
+    deploy:
         <<: *defaults
-        steps:
-            - checkout
 
-            - restore_cache:
-                keys:
-                    - composer-cache
-                    - terminus-install
+        parameters:
+          site:
+            type: string
 
-            - run:
-                # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: dependencies
-                command: /build-tools-ci/scripts/set-environment
+        description: Deploy << parameters.site >>
 
-            - run:
-                name: install dev dependencies, build assets, etc.
-                command: ./.circleci/scripts/pantheon/01-prepare
-
-            - run:
-                name: build assets
-                command: composer -n build-assets
-
-            - run:
-                name: prepare database for site-under test
-                command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
-
-            - run:
-                name: run composer install again to get dev dependencies
-                command: composer install
-
-            - run:
-                name: remove transient test fixtures
-                command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
-
-    deploy_artifact:
-        <<: *defaults
         steps:
             - add_ssh_keys:
                 fingerprints:
@@ -131,50 +97,127 @@ jobs:
             - restore_cache:
                 keys:
                     - composer-cache
-                    - terminus-install
-
-            - run:
-                # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: dependencies
-                command: /build-tools-ci/scripts/set-environment
-
-            - run:
-                name: Authenticate Terminus
-                command: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
 
             - run:
                 name: Run Composer Install
                 command: composer install -o --no-dev
 
             - run:
+                name: Build Theme(s)
+                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+
+            - run:
+                name: Deploying << parameters.site >>
+                command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh << parameters.site >>
+
+    cypress:
+        <<: *cypress
+        parameters:
+            site:
+                type: string
+        description: Cypress End to End and Visual Regression Testing
+        steps:
+
+            - attach_workspace:
+                at: ~/
+
+            - checkout
+
+            - restore_cache:
+                keys:
+                    - cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+
+            - run:
+                name: Install
+                working_directory: ''
+                command: "if [[ ! -z \"\" ]]; then\n  echo \"Installing using custom command\"\n  echo \"\"\n  \nelif [ \"false\" = \"true\" ]; then\n  echo \"Installing using Yarn\"\n  yarn install --frozen-lockfile\nelif [ ! -e ./package-lock.json ]; then\n  echo \"The Cypress orb uses 'npm ci' to install 'node_modules', which requires a 'package-lock.json'.\"\n  echo \"A 'package-lock.json' file was not found. Please run 'npm install' in your project,\"\n  echo \"and commit 'package-lock.json' to your repo.\"\n  exit 1\nelse\n  echo \"Installing dependencies using NPM ci\"\n  npm ci\nfi\n"
+
+            - run:
+                name: Verify Cypress
+                command: npx cypress verify
+                working_directory: ''
+
+            - save_cache:
+                key: cache-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
+                paths:
+                    - ~/.npm
+                    - ~/.cache
+
+            - persist_to_workspace:
+                root: ~/
+                paths:
+                    - project
+                    - .cache/Cypress
+
+            - run:
+                # To make this effective on master/live we need to snap base
+                # images in another job, *before* the deploy.
+                # To do that, work out persisting the snaps to the workspace
+                # so it can be used in this job after the deploy.
+                name: VRT set base images
+                command: .circleci/scripts/cypress/cypress-ci.sh -b << parameters.site >>
+                no_output_timeout: 10m
+                working_directory: ''
+
+            - run:
+<<<<<<< HEAD
                 name: Build Theme
                 command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 
             - run:
                 name: Deploy Artifact
                 command: chmod +x .circleci/scripts/deploy.sh && .circleci/scripts/deploy.sh
+=======
+                # You will get full benefit of end to end / behavioral tests
+                # when run after deployment even on master/live.
+                name: Run CI specs.
+                command: .circleci/scripts/cypress/cypress-ci.sh << parameters.site >>
+                no_output_timeout: 10m
+                working_directory: ''
+
+            - store_artifacts:
+                path: /root/project/test/cypress/videos
+                destination: /videos
+
+            - store_artifacts:
+                path: /root/project/test/cypress/reports
+                destination: /reports
+
+            - store_artifacts:
+                path: /root/project/test/cypress/snapshots
+                destination: /snapshots
+
+            - store_artifacts:
+                path: /root/project/test/cypress/screenshots
+                destination: /screenshots
+>>>>>>> feature/SRL-382--automated-testing
 
 workflows:
-  version: 2
+  version: 2.1
   build_and_test:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
-      - build
-      # Build deploy and test on target platform
-      - build_deploy_and_test:
+      - build_test
+      - deploy:
+          matrix:
+            parameters:
+              site: ["srl"]
           requires:
-            - build
+            - build_test
           filters:
             branches:
-              ignore:
+              only:
                 - develop
                 - stage
                 - master
                 - /^epic-.*/
-      - deploy_artifact:
+      # End to End and Visual Regression Tests
+      - cypress:
+          matrix:
+            parameters:
+              site: ["srl"]
           requires:
-            - build
+            - deploy
           filters:
             branches:
               only:
