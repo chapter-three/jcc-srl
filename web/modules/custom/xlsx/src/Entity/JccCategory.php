@@ -227,8 +227,6 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
     else {
       $values = [
         'name' => $term_name,
-        //'field_category_form_packets_link' => $this->getSynonym(),
-        //'field_category_info_link' => $this->getSynonym(),
         'field_synonyms' => $this->getSynonym(),
         'vid' => 'jcc_form_category',
       ];
@@ -312,7 +310,7 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
       ])
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['info_url'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Info URL'))
@@ -332,7 +330,7 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
       ])
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['info_label'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Info Label'))
@@ -352,7 +350,7 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
       ])
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['packet_url'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Packet URL'))
@@ -372,7 +370,7 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
       ])
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['packet_label'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Packet Label'))
@@ -392,7 +390,7 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
       ])
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['synonym'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Synonym'))
@@ -412,7 +410,7 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
       ])
       ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', FALSE)
-      ->setRequired(TRUE);
+      ->setRequired(FALSE);
 
     $fields['term_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Referenced Term'))
