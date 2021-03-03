@@ -148,6 +148,8 @@ class JccPrefix extends ContentEntityBase implements JccPrefixInterface {
     if ($terms = taxonomy_term_load_multiple_by_name($term_name, 'jcc_form_prefix')) {
       $term = reset($terms);
       $this->setTermId($term->id());
+      $term->set('field_form_prefix_label', $this->getPrefixLabel());
+      $term->save();
     }
     else {
       $term = Term::create([

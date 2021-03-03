@@ -223,6 +223,20 @@ class JccCategory extends ContentEntityBase implements JccCategoryInterface {
     if ($terms = taxonomy_term_load_multiple_by_name($term_name, 'jcc_form_category')) {
       $term = reset($terms);
       $this->setTermId($term->id());
+      if ($url = $this->getInfoUrl()) {
+        $term->set('field_category_info_link', [
+          'uri' => $url,
+          'title' => $this->getInfoLabel(),
+        ]);
+      }
+      if ($url = $this->getPacketUrl()) {
+        $term->set('field_category_form_packets_link', [
+          'uri' => $url,
+          'title' => $this->getPacketLabel(),
+        ]);
+      }
+      $term->set('field_synonyms', $this->getSynonym());
+      $term->save();
     }
     else {
       $values = [
