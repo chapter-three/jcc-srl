@@ -185,7 +185,11 @@ jobs:
     # Uncomment this job if you want to spin up Pantheon envs for every PR.
     # Remove this job if you don't want PR envs.
     pr_env:
-      <<: *defaults
+        <<: *defaults
+        parameters:
+            site:
+                type: string
+        description: Create a PR environemnt on Pantheon
         steps:
             - checkout
             - restore_cache:
@@ -249,18 +253,18 @@ workflows:
       # Uncomment this job if you want to spin up Pantheon envs for every PR.
       # Remove this job if you don't want PR envs.
       - pr_env:
-        matrix:
-          parameters:
-            site: ["srl"]
+          matrix:
+            parameters:
+              site: ["srl"]
           requires:
-            - build_test
+              - build_test
           filters:
-            branches:
-              ignore:
-                - develop
-                - stage
-                - master
-                - /^epic-.*/
+              branches:
+                ignore:
+                  - develop
+                  - stage
+                  - master
+                  - /^epic-.*/
 experimental:
   notify:
     branches:
