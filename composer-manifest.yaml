@@ -102,6 +102,7 @@ packages:
     drupal/rabbit_hole: 1.0.0-beta7
     drupal/range: 1.2.0
     drupal/redirect: 1.6.0
+    drupal/robotstxt: 1.4.0
     drupal/role_delegation: 1.1.0
     drupal/scheduler: 1.3.0
     drupal/scheduler_content_moderation_integration: 1.3.0
@@ -112,6 +113,7 @@ packages:
     drupal/search_kint: 1.0.0
     drupal/sendgrid_integration: 1.4.0
     drupal/simple_block: 1.0.0-beta1
+    drupal/simple_sitemap: 3.9.0
     drupal/smart_trim: 1.3.0
     drupal/stage_file_proxy: 1.0.0
     drupal/svg_image: 1.14.0
