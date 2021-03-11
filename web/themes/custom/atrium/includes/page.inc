@@ -46,6 +46,23 @@ function atrium_preprocess_page(&$variables) {
 
   // Add js-back-button functionality to all pages.
   $variables['#attached']['library'][] = 'atrium/js-back-button';
+
+  // BEGIN Site Branding.
+  //Get theme logo from appearance setting.
+  $theme_logo = theme_get_setting('logo.url');
+
+  //  Get basic site settings (e.g. site name for logo alt).
+  $config = \Drupal::config('system.site');
+  $site_name = $config->get('name');
+
+  $logo['desktop'] = $theme_logo;
+  $logo['mobile'] = $theme_logo;
+
+  $variables['site_branding'] = [
+    'logo' => $logo,
+    'title' => $site_name,
+  ];
+  // END.
 }
 
 /**
