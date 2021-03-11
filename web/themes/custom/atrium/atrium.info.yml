@@ -3,7 +3,7 @@ description: A custom theme for JCC.
 core: 8.x
 type: theme
 base theme: classy
-logo: assets/images/logo/jcc-logo--selfhelp__white.png
+logo: src/images/logo/jcc-logo--selfhelp__white.png
 
 regions:
   logo: 'Logo'
