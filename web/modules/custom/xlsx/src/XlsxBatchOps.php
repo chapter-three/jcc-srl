@@ -121,6 +121,7 @@ class XlsxBatchOps {
    */
   public static function uploadThumbnail($filename, $path, $contents, &$context) {
     if ($contents) {
+      $context['results'][] = $filename;
       $context['message'] = t('Unzipping %label ...', ['%label' => $filename]);
       $thumbnails = \Drupal::entityTypeManager()
         ->getStorage('jcc_form_thumbnail')
