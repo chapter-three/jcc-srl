@@ -130,19 +130,6 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'Callout - Italic',
-      image: 'callout.png',
-      description: 'Highlight or repeat important info (appears in right rail).',
-      template: function () {
-        return `<p>Text Before</p>
-          <div class="jcc-callout  jcc-callout__italic">
-            <div class="jcc-callout__content">In general, after a divorce, you keep your separate property and divide your community property.
-            </div>
-          </div>
-          <p>Text After</p>`
-      }
-    },
-    {
       title: 'Alert - Warning',
       image: 'alert.png',
       description: 'Warn readers to avoid high-stakes errors or address common misconceptions.',
