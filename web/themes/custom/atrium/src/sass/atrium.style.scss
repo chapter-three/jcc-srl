@@ -1,4 +1,5 @@
-
+// FIXME: Remove when courtyard is updated
+@import 'styles-srl';
 
 // Base Dependencies
 // -----------------------------------------------------------------------------
@@ -24,3 +25,7 @@
 @import 'components/pager/pager';
 @import 'components/choice/choice-section';
 @import 'components/share/share-content';
+
+// Content
+// -----------------------------------------------------------------------------
+@import 'content/typography';
