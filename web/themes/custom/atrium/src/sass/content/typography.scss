@@ -1,6 +1,4 @@
-.jcc-text-section__column-left,
-.jcc-text-section__column-right {
-  .h-verbose-h2 {
-    font-size: 1.49rem;
-  }
+.h-verbose-h2 {
+  @extend .h-responsive-h5;
+  font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
 }
