@@ -2554,7 +2554,7 @@ button.usa-combo-box__clear-input:focus {
   margin-top: 0 ;
   clear: both;
   font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   line-height: 1.2 ;
   font-weight: bold;
   margin-bottom: 0;
@@ -2930,7 +2930,7 @@ button.usa-combo-box__clear-input:focus {
 
 .usa-prose > h3, .jcc-callout__block > h3, .jcc-card__excerpt > h3, .jcc-step__excerpt > h3, .jcc-timeline-item__excerpt > h3, .jcc-read-more__content > h3, .jcc-header-group__lead > h3, .jcc-header-group__body > h3, .jcc-cards-with-button__container > ul > li > .jcc-cards-with-button__read_more > h3, .jcc-cards-with-list__container > ul > li > .jcc-cards-with-list__read_more > h3, .jcc-modal .jcc-modal__dialog .jcc-modal__content > h3, .jcc-text-section-aside .jcc-text-section-aside__content .jcc-card__excerpt > h3, .jcc-text-section-location__content > h3, .jcc-text-section-location__column-left > h3, .jcc-text-section-location__column-right > h3, .jcc-text-section__column-left > h3, .jcc-text-section__column-right > h3, .jcc-wayfinder-section__content > h3 {
   font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   line-height: 1.2 ;
   font-weight: bold;
 }
@@ -4026,7 +4026,7 @@ button.usa-combo-box__clear-input:focus {
 
 .usa-sign-up__heading {
   font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   line-height: 1.2 ;
   font-weight: bold;
   margin: 0;
@@ -4061,7 +4061,7 @@ button.usa-combo-box__clear-input:focus {
 
 .usa-footer__logo-heading {
   font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   line-height: 1 ;
   margin-bottom: 0.5rem ;
   margin-top: 0.5rem ;
@@ -4073,7 +4073,7 @@ button.usa-combo-box__clear-input:focus {
 
 .usa-footer__contact-heading {
   font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   line-height: 1.2 ;
   margin-top: 0;
 }
@@ -4291,7 +4291,7 @@ button.usa-combo-box__clear-input:focus {
   margin-top: 0 ;
   clear: both;
   font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   line-height: 1.2 ;
   font-weight: bold;
 }
@@ -12709,7 +12709,7 @@ h3,
 .jcc-text-section__column-right .h-responsive-h3,
 .jcc-wayfinder-section__content .h-responsive-h3 {
   font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
 }
 
 h4,
@@ -16333,7 +16333,7 @@ a.usa-link:visited,
 
 .jcc-card.person h3.jcc-card__title {
   font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
 }
 
 .jcc-card {
@@ -20229,7 +20229,7 @@ nav.jcc-primary-nav {
 
 h3.jcc-header-group__title {
   font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1.49rem;
+  font-size: 1.74rem;
   font-weight: normal ;
 }
 
@@ -35969,7 +35969,7 @@ div[class^="jcc-"] + .jcc-text-section-aside-secondary__container .jcc-text-sect
   .jcc-text-section__column-right .h-responsive-h3,
   .jcc-wayfinder-section__content .h-responsive-h3 {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 2.24rem;
+    font-size: 1.99rem;
   }
   h4,
   .h-responsive-h4,
@@ -36137,7 +36137,7 @@ div[class^="jcc-"] + .jcc-text-section-aside-secondary__container .jcc-text-sect
   }
   .jcc-card.person h3.jcc-card__title {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 2.24rem;
+    font-size: 1.99rem;
   }
   .jcc-card__title {
     font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
@@ -36717,7 +36717,7 @@ div[class^="jcc-"] + .jcc-text-section-aside-secondary__container .jcc-text-sect
   }
   h3.jcc-header-group__title {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 2.24rem;
+    font-size: 1.99rem;
   }
   .jcc-header-group__lead {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
@@ -38334,7 +38334,7 @@ div[class^="jcc-"] + .jcc-text-section-aside-secondary__container .jcc-text-sect
   .jcc-text-section__column-right .h-responsive-h3,
   .jcc-wayfinder-section__content .h-responsive-h3 {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 1.74rem;
+    font-size: 1.49rem;
   }
   h4,
   .h-responsive-h4,
@@ -38489,7 +38489,7 @@ div[class^="jcc-"] + .jcc-text-section-aside-secondary__container .jcc-text-sect
   }
   .jcc-card.person h3.jcc-card__title {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 1.74rem;
+    font-size: 1.49rem;
   }
   .jcc-card__title {
     font-family: Lora, Georgia, Cambria, Times New Roman, Times, serif;
@@ -38576,7 +38576,7 @@ div[class^="jcc-"] + .jcc-text-section-aside-secondary__container .jcc-text-sect
   }
   h3.jcc-header-group__title {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-    font-size: 1.74rem;
+    font-size: 1.49rem;
   }
   .jcc-header-group__brow {
     font-family: Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
