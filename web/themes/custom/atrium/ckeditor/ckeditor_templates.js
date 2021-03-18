@@ -8,27 +8,6 @@ CKEDITOR.addTemplates('default', {
 	// The templates definitions.
 	templates: [
     {
-      title: 'Left icon',
-      image: 'left-icon.png',
-      description: 'Contains a left-align icon and some content.',
-      template: function () {
-        return `
-            <div class="usa-card usa-card--flag jcc-card jcc-card--icon">
-                <div class="usa-card__container jcc-border--borderless">
-                    <div class="usa-card__body">
-                        <h3>Title</h3>
-                        <p>text</p>
-                    </div>
-                    <div class="usa-card__media">
-                        <div class="usa-card__img jcc-image--media-icon">
-                            [IMG]
-                        </div>
-                    </div>
-                </div>
-            </div>`
-      },
-    },
-    {
       title: 'Detail (Read more)',
       image: 'read-more.png',
       description: 'Contains a trigger and expanded text. Use for exceptions and details not relevant to all readers.',
@@ -114,6 +93,27 @@ CKEDITOR.addTemplates('default', {
         </div>
         <p>Text After</p>`
       }
+    },
+    {
+      title: 'Left icon',
+      image: 'left-icon.png',
+      description: 'Contains a left-align icon and some content.',
+      template: function () {
+        return `
+            <div class="usa-card usa-card--flag jcc-card jcc-card--icon">
+                <div class="usa-card__container jcc-border--borderless">
+                    <div class="usa-card__body">
+                        <h3>Title</h3>
+                        <p>text</p>
+                    </div>
+                    <div class="usa-card__media">
+                        <div class="usa-card__img jcc-image--media-icon">
+                            <img src="/themes/custom/atrium/ckeditor/placeholder.png" alt="placeholder" />
+                        </div>
+                    </div>
+                </div>
+            </div>`
+      },
     },
     {
       title: 'Callout Block',
