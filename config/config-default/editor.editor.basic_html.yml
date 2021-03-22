@@ -27,6 +27,7 @@ settings:
             - '-'
             - Outdent
             - Indent
+            - HorizontalRule
         -
           name: Linking
           items:
