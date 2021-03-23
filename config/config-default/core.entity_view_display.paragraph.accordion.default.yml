@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion.field_body
-    - field.field.paragraph.accordion.field_postcard
     - field.field.paragraph.accordion.field_title_display
     - paragraphs.paragraphs_type.accordion
   module:
-    - entity_reference_revisions
     - text
 id: paragraph.accordion.default
 targetEntityType: paragraph
@@ -22,15 +20,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_postcard:
-    type: entity_reference_revisions_entity_view
-    weight: 2
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_title_display:
     weight: 0
     label: hidden
@@ -38,4 +27,5 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

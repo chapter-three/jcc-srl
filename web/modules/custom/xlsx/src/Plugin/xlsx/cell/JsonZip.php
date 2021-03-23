@@ -21,7 +21,7 @@ class JsonZip extends XlsxCellBase {
   /**
    * {@inheritdoc}
    */
-  public function import($entity, $field_name, $value, $mapped_fields) {
+  public function import($entity, $field_name, $value, $mapped_fields, $data_array, $worksheet_index) {
     $array = [];
     if ($entity->hasField($field_name)) {
       if (!empty($value)) {
