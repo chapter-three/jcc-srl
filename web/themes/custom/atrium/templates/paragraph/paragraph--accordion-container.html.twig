@@ -10,7 +10,7 @@
   {% if content.field_body|render or content.field_title_display|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
-        background_variant: 'has-background-color--dark',
+        padding_adjustment: 'padding-bottom-0',
         id: paragraph_id,
         headergroup: {
           title: content.field_title_display|render ? content.field_title_display : '',
