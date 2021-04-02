@@ -95,6 +95,27 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
+      title: 'Left icon',
+      image: 'left-icon.png',
+      description: 'Contains a left-align icon and some content.',
+      template: function () {
+        return `
+            <div class="usa-card usa-card--flag jcc-card jcc-card--icon">
+                <div class="usa-card__container jcc-border--borderless">
+                    <div class="usa-card__body">
+                        <h3>Title</h3>
+                        <p>text</p>
+                    </div>
+                    <div class="usa-card__media">
+                        <div class="usa-card__img jcc-image--media-icon">
+                            <img src="/themes/custom/atrium/ckeditor/placeholder.png" alt="placeholder" />
+                        </div>
+                    </div>
+                </div>
+            </div>`
+      },
+    },
+    {
       title: 'Callout Block',
       image: 'callout.png',
       description: 'Highlight or repeat important info (appears in right rail).',

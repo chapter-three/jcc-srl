@@ -1,0 +1,29 @@
+uuid: b7d77c80-57c2-4ee7-92ad-51a715b2a814
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dark_background
+    - node.type.srl_howto_instruction
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_dark_background
+id: node.srl_howto_instruction.field_dark_background
+field_name: field_dark_background
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Dark background'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

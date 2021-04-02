@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_case_types
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
+    - field.field.node.srl_howto_instruction.field_dark_background
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
@@ -21,9 +22,11 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_title_display
     - field.field.node.srl_howto_instruction.field_watchers
     - node.type.srl_howto_instruction
+    - workflows.workflow.editorial_workflow
   module:
     - allowed_formats
     - block_field
+    - content_moderation
     - entity_browser
     - field_group
     - link
@@ -32,6 +35,8 @@ dependencies:
     - metatag
     - paragraphs
     - path
+    - scheduler
+    - scheduler_content_moderation_integration
     - text
 third_party_settings:
   field_group:
@@ -57,6 +62,7 @@ third_party_settings:
         - field_column_first
         - field_column_second
         - field_image
+        - field_dark_background
       parent_name: ''
       weight: 1
       format_type: fieldset
@@ -186,6 +192,13 @@ content:
         maxlength_js_truncate_html: false
     type: text_textarea
     region: content
+  field_dark_background:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_forms:
     weight: 13
     settings:
@@ -292,9 +305,32 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -327,6 +363,18 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   url_redirects:
     weight: 8

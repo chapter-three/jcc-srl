@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_case_types
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
+    - field.field.node.srl_howto_instruction.field_dark_background
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
@@ -27,7 +28,12 @@ id: node.srl_howto_instruction.teaser
 targetEntityType: node
 bundle: srl_howto_instruction
 mode: teaser
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   body: true
   field_actions: true
@@ -35,6 +41,7 @@ hidden:
   field_case_types: true
   field_column_first: true
   field_column_second: true
+  field_dark_background: true
   field_forms: true
   field_howto_tabs: true
   field_howto_tabs_title: true
