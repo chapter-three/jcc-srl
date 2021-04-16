@@ -244,7 +244,7 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: 'List group',
+      title: 'List Group',
       image: 'list-group.png',
       description: 'The "List group" component from Courtyard. Each item contains a title and paragraph.',
       html: '<ul class="jcc-list-group">' +
@@ -271,7 +271,7 @@ CKEDITOR.addTemplates('default', {
         '</ul>'
     },
     {
-      title: 'Action list',
+      title: 'Action List',
       image: 'action-list.png',
       description: 'The "Action list" component from Courtyard. Each item contains a title and brief description, followed by a button link.',
       html: '<ul class="jcc-action-list">' +
@@ -323,9 +323,31 @@ CKEDITOR.addTemplates('default', {
         '</ul>'
     },
     {
-      title: '"Go to" link tile section',
+      title: 'Single "Go to" Link',
+      image: 'explainer-one.png',
+      description: 'Use to easily link to another page.',
+      template: function () {
+        return `<p>Text Before</p>
+        <div class="jcc-tiles-section jcc-tiles-section--has-two-columns">
+          <ul class="jcc-tiles">
+            <li class="jcc-tiles__item">
+              <div class="jcc-tile jcc-tile--hover">
+                <p class="jcc-tile__brow">Go to</p>
+                <h3 class="jcc-tile__title">
+                  <a href="#">The title of the link tile</a>
+                </h3>
+                <div class="jcc-tile__icon-link"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <p>Text After</p>`
+      }
+    },
+    {
+      title: 'Multiple "Go to" Links Section',
       image: 'explainer-two.png',
-      description: 'Use to wrap "go to" links.',
+      description: 'A section to add two to three "go to" links to other pages. Requires tile template that follows.',
       template: function () {
         return `<p>Text Before</p>
         <div class="jcc-tiles-section jcc-tiles-section--has-two-columns">
@@ -339,9 +361,9 @@ CKEDITOR.addTemplates('default', {
       }
     },
     {
-      title: '"Go to" link tile',
+      title: '"Go to" Link Tile',
       image: 'explainer-one.png',
-      description: 'Use to link to another page.',
+      description: 'Tile component for the multiple "Go to" links section.',
       template: function () {
         return `<li class="jcc-tiles__item">
           <div class="jcc-tile jcc-tile--hover">
