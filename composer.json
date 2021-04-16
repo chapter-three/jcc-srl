@@ -268,6 +268,9 @@
             },
             "drupal/svg_image_field": {
                 "Fix previews": "https://www.drupal.org/files/issues/2019-05-06/svg_image_field-zero-width-preview-3053018.patch"
+            },
+            "drupal/linkit": {
+                "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch"
             }
         },
         "installer-types": [
