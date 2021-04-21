@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.case_type
+    - user.role.authenticated
   module:
+    - csv_serialization
+    - jcc_forms
     - node
     - rest
     - serialization
@@ -26,9 +29,10 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            authenticated: authenticated
       cache:
         type: tag
         options: {  }
@@ -173,7 +177,7 @@ display:
           hide_alter_empty: true
           text: view
           output_url_as_text: true
-          absolute: false
+          absolute: true
           entity_type: node
           plugin_id: entity_link
       filters:
@@ -203,7 +207,7 @@ display:
           exposed: true
           expose:
             operator_id: field_case_types_target_id_op
-            label: 'Case type'
+            label: ''
             description: ''
             use_operator: false
             operator: field_case_types_target_id_op
@@ -297,7 +301,9 @@ display:
           break_phrase: false
           not: false
           plugin_id: numeric
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
+        ajax_history: {  }
       filter_groups:
         operator: AND
         groups:
@@ -311,7 +317,7 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   data_export_1:
     display_plugin: data_export
@@ -330,29 +336,20 @@ display:
       custom_redirect_path: false
       include_query_params: false
       style:
-        type: data_export
+        type: custom_serializer
         options:
           formats:
-            json: json
-          csv_settings:
-            delimiter: ','
-            enclosure: '"'
-            escape_char: \
-            strip_tags: true
-            trim: true
-            encoding: utf8
-            utf8_bom: '0'
-            use_serializer_encode_only: false
+            csv: csv
       row:
         type: data_field
         options:
           field_options:
             title:
               alias: ''
-              raw_output: true
-            view_node:
+              raw_output: false
+            nid:
               alias: ''
-              raw_output: true
+              raw_output: false
       filters:
         status:
           value: '1'
@@ -431,7 +428,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Link to Content'
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -464,7 +461,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -485,13 +482,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          default_action: 'not found'
+          default_action: ignore
           exception:
             value: all
             title_enable: false
             title: All
-          title_enable: false
-          title: ''
+          title_enable: true
+          title: 'Case type : {{ arguments.field_case_types_target_id }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''
@@ -521,7 +518,7 @@ display:
         - request_format
         - url
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   page_1:
     display_plugin: page
@@ -532,7 +529,7 @@ display:
       display_extenders:
         metatag_display_extender: {  }
         ajax_history: {  }
-      path: case-type
+      path: case-type-list
       footer: {  }
       defaults:
         footer: false
@@ -547,5 +544,5 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
