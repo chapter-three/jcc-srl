@@ -484,7 +484,7 @@ display:
           admin_label: ''
           default_action: ignore
           exception:
-            value: all
+            value: All
             title_enable: false
             title: All
           title_enable: true
