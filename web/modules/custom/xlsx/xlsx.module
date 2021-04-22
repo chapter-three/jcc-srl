@@ -3,6 +3,7 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\xlsx\Event\XlsxEventType;
 use Drupal\xlsx\Event\XlsxEntityEvent;
+use Drupal\xlsx\Entity\FormThumbnail;
 
 /**
  * Implements hook_entity_update().
@@ -25,4 +26,13 @@ function xlsx_entity_delete(EntityInterface $entity) {
     ->condition('entity_type', $entity->getEntityTypeId() . ':' . $entity->bundle())
     ->condition('entity_id', $entity->id())
     ->execute();
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function xlsx_file_delete(EntityInterface $entity) {
+  if ($e = FormThumbnail::load($entity->id())) {
+    $e->delete();
+  }
 }
