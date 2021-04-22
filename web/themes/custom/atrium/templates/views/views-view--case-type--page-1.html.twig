@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Template for "Find Your Self Help Center" view.
+ *
+ * This shows a `court` node based off of a search. Its corresponding `courthouse`
+ * nodes are displayed below via `views-view--find-courthouses--self-help-block.html.twig`.
+ */
+#}
+
+{% extends 'views-view.html.twig' %}
+
+{% block header %}
+  {% set search_form %}
+    <div class="jcc-search-group jcc-search-group--vertical">
+      <div class="jcc-search-group__container">
+        {{ exposed }}
+      </div>
+
+      {% if(exposed.casetype['#value']) %}
+        <div class="export-button">
+          {% include '@atoms/buttons/link-button.twig' with {
+            link_button: {
+              text: 'Export',
+              url: "/content-export/" ~ exposed.casetype['#value'],
+            }
+          } %}
+        </div>
+      {% endif %}
+
+    </div>
+  {% endset %}
+
+  {% include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      background_variant: 'has-background-color--light--secondary',
+      column_variant: 'has-one-column',
+      lead: header,
+      column_content_right: search_form,
+    }
+  } %}
+{% endblock %}
+
+{% block exposed %}
+  {# "Unset" this block since exposed is used in the header block #}
+  {#
+    Info:
+      - `exposed.s` is the "search" term. This textbox is visible to the user.
+      - `exposed.id` is the nid of a court node. This textbox is hidden (via css) from the user.
+  #}
+{% endblock %}
+
+
+{% block content %}
+  <div class="grid-container-widescreen padding-y-5">
+      {% if rows %}
+        <div class="view__content">
+          {{ rows }}
+        </div>
+      {% endif %}
+  </div>
+{% endblock %}
+
+{% block empty %}
+  <div class="grid-container-widescreen padding-y-5">
+      {% if empty %}
+        <div class="view__content is-empty">
+          {{ empty }}
+        </div>
+      {% endif %}
+  </div>
+{% endblock %}
