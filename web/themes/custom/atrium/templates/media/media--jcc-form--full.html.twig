@@ -106,10 +106,13 @@
     {% else %}
       {% set form_thumbnail_url = '/' ~ directory ~ '/assets/images/form-generic.jpg' %}
     {% endif %}
-    
+
+    {% set thumbnail_alt = 'View ' ~ media.field_number.value ~ ' ' ~ media.label ~ ' form PDF' %}
     <div class="jcc-form--thumbnail">
       <a href="{{ media.field_url.uri }}">
-        <img src="{{ form_thumbnail_url }}" alt="View {{media.field_number.value}} {{media.label}} form PDF">
+        <img src="{{ form_thumbnail_url }}" alt="{{ thumbnail_alt }}">
+        {# For analytics visibility only #}
+        <span class="usa-sr-only" aria-hidden="true">{{ thumbnail_alt }}</span>
       </a>
     </div>
   {% endset %}
