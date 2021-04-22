@@ -1,0 +1,29 @@
+uuid: a1419552-a451-4643-ab30-b70851cd7f1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_mandatory
+    - media.type.jcc_form
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 1
+    label: field_mandatory
+id: media.jcc_form.field_mandatory
+field_name: field_mandatory
+entity_type: media
+bundle: jcc_form
+label: 'Is form mandatory?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

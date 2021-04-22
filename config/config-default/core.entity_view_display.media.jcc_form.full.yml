@@ -19,6 +19,7 @@ dependencies:
     - field.field.media.jcc_form.field_form_thumbnail
     - field.field.media.jcc_form.field_hmong_url
     - field.field.media.jcc_form.field_korean_url
+    - field.field.media.jcc_form.field_mandatory
     - field.field.media.jcc_form.field_media_file_1
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
@@ -28,6 +29,7 @@ dependencies:
     - field.field.media.jcc_form.field_tagalog_url
     - field.field.media.jcc_form.field_url
     - field.field.media.jcc_form.field_vietnamese_url
+    - field.field.media.jcc_form.field_weight
     - media.type.jcc_form
   module:
     - datetime
@@ -139,11 +141,13 @@ hidden:
   field_form_thumbnail: true
   field_hmong_url: true
   field_korean_url: true
+  field_mandatory: true
   field_punjabi_url: true
   field_russian_url: true
   field_spanish_url: true
   field_tagalog_url: true
   field_vietnamese_url: true
+  field_weight: true
   search_api_excerpt: true
   thumbnail: true
   uid: true
