@@ -1,4 +1,4 @@
-uuid: 3368e9cc-8922-41a8-b1ff-7eb9c9d4a688
+uuid: 21be897a-f4a3-457f-a988-570dffa7b36e
 langcode: en
 status: true
 dependencies: {  }
@@ -127,6 +127,9 @@ mapping:
       field_korean_url:
         column: L
         cell_plugin: link
+      field_mandatory:
+        column: S
+        cell_plugin: as_is
       field_number:
         column: B
         cell_plugin: as_is
@@ -145,6 +148,9 @@ mapping:
       field_vietnamese_url:
         column: Q
         cell_plugin: link
+      field_weight:
+        column: U
+        cell_plugin: as_is
   sheet_columns:
     Categories:
       A: 'Form Category ID'
@@ -181,3 +187,4 @@ mapping:
       R: 'Form filling instructions URL'
       S: 'Mandatory Form'
       T: 'Revision Date'
+      U: Weight
