@@ -9,3 +9,9 @@ xlsx.json_file.counties:
   route_name: xlsx.json_file.counties
   description: 'Counties, Cities and Zip Codes.'
   parent: xlsx.mapping
+
+xlsx.forms_images:
+  title: 'Forms images upload'
+  route_name: xlsx.forms_images
+  description: 'Forms images zip upload.'
+  parent: xlsx.mapping

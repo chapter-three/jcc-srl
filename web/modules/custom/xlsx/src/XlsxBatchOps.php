@@ -2,6 +2,8 @@
 
 namespace Drupal\xlsx;
 
+use Drupal\xlsx\Entity\FormThumbnail;
+
 /**
  * Xlsx Batch API.
  *
@@ -38,7 +40,15 @@ class XlsxBatchOps {
     $data_array = array_values($data);
     $mapped_fields = [];
     $entity_mapping = $mapping['entity_mapping'];
-    $entity = \Drupal::entityTypeManager()->getStorage($destination['type'])->create(['type' => $destination['bundle']]);
+    if ($destination['type'] == 'media') {
+      $entity = \Drupal::entityTypeManager()->getStorage($destination['type'])->create(['bundle' => $destination['bundle']]);
+    }
+    elseif ($destination['type'] == 'taxonomy_term') {
+      $entity = \Drupal::entityTypeManager()->getStorage($destination['type'])->create(['vid' => $destination['bundle']]);
+    }
+    else {
+      $entity = \Drupal::entityTypeManager()->getStorage($destination['type'])->create(['type' => $destination['bundle']]);
+    }
     foreach ($mapping['field_mapping'][$worksheet_index] as $drupal_field => $info) {
       $value = !empty($data_array[0][$info['column']]) ? $data_array[0][$info['column']] : '';
       if ($value) {
@@ -54,7 +64,7 @@ class XlsxBatchOps {
       // Load cell transformer plugin.
       $xlsx_cell = !empty($info['cell_plugin']) ? $info['cell_plugin'] : 'as_is';
       if ($plugin = \Drupal::service('plugin.manager.xlsx_cell')->createInstance($xlsx_cell)) {
-        if ($plugin_value = $plugin->import($entity, $drupal_field, $value, $mapped_fields)) {
+        if ($plugin_value = $plugin->import($entity, $drupal_field, $value, $mapped_fields, $data_array, $worksheet_index)) {
           $entity->set($drupal_field, $plugin_value);
         }
       }
@@ -104,6 +114,30 @@ class XlsxBatchOps {
       $message = t('Finished with an error.');
     }
     \Drupal::messenger()->addMessage($message, 'status', TRUE);
+  }
+
+  /**
+   * Purge previously imported data.
+   */
+  public static function uploadThumbnail($filename, $path, $contents, &$context) {
+    if ($contents) {
+      $context['results'][] = $filename;
+      $context['message'] = t('Unzipping %label ...', ['%label' => $filename]);
+      $thumbnails = \Drupal::entityTypeManager()
+        ->getStorage('jcc_form_thumbnail')
+        ->loadByProperties(['name' => $filename]);
+      if (!$thumbnail = reset($thumbnails)) {
+        if ($fileObj = file_save_data($contents, $path . '/' . $filename)) {
+          $thumbnail = FormThumbnail::create([
+            'name' => $filename,
+            'file_id' => [
+              'target_id' => $fileObj->id(),
+            ]
+          ]);
+          $thumbnail->save();
+        }
+      }
+    }
   }
 
 }

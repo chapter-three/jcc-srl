@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\Core\Database\Database;
+use Drupal\Core\Entity\ContentEntityType;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
 /**
  * Implements hook_requirements().
  */
@@ -109,4 +113,79 @@ function xlsx_schema() {
     ],
   ];
   return $schema;
+}
+
+/**
+ * Add custom entity to track uploaded thumbnails.
+ */
+function xlsx_update_8802() {
+  $entity_definition = new ContentEntityType([
+    "id" => "jcc_form_thumbnail",
+    "label" => new TranslatableMarkup("JCC Form Thumbnails"),
+    "base_table" => "jcc_form_thumbnail",
+    "translatable" => FALSE,
+    "admin_permission" => "administer xlsx mapping",
+    "entity_keys" => [
+      "id" => "id",
+      "label" => "label",
+      "uuid" => "uuid",
+      "published" => "status",
+    ],
+  ]);
+  $entity_definition->setClass('Drupal\xlsx\Entity\FormThumbnail');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_definition);
+}
+
+/**
+ * Add custom entity to track JCC forms data.
+ */
+function xlsx_update_8803() {
+
+  $entity_definition = new ContentEntityType([
+    "id" => "jcc_thumbnail",
+    "label" => new TranslatableMarkup("JCC Thumbnails"),
+    "base_table" => "jcc_thumbnail",
+    "translatable" => FALSE,
+    "admin_permission" => "administer xlsx mapping",
+    "entity_keys" => [
+      "id" => "id",
+      "label" => "label",
+      "uuid" => "uuid",
+      "published" => "status",
+    ],
+  ]);
+  $entity_definition->setClass('Drupal\xlsx\Entity\JccThumbnail');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_definition);
+
+  $entity_definition = new ContentEntityType([
+    "id" => "jcc_prefix",
+    "label" => new TranslatableMarkup("JCC Prefix"),
+    "base_table" => "jcc_prefix",
+    "translatable" => FALSE,
+    "admin_permission" => "administer xlsx mapping",
+    "entity_keys" => [
+      "id" => "id",
+      "label" => "label",
+      "uuid" => "uuid",
+      "published" => "status",
+    ],
+  ]);
+  $entity_definition->setClass('Drupal\xlsx\Entity\JccPrefix');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_definition);
+
+  $entity_definition = new ContentEntityType([
+    "id" => "jcc_category",
+    "label" => new TranslatableMarkup("JCC Category"),
+    "base_table" => "jcc_category",
+    "translatable" => FALSE,
+    "admin_permission" => "administer xlsx mapping",
+    "entity_keys" => [
+      "id" => "id",
+      "label" => "label",
+      "uuid" => "uuid",
+      "published" => "status",
+    ],
+  ]);
+  $entity_definition->setClass('Drupal\xlsx\Entity\JccCategory');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_definition);
 }

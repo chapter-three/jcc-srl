@@ -154,3 +154,11 @@ xlsx.json_file.counties:
     _form: '\Drupal\xlsx\Form\JsonFileForm'
   requirements:
     _permission: 'administer xlsx mapping'
+
+xlsx.forms_images:
+  path: '/admin/structure/xlsx/forms-images'
+  defaults:
+    _title: 'Forms Images'
+    _form: '\Drupal\xlsx\Form\FormsImagesUploadForm'
+  requirements:
+    _permission: 'administer xlsx mapping'
