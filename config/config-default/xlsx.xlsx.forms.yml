@@ -1,0 +1,193 @@
+uuid: 21be897a-f4a3-457f-a988-570dffa7b36e
+langcode: en
+status: true
+dependencies: {  }
+id: forms
+label: Forms
+mapping:
+  source: xlsx_file
+  source_name: jcc_forms.xlsx
+  csv: null
+  export:
+    - xlsx
+  export_only: false
+  entity_mapping:
+    -
+      worksheet:
+        index: 0
+        name: Categories
+      entity:
+        xlsx_data_plugin: jcc_category
+        type: jcc_category
+        bundle: jcc_category
+    -
+      worksheet:
+        index: 1
+        name: Prefixes
+      entity:
+        xlsx_data_plugin: jcc_prefix
+        type: jcc_prefix
+        bundle: jcc_prefix
+    -
+      worksheet:
+        index: 2
+        name: Thumbnails
+      entity:
+        xlsx_data_plugin: jcc_thumbnail
+        type: jcc_thumbnail
+        bundle: jcc_thumbnail
+    -
+      worksheet:
+        index: 3
+        name: Forms
+      entity:
+        xlsx_data_plugin: media
+        type: media
+        bundle: jcc_form
+  field_mapping:
+    -
+      name:
+        column: A
+        cell_plugin: as_is
+      category_label:
+        column: B
+        cell_plugin: as_is
+      info_url:
+        column: C
+        cell_plugin: as_is
+      info_label:
+        column: D
+        cell_plugin: as_is
+      packet_url:
+        column: E
+        cell_plugin: as_is
+      packet_label:
+        column: F
+        cell_plugin: as_is
+      synonym:
+        column: G
+        cell_plugin: as_is
+      term_id:
+        column: A
+        cell_plugin: as_is
+    -
+      name:
+        column: A
+        cell_plugin: as_is
+      prefix_label:
+        column: B
+        cell_plugin: as_is
+      term_id:
+        column: A
+        cell_plugin: as_is
+    -
+      name:
+        column: A
+        cell_plugin: as_is
+      filename:
+        column: B
+        cell_plugin: as_is
+    -
+      name:
+        column: A
+        cell_plugin: as_is
+      field_arabic_url:
+        column: F
+        cell_plugin: link
+      field_cambodian_url:
+        column: G
+        cell_plugin: link
+      field_chinese_traditional_url:
+        column: I
+        cell_plugin: link
+      field_chinese_url:
+        column: H
+        cell_plugin: link
+      field_description:
+        column: D
+        cell_plugin: as_is
+      field_farsi_url:
+        column: J
+        cell_plugin: link
+      field_form_category:
+        column: C
+        cell_plugin: form_category
+      field_form_filling_instructions_:
+        column: R
+        cell_plugin: as_is
+      field_form_prefix:
+        column: B
+        cell_plugin: form_prefix
+      field_form_thumbnail:
+        column: B
+        cell_plugin: jcc_thumbnail
+      field_hmong_url:
+        column: K
+        cell_plugin: link
+      field_korean_url:
+        column: L
+        cell_plugin: link
+      field_mandatory:
+        column: S
+        cell_plugin: as_is
+      field_number:
+        column: B
+        cell_plugin: as_is
+      field_punjabi_url:
+        column: M
+        cell_plugin: link
+      field_russian_url:
+        column: 'N'
+        cell_plugin: link
+      field_spanish_url:
+        column: O
+        cell_plugin: link
+      field_tagalog_url:
+        column: P
+        cell_plugin: link
+      field_vietnamese_url:
+        column: Q
+        cell_plugin: link
+      field_weight:
+        column: U
+        cell_plugin: as_is
+      field_url:
+        column: E
+        cell_plugin: as_is
+  sheet_columns:
+    Categories:
+      A: 'Form Category ID'
+      B: 'Form Category Label'
+      C: 'Info URL'
+      D: 'Info URL Label'
+      E: 'Forms Packet URL'
+      F: 'Forms Packet URL Label'
+      G: Synonyms
+    Prefixes:
+      A: 'Form Prefix'
+      B: 'Form Prefix Label'
+    Thumbnails:
+      A: 'Form Number'
+      B: 'Thumbnail Path'
+    Forms:
+      A: 'Form name'
+      B: 'Form number'
+      C: 'Form category ids'
+      D: 'Plain language description (1-2 sentences)'
+      E: 'PDF URL'
+      F: 'Arabic URL'
+      G: 'Cambodian URL'
+      H: 'Chinese URL'
+      I: 'Chinese Traditional URL'
+      J: 'Farsi URL'
+      K: 'Hmong URL'
+      L: 'Korean URL'
+      M: 'Punjabi URL'
+      'N': 'Russian URL'
+      O: 'Spanish URL'
+      P: 'Tagalog URL'
+      Q: 'Vietnamese URL'
+      R: 'Form filling instructions URL'
+      S: 'Mandatory Form'
+      T: 'Revision Date'
+      U: Weight

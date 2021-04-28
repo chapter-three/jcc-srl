@@ -8,7 +8,8 @@ id: local
 label: Local
 description: 'Local development environments.'
 folder: ../config/config-local
-module: {  }
+module:
+  devel: 0
 theme: {  }
 blacklist: {  }
 graylist:

@@ -1,0 +1,28 @@
+uuid: 36d42a49-f79b-4700-8bd3-ffe99ea96454
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_weight
+    - media.type.jcc_form
+  module:
+    - datalayer
+    - options
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_weight
+id: media.jcc_form.field_weight
+field_name: field_weight
+entity_type: media
+bundle: jcc_form
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

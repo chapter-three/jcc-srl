@@ -90,7 +90,8 @@ function _atrium_get_menutree($menu_name) {
   // active_trail on menu items.
   $node_tids = [];
   $node = \Drupal::routeMatch()->getParameter('node');
-  if (isset($node)) {
+  // Skip if is_numeric as we're likely looking at a revision.
+  if (!is_numeric($node) && isset($node)) {
     $terms = $node->get('field_case_types')->referencedEntities();
     foreach ($terms as $term) {
       $node_tids[] = $term->id();
