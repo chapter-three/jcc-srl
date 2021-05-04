@@ -23,10 +23,6 @@ form_settings:
     disable: true
     hidden: true
     default_value: false
-  node:
-    default_value: true
-    disable: true
-    hidden: true
   path_alias:
     hidden: true
     default_value: false
@@ -59,3 +55,39 @@ form_settings:
     default_value: true
     disable: true
     hidden: true
+  access_token:
+    default_value: false
+    disable: false
+    hidden: false
+  content_moderation_state:
+    default_value: false
+    disable: false
+    hidden: false
+  node:
+    default_value: false
+    disable: false
+    hidden: false
+  webform_submission:
+    default_value: false
+    disable: false
+    hidden: false
+  jcc_form_thumbnail:
+    default_value: false
+    disable: false
+    hidden: false
+  jcc_category:
+    default_value: false
+    disable: false
+    hidden: false
+  jcc_prefix:
+    default_value: false
+    disable: false
+    hidden: false
+  jcc_thumbnail:
+    default_value: false
+    disable: false
+    hidden: false
+  xlsx_data:
+    default_value: false
+    disable: false
+    hidden: false
