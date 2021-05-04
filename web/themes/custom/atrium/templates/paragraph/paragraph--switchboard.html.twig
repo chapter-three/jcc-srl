@@ -1,6 +1,7 @@
 {# Switchboard items: Primary #}
 {%  if content.field_tiles|render %}
   {% set background = paragraph.field_switchboard_background.value ?: 'dark' %}
+  {% set headingstyle = paragraph.field_use_component_as_hero.value ? 'h1' %}
 
   {% set primary_items = [] %}
   {% set primary = paragraph.field_tiles %}
@@ -43,7 +44,8 @@
       layout_variant: paragraph.field_layout_variant.value,
       headergroup: {
         brow: content.field_switchboard_title|render ? content.field_switchboard_title : '',
-        title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : ''
+        title: content.field_switchboard_subtitle|render ? content.field_switchboard_subtitle : '',
+        tag: headingstyle,
       },
       body: paragraph.field_body|view,
       items: {
