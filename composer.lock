@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce553e027a07a7d4c9fa85883057a013",
+    "content-hash": "5adb01f3baece9476360ce66b8c481bb",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8909,16 +8909,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.48",
+            "version": "0.1.105",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "058abe75df93b32bae4df546bcefc53ccb025e63"
+                "reference": "c6e206e37906f4275def9c71a77a383c72c82b3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/058abe75df93b32bae4df546bcefc53ccb025e63",
-                "reference": "058abe75df93b32bae4df546bcefc53ccb025e63",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/c6e206e37906f4275def9c71a77a383c72c82b3a",
+                "reference": "c6e206e37906f4275def9c71a77a383c72c82b3a",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8933,7 +8933,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-03-25T16:54:45+00:00"
+            "time": "2021-05-05T17:15:43+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
