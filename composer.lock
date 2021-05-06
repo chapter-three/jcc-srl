@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce553e027a07a7d4c9fa85883057a013",
+    "content-hash": "5adb01f3baece9476360ce66b8c481bb",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5216,6 +5216,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8909,16 +8912,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.48",
+            "version": "0.1.108",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "058abe75df93b32bae4df546bcefc53ccb025e63"
+                "reference": "d133ad2f0ab3ba74dd1b11b99c74876bca0ea9ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/058abe75df93b32bae4df546bcefc53ccb025e63",
-                "reference": "058abe75df93b32bae4df546bcefc53ccb025e63",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/d133ad2f0ab3ba74dd1b11b99c74876bca0ea9ef",
+                "reference": "d133ad2f0ab3ba74dd1b11b99c74876bca0ea9ef",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -8933,7 +8936,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-03-25T16:54:45+00:00"
+            "time": "2021-05-06T19:04:33+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -13794,10 +13797,6 @@
                 "GPL-2.0+"
             ],
             "authors": [
-                {
-                    "name": "Bohun Tak",
-                    "homepage": "https://www.drupal.org/user/1205098"
-                },
                 {
                     "name": "mrhanlon",
                     "homepage": "https://www.drupal.org/user/764624"
