@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.switchboard.field_switchboard_subtitle
     - field.field.paragraph.switchboard.field_switchboard_title
     - field.field.paragraph.switchboard.field_tiles
+    - field.field.paragraph.switchboard.field_use_component_as_hero
     - paragraphs.paragraphs_type.switchboard
   module:
     - allowed_formats
@@ -21,7 +22,7 @@ bundle: switchboard
 mode: default
 content:
   field_body:
-    weight: 4
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -78,7 +79,7 @@ content:
     region: content
   field_tiles:
     type: entity_reference_paragraphs
-    weight: 5
+    weight: 6
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -88,8 +89,15 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
+  field_use_component_as_hero:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   translation:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
