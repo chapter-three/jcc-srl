@@ -1,0 +1,22 @@
+uuid: 5e4fb115-e868-4f79-9f9d-ca5974dbd479
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.cascading_menu
+id: paragraph.cascading_menu.status
+field_name: status
+entity_type: paragraph
+bundle: cascading_menu
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

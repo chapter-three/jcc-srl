@@ -1,0 +1,11 @@
+uuid: 73d393f3-25d8-4df9-8785-5906ccb9264a
+langcode: en
+status: true
+dependencies:
+  module:
+    - xlsx
+id: jcc_prefix.jcc_prefix
+target_entity_type_id: jcc_prefix
+target_bundle: jcc_prefix
+default_langcode: site_default
+language_alterable: false

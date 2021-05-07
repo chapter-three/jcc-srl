@@ -1,0 +1,18 @@
+uuid: 4eb6fe8a-6f8e-40cc-83a0-a2a586bf8611
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.self_help_finder
+id: paragraph.self_help_finder.created
+field_name: created
+entity_type: paragraph
+bundle: self_help_finder
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

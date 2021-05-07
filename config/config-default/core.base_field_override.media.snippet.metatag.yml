@@ -1,0 +1,18 @@
+uuid: 0474c728-6f33-42f4-bd4b-3babf91781dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.snippet
+id: media.snippet.metatag
+field_name: metatag
+entity_type: media
+bundle: snippet
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
