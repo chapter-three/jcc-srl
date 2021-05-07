@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 
 /**
@@ -31,18 +32,19 @@ function jcc_forms_preprocess_media__jcc_form__full(&$variables, $hook) {
 
   /** @var Drupal\media\Entity\Media $media */
   $media = $variables['elements']['#media'];
+  $form_number = $media->field_number->value;
 
   foreach ($lang_props_sets as $field_name => $labels ) {
-
     if(isset($media->$field_name) && $media->$field_name->uri != null) {
-      $label_in_language = $labels->label_in_language;
       $label_default = $labels->label_default;
+      $label_in_language = $labels->label_in_language;
+      $link_text = Markup::create('<span aria-hidden="true">' . $label_in_language . '</span>' . '<span class="usa-sr-only">Get form ' . $form_number . ' in ' . $label_default . '</span>');
 
       /** @var Drupal\core\Url $field_url */
       $field_url = Url::fromUri($media->$field_name->uri);
 
       /** @var Drupal\Core\Link $link */
-      $link = Link::fromTextAndUrl($label_in_language, $field_url);
+      $link = Link::fromTextAndUrl($link_text, $field_url);
       $link_suffix = t(' (@label_default)', array('@label_default' => $label_default));
 
       $variables['language_links'][$labels->label_default] = [

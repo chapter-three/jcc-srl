@@ -51,7 +51,7 @@
 
   {# Prepare 'title' for hero.twig #}
   {% set title %}
-    {{media.label}} <span style="white-space: nowrap;">({{media.field_number.value}})</span>
+    {{media.label}} <span class="text-no-wrap">({{media.field_number.value}})</span>
   {% endset %}
 
   {# Prepare 'body' for hero.twig #}
@@ -111,7 +111,7 @@
     <div class="jcc-form--thumbnail">
       <a href="{{ media.field_url.uri }}">
         <img src="{{ form_thumbnail_url }}" alt="{{ thumbnail_alt }}">
-        {# For analytics visibility only #}
+        {# For analytics visibility only ... intentional screen reader code misuse #}
         <span class="usa-sr-only" aria-hidden="true">{{ thumbnail_alt }}</span>
       </a>
     </div>
