@@ -5216,9 +5216,6 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -13797,6 +13794,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "Bohun Tak",
+                    "homepage": "https://www.drupal.org/user/1205098"
+                },
                 {
                     "name": "mrhanlon",
                     "homepage": "https://www.drupal.org/user/764624"
