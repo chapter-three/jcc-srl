@@ -1,0 +1,18 @@
+uuid: f4cf1d15-4d73-467b-a42f-ca1efa0c8dd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.snippet
+id: media.snippet.changed
+field_name: changed
+entity_type: media
+bundle: snippet
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

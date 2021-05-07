@@ -1,0 +1,11 @@
+uuid: b97b2ab7-d7ef-43fa-9b05-a76326e1790f
+langcode: en
+status: true
+dependencies:
+  module:
+    - xlsx
+id: jcc_form_thumbnail.jcc_form_thumbnail
+target_entity_type_id: jcc_form_thumbnail
+target_bundle: jcc_form_thumbnail
+default_langcode: site_default
+language_alterable: false

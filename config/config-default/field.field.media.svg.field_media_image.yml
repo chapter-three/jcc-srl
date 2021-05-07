@@ -6,18 +6,12 @@ dependencies:
     - field.storage.media.field_media_image
     - media.type.svg
   module:
-    - content_translation
     - datalayer
     - image
 third_party_settings:
   datalayer:
     expose: 0
     label: field_media_image
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 id: media.svg.field_media_image
 field_name: field_media_image
 entity_type: media
@@ -25,7 +19,7 @@ bundle: svg
 label: Image
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
