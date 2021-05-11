@@ -19,6 +19,7 @@ dependencies:
     - field.field.media.jcc_form.field_form_thumbnail
     - field.field.media.jcc_form.field_hmong_url
     - field.field.media.jcc_form.field_korean_url
+    - field.field.media.jcc_form.field_mandatory
     - field.field.media.jcc_form.field_media_file_1
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
@@ -28,6 +29,7 @@ dependencies:
     - field.field.media.jcc_form.field_tagalog_url
     - field.field.media.jcc_form.field_url
     - field.field.media.jcc_form.field_vietnamese_url
+    - field.field.media.jcc_form.field_weight
     - media.type.jcc_form
 id: media.jcc_form.media_library
 targetEntityType: media
@@ -63,6 +65,7 @@ hidden:
   field_form_thumbnail: true
   field_hmong_url: true
   field_korean_url: true
+  field_mandatory: true
   field_media_file_1: true
   field_number: true
   field_pdf_private: true
@@ -72,6 +75,7 @@ hidden:
   field_tagalog_url: true
   field_url: true
   field_vietnamese_url: true
+  field_weight: true
   name: true
   path: true
   status: true

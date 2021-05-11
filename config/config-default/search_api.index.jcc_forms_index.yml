@@ -9,6 +9,7 @@ dependencies:
     - field.storage.taxonomy_term.field_synonyms
     - field.storage.media.field_form_prefix
     - field.storage.taxonomy_term.field_form_prefix_label
+    - field.storage.media.field_weight
     - search_api.server.deafult
   module:
     - taxonomy
@@ -30,6 +31,14 @@ field_settings:
         - field.storage.taxonomy_term.field_synonyms
       module:
         - taxonomy
+  field_weight:
+    label: Weight
+    datasource_id: 'entity:media'
+    property_path: field_weight
+    type: integer
+    dependencies:
+      config:
+        - field.storage.media.field_weight
   form_category:
     label: 'Form Category » Taxonomy term » Name'
     datasource_id: 'entity:media'

@@ -11,6 +11,7 @@ dependencies:
     - field.storage.media.field_farsi_url
     - field.storage.media.field_hmong_url
     - field.storage.media.field_korean_url
+    - field.storage.media.field_mandatory
     - field.storage.media.field_number
     - field.storage.media.field_punjabi_url
     - field.storage.media.field_russian_url
@@ -18,12 +19,14 @@ dependencies:
     - field.storage.media.field_tagalog_url
     - field.storage.media.field_url
     - field.storage.media.field_vietnamese_url
+    - field.storage.media.field_weight
     - field.storage.taxonomy_term.field_form_prefix_label
     - field.storage.taxonomy_term.field_synonyms
     - search_api.index.jcc_forms_index
   module:
     - jcc_forms
     - link
+    - options
     - rest
     - search_api
     - serialization
@@ -1632,6 +1635,164 @@ display:
             multi_separator: ', '
           entity_type: media
           plugin_id: search_api_field
+        field_mandatory:
+          id: field_mandatory
+          table: search_api_datasource_jcc_forms_index_entity_media
+          field: field_mandatory
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: true-false
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_boolean
+          fallback_options:
+            type: yes-no
+            type_custom_true: ''
+            type_custom_false: ''
+            not: false
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: media
+          plugin_id: search_api_field
+        field_weight:
+          id: field_weight
+          table: search_api_datasource_jcc_forms_index_entity_media
+          field: field_weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
+          entity_type: media
+          plugin_id: search_api_field
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -1698,6 +1859,18 @@ display:
           expose:
             label: ''
           plugin_id: search_api
+        field_weight:
+          id: field_weight
+          table: search_api_index_jcc_forms_index
+          field: field_weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
         form_number:
           id: form_number
           table: search_api_index_jcc_forms_index
@@ -1733,6 +1906,7 @@ display:
         - 'config:field.storage.media.field_farsi_url'
         - 'config:field.storage.media.field_hmong_url'
         - 'config:field.storage.media.field_korean_url'
+        - 'config:field.storage.media.field_mandatory'
         - 'config:field.storage.media.field_number'
         - 'config:field.storage.media.field_punjabi_url'
         - 'config:field.storage.media.field_russian_url'
@@ -1740,6 +1914,7 @@ display:
         - 'config:field.storage.media.field_tagalog_url'
         - 'config:field.storage.media.field_url'
         - 'config:field.storage.media.field_vietnamese_url'
+        - 'config:field.storage.media.field_weight'
         - 'config:field.storage.taxonomy_term.field_form_prefix_label'
         - 'config:field.storage.taxonomy_term.field_synonyms'
         - 'config:search_api.index.jcc_forms_index'
@@ -1848,6 +2023,7 @@ display:
         - 'config:field.storage.media.field_farsi_url'
         - 'config:field.storage.media.field_hmong_url'
         - 'config:field.storage.media.field_korean_url'
+        - 'config:field.storage.media.field_mandatory'
         - 'config:field.storage.media.field_number'
         - 'config:field.storage.media.field_punjabi_url'
         - 'config:field.storage.media.field_russian_url'
@@ -1855,6 +2031,7 @@ display:
         - 'config:field.storage.media.field_tagalog_url'
         - 'config:field.storage.media.field_url'
         - 'config:field.storage.media.field_vietnamese_url'
+        - 'config:field.storage.media.field_weight'
         - 'config:field.storage.taxonomy_term.field_form_prefix_label'
         - 'config:field.storage.taxonomy_term.field_synonyms'
         - 'config:search_api.index.jcc_forms_index'

@@ -2,6 +2,8 @@
 
 namespace Drupal\xlsx;
 
+use Drupal\xlsx\Entity\FormThumbnail;
+
 /**
  * Xlsx Batch API.
  *
@@ -112,6 +114,30 @@ class XlsxBatchOps {
       $message = t('Finished with an error.');
     }
     \Drupal::messenger()->addMessage($message, 'status', TRUE);
+  }
+
+  /**
+   * Purge previously imported data.
+   */
+  public static function uploadThumbnail($filename, $path, $contents, &$context) {
+    if ($contents) {
+      $context['results'][] = $filename;
+      $context['message'] = t('Unzipping %label ...', ['%label' => $filename]);
+      $thumbnails = \Drupal::entityTypeManager()
+        ->getStorage('jcc_form_thumbnail')
+        ->loadByProperties(['name' => $filename]);
+      if (!$thumbnail = reset($thumbnails)) {
+        if ($fileObj = file_save_data($contents, $path . '/' . $filename)) {
+          $thumbnail = FormThumbnail::create([
+            'name' => $filename,
+            'file_id' => [
+              'target_id' => $fileObj->id(),
+            ]
+          ]);
+          $thumbnail->save();
+        }
+      }
+    }
   }
 
 }

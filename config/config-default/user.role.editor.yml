@@ -64,6 +64,7 @@ permissions:
   - 'link to any page'
   - 'schedule publishing of nodes'
   - 'translate any entity'
+  - 'translate interface'
   - 'translate jcc_form media'
   - 'update content translations'
   - 'use editorial_workflow transition archive'

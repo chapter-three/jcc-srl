@@ -28,6 +28,7 @@ module:
   content_moderation: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
   datalayer: 0
   datetime: 0
@@ -70,6 +71,7 @@ module:
   language: 0
   link: 0
   linkit: 0
+  locale: 0
   login_emailusername: 0
   markup: 0
   maxlength: 0
@@ -140,6 +142,7 @@ module:
   views_ajax_history: 0
   views_bulk_edit: 0
   views_bulk_operations: 0
+  views_data_export: 0
   views_ui: 0
   webform: 0
   webform_jqueryui_buttons: 0

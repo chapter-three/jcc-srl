@@ -14,7 +14,7 @@ bundle: jcc_form_category
 label: 'Category info link'
 description: 'This link gets rendered on the form info pages for forms tagged with this category. It should be a link to self-help information about this category.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
