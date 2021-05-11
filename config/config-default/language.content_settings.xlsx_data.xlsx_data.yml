@@ -1,0 +1,11 @@
+uuid: 99b7c03e-4b05-49d5-ace2-f4f71decbc80
+langcode: en
+status: true
+dependencies:
+  module:
+    - xlsx
+id: xlsx_data.xlsx_data
+target_entity_type_id: xlsx_data
+target_bundle: xlsx_data
+default_langcode: site_default
+language_alterable: false

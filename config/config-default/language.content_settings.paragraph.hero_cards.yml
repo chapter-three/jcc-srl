@@ -1,0 +1,18 @@
+uuid: e4c47c91-a61c-4ac3-b408-afbc8be419d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.hero_cards
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.hero_cards
+target_entity_type_id: paragraph
+target_bundle: hero_cards
+default_langcode: site_default
+language_alterable: true

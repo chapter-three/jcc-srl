@@ -71,6 +71,7 @@ module:
   language: 0
   link: 0
   linkit: 0
+  locale: 0
   login_emailusername: 0
   markup: 0
   maxlength: 0

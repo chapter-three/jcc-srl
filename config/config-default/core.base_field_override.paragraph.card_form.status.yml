@@ -1,0 +1,22 @@
+uuid: 171f7f98-e6b2-4e01-8660-19566e4b4c33
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.card_form
+id: paragraph.card_form.status
+field_name: status
+entity_type: paragraph
+bundle: card_form
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 17e81d83-67a3-470d-910d-85e4ee3f05ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.card_form
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.card_form
+target_entity_type_id: paragraph
+target_bundle: card_form
+default_langcode: site_default
+language_alterable: true
