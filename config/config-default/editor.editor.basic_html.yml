@@ -49,13 +49,13 @@ settings:
             - DrupalMediaLibrary
             - Blockquote
         -
-          name: Styles
-          items:
-            - Styles
-        -
           name: 'Block Formatting'
           items:
             - Format
+        -
+          name: Styles
+          items:
+            - Styles
         -
           name: Tools
           items:
