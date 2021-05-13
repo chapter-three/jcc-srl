@@ -1,0 +1,11 @@
+uuid: 26a4f63c-b4f1-41e4-b028-80cb641b97be
+langcode: en
+status: true
+dependencies:
+  module:
+    - xlsx
+id: jcc_category.jcc_category
+target_entity_type_id: jcc_category
+target_bundle: jcc_category
+default_langcode: site_default
+language_alterable: false

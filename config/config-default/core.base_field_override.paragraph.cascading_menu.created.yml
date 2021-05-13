@@ -1,0 +1,18 @@
+uuid: face48f2-91b9-4446-90df-636e31e10318
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.cascading_menu
+id: paragraph.cascading_menu.created
+field_name: created
+entity_type: paragraph
+bundle: cascading_menu
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

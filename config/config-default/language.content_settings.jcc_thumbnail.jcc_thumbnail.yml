@@ -1,0 +1,11 @@
+uuid: ee444026-19bd-4e56-a43e-2a381f5f3d52
+langcode: en
+status: true
+dependencies:
+  module:
+    - xlsx
+id: jcc_thumbnail.jcc_thumbnail
+target_entity_type_id: jcc_thumbnail
+target_bundle: jcc_thumbnail
+default_langcode: site_default
+language_alterable: false

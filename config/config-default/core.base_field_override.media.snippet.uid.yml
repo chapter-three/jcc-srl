@@ -1,0 +1,20 @@
+uuid: 18694174-de35-4165-b637-5132036de728
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.snippet
+id: media.snippet.uid
+field_name: uid
+entity_type: media
+bundle: snippet
+label: 'Authored by'
+description: 'The user ID of the author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\media\Entity\Media::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

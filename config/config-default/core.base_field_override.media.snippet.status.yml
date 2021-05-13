@@ -1,0 +1,22 @@
+uuid: dd5b02a1-1065-4828-bd6a-157bf99a2c4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.snippet
+id: media.snippet.status
+field_name: status
+entity_type: media
+bundle: snippet
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

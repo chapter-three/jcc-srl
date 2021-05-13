@@ -174,6 +174,7 @@ permissions:
   - 'select account cancellation method'
   - 'switch shortcut sets'
   - 'translate any entity'
+  - 'translate interface'
   - 'translate jcc_form media'
   - 'update any media'
   - 'update content translations'
