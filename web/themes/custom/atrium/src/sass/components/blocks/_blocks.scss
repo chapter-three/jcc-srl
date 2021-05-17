@@ -1,0 +1,10 @@
+jcc-hero--has-background-color--dark{
+  a.usa-button{
+    //background-color: color($theme-color-secondary);
+    color: $theme-color-base-darkest;
+    background-color: $theme-color-warning;
+    &:hover {
+      background-color: $theme-color-warning-dark;
+    }
+  }
+}
