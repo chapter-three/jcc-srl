@@ -1,0 +1,28 @@
+.jcc-hero--has-background-color--dark{
+  a.usa-button{
+    color: color($theme-color-accent-cool-darker);
+    //background-color: color($theme-color-warning);
+    background-color: #ffffff;
+    &:hover {
+      color: color($theme-color-base-ink);
+      background-color: color($theme-color-warning);
+    }
+  }
+}
+.jcc-hero{
+  ul li {
+    margin-bottom: .25rem;
+  }
+  .jcc-hero__column-right {
+    p{
+      max-width: 300px;
+    }
+  }
+}
+
+.jcc-card--icon {
+  .usa-card__body{
+    padding-top:0;
+  }
+}
+
