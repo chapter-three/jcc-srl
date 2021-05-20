@@ -329,7 +329,7 @@ display:
         metatag_display_extender: {  }
         ajax_history: {  }
       path: content-export
-      filename: ''
+      filename: '[view:id].csv'
       automatic_download: false
       store_in_public_file_directory: false
       redirect_to_display: none
