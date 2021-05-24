@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5adb01f3baece9476360ce66b8c481bb",
+    "content-hash": "973db9f32bab90d4edf4cbef345d1d60",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5216,6 +5216,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8991,16 +8994,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.118",
+            "version": "0.1.123",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "6989f09582f5a696e12f017e3680dee2176b8780"
+                "reference": "02f2f1998b30c96e392a3bc92f2cca8d1d5b4808"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/6989f09582f5a696e12f017e3680dee2176b8780",
-                "reference": "6989f09582f5a696e12f017e3680dee2176b8780",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/02f2f1998b30c96e392a3bc92f2cca8d1d5b4808",
+                "reference": "02f2f1998b30c96e392a3bc92f2cca8d1d5b4808",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9015,7 +9018,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-05-13T21:40:40+00:00"
+            "time": "2021-05-19T22:26:59+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -13876,10 +13879,6 @@
                 "GPL-2.0+"
             ],
             "authors": [
-                {
-                    "name": "Bohun Tak",
-                    "homepage": "https://www.drupal.org/user/1205098"
-                },
                 {
                     "name": "mrhanlon",
                     "homepage": "https://www.drupal.org/user/764624"
