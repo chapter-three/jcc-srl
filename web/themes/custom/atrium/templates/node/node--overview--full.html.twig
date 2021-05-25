@@ -6,5 +6,11 @@
  * See node.html.twig and page.html.twig.
  */
 #}
-<h1 class="visually-hidden">{{ label }}</h1>
+{# BEGIN In case the title is not set through Switchboard paragraph #}
+{% set title_exists = content.field_paragraphs.0['#paragraph'].field_use_component_as_hero.value %}
+{% if not title_exists %}
+  <h1 class="visually-hidden">{{ label }}</h1>
+{% endif %}
+{# END #}
+
 {{ content.field_paragraphs }}

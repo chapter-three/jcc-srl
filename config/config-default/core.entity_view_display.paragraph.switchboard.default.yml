@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.switchboard.field_switchboard_subtitle
     - field.field.paragraph.switchboard.field_switchboard_title
     - field.field.paragraph.switchboard.field_tiles
+    - field.field.paragraph.switchboard.field_use_component_as_hero
     - paragraphs.paragraphs_type.switchboard
   module:
     - entity_reference_revisions
@@ -62,6 +63,16 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_use_component_as_hero:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
 hidden:
   search_api_excerpt: true
