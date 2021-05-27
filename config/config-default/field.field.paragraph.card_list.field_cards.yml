@@ -15,7 +15,7 @@ bundle: card_list
 label: Cards
 description: 'Create 2-3 cards.'
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

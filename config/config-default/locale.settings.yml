@@ -1,5 +1,5 @@
 cache_strings: true
-translate_english: true
+translate_english: false
 javascript:
   directory: languages
 translation:
