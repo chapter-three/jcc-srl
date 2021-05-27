@@ -20,7 +20,7 @@ bundle: cascading_menu
 label: 'Menu items'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
