@@ -1,27 +1,22 @@
-uuid: 99d1c151-6e6c-4665-b6d0-e56cc4ef7808
+uuid: 7e7a83b5-a28a-4f66-84a6-34a896b5f4d9
 langcode: en
 status: open
-dependencies:
-  module:
-    - honeypot
-third_party_settings:
-  honeypot:
-    honeypot: true
+dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 1
+uid: 13
 template: false
 archive: false
-id: was_this_information_helpful_
-title: 'Was this information helpful?'
+id: dropdown_test
+title: 'Dropdown Test'
 description: ''
 category: ''
-elements: "was_this_information_helpful_:\n  '#type': webform_buttons\n  '#title': 'Was this helpful?'\n  '#description': 'did this information help you with your case?'\n  '#description_display': tooltip\n  '#options': yes_no\n  '#format_items': comma\n  '#format_items_html': ''\n  '#format_items_text': ''\nany_additional_feedback_:\n  '#type': textarea\n  '#title': 'Any Additional Feedback?'\n  '#autocomplete': 'off'\n  '#states':\n    visible-slide:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nemail_optional_:\n  '#type': email\n  '#title': 'Email (optional)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true"
+elements: "dropdown_test:\n  '#type': webform_wizard_page\n  '#title': 'Dropdown test'\n  dropdown:\n    '#type': select\n    '#title': 'Choose One'\n    '#options':\n      One: One\n      Two: Two\n      Three: Three\n      Four: Four\n      Five: Five\n      Six: Six\n      Seven: Seven\n      Eight: Eight\n      Nine: Nine\n      Ten: Ten\n      Eleven: Eleven\n      Twelve: Twelve\n      Thirteen: Thirteen\n      Fourteen: Fourteen\n      Fifteen: Fifteen\n      Sixteeen: Sixteeen\n      Seventeen: Seventeen\n      Eighteen: Eighteen\n      Nineteen: Nineteen\n      Twenty: Twenty\n      Twenty-one: Twenty-one\n      Twenty-two: Twenty-two\n      Twenty-three: Twenty-three\n      Twenty-four: Twenty-four\n      Twenty-five: Twenty-five\n      Twenty-six: Twenty-six\n      Twenty-seven: Twenty-seven\n      Twenty-eight: Twenty-eight\n      Twenty-nine: Twenty-nine\n      Thirty: Thirty\n      Thirty-one: Thirty-one\n      Thirty-two: Thirty-two\n      Thirty-three: Thirty-three\n      Thirty-four: Thirty-four\n      Thirty-five: Thirty-five\n      Thirty-six: Thirty-six\n      Thirty-seven: Thirty-seven\n      Thirty-eight: Thirty-eight\n      Thirty-nine: Thirty-nine\n      Forty: Forty\n      Forty-one: Forty-one\n      Forty-two: Forty-two\n      Forty-three: Forty-three\n      Forty-four: Forty-four\n      Forty-five: Forty-five\n      Forty-six: Forty-six\n      Forty-seven: Forty-seven\n      Forty-eight: Forty-eight\n      Forty-nine: Forty-nine\n      Fifty: Fifty\n      Fifty-one: Fifty-one\n      Fifty-two: Fifty-two\n      Fifty-three: Fifty-three\n      Fifty-four: Fifty-four\n      Fifty-five: Fifty-five\n      Fifty-six: Fifty-six\n      Fifty-seven: Fifty-seven\n      Fifty-eight: Fifty-eight\n      Fifty-nine: Fifty-nine"
 css: ''
 javascript: ''
 settings:
-  ajax: true
+  ajax: false
   ajax_scroll_top: form
   ajax_progress_type: ''
   ajax_effect: ''
@@ -115,12 +110,12 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: inline
+  confirmation_type: page
   confirmation_title: ''
-  confirmation_message: 'Thank you for your feedback!'
+  confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
-  confirmation_back: false
+  confirmation_back: true
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
   confirmation_exclude_query: false
@@ -140,8 +135,8 @@ settings:
   entity_limit_user_interval: null
   purge: none
   purge_days: null
-  results_disabled: false
-  results_disabled_ignore: false
+  results_disabled: true
+  results_disabled_ignore: true
   results_customize: false
   token_view: false
   token_update: false
@@ -192,41 +187,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  email:
-    id: email
-    label: current-pageEmail
-    handler_id: email
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: _default
-      to_options: {  }
-      cc_mail: 'jack.madans-t@jud.ca.gov, cyd.harrell-t@jud.ca.gov, christa.dahlstrom-t@jud.ca.gov,eric.nakano-t@jud.ca.gov,kelley.stieler@jud.ca.gov,suma.mathai-t@jud.ca.gov,jenny.phu@jud.ca.gov,peter.clarke@jud.ca.gov,Ventura.Behlers-T@jud.ca.gov,cherie.tran@jud.ca.gov,lana.ho@jud.ca.gov,Alissa.Vuillier-T@jud.ca.gov'
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: noreply@courtinfo.ca.gov
-      from_options: {  }
-      from_name: ''
-      subject: _default
-      body: "Submitted on [webform_submission:created]<br />\r\n<br />\r\nSubmitted by: [webform_submission:user]<br />\r\n<br />\r\n<br />\r\nSubmitted values are:<br />\r\n<br />\r\nPage: [webform_submission:source-title]<br />\r\n<br />\r\nURL: [current-page:url:absolute]<br />\r\n<br />\r\nFeedback: [webform_submission:values]"
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: atrium
-      parameters: {  }
+handlers: {  }
 variants: {  }

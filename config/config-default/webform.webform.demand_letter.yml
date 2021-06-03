@@ -1,0 +1,191 @@
+uuid: 2eaafa58-89fd-4f22-8197-f43ca44b5139
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 13
+template: false
+archive: false
+id: demand_letter
+title: 'Demand Letter'
+description: 'Webform to generate a demand letter for small claims court.'
+category: ''
+elements: "introduction:\n  '#type': webform_wizard_page\n  '#title': 'Demand Letter Generator'\n  intro_text:\n    '#type': processed_text\n    '#text': |\n      <p>This program will help you write a demand letter asking for money.</p>\n      \n      <p>The program asks questions and then prepares a letter for you.</p>\n      \n      <p>If you don't know the answer to a question, you can stop and find the answer, or you can answer and change your answer later.</p>\n      \n    '#format': basic_html\nwho_are_you_suing_:\n  '#type': webform_wizard_page\n  '#title': 'Who are you suing?'\n  entity:\n    '#type': radios\n    '#title': entity\n    '#options':\n      entity: 'A Corporation, Partnership, Trust, or other private organization'\n      individual: 'A person'\n      government: 'A governmental entity (like a state agency or local government)'\n    '#options__properties': ''\nenter_information_about_who_you_are_suing:\n  '#type': webform_wizard_page\n  '#title': 'Enter information about who you are suing'\n  '#states':\n    invisible:\n      ':input[name=\"entity\"]':\n        value: government\n  name_of_corporation_partnership_trust_llc_or_other_private_organ:\n    '#type': textfield\n    '#title': 'Name of corporation, partnership, trust, LLC, or other private organization'\n    '#states':\n      visible:\n        ':input[name=\"entity\"]':\n          value: entity\n  name:\n    '#type': webform_name\n    '#title': Name\n    '#states':\n      visible:\n        ':input[name=\"entity\"]':\n          value: individual\n    '#degree__access': false\n  address:\n    '#type': webform_address\n    '#title': Address\n    '#state_province__options': state_province_codes\n    '#country__access': false\nare_you_writing_this_letter_on_behalf_of_a_business_:\n  '#type': webform_wizard_page\n  '#title': 'Are you writing this letter on behalf of a business?'\n  '#states':\n    invisible:\n      ':input[name=\"entity\"]':\n        value: government\n  on_behalf_of_a_business_:\n    '#type': radios\n    '#title': 'On behalf of a business?'\n    '#options':\n      business: 'I am writing this letter for a business.'\n      self: 'I am writing this letter for myself.'\n    '#options__properties': ''\nenter_information_about_the_sender_of_this_letter:\n  '#type': webform_wizard_page\n  '#title': 'Enter information about the sender of this letter'\n  '#states':\n    invisible:\n      ':input[name=\"entity\"]':\n        value: government\n  your_full_name_first_middle_last_:\n    '#type': textfield\n    '#title': 'Your full name (first, middle, last)'\n  name_of_business:\n    '#type': textfield\n    '#title': 'Name of business'\n    '#states':\n      visible:\n        ':input[name=\"on_behalf_of_a_business_\"]':\n          value: business\n  your_job_title:\n    '#type': textfield\n    '#title': 'Your job title'\n    '#states':\n      visible:\n        ':input[name=\"on_behalf_of_a_business_\"]':\n          value: business\n  sender_s_address:\n    '#type': webform_address\n    '#title': 'Sender''s address'\n    '#country__access': false\nhow_much_are_you_demanding_:\n  '#type': webform_wizard_page\n  '#title': 'How much are you demanding?'\n  '#states':\n    invisible:\n      ':input[name=\"entity\"]':\n        value: government\n  enter_the_amount_you_are_demanding_:\n    '#type': number\n    '#title': 'Enter the amount you are demanding . Do not enter a \"$\" sign.'\n    '#min': 0\n    '#max': 10000\n  small_claims_limit:\n    '#type': processed_text\n    '#text': |\n      <p>Note: You cannot sue for more than $10,000 in small claims court.</p>\n      \n    '#format': basic_html\nwhy_are_you_owed_money_:\n  '#type': webform_wizard_page\n  '#title': 'Why are you owed money?'\n  '#states':\n    invisible:\n      ':input[name=\"entity\"]':\n        value: government\n  complete_the_sentence_you_owe_the_amount_i_am_demanding_because_:\n    '#type': textarea\n    '#title': 'Complete the sentence: \"You owe the amount I am demanding because...\"'\ndo_you_know_the_name_of_the_person_who_you_are_writing_to_in_the:\n  '#type': webform_wizard_page\n  '#title': 'Do you know the name of the person who you are writing to in the business?'\n  '#states':\n    visible:\n      ':input[name=\"entity\"]':\n        value: entity\n  do_you_know_the_name_of_the_person:\n    '#type': radios\n    '#title': 'Do you know the name of the person'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n    '#options__properties': ''\n  title_and_name_of_person_being_mailed:\n    '#type': webform_name\n    '#title': 'Title and name of person being mailed'\n    '#title_display': before\n    '#states':\n      visible:\n        ':input[name=\"do_you_know_the_name_of_the_person\"]':\n          value: 'Yes'\n    '#degree__access': false\nyou_must_file_a_government_claim:\n  '#type': webform_wizard_page\n  '#title': 'You must file a government claim'\n  '#states':\n    visible:\n      ':input[name=\"entity\"]':\n        value: government\n  government_warning:\n    '#type': processed_text\n    '#text': |\n      <p>When you intend to sue a government agency you must first file a claim with the government agency you want to sue.<br />\n      Contact the agency to see if it has a claim form you can use. Contact your local law&nbsp;library to see examples of how to write a government claim, and for other important information about filing a government claim.<br />\n      If the agency rejects your claim OR doesn't answer your claim in 45 days, you can file a claim in small claims court.</p>\n      \n    '#format': basic_html"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: true
+  results_disabled_ignore: true
+  results_customize: false
+  token_view: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }
