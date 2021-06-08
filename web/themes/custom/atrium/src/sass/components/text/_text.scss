@@ -4,3 +4,9 @@ hr {
   border-left: none;
   border-right: none;
 }
+
+.jcc-form-required--hidden {
+  &:after {
+    display:none;
+  }
+}

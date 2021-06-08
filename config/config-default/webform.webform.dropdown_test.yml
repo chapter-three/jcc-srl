@@ -1,18 +1,18 @@
-uuid: ae67427d-7ae3-44b5-8ddc-f9c93b353fa8
+uuid: 7e7a83b5-a28a-4f66-84a6-34a896b5f4d9
 langcode: en
 status: open
 dependencies: {  }
 open: null
 close: null
 weight: 0
-uid: 5
+uid: 13
 template: false
 archive: false
-id: share_this_page
-title: 'Share This Page'
+id: dropdown_test
+title: 'Dropdown Test'
 description: ''
 category: ''
-elements: "'#attributes':\n  class:\n    - jcc-contact-group\ncontainer:\n  '#type': container\n  '#attributes':\n    class:\n      - 'jcc-contact-group__container margin-bottom-4'\n  email:\n    '#type': email\n    '#title': 'Enter your email'\n    '#required': true\n    '#required_error': 'Email address is required'\n    '#attributes':\n      class:\n        - usa-input\n    '#label_attributes':\n      class:\n        - jcc-form-required--hidden\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#submit__label': 'Send Link'\n    '#submit__attributes':\n      class:\n        - 'usa-button usa-button--accent-warm margin-top-0'\n  info:\n    '#type': webform_markup\n    '#wrapper_attributes':\n      class:\n        - jcc-contact-group__helper\n    '#markup': 'We&#39;ll only use this email to send this link'"
+elements: "dropdown_test:\n  '#type': webform_wizard_page\n  '#title': 'Dropdown test'\n  dropdown:\n    '#type': select\n    '#title': 'Choose One'\n    '#options':\n      One: One\n      Two: Two\n      Three: Three\n      Four: Four\n      Five: Five\n      Six: Six\n      Seven: Seven\n      Eight: Eight\n      Nine: Nine\n      Ten: Ten\n      Eleven: Eleven\n      Twelve: Twelve\n      Thirteen: Thirteen\n      Fourteen: Fourteen\n      Fifteen: Fifteen\n      Sixteeen: Sixteeen\n      Seventeen: Seventeen\n      Eighteen: Eighteen\n      Nineteen: Nineteen\n      Twenty: Twenty\n      Twenty-one: Twenty-one\n      Twenty-two: Twenty-two\n      Twenty-three: Twenty-three\n      Twenty-four: Twenty-four\n      Twenty-five: Twenty-five\n      Twenty-six: Twenty-six\n      Twenty-seven: Twenty-seven\n      Twenty-eight: Twenty-eight\n      Twenty-nine: Twenty-nine\n      Thirty: Thirty\n      Thirty-one: Thirty-one\n      Thirty-two: Thirty-two\n      Thirty-three: Thirty-three\n      Thirty-four: Thirty-four\n      Thirty-five: Thirty-five\n      Thirty-six: Thirty-six\n      Thirty-seven: Thirty-seven\n      Thirty-eight: Thirty-eight\n      Thirty-nine: Thirty-nine\n      Forty: Forty\n      Forty-one: Forty-one\n      Forty-two: Forty-two\n      Forty-three: Forty-three\n      Forty-four: Forty-four\n      Forty-five: Forty-five\n      Forty-six: Forty-six\n      Forty-seven: Forty-seven\n      Forty-eight: Forty-eight\n      Forty-nine: Forty-nine\n      Fifty: Fifty\n      Fifty-one: Fifty-one\n      Fifty-two: Fifty-two\n      Fifty-three: Fifty-three\n      Fifty-four: Fifty-four\n      Fifty-five: Fifty-five\n      Fifty-six: Fifty-six\n      Fifty-seven: Fifty-seven\n      Fifty-eight: Fifty-eight\n      Fifty-nine: Fifty-nine"
 css: ''
 javascript: ''
 settings:
@@ -25,7 +25,7 @@ settings:
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
-  form_title: source_entity_webform
+  form_title: both
   form_submit_once: false
   form_exception_message: ''
   form_open_message: ''
@@ -92,7 +92,7 @@ settings:
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
-  wizard_toggle: true
+  wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
   preview: 0
@@ -110,9 +110,9 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: message
+  confirmation_type: page
   confirmation_title: ''
-  confirmation_message: 'An email has been sent to&nbsp;[webform_submission:values:email]'
+  confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -187,41 +187,5 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers:
-  recipient:
-    id: email
-    label: Email
-    handler_id: recipient
-    status: true
-    conditions: {  }
-    weight: 0
-    settings:
-      states:
-        - completed
-      to_mail: '[webform_submission:values:email:raw]'
-      to_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      from_mail: noreply@courtinfo.ca.gov
-      from_options: {  }
-      from_name: _default
-      subject: 'Mark my place'
-      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>\r\n<p>{{ webform_token('[current-page:url]', webform_submission) }}</p>\r\n"
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: true
-      debug: false
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      theme_name: ''
-      parameters: {  }
+handlers: {  }
 variants: {  }
