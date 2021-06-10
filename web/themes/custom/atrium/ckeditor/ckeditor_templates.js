@@ -187,13 +187,13 @@ CKEDITOR.addTemplates('default', {
               <ul class="jcc-options">
                 <li class="jcc-options__item">
                   <div class="jcc-option">
-                    <h6>If you're suing a person (or people)</h6>
+                    <h3>If you're suing a person (or people)</h3>
                     <div class="jcc-option__content">Serve each person you are suing.</div>
                   </div>
                 </li>
                 <li class="jcc-options__item">
                   <div class="jcc-option">
-                    <h6>If you're suing a business or government</h6>
+                    <h3>If you're suing a business or government</h3>
                     <div class="jcc-option__content">Business or agencies have a specific person you must serve, not just any employee. Follow these guidelines to make sure you are serving the right person.</div>
                   </div>
                 </li>
@@ -214,13 +214,13 @@ CKEDITOR.addTemplates('default', {
               <ul class="jcc-options">
                 <li class="jcc-options__item">
                   <div class="jcc-option">
-                    <h6>If you're suing a person (or people)</h6>
+                    <h3>If you're suing a person (or people)</h3>
                     <div class="jcc-option__content">Serve each person you are suing.</div>
                   </div>
                 </li>
                 <li class="jcc-options__item">
                   <div class="jcc-option">
-                    <h6>If you're suing a business or government</h6>
+                    <h3>If you're suing a business or government</h3>
                     <div class="jcc-option__content">Business or agencies have a specific person you must serve, not just any employee. Follow these guidelines to make sure you are serving the right person.</div>
                   </div>
                 </li>
