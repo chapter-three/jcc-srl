@@ -59,7 +59,7 @@
     <div class="jcc-form--form-links">
       <a href={{ media.field_url.uri }}
          class="jcc-form--link border-primary-vivid"
-         aria-label="View {{media.field_number.value}} {{media.label}} form PDF">
+         aria-label="Get form {{media.field_number.value}} {{media.label}}">
         {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
         {% include '@atoms/icons/icon.twig' with {
           icon: {
@@ -75,7 +75,7 @@
       {% if media.field_form_filling_instructions_.uri %}
       <a href={{ media.field_form_filling_instructions_.uri }}
          class="jcc-form--link border-primary-vivid"
-         aria-label="View instructions for filling {{media.field_number.value}} {{media.label}}">
+         aria-label="Get instructions for filling form {{media.field_number.value}} {{media.label}}">
         {% include '@atoms/icons/icon.twig' with {
           icon: {
             name: 'file',
@@ -107,7 +107,7 @@
       {% set form_thumbnail_url = '/' ~ directory ~ '/assets/images/form-generic.jpg' %}
     {% endif %}
 
-    {% set thumbnail_alt = 'View ' ~ media.field_number.value ~ ' ' ~ media.label ~ ' form PDF' %}
+    {% set thumbnail_alt = 'View ' ~ media.field_number.value ~ ' ' ~ media.label ~ ' form' %}
     <div class="jcc-form--thumbnail">
       <a href="{{ media.field_url.uri }}">
         <img src="{{ form_thumbnail_url }}" alt="{{ thumbnail_alt }}">
