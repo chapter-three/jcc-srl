@@ -14,7 +14,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <iframe>'
+      allowed_html: '<em> <strong> <iframe src allow allowfullscreen frameborder height width name>'
       filter_html_help: true
       filter_html_nofollow: false
   media_embed:
