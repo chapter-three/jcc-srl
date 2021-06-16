@@ -74,12 +74,13 @@
 
       {# Store each card in an array for the Pattern component. #}
       {% set card_content = card_content|merge([{
-        id: 'now'|date('U'),
+        id: card.id.value,
         title: card.field_title_display|view,
         excerpt: card.field_body|view,
-        menu_label: card.field_title_display|view,
+        menu_label: menu_label|default(menu_default_option),
         menu_type: menu_type,
         menu_default_option: menu_default_option,
+        menu_label_child: menu_label_child|default(menu_default_child_option),
         menu_default_child_option: menu_default_child_option,
         menu_items: links,
       }]) %}
