@@ -1,0 +1,28 @@
+uuid: b82cb74c-db14-4d90-8cf3-b45e5bab67c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+name: 'iframe only'
+format: iframe_only
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<iframe src allow allowfullscreen frameborder height width name>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }

@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.complete
     - paragraphs.paragraphs_type.datefinder
     - paragraphs.paragraphs_type.flex
+    - paragraphs.paragraphs_type.iframe
     - paragraphs.paragraphs_type.links
     - paragraphs.paragraphs_type.postcard
     - paragraphs.paragraphs_type.self_help_finder
@@ -21,10 +22,13 @@ dependencies:
   module:
     - datalayer
     - entity_reference_revisions
+    - tmgmt_content
 third_party_settings:
   datalayer:
     expose: 1
     label: field_paragraphs
+  tmgmt_content:
+    excluded: false
 id: node.basic.field_paragraphs
 field_name: field_paragraphs
 entity_type: node
@@ -52,6 +56,7 @@ settings:
       links: links
       timeline_dual: timeline_dual
       self_help_finder: self_help_finder
+      iframe: iframe
       text: text
     target_bundles_drag_drop:
       accordion:
@@ -90,6 +95,9 @@ settings:
       hero_cards:
         weight: 30
         enabled: false
+      iframe:
+        enabled: true
+        weight: 39
       links:
         enabled: true
         weight: 31
