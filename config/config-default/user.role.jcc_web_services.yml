@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: jcc_web_services
 label: 'JCC Web Services'
-weight: -7
+weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'
