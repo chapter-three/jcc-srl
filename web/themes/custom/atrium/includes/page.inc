@@ -186,13 +186,25 @@ function _atrium_translation_menu() {
   }
   // Create links for dropbutton component.
   foreach ($languages as $langcode => $language) {
+    $translated_path = '';
+    $current_id = '';
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      // You can get nid and anything else you need from the node object.
+      $nid = $node->id();
+      $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
+    }
+
     // Default language paths have no prefix.
     $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
 
-    $links[] = [
-      'title' => $language->getName(),
-      'href' => "$host$langcode$current_path",
-    ];
+    if($node != null && $translated_path != $current_path && $translated_path != '/node/'. $node->id()){
+      $links[] = [
+        'title' => $language->getName(),
+        'href' => "$host$langcode$current_path",
+      ];
+    }
   }
 
   return $links;
