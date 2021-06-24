@@ -7,15 +7,18 @@ dependencies:
     - paragraphs.paragraphs_type.menu_links
   module:
     - datalayer
+    - tmgmt_content
 third_party_settings:
   datalayer:
     expose: 0
     label: field_label
+  tmgmt_content:
+    excluded: false
 id: paragraph.menu_links.field_label
 field_name: field_label
 entity_type: paragraph
 bundle: menu_links
-label: 'Default text (in dropdown)'
+label: 'Menu Label'
 description: ''
 required: false
 translatable: true

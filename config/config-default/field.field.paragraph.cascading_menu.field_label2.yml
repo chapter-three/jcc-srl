@@ -7,15 +7,18 @@ dependencies:
     - paragraphs.paragraphs_type.cascading_menu
   module:
     - datalayer
+    - tmgmt_content
 third_party_settings:
   datalayer:
     expose: 0
     label: field_label2
+  tmgmt_content:
+    excluded: false
 id: paragraph.cascading_menu.field_label2
 field_name: field_label2
 entity_type: paragraph
 bundle: cascading_menu
-label: 'Default text (in child dropdown when no parent item selected)'
+label: 'Child Menu Label'
 description: ''
 required: false
 translatable: true

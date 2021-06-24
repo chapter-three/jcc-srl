@@ -43,7 +43,8 @@
       {% set links = [] %}
       {% if type == 'menu_links' %}
         {% set menu_type = 'single' %}
-        {% set menu_default_option = menu.field_label.value ?: '' %}
+        {% set menu_label = menu.field_label.value ?: '' %}
+        {% set menu_default_option = menu.field_default_option.value ?: '' %}
         {% for link in menu.field_links %}
           {% set links = links|merge([{
             name: link.title,
@@ -53,8 +54,10 @@
 
       {% elseif type == 'cascading_menu' %}
         {% set menu_type = 'cascading' %}
-        {% set menu_default_option = menu.field_label.value ?: '' %}
-        {% set menu_default_child_option = menu.field_label2.value ?: '' %}
+        {% set menu_label = menu.field_label.value ?: '' %}
+        {% set menu_default_option = menu.field_default_option.value ?: '' %}
+        {% set menu_child_label = menu.field_label2.value ?: '' %}
+        {% set menu_default_child_option = menu.field_default_child_option.value ?: '' %}
         {% for key, item in menu.field_items %}
           {% set cascading_menu = menu.field_items.get(key).entity %}
           {% set cascading_links = [] %}
@@ -77,10 +80,10 @@
         id: card.id.value,
         title: card.field_title_display|view,
         excerpt: card.field_body|view,
-        menu_label: menu_label|default(menu_default_option),
+        menu_label: menu_label,
         menu_type: menu_type,
         menu_default_option: menu_default_option,
-        menu_label_child: menu_label_child|default(menu_default_child_option),
+        menu_label_child: menu_child_label,
         menu_default_child_option: menu_default_child_option,
         menu_items: links,
       }]) %}
