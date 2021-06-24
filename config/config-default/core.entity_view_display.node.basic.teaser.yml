@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.basic.field_case_types
     - field.field.node.basic.field_column_first
     - field.field.node.basic.field_header
+    - field.field.node.basic.field_hide_title
     - field.field.node.basic.field_image
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
@@ -35,11 +36,17 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_actions: true
   field_case_types: true
   field_column_first: true
   field_header: true
+  field_hide_title: true
   field_image: true
   field_media: true
   field_metatag: true

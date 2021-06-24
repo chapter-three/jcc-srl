@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.basic.field_case_types
     - field.field.node.basic.field_column_first
     - field.field.node.basic.field_header
+    - field.field.node.basic.field_hide_title
     - field.field.node.basic.field_image
     - field.field.node.basic.field_media
     - field.field.node.basic.field_metatag
@@ -33,12 +34,17 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_column_first:
-    weight: 5
+    weight: 6
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -46,7 +52,7 @@ content:
     region: content
   field_header:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -54,7 +60,7 @@ content:
     third_party_settings: {  }
     region: content
   field_image:
-    weight: 6
+    weight: 7
     label: hidden
     settings:
       link: true
@@ -64,7 +70,7 @@ content:
     region: content
   field_media:
     type: media_thumbnail
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       image_style: large
@@ -72,7 +78,7 @@ content:
     third_party_settings: {  }
     region: content
   field_paragraphs:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       view_mode: default
@@ -81,7 +87,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_title_display:
-    weight: 4
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -90,6 +96,7 @@ content:
 hidden:
   field_actions: true
   field_case_types: true
+  field_hide_title: true
   field_metatag: true
   field_parent: true
   field_parties: true

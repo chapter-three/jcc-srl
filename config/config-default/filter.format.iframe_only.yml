@@ -1,11 +1,11 @@
-uuid: a076594c-ffa4-4fa6-9778-16fb6213ecb8
+uuid: b82cb74c-db14-4d90-8cf3-b45e5bab67c1
 langcode: en
 status: true
 dependencies:
   module:
     - media
-name: 'Simple HTML'
-format: simple_html
+name: 'iframe only'
+format: iframe_only
 weight: 0
 filters:
   filter_html:
@@ -14,9 +14,15 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong>'
+      allowed_html: '<iframe src allow allowfullscreen frameborder height width name>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
   media_embed:
     id: media_embed
     provider: media
@@ -26,9 +32,3 @@ filters:
       default_view_mode: default
       allowed_media_types: {  }
       allowed_view_modes: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }
