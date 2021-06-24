@@ -202,7 +202,8 @@ function _atrium_translation_menu() {
     if($node != null && $translated_path != $current_path && $translated_path != '/node/'. $node->id()){
       $links[] = [
         'title' => $language->getName(),
-        'href' => "$host$langcode$current_path",
+        //'href' => "$host$langcode$current_path",
+        'href' => "$host$langcode$translated_path",
       ];
     }
   }
