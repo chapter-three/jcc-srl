@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.cascading_menu.field_default_child_option
+    - field.field.paragraph.cascading_menu.field_default_option
     - field.field.paragraph.cascading_menu.field_items
     - field.field.paragraph.cascading_menu.field_label
     - field.field.paragraph.cascading_menu.field_label2
@@ -14,6 +16,22 @@ targetEntityType: paragraph
 bundle: cascading_menu
 mode: default
 content:
+  field_default_child_option:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_default_option:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_items:
     type: entity_reference_revisions_entity_view
     weight: 0
