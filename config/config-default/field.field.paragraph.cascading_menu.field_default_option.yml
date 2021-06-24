@@ -1,0 +1,28 @@
+uuid: 2a4b5505-7cf8-4f3a-a08c-4e248bfcee9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_option
+    - paragraphs.paragraphs_type.cascading_menu
+  module:
+    - datalayer
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_default_option
+  tmgmt_content:
+    excluded: false
+id: paragraph.cascading_menu.field_default_option
+field_name: field_default_option
+entity_type: paragraph
+bundle: cascading_menu
+label: 'Default Option'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

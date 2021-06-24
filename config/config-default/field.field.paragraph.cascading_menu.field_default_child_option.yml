@@ -1,0 +1,28 @@
+uuid: a33bb77d-3dc5-4660-bdfd-c19e7a12867c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_default_child_option
+    - paragraphs.paragraphs_type.cascading_menu
+  module:
+    - datalayer
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_default_child_option
+  tmgmt_content:
+    excluded: false
+id: paragraph.cascading_menu.field_default_child_option
+field_name: field_default_child_option
+entity_type: paragraph
+bundle: cascading_menu
+label: 'Default Child Option (in dropdown when no parent item selected)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
