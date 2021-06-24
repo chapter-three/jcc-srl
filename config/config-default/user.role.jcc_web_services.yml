@@ -183,7 +183,6 @@ permissions:
   - 'use editorial_workflow transition create_new_draft'
   - 'use editorial_workflow transition for_review'
   - 'use editorial_workflow transition publish'
-  - 'use text format iframe_only'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view all user input revisions'

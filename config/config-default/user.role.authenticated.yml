@@ -27,6 +27,7 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format iframe_only'
   - 'use text format simple_html'
   - 'view media'
   - 'view published user input entities'
