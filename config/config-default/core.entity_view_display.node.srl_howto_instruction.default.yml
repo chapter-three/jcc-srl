@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.srl_howto_instruction.body
     - field.field.node.srl_howto_instruction.field_actions
+    - field.field.node.srl_howto_instruction.field_back_button_only
     - field.field.node.srl_howto_instruction.field_blocks
     - field.field.node.srl_howto_instruction.field_case_types
     - field.field.node.srl_howto_instruction.field_column_first
@@ -125,6 +126,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_actions: true
+  field_back_button_only: true
   field_case_types: true
   field_dark_background: true
   field_metatag: true

@@ -1,0 +1,32 @@
+uuid: a72fd9ca-7038-4e04-b722-74e991884730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_back_button_only
+    - node.type.srl_howto_instruction
+  module:
+    - datalayer
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_back_button_only
+  tmgmt_content:
+    excluded: false
+id: node.srl_howto_instruction.field_back_button_only
+field_name: field_back_button_only
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Back button only'
+description: 'If this is checked, the parent title (even if defined) will not be displayed.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
