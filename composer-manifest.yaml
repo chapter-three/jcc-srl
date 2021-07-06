@@ -74,6 +74,7 @@ packages:
     drupal/extlink: 1.3.0
     drupal/field_defaults: 1.3.0
     drupal/field_group: 3.1.0
+    drupal/fillpdf: 4.11.0
     drupal/fixed_block_content: 1.1.0
     drupal/flag: 4.0.0-beta2
     drupal/focal_point: 1.4.0

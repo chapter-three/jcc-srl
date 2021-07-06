@@ -52,6 +52,7 @@ module:
   field_group: 0
   field_ui: 0
   file: 0
+  fillpdf: 0
   filter: 0
   fixed_block_content: 0
   focal_point: 0
