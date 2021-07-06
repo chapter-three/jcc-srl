@@ -38,6 +38,7 @@ permissions:
   - 'administer meta tags'
   - 'administer nodes'
   - 'administer pathauto'
+  - 'administer pdfs'
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer scheduler'

@@ -24,6 +24,7 @@ permissions:
   - 'access_unpublished node srl_wayfinder'
   - 'access_unpublished node timeline'
   - 'post comments'
+  - 'publish all pdfs'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
