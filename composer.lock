@@ -9031,16 +9031,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.136",
+            "version": "0.1.147",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "7173bf9de6e25124fdc2fce8dc40ad004d212f59"
+                "reference": "0fdb45ef4e0c6a417e718336cba7069a48a664c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/7173bf9de6e25124fdc2fce8dc40ad004d212f59",
-                "reference": "7173bf9de6e25124fdc2fce8dc40ad004d212f59",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/0fdb45ef4e0c6a417e718336cba7069a48a664c2",
+                "reference": "0fdb45ef4e0c6a417e718336cba7069a48a664c2",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9055,7 +9055,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-06-23T23:22:11+00:00"
+            "time": "2021-07-13T17:08:18+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -13926,6 +13926,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "Bohun Tak",
+                    "homepage": "https://www.drupal.org/user/1205098"
+                },
                 {
                     "name": "mrhanlon",
                     "homepage": "https://www.drupal.org/user/764624"
