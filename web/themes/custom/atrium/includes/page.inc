@@ -34,6 +34,7 @@ function atrium_preprocess_page(&$variables) {
   $variables['menu_main'] = _atrium_get_menutree('main');
   $variables['menu_hat'] = _atrium_get_menutree('hat');
   $variables['menu_footer'] = _atrium_get_menutree('footer');
+  $variables['translation_links'] = _atrium_translation_menu();
 
   // Social links for footer.
   $social = [];
@@ -155,4 +156,57 @@ function _atrium_get_menutree($menu_name) {
   }
 
   return $menu_items;
+}
+
+/**
+ * Format translation links for drobputton component.
+ *
+ * @todo : Return actual enabled languages. This will be affected by:
+ *   - enabled languages
+ *   - filtered by languages enabled for specific courts
+ *   - depending if this is multisite or domain access.
+ *
+ * @return array
+ *   Array of link items for dropbutton component.
+ */
+function _atrium_translation_menu() {
+
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+  $language_manager = \Drupal::languageManager();
+  $languages = $language_manager->getLanguages();
+  $default_language = $language_manager->getDefaultLanguage();
+  $current_path = \Drupal::request()->getRequestUri();
+
+  // Strip language from current path.
+  foreach ($languages as $langcode => $language) {
+    $current_path = strpos($current_path, "/$langcode/") === 0
+    || $current_path == "/$langcode"
+      ? str_replace("/$langcode", '', $current_path)
+      : $current_path;
+  }
+  // Create links for dropbutton component.
+  foreach ($languages as $langcode => $language) {
+    $translated_path = '';
+    $current_id = '';
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      // You can get nid and anything else you need from the node object.
+      $nid = $node->id();
+      $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
+    }
+
+    // Default language paths have no prefix.
+    $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
+
+    if($node != null && $translated_path != $current_path && $translated_path != '/node/'. $node->id()){
+      $links[] = [
+        'title' => $language->getName(),
+        //'href' => "$host$langcode$current_path",
+        'href' => "$host$langcode$translated_path",
+      ];
+    }
+  }
+
+  return $links;
 }
