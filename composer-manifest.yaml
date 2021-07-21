@@ -50,10 +50,10 @@ packages:
     drupal/console-core: 1.9.4
     drupal/console-en: 1.9.4
     drupal/console-extend-plugin: 0.9.3
-    drupal/core: 8.9.16
+    drupal/core: 8.9.17
     drupal/core-composer-scaffold: 8.9.10
     drupal/core-project-message: 8.9.1
-    drupal/core-recommended: 8.9.16
+    drupal/core-recommended: 8.9.17
     drupal/core-vendor-hardening: 8.9.10
     drupal/crop: 2.1.0
     drupal/csv_serialization: 2.0.0
@@ -165,7 +165,7 @@ packages:
     nikic/php-parser: v4.5.0
     oomphinc/composer-installers-extender: v1.1.2
     paragonie/random_compat: v9.99.99
-    pear/archive_tar: 1.4.13
+    pear/archive_tar: 1.4.14
     pear/console_getopt: v1.4.3
     pear/pear-core-minimal: v1.10.10
     pear/pear_exception: v1.0.1
