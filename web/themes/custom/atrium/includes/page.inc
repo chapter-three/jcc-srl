@@ -162,7 +162,6 @@ function _atrium_get_menutree($menu_name) {
  * Format translation links for drobputton component.
  *
  * @todo : Return actual enabled languages. This will be affected by:
- *   - enabled languages
  *   - filtered by languages enabled for specific courts
  *   - depending if this is multisite or domain access.
  *
@@ -176,6 +175,7 @@ function _atrium_translation_menu() {
   $languages = $language_manager->getLanguages();
   $default_language = $language_manager->getDefaultLanguage();
   $current_path = \Drupal::request()->getRequestUri();
+  $prefixed_current_path = \Drupal::request()->getRequestUri();
 
   // Strip language from current path.
   foreach ($languages as $langcode => $language) {
@@ -194,19 +194,21 @@ function _atrium_translation_menu() {
       // You can get nid and anything else you need from the node object.
       $nid = $node->id();
       $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
+      $prefixed_translated_path = '/' . $langcode . $translated_path;
     }
 
     // Default language paths have no prefix.
     $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
 
-    if($node != null && $translated_path != $current_path && $translated_path != '/node/'. $node->id()){
+    if($node != null
+      && $prefixed_translated_path != $prefixed_current_path
+      && $prefixed_translated_path != '/en' . $prefixed_current_path
+      && $translated_path != '/node/'. $node->id()){
       $links[] = [
         'title' => $language->getName(),
-        //'href' => "$host$langcode$current_path",
         'href' => "$host$langcode$translated_path",
       ];
     }
   }
-
   return $links;
 }
