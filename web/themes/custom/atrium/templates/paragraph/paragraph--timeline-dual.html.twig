@@ -6,6 +6,9 @@
 #}
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
+  {# To get a correct langcode, use a field that is translated since this paragraph
+  is not translated itself (see https://www.drupal.org/node/2735121) #}
+  {% set lang_code = paragraph.field_title_bar_title.langcode %}
 
   {% set item_content = [] %}
   {% set items = paragraph.field_timeline_dual_items %}
@@ -15,8 +18,8 @@
     {% set timeline_dual_item = items.get(key).entity %}
 
     {# Get translated child if it exists. #}
-    {% if timeline_dual_item.hasTranslation(items.langcode) %}
-      {% set timeline_dual_item = timeline_dual_item.getTranslation(items.langcode) %}
+    {% if timeline_dual_item.hasTranslation(lang_code) %}
+      {% set timeline_dual_item = timeline_dual_item.getTranslation(lang_code) %}
     {% endif %}
 
     {# Build bottom array.#}

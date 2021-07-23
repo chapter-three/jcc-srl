@@ -6,6 +6,9 @@
 #}
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
+  {# To get a correct langcode, use a field that is translated since this paragraph
+  is not translated itself (see https://www.drupal.org/node/2735121) #}
+  {% set lang_code = paragraph.field_description.langcode %}
 
   {% if content.field_title_display|render or content.field_description|render %}
     {% set image %}
@@ -32,8 +35,8 @@
       {% set card = cards.get(key).entity %}
 
       {# Get translated child if it exists. #}
-      {% if card.hasTranslation(cards.langcode) %}
-        {% set card = card.getTranslation(cards.langcode) %}
+      {% if card.hasTranslation(lang_code) %}
+        {% set card = card.getTranslation(lang_code) %}
       {% endif %}
 
       {# Menu paragraph #}

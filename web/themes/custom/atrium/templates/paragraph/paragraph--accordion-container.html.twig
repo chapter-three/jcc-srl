@@ -7,6 +7,10 @@
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
 
+  {# To get a correct langcode, use a field that is translated since this paragraph
+  is not translated itself (see https://www.drupal.org/node/2735121) #}
+  {% set lang_code = paragraph.field_body.langcode %}
+
   {% if content.field_body|render or content.field_title_display|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
@@ -31,8 +35,8 @@
         {% set accordion = accordions.get(key).entity %}
 
         {# Get translated child if it exists. #}
-        {% if accordion.hasTranslation(accordions.langcode) %}
-          {% set accordion = accordion.getTranslation(accordions.langcode) %}
+        {% if accordion.hasTranslation(lang_code) %}
+          {% set accordion = accordion.getTranslation(lang_code) %}
         {% endif %}
 
         {% set body %}

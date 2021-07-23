@@ -6,6 +6,9 @@
 #}
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
+  {# To get a correct langcode, use a field that is translated since this paragraph
+  is not translated itself (see https://www.drupal.org/node/2735121) #}
+  {% set lang_code = paragraph.field_description.langcode %}
 
   {% if content.field_timeline_items|render %}
 
@@ -25,6 +28,11 @@
       {% if items.get(key).entity.field_title_display.value %}
         {% set timeline_item = items.get(key).entity %}
 
+        {# Get translated child if it exists. #}
+        {% if timeline_item.hasTranslation(lang_code) %}
+          {% set timeline_item = timeline_item.getTranslation(lang_code) %}
+        {% endif %}
+
         {# Prepare "Read more" toggle #}
         {% if timeline_item.field_details.value %}
 
@@ -36,11 +44,6 @@
               content: timeline_item.field_details|view,
             }
           } %}
-        {% endif %}
-
-        {# Get translated child if it exists. #}
-        {% if timeline_item.hasTranslation(items.langcode) %}
-          {% set timeline_item = timeline_item.getTranslation(items.langcode) %}
         {% endif %}
 
         {# Store each item in an array for the Pattern component. #}
