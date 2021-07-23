@@ -6,6 +6,9 @@
 #}
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
+  {# To get a correct langcode, use a field that is translated since this paragraph
+  is not translated itself (see https://www.drupal.org/node/2735121) #}
+  {% set lang_code = paragraph.field_description.langcode %}
 
   {% if content.field_steps|render %}
 
@@ -26,8 +29,8 @@
         {% set step = steps.get(key).entity %}
 
         {# Get translated child if it exists. #}
-        {% if step.hasTranslation(steps.langcode) %}
-          {% set step = step.getTranslation(steps.langcode) %}
+        {% if step.hasTranslation(lang_code) %}
+          {% set step = step.getTranslation(lang_code) %}
         {% endif %}
 
         {# Store each step in an array for the Pattern component. #}

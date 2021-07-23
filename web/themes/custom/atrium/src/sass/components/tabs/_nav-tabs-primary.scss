@@ -6,7 +6,6 @@
   .is-horizontal &:before {
     border-color: $nav-tabs-primary-border-color;
   }
-
   .nav-tabs__link {
     background-color: $nav-tabs-primary-tab-background-color;
     border-color: $nav-tabs-primary-border-color;
@@ -31,6 +30,17 @@
 
     .is-horizontal & {
       border-width: 1px 0 0 1px;
+    }
+  }
+  .nav-tabs__item{
+    &.is-important a{
+      background: color($theme-color-error-light);
+      color: color($theme-color-base-ink);
+      &:hover {
+        background: color($theme-color-error-dark);
+        color: #ffffff;
+        text-decoration: none;
+      }
     }
   }
 
