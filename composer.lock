@@ -9031,16 +9031,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.152",
+            "version": "0.1.157",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "8aef43ef9d950c6a7a3b34f835ed97acba79f56f"
+                "reference": "6a8dd2aadf8059a443d4f980fbdc978caca1be78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/8aef43ef9d950c6a7a3b34f835ed97acba79f56f",
-                "reference": "8aef43ef9d950c6a7a3b34f835ed97acba79f56f",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/6a8dd2aadf8059a443d4f980fbdc978caca1be78",
+                "reference": "6a8dd2aadf8059a443d4f980fbdc978caca1be78",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9055,7 +9055,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-07-19T17:05:16+00:00"
+            "time": "2021-07-23T00:00:38+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
