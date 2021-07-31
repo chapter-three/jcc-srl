@@ -15,9 +15,6 @@ settings:
       value: default
       label: Default
     -
-      value: marginless
-      label: 'No Margins'
-    -
       value: full
       label: 'Full browser width'
   allowed_values_function: ''
