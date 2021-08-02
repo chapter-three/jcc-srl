@@ -68,6 +68,7 @@ module:
   jcc_datefinder: 0
   jcc_forms: 0
   jcc_twig: 0
+  jsonapi: 0
   key: 0
   language: 0
   link: 0
@@ -111,6 +112,7 @@ module:
   redirect: 0
   responsive_image: 0
   rest: 0
+  restui: 0
   rh_media: 0
   rh_node: 0
   rh_taxonomy: 0

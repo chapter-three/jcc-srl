@@ -104,6 +104,7 @@ packages:
     drupal/rabbit_hole: 1.0.0-beta7
     drupal/range: 1.2.0
     drupal/redirect: 1.6.0
+    drupal/restui: 1.20.0
     drupal/robotstxt: 1.4.0
     drupal/role_delegation: 1.1.0
     drupal/scheduler: 1.3.0
@@ -129,6 +130,7 @@ packages:
     drupal/views_bulk_operations: 3.9.0
     drupal/views_data_export: 1.0.0
     drupal/webform: 5.26.0
+    drupal/webform_rest: 4.0.0
     drupal/webform_translation_permissions: 1.1.0
     drupal/workbench: 1.3.0
     drupal/xmlsitemap: 1.0.0-rc1
