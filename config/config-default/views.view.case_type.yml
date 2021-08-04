@@ -609,7 +609,7 @@ display:
         title: false
         pager: false
       arguments: {  }
-      title: 'Case type'
+      title: 'Case Type Page Search'
       pager:
         type: full
         options:
@@ -672,7 +672,7 @@ display:
         title: false
         pager: false
       arguments: {  }
-      title: 'Case type (all)'
+      title: 'Case Type Page Search'
       pager:
         type: none
         options:
