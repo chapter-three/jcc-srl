@@ -609,7 +609,7 @@ display:
         title: false
         pager: false
       arguments: {  }
-      title: 'Case type'
+      title: 'Case Type Page Search'
       pager:
         type: full
         options:
@@ -663,7 +663,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<div class="grid-container padding-y-2"><a class="float-right" href="/case-type-listl">Pagination</a></div>'
+            value: '<div class="grid-container padding-y-2"><a class="float-right" href="/case-type-list">Pagination</a></div>'
             format: full_html
           plugin_id: text
       defaults:
@@ -672,7 +672,7 @@ display:
         title: false
         pager: false
       arguments: {  }
-      title: 'Case type (all)'
+      title: 'Case Type Page Search'
       pager:
         type: none
         options:
