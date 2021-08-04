@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_case_types
     - taxonomy.vocabulary.case_type
-    - user.role.authenticated
   module:
     - csv_serialization
     - jcc_forms
@@ -13,7 +12,6 @@ dependencies:
     - rest
     - serialization
     - taxonomy
-    - user
     - views_data_export
 id: case_type
 label: 'Case type'
@@ -30,10 +28,8 @@ display:
     position: 0
     display_options:
       access:
-        type: role
-        options:
-          role:
-            authenticated: authenticated
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -381,7 +377,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.roles
       tags:
         - 'config:field.storage.node.field_case_types'
   data_export_1:
@@ -583,7 +578,6 @@ display:
         - request_format
         - url
         - 'user.node_grants:view'
-        - user.roles
       tags: {  }
   page_1:
     display_plugin: page
@@ -606,7 +600,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<div class="grid-container-widescreen padding-y-2"><a href="/case-type-list-all">View all</a></div>'
+            value: '<div class="grid-container padding-y-2"><a class="float-right" href="/case-type-list-all">View all</a></div>'
             format: full_html
           plugin_id: text
       defaults:
@@ -646,7 +640,6 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.roles
       tags:
         - 'config:field.storage.node.field_case_types'
   page_2:
@@ -659,7 +652,20 @@ display:
         metatag_display_extender: {  }
         ajax_history: {  }
       path: case-type-list-all
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<div class="grid-container padding-y-2"><a class="float-right" href="/case-type-listl">Pagination</a></div>'
+            format: full_html
+          plugin_id: text
       defaults:
         footer: false
         arguments: false
@@ -679,6 +685,5 @@ display:
         - url
         - user
         - 'user.node_grants:view'
-        - user.roles
       tags:
         - 'config:field.storage.node.field_case_types'
