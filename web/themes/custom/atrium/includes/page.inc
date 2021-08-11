@@ -195,19 +195,19 @@ function _atrium_translation_menu() {
       $nid = $node->id();
       $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
       $prefixed_translated_path = '/' . $langcode . $translated_path;
-    }
 
-    // Default language paths have no prefix.
-    $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
+      // Default language paths have no prefix.
+      $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
 
-    if($node != null
-      && $prefixed_translated_path != $prefixed_current_path
-      && $prefixed_translated_path != '/en' . $prefixed_current_path
-      && $translated_path != '/node/'. $node->id()){
-      $links[] = [
-        'title' => $language->getName(),
-        'href' => "$host$langcode$translated_path",
-      ];
+      if($node != null
+        && $prefixed_translated_path != $prefixed_current_path
+        && $prefixed_translated_path != '/en' . $prefixed_current_path
+        && $translated_path != '/node/'. $node->id()){
+        $links[] = [
+          'title' => $language->getName(),
+          'href' => "$host$langcode$translated_path",
+        ];
+      }
     }
   }
   return $links;
