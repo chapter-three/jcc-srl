@@ -12,8 +12,9 @@ class SrlWebformSubmissionFinderController {
         $submission_uuid = $submission->get('uuid')->getValue();
         return new RedirectResponse('/webform_rest/was_this_information_helpful_/submission/' . $submission_uuid[0]['value'] . '?_format=json');
       } else {
-        dsm('failed export for sid : ' . $sid . '.');
-        return array();
+        return [
+          '#markup' => 'Export failed for sid : ' . $sid ,
+        ];
       }
   }
 }
