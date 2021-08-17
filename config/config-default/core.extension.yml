@@ -133,6 +133,7 @@ module:
   srl_ga_gtm: 0
   srl_updates: 0
   srl_webform: 0
+  srl_webform_submission_finder: 0
   svg_image: 0
   system: 0
   taxonomy: 0
