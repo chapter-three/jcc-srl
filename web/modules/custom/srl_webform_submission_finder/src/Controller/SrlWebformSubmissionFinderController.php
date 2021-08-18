@@ -6,7 +6,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use \Drupal\webform\Entity\WebformSubmission;
 
 class SrlWebformSubmissionFinderController {
-  function customRedirect(string $sid) {
+  function customRedirect() {
+      $sid = htmlspecialchars($_GET["sid"]);
       $submission = WebformSubmission::load($sid);
       if(!is_null($submission)){
         $submission_uuid = $submission->get('uuid')->getValue();
