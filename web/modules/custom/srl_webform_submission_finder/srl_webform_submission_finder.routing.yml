@@ -1,0 +1,6 @@
+srl_webform_submission_finder.redirect:
+  path: '/rest_export_feedback'
+  defaults:
+    _controller: '\Drupal\srl_webform_submission_finder\Controller\SrlWebformSubmissionFinderController::customRedirect'
+  requirements:
+    _permission: 'access content'

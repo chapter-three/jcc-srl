@@ -1,0 +1,5 @@
+name: 'SRL webform submission finder'
+type: module
+description: 'Redirects webform submission REST from SID to UUID'
+core: 8.x
+package: 'JCC-SRL'
