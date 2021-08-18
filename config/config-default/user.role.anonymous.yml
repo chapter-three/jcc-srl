@@ -22,6 +22,8 @@ permissions:
   - 'access_unpublished node srl_onramp'
   - 'access_unpublished node srl_wayfinder'
   - 'access_unpublished node timeline'
+  - 'restful get webform_rest_complete_submission'
+  - 'restful get webform_rest_submission'
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'
