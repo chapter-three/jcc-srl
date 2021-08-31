@@ -22,15 +22,6 @@
  */
 #}
 
-{% include '@molecules/blocks/feedback/feedback.twig' with {
-  feedback: {
-    id: element['#webform_id_trunc'],
-    form: {
-      attributes: attributes,
-      children: children
-    },
-    button: {
-      title: element.elements.was_this_information_helpful_['#admin_title']
-    }
-  }
-} %}
+<form{{ attributes }}>
+  {{ children }}
+</form>
