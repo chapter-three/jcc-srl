@@ -31,7 +31,7 @@ packages:
     doctrine/inflector: v1.2.0
     doctrine/lexer: 1.0.2
     drupal/access_unpublished: 1.0.0
-    drupal/admin_toolbar: 2.3.0
+    drupal/admin_toolbar: 2.5.0
     drupal/adminimal_admin_toolbar: 1.11.0
     drupal/adminimal_theme: 1.5.0
     drupal/advagg: 4.1.0
@@ -129,7 +129,7 @@ packages:
     drupal/views_bulk_edit: 2.4.0
     drupal/views_bulk_operations: 3.9.0
     drupal/views_data_export: 1.0.0
-    drupal/webform: 5.26.0
+    drupal/webform: 5.28.0
     drupal/webform_rest: 4.0.0
     drupal/webform_translation_permissions: 1.1.0
     drupal/workbench: 1.3.0
