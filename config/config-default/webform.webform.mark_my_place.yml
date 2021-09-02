@@ -204,7 +204,7 @@ handlers:
       cc_options: {  }
       bcc_mail: ''
       bcc_options: {  }
-      from_mail: noreply@courtinfo.ca.gov
+      from_mail: _default
       from_options: {  }
       from_name: _default
       subject: 'Mark my place'
