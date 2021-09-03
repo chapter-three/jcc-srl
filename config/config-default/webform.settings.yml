@@ -164,7 +164,7 @@ file:
 format: {  }
 mail:
   default_to_mail: stephen.mcgarrigle-t@jud.ca.gov
-  default_from_mail: webdev@jud.ca.gov
+  default_from_mail: no-reply@courtinfo.ca.gov
   default_from_name: selfhelp.courts.ca.gov
   default_reply_to: ''
   default_return_path: ''
