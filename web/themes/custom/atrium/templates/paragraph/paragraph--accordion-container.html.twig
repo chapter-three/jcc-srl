@@ -7,56 +7,62 @@
 {% extends 'paragraph.html.twig' %}
 {% block paragraph %}
 
+  {# To get a correct langcode, use a field that is translated since this paragraph
+  is not translated itself (see https://www.drupal.org/node/2735121) #}
+  {% set lang_code = paragraph.field_body.langcode %}
+
+  {% set body %}
+    {{ content.field_body|render ? content.field_body : null }}
+
+    {% if content.field_accordions|render %}
+      {% set accordion_items = [] %}
+      {% set accordions = paragraph.field_accordions %}
+
+      {% for key, item in accordions.value %}
+        {# ⇣ This check is important because Accordion fields are NOT required.
+        Empty accordions are possible, and would return the wrong data. #}
+        {% if accordions.get(key).entity.field_title_display.value %}
+          {% set accordion = accordions.get(key).entity %}
+
+          {# Get translated child if it exists. #}
+          {% if accordion.hasTranslation(lang_code) %}
+            {% set accordion = accordion.getTranslation(lang_code) %}
+          {% endif %}
+
+          {% set body %}
+            {{ accordion.field_body|view }}
+            {{ accordion.field_postcard|view }}
+          {% endset %}
+
+          {# Store each accordion in an array for the Pattern component. #}
+          {% set accordion_items = accordion_items|merge([{
+            title: accordion.field_title_display|view,
+            body: body,
+          }]) %}
+        {% endif %}
+      {% endfor %}
+
+      {% include '@molecules/interactive/accordion/accordion.twig' with {
+        accordion: {
+          full: paragraph.field_accordion_style.0.value == 'full' ? true : false,
+          expand_first: 'no',
+          items: accordion_items,
+        }
+      } only %}
+
+    {% endif %}
+  {% endset %}
+
   {% if content.field_body|render or content.field_title_display|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
-        padding_adjustment: 'padding-bottom-0',
         id: paragraph_id,
         headergroup: {
           title: content.field_title_display|render ? content.field_title_display : '',
-          body: content.field_body|render ? content.field_body : null,
+          body: body,
         },
       }
     } only %}
-  {% endif %}
-
-  {% if content.field_accordions|render %}
-    {% set accordion_items = [] %}
-    {% set accordions = paragraph.field_accordions %}
-
-    {% for key, item in accordions.value %}
-      {# ⇣ This check is important because Accordion fields are NOT required.
-      Empty accordions are possible, and would return the wrong data. #}
-      {% if accordions.get(key).entity.field_title_display.value %}
-        {% set accordion = accordions.get(key).entity %}
-
-        {# Get translated child if it exists. #}
-        {% if accordion.hasTranslation(accordions.langcode) %}
-          {% set accordion = accordion.getTranslation(accordions.langcode) %}
-        {% endif %}
-
-        {% set body %}
-          {{ accordion.field_body|view }}
-          {{ accordion.field_postcard|view }}
-        {% endset %}
-
-        {# Store each accordion in an array for the Pattern component. #}
-        {% set accordion_items = accordion_items|merge([{
-          title: accordion.field_title_display|view,
-          body: body,
-        }]) %}
-      {% endif %}
-    {% endfor %}
-
-    {% include '@molecules/interactive/accordion/accordion.twig' with {
-      accordion: {
-        full: paragraph.field_accordion_style.0.value == 'default' ? false : true,
-        container: paragraph.field_accordion_style.0.value == 'default',
-        expand_first: 'no',
-        items: accordion_items,
-      }
-    } only %}
-
   {% endif %}
 
   {{ content|without(

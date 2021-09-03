@@ -50,10 +50,10 @@ packages:
     drupal/console-core: 1.9.4
     drupal/console-en: 1.9.4
     drupal/console-extend-plugin: 0.9.3
-    drupal/core: 8.9.16
+    drupal/core: 8.9.18
     drupal/core-composer-scaffold: 8.9.10
     drupal/core-project-message: 8.9.1
-    drupal/core-recommended: 8.9.16
+    drupal/core-recommended: 8.9.18
     drupal/core-vendor-hardening: 8.9.10
     drupal/crop: 2.1.0
     drupal/csv_serialization: 2.0.0
@@ -104,6 +104,7 @@ packages:
     drupal/rabbit_hole: 1.0.0-beta7
     drupal/range: 1.2.0
     drupal/redirect: 1.6.0
+    drupal/restui: 1.20.0
     drupal/robotstxt: 1.4.0
     drupal/role_delegation: 1.1.0
     drupal/scheduler: 1.3.0
@@ -129,6 +130,7 @@ packages:
     drupal/views_bulk_operations: 3.9.0
     drupal/views_data_export: 1.0.0
     drupal/webform: 5.26.0
+    drupal/webform_rest: 4.0.0
     drupal/webform_translation_permissions: 1.1.0
     drupal/workbench: 1.3.0
     drupal/xmlsitemap: 1.0.0-rc1
@@ -147,7 +149,7 @@ packages:
     harvesthq/chosen: 1.8.7
     html2text/html2text: 4.0.1
     joachim-n/composer-manifest: 1.0.4
-    judicialcouncil/courtyard-artifact: 0.1.136
+    judicialcouncil/courtyard-artifact: 0.1.190
     kub-at/php-simple-html-dom-parser: 1.9.1
     laminas/laminas-diactoros: 1.8.7p2
     laminas/laminas-escaper: 2.6.1
@@ -165,7 +167,7 @@ packages:
     nikic/php-parser: v4.5.0
     oomphinc/composer-installers-extender: v1.1.2
     paragonie/random_compat: v9.99.99
-    pear/archive_tar: 1.4.13
+    pear/archive_tar: 1.4.14
     pear/console_getopt: v1.4.3
     pear/pear-core-minimal: v1.10.10
     pear/pear_exception: v1.0.1

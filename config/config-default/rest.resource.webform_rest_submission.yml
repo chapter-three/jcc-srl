@@ -1,0 +1,18 @@
+uuid: fd701331-dc23-4cbd-836e-50381e9b9aaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - serialization
+    - user
+    - webform_rest
+id: webform_rest_submission
+plugin_id: webform_rest_submission
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
