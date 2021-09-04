@@ -28,6 +28,7 @@ settings:
             - Outdent
             - Indent
             - HorizontalRule
+            - Table
         -
           name: Linking
           items:
