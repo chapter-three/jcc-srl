@@ -28,10 +28,7 @@
       body: content.field_column_first|render ? content.field_column_first : '',
       column_content_right: content.field_column_second|render ? content.field_column_second : '',
       banner_image: node.field_image.0 ? file_url(node.field_image.0.entity.field_media_image.entity.uri.value),
-      case_type: {
-        url: case_index.url,
-        label: case_index.label
-      }
+      case_type: case_index
     }
   } %}
 
