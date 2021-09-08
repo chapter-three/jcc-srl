@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\Core\Url;
 use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 
 /**
@@ -25,15 +26,18 @@ function atrium_preprocess_node(&$variables) {
         if(count($terms) == 1){
           if (!$terms[0]->get('field_url')->isEmpty()) {
             $term_custom_uri = $terms[0]->get('field_url')->getValue();
-            $variables['case_index']['url'] = $term_custom_uri[0]['uri'];
+            $variables['case_index']['url'] = Url::fromUri($term_custom_uri[0]['uri']);
+            if ($term_custom_uri[0]['title'] != ''){
+              $variables['case_index']['label'] = t('Index: All ') . $term_custom_uri[0]['title'] . t(' Pages');
+            } else {
+              $variables['case_index']['label'] = t('Index: All ') . $terms[0]->label() . t(' Pages');
+            }
           } else {
-            $id = $terms[0]->id();
-            $aliasManager = \Drupal::service('path.alias_manager');
-            $variables['case_index']['url'] = $aliasManager->getAliasByPath('/taxonomy/term/'.$id);
+            break;
           }
-          $variables['case_index']['label'] = t('Index: All ') . $terms[0]->label() . t(' Pages');
+
         }
       }
-      break;
+
   }
 }

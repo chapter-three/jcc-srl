@@ -1917,7 +1917,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-2.3",
-                    "datestamp": "1592535714",
+                    "datestamp": "1629907119",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8029,7 +8029,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-5.26",
-                    "datestamp": "1620250064",
+                    "datestamp": "1629907242",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9141,16 +9141,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.190",
+            "version": "0.1.194",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "adc1157bfde9a8dd20de3646c026dfa799ea7ac2"
+                "reference": "9d0b8f7c0ac9d92090979606978bf3ebe095b378"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/adc1157bfde9a8dd20de3646c026dfa799ea7ac2",
-                "reference": "adc1157bfde9a8dd20de3646c026dfa799ea7ac2",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/9d0b8f7c0ac9d92090979606978bf3ebe095b378",
+                "reference": "9d0b8f7c0ac9d92090979606978bf3ebe095b378",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9165,7 +9165,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-09-02T22:39:15+00:00"
+            "time": "2021-09-07T23:37:07+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
