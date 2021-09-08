@@ -65,6 +65,7 @@ filters:
       default_view_mode: embed
       allowed_media_types:
         image: image
+        remote_video: remote_video
         snippet: snippet
         svg: svg
       allowed_view_modes:
