@@ -1,0 +1,31 @@
+uuid: f48cbac8-da3d-4754-833e-c5ba73f97753
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_type_override
+    - node.type.srl_howto_instruction
+  module:
+    - datalayer
+    - link
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_case_type_override
+  tmgmt_content:
+    excluded: false
+id: node.srl_howto_instruction.field_case_type_override
+field_name: field_case_type_override
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Case type Override'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link
