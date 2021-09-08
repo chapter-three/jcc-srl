@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_actions
     - field.field.node.srl_howto_instruction.field_back_button_only
     - field.field.node.srl_howto_instruction.field_blocks
+    - field.field.node.srl_howto_instruction.field_case_type_override
     - field.field.node.srl_howto_instruction.field_case_types
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
@@ -127,6 +128,7 @@ content:
 hidden:
   field_actions: true
   field_back_button_only: true
+  field_case_type_override: true
   field_case_types: true
   field_dark_background: true
   field_metatag: true
