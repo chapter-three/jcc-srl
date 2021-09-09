@@ -1,4 +1,5 @@
 ignored_config_entities:
+  - 'key.key.*'
   - 'webform.webform.*'
   - tmgmt.settings
 _core:
