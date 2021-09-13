@@ -15,10 +15,10 @@ CKEDITOR.addTemplates('default', {
         const randomId = +new Date();
         return`<p>Text Before</p>
           <div class="jcc-read-more">
-            <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
+            <span class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
               What is a judgment
               <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
-            </button>
+            </span>
             <div class="jcc-read-more__content" id="read-more-${randomId}">
               If your bank account is levied, you must act quickly! You have only ten days from the date of the levy to file a claim of exempltion (plus five days if the notice was sent be mail) with the sheriff performing the levy.
             </div>
