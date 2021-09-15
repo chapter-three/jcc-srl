@@ -60,7 +60,6 @@ third_party_settings:
     group_hero:
       children:
         - field_parent
-        - field_back_button_only
         - field_title_display
         - field_column_first
         - field_column_second
@@ -99,7 +98,7 @@ third_party_settings:
         - field_watchers
         - field_case_type_override
       parent_name: ''
-      weight: 14
+      weight: 13
       format_type: fieldset
       region: content
       format_settings:
@@ -144,13 +143,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-    region: content
-  field_back_button_only:
-    weight: 3
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
     region: content
   field_blocks:
     weight: 11
@@ -263,7 +255,7 @@ content:
     type: media_library_widget
     region: content
   field_metatag:
-    weight: 13
+    weight: 12
     settings:
       sidebar: true
     third_party_settings: {  }
@@ -326,30 +318,30 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 20
+    weight: 19
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -369,13 +361,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -385,13 +377,13 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 19
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -401,5 +393,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_back_button_only: true
   promote: true
   sticky: true
