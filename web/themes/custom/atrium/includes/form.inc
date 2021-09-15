@@ -35,6 +35,13 @@ function atrium_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   if (isset($form['#webform_id'])) {
     $form['#webform_id_trunc'] = $form['#webform_id'];
+
+    //Patternlab javascript needs to be reloaded on ajax calls for webform
+    $request = \Drupal::request();
+    $is_ajax = $request->isXmlHttpRequest();
+    if($is_ajax){
+      $form['is_ajax'] = true;
+    }
   }
   if (isset($form['#attributes']['class']) && in_array('wayfinder', $form['#attributes']['class']))  {
     atrium_add_suggestion($form, 'webform', 'wayfinder');
