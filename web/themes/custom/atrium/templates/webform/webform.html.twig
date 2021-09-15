@@ -6,6 +6,16 @@
  * @see web/modules/contrib/webform/templates/webform.html.twig
  */
 #}
+
+{% if element.is_ajax %}
+  <script>
+      var newContainer = jQuery(".jcc-wayfinder-section");
+      if (newContainer.length){
+        window.a11yToggle(newContainer[0]);
+      }
+  </script>
+{% endif %}
+
 {% if content %}
   {%- include '@molecules/blocks/hero/hero.twig' with {
     hero: {
