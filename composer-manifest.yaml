@@ -50,10 +50,10 @@ packages:
     drupal/console-core: 1.9.4
     drupal/console-en: 1.9.4
     drupal/console-extend-plugin: 0.9.3
-    drupal/core: 8.9.18
+    drupal/core: 8.9.19
     drupal/core-composer-scaffold: 8.9.10
     drupal/core-project-message: 8.9.1
-    drupal/core-recommended: 8.9.18
+    drupal/core-recommended: 8.9.19
     drupal/core-vendor-hardening: 8.9.10
     drupal/crop: 2.1.0
     drupal/csv_serialization: 2.0.0
@@ -68,7 +68,7 @@ packages:
     drupal/entity_browser: 2.5.0
     drupal/entity_browser_entity_form: 2.5.0
     drupal/entity_clone: 1.0.0-beta4
-    drupal/entity_embed: 1.1.0
+    drupal/entity_embed: 1.2.0
     drupal/entity_reference_revisions: 1.8.0
     drupal/environment_indicator: 3.7.0
     drupal/extlink: 1.3.0
