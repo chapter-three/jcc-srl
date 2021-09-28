@@ -19,7 +19,7 @@ function atrium_preprocess_node(&$variables) {
     case "srl_howto_instruction":
       if (!$node->get('field_case_type_override')->isEmpty()) {
         $case_type_override = $node->get('field_case_type_override');
-        $variables['case_index']['url'] = $case_type_override[0]->get('uri')->getValue();
+        $variables['case_index']['url'] = Url::fromUri($case_type_override[0]->get('uri')->getValue());
         $variables['case_index']['label'] = t('Index: All ') . $case_type_override[0]->get('title')->getValue() . t(' Pages');
       } else {
         $terms = $node->get('field_case_types')->referencedEntities();
