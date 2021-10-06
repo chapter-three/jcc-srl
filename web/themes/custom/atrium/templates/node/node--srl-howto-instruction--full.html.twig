@@ -1,28 +1,12 @@
 {% extends 'node.html.twig' %}
 {% set back_btn_status = false %}
 {% block content %}
-  {% if node.field_back_button_only.value == 1 %}
-    {% set back_btn_status = true %}
-  {% else %}
-    {% if node.field_parent.value is not empty %}
-      {% set breadcrumbs =  [
-        {
-          url: path('entity.node.canonical', { 'node': node.field_parent.entity.id }),
-          label: node.field_parent.entity.label,
-        }
-      ] %}
-      {% set back_btn_status = true %}
-    {% else %}
-      {% set back_btn_status = false %}
-    {% endif %}
-  {% endif %}
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       background_variant: node.field_dark_background[0].value == 1 ? 'has-background-color--dark' : '',
       column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
       breadcrumbs: {
-        show_back_button: back_btn_status,
-        items: breadcrumbs,
+        show_back_button: true
       },
       title: content.field_title_display|render ? content.field_title_display : label,
       body: content.field_column_first|render ? content.field_column_first : '',
