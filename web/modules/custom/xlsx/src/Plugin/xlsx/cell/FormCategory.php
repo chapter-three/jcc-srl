@@ -25,15 +25,17 @@ class FormCategory extends XlsxCellBase {
     if ($entity->hasField($field_name)) {
       if (!empty($value)) {
         $terms = explode(',', $value);
+        $target_ids = [];
         foreach ($terms as $term_name) {
           $t_name = trim($term_name);
           $result = \Drupal::entityTypeManager()->getStorage('jcc_category')
             ->loadByProperties(['name' => $t_name]);
           if ($jcc_category = reset($result)) {
-            return [
-              'target_id' => $jcc_category->getTermId(),
-            ];
+            $target_ids[]['target_id'] = $jcc_category->getTermId();
           }
+        }
+        if (!empty($target_ids)) {
+          return $target_ids;
         }
       }
     }
