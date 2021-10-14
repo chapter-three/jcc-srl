@@ -36,6 +36,7 @@ permissions:
   - 'access_unpublished paragraph timeline_item'
   - 'administer block_content fields'
   - 'administer content translation'
+  - 'administer content types'
   - 'administer languages'
   - 'administer media fields'
   - 'administer node fields'
