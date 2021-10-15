@@ -18,6 +18,7 @@ permissions:
   - 'access workbench'
   - 'administer media'
   - 'administer meta tags'
+  - 'administer pdfs'
   - 'administer url aliases'
   - 'change own username'
   - 'clone node entity'
