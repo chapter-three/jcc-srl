@@ -1,11 +1,44 @@
+diff --git a/patches/robots.patch b/patches/robots.patch
+index 21b5317a..e69de29b 100644
+--- a/patches/robots.patch
++++ b/patches/robots.patch
+@@ -1,11 +0,0 @@
+-diff --git a/web/robots.txt b/web/robots.txt
+-index 54da16277ade77495e7b227288c62f7d8abfe9a1..a1c9e354fccfad15077be378cc4d6310f68109e6 100644
+---- a/web/robots.txt
+-+++ b/web/robots.txt
+-@@ -59,3 +59,6 @@ Disallow: /index.php/user/password/
+- Disallow: /index.php/user/register/
+- Disallow: /index.php/user/login/
+- Disallow: /index.php/user/logout/
+-+
+-+# Remove this line after Alpha2 launch.
+-+Disallow: /
 diff --git a/web/robots.txt b/web/robots.txt
-index 54da16277ade77495e7b227288c62f7d8abfe9a1..a1c9e354fccfad15077be378cc4d6310f68109e6 100644
+index a1c9e354..2a93fe28 100644
 --- a/web/robots.txt
 +++ b/web/robots.txt
-@@ -59,3 +59,6 @@ Disallow: /index.php/user/password/
- Disallow: /index.php/user/register/
- Disallow: /index.php/user/login/
- Disallow: /index.php/user/logout/
-+
-+# Remove this line after Alpha2 launch.
-+Disallow: /
+@@ -33,6 +33,23 @@ Allow: /profiles/*.jpg
+ Allow: /profiles/*.jpeg
+ Allow: /profiles/*.png
+ Allow: /profiles/*.svg
++#Eviction redirects 10-14-2021
++Allow: /eviction
++Allow: /eviction-landlord
++Allow: /eviction-landlord/after-trial
++Allow: /eviction-landlord/ask-for-judgment
++Allow: /eviction-landlord/dismiss-case
++Allow: /eviction-landlord/file
++Allow: /eviction-landlord/fill-out
++Allow: /eviction-landlord/notice
++Allow: /eviction-landlord/serve
++Allow: /eviction-mediation
++Allow: /eviction-tenant
++Allow: /eviction-tenant/notice
++Allow: /eviction-tenant/respond-file
++Allow: /eviction-tenant/summons-complaint
++Allow: /eviction-tenant/trial
++Allow: /eviction-tenant/lose-case
+ # Directories
+ Disallow: /core/
+ Disallow: /profiles/

@@ -33,23 +33,6 @@ Allow: /profiles/*.jpg
 Allow: /profiles/*.jpeg
 Allow: /profiles/*.png
 Allow: /profiles/*.svg
-#Eviction redirects 10-14-2021
-Allow: /eviction
-Allow: /eviction-landlord
-Allow: /eviction-landlord/after-trial
-Allow: /eviction-landlord/ask-for-judgment
-Allow: /eviction-landlord/dismiss-case
-Allow: /eviction-landlord/file
-Allow: /eviction-landlord/fill-out
-Allow: /eviction-landlord/notice
-Allow: /eviction-landlord/serve
-Allow: /eviction-mediation
-Allow: /eviction-tenant
-Allow: /eviction-tenant/notice
-Allow: /eviction-tenant/respond-file
-Allow: /eviction-tenant/summons-complaint
-Allow: /eviction-tenant/trial
-Allow: /eviction-tenant/lose-case
 # Directories
 Disallow: /core/
 Disallow: /profiles/
