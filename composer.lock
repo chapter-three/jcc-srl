@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75b7b188c286b2e074d3b685a13fb816",
+    "content-hash": "e59aa2854668489c18892ed4e61be07b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5248,17 +5248,17 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "4.3.0",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "8.x-4.3"
+                "reference": "8.x-4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-4.3.zip",
-                "reference": "8.x-4.3",
-                "shasum": "e624ea2f18a6100b76a8337e24f7c08df6e2235e"
+                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-4.4.zip",
+                "reference": "8.x-4.4",
+                "shasum": "c6db47623f14e939f03375565229af45b15f5b91"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5266,8 +5266,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-4.3",
-                    "datestamp": "1490205830",
+                    "version": "8.x-4.4",
+                    "datestamp": "1632933665",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6707,63 +6707,6 @@
             "homepage": "https://www.drupal.org/project/restui",
             "support": {
                 "source": "https://git.drupalcode.org/project/restui"
-            }
-        },
-        {
-            "name": "drupal/robotstxt",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/robotstxt.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/robotstxt-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "8793121a58d2897c0523f3cf13c31f7d80f90154"
-            },
-            "require": {
-                "drupal/core": "^8.0 || ^9.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1585290535",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/u/hass"
-                },
-                {
-                    "name": "See other contributors",
-                    "homepage": "https://www.drupal.org/node/53579/committers"
-                },
-                {
-                    "name": "ccjjmartin",
-                    "homepage": "https://www.drupal.org/user/3210801"
-                },
-                {
-                    "name": "mikeegoulding",
-                    "homepage": "https://www.drupal.org/user/2867877"
-                }
-            ],
-            "description": "Generates the robots.txt file dynamically and gives you the chance to edit it, on a per-site basis, from the web UI.",
-            "homepage": "https://www.drupal.org/project/robotstxt",
-            "support": {
-                "source": "https://git.drupal.org/project/robotstxt.git",
-                "issues": "https://www.drupal.org/project/issues/robotstxt"
             }
         },
         {
@@ -8327,9 +8270,6 @@
                 "drupal/core": "^8 || ^9",
                 "ext-xmlwriter": "*"
             },
-            "require-dev": {
-                "drupal/robotstxt": "^1.0"
-            },
             "suggest": {
                 "drush/drush": "Command-line regenerating and rebuilding sitemaps."
             },
@@ -9194,16 +9134,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.225",
+            "version": "0.1.241",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "377494d37910a2a8804e42d4cd98581796b47a92"
+                "reference": "bd7147a269b5a01b482602b9ca86cedd42b9a384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/377494d37910a2a8804e42d4cd98581796b47a92",
-                "reference": "377494d37910a2a8804e42d4cd98581796b47a92",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/bd7147a269b5a01b482602b9ca86cedd42b9a384",
+                "reference": "bd7147a269b5a01b482602b9ca86cedd42b9a384",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9218,7 +9158,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-10-12T18:23:26+00:00"
+            "time": "2021-10-27T19:05:38+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
