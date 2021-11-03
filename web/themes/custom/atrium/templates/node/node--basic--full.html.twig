@@ -113,10 +113,24 @@
 
   {% set column_content_left = {field_media: content.field_media, body: content.body} %}
 
+  {% set right_column %}
+    <div class="jcc-share--spacer"></div>
+  {% endset %}
+
+  <div class="jcc-share__container">
+    {% include '@organisms/sections/share/share.twig' with {
+      share: {
+        email_modal: drupal_entity('webform', 'share_this_page'),
+        text_modal: drupal_entity('webform', 'mark_my_place_text_message')
+      }
+    } only %}
+  </div>
+
   {% if column_content_left|render %}
     {% include '@organisms/sections/text-section/text-section.twig' with {
       text_section: {
-        column_content_left: column_content_left
+        column_content_left: column_content_left,
+        column_content_right: right_column,
       }
     } only %}
   {% endif %}
