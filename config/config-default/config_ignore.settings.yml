@@ -2,6 +2,5 @@ ignored_config_entities:
   - 'key.key.*'
   - 'webform.webform.*'
   - tmgmt.settings
-  - recaptcha.settings
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

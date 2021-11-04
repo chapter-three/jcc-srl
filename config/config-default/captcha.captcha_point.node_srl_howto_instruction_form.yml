@@ -1,7 +1,0 @@
-uuid: 3fc59904-c209-4d7d-adcf-473a398ff33b
-langcode: en
-status: false
-dependencies: {  }
-formId: node_srl_howto_instruction_form
-captchaType: default
-label: null
