@@ -200,6 +200,8 @@ requirements:
   spam: true
 langcode: en
 third_party_settings:
+  captcha:
+    replace_administration_mode: true
   honeypot: {  }
 _core:
   default_config_hash: HzTDACmplSpgvfi_MAwVt9OFrWilRxdj-K-v5RoANjw
