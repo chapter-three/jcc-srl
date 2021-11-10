@@ -1,0 +1,29 @@
+uuid: ab6e348c-0242-4423-b895-7e834f0664ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.overview.field_actions
+    - field.field.node.overview.field_case_types
+    - field.field.node.overview.field_paragraphs
+    - field.field.node.overview.field_parties
+    - field.field.node.overview.field_watchers
+    - node.type.overview
+  module:
+    - user
+id: node.overview.search_index
+targetEntityType: node
+bundle: overview
+mode: search_index
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_actions: true
+  field_case_types: true
+  field_paragraphs: true
+  field_parties: true
+  field_watchers: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

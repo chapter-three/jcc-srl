@@ -92,6 +92,7 @@ permissions:
   - 'revert srl_howto_instruction revisions'
   - 'revert srl_onramp revisions'
   - 'revert srl_wayfinder revisions'
+  - 'search content'
   - 'submit translation jobs'
   - 'translate action taxonomy_term'
   - 'translate any entity'

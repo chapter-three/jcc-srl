@@ -172,6 +172,7 @@ permissions:
   - 'revert srl_onramp revisions'
   - 'revert srl_wayfinder revisions'
   - 'schedule publishing of nodes'
+  - 'search content'
   - 'select account cancellation method'
   - 'switch shortcut sets'
   - 'translate any entity'

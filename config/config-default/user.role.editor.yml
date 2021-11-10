@@ -64,6 +64,7 @@ permissions:
   - 'edit own video media'
   - 'link to any page'
   - 'schedule publishing of nodes'
+  - 'search content'
   - 'translate any entity'
   - 'translate interface'
   - 'translate jcc_form media'
