@@ -121,7 +121,6 @@ module:
   role_delegation: 0
   scheduler: 0
   scheduler_content_moderation_integration: 0
-  search: 0
   search_api: 0
   search_api_db: 0
   sendgrid_integration: 0

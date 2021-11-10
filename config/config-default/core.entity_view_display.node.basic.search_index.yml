@@ -1,0 +1,49 @@
+uuid: 339be4ef-afa0-439b-b7a1-35301106a8d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.basic.body
+    - field.field.node.basic.field_actions
+    - field.field.node.basic.field_case_types
+    - field.field.node.basic.field_column_first
+    - field.field.node.basic.field_header
+    - field.field.node.basic.field_hide_title
+    - field.field.node.basic.field_image
+    - field.field.node.basic.field_media
+    - field.field.node.basic.field_metatag
+    - field.field.node.basic.field_paragraphs
+    - field.field.node.basic.field_parent
+    - field.field.node.basic.field_parties
+    - field.field.node.basic.field_title_display
+    - field.field.node.basic.field_watchers
+    - node.type.basic
+  module:
+    - user
+_core:
+  default_config_hash: yA_hyz2S6d-S09EOKJfahwBxv-tjADiCjwmhsWthkyg
+id: node.basic.search_index
+targetEntityType: node
+bundle: basic
+mode: search_index
+content: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_actions: true
+  field_case_types: true
+  field_column_first: true
+  field_header: true
+  field_hide_title: true
+  field_image: true
+  field_media: true
+  field_metatag: true
+  field_paragraphs: true
+  field_parent: true
+  field_parties: true
+  field_title_display: true
+  field_watchers: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
