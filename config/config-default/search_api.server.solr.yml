@@ -1,0 +1,42 @@
+uuid: a5bdb4e8-955f-4488-9e5d-46571fcae361
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+id: solr
+name: Solr
+description: ''
+backend: search_api_solr
+backend_config:
+  connector: solr_cloud
+  connector_config:
+    scheme: http
+    host: 'http://jcc-trialcourt-solr.azurewebsites.net/'
+    port: 433
+    path: /
+    core: jcc-srl-live
+    timeout: 5
+    index_timeout: 5
+    optimize_timeout: 10
+    finalize_timeout: 30
+    commit_within: 1000
+    solr_version: ''
+    http_method: AUTO
+    jmx: false
+    solr_install_dir: ''
+    checkpoints_collection: ''
+    stats_cache: org.apache.solr.search.stats.LRUStatsCache
+  disabled_field_types: {  }
+  disabled_caches: {  }
+  disabled_request_handlers: {  }
+  disabled_request_dispatchers: {  }
+  rows: 10
+  retrieve_data: false
+  highlight_data: false
+  skip_schema_check: false
+  server_prefix: ''
+  domain: generic
+  environment: default
+  optimize: false
+  site_hash: false

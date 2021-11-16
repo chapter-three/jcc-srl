@@ -4,13 +4,8 @@ status: true
 dependencies:
   config:
     - search_api.index.default
-    - user.role.administrator
-    - user.role.editor
-    - user.role.jcc_web_services
-    - user.role.translator
   module:
     - search_api
-    - user
 id: search
 label: Search
 module: views
@@ -26,13 +21,8 @@ display:
     position: 0
     display_options:
       access:
-        type: role
-        options:
-          role:
-            editor: editor
-            translator: translator
-            jcc_web_services: jcc_web_services
-            administrator: administrator
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -322,7 +312,6 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
       tags:
         - 'config:search_api.index.default'
   page_1:
@@ -343,6 +332,5 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.roles
       tags:
         - 'config:search_api.index.default'

@@ -125,6 +125,7 @@ module:
   scheduler_content_moderation_integration: 0
   search_api: 0
   search_api_db: 0
+  search_api_solr: 0
   sendgrid_integration: 0
   serialization: 0
   shortcut: 0
