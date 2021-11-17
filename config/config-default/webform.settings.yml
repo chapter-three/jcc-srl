@@ -9,6 +9,7 @@ settings:
   default_form_required_label: 'Indicates required field'
   default_submit_button_label: Submit
   default_reset_button_label: Reset
+  default_delete_button_label: Delete
   form_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\nwayfinder"
   button_classes: ''
   default_form_submit_once: false
@@ -42,6 +43,8 @@ settings:
   default_ajax_progress_type: fullscreen
   default_ajax_effect: fade
   default_ajax_speed: null
+  webform_bulk_form: false
+  webform_bulk_form_actions: {  }
   dialog_options:
     narrow:
       title: Narrow
@@ -196,6 +199,9 @@ requirements:
   bootstrap: true
   spam: true
 langcode: en
-third_party_settings: {  }
+third_party_settings:
+  captcha:
+    replace_administration_mode: true
+  honeypot: {  }
 _core:
   default_config_hash: HzTDACmplSpgvfi_MAwVt9OFrWilRxdj-K-v5RoANjw
