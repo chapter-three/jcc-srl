@@ -1,0 +1,41 @@
+uuid: 556a4751-c709-4971-bb2a-460ebbbdb47a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.srl_onramp.field_actions
+    - field.field.node.srl_onramp.field_brow
+    - field.field.node.srl_onramp.field_case_type
+    - field.field.node.srl_onramp.field_case_types
+    - field.field.node.srl_onramp.field_description
+    - field.field.node.srl_onramp.field_hero_nav_title
+    - field.field.node.srl_onramp.field_metatag
+    - field.field.node.srl_onramp.field_paragraphs
+    - field.field.node.srl_onramp.field_parent
+    - field.field.node.srl_onramp.field_parties
+    - field.field.node.srl_onramp.field_watchers
+    - node.type.srl_onramp
+  module:
+    - user
+id: node.srl_onramp.search_index
+targetEntityType: node
+bundle: srl_onramp
+mode: search_index
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_actions: true
+  field_brow: true
+  field_case_type: true
+  field_case_types: true
+  field_description: true
+  field_hero_nav_title: true
+  field_metatag: true
+  field_paragraphs: true
+  field_parent: true
+  field_parties: true
+  field_watchers: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
