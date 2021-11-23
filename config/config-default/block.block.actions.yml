@@ -1,0 +1,29 @@
+uuid: 4578ca50-3032-4cea-859b-6b03dc1a2c2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.actions
+  module:
+    - facets
+    - system
+  theme:
+    - atrium
+id: actions
+theme: atrium
+region: content_below
+weight: -5
+provider: null
+plugin: 'facet_block:actions'
+settings:
+  id: 'facet_block:actions'
+  label: Actions
+  provider: facets
+  label_display: visible
+  block_id: actions
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search\r\n/solr-search"
+    negate: false
+    context_mapping: {  }
