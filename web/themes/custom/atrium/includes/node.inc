@@ -17,6 +17,7 @@ function atrium_preprocess_node(&$variables) {
   $node = $variables['node'];
   switch ($node->getType()) {
     case "srl_howto_instruction":
+      $variables['previous_label'] = t('Previous Page');
       if (!$node->get('field_case_type_override')->isEmpty()) {
         $case_type_override = $node->get('field_case_type_override');
         $variables['case_index']['url'] = Url::fromUri($case_type_override[0]->get('uri')->getValue());

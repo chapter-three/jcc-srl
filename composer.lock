@@ -4866,6 +4866,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Secure user data after pdf is rendered.": "patches/webform-pdf-protect.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5339,7 +5342,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-4.4",
-                    "datestamp": "1632933665",
+                    "datestamp": "1632946963",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5359,6 +5362,10 @@
                     "homepage": "https://stjerneman.com",
                     "email": "emil@stjerneman.com",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "johnwebdev",
+                    "homepage": "https://www.drupal.org/user/3331569"
                 }
             ],
             "description": "Linkit - Enriched linking experience",
@@ -8425,6 +8432,9 @@
                 "drupal/core": "^8 || ^9",
                 "ext-xmlwriter": "*"
             },
+            "require-dev": {
+                "drupal/robotstxt": "^1.0"
+            },
             "suggest": {
                 "drush/drush": "Command-line regenerating and rebuilding sitemaps."
             },
@@ -9336,16 +9346,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.259",
+            "version": "0.1.267",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "7281fdcbbccbb12e7b93f9382d749248cd1a5e4d"
+                "reference": "676290f19ad4f628b447d3425632129e2c6941b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/7281fdcbbccbb12e7b93f9382d749248cd1a5e4d",
-                "reference": "7281fdcbbccbb12e7b93f9382d749248cd1a5e4d",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/676290f19ad4f628b447d3425632129e2c6941b4",
+                "reference": "676290f19ad4f628b447d3425632129e2c6941b4",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9360,7 +9370,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-11-17T19:36:06+00:00"
+            "time": "2021-11-23T04:20:22+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -14073,6 +14083,7 @@
                 }
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
+            "abandoned": "symfony/filesystem",
             "time": "2015-12-17T08:42:14+00:00"
         },
         {
