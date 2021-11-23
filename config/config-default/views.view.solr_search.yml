@@ -1,17 +1,19 @@
-uuid: 7fcd0e51-235e-45a4-b585-da13aded07f7
+uuid: f1144b00-ccc5-4d39-b574-46c78d963c20
 langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.default
+    - field.storage.node.body
+    - search_api.index.solr_index
   module:
     - search_api
-id: search
-label: Search
+    - text
+id: solr_search
+label: 'Solr Search'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_default
+base_table: search_api_index_solr_index
 base_field: search_api_id
 display:
   default:
@@ -76,66 +78,15 @@ display:
               srl_howto_instruction: search_index
               srl_onramp: search_index
               srl_wayfinder: search_index
+              timeline: search_index
       fields:
-        node_grants:
-          id: node_grants
-          table: search_api_index_default
-          field: node_grants
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          link_to_item: false
-          use_highlighting: false
-          multi_type: separator
-          multi_separator: ', '
+        body:
+          table: search_api_index_solr_index
+          field: body
+          id: body
           entity_type: null
           entity_field: null
-          plugin_id: search_api
-        title:
-          id: title
-          table: search_api_datasource_default_entity_node
-          field: title
+          plugin_id: search_api_field
           relationship: none
           group_type: group
           admin_label: ''
@@ -172,7 +123,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -181,9 +132,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -201,17 +151,15 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
       filters:
         search_api_fulltext:
           id: search_api_fulltext
-          table: search_api_index_default
+          table: search_api_index_solr_index
           field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: and
           value: ''
           group: 1
           exposed: true
@@ -250,52 +198,14 @@ display:
           parse_mode: terms
           min_length: null
           fields:
-            - rendered_item
-            - title
+            - body
+            - field_column_content_right
+            - field_column_first
+            - field_column_second
+            - field_description
           plugin_id: search_api_fulltext
-        search_api_datasource:
-          id: search_api_datasource
-          table: search_api_index_default
-          field: search_api_datasource
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            'entity:node': 'entity:node'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_datasource
       sorts: {  }
-      title: Search
+      title: 'Solr Search'
       header: {  }
       footer: {  }
       empty: {  }
@@ -313,7 +223,8 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:search_api.index.default'
+        - 'config:field.storage.node.body'
+        - 'config:search_api.index.solr_index'
   page_1:
     display_plugin: page
     id: page_1
@@ -324,6 +235,10 @@ display:
         metatag_display_extender: {  }
         ajax_history: {  }
       path: search
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -333,4 +248,5 @@ display:
         - url.query_args
         - 'user.node_grants:view'
       tags:
-        - 'config:search_api.index.default'
+        - 'config:field.storage.node.body'
+        - 'config:search_api.index.solr_index'

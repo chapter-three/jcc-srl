@@ -78,15 +78,22 @@
 
     <div class="page__content">
       <div class="jcc-text-section__container">
-        {{ page.content }}
+        {% include '@organisms/sections/text-section/text-section.twig' with {
+          text_section: {
+            column_content_left: page.content,
+            column_content_right: page.content_below,
+            headergroup: {
+              tag: 'h1',
+              title: title
+            },
+          }
+        } only %}
       </div>
     </div>
 
-    {% if page.content_below|render %}
-      <div class="page__content-below">
-        {{ page.content_below }}
-      </div>
-    {% endif %}
+
+
+
   </main>
   {{ page.drawer }}
   {% include base_path ~ directory ~ '/templates/page/page-footer.twig' %}
