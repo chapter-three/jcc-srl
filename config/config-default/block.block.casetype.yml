@@ -12,7 +12,7 @@ dependencies:
 id: casetype
 theme: atrium
 region: content_below
-weight: -6
+weight: -5
 provider: null
 plugin: 'facet_block:case_type'
 settings:

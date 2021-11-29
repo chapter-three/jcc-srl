@@ -12,7 +12,7 @@ dependencies:
 id: actions
 theme: atrium
 region: content_below
-weight: -5
+weight: -4
 provider: null
 plugin: 'facet_block:actions'
 settings:

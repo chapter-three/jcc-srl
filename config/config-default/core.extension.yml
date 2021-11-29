@@ -132,6 +132,7 @@ module:
   shortcut: 0
   simple_block: 0
   simple_sitemap: 0
+  smart_trim: 0
   srl_court_finder: 0
   srl_errors: 0
   srl_ga_gtm: 0
