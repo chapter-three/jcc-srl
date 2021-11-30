@@ -1,4 +1,4 @@
-uuid: 2fae1e2f-303f-413d-a5f8-e5e335b4fcf8
+uuid: b6798e8c-35d7-43eb-98eb-bc8d37ab4aea
 langcode: en
 status: true
 dependencies:
@@ -7,19 +7,19 @@ dependencies:
     - views.view.solr_search
   module:
     - search_api
-id: case_type
-name: 'Case Type'
-url_alias: case_type
+id: case_types
+name: 'Case types'
+url_alias: case_types
 weight: 0
 min_count: 1
 show_only_one_result: false
-field_identifier: field_case_type
+field_identifier: field_case_types
 facet_source_id: 'search_api:views_page__solr_search__page_1'
 widget:
   type: checkbox
   config:
     show_numbers: false
-    soft_limit: 10
+    soft_limit: 5
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
@@ -53,11 +53,6 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
-  hide_1_result_facet:
-    processor_id: hide_1_result_facet
-    weights:
-      build: 50
-    settings: {  }
   translate_entity:
     processor_id: translate_entity
     weights:
