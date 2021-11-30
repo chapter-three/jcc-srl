@@ -1,29 +1,29 @@
-uuid: 43d2ef8c-fdd9-4267-a17a-c2d6279a7b86
+uuid: c35e7315-b0f5-48bd-8e41-23c32cd484c1
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.case_type
+    - facets.facet.case_types
   module:
     - facets
     - system
   theme:
     - atrium
-id: casetype
+id: casetypes
 theme: atrium
 region: content_below
-weight: -5
+weight: 0
 provider: null
-plugin: 'facet_block:case_type'
+plugin: 'facet_block:case_types'
 settings:
-  id: 'facet_block:case_type'
-  label: 'Case Type'
+  id: 'facet_block:case_types'
+  label: 'Case types'
   provider: facets
   label_display: visible
-  block_id: casetype
+  block_id: casetypes
 visibility:
   request_path:
     id: request_path
-    pages: "/search\r\n/solr-search"
+    pages: /search
     negate: false
     context_mapping: {  }

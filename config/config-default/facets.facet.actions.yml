@@ -53,11 +53,6 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
-  hide_1_result_facet:
-    processor_id: hide_1_result_facet
-    weights:
-      build: 50
-    settings: {  }
   translate_entity:
     processor_id: translate_entity
     weights:

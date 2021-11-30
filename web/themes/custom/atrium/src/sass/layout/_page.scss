@@ -35,11 +35,18 @@ footer {
   }
 }
 
-.path-search main .view__content .views-row {
-  &:nth-child(odd) {
-    background: #eff6fb;
+.path-search main {
+  .facets-widget-checkbox {
+    li {
+      list-style:none;
+    }
   }
-  .jcc-header-group__title {
-    text-decoration: none;
+  .view__content .views-row {
+    &:nth-child(odd) {
+      background: #eff6fb;
+    }
+    .jcc-header-group__title {
+      text-decoration: none;
+    }
   }
 }
