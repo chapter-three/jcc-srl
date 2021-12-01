@@ -16,7 +16,7 @@ CKEDITOR.addTemplates('default', {
         return`<p>Text Before</p>
           <div class="jcc-read-more">
             <span class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
-              What is a judgment
+              <span>What is a judgment</span>
               <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
             </span>
             <div class="jcc-read-more__content" id="read-more-${randomId}">
@@ -35,7 +35,7 @@ CKEDITOR.addTemplates('default', {
         return`<p>Text Before</p>
           <div class="jcc-read-more jcc-read-more--block">
             <button class="jcc-read-more__trigger usa-button usa-button--unstyled" data-a11y-toggle="read-more-${randomId}">
-              What is a judgment
+              <span>What is a judgment</span>
               <svg class="icon icon-expand_more" role="img" title="Expand"><use href="#i-expand_more"></use></svg>
             </button>
             <div class="jcc-read-more__content" id="read-more-${randomId}">
