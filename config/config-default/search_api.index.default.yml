@@ -67,8 +67,17 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
-      selected: {  }
+      default: false
+      selected:
+        - basic
+        - court
+        - courthouse
+        - handbook
+        - overview
+        - srl_howto
+        - srl_howto_instruction
+        - srl_onramp
+        - srl_wayfinder
     languages:
       default: true
       selected: {  }

@@ -1,0 +1,90 @@
+uuid: c8cb127a-5b7a-42b1-901e-69070a63b7c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.srl_howto_instruction.body
+    - field.field.node.srl_howto_instruction.field_actions
+    - field.field.node.srl_howto_instruction.field_back_button_only
+    - field.field.node.srl_howto_instruction.field_blocks
+    - field.field.node.srl_howto_instruction.field_case_type_override
+    - field.field.node.srl_howto_instruction.field_case_types
+    - field.field.node.srl_howto_instruction.field_column_first
+    - field.field.node.srl_howto_instruction.field_column_second
+    - field.field.node.srl_howto_instruction.field_dark_background
+    - field.field.node.srl_howto_instruction.field_forms
+    - field.field.node.srl_howto_instruction.field_howto_tabs
+    - field.field.node.srl_howto_instruction.field_howto_tabs_title
+    - field.field.node.srl_howto_instruction.field_image
+    - field.field.node.srl_howto_instruction.field_metatag
+    - field.field.node.srl_howto_instruction.field_paragraphs
+    - field.field.node.srl_howto_instruction.field_parent
+    - field.field.node.srl_howto_instruction.field_parties
+    - field.field.node.srl_howto_instruction.field_title_display
+    - field.field.node.srl_howto_instruction.field_watchers
+    - node.type.srl_howto_instruction
+  module:
+    - smart_trim
+    - user
+id: node.srl_howto_instruction.search_index
+targetEntityType: node
+bundle: srl_howto_instruction
+mode: search_index
+content:
+  field_actions:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_case_types:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_column_first:
+    type: smart_trim
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      trim_length: 350
+      trim_type: chars
+      trim_suffix: ''
+      wrap_class: trimmed
+      more_text: More
+      more_class: more-link
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+      wrap_output: false
+      more_link: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_back_button_only: true
+  field_blocks: true
+  field_case_type_override: true
+  field_column_second: true
+  field_dark_background: true
+  field_forms: true
+  field_howto_tabs: true
+  field_howto_tabs_title: true
+  field_image: true
+  field_metatag: true
+  field_paragraphs: true
+  field_parent: true
+  field_parties: true
+  field_title_display: true
+  field_watchers: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

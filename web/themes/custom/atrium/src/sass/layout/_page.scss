@@ -34,3 +34,29 @@ footer {
     }
   }
 }
+
+.path-search main {
+  .usa-form.jcc-form {
+    padding-bottom: 20px;
+  }
+  .facets-widget-checkbox {
+    padding-bottom: 20px;
+    ul.js-facets-widget{
+      padding-left: 0;
+      li {
+        list-style:none;
+        input.facets-checkbox{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .view__content .views-row {
+    &:nth-child(odd) {
+      background: #eff6fb;
+    }
+    .jcc-header-group__title {
+      text-decoration: none;
+    }
+  }
+}

@@ -65,6 +65,20 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   if (file_exists($pantheon_settings)) {
     include $pantheon_settings;
   }
+
+  if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array('live', 'dev'))) {
+    $config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'jcc-srl-live';
+  } else if ($_ENV['PANTHEON_ENVIRONMENT'] == 'stage') {
+    $config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'jcc-srl-stage';
+  } else {
+    $config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'jcc-srl-develop';
+  }
+
+// Assumes local.
+} else {
+  $config['config_split.config_split.local']['status'] = TRUE;
+  $config['config_split.config_split.stage']['status'] = TRUE;
+  $config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'jcc-srl-sandbox-1';
 }
 
 /**
