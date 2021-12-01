@@ -35,7 +35,7 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
   field_case_types:
     type: entity_reference_label
@@ -43,7 +43,7 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
   field_column_first:
     type: smart_trim
