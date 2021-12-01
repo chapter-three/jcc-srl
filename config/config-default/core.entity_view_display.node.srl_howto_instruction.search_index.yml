@@ -32,7 +32,23 @@ targetEntityType: node
 bundle: srl_howto_instruction
 mode: search_index
 content:
-  body:
+  field_actions:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_case_types:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_column_first:
     type: smart_trim
     weight: 0
     region: content
@@ -51,28 +67,12 @@ content:
       wrap_output: false
       more_link: false
     third_party_settings: {  }
-  field_actions:
-    type: entity_reference_label
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-  field_case_types:
-    type: entity_reference_label
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
 hidden:
+  body: true
   content_moderation_control: true
   field_back_button_only: true
   field_blocks: true
   field_case_type_override: true
-  field_column_first: true
   field_column_second: true
   field_dark_background: true
   field_forms: true

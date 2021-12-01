@@ -22,13 +22,27 @@ id: node.srl_onramp.search_index
 targetEntityType: node
 bundle: srl_onramp
 mode: search_index
-content: {  }
+content:
+  field_actions:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_case_types:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
 hidden:
   content_moderation_control: true
-  field_actions: true
   field_brow: true
   field_case_type: true
-  field_case_types: true
   field_description: true
   field_hero_nav_title: true
   field_metatag: true
