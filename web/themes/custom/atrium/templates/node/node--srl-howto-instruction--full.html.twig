@@ -6,7 +6,10 @@
       background_variant: node.field_dark_background[0].value == 1 ? 'has-background-color--dark' : '',
       column_variant: node.field_image.0 ? 'has-banner-image' : 'has-two-columns-threequarter',
       breadcrumbs: {
-        show_back_button: true
+        show_back_button: true,
+        back_button: {
+          text: previous_label
+        }
       },
       title: content.field_title_display|render ? content.field_title_display : label,
       body: content.field_column_first|render ? content.field_column_first : '',

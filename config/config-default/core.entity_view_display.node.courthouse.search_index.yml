@@ -1,0 +1,79 @@
+uuid: 0c02c8d1-1c17-4386-9d87-4c92314e3fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.courthouse.field_actions
+    - field.field.node.courthouse.field_address
+    - field.field.node.courthouse.field_building_hours_friday
+    - field.field.node.courthouse.field_building_hours_monday
+    - field.field.node.courthouse.field_building_hours_summary
+    - field.field.node.courthouse.field_building_hours_thursday
+    - field.field.node.courthouse.field_building_hours_tuesday
+    - field.field.node.courthouse.field_building_hours_wednesday
+    - field.field.node.courthouse.field_case_types
+    - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_filing_hours_friday
+    - field.field.node.courthouse.field_filing_hours_monday
+    - field.field.node.courthouse.field_filing_hours_summary
+    - field.field.node.courthouse.field_filing_hours_thursday
+    - field.field.node.courthouse.field_filing_hours_tuesday
+    - field.field.node.courthouse.field_filing_hours_wednesday
+    - field.field.node.courthouse.field_image
+    - field.field.node.courthouse.field_link
+    - field.field.node.courthouse.field_matters_served
+    - field.field.node.courthouse.field_parties
+    - field.field.node.courthouse.field_phone
+    - field.field.node.courthouse.field_self_help_appointment
+    - field.field.node.courthouse.field_self_help_workshop
+    - field.field.node.courthouse.field_selfhelp_hours_friday
+    - field.field.node.courthouse.field_selfhelp_hours_monday
+    - field.field.node.courthouse.field_selfhelp_hours_summary
+    - field.field.node.courthouse.field_selfhelp_hours_thursday
+    - field.field.node.courthouse.field_selfhelp_hours_tuesday
+    - field.field.node.courthouse.field_selfhelp_hours_wednesday
+    - field.field.node.courthouse.field_watchers
+    - node.type.courthouse
+  module:
+    - user
+id: node.courthouse.search_index
+targetEntityType: node
+bundle: courthouse
+mode: search_index
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_actions: true
+  field_address: true
+  field_building_hours_friday: true
+  field_building_hours_monday: true
+  field_building_hours_summary: true
+  field_building_hours_thursday: true
+  field_building_hours_tuesday: true
+  field_building_hours_wednesday: true
+  field_case_types: true
+  field_court: true
+  field_filing_hours_friday: true
+  field_filing_hours_monday: true
+  field_filing_hours_summary: true
+  field_filing_hours_thursday: true
+  field_filing_hours_tuesday: true
+  field_filing_hours_wednesday: true
+  field_image: true
+  field_link: true
+  field_matters_served: true
+  field_parties: true
+  field_phone: true
+  field_self_help_appointment: true
+  field_self_help_workshop: true
+  field_selfhelp_hours_friday: true
+  field_selfhelp_hours_monday: true
+  field_selfhelp_hours_summary: true
+  field_selfhelp_hours_thursday: true
+  field_selfhelp_hours_tuesday: true
+  field_selfhelp_hours_wednesday: true
+  field_watchers: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

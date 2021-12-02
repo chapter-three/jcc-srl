@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b2016c29a5f9faae02d07f8d1eea951",
+    "content-hash": "290d35d3e20d01df2e9327025049028b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4722,6 +4722,77 @@
             }
         },
         {
+            "name": "drupal/facets",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/facets.git",
+                "reference": "8.x-1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/facets-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "f621b84b59c5315db14a0529df5dfc74ca5bc9de"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "conflict": {
+                "drupal/search_api": "<1.14"
+            },
+            "require-dev": {
+                "drupal/search_api": "~1.14"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.8",
+                    "datestamp": "1620838256",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-1.x": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "See all contributors",
+                    "homepage": "https://www.drupal.org/node/2348769/committers"
+                },
+                {
+                    "name": "StryKaizer",
+                    "homepage": "https://www.drupal.org/user/462700"
+                },
+                {
+                    "name": "borisson_",
+                    "homepage": "https://www.drupal.org/user/2393360"
+                },
+                {
+                    "name": "drunken monkey",
+                    "homepage": "https://www.drupal.org/user/205582"
+                },
+                {
+                    "name": "mkalkbrenner",
+                    "homepage": "https://www.drupal.org/user/124705"
+                }
+            ],
+            "description": "The Facet module allows site builders to easily create and manage faceted search interfaces.",
+            "homepage": "https://www.drupal.org/project/facets",
+            "support": {
+                "source": "git://git.drupal.org/project/facets.git",
+                "issues": "https://www.drupal.org/project/issues/facets",
+                "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
+        {
             "name": "drupal/field_defaults",
             "version": "1.3.0",
             "source": {
@@ -4866,6 +4937,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Secure user data after pdf is rendered.": "patches/webform-pdf-protect.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5339,7 +5413,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-4.4",
-                    "datestamp": "1632933665",
+                    "datestamp": "1632946963",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5359,6 +5433,10 @@
                     "homepage": "https://stjerneman.com",
                     "email": "emil@stjerneman.com",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "johnwebdev",
+                    "homepage": "https://www.drupal.org/user/3331569"
                 }
             ],
             "description": "Linkit - Enriched linking experience",
@@ -8425,6 +8503,9 @@
                 "drupal/core": "^8 || ^9",
                 "ext-xmlwriter": "*"
             },
+            "require-dev": {
+                "drupal/robotstxt": "^1.0"
+            },
             "suggest": {
                 "drush/drush": "Command-line regenerating and rebuilding sitemaps."
             },
@@ -9336,16 +9417,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.259",
+            "version": "0.1.271",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "7281fdcbbccbb12e7b93f9382d749248cd1a5e4d"
+                "reference": "9ba1a7d1748af9c5ef9a6969dcfb8762efed1790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/7281fdcbbccbb12e7b93f9382d749248cd1a5e4d",
-                "reference": "7281fdcbbccbb12e7b93f9382d749248cd1a5e4d",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/9ba1a7d1748af9c5ef9a6969dcfb8762efed1790",
+                "reference": "9ba1a7d1748af9c5ef9a6969dcfb8762efed1790",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9360,7 +9441,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2021-11-17T19:36:06+00:00"
+            "time": "2021-12-01T01:15:16+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",
@@ -14073,6 +14154,7 @@
                 }
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
+            "abandoned": "symfony/filesystem",
             "time": "2015-12-17T08:42:14+00:00"
         },
         {

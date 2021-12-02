@@ -9,7 +9,7 @@ dependencies:
 id: messages
 theme: atrium
 region: content
-weight: -1
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:
