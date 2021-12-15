@@ -184,7 +184,8 @@ function _atrium_translation_menu() {
       ? str_replace("/$langcode", '', $current_path)
       : $current_path;
   }
-  // Create links for dropbutton component.
+  // Create links for dropbutton component if translated content exists for page.
+  $links = [];
   foreach ($languages as $langcode => $language) {
     $translated_path = '';
     $current_id = '';
@@ -192,7 +193,6 @@ function _atrium_translation_menu() {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
       // You can get nid and anything else you need from the node object.
-      $nid = $node->id();
       $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
       $prefixed_translated_path = '/' . $langcode . $translated_path;
 
