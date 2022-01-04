@@ -51,10 +51,10 @@ packages:
     drupal/console-core: 1.9.4
     drupal/console-en: 1.9.4
     drupal/console-extend-plugin: 0.9.3
-    drupal/core: 8.9.19
+    drupal/core: 8.9.20
     drupal/core-composer-scaffold: 8.9.10
     drupal/core-project-message: 8.9.1
-    drupal/core-recommended: 8.9.19
+    drupal/core-recommended: 8.9.20
     drupal/core-vendor-hardening: 8.9.10
     drupal/crop: 2.1.0
     drupal/csv_serialization: 2.0.0
@@ -106,6 +106,7 @@ packages:
     drupal/r4032login: 1.1.0
     drupal/rabbit_hole: 1.0.0-beta7
     drupal/range: 1.2.0
+    drupal/rate_limits: 2.0.1
     drupal/recaptcha: 3.0.0
     drupal/redirect: 1.6.0
     drupal/restui: 1.20.0

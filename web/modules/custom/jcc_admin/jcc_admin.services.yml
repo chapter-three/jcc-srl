@@ -1,0 +1,5 @@
+services:
+  jcc_admin.route_subscriber:
+    class: Drupal\jcc_admin\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

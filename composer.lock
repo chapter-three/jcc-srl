@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "290d35d3e20d01df2e9327025049028b",
+    "content-hash": "5ca23ff1f5ee56829cf69593b966a018",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3132,16 +3132,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.9.19",
+            "version": "8.9.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "96eb83b31d950f020cbc079ab960159c3735a033"
+                "reference": "39e2e1c32498338921923af66a90cb4a23a5b389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/96eb83b31d950f020cbc079ab960159c3735a033",
-                "reference": "96eb83b31d950f020cbc079ab960159c3735a033",
+                "url": "https://api.github.com/repos/drupal/core/zipball/39e2e1c32498338921923af66a90cb4a23a5b389",
+                "reference": "39e2e1c32498338921923af66a90cb4a23a5b389",
                 "shasum": ""
             },
             "require": {
@@ -3365,7 +3365,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2021-09-14T22:08:18+00:00"
+            "time": "2021-11-17T21:24:28+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
@@ -3454,16 +3454,16 @@
         },
         {
             "name": "drupal/core-recommended",
-            "version": "8.9.19",
+            "version": "8.9.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "880335bafeeba6d29454053bd24f253a219c2cfc"
+                "reference": "49b9abf15bf4b82c5b47692e39770f2f3a76eaf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/880335bafeeba6d29454053bd24f253a219c2cfc",
-                "reference": "880335bafeeba6d29454053bd24f253a219c2cfc",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/49b9abf15bf4b82c5b47692e39770f2f3a76eaf1",
+                "reference": "49b9abf15bf4b82c5b47692e39770f2f3a76eaf1",
                 "shasum": ""
             },
             "require": {
@@ -3475,7 +3475,7 @@
                 "doctrine/common": "v2.7.3",
                 "doctrine/inflector": "v1.2.0",
                 "doctrine/lexer": "1.0.2",
-                "drupal/core": "8.9.19",
+                "drupal/core": "8.9.20",
                 "easyrdf/easyrdf": "0.9.1",
                 "egulias/email-validator": "2.1.17",
                 "guzzlehttp/guzzle": "6.5.4",
@@ -3532,7 +3532,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Locked core dependencies; require this project INSTEAD OF drupal/core.",
-            "time": "2021-09-14T22:08:18+00:00"
+            "time": "2021-11-17T21:24:28+00:00"
         },
         {
             "name": "drupal/core-vendor-hardening",
@@ -6749,6 +6749,50 @@
             "homepage": "https://www.drupal.org/project/range",
             "support": {
                 "source": "https://git.drupalcode.org/project/range"
+            }
+        },
+        {
+            "name": "drupal/rate_limits",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/rate_limits.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/rate_limits-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "facef296c4350fbb4b0add41d7764b39d3900269"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1618494369",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "e0ipso",
+                    "homepage": "https://www.drupal.org/user/550110"
+                }
+            ],
+            "description": "Allows configurable rate limits.",
+            "homepage": "https://www.drupal.org/project/rate_limits",
+            "support": {
+                "source": "https://git.drupalcode.org/project/rate_limits"
             }
         },
         {
@@ -14313,10 +14357,6 @@
                 "GPL-2.0+"
             ],
             "authors": [
-                {
-                    "name": "Bohun Tak",
-                    "homepage": "https://www.drupal.org/user/1205098"
-                },
                 {
                     "name": "mrhanlon",
                     "homepage": "https://www.drupal.org/user/764624"
