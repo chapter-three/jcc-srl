@@ -113,6 +113,7 @@ module:
   r4032login: 0
   rabbit_hole: 0
   range: 0
+  rate_limits: 0
   recaptcha: 0
   redirect: 0
   responsive_image: 0
