@@ -179,7 +179,7 @@
         "drupal/views_bulk_edit": "^2.4",
         "drupal/views_bulk_operations": "^3.9",
         "drupal/views_data_export": "^1.0",
-        "drupal/webform": "^5.28",
+        "drupal/webform": "^6.1",
         "drupal/webform_rest": "^4.0",
         "drupal/webform_translation_permissions": "^1.1",
         "drupal/workbench": "^1.3",

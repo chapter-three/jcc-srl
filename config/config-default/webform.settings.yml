@@ -1,5 +1,5 @@
 settings:
-  default_page_base_path: form
+  default_page_base_path: /form
   default_status: open
   default_form_open_message: 'This form has not yet been opened to submissions.'
   default_form_close_message: 'Sorry&hellip; This form is closed to new submissions.'
@@ -56,6 +56,7 @@ settings:
       title: Wide
       width: 1000
   dialog: true
+  default_form_disable_remote_addr: false
   default_form_file_limit: ''
   default_draft_button_label: 'Save Draft'
   default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
@@ -86,6 +87,13 @@ settings:
   default_autofill_message: 'This submission has been autofilled with your previous submission.'
   default_limit_total_message: 'No more submissions are permitted.'
   default_limit_user_message: 'No more submissions are permitted.'
+  webform_submission_bulk_form: true
+  webform_submission_bulk_form_actions:
+    - webform_submission_make_sticky_action
+    - webform_submission_make_unsticky_action
+    - webform_submission_make_lock_action
+    - webform_submission_make_unlock_action
+    - webform_submission_delete_action
 assets:
   css: ''
   javascript: ''
@@ -124,15 +132,16 @@ batch:
 purge:
   cron_size: 100
 form:
+  limit: 50
   filter_category: ''
   filter_state: ''
 element:
   machine_name_pattern: a-z0-9_
   empty_message: '{Empty}'
   allowed_tags: admin
-  wrapper_classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
-  classes: "container-inline clearfix\nform--inline clearfix\nmessages messages--error\nmessages messages--warning\nmessages messages--status\n"
-  horizontal_rule_classes: "webform-horizontal-rule--solid\nwebform-horizontal-rule--dashed\nwebform-horizontal-rule--dotted\nwebform-horizontal-rule--gradient\nwebform-horizontal-rule--thin\nwebform-horizontal-rule--medium\nwebform-horizontal-rule--thick\nwebform-horizontal-rule--flaired\nwebform-horizontal-rule--glyph\n"
+  wrapper_classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  classes: "container-inline clearfix\r\nform--inline clearfix\r\nmessages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
+  horizontal_rule_classes: "webform-horizontal-rule--solid\r\nwebform-horizontal-rule--dashed\r\nwebform-horizontal-rule--dotted\r\nwebform-horizontal-rule--gradient\r\nwebform-horizontal-rule--thin\r\nwebform-horizontal-rule--medium\r\nwebform-horizontal-rule--thick\r\nwebform-horizontal-rule--flaired\r\nwebform-horizontal-rule--glyph\r\n"
   default_description_display: ''
   default_more_title: More
   default_section_title_tag: h2
@@ -144,8 +153,6 @@ element:
   excluded_elements:
     password: password
     password_confirm: password_confirm
-  default_icheck: ''
-  default_google_maps_api_key: ''
 html_editor:
   disabled: false
   element_format: ''
@@ -187,7 +194,9 @@ ui:
   dialog_disabled: false
   offcanvas_disabled: false
   promotions_disabled: false
+  support_disabled: false
   description_help: true
+  toolbar_item: false
 libraries:
   excluded_libraries:
     - choices
@@ -197,6 +206,7 @@ libraries:
 requirements:
   cdn: true
   bootstrap: true
+  clientside_validation: true
   spam: true
 langcode: en
 third_party_settings:
