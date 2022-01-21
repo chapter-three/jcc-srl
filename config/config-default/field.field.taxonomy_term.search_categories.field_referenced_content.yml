@@ -1,0 +1,55 @@
+uuid: 10e97ef8-4cd6-4042-aa85-820333401925
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_referenced_content
+    - node.type.basic
+    - node.type.court
+    - node.type.courthouse
+    - node.type.handbook
+    - node.type.overview
+    - node.type.srl_howto
+    - node.type.srl_howto_instruction
+    - node.type.srl_onramp
+    - node.type.srl_wayfinder
+    - node.type.timeline
+    - taxonomy.vocabulary.search_categories
+  module:
+    - datalayer
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_referenced_content
+  tmgmt_content:
+    excluded: false
+id: taxonomy_term.search_categories.field_referenced_content
+field_name: field_referenced_content
+entity_type: taxonomy_term
+bundle: search_categories
+label: 'Referenced content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      basic: basic
+      overview: overview
+      court: court
+      courthouse: courthouse
+      handbook: handbook
+      timeline: timeline
+      srl_howto: srl_howto
+      srl_onramp: srl_onramp
+      srl_howto_instruction: srl_howto_instruction
+      srl_wayfinder: srl_wayfinder
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: basic
+field_type: entity_reference

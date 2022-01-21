@@ -1,0 +1,32 @@
+uuid: 7d0d9098-6219-48c4-9937-23234d33f453
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.search_categories.field_referenced_content
+    - taxonomy.vocabulary.search_categories
+  module:
+    - text
+id: taxonomy_term.search_categories.default
+targetEntityType: taxonomy_term
+bundle: search_categories
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_referenced_content:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
