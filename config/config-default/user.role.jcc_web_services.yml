@@ -164,6 +164,7 @@ permissions:
   - 'export xlsx'
   - 'import xlsx'
   - 'link to any page'
+  - 'rebuild cache access'
   - 'revert all revisions'
   - 'revert basic revisions'
   - 'revert handbook revisions'
