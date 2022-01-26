@@ -27,8 +27,6 @@ function atrium_preprocess_views_view(&$variables) {
     $search_arg = trim($variables['view']->exposed_data['search_api_fulltext']);
     //Checking if bew argument exists as a taxonomy term name
     $term_lookup = taxonomy_term_load_multiple_by_name($search_arg, $vid);
-
-    //TODO: remove space before / after the term - before the lookup
     if (!empty($term_lookup)){
       $variables['featured_view'] = array_key_first($term_lookup);
     }

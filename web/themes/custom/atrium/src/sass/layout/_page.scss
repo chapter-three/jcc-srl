@@ -39,6 +39,12 @@ footer {
   .usa-form.jcc-form {
     padding-bottom: 20px;
   }
+  .featured_view .jcc-tiles-section {
+    padding: 0;
+    .jcc-tile a {
+      text-decoration: none;
+    }
+  }
   .facets-widget-checkbox {
     padding-bottom: 20px;
     ul.js-facets-widget{
@@ -58,5 +64,11 @@ footer {
     .jcc-header-group__title {
       text-decoration: none;
     }
+  }
+  .usa-form .usa-button{
+    margin-top: 0.5rem;
+  }
+  .js-form-item-search-api-fulltext{
+    max-width: 60%;
   }
 }
