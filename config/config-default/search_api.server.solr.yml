@@ -15,7 +15,7 @@ backend_config:
     host: jcc-trialcourt-solr.azurewebsites.net
     port: 443
     path: /
-    core: jcc-srl-develop
+    core: jcc-srl-live
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
