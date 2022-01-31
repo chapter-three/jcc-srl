@@ -1368,6 +1368,28 @@ footer {
   }
 }
 
+.path-search main .usa-form.jcc-form {
+  padding-bottom: 20px;
+}
+.path-search main .facets-widget-checkbox {
+  padding-bottom: 20px;
+}
+.path-search main .facets-widget-checkbox ul.js-facets-widget {
+  padding-left: 0;
+}
+.path-search main .facets-widget-checkbox ul.js-facets-widget li {
+  list-style: none;
+}
+.path-search main .facets-widget-checkbox ul.js-facets-widget li input.facets-checkbox {
+  margin-right: 5px;
+}
+.path-search main .view__content .views-row:nth-child(odd) {
+  background: #eff6fb;
+}
+.path-search main .view__content .views-row .jcc-header-group__title {
+  text-decoration: none;
+}
+
 .caption {
   margin-bottom: 1rem;
   min-width: 12rem;

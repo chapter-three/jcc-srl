@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.overview.field_actions
+    - field.field.node.overview.field_case_type_forms_page
     - field.field.node.overview.field_case_types
     - field.field.node.overview.field_paragraphs
     - field.field.node.overview.field_parties
@@ -16,9 +17,15 @@ id: node.overview.teaser
 targetEntityType: node
 bundle: overview
 mode: teaser
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_actions: true
+  field_case_type_forms_page: true
   field_case_types: true
   field_paragraphs: true
   field_parties: true
