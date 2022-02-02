@@ -85,6 +85,7 @@ permissions:
   - 'edit own srl_howto_instruction content'
   - 'edit own srl_onramp content'
   - 'edit own srl_wayfinder content'
+  - 'rebuild cache access'
   - 'revert all revisions'
   - 'revert basic revisions'
   - 'revert handbook revisions'

@@ -38,8 +38,9 @@ function atrium_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
     //Patternlab javascript needs to be reloaded on ajax calls for webform
     $request = \Drupal::request();
+
     $is_ajax = $request->isXmlHttpRequest();
-    if($is_ajax){
+    if(isset($form['is_ajax']) && !empty($form['is_ajax']) && $is_ajax) {
       $form['is_ajax'] = true;
     }
   }
