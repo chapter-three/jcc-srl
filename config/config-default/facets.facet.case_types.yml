@@ -18,7 +18,7 @@ facet_source_id: 'search_api:views_page__solr_search__page_1'
 widget:
   type: checkbox
   config:
-    show_numbers: false
+    show_numbers: true
     soft_limit: 5
     soft_limit_settings:
       show_less_label: 'Show less'
@@ -40,13 +40,13 @@ processor_configs:
     weights:
       sort: 20
     settings:
-      sort: DESC
+      sort: ASC
   count_widget_order:
     processor_id: count_widget_order
     weights:
       sort: 30
     settings:
-      sort: DESC
+      sort: ASC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
