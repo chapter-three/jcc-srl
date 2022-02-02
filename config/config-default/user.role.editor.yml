@@ -63,6 +63,7 @@ permissions:
   - 'edit own snippet media'
   - 'edit own video media'
   - 'link to any page'
+  - 'rebuild cache access'
   - 'schedule publishing of nodes'
   - 'search content'
   - 'translate any entity'
