@@ -12,7 +12,68 @@ id: mark_my_place_text_message
 title: 'Mark My Place Text Message'
 description: ''
 category: ''
-elements: "'#attributes':\n  class:\n    - jcc-contact-group\ncontainer:\n  '#type': container\n  '#attributes':\n    class:\n      - 'jcc-contact-group__container margin-bottom-4'\n  processed_text:\n    '#type': processed_text\n    '#text': |\n      <div class=\"active jcc-alert usa-alert usa-alert--no-icon usa-alert--warning\" id=\"alert-bar\">\n      <div class=\"jcc-alert__body usa-alert__body\">\n      <h4 class=\"jcc-alert__heading usa-alert__heading\">Sorry, we can't do that yet!&nbsp;</h4>\n      \n      <div class=\"jcc-alert__text usa-alert__text\">Sharing this page with by&nbsp;text is not available yet. But you can share the page with an email!</div>\n      \n      <div class=\"jcc-alert__close\" id=\"alert-close\">&nbsp;</div>\n      </div>\n      </div>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  email:\n    '#type': email\n    '#title': 'Enter your email'\n    '#required': true\n    '#required_error': 'Email address is required'\n    '#attributes':\n      class:\n        - usa-input\n    '#label_attributes':\n      class:\n        - jcc-form-required--hidden\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#submit__label': 'Send Link'\n    '#submit__attributes':\n      class:\n        - 'usa-button usa-button--accent-warm margin-top-0 margin-bottom-4'\n  info:\n    '#type': webform_markup\n    '#wrapper_attributes':\n      class:\n        - jcc-contact-group__helper\n    '#markup': 'We&#39;ll only use this email to send this link'"
+elements: |
+  '#attributes':
+    class:
+      - jcc-contact-group
+  container:
+    '#type': container
+    '#attributes':
+      class:
+        - 'jcc-contact-group__container margin-bottom-4'
+    mobile_number:
+      '#type': textfield
+      '#title': 'Enter your mobile number '
+      '#description': |
+        Ten digit mobile number starting with the area code (e.g. 4158654200)
+        <p>&nbsp;</p>
+
+      '#required': true
+      '#attributes':
+        class:
+          - usa-input
+        style: usa-input
+      '#label_attributes':
+        class:
+          - jcc-form-required--hidden
+    mobile_carrier:
+      '#type': select
+      '#title': 'Select your mobile carrier'
+      '#title_display': invisible
+      '#options':
+        sms.myboostmobile.com: 'Boost Mobile'
+        mms.cricketwireless.net: 'Cricket Wireless'
+        sms.alltelwireless.com: Alltel
+        msg.fi.google.com: 'Google Fi'
+        mymetropcs.com: MetroPCS
+        'txt.att.net ': 'AT&T'
+        text.republicwireless.com: 'Republic Wireless'
+        'messaging.sprintpcs.com ': Sprint
+        tmomail.net: T-Mobile
+        vtext.com: Verizon
+        email.uscc.net: 'U.S. Cellular'
+        vmobl.com: 'Virgin Mobile'
+      '#empty_option': 'Select your mobile carrier'
+      '#required': true
+      '#attributes':
+        class:
+          - usa-input
+      '#label_attributes':
+        class:
+          - jcc-form-required--hidden
+    actions:
+      '#type': webform_actions
+      '#title': 'Submit button(s)'
+      '#submit__label': 'Send Link'
+      '#submit__attributes':
+        class:
+          - 'usa-button usa-button--accent-warm margin-top-0 margin-bottom-4'
+    info:
+      '#type': webform_markup
+      '#wrapper_attributes':
+        class:
+          - jcc-contact-group__helper
+      '#markup': 'We&#39;ll only use this mobile number to send this link'
 css: ''
 javascript: ''
 settings:
@@ -33,7 +94,7 @@ settings:
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
-  form_remote_addr: true
+  form_disable_remote_addr: false
   form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
@@ -54,6 +115,11 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
+  form_method: ''
+  form_action: ''
+  form_attributes:
+    class:
+      - jcc-contact-group
   share: false
   share_node: false
   share_theme_name: ''
@@ -85,6 +151,8 @@ settings:
   wizard_progress_link: false
   wizard_progress_states: false
   wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
@@ -112,7 +180,7 @@ settings:
   draft_pending_multiple_message: ''
   confirmation_type: message
   confirmation_title: ''
-  confirmation_message: 'An email has been sent to&nbsp;[webform_submission:values:email]'
+  confirmation_message: 'An message has been sent to&nbsp;[webform_submission:values:mobile_number]'
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -140,6 +208,9 @@ settings:
   results_customize: false
   token_view: false
   token_update: false
+  token_delete: false
+  serial_disabled: false
+  form_remote_addr: true
 access:
   create:
     roles:
@@ -191,6 +262,7 @@ handlers:
   recipient:
     id: email
     label: Email
+    notes: ''
     handler_id: recipient
     status: true
     conditions: {  }
@@ -198,7 +270,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: '[webform_submission:values:email:raw]'
+      to_mail: '[webform_submission:values:mobile_number:raw]@[webform_submission:values:mobile_carrier:raw]'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -208,7 +280,10 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Mark my place'
-      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}:</p>\r\n<p>{{ webform_token('[current-page:url]', webform_submission) }}</p>\r\n"
+      body: |
+        <p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}</p>
+        <p>{{ webform_token('[current-page:url:brief]', webform_submission) }}</p>
+
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
