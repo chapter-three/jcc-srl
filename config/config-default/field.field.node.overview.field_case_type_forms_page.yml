@@ -1,0 +1,31 @@
+uuid: 2a738370-3f60-44fa-9e00-2fc5af57913e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_type_forms_page
+    - node.type.overview
+  module:
+    - datalayer
+    - link
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_case_type_forms_page
+  tmgmt_content:
+    excluded: false
+id: node.overview.field_case_type_forms_page
+field_name: field_case_type_forms_page
+entity_type: node
+bundle: overview
+label: 'Case type forms page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

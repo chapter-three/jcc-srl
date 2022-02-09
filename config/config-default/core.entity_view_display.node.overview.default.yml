@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.overview.field_actions
+    - field.field.node.overview.field_case_type_forms_page
     - field.field.node.overview.field_case_types
     - field.field.node.overview.field_paragraphs
     - field.field.node.overview.field_parties
@@ -11,6 +12,7 @@ dependencies:
     - node.type.overview
   module:
     - entity_reference_revisions
+    - link
     - user
 id: node.overview.default
 targetEntityType: node
@@ -22,6 +24,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_case_type_forms_page:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_paragraphs:
     weight: 1
     label: above
