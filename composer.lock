@@ -2039,9 +2039,6 @@
             },
             "type": "drupal-theme",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.5",
                     "datestamp": "1558584484",
@@ -2191,6 +2188,10 @@
                 {
                     "name": "floretan",
                     "homepage": "https://www.drupal.org/user/66163"
+                },
+                {
+                    "name": "nord102",
+                    "homepage": "https://www.drupal.org/user/3471419"
                 }
             ],
             "description": "Limit which text formats are available for each field instance.",
@@ -2267,7 +2268,7 @@
                     "datestamp": "1588279781",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2295,6 +2296,10 @@
                 {
                     "name": "michaellander",
                     "homepage": "https://www.drupal.org/user/636494"
+                },
+                {
+                    "name": "paulocs",
+                    "homepage": "https://www.drupal.org/user/3640109"
                 }
             ],
             "description": "Provides a field that allows a content entity to create and configure custom block instances.",
@@ -2545,13 +2550,10 @@
                 "shasum": "f8c793e34a5d6aea769fbc0204e818509a486a94"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1552809780",
@@ -2569,6 +2571,10 @@
                 {
                     "name": "lucaslg",
                     "homepage": "https://www.drupal.org/user/3128975"
+                },
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
                 }
             ],
             "description": "Integrates the CKEdito templates plugin",
@@ -2596,9 +2602,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1556870881",
@@ -2675,7 +2678,8 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/config_exclude",
                 "issues": "https://www.drupal.org/project/issues/config_exclude"
-            }
+            },
+            "time": "2017-12-07T21:31:19+00:00"
         },
         {
             "name": "drupal/config_filter",
@@ -2763,9 +2767,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.2",
                     "datestamp": "1576528386",
@@ -3347,8 +3348,8 @@
             "autoload": {
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
-                    "Drupal\\Component\\": "lib/Drupal/Component",
-                    "Drupal\\Driver\\": "../drivers/lib/Drupal/Driver"
+                    "Drupal\\Driver\\": "../drivers/lib/Drupal/Driver",
+                    "Drupal\\Component\\": "lib/Drupal/Component"
                 },
                 "classmap": [
                     "lib/Drupal.php",
@@ -3591,9 +3592,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-2.1",
                     "datestamp": "1585251827",
@@ -3946,7 +3944,7 @@
             "extra": {
                 "drupal": {
                     "version": "4.1.1",
-                    "datestamp": "1609419527",
+                    "datestamp": "1631968537",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4000,9 +3998,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.0",
                     "datestamp": "1578322688",
@@ -4296,7 +4291,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-2.5",
-                    "datestamp": "1588015347",
+                    "datestamp": "1588015429",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4361,14 +4356,14 @@
             "version": "2.5.0",
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
-                "drupal/entity_browser": "self.version",
+                "drupal/entity_browser": "*",
                 "drupal/inline_entity_form": "*"
             },
             "type": "metapackage",
             "extra": {
                 "drupal": {
                     "version": "8.x-2.5",
-                    "datestamp": "1588015347",
+                    "datestamp": "1588015429",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4459,6 +4454,14 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "NickDickinsonWilde",
+                    "homepage": "https://www.drupal.org/user/3094661"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
                 {
                     "name": "vpeltot",
                     "homepage": "https://www.drupal.org/user/1361586"
@@ -4570,9 +4573,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.8",
                     "datestamp": "1583961846",
@@ -4625,13 +4625,10 @@
                 "shasum": "c5e27581a10f446f7c88568279454f20f5910dc9"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-3.7",
                     "datestamp": "1568149685",
@@ -4653,6 +4650,10 @@
                 {
                     "name": "mrfelton",
                     "homepage": "https://www.drupal.org/user/305669"
+                },
+                {
+                    "name": "pratik_kamble",
+                    "homepage": "https://www.drupal.org/user/3204909"
                 }
             ],
             "description": "Adds a color indicator for the different environments.",
@@ -5157,7 +5158,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1591383264",
+                    "datestamp": "1593179846",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5199,9 +5200,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.30",
                     "datestamp": "1576274288",
@@ -5220,6 +5218,10 @@
                     "name": "Jeff Geerling",
                     "homepage": "https://www.drupal.org/user/213194",
                     "email": "geerlingguy@mac.com"
+                },
+                {
+                    "name": "TR",
+                    "homepage": "https://www.drupal.org/user/202830"
                 },
                 {
                     "name": "geerlingguy",
@@ -5281,6 +5283,10 @@
             ],
             "authors": [
                 {
+                    "name": "Centarro",
+                    "homepage": "https://www.drupal.org/user/3661446"
+                },
+                {
                     "name": "bojanz",
                     "homepage": "https://www.drupal.org/user/86106"
                 },
@@ -5307,6 +5313,10 @@
                 {
                     "name": "oknate",
                     "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "ram4nd",
+                    "homepage": "https://www.drupal.org/user/601534"
                 },
                 {
                     "name": "rszrama",
@@ -5370,7 +5380,7 @@
                     "homepage": "https://www.drupal.org/user/658076"
                 },
                 {
-                    "name": "CrashTest_",
+                    "name": "crashtest_",
                     "homepage": "https://www.drupal.org/user/261457"
                 },
                 {
@@ -5465,9 +5475,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1483456142",
@@ -5482,6 +5489,14 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                },
+                {
+                    "name": "devdesagar",
+                    "homepage": "https://www.drupal.org/user/3569773"
+                },
                 {
                     "name": "rjjakes",
                     "homepage": "https://www.drupal.org/user/3457245"
@@ -5499,10 +5514,10 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maillog.git",
-                "reference": "3ec675bd7842c04bc01860fa8b3f424f95a17d93"
+                "reference": "053d0b4a53aea4f848be75b02fc8974bb7b053b3"
             },
             "require": {
-                "drupal/core": "^8"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
@@ -5510,11 +5525,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1470431939",
+                    "version": "8.x-1.0-beta1+0-dev",
+                    "datestamp": "1600799873",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5544,7 +5559,8 @@
             "homepage": "https://www.drupal.org/project/maillog",
             "support": {
                 "source": "https://git.drupalcode.org/project/maillog"
-            }
+            },
+            "time": "2020-09-22T18:37:31+00:00"
         },
         {
             "name": "drupal/mailsystem",
@@ -5712,68 +5728,28 @@
             ],
             "authors": [
                 {
-                    "name": "Aron Novak",
-                    "homepage": "https://www.drupal.org/user/61864"
-                },
-                {
-                    "name": "Schnitzel",
-                    "homepage": "https://www.drupal.org/user/643820"
-                },
-                {
-                    "name": "a_c_m",
-                    "homepage": "https://www.drupal.org/user/195063"
-                },
-                {
-                    "name": "barneytech",
-                    "homepage": "https://www.drupal.org/user/669922"
-                },
-                {
-                    "name": "claudiu_cristea",
-                    "homepage": "https://www.drupal.org/user/2623935"
+                    "name": "cedewey",
+                    "homepage": "https://www.drupal.org/user/38694"
                 },
                 {
                     "name": "dawehner",
                     "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
-                    "name": "derhasi",
-                    "homepage": "https://www.drupal.org/user/83474"
-                },
-                {
-                    "name": "frjo",
-                    "homepage": "https://www.drupal.org/user/5546"
-                },
-                {
-                    "name": "hefox",
-                    "homepage": "https://www.drupal.org/user/426416"
-                },
-                {
-                    "name": "jm.federico",
-                    "homepage": "https://www.drupal.org/user/509892"
-                },
-                {
-                    "name": "k4v",
-                    "homepage": "https://www.drupal.org/user/744246"
-                },
-                {
-                    "name": "mariano73",
-                    "homepage": "https://www.drupal.org/user/1324866"
+                    "name": "hipp2bsquare",
+                    "homepage": "https://www.drupal.org/user/2473076"
                 },
                 {
                     "name": "mariuss",
                     "homepage": "https://www.drupal.org/user/28539"
                 },
                 {
-                    "name": "sanduhrs",
-                    "homepage": "https://www.drupal.org/user/28074"
+                    "name": "pmichelazzo",
+                    "homepage": "https://www.drupal.org/user/182237"
                 },
                 {
-                    "name": "vasi1186",
-                    "homepage": "https://www.drupal.org/user/342104"
-                },
-                {
-                    "name": "webiator GmbH",
-                    "homepage": "https://www.drupal.org/user/2390554"
+                    "name": "srdtwc",
+                    "homepage": "https://www.drupal.org/user/3422763"
                 }
             ],
             "description": "Limit the number of characters in textfields and textareas and shows the amount of characters left.",
@@ -6035,6 +6011,10 @@
                     "name": "Lucas Hedding",
                     "homepage": "https://www.drupal.org/u/heddn",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "Enhancements to core migration support.",
@@ -6087,10 +6067,6 @@
                     "name": "Lucas Hedding",
                     "homepage": "https://www.drupal.org/u/heddn",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "mikeryan",
-                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "CSV source migration.",
@@ -6160,8 +6136,8 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "moshe weitzman",
-                    "homepage": "https://www.drupal.org/user/23"
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
             "description": "Tools to assist in developing and running migrations.",
@@ -6344,8 +6320,8 @@
                     "homepage": "https://www.drupal.org/user/93254"
                 },
                 {
-                    "name": "Fabianx",
-                    "homepage": "https://www.drupal.org/user/693738"
+                    "name": "greg.1.anderson",
+                    "homepage": "https://www.drupal.org/user/438598"
                 },
                 {
                     "name": "stevector",
@@ -6396,7 +6372,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.12",
-                    "datestamp": "1590061335",
+                    "datestamp": "1590140081",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6574,9 +6550,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1533913684",
@@ -6594,6 +6567,10 @@
                 {
                     "name": "Bevan",
                     "homepage": "https://www.drupal.org/user/49989"
+                },
+                {
+                    "name": "Grayle",
+                    "homepage": "https://www.drupal.org/user/3145497"
                 },
                 {
                     "name": "Nixou",
@@ -6620,7 +6597,7 @@
                     "homepage": "https://www.drupal.org/user/216580"
                 },
                 {
-                    "name": "mikesmullin",
+                    "name": "ms2011",
                     "homepage": "https://www.drupal.org/user/108440"
                 },
                 {
@@ -6678,6 +6655,10 @@
                 {
                     "name": "Dylan Donkersgoed",
                     "homepage": "https://www.drupal.org/user/2803351"
+                },
+                {
+                    "name": "Matroskeen",
+                    "homepage": "https://www.drupal.org/user/3426249"
                 },
                 {
                     "name": "Odd Hill",
@@ -6739,10 +6720,6 @@
                 {
                     "name": "Taran2L",
                     "homepage": "https://www.drupal.org/user/473438"
-                },
-                {
-                    "name": "ribel",
-                    "homepage": "https://www.drupal.org/user/1449610"
                 }
             ],
             "description": "Defines a numeric range field type.",
@@ -7005,9 +6982,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.1",
                     "datestamp": "1580498751",
@@ -7182,13 +7156,10 @@
                 "shasum": "9265e2f5faee198c764fa281a3c9668de5ef76fe"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.0",
                     "datestamp": "1528785184",
@@ -7210,6 +7181,10 @@
                 {
                     "name": "binnythomas",
                     "homepage": "https://www.drupal.org/user/3123091"
+                },
+                {
+                    "name": "jijojoseph_zyxware",
+                    "homepage": "https://www.drupal.org/user/3561263"
                 },
                 {
                     "name": "larssg",
@@ -7268,7 +7243,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.17",
-                    "datestamp": "1591128369",
+                    "datestamp": "1594482952",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7665,24 +7640,16 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "chrisjlee",
-                    "homepage": "https://www.drupal.org/user/760600"
-                },
-                {
-                    "name": "drywall",
-                    "homepage": "https://www.drupal.org/user/192591"
-                },
-                {
-                    "name": "jsenich",
-                    "homepage": "https://www.drupal.org/user/58871"
-                },
-                {
-                    "name": "markie",
-                    "homepage": "https://www.drupal.org/user/206687"
-                },
-                {
                     "name": "newsignature",
                     "homepage": "https://www.drupal.org/user/765518"
+                },
+                {
+                    "name": "ultimike",
+                    "homepage": "https://www.drupal.org/user/51132"
+                },
+                {
+                    "name": "volkswagenchick",
+                    "homepage": "https://www.drupal.org/user/3332522"
                 }
             ],
             "description": "Provides a more robust alternative to 'summary or trimmed' textfield format.",
@@ -7840,7 +7807,7 @@
                 "shasum": "c7e3a3757282e4c94e3c1fff08d01e22155cb853"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^8.7.7 || ^9"
             },
             "type": "drupal-module",
             "extra": {
@@ -8398,6 +8365,10 @@
             ],
             "authors": [
                 {
+                    "name": "Nelson Alves",
+                    "homepage": "https://www.drupal.org/user/3557178"
+                },
+                {
                     "name": "dgaspara",
                     "homepage": "https://www.drupal.org/user/3557179"
                 },
@@ -8896,25 +8867,25 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.14.0",
+            "version": "0.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-                "reference": "beff89576a72540ee99476aeb9cfe98222e76fb8"
+                "reference": "454682a67b335bb918952b93c4e699a36012c568"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/beff89576a72540ee99476aeb9cfe98222e76fb8",
-                "reference": "beff89576a72540ee99476aeb9cfe98222e76fb8",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/454682a67b335bb918952b93c4e699a36012c568",
+                "reference": "454682a67b335bb918952b93c4e699a36012c568",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
-                "ext-libxml": "*"
+                "ext-libxml": "*",
+                "php": "^7.0 || ^8.0"
             },
             "require-dev": {
-                "codeclimate/php-test-reporter": "^0.1.2",
-                "phpunit/phpunit": "^6"
+                "phpunit/phpunit": "^6.5 || ^8.5"
             },
             "type": "library",
             "autoload": {
@@ -8933,7 +8904,7 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2021-01-21T10:13:20+00:00"
+            "time": "2022-02-14T00:53:22+00:00"
         },
         {
             "name": "enyo/dropzone",
@@ -9224,12 +9195,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -9342,12 +9313,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -11858,12 +11829,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Contracts\\": ""
-                },
                 "files": [
                     "Deprecation/function.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Contracts\\": ""
+                },
                 "exclude-from-classmap": [
                     "**/Tests/"
                 ]
@@ -12676,12 +12647,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Iconv\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Iconv\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -12751,12 +12722,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Intl\\Idn\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Idn\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -12825,12 +12796,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -13038,12 +13009,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php72\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php72\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -13111,12 +13082,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -14365,6 +14336,10 @@
             ],
             "authors": [
                 {
+                    "name": "Bladedu",
+                    "homepage": "https://www.drupal.org/user/436000"
+                },
+                {
                     "name": "Bohun Tak",
                     "homepage": "https://www.drupal.org/user/1205098"
                 },
@@ -14421,6 +14396,10 @@
                 {
                     "name": "dahousecat",
                     "homepage": "https://www.drupal.org/user/1410992"
+                },
+                {
+                    "name": "daniel_j",
+                    "homepage": "https://www.drupal.org/user/970952"
                 }
             ],
             "description": "Allows searching through the kint dump",
