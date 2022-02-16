@@ -25,21 +25,27 @@ function atrium_preprocess_paragraph(&$variables) {
       if(count($terms) == 1){
         if (!$terms[0]->get('field_url')->isEmpty()) {
           $variables['switchboard_footer']['label'] = t('Already know what you are looking for?');
-
           $term_custom_uri = $terms[0]->get('field_url')->getValue();
-          $variables['switchboard_footer']['buttons'][0]['url'] = Url::fromUri($term_custom_uri[0]['uri']);
-          $variables['switchboard_footer']['buttons'][1]['url'] = $case_forms_url;
-          $variables['switchboard_footer']['buttons'][0]['icon']['name'] = 'file';
+
+          if($case_forms_url){
+            $variables['switchboard_footer']['buttons'][0]['url'] = $case_forms_url;
+            $variables['switchboard_footer']['buttons'][0]['icon']['name'] = 'file';
+          }
+          $variables['switchboard_footer']['buttons'][1]['url'] = Url::fromUri($term_custom_uri[0]['uri']);
           $variables['switchboard_footer']['buttons'][1]['icon']['name'] = 'list';
           if ($term_custom_uri[0]['title'] != '') {
-            $variables['switchboard_footer']['buttons'][0]['title'] = t('See ') . t($term_custom_uri[0]['title']) . t(' Forms');
+            if($case_forms_url) {
+              $variables['switchboard_footer']['buttons'][0]['title'] = t('See ') . t($term_custom_uri[0]['title']) . t(' Forms');
+            }
             $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All ') . t($term_custom_uri[0]['title']) . t(' Pages');
           } else {
             // Translation through taxonomy management.
             $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
             $term_translated = Drupal::service('entity.repository')->getTranslationFromContext($terms[0], $lang_code);
             $term_name = $term_translated->getName();
-            $variables['switchboard_footer']['buttons'][0]['title'] = t('See ') . $term_name . t(' Forms');
+            if($case_forms_url) {
+              $variables['switchboard_footer']['buttons'][0]['title'] = t('See ') . $term_name . t(' Forms');
+            }
             $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All ') . $term_name . t(' Pages');
           }
         }
