@@ -1,0 +1,9 @@
+services:
+  jcc_autocomplete_helper.route_subscriber:
+    class: Drupal\jcc_autocomplete_helper\Routing\AutocompleteRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  jcc_autocomplete_helper.autocomplete_matcher:
+    class: Drupal\jcc_autocomplete_helper\JccEntityAutocompleteMatcher
+    arguments: ['@plugin.manager.entity_reference_selection']
