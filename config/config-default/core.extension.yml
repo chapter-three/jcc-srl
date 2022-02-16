@@ -67,6 +67,7 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  jcc_autocomplete_helper: 0
   jcc_boilerplate: 0
   jcc_chatbot: 0
   jcc_datefinder: 0
@@ -113,7 +114,6 @@ module:
   r4032login: 0
   rabbit_hole: 0
   range: 0
-  rebuild_cache_access: 0
   recaptcha: 0
   redirect: 0
   responsive_image: 0
