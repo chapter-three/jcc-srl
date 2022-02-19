@@ -26,7 +26,7 @@ matchers:
     id: 'entity:node'
     weight: 0
     settings:
-      result_description: Nodes
+      result_description: '[node:field_case_types:0:entity]'
       bundles: {  }
       group_by_bundle: true
       include_unpublished: false

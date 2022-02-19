@@ -283,7 +283,8 @@
                 "Fix previews": "https://www.drupal.org/files/issues/2019-05-06/svg_image_field-zero-width-preview-3053018.patch"
             },
             "drupal/linkit": {
-                "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch"
+                "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch",
+                "Empty tokens": "patches/linkit_empty_tokens.patch"
             },
             "drupal/fillpdf": {
                 "Secure user data after pdf is rendered.": "patches/webform-pdf-protect.patch"
