@@ -9,3 +9,10 @@
     padding-top: 20px;
   }
 }
+
+.view-id-search_featured_items{
+  .views-field-description__value {
+    @include u-padding-top(4);
+  }
+}
+

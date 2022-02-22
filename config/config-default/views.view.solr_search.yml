@@ -246,20 +246,7 @@ display:
           plugin_id: search_api_language
       sorts: {  }
       title: Search
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<h2>Featured results</h2>'
-            format: basic_html
-          plugin_id: text
+      header: {  }
       footer: {  }
       empty:
         area:
