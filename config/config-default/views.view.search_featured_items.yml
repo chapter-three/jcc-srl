@@ -279,7 +279,7 @@ display:
       display_extenders:
         metatag_display_extender: {  }
         ajax_history: {  }
-      css_class: 'jcc-tiles-section jcc-tiles-section--has-emphasis jcc-tiles-section--has-three-columns'
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
