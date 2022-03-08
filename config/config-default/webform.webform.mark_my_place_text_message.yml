@@ -12,68 +12,7 @@ id: mark_my_place_text_message
 title: 'Mark My Place Text Message'
 description: ''
 category: ''
-elements: |
-  '#attributes':
-    class:
-      - jcc-contact-group
-  container:
-    '#type': container
-    '#attributes':
-      class:
-        - 'jcc-contact-group__container margin-bottom-4'
-    mobile_number:
-      '#type': textfield
-      '#title': 'Enter your mobile number '
-      '#description': |
-        Ten digit mobile number starting with the area code (e.g. 4158654200)
-        <p>&nbsp;</p>
-
-      '#required': true
-      '#attributes':
-        class:
-          - usa-input
-        style: usa-input
-      '#label_attributes':
-        class:
-          - jcc-form-required--hidden
-    mobile_carrier:
-      '#type': select
-      '#title': 'Select your mobile carrier'
-      '#title_display': invisible
-      '#options':
-        sms.myboostmobile.com: 'Boost Mobile'
-        mms.cricketwireless.net: 'Cricket Wireless'
-        sms.alltelwireless.com: Alltel
-        msg.fi.google.com: 'Google Fi'
-        mymetropcs.com: MetroPCS
-        'txt.att.net ': 'AT&T'
-        text.republicwireless.com: 'Republic Wireless'
-        'messaging.sprintpcs.com ': Sprint
-        tmomail.net: T-Mobile
-        vtext.com: Verizon
-        email.uscc.net: 'U.S. Cellular'
-        vmobl.com: 'Virgin Mobile'
-      '#empty_option': 'Select your mobile carrier'
-      '#required': true
-      '#attributes':
-        class:
-          - usa-input
-      '#label_attributes':
-        class:
-          - jcc-form-required--hidden
-    actions:
-      '#type': webform_actions
-      '#title': 'Submit button(s)'
-      '#submit__label': 'Send Link'
-      '#submit__attributes':
-        class:
-          - 'usa-button usa-button--accent-warm margin-top-0 margin-bottom-4'
-    info:
-      '#type': webform_markup
-      '#wrapper_attributes':
-        class:
-          - jcc-contact-group__helper
-      '#markup': 'We&#39;ll only use this mobile number to send this link'
+elements: "'#attributes':\n  class:\n    - jcc-contact-group\ncontainer:\n  '#type': container\n  '#attributes':\n    class:\n      - 'jcc-contact-group__container margin-bottom-4'\n  mobile_number:\n    '#type': textfield\n    '#title': 'Enter your mobile number '\n    '#description': |\n      Ten digit mobile number starting with the area code (e.g. 4158654200)\n      <p>&nbsp;</p>\n\n    '#required': true\n    '#attributes':\n      class:\n        - usa-input\n      style: usa-input\n    '#label_attributes':\n      class:\n        - jcc-form-required--hidden\n  mobile_carrier:\n    '#type': select\n    '#title': 'Select your mobile carrier'\n    '#title_display': invisible\n    '#options':\n      sms.myboostmobile.com: 'Boost Mobile'\n      mms.cricketwireless.net: 'Cricket Wireless'\n      sms.alltelwireless.com: Alltel\n      msg.fi.google.com: 'Google Fi'\n      mymetropcs.com: MetroPCS\n      'txt.att.net ': 'AT&T'\n      text.republicwireless.com: 'Republic Wireless'\n      'messaging.sprintpcs.com ': Sprint\n      tmomail.net: T-Mobile\n      vtext.com: Verizon\n      email.uscc.net: 'U.S. Cellular'\n      vmobl.com: 'Virgin Mobile'\n    '#empty_option': 'Select your mobile carrier'\n    '#required': true\n    '#attributes':\n      class:\n        - usa-input\n    '#label_attributes':\n      class:\n        - jcc-form-required--hidden\n  actions:\n    '#type': webform_actions\n    '#title': 'Submit button(s)'\n    '#submit__label': 'Send Link'\n    '#submit__attributes':\n      class:\n        - 'usa-button usa-button--accent-warm margin-top-0 margin-bottom-4'\n  info:\n    '#type': webform_markup\n    '#wrapper_attributes':\n      class:\n        - jcc-contact-group__helper\n    '#markup': 'We&#39;ll only use this mobile number to send this link'\n"
 css: ''
 javascript: ''
 settings:
@@ -280,10 +219,7 @@ handlers:
       from_options: {  }
       from_name: _default
       subject: 'Mark my place'
-      body: |
-        <p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}</p>
-        <p>{{ webform_token('[current-page:url:brief]', webform_submission) }}</p>
-
+      body: "<p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}</p>\n<p>{{ webform_token('[current-page:url:brief]', webform_submission) }}</p>\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true

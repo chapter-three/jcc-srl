@@ -23,6 +23,7 @@ dependencies:
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_punjabi_url
+    - field.field.media.jcc_form.field_revision_date
     - field.field.media.jcc_form.field_russian_url
     - field.field.media.jcc_form.field_spanish_url
     - field.field.media.jcc_form.field_tagalog_url
@@ -46,19 +47,11 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_arabic_url:
-    weight: 14
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_cambodian_url:
     weight: 15
     settings:
       placeholder_url: ''
@@ -66,8 +59,16 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_cambodian_url:
+    weight: 16
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_case_type:
-    weight: 8
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -77,7 +78,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_chinese_traditional_url:
-    weight: 17
+    weight: 18
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -85,7 +86,7 @@ content:
     type: link_default
     region: content
   field_chinese_url:
-    weight: 16
+    weight: 17
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -94,7 +95,7 @@ content:
     region: content
   field_code:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 10
     settings:
       title: 'Code Section'
       title_plural: 'Code Sections'
@@ -105,13 +106,13 @@ content:
     third_party_settings: {  }
     region: content
   field_date_effective:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_description:
-    weight: 3
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -121,7 +122,7 @@ content:
     type: text_textarea_with_summary
     region: content
   field_farsi_url:
-    weight: 18
+    weight: 19
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -129,7 +130,7 @@ content:
     type: link_default
     region: content
   field_form_category:
-    weight: 27
+    weight: 28
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -139,7 +140,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_form_filling_instructions_:
-    weight: 29
+    weight: 30
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -147,7 +148,7 @@ content:
     type: link_default
     region: content
   field_form_prefix:
-    weight: 26
+    weight: 27
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -157,7 +158,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_form_thumbnail:
-    weight: 28
+    weight: 29
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -165,14 +166,6 @@ content:
     type: image_image
     region: content
   field_hmong_url:
-    weight: 19
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_korean_url:
     weight: 20
     settings:
       placeholder_url: ''
@@ -180,15 +173,23 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_korean_url:
+    weight: 21
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_mandatory:
-    weight: 30
+    weight: 31
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_media_file_1:
-    weight: 5
+    weight: 6
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -203,21 +204,13 @@ content:
     type: string_textfield
     region: content
   field_pdf_private:
-    weight: 6
+    weight: 7
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_punjabi_url:
-    weight: 21
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_russian_url:
     weight: 22
     settings:
       placeholder_url: ''
@@ -225,7 +218,13 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_spanish_url:
+  field_revision_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_russian_url:
     weight: 23
     settings:
       placeholder_url: ''
@@ -233,7 +232,7 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_tagalog_url:
+  field_spanish_url:
     weight: 24
     settings:
       placeholder_url: ''
@@ -241,15 +240,7 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_url:
-    weight: 4
-    settings:
-      placeholder_url: 'https://www.courts.ca.gov/documents'
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_vietnamese_url:
+  field_tagalog_url:
     weight: 25
     settings:
       placeholder_url: ''
@@ -257,15 +248,31 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_url:
+    weight: 5
+    settings:
+      placeholder_url: 'https://www.courts.ca.gov/documents'
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_vietnamese_url:
+    weight: 26
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_weight:
-    weight: 31
+    weight: 32
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
@@ -280,18 +287,18 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60

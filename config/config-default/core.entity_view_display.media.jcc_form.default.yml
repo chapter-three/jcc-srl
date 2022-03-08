@@ -23,6 +23,7 @@ dependencies:
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_punjabi_url
+    - field.field.media.jcc_form.field_revision_date
     - field.field.media.jcc_form.field_russian_url
     - field.field.media.jcc_form.field_spanish_url
     - field.field.media.jcc_form.field_tagalog_url
@@ -31,6 +32,7 @@ dependencies:
     - field.field.media.jcc_form.field_weight
     - media.type.jcc_form
   module:
+    - datetime
     - link
     - options
     - svg_image
@@ -40,18 +42,6 @@ bundle: jcc_form
 mode: default
 content:
   field_arabic_url:
-    weight: 3
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_cambodian_url:
     weight: 4
     label: above
     settings:
@@ -63,19 +53,7 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_chinese_traditional_url:
-    weight: 6
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_chinese_url:
+  field_cambodian_url:
     weight: 5
     label: above
     settings:
@@ -87,7 +65,7 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_farsi_url:
+  field_chinese_traditional_url:
     weight: 7
     label: above
     settings:
@@ -99,16 +77,8 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_form_category:
-    weight: 16
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_form_filling_instructions_:
-    weight: 18
+  field_chinese_url:
+    weight: 6
     label: above
     settings:
       trim_length: 80
@@ -119,24 +89,7 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_form_prefix:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_form_thumbnail:
-    weight: 17
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_hmong_url:
+  field_farsi_url:
     weight: 8
     label: above
     settings:
@@ -148,7 +101,48 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_korean_url:
+  field_form_category:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_form_filling_instructions_:
+    weight: 19
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_form_prefix:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_form_thumbnail:
+    weight: 18
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hmong_url:
     weight: 9
     label: above
     settings:
@@ -160,8 +154,20 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_korean_url:
+    weight: 10
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_mandatory:
-    weight: 20
+    weight: 21
     label: above
     settings:
       format: default
@@ -179,18 +185,6 @@ content:
     type: string
     region: content
   field_punjabi_url:
-    weight: 10
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_russian_url:
     weight: 11
     label: above
     settings:
@@ -202,7 +196,16 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_spanish_url:
+  field_revision_date:
+    weight: 2
+    label: above
+    settings:
+      timezone_override: ''
+      date_format: 'M j, Y'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: content
+  field_russian_url:
     weight: 12
     label: above
     settings:
@@ -214,8 +217,20 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_tagalog_url:
+  field_spanish_url:
     weight: 13
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_tagalog_url:
+    weight: 14
     label: above
     settings:
       trim_length: 80
@@ -228,7 +243,7 @@ content:
     region: content
   field_url:
     type: link
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -239,7 +254,7 @@ content:
       target: '0'
     third_party_settings: {  }
   field_vietnamese_url:
-    weight: 14
+    weight: 15
     label: above
     settings:
       trim_length: 80
@@ -251,7 +266,7 @@ content:
     type: link
     region: content
   field_weight:
-    weight: 19
+    weight: 20
     label: above
     settings: {  }
     third_party_settings: {  }
