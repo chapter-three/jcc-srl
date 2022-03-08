@@ -154,6 +154,9 @@ mapping:
       field_url:
         column: E
         cell_plugin: as_is
+      field_revision_date:
+        column: T
+        cell_plugin: revision_date
   sheet_columns:
     Categories:
       A: 'Form Category ID'
