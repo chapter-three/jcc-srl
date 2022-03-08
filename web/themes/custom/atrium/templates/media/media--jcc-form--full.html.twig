@@ -90,11 +90,15 @@
     </div>
 
     {% if language_links %}
-      <div class="jcc-form--languages">
+      <ul class="jcc-form--languages">
         {% for language_link in language_links %}
           <li>{{ language_link }}</li>
         {% endfor %}
-      </div>
+      </ul>
+    {% endif %}
+
+    {% if media.field_revision_date %}
+      <p class="jcc-form--revision-date">[Revised {{ media.field_revision_date.value|date('F j, Y') }}]</p>
     {% endif %}
   {% endset %}
 
