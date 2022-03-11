@@ -1,0 +1,31 @@
+uuid: 20e88356-5d3f-430b-b339-cac7624be37d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_type_override
+    - node.type.srl_onramp
+  module:
+    - datalayer
+    - link
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_case_type_override
+  tmgmt_content:
+    excluded: false
+id: node.srl_onramp.field_case_type_override
+field_name: field_case_type_override
+entity_type: node
+bundle: srl_onramp
+label: 'Case type Override'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.srl_onramp.field_actions
     - field.field.node.srl_onramp.field_brow
     - field.field.node.srl_onramp.field_case_type
+    - field.field.node.srl_onramp.field_case_type_override
     - field.field.node.srl_onramp.field_case_types
     - field.field.node.srl_onramp.field_description
     - field.field.node.srl_onramp.field_hero_nav_title
@@ -22,11 +23,17 @@ id: node.srl_onramp.teaser
 targetEntityType: node
 bundle: srl_onramp
 mode: teaser
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_actions: true
   field_brow: true
   field_case_type: true
+  field_case_type_override: true
   field_case_types: true
   field_description: true
   field_hero_nav_title: true
