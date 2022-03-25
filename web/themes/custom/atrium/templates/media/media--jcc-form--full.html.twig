@@ -97,7 +97,7 @@
       </ul>
     {% endif %}
 
-    {% if media.field_revision_date %}
+    {% if media.field_revision_date.value %}
       <p class="jcc-form--revision-date">Revised: {{ media.field_revision_date.value|date('F j, Y') }}</p>
     {% endif %}
   {% endset %}
