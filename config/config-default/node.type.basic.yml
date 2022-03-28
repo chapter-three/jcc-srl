@@ -25,7 +25,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   search_api_exclude:
-    enabled: 1
+    enabled: 0
 _core:
   default_config_hash: d8DCEHaeXyoba2s7Q5L61mOFNsYWC3ypttLCVswZgik
 name: 'Basic Page'

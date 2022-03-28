@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_dark_background
+    - field.field.node.srl_howto_instruction.field_exclude_from_search
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
@@ -46,6 +47,7 @@ hidden:
   field_column_first: true
   field_column_second: true
   field_dark_background: true
+  field_exclude_from_search: true
   field_forms: true
   field_howto_tabs: true
   field_howto_tabs_title: true

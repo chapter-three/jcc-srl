@@ -25,7 +25,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   search_api_exclude:
-    enabled: 1
+    enabled: 0
 name: 'JCC SRL Website Handbook'
 type: handbook
 description: 'Pages with end user input define paths of MULPs.'

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.timeline.field_actions
     - field.field.node.timeline.field_case_types
     - field.field.node.timeline.field_column_content_right
+    - field.field.node.timeline.field_exclude_from_search
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
     - field.field.node.timeline.field_parties
@@ -14,6 +15,7 @@ dependencies:
     - node.type.timeline
   module:
     - entity_reference_revisions
+    - search_api_exclude_entity
     - text
     - user
 id: node.timeline.default
@@ -28,12 +30,27 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_column_content_right:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_exclude_from_search:
+    weight: 4
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: search_api_exclude_entity_formatter
     region: content
   field_lead:
     weight: 0

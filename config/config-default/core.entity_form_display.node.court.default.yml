@@ -7,16 +7,22 @@ dependencies:
     - field.field.node.court.field_case_types
     - field.field.node.court.field_cities
     - field.field.node.court.field_description
+    - field.field.node.court.field_exclude_from_search
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
     - field.field.node.court.field_watchers
     - field.field.node.court.field_zip_codes
     - node.type.court
+    - workflows.workflow.editorial_workflow
   module:
+    - content_moderation
     - field_group
     - link
     - path
+    - scheduler
+    - scheduler_content_moderation_integration
+    - search_api_exclude_entity
     - text
 third_party_settings:
   field_group:
@@ -103,6 +109,13 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_exclude_from_search:
+    weight: 101
+    settings:
+      field_label: 'Yes, exclude this entity from the search indexes.'
+    third_party_settings: {  }
+    type: search_api_exclude_entity_widget
+    region: content
   field_main_link:
     weight: 26
     settings:
@@ -146,6 +159,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 11
@@ -159,6 +178,23 @@ content:
     weight: 9
     region: content
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   status:
     type: boolean_checkbox
     settings:
@@ -195,6 +231,18 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   url_redirects:
     weight: 12

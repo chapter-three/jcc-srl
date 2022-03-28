@@ -25,7 +25,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   search_api_exclude:
-    enabled: 1
+    enabled: 0
 name: 'SRL Onramp'
 type: srl_onramp
 description: 'Onranp provides information about a specific form or process.'

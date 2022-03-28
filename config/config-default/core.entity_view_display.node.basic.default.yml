@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.basic.field_actions
     - field.field.node.basic.field_case_types
     - field.field.node.basic.field_column_first
+    - field.field.node.basic.field_exclude_from_search
     - field.field.node.basic.field_header
     - field.field.node.basic.field_hide_title
     - field.field.node.basic.field_image
@@ -22,6 +23,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - media
+    - search_api_exclude_entity
     - text
     - user
 _core:
@@ -49,6 +51,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_exclude_from_search:
+    weight: 8
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: search_api_exclude_entity_formatter
     region: content
   field_header:
     type: entity_reference_revisions_entity_view

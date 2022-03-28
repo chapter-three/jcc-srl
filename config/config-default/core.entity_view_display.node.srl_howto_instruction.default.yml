@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.srl_howto_instruction.field_column_first
     - field.field.node.srl_howto_instruction.field_column_second
     - field.field.node.srl_howto_instruction.field_dark_background
+    - field.field.node.srl_howto_instruction.field_exclude_from_search
     - field.field.node.srl_howto_instruction.field_forms
     - field.field.node.srl_howto_instruction.field_howto_tabs
     - field.field.node.srl_howto_instruction.field_howto_tabs_title
@@ -27,6 +28,7 @@ dependencies:
     - block_field
     - entity_reference_revisions
     - link
+    - search_api_exclude_entity
     - text
     - user
 id: node.srl_howto_instruction.default
@@ -66,6 +68,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_exclude_from_search:
+    weight: 12
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: search_api_exclude_entity_formatter
     region: content
   field_forms:
     type: entity_reference_entity_view

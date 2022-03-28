@@ -1,0 +1,31 @@
+uuid: aea6f7a5-de85-4db4-87c5-3d1481ff4815
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_from_search
+    - node.type.courthouse
+  module:
+    - datalayer
+    - search_api_exclude_entity
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_exclude_from_search
+  tmgmt_content:
+    excluded: false
+id: node.courthouse.field_exclude_from_search
+field_name: field_exclude_from_search
+entity_type: node
+bundle: courthouse
+label: 'Exclude from search'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: false
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

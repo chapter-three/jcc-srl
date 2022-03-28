@@ -6,10 +6,13 @@ dependencies:
     - field.field.node.handbook.body
     - field.field.node.handbook.field_actions
     - field.field.node.handbook.field_case_types
+    - field.field.node.handbook.field_exclude_from_search
+    - field.field.node.handbook.field_parent
     - field.field.node.handbook.field_parties
     - field.field.node.handbook.field_watchers
     - node.type.handbook
   module:
+    - search_api_exclude_entity
     - text
     - user
 id: node.handbook.default
@@ -24,9 +27,25 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_exclude_from_search:
+    weight: 1
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: search_api_exclude_entity_formatter
+    region: content
 hidden:
   field_actions: true
   field_case_types: true
+  field_parent: true
   field_parties: true
   field_watchers: true
   langcode: true

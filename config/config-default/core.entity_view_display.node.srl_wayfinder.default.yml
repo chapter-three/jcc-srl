@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.srl_wayfinder.field_actions
     - field.field.node.srl_wayfinder.field_case_types
     - field.field.node.srl_wayfinder.field_description
+    - field.field.node.srl_wayfinder.field_exclude_from_search
     - field.field.node.srl_wayfinder.field_metatag
     - field.field.node.srl_wayfinder.field_options
     - field.field.node.srl_wayfinder.field_paragraphs
@@ -16,6 +17,7 @@ dependencies:
   module:
     - cc
     - entity_reference_revisions
+    - search_api_exclude_entity
     - text
     - user
 id: node.srl_wayfinder.default
@@ -23,12 +25,27 @@ targetEntityType: node
 bundle: srl_wayfinder
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_description:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_exclude_from_search:
+    weight: 4
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: search_api_exclude_entity_formatter
     region: content
   field_options:
     weight: 0

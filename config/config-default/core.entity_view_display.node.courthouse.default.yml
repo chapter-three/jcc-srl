@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.courthouse.field_building_hours_wednesday
     - field.field.node.courthouse.field_case_types
     - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_exclude_from_search
     - field.field.node.courthouse.field_filing_hours_friday
     - field.field.node.courthouse.field_filing_hours_monday
     - field.field.node.courthouse.field_filing_hours_summary
@@ -36,6 +37,7 @@ dependencies:
     - node.type.courthouse
   module:
     - link
+    - search_api_exclude_entity
     - text
     - user
 id: node.courthouse.default
@@ -109,6 +111,16 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_exclude_from_search:
+    weight: 30
+    label: above
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: search_api_exclude_entity_formatter
     region: content
   field_filing_hours_friday:
     weight: 14
