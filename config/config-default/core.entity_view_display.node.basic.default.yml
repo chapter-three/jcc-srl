@@ -23,7 +23,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - media
-    - search_api_exclude_entity
     - text
     - user
 _core:
@@ -51,16 +50,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_exclude_from_search:
-    weight: 8
-    label: above
-    settings:
-      format: yes-no
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: search_api_exclude_entity_formatter
     region: content
   field_header:
     type: entity_reference_revisions_entity_view
@@ -108,6 +97,7 @@ content:
 hidden:
   field_actions: true
   field_case_types: true
+  field_exclude_from_search: true
   field_hide_title: true
   field_metatag: true
   field_parent: true

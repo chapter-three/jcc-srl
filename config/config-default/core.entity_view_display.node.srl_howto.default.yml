@@ -20,7 +20,6 @@ dependencies:
     - node.type.srl_howto
   module:
     - entity_reference_revisions
-    - search_api_exclude_entity
     - text
     - user
 id: node.srl_howto.default
@@ -29,13 +28,13 @@ bundle: srl_howto
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_children_primary:
     type: entity_reference_revisions_entity_view
-    weight: 7
+    weight: 8
     label: hidden
     settings:
       view_mode: default
@@ -44,7 +43,7 @@ content:
     region: content
   field_children_secondary:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 7
     label: hidden
     settings:
       view_mode: default
@@ -52,58 +51,49 @@ content:
     third_party_settings: {  }
     region: content
   field_column_first:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_column_second:
     weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_exclude_from_search:
-    weight: 8
-    label: above
-    settings:
-      format: yes-no
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: search_api_exclude_entity_formatter
-    region: content
-  field_switchboard_subtitle:
-    weight: 5
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_switchboard_title:
+  field_column_second:
     weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_switchboard_subtitle:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_switchboard_title:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_title_display:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   links:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_actions: true
   field_case_types: true
+  field_exclude_from_search: true
   field_metatag: true
   field_parent: true
   field_parties: true
