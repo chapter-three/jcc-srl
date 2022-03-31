@@ -5,27 +5,7 @@
  *
  * Available variables:
  * - attributes: Remaining HTML attributes for the element.
- * - css_name: A css-safe version of the view name.
- * - css_class: The user-specified classes names, if any.
- * - header: The optional header.
- * - footer: The optional footer.
- * - rows: The results of the view query, if any.
- * - empty: The content to display if there are no rows.
- * - pager: The optional pager next/prev links to display.
- * - exposed: Exposed widget form/info to display.
- * - feed_icons: Optional feed icons to display.
- * - more: An optional link to the next page of results.
- * - title: Title of the view, only used when displaying in the admin preview.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the view title.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the view title.
- * - attachment_before: An optional attachment view to be displayed before the
- *   view content.
- * - attachment_after: An optional attachment view to be displayed after the
- *   view content.
- * - dom_id: Unique id for every view being printed to give unique class for
- *   Javascript.
+ * - forms_by_category: available JCC forms media
  *
  * @see template_preprocess_views_view()
  */
@@ -43,7 +23,92 @@
   <{{ tag }}{{ attributes.addClass(classes) }}>
     {% block content %}
       {% if forms_by_category %}
-        {{ forms_by_category }}
+        {% set all_forms = [] %}
+        {% for form_category in forms_by_category %}
+          {% set category = form_category[0].category %}
+          {% set categorized %}
+            {% set forms = [] %}
+            {% for form in form_category %}
+              {% set title = form.number %}
+              {% if form.mandatory %}
+                {% set title = title ~ ' *' %}
+              {% endif %}
+              {% set content %}
+                {% if form.description %}<p>{{ form.description }}</p>{% endif %}
+                {% if form.revision_date %}<p>Revised: {{ form.revision_date|date('F j, Y') }}</p>{% endif %}
+                {% if form.languages %}
+                  {% set avail_languages = [] %}
+                  {% for language in form.languages %}
+                    {% set avail_languages = avail_languages|merge([{
+                      text: language,
+                    }]) %}
+                  {% endfor %}
+                  {% include '@molecules/blocks/tags/tags.twig' with {
+                    tags: {
+                      style: 'pill',
+                      icon: {
+                        name: 'language-translation',
+                        title: 'Available translated forms',
+                        decorative: false,
+                        width: 'width-4',
+                        height: 'height-4',
+                        color: 'text-base-dark',
+                      },
+                      items: avail_languages,
+                    }
+                  } %}
+                {% endif %}
+              {% endset %}
+              {% if form.information or form.download %}
+                {% set actions %}
+                  {% if form.information %}{{ form.information }}{% endif %}
+                  {{ form.download }}
+                {% endset %}
+              {% endif %}
+
+              {% set forms = forms|merge([{
+                title: title,
+                content: content,
+                actions: actions,
+              }]) %}
+            {% endfor %}
+
+            {% include '@molecules/blocks/list-group/list-group.twig' with {
+              list_group: {
+                display: 'rich',
+                items: forms,
+              }
+            } %}
+          {% endset %}
+
+          {% set all_forms = all_forms|merge([{
+            title: category,
+            body: categorized,
+          }]) %}
+        {% endfor %}
+
+        {% set instruct %}
+          <p>Use Adobe Acrobat. <a href="/pdf-working-court-forms-1">See instructions</a>.</p>
+        {% endset %}
+        {% include '@molecules/blocks/alert/alert.twig' with {
+          alert: {
+            type: 'warning',
+            icon: true,
+            heading: 'Don\'t fill forms in your browser!',
+            text: instruct,
+          }
+        } %}
+
+        <div class="margin-y-2">
+          Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.
+        </div>
+
+        {% include '@molecules/interactive/accordion/accordion.twig' with {
+          accordion: {
+            expand_first: 'no',
+            items: all_forms,
+          }
+        } %}
       {% endif %}
     {% endblock %}
   </{{ tag }}>
