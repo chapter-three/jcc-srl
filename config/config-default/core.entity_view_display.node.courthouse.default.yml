@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.courthouse.field_building_hours_wednesday
     - field.field.node.courthouse.field_case_types
     - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_exclude_from_search
     - field.field.node.courthouse.field_filing_hours_friday
     - field.field.node.courthouse.field_filing_hours_monday
     - field.field.node.courthouse.field_filing_hours_summary
@@ -44,19 +45,19 @@ bundle: courthouse
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_building_hours_friday:
-    weight: 9
+    weight: 10
     label: hidden
     settings:
       link_to_entity: false
@@ -64,29 +65,6 @@ content:
     type: string
     region: content
   field_building_hours_monday:
-    weight: 5
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_building_hours_summary:
-    weight: 20
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_building_hours_thursday:
-    weight: 8
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_building_hours_tuesday:
     weight: 6
     label: hidden
     settings:
@@ -94,7 +72,22 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_building_hours_wednesday:
+  field_building_hours_summary:
+    weight: 21
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_building_hours_thursday:
+    weight: 9
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_building_hours_tuesday:
     weight: 7
     label: hidden
     settings:
@@ -102,8 +95,16 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_building_hours_wednesday:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_court:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       link: true
@@ -111,7 +112,7 @@ content:
     type: entity_reference_label
     region: content
   field_filing_hours_friday:
-    weight: 14
+    weight: 15
     label: hidden
     settings:
       link_to_entity: false
@@ -119,29 +120,6 @@ content:
     type: string
     region: content
   field_filing_hours_monday:
-    weight: 11
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_filing_hours_summary:
-    weight: 21
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_filing_hours_thursday:
-    weight: 13
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_filing_hours_tuesday:
     weight: 12
     label: hidden
     settings:
@@ -149,8 +127,31 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_filing_hours_summary:
+    weight: 22
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_filing_hours_thursday:
+    weight: 14
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_filing_hours_tuesday:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_filing_hours_wednesday:
-    weight: 10
+    weight: 11
     label: hidden
     settings:
       link_to_entity: false
@@ -159,7 +160,7 @@ content:
     region: content
   field_image:
     type: entity_reference_entity_view
-    weight: 23
+    weight: 24
     label: hidden
     settings:
       view_mode: default
@@ -167,7 +168,7 @@ content:
     third_party_settings: {  }
     region: content
   field_link:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -179,7 +180,7 @@ content:
     type: link
     region: content
   field_matters_served:
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       link_to_entity: false
@@ -187,7 +188,7 @@ content:
     type: string
     region: content
   field_phone:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -195,7 +196,7 @@ content:
     type: string
     region: content
   field_self_help_appointment:
-    weight: 29
+    weight: 26
     label: hidden
     settings:
       trim_length: 80
@@ -207,7 +208,7 @@ content:
     type: link
     region: content
   field_self_help_workshop:
-    weight: 28
+    weight: 25
     label: hidden
     settings:
       trim_length: 80
@@ -219,7 +220,7 @@ content:
     type: link
     region: content
   field_selfhelp_hours_friday:
-    weight: 19
+    weight: 20
     label: hidden
     settings:
       link_to_entity: false
@@ -227,29 +228,6 @@ content:
     type: string
     region: content
   field_selfhelp_hours_monday:
-    weight: 16
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_selfhelp_hours_summary:
-    weight: 22
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_selfhelp_hours_thursday:
-    weight: 18
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_selfhelp_hours_tuesday:
     weight: 17
     label: hidden
     settings:
@@ -257,8 +235,31 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_selfhelp_hours_summary:
+    weight: 23
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_selfhelp_hours_thursday:
+    weight: 19
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_selfhelp_hours_tuesday:
+    weight: 18
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_selfhelp_hours_wednesday:
-    weight: 15
+    weight: 16
     label: hidden
     settings:
       link_to_entity: false
@@ -268,6 +269,7 @@ content:
 hidden:
   field_actions: true
   field_case_types: true
+  field_exclude_from_search: true
   field_parties: true
   field_watchers: true
   langcode: true

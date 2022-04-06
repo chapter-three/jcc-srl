@@ -81,38 +81,43 @@
 
 {{ attach_library('classy/node') }}
 
-<article{{ attributes.addClass(classes)|without('role') }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
+{% if node.hasField('field_exclude_from_search') %}
+  {% if not node.field_exclude_from_search.value == 1 %}
 
-  {% block content %}
-    {% if label and not page %}
-      {% set title %}
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      {% endset %}
-    {% endif %}
+    <article{{ attributes.addClass(classes)|without('role') }}>
+      {{ title_prefix }}
+      {{ title_suffix }}
 
-    {% set body %}
-      {% if display_submitted %}
-        <footer class="node__meta">
-          {{ author_picture }}
-          <div{{ author_attributes.addClass('node__submitted') }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </footer>
-      {% endif %}
-      {{ content}}
-    {% endset %}
+      {% block content %}
+        {% if label and not page %}
+          {% set title %}
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+          {% endset %}
+        {% endif %}
 
-    {% include '@organisms/sections/text-section/text-section.twig' with {
-      text_section: {
-        column_content_left: body,
-        headergroup: {
-          tag: 'h3',
-          title: title
-        },
-      }
-    } only %}
-  {% endblock %}
-</article>
+        {% set body %}
+          {% if display_submitted %}
+            <footer class="node__meta">
+              {{ author_picture }}
+              <div{{ author_attributes.addClass('node__submitted') }}>
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                {{ metadata }}
+              </div>
+            </footer>
+          {% endif %}
+          {{ content}}
+        {% endset %}
+
+        {% include '@organisms/sections/text-section/text-section.twig' with {
+          text_section: {
+            column_content_left: body,
+            headergroup: {
+              tag: 'h3',
+              title: title
+            },
+          }
+        } only %}
+      {% endblock %}
+    </article>
+  {% endif %}
+{% endif %}

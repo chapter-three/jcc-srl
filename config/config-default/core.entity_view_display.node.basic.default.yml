@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.basic.field_actions
     - field.field.node.basic.field_case_types
     - field.field.node.basic.field_column_first
+    - field.field.node.basic.field_exclude_from_search
     - field.field.node.basic.field_header
     - field.field.node.basic.field_hide_title
     - field.field.node.basic.field_image
@@ -96,6 +97,7 @@ content:
 hidden:
   field_actions: true
   field_case_types: true
+  field_exclude_from_search: true
   field_hide_title: true
   field_metatag: true
   field_parent: true

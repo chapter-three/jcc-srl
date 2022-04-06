@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.srl_onramp.field_case_type
     - field.field.node.srl_onramp.field_case_types
     - field.field.node.srl_onramp.field_description
+    - field.field.node.srl_onramp.field_exclude_from_search
     - field.field.node.srl_onramp.field_hero_nav_title
     - field.field.node.srl_onramp.field_metatag
     - field.field.node.srl_onramp.field_paragraphs
@@ -22,13 +23,19 @@ id: node.srl_onramp.teaser
 targetEntityType: node
 bundle: srl_onramp
 mode: teaser
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_actions: true
   field_brow: true
   field_case_type: true
   field_case_types: true
   field_description: true
+  field_exclude_from_search: true
   field_hero_nav_title: true
   field_metatag: true
   field_paragraphs: true

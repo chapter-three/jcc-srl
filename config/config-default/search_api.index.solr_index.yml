@@ -6,6 +6,7 @@ dependencies:
     - search_api_solr
     - node
     - search_api
+    - search_api_exclude_entity
   config:
     - field.storage.node.body
     - field.storage.node.field_actions
@@ -298,7 +299,13 @@ processor_settings:
   aggregated_field: {  }
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  search_api_exclude_entity_processor:
+    fields:
+      node:
+        - field_exclude_from_search
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo

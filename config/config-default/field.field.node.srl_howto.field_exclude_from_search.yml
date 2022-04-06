@@ -1,0 +1,31 @@
+uuid: a0cf993d-c490-4327-bf5c-7312cfc50b70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_from_search
+    - node.type.srl_howto
+  module:
+    - datalayer
+    - search_api_exclude_entity
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_exclude_from_search
+  tmgmt_content:
+    excluded: false
+id: node.srl_howto.field_exclude_from_search
+field_name: field_exclude_from_search
+entity_type: node
+bundle: srl_howto
+label: 'Exclude from search'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: false
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

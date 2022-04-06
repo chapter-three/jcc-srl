@@ -1,0 +1,31 @@
+uuid: e6360afe-121c-40d1-85cf-61f9778c05a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_from_search
+    - node.type.timeline
+  module:
+    - datalayer
+    - search_api_exclude_entity
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_exclude_from_search
+  tmgmt_content:
+    excluded: false
+id: node.timeline.field_exclude_from_search
+field_name: field_exclude_from_search
+entity_type: node
+bundle: timeline
+label: 'Exclude from search'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: false
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

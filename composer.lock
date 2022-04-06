@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc169c29231d9a4b86bab26c586aa7d4",
+    "content-hash": "90351202ec43d1f7d07cdcee2a0690d8",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5420,7 +5420,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch"
+                    "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch",
+                    "Empty tokens": "patches/linkit_empty_tokens.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7358,6 +7359,101 @@
                 "source": "http://git.drupal.org/project/search_api_autocomplete.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_autocomplete",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
+            }
+        },
+        {
+            "name": "drupal/search_api_exclude",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_exclude.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_exclude-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "b5a6803c03b995f4a4ddf7346fa9af9d0c3006e4"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/search_api": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1628003031",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "MiSc",
+                    "homepage": "https://www.drupal.org/user/382892"
+                },
+                {
+                    "name": "StijnStroobants",
+                    "homepage": "https://www.drupal.org/user/1787140"
+                }
+            ],
+            "description": "The Search API Exclude module allows users to prevent certain nodes from being indexed.",
+            "homepage": "https://www.drupal.org/project/search_api_exclude",
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_exclude",
+                "issues": "https://www.drupal.org/project/issues/search_api_exclude"
+            }
+        },
+        {
+            "name": "drupal/search_api_exclude_entity",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api_exclude_entity.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api_exclude_entity-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "a4b8fd96bceedf4f6cff382f531585613325a702"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/search_api": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1603201534",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "beltofte",
+                    "homepage": "https://www.drupal.org/user/151799"
+                }
+            ],
+            "description": "Exclude one or more entities from being indexed in Search API.",
+            "homepage": "https://www.drupal.org/project/search_api_exclude_entity",
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api_exclude_entity"
             }
         },
         {
@@ -9468,16 +9564,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.312",
+            "version": "0.1.324",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "6b46f7930bf54e3d7cfa24d6a7d8b2a6eb95ac1c"
+                "reference": "cb0b3d53b23c086ea0d3e7209f7a6f0638e11fce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/6b46f7930bf54e3d7cfa24d6a7d8b2a6eb95ac1c",
-                "reference": "6b46f7930bf54e3d7cfa24d6a7d8b2a6eb95ac1c",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/cb0b3d53b23c086ea0d3e7209f7a6f0638e11fce",
+                "reference": "cb0b3d53b23c086ea0d3e7209f7a6f0638e11fce",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9492,7 +9588,7 @@
                 }
             ],
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
-            "time": "2022-02-09T17:46:23+00:00"
+            "time": "2022-03-30T23:34:14+00:00"
         },
         {
             "name": "kub-at/php-simple-html-dom-parser",

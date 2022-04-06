@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.srl_howto.field_children_secondary
     - field.field.node.srl_howto.field_column_first
     - field.field.node.srl_howto.field_column_second
+    - field.field.node.srl_howto.field_exclude_from_search
     - field.field.node.srl_howto.field_metatag
     - field.field.node.srl_howto.field_parent
     - field.field.node.srl_howto.field_parties
@@ -28,6 +29,7 @@ dependencies:
     - path
     - scheduler
     - scheduler_content_moderation_integration
+    - search_api_exclude_entity
     - text
 third_party_settings:
   field_group:
@@ -146,6 +148,13 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
+  field_exclude_from_search:
+    weight: 26
+    settings:
+      field_label: 'Yes, exclude this entity from the search indexes.'
+    third_party_settings: {  }
+    type: search_api_exclude_entity_widget
     region: content
   field_metatag:
     weight: 15

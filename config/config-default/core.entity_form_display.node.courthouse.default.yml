@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.courthouse.field_building_hours_wednesday
     - field.field.node.courthouse.field_case_types
     - field.field.node.courthouse.field_court
+    - field.field.node.courthouse.field_exclude_from_search
     - field.field.node.courthouse.field_filing_hours_friday
     - field.field.node.courthouse.field_filing_hours_monday
     - field.field.node.courthouse.field_filing_hours_summary
@@ -34,11 +35,16 @@ dependencies:
     - field.field.node.courthouse.field_selfhelp_hours_wednesday
     - field.field.node.courthouse.field_watchers
     - node.type.courthouse
+    - workflows.workflow.editorial_workflow
   module:
+    - content_moderation
     - field_group
     - link
     - media_library
     - path
+    - scheduler
+    - scheduler_content_moderation_integration
+    - search_api_exclude_entity
     - telephone
     - text
 third_party_settings:
@@ -228,6 +234,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_exclude_from_search:
+    weight: 101
+    settings:
+      field_label: 'Yes, exclude this entity from the search indexes.'
+    third_party_settings: {  }
+    type: search_api_exclude_entity_widget
+    region: content
   field_filing_hours_friday:
     weight: 25
     settings:
@@ -389,6 +402,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 14
@@ -402,6 +421,23 @@ content:
     weight: 12
     region: content
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   status:
     type: boolean_checkbox
     settings:
@@ -438,6 +474,18 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   url_redirects:
     weight: 15

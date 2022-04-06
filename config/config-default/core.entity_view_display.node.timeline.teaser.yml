@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.timeline.field_actions
     - field.field.node.timeline.field_case_types
     - field.field.node.timeline.field_column_content_right
+    - field.field.node.timeline.field_exclude_from_search
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
     - field.field.node.timeline.field_parties
@@ -19,12 +20,18 @@ id: node.timeline.teaser
 targetEntityType: node
 bundle: timeline
 mode: teaser
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   body: true
   field_actions: true
   field_case_types: true
   field_column_content_right: true
+  field_exclude_from_search: true
   field_lead: true
   field_paragraphs: true
   field_parties: true

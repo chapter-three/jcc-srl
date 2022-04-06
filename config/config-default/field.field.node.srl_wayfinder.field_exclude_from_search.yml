@@ -1,0 +1,31 @@
+uuid: fee35bfe-63d8-4bfb-9fa5-bdcae3f4f86e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exclude_from_search
+    - node.type.srl_wayfinder
+  module:
+    - datalayer
+    - search_api_exclude_entity
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_exclude_from_search
+  tmgmt_content:
+    excluded: false
+id: node.srl_wayfinder.field_exclude_from_search
+field_name: field_exclude_from_search
+entity_type: node
+bundle: srl_wayfinder
+label: 'Exclude from search'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: false
+default_value_callback: ''
+settings: {  }
+field_type: search_api_exclude_entity

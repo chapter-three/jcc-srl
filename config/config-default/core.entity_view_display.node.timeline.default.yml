@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.timeline.field_actions
     - field.field.node.timeline.field_case_types
     - field.field.node.timeline.field_column_content_right
+    - field.field.node.timeline.field_exclude_from_search
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
     - field.field.node.timeline.field_parties
@@ -24,26 +25,31 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_column_content_right:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_lead:
-    weight: 0
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_paragraphs:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -54,6 +60,7 @@ content:
 hidden:
   field_actions: true
   field_case_types: true
+  field_exclude_from_search: true
   field_parties: true
   field_watchers: true
   langcode: true
