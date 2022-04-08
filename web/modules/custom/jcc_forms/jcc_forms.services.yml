@@ -1,0 +1,5 @@
+services:
+  jcc_forms_event_subscriber:
+    class: Drupal\jcc_forms\EventSubscriber\JccFormsEventSubscriber
+    tags:
+      - { name: event_subscriber }

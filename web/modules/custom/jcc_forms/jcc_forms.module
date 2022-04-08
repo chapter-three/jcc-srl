@@ -69,7 +69,8 @@ function jcc_forms_preprocess_views_view__find_forms__all_by_category(&$variable
   foreach ($variables['rows'][0]['#rows'] as $row) {
     $item = $row['#row'];
     $form_number = $item->_entity->field_number->value;
-    $item_categories = $item->_entity->field_form_category->referencedEntities();
+    // Internal categories are being stored as form prefix labels
+    $item_category = $item->_entity->field_form_prefix->referencedEntities();
 
     // Forms information button.
     /** @var Drupal\core\Url $information_url */
@@ -99,38 +100,25 @@ function jcc_forms_preprocess_views_view__find_forms__all_by_category(&$variable
       }
     }
 
-    // List forms per category.
-    if ($item_categories) {
-      foreach ($item_categories as $category) {
-        $form = [
-          'number' => $form_number,
-          'description' => $item->_entity->name->value,
-          'category' => $category->label(),
-          'mandatory' => $item->_entity->field_mandatory->value,
-          'revision_date' => $item->_entity->field_revision_date->value,
-          'information' => $information_btn,
-          'download' => $download_btn,
-          'languages' => $item_languages
-        ];
-
-        // Do not list duplicates for the same category.
-        if (!in_array($form, $forms)) {
-          array_push($forms, $form);
-        }
-      }
+    // List forms.
+    $category = $label_other;
+    if ($item_category) {
+      $category = $item_category[0]->field_form_prefix_label->value;
     }
-    else {
-      $form = [
-        'number' => $form_number,
-        'description' => $item->_entity->name->value,
-        'category' => $label_other,
-        'mandatory' => $item->_entity->field_mandatory->value,
-        'revision_date' => $item->_entity->field_revision_date->value,
-        'information' => $information_btn,
-        'download' => $download_btn,
-        'languages' => $item_languages
-      ];
+    $form = [
+      'number' => $form_number,
+      'description' => $item->_entity->name->value,
+      'category' => $category,
+      'mandatory' => $item->_entity->field_mandatory->value,
+      'revision_date' => $item->_entity->field_revision_date->value,
+      'url' => $information_url,
+      'information' => $information_btn,
+      'download' => $download_btn,
+      'languages' => $item_languages
+    ];
 
+    // Do not list duplicates for the same category.
+    if (!in_array($form, $forms)) {
       array_push($forms, $form);
     }
   }
