@@ -49,3 +49,7 @@ js-back-button:
 drawer:
   js:
     assets/js/drawer.js: {}
+
+iframe-resizer-client:
+  js:
+    assets/js/iframeResizer.contentWindow.min.js: {}
