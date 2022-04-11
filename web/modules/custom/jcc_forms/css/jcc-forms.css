@@ -1,0 +1,4 @@
+/* Overrides body default height handling to allow proper iframe-resizer.js management */
+.path-find-forms {
+  height: auto;
+}
