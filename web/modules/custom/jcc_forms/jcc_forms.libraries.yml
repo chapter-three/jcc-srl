@@ -1,0 +1,5 @@
+# Custom module library for general purposes.
+jcc_forms:
+  css:
+    theme:
+      css/jcc-forms.css: {}

@@ -24,15 +24,16 @@ footer {
 }
 
 .jcc-header-base {
-  .path-frontpage & {
-    display: none;
-  }
-
   .jcc-nav-secondary__menu {
     @include at-media(desktop) {
       display: none;
     }
   }
+}
+
+/* Override Drupal's form height handling for global search */
+.jcc-nav-secondary__group .jcc-form.usa-form {
+  height: auto;
 }
 
 .path-search main {

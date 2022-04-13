@@ -68,6 +68,11 @@
 
               {% set forms = forms|merge([{
                 title: title,
+                link: {
+                  url: form.url,
+                  url_label: 'Get more information and options for ' ~ form.number,
+                  target: '_blank',
+                },
                 content: content,
                 actions: actions,
               }]) %}
@@ -76,6 +81,7 @@
             {% include '@molecules/blocks/list-group/list-group.twig' with {
               list_group: {
                 display: 'rich',
+                content_block_cta: true,
                 items: forms,
               }
             } %}
