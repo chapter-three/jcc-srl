@@ -42,6 +42,7 @@ permissions:
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer scheduler'
+  - 'administer search api exclude entity'
   - 'administer shortcuts'
   - 'administer url aliases'
   - 'administer users'

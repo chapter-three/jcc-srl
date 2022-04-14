@@ -44,6 +44,7 @@ permissions:
   - 'administer paragraph fields'
   - 'administer paragraphs settings'
   - 'administer paragraphs types'
+  - 'administer search api exclude entity'
   - 'administer site configuration'
   - 'administer taxonomy_term fields'
   - 'administer tmgmt'
