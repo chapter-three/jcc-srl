@@ -19,6 +19,7 @@ permissions:
   - 'administer media'
   - 'administer meta tags'
   - 'administer pdfs'
+  - 'administer search api exclude entity'
   - 'administer url aliases'
   - 'change own username'
   - 'clone node entity'
