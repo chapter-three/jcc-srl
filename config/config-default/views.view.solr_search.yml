@@ -87,6 +87,7 @@ display:
               srl_howto_instruction: search_index
               srl_onramp: search_index
               timeline: search_index
+              srl_wayfinder: search_index
       fields:
         body:
           table: search_api_index_solr_index
