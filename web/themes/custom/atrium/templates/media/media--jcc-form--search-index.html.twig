@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Template for "JCC Form" media type using "Search index" display mode.
+ */
+#}
+
+{# Add a class to the tile links so we can track these clicks separately in google tag manager #}
+{% set tile_url_attributes = create_attribute({'class': ['form-info-tile-link']}) %}
+
+<article{{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+
+  {# Prepare 'title' for hero.twig #}
+  {% set title %}
+    <a href="jcc-form/{{media.field_number.value}}" rel="bookmark">{{media.label}} <span class="text-no-wrap">({{media.field_number.value}})</span></a>
+  {% endset %}
+
+  {# Prepare 'body' for hero.twig #}
+  {% set body %}
+    <div class="jcc-form--form-links">
+      <a href={{ media.field_url.uri }}
+         class="jcc-form--link border-primary-vivid"
+         aria-label="Get form {{media.field_number.value}} {{media.label}}">
+        {# {{ link("View PDF"|t,  media.field_url.uri) }} #}
+        {% include '@atoms/icons/icon.twig' with {
+          icon: {
+            name: 'file',
+            width: 'width-2',
+            height: 'height-2',
+            color: 'text-primary-vivid'
+          }
+        } %}
+        <span>Get form {{media.field_number.value}}</span>
+      </a>
+
+      {% if media.field_form_filling_instructions_.uri %}
+        <a href={{ media.field_form_filling_instructions_.uri }}
+           class="jcc-form--link border-primary-vivid"
+           aria-label="Get instructions for form {{media.field_number.value}} {{media.label}}">
+          {% include '@atoms/icons/icon.twig' with {
+            icon: {
+              name: 'file',
+              width: 'width-2',
+              height: 'height-2',
+              color: 'text-primary-vivid'
+            }
+          } %}
+        </a>
+      {% endif %}
+    </div>
+
+  {% endset %}
+
+  {% include '@organisms/sections/text-section/text-section.twig' with {
+    text_section: {
+      column_content_left: body,
+      headergroup: {
+        tag: 'h3',
+        title: title
+      },
+    }
+  } only %}
+
+</article>

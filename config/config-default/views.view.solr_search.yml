@@ -68,6 +68,15 @@ display:
         type: search_api
         options:
           view_modes:
+            'entity:media':
+              audio: default
+              file: default
+              image: default
+              jcc_form: search_index
+              remote_video: default
+              snippet: default
+              svg: default
+              video: default
             'entity:node':
               basic: search_index
               court: search_index
@@ -77,8 +86,8 @@ display:
               srl_howto: search_index
               srl_howto_instruction: search_index
               srl_onramp: search_index
-              srl_wayfinder: search_index
               timeline: search_index
+              srl_wayfinder: search_index
       fields:
         body:
           table: search_api_index_solr_index
@@ -203,6 +212,9 @@ display:
             - field_column_first
             - field_column_second
             - field_description
+            - field_description_1
+            - field_number
+            - name
           plugin_id: search_api_fulltext
         search_api_language:
           id: search_api_language
@@ -244,6 +256,53 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_language
+        bundle:
+          id: bundle
+          table: search_api_index_solr_index
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: not
+          value:
+            audio: audio
+            file: file
+            image: image
+            remote_video: remote_video
+            snippet: snippet
+            svg: svg
+            video: video
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
       sorts: {  }
       title: Search
       header: {  }
