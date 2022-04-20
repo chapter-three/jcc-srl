@@ -8,12 +8,12 @@
         "label_in_language": "ភាសាខ្មែរ"
     },
     "field_chinese_traditional_url": {
-        "label_default": "Chinese",
-        "label_in_language": "汉语"
+      "label_default": "Chinese Traditional",
+      "label_in_language": "漢語"
     },
     "field_chinese_url": {
-        "label_default": "Chinese Traditional",
-        "label_in_language": "漢語"
+      "label_default": "Chinese Simple",
+      "label_in_language": "汉语"
     },
     "field_farsi_url": {
         "label_default": "Farsi",
