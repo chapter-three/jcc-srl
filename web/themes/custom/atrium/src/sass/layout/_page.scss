@@ -77,3 +77,31 @@ footer {
 .node--unpublished {
   background-color: transparent;
 }
+
+@media print {
+  .jcc-feedback.block,
+  .block.jcc-chat,
+  .jcc-share__container,
+  .usa-footer__contact-links,
+  .jcc-nav-secondary__group,
+  .jcc-global-bar{
+    display: none !important;
+  }
+  .jcc-hero__content{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .usa-accordion {
+    .usa-accordion__content {
+      display: block !important;
+    }
+  }
+  .jcc-hero--has-background-color--dark,
+  .jcc-hero--has-background-image,
+  .jcc-hero--has-background-color--dark .jcc-hero__title,
+  .jcc-hero--has-background-image .jcc-hero__title,
+  .jcc-primary-nav .usa-nav__primary-item .usa-nav__link[aria-expanded=true] span,
+  a{
+    color: #000000 !important;
+  }
+}
