@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.basic.body
     - field.field.node.basic.field_actions
+    - field.field.node.basic.field_case_type_override
     - field.field.node.basic.field_case_types
     - field.field.node.basic.field_column_first
     - field.field.node.basic.field_exclude_from_search
@@ -44,6 +45,7 @@ content:
     region: content
 hidden:
   field_actions: true
+  field_case_type_override: true
   field_case_types: true
   field_column_first: true
   field_exclude_from_search: true
