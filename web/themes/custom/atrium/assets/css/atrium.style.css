@@ -1425,6 +1425,10 @@ footer {
   .jcc-hero__content .jcc-hero__columns {
     display: block;
   }
+  .jcc-hero__content .jcc-hero__columns .jcc-hero__column-left,
+.jcc-hero__content .jcc-hero__columns .jcc-hero__column-right {
+    height: auto;
+  }
 
   .usa-accordion .usa-accordion__content {
     display: block !important;
@@ -1444,7 +1448,7 @@ body .usa-logo__graphic--mobile img {
     content: url("/themes/custom/atrium/images/logo/jcc-logo--selfhelp.png") !important;
   }
 
-  div {
+  p, h1, h1, h3, h4, h5, li, span {
     -webkit-column-break-inside: avoid;
        -moz-column-break-inside: avoid;
             break-inside: avoid;
