@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.srl_onramp.field_actions
     - field.field.node.srl_onramp.field_brow
     - field.field.node.srl_onramp.field_case_type
+    - field.field.node.srl_onramp.field_case_type_override
     - field.field.node.srl_onramp.field_case_types
     - field.field.node.srl_onramp.field_description
     - field.field.node.srl_onramp.field_exclude_from_search
@@ -22,6 +23,7 @@ dependencies:
     - cc
     - content_moderation
     - field_group
+    - link
     - maxlength
     - metatag
     - paragraphs
@@ -38,6 +40,7 @@ third_party_settings:
         - field_actions
         - field_parties
         - field_watchers
+        - field_case_type_override
       parent_name: ''
       weight: 7
       format_type: fieldset
@@ -83,6 +86,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_case_type_override:
+    weight: 20
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_case_types:
     weight: 16
     settings: {  }
@@ -127,7 +138,7 @@ content:
     type: text_textfield
     region: content
   field_metatag:
-    weight: 15
+    weight: 16
     settings:
       sidebar: true
     third_party_settings: {  }
@@ -190,13 +201,13 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -221,7 +232,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -237,13 +248,13 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
