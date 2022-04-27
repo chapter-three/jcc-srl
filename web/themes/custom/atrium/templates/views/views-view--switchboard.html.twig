@@ -16,57 +16,55 @@
     {# Current "SRL HowTo Information" node, which needs to be excluded. #}
     {% set current = rows.0['#rows'].0['#view'].result.0._entity %}
     {# Parent "SRL HowTo" node. #}
-    {% set parent = rows.0['#rows'].0['#view'].result.0._relationship_entities.field_parent %}
+    {% set parent = parent_howto %}
 
-      {# Primary Switchboard items. #}
-      {% if parent.field_children_primary.value %}
-        {% set primary_items = [] %}
-        {% set primary = parent.fields.field_children_primary %}
+    {# Primary Switchboard items. #}
+    {% if children_primary %}
+      {% set primary_items = [] %}
 
-        {% for key, item in parent.field_children_primary.value %}
-          {# ⇣ This check is important because Card fields are NOT required.
-          Empty Cards are possible, and would return the wrong data. #}
-          {% if primary.get(key).entity.field_page.value %}
-            {% set tile_target = primary.get(key).entity.field_page.entity %}
+      {% for item in children_primary %}
+        {# ⇣ This check is important because Card fields are NOT required.
+        Empty Cards are possible, and would return the wrong data. #}
+        {% if item.field_page.value %}
+          {% set tile_target = item.field_page.entity %}
 
-            {# Exclude the current node from the results. #}
-            {% if tile_target.id() != current.id() %}
-              {# Store each tile in an array for the Pattern component. #}
-              {% set primary_items = primary_items|merge([{
-                brow: tile_target.label(),
-                title: primary.get(key).entity.field_statement|view,
-                url: path('entity.node.canonical', { 'node': tile_target.id() })
-              }]) %}
-            {% endif %}
+          {# Exclude the current node from the results. #}
+          {% if tile_target.id() != current.id() %}
+            {# Store each tile in an array for the Pattern component. #}
+            {% set primary_items = primary_items|merge([{
+              brow: tile_target.label(),
+              title: item.field_statement|view,
+              url: path('entity.node.canonical', { 'node': tile_target.id() })
+            }]) %}
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
     {# Secondary Switchboard items. #}
-    {% if parent.field_children_secondary.value %}
-        {% set secondary_items = [] %}
-        {% set secondary = parent.field_children_secondary %}
+    {% if children_secondary %}
+      {% set secondary_items = [] %}
 
-        {% for key, item in parent.field_children_secondary.value %}
-          {# ⇣ This check is important because Card fields are NOT required.
-          Empty Cards are possible, and would return the wrong data. #}
-          {% if secondary.get(key).entity.field_page.value %}
-            {% set tile_target = secondary.get(key).entity.field_page.entity %}
+      {% for key, item in children_secondary %}
+        {# ⇣ This check is important because Card fields are NOT required.
+        Empty Cards are possible, and would return the wrong data. #}
+        {% if item.field_page.value %}
+          {% set tile_target = item.field_page.entity %}
 
-            {# Exclude the current node from the results. #}
-            {% if tile_target.id() != current.id() %}
-              {# Store each tile in an array for the Pattern component. #}
-              {% set secondary_items = secondary_items|merge([{
-                brow: tile_target.label(),
-                title: secondary.get(key).entity.field_statement|view,
-                url: path('entity.node.canonical', { 'node': tile_target.id() })
-              }]) %}
-            {% endif %}
+          {# Exclude the current node from the results. #}
+          {% if tile_target.id() != current.id() %}
+            {# Store each tile in an array for the Pattern component. #}
+            {% set secondary_items = secondary_items|merge([{
+              brow: tile_target.label(),
+              title: item.field_statement|view,
+              url: path('entity.node.canonical', { 'node': tile_target.id() })
+            }]) %}
           {% endif %}
-        {% endfor %}
-      {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
-    {% if parent.field_children_primary.value or parent.field_children_secondary.value %}
+    {% if primary_items or secondary_items %}
       {% include '@organisms/sections/switchboard/switchboard.twig' with {
         switchboard: {
           background_variant: 'has-background-color--dark',
