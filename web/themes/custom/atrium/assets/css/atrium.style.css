@@ -1422,6 +1422,9 @@ footer {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
+  .jcc-hero__content .jcc-hero__columns {
+    display: block;
+  }
 
   .usa-accordion .usa-accordion__content {
     display: block !important;
@@ -1434,6 +1437,17 @@ footer {
 .jcc-primary-nav .usa-nav__primary-item .usa-nav__link[aria-expanded=true] span,
 a {
     color: #000000 !important;
+  }
+
+  body .usa-logo__graphic--desktop img,
+body .usa-logo__graphic--mobile img {
+    content: url("/themes/custom/atrium/images/logo/jcc-logo--selfhelp.png") !important;
+  }
+
+  div {
+    -webkit-column-break-inside: avoid;
+       -moz-column-break-inside: avoid;
+            break-inside: avoid;
   }
 }
 .caption {

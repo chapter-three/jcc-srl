@@ -90,6 +90,9 @@ footer {
   .jcc-hero__content{
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    .jcc-hero__columns {
+      display: block;
+    }
   }
   .usa-accordion {
     .usa-accordion__content {
@@ -104,4 +107,12 @@ footer {
   a{
     color: #000000 !important;
   }
+
+  body .usa-logo__graphic--desktop,
+  body .usa-logo__graphic--mobile{
+    img{
+      content:url("/themes/custom/atrium/images/logo/jcc-logo--selfhelp.png") !important;
+    }
+  }
 }
+
