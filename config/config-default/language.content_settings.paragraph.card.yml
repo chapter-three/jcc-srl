@@ -15,4 +15,4 @@ id: paragraph.card
 target_entity_type_id: paragraph
 target_bundle: card
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
