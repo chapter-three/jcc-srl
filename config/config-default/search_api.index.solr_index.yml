@@ -9,33 +9,27 @@ dependencies:
     - search_api
     - search_api_exclude_entity
   config:
-    - field.storage.media.field_description
-    - field.storage.media.field_number
-    - field.storage.node.field_actions
     - field.storage.node.body
+    - field.storage.node.field_actions
+    - field.storage.node.field_blocks
     - field.storage.node.field_brow
     - field.storage.node.field_case_type
     - field.storage.node.field_case_types
-    - field.storage.node.field_cities
     - field.storage.node.field_column_content_right
-    - field.storage.node.field_court
-    - field.storage.node.field_header
     - field.storage.node.field_column_first
     - field.storage.node.field_column_second
+    - field.storage.node.field_description
+    - field.storage.media.field_description
+    - field.storage.node.field_forms
+    - field.storage.node.field_header
     - field.storage.node.field_howto_tabs
     - field.storage.node.field_howto_tabs_title
     - field.storage.node.field_lead
-    - field.storage.node.field_matters_served
+    - field.storage.media.field_number
     - field.storage.node.field_paragraphs
-    - field.storage.node.field_forms
-    - field.storage.node.field_self_help_appointment
-    - field.storage.node.field_blocks
-    - field.storage.node.field_self_help_workshop
-    - field.storage.node.field_description
     - field.storage.node.field_switchboard_subtitle
     - field.storage.node.field_switchboard_title
     - field.storage.node.field_watchers
-    - field.storage.node.field_zip_codes
     - search_api.server.solr
 third_party_settings:
   search_api_solr:
@@ -136,14 +130,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_case_types
-  field_cities:
-    label: Cities
-    datasource_id: 'entity:node'
-    property_path: field_cities
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_cities
   field_column_content_right:
     label: 'Column Content Right'
     datasource_id: 'entity:node'
@@ -168,14 +154,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_column_second
-  field_court:
-    label: Court
-    datasource_id: 'entity:node'
-    property_path: field_court
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_court
   field_description:
     label: Summary
     datasource_id: 'entity:node'
@@ -232,14 +210,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_lead
-  field_matters_served:
-    label: 'Matters served'
-    datasource_id: 'entity:node'
-    property_path: field_matters_served
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_matters_served
   field_number:
     label: 'Form #'
     datasource_id: 'entity:media'
@@ -257,22 +227,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_paragraphs
-  field_self_help_appointment:
-    label: 'Schedule self help appointment'
-    datasource_id: 'entity:node'
-    property_path: field_self_help_appointment
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_self_help_appointment
-  field_self_help_workshop:
-    label: 'Sign up for workshop'
-    datasource_id: 'entity:node'
-    property_path: field_self_help_workshop
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_self_help_workshop
   field_switchboard_subtitle:
     label: 'Switchboard Subtitle'
     datasource_id: 'entity:node'
@@ -297,14 +251,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_watchers
-  field_zip_codes:
-    label: 'Zip codes'
-    datasource_id: 'entity:node'
-    property_path: field_zip_codes
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_zip_codes
   name:
     label: Name
     datasource_id: 'entity:media'
@@ -333,6 +279,8 @@ datasource_settings:
     bundles:
       default: true
       selected:
+        - court
+        - courthouse
         - srl_wayfinder
     languages:
       default: true
