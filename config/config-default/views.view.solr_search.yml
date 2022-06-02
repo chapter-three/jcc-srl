@@ -86,8 +86,8 @@ display:
               srl_howto: search_index
               srl_howto_instruction: search_index
               srl_onramp: search_index
-              timeline: search_index
               srl_wayfinder: search_index
+              timeline: search_index
       fields:
         body:
           table: search_api_index_solr_index
@@ -318,7 +318,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"active jcc-alert usa-alert usa-alert--no-icon usa-alert--warning\" id=\"alert-bar\">\r\n<div class=\"jcc-alert__body usa-alert__body\">\r\n\r\n<div class=\"jcc-alert__text usa-alert__text\">You search returned no result. <br>\r\nPlease try again with a different keyword.</div>\r\n\r\n<div class=\"jcc-alert__close\" id=\"alert-close\">&nbsp;</div>\r\n</div>\r\n</div>"
+            value: "<div class=\"active jcc-alert usa-alert usa-alert--no-icon usa-alert--warning\" id=\"alert-bar\">\r\n<div class=\"jcc-alert__body usa-alert__body\">\r\n<div class=\"jcc-alert__text usa-alert__text\">\r\n<h3 class=\"usa-alert__heading jcc-alert__heading\">We were unable to find a result for you.</h3>\r\n<p>Please try again with a different keyword or here are some resources that can help answer common questions:</p>\r\n<ul>\r\n<li><a href=\"/\">See the home page</a> for more options</li>\r\n<li>Get answers about your specific case, divorce records, or traffic fines and payments by <a href=\"https://www.courts.ca.gov/find-my-court.htm\" aria-label=\"Contact you local court to get answers about your case, records, or fines and payments\">contacting your local court</a></li>\r\n<li><a href=\"https://selfhelp.courts.ca.gov/getting-legal-help\">Find free or low-cost legal help</a></li>\r\n<li><a href=\"https://www.courts.ca.gov/find-my-court.htm\">Get free services from your court</a></li>\r\n<li><a href=\"https://calcountylawlib.libanswers.com/\">Ask a law librarian</a></li>\r\n</ul>\r\n</div>\r\n<div class=\"jcc-alert__close\" id=\"alert-close\">&nbsp;</div>\r\n</div>\r\n</div>\r\n\r\n"
             format: full_html
           plugin_id: text
       relationships: {  }
