@@ -440,7 +440,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: 'Enter city, county or zip code'
+            label: 'Enter city, county, or zip code'
             description: ''
             use_operator: false
             operator: combine_op
@@ -454,6 +454,7 @@ display:
               authenticated: authenticated
               anonymous: '0'
               editor: '0'
+              translator: '0'
               jcc_web_services: '0'
               administrator: '0'
             placeholder: ''
@@ -762,7 +763,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<p class="jcc-lead">The Self-Help Center/Family Law Facilitator''s Office provides legal information and resources to self-represented court customers. Assistance may be in the form of walk in services, workshops, referrals and/or telephonic assistance.</p>'
+            value: '<p class="jcc-lead">Self-Help Centers can provide legal information and resources to people without a lawyer. Assistance may be in the form of walk in services, workshops, referrals and/or telephonic assistance.</p>'
             format: basic_html
           plugin_id: text
       defaults:
