@@ -763,7 +763,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<p class="jcc-lead">Self-Help Centers can provide legal information and resources to people without a lawyer. Assistance may be in the form of walk in services, workshops, referrals and/or telephonic assistance.</p>'
+            value: '<p class="jcc-lead">Self-Help Centers can provide legal information and resources to people without a lawyer. Help can be in person with or without an appointment, over the phone, or online.</p>'
             format: basic_html
           plugin_id: text
       defaults:
