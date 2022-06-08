@@ -491,7 +491,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Find Your Self Help Center'
+      title: 'Find Your Self-Help Center'
       header:
         area:
           id: area
@@ -763,7 +763,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<p class="jcc-lead">Self-Help Centers can provide legal information and resources to people without a lawyer. Help can be in person with or without an appointment, over the phone, or online.</p>'
+            value: '<p class="jcc-lead">Self-Help Centers can provide legal information and resources to people without a lawyer. Help can be in person, over the phone, or online.</p>'
             format: basic_html
           plugin_id: text
       defaults:
