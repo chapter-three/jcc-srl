@@ -1,0 +1,60 @@
+.jcc-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.4rem;
+  height: 1.8rem;
+  margin-right: 0.2rem;
+}
+
+.jcc-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.jcc-switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.jcc-switch__slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4rem;
+  width: 1.4rem;
+  left: 0.2rem;
+  bottom: 0.2rem;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .jcc-switch__slider {
+  background-color: #005ea2;
+}
+
+input:focus + .jcc-switch__slider {
+  box-shadow: 0 0 1px #005ea2;
+}
+
+input:checked + .jcc-switch__slider:before {
+  -webkit-transform: translateX(1.6rem);
+  -ms-transform: translateX(1.6rem);
+  transform: translateX(1.6rem);
+}
+
+/* Rounded sliders */
+.jcc-switch__slider.round {
+  border-radius: 1rem;
+}
+
+.jcc-switch__slider.round:before {
+  border-radius: 50%;
+}
