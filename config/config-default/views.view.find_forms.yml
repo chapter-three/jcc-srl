@@ -588,7 +588,19 @@ display:
         operator: AND
         groups:
           1: AND
-      sorts: {  }
+      sorts:
+        field_number_value:
+          id: field_number_value
+          table: media__field_number
+          field: field_number_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
     cache_metadata:
       max-age: -1
       contexts:
