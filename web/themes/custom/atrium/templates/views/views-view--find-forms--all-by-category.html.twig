@@ -109,12 +109,10 @@
           Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.
         </div>
 
-        <div class="text-align-right margin-bottom-2">
-          <label class="jcc-switch">
-            <input type="checkbox" checked onclick="location.href='/find-forms/all'; this.disabled=true;">
-            <span class="jcc-switch__slider round"></span>
-          </label>
-          Organize by category
+        <div class="form-type--checkbox text-align-right margin-bottom-2">
+          <input aria-describedby="org_by_category" type="checkbox" checked="checked" class="form-checkbox form-boolean form-boolean--type-checkbox" onclick="location.href='/find-forms/all'; this.disabled=true;">
+          <span class="checkbox-toggle"><span class="checkbox-toggle__inner"></span></span>
+          <label for="org_by_category" class="form-item__label option">Organize by category</label>
         </div>
 
         {% include '@molecules/interactive/accordion/accordion.twig' with {
