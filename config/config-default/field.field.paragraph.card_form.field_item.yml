@@ -10,10 +10,13 @@ dependencies:
   module:
     - datalayer
     - entity_reference_revisions
+    - tmgmt_content
 third_party_settings:
   datalayer:
     expose: 0
     label: field_item
+  tmgmt_content:
+    excluded: false
 id: paragraph.card_form.field_item
 field_name: field_item
 entity_type: paragraph
@@ -21,7 +24,7 @@ bundle: card_form
 label: Menu
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -68,6 +71,9 @@ settings:
       hero_cards:
         weight: -37
         enabled: false
+      iframe:
+        weight: 39
+        enabled: false
       links:
         weight: -36
         enabled: false
@@ -88,6 +94,9 @@ settings:
         enabled: false
       switchboard:
         weight: -31
+        enabled: false
+      text:
+        weight: 47
         enabled: false
       tile:
         weight: -30
