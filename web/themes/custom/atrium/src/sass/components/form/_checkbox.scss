@@ -71,4 +71,10 @@
   padding-left: 4px;
   padding-bottom: 0;
 }
+
+.form-type--checkbox .ajax-progress-throbber .throbber {
+  position: relative;
+  bottom: 0.1rem;
+  padding: 1px 8px 2px;
+}
 // END
