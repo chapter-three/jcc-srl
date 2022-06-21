@@ -110,7 +110,8 @@
         </div>
 
         <div class="form-type--checkbox text-align-right margin-bottom-2">
-          <input aria-describedby="org_by_category" type="checkbox" checked="checked" class="form-checkbox form-boolean form-boolean--type-checkbox" onclick="location.href='/find-forms/all'; this.disabled=true;">
+          <span class="ajax-progress-throbber margin-right-1"><span id="throbber__container"></span></span>
+          <input aria-describedby="org_by_category" type="checkbox" checked="checked" class="form-checkbox form-boolean form-boolean--type-checkbox" onclick="location.href='/find-forms/all'; document.getElementById('throbber__container').classList.add('throbber'); this.disabled=true;">
           <span class="checkbox-toggle"><span class="checkbox-toggle__inner"></span></span>
           <label for="org_by_category" class="form-item__label option">Organize by category</label>
         </div>
