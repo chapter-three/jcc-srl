@@ -113,7 +113,7 @@ packages:
     drupal/search_api_exclude: 2.0.0
     drupal/search_api_exclude_entity: 1.3.0
     drupal/search_api_solr: 4.2.7
-    drupal/search_kint: 'dev-1.x:ef50a53718e1c9a29b030a36f0646bf3d5ac9c0b'
+    drupal/search_kint: '1.x-dev:ef50a53718e1c9a29b030a36f0646bf3d5ac9c0b'
     drupal/sendgrid_integration: 1.7.0
     drupal/simple_block: 1.3.0
     drupal/simple_sitemap: 3.11.0
