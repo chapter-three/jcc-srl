@@ -156,7 +156,7 @@ packages:
     harvesthq/chosen: 1.8.7
     html2text/html2text: 4.0.1
     joachim-n/composer-manifest: 1.0.4
-    judicialcouncil/courtyard-artifact: 0.1.333
+    judicialcouncil/courtyard-artifact: 0.1.334
     kub-at/php-simple-html-dom-parser: 1.9.1
     laminas/laminas-diactoros: 1.8.7p2
     laminas/laminas-escaper: 2.6.1
