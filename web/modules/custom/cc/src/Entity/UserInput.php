@@ -42,6 +42,11 @@ use Drupal\Core\Entity\EntityTypeInterface;
  *     "langcode" = "langcode",
  *     "published" = "status",
  *   },
+ *   revision_metadata_keys = {
+ *     "revision_user" = "revision_user",
+ *     "revision_created" = "revision_created",
+ *     "revision_log_message" = "revision_log",
+ *   },
  * )
  */
 class UserInput extends EditorialContentEntityBase implements UserInputInterface {
@@ -73,9 +78,11 @@ class UserInput extends EditorialContentEntityBase implements UserInputInterface
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
 
-    $fields['revision_log_message']->setDisplayOptions('form', [
-      'type' => 'hidden',
-    ]);
+    if (isset($fields['revision_log_message'])) {
+      $fields['revision_log_message']->setDisplayOptions('form', [
+        'type' => 'hidden',
+      ]);
+    }
 
     // Add the published field.
     $fields += static::publishedBaseFieldDefinitions($entity_type);

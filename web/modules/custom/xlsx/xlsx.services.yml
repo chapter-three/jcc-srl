@@ -27,7 +27,7 @@ services:
 
   paramconverter.xlsx:
     class: Drupal\xlsx\ParamConverter\XlsxConverter
-    arguments: ['@entity.manager', '@language_manager']
+    arguments: ['@entity_type.manager', '@entity.repository']
     tags:
       - { name: paramconverter }
 

@@ -2,5 +2,4 @@ name: JCC Chatbot
 type: module
 description: Chatbot integration.
 package: JCC-SRL
-core: 8.x
 core_version_requirement: ^8 || ^9

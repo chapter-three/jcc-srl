@@ -93,7 +93,7 @@
         }
     },
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "ckeditor-plugin/templates": "^4.13",
         "composer/installers": "^1.7.0",
         "cweagans/composer-patches": "^1.6.5",
@@ -110,9 +110,10 @@
         "drupal/components": "^2.4",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-vendor-hardening": "^8.8",
+        "drupal/core-composer-scaffold": "9.0.0",
+        "drupal/core-project-message": "9.0.0",
+        "drupal/core-recommended": "9.0.0",
+        "drupal/core-vendor-hardening": "9.0.0",
         "drupal/datalayer": "^1.0@beta",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^4.1",
@@ -203,7 +204,8 @@
         "drupal/log_stdout": "^1.1",
         "drupal/search_kint": "^1.0",
         "drupal/stage_file_proxy": "^1.0@RC",
-        "drupal/twig_xdebug": "^1.1"
+        "drupal/twig_xdebug": "^1.1",
+        "mglaman/drupal-check": "^1.4"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -282,7 +284,6 @@
         "patches": {
             "drupal/core": {
                 "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch",
-                "Media embed javascript error": "https://www.drupal.org/files/issues/2019-12-10/3097338-47.patch",
                 "Media library edit": "https://www.drupal.org/files/issues/2021-01-04/3168868-9.patch",
                 "Media name reverts to default": "https://www.drupal.org/files/issues/2020-10-28/3157183_20.patch"
             },
