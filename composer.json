@@ -221,7 +221,8 @@
             "drupal/core-vendor-hardening": true,
             "oomphinc/composer-installers-extender": true,
             "zaporylie/composer-drupal-optimizations": true,
-            "joachim-n/composer-manifest": true
+            "joachim-n/composer-manifest": true,
+            "drupal/console-extend-plugin": true
         }
     },
     "autoload": {
