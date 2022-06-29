@@ -253,7 +253,8 @@
             "patch -p1 < patches/robots-4.patch",
             "patch -p1 < patches/robots-5.patch",
             "patch -p1 < patches/robots-6.patch",
-            "patch -p1 < patches/robots-7.patch"
+            "patch -p1 < patches/robots-7.patch",
+            "patch -p1 < patches/robots-8.patch"
         ],
         "build-assets": [
             "@prepare-for-pantheon",

@@ -35,6 +35,7 @@ function atrium_preprocess_page(&$variables) {
   $variables['menu_hat'] = _atrium_get_menutree('hat');
   $variables['menu_footer'] = _atrium_get_menutree('footer');
   $variables['translation_links'] = _atrium_translation_menu();
+  $variables['global_links'] = _atrium_global_translation_menu();
 
   // Social links for footer.
   $social = [];
@@ -208,4 +209,24 @@ function _atrium_translation_menu() {
     }
   }
   return $links;
+}
+
+/**
+ * Format Global language links for drobputton component.
+ *
+ * @return array
+ *   Array of global link items for dropbutton component.
+ */
+function _atrium_global_translation_menu() {
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+
+  $tree = \Drupal::menuTree()->load('global-translations', new \Drupal\Core\Menu\MenuTreeParameters());
+  $global_links = [];
+  $links_index = 0;
+  foreach ($tree as $item) {
+    $global_links[$links_index]['title'] = $item->link->getTitle();
+    $global_links[$links_index]['href'] = $host . $item->link->getUrlObject()->toString();
+    $links_index ++;
+  }
+  return $global_links;
 }
