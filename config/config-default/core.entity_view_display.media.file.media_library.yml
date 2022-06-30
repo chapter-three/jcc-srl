@@ -8,7 +8,7 @@ dependencies:
     - image.style.thumbnail
     - media.type.file
   module:
-    - image
+    - svg_image
 _core:
   default_config_hash: vhAK2lCOWK2paUpJawj7yiSLFO9wwsx6WE8_oDmvbwU
 id: media.file.media_library
@@ -18,16 +18,23 @@ mode: media_library
 content:
   thumbnail:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: ''
+      image_style: thumbnail
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   field_media_file: true
   langcode: true
   name: true
+  search_api_excerpt: true
   uid: true

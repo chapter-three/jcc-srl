@@ -20,16 +20,17 @@ bundle: timeline_dual
 mode: default
 content:
   field_bottom_title:
+    type: string_textfield
     weight: 4
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_timeline_dual_items:
     type: entity_reference_paragraphs
     weight: 5
+    region: content
     settings:
       title: 'Timeline Item'
       title_plural: 'Timeline Items'
@@ -40,39 +41,38 @@ content:
     third_party_settings:
       cc:
         status: 0
-    region: content
   field_title_bar_next:
+    type: link_default
     weight: 2
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_title_bar_previous:
+    type: link_default
     weight: 1
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_title_bar_title:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_top_title:
+    type: string_textfield
     weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   translation:
     weight: 10
     region: content

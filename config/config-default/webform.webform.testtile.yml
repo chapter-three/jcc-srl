@@ -12,7 +12,74 @@ id: testtile
 title: Test
 description: ''
 category: ''
-elements: "processed_text:\n  '#type': processed_text\n  '#text': |\n    <p>Text Before</p>\n    \n    <div class=\"jcc-tiles-section jcc-tiles-section--has-two-columns\">\n    <ul class=\"jcc-tiles\">\n    \t<li class=\"jcc-tiles__item\">\n    \t<div class=\"jcc-tile jcc-tile--hover\">\n    \t<p>Go to</p>\n    \n    \t<h3 class=\"jcc-tile__title\"><a href=\"#\">The title of the link tile</a></h3>\n    \n    \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n    \t</div>\n    \t</li>\n    \t<li class=\"jcc-tiles__item\">\n    \t<div class=\"jcc-tile jcc-tile--hover\">\n    \t<p>Go to</p>\n    \n    \t<h3 class=\"jcc-tile__title\"><a href=\"#\">The title of the link tile</a></h3>\n    \n    \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n    \t</div>\n    \t</li>\n    \t<li class=\"jcc-tiles__item\">\n    \t<div class=\"jcc-tile jcc-tile--hover\">\n    \t<p>Go to</p>\n    \n    \t<h3 class=\"jcc-tile__title\"><a href=\"#\">The title of the link tile</a></h3>\n    \n    \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n    \t</div>\n    \t</li>\n    </ul>\n    </div>\n    \n    <p>Text After</p>\n    \n    <p>&nbsp;</p>\n    \n  '#format': basic_html\ntile_test_2:\n  '#type': webform_wizard_page\n  '#title': 'Tile test 2'\n  processed_text_01:\n    '#type': processed_text\n    '#text': |\n      <p>&nbsp;</p>\n      \n      <div class=\"jcc-tiles-section jcc-tiles-section--has-two-columns\">\n      <ul class=\"jcc-tiles\">\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"#\">The title of the link tile</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      </div>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html"
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': |
+      <p>Text Before</p>
+      
+      <div class="jcc-tiles-section jcc-tiles-section--has-two-columns">
+      <ul class="jcc-tiles">
+      	<li class="jcc-tiles__item">
+      	<div class="jcc-tile jcc-tile--hover">
+      	<p>Go to</p>
+      
+      	<h3 class="jcc-tile__title"><a href="#">The title of the link tile</a></h3>
+      
+      	<div class="jcc-tile__icon-link">&nbsp;</div>
+      	</div>
+      	</li>
+      	<li class="jcc-tiles__item">
+      	<div class="jcc-tile jcc-tile--hover">
+      	<p>Go to</p>
+      
+      	<h3 class="jcc-tile__title"><a href="#">The title of the link tile</a></h3>
+      
+      	<div class="jcc-tile__icon-link">&nbsp;</div>
+      	</div>
+      	</li>
+      	<li class="jcc-tiles__item">
+      	<div class="jcc-tile jcc-tile--hover">
+      	<p>Go to</p>
+      
+      	<h3 class="jcc-tile__title"><a href="#">The title of the link tile</a></h3>
+      
+      	<div class="jcc-tile__icon-link">&nbsp;</div>
+      	</div>
+      	</li>
+      </ul>
+      </div>
+      
+      <p>Text After</p>
+      
+      <p>&nbsp;</p>
+      
+    '#format': basic_html
+  tile_test_2:
+    '#type': webform_wizard_page
+    '#title': 'Tile test 2'
+    processed_text_01:
+      '#type': processed_text
+      '#text': |
+        <p>&nbsp;</p>
+        
+        <div class="jcc-tiles-section jcc-tiles-section--has-two-columns">
+        <ul class="jcc-tiles">
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="#">The title of the link tile</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        </div>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
 css: ''
 javascript: ''
 settings:

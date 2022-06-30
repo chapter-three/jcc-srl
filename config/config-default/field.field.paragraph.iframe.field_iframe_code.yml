@@ -11,17 +11,14 @@ dependencies:
     - text
     - tmgmt_content
 third_party_settings:
-  allowed_formats:
-    iframe_only: iframe_only
-    basic_html: '0'
-    simple_html: '0'
-    full_html: '0'
-    plain_text: '0'
   datalayer:
     expose: 0
     label: field_iframe_code
   tmgmt_content:
     excluded: false
+  allowed_formats:
+    allowed_formats:
+      - iframe_only
 id: paragraph.iframe.field_iframe_code
 field_name: field_iframe_code
 entity_type: paragraph

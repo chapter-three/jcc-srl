@@ -13,8 +13,6 @@ id: postcard_background
 label: 'Postcard Background'
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
@@ -25,5 +23,7 @@ image_style_mappings:
         - 2_1_375x188
         - 2_1_640x320
         - 2_1_768x384
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: 2_1_375x188

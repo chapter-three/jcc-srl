@@ -27,10 +27,10 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       timeline_dual: timeline_dual
       text: text
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 18
@@ -90,8 +90,8 @@ settings:
         weight: 29
         enabled: false
       text:
-        enabled: true
         weight: 45
+        enabled: true
       tile:
         weight: 30
         enabled: false
@@ -99,8 +99,8 @@ settings:
         weight: 31
         enabled: false
       timeline_dual:
-        enabled: true
         weight: 32
+        enabled: true
       timeline_dual_item:
         weight: 33
         enabled: false

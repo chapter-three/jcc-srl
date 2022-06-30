@@ -12,7 +12,250 @@ id: tenant_defenses_covid_19_
 title: 'Tenant Defenses (COVID-19)'
 description: ''
 category: ''
-elements: "introduction:\n  '#type': webform_wizard_page\n  '#title': 'Can your landlord evict you for past due rent?'\n  '#hide_submit': true\n  page_1_intro:\n    '#type': processed_text\n    '#text': |\n      <p>This quiz is to see what legal protection you might have if you're being evicted (your landlord is asking for a court order that you move out) but ONLY for past due rent owed between March 1, 2020 and June 30, 2021 (called \"COVID-19 rental debt\").&nbsp;</p>\n      \n      <p>Even if your landlord can't evict you because of the past due rent, you'll still owe them the money unless you have other legal reasons you shouldn't have to pay. They can sue you for the past due rent starting August 1, 2021.</p>\n      \n      <p>And even if your landlord can't evict you because of the past due rent, they can evict you for other reasons like not following what the lease says.</p>\n      \n      <p>1) &nbsp;This tool helps you learn about state protections from eviction due to unpaid rent. If you got a Notice from your landlord that states another reason for eviction, or does not state a reason, you may still be protected from eviction by other laws. Contact a lawyer as soon as possible to find out what rules apply to your specific situation. You can find a no-cost lawyer or legal aid provider through this link: www.lawhelpca.org</p>\n      \n      <p>2) &nbsp;THIS TOOL DOES NOT GIVE LEGAL ADVICE. It was written to help you learn about legal protections you might have because of The COVID-19 Tenant Relief Act. Do not do, or not do, anything just based on this quiz without first getting legal advice from a lawyer. All liability with respect to actions taken or not taken based on the information in this tool are hereby expressly disclaimed.<br />\n      &nbsp;</p>\n      \n    '#format': basic_html\nhas_your_landlord_had_a_summons_and_complaint_for_unlawful_detai:\n  '#type': webform_wizard_page\n  '#title': 'Has your landlord had a Summons and Complaint for \"Unlawful Detainer\" delivered to you to evict you from where you live? '\n  '#prev_button_label': Back\n  '#next_button_label': Next\n  '#hide_submit': true\n  has_your_landlord_had_a_summons_and_complaint_delivered_to_you_:\n    '#type': radios\n    '#title': 'Has your landlord had a summons and complaint delivered to you?'\n    '#options': yes_no\n    '#options__properties': ''\ndid_you_miss_paying_rent_for_any_time_between_march_1_2020_and_j:\n  '#type': webform_wizard_page\n  '#title': 'Did you miss paying rent for ANY time between March 1, 2020 and June 30, 2021?'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n  mar1_jun30_rent:\n    '#type': radios\n    '#title': 'March 1, 2020 and June 30, 2021 rent (answer)'\n    '#options':\n      unpaid_rent: 'There were times between March 1, 2020 and June 30, 2021 I couldn''t pay rent'\n      paid_rent: 'I paid all my rent during that time'\n    '#options__properties': ''\ndid_your_landlord_ever_give_you_a_15_day_notice_to_pay_or_quit_:\n  '#type': webform_wizard_page\n  '#title': 'Did your landlord ever give you a \"15-Day Notice to Pay or Quit\"?'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n      ':input[name=\"mar1_jun30_rent\"]':\n        filled: true\n  15_day_notice:\n    '#type': radios\n    '#title': 'Did your landlord ever give you a \"15-Day Notice to Pay or Quit\"?'\n    '#options': yes_no\n    '#options__properties': ''\ndid_your_landlord_give_you_a_notice_from_the_state_of_california:\n  '#type': webform_wizard_page\n  '#title': 'Did your landlord give you a (1) a notice from the State of California about your rights and responsibilities and (2) an unsigned \"declaration of COVID-19-related financial distress\"?'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n      ':input[name=\"15_day_notice\"]':\n        filled: true\n  state_of_california_rights_and_responsibilities:\n    '#type': radios\n    '#title': 'State of California Rights and responsibilities'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'I don''t know': 'I don''t know'\n    '#options__properties': ''\ndid_your_landlord_also_give_you_information_that_said_you_might_:\n  '#type': webform_wizard_page\n  '#title': 'Did your landlord also give you information that said you might qualify for rental assistance with a website and phone number where you can get more information? This could have been part of other paperwork they gave you.'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n      ':input[name=\"state_of_california_rights_and_responsibilities\"]':\n        filled: true\n  rental_assistance_information:\n    '#type': radios\n    '#title': 'Rental Assistance Information'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'I don''t know': 'I don''t know'\n    '#options__properties': ''\nwhen_did_you_owe_past_due_rent_:\n  '#type': webform_wizard_page\n  '#title': 'When did you owe past due rent?'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n      ':input[name=\"rental_assistance_information\"]':\n        filled: true\n  past_due_rent_date:\n    '#type': radios\n    '#title': 'Past Due Rent Date'\n    '#options':\n      'March 1, 2020 - August 31, 2020? (called the PROTECTED period)': 'March 1, 2020 - August 31, 2020? (called the PROTECTED period)'\n      'September 1, 2020 - June 30, 2021? (called the TRANSITION period)': 'September 1, 2020 - June 30, 2021? (called the TRANSITION period)'\n      'Some from both time periods above': 'Some from both time periods above'\n      'Other times': 'Other times'\n    '#options__properties': ''\ndid_you_give_your_landlord_a_signed_declaration_of_covid_19_rela:\n  '#type': webform_wizard_page\n  '#title': 'Did you give your landlord a signed \"declaration of COVID-19-related financial distress\" AND pay 25% of your rent?'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n      ':input[name=\"past_due_rent_date\"]':\n        '!value': 'Other times'\n  declaration_of_financial_distress_and_pay_25_percent_of_rent:\n    '#type': radios\n    '#title': 'Declaration of financial distress and pay 25 percent of rent'\n    '#options': yes_no\n    '#options__properties': ''\nyou_re_not_being_evicted:\n  '#type': webform_wizard_page\n  '#title': 'You''re not being evicted. '\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'No'\n  processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>From the answers you've given you might owe past due COVID-19 rental debt to your landlord but they're not trying to get a court order that you move out (are evicted).&nbsp;</p>\n      \n    '#format': basic_html\nit_looks_like_you_re_not_protected_by_covid_19_rental_debt_laws_:\n  '#type': webform_wizard_page\n  '#title': 'It looks like you''re not protected by COVID-19 rental debt laws but you may have other eviction protections. '\n  '#states':\n    visible:\n      ':input[name=\"past_due_rent_date\"]':\n        value: 'Other times'\ntalk_your_situation_over_with_a_legal_professional:\n  '#type': webform_wizard_page\n  '#title': 'Talk your situation over with a legal professional'\n  '#states':\n    visible:\n      - ':input[name=\"state_of_california_rights_and_responsibilities\"]':\n          value: 'I don''t know'\n      - or\n      - ':input[name=\"rental_assistance_information\"]':\n          value: 'I don''t know'\n  talk_with_legal_professional:\n    '#type': processed_text\n    '#text': |\n      <p>From what you've told us your situation isn't clear cut. Go to http://housingiskey.com for more information, https://www.lawhelpca.org/ to find free legal help, visit your local court's Self-Help Center, or see a private attorney to learn more about your rights.</p>\n      \n    '#format': basic_html\nit_looks_like_you_have_at_least_one_legal_reason_defense_you_sho:\n  '#type': webform_wizard_page\n  '#title': 'It looks like you have at least one legal reason (\"defense\") you shouldn''t be evicted'\n  '#states':\n    visible:\n      - ':input[name=\"declaration_of_financial_distress_and_pay_25_percent_of_rent\"]':\n          value: 'No'\n      - or\n      - ':input[name=\"state_of_california_rights_and_responsibilities\"]':\n          value: 'No'\n      - or\n      - ':input[name=\"rental_assistance_information\"]':\n          value: 'No'\n      - or\n      - ':input[name=\"15_day_notice\"]':\n          value: 'No'\n  defenses_intro:\n    '#type': processed_text\n    '#text': |\n      <p>To tell the court about why you shouldn't be evicted because of your unpaid rent, you'll fill out an Answer form and file it with the court. Tell the court about ANY of the these things that you said your landlord didn't do:</p>\n      \n    '#format': basic_html\n  no_15_day_notice:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"15_day_notice\"]':\n          value: 'No'\n    '#text': |\n      <p>&nbsp;-Your landlord didn't give you a \"15-Day Notice to Pay or Quit\"</p>\n      \n    '#format': basic_html\n  no_documents:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"state_of_california_rights_and_responsibilities\"]':\n          value: 'No'\n    '#text': |\n      <p>The 15-Day Notice didn't include a notice from the State of California about your rights and responsibilities and/or an unsigned&nbsp;\"declaration of COVID-19-related financial distress\".</p>\n      \n    '#format': basic_html\n  no_rental_assistance_notice:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"rental_assistance_information\"]':\n          value: 'No'\n    '#text': |\n      <p>-Your landlord didn't give you a general notice that said you might qualify for rental assistance with a website and phone number where you can get more information. This could have been part of other paperwork they gave you.</p>\n      \n    '#format': basic_html\n  what_tenant_did:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"declaration_of_financial_distress_and_pay_25_percent_of_rent\"]':\n          value: 'Yes'\n    '#text': |\n      <p>Tell the court about ANY of the these things that you did&nbsp;do:</p>\n      \n      <p>You gave your landlord a signed \"declaration of COVID-19-related financial distress\" within 15 days of getting the 15-Day Notice to Pay or Quit (before the 15 days expired). You delivered it in person (if the Notice provided an address for personal delivery), by email (if the Notice provides an email address), by mail, or any way that you usually pay rent.</p>\n      \n      <p>&nbsp; &nbsp; &nbsp;AND (ONLY if you didn't pay some of your rent between September 1, 2020 and June 30, 2021):</p>\n      \n      <p>You DID pay at least 25% of your rent during this time, either monthly or the whole 25% BY June 30, 2021.</p>\n      \n    '#format': basic_html\nnot_protected_but_other_options_2:\n  '#type': webform_wizard_page\n  '#title': 'It looks like you''re not protected by COVID-19 rental debt laws but you might have other eviction protections.'\n  '#states':\n    visible:\n      ':input[name=\"has_your_landlord_had_a_summons_and_complaint_delivered_to_you_\"]':\n        value: 'Yes'\n      ':input[name=\"15_day_notice\"]':\n        value: 'Yes'\n      ':input[name=\"state_of_california_rights_and_responsibilities\"]':\n        value: 'Yes'\n      ':input[name=\"rental_assistance_information\"]':\n        value: 'Yes'\n      ':input[name=\"declaration_of_financial_distress_and_pay_25_percent_of_rent\"]':\n        value: 'Yes'"
+elements: |-
+  introduction:
+    '#type': webform_wizard_page
+    '#title': 'Can your landlord evict you for past due rent?'
+    '#hide_submit': true
+    page_1_intro:
+      '#type': processed_text
+      '#text': |
+        <p>This quiz is to see what legal protection you might have if you're being evicted (your landlord is asking for a court order that you move out) but ONLY for past due rent owed between March 1, 2020 and June 30, 2021 (called "COVID-19 rental debt").&nbsp;</p>
+        
+        <p>Even if your landlord can't evict you because of the past due rent, you'll still owe them the money unless you have other legal reasons you shouldn't have to pay. They can sue you for the past due rent starting August 1, 2021.</p>
+        
+        <p>And even if your landlord can't evict you because of the past due rent, they can evict you for other reasons like not following what the lease says.</p>
+        
+        <p>1) &nbsp;This tool helps you learn about state protections from eviction due to unpaid rent. If you got a Notice from your landlord that states another reason for eviction, or does not state a reason, you may still be protected from eviction by other laws. Contact a lawyer as soon as possible to find out what rules apply to your specific situation. You can find a no-cost lawyer or legal aid provider through this link: www.lawhelpca.org</p>
+        
+        <p>2) &nbsp;THIS TOOL DOES NOT GIVE LEGAL ADVICE. It was written to help you learn about legal protections you might have because of The COVID-19 Tenant Relief Act. Do not do, or not do, anything just based on this quiz without first getting legal advice from a lawyer. All liability with respect to actions taken or not taken based on the information in this tool are hereby expressly disclaimed.<br />
+        &nbsp;</p>
+        
+      '#format': basic_html
+  has_your_landlord_had_a_summons_and_complaint_for_unlawful_detai:
+    '#type': webform_wizard_page
+    '#title': 'Has your landlord had a Summons and Complaint for "Unlawful Detainer" delivered to you to evict you from where you live? '
+    '#prev_button_label': Back
+    '#next_button_label': Next
+    '#hide_submit': true
+    has_your_landlord_had_a_summons_and_complaint_delivered_to_you_:
+      '#type': radios
+      '#title': 'Has your landlord had a summons and complaint delivered to you?'
+      '#options': yes_no
+      '#options__properties': ''
+  did_you_miss_paying_rent_for_any_time_between_march_1_2020_and_j:
+    '#type': webform_wizard_page
+    '#title': 'Did you miss paying rent for ANY time between March 1, 2020 and June 30, 2021?'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+    mar1_jun30_rent:
+      '#type': radios
+      '#title': 'March 1, 2020 and June 30, 2021 rent (answer)'
+      '#options':
+        unpaid_rent: 'There were times between March 1, 2020 and June 30, 2021 I couldn''t pay rent'
+        paid_rent: 'I paid all my rent during that time'
+      '#options__properties': ''
+  did_your_landlord_ever_give_you_a_15_day_notice_to_pay_or_quit_:
+    '#type': webform_wizard_page
+    '#title': 'Did your landlord ever give you a "15-Day Notice to Pay or Quit"?'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+        ':input[name="mar1_jun30_rent"]':
+          filled: true
+    15_day_notice:
+      '#type': radios
+      '#title': 'Did your landlord ever give you a "15-Day Notice to Pay or Quit"?'
+      '#options': yes_no
+      '#options__properties': ''
+  did_your_landlord_give_you_a_notice_from_the_state_of_california:
+    '#type': webform_wizard_page
+    '#title': 'Did your landlord give you a (1) a notice from the State of California about your rights and responsibilities and (2) an unsigned "declaration of COVID-19-related financial distress"?'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+        ':input[name="15_day_notice"]':
+          filled: true
+    state_of_california_rights_and_responsibilities:
+      '#type': radios
+      '#title': 'State of California Rights and responsibilities'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'I don''t know': 'I don''t know'
+      '#options__properties': ''
+  did_your_landlord_also_give_you_information_that_said_you_might_:
+    '#type': webform_wizard_page
+    '#title': 'Did your landlord also give you information that said you might qualify for rental assistance with a website and phone number where you can get more information? This could have been part of other paperwork they gave you.'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+        ':input[name="state_of_california_rights_and_responsibilities"]':
+          filled: true
+    rental_assistance_information:
+      '#type': radios
+      '#title': 'Rental Assistance Information'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'I don''t know': 'I don''t know'
+      '#options__properties': ''
+  when_did_you_owe_past_due_rent_:
+    '#type': webform_wizard_page
+    '#title': 'When did you owe past due rent?'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+        ':input[name="rental_assistance_information"]':
+          filled: true
+    past_due_rent_date:
+      '#type': radios
+      '#title': 'Past Due Rent Date'
+      '#options':
+        'March 1, 2020 - August 31, 2020? (called the PROTECTED period)': 'March 1, 2020 - August 31, 2020? (called the PROTECTED period)'
+        'September 1, 2020 - June 30, 2021? (called the TRANSITION period)': 'September 1, 2020 - June 30, 2021? (called the TRANSITION period)'
+        'Some from both time periods above': 'Some from both time periods above'
+        'Other times': 'Other times'
+      '#options__properties': ''
+  did_you_give_your_landlord_a_signed_declaration_of_covid_19_rela:
+    '#type': webform_wizard_page
+    '#title': 'Did you give your landlord a signed "declaration of COVID-19-related financial distress" AND pay 25% of your rent?'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+        ':input[name="past_due_rent_date"]':
+          '!value': 'Other times'
+    declaration_of_financial_distress_and_pay_25_percent_of_rent:
+      '#type': radios
+      '#title': 'Declaration of financial distress and pay 25 percent of rent'
+      '#options': yes_no
+      '#options__properties': ''
+  you_re_not_being_evicted:
+    '#type': webform_wizard_page
+    '#title': 'You''re not being evicted. '
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'No'
+    processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>From the answers you've given you might owe past due COVID-19 rental debt to your landlord but they're not trying to get a court order that you move out (are evicted).&nbsp;</p>
+        
+      '#format': basic_html
+  it_looks_like_you_re_not_protected_by_covid_19_rental_debt_laws_:
+    '#type': webform_wizard_page
+    '#title': 'It looks like you''re not protected by COVID-19 rental debt laws but you may have other eviction protections. '
+    '#states':
+      visible:
+        ':input[name="past_due_rent_date"]':
+          value: 'Other times'
+  talk_your_situation_over_with_a_legal_professional:
+    '#type': webform_wizard_page
+    '#title': 'Talk your situation over with a legal professional'
+    '#states':
+      visible:
+        - ':input[name="state_of_california_rights_and_responsibilities"]':
+            value: 'I don''t know'
+        - or
+        - ':input[name="rental_assistance_information"]':
+            value: 'I don''t know'
+    talk_with_legal_professional:
+      '#type': processed_text
+      '#text': |
+        <p>From what you've told us your situation isn't clear cut. Go to http://housingiskey.com for more information, https://www.lawhelpca.org/ to find free legal help, visit your local court's Self-Help Center, or see a private attorney to learn more about your rights.</p>
+        
+      '#format': basic_html
+  it_looks_like_you_have_at_least_one_legal_reason_defense_you_sho:
+    '#type': webform_wizard_page
+    '#title': 'It looks like you have at least one legal reason ("defense") you shouldn''t be evicted'
+    '#states':
+      visible:
+        - ':input[name="declaration_of_financial_distress_and_pay_25_percent_of_rent"]':
+            value: 'No'
+        - or
+        - ':input[name="state_of_california_rights_and_responsibilities"]':
+            value: 'No'
+        - or
+        - ':input[name="rental_assistance_information"]':
+            value: 'No'
+        - or
+        - ':input[name="15_day_notice"]':
+            value: 'No'
+    defenses_intro:
+      '#type': processed_text
+      '#text': |
+        <p>To tell the court about why you shouldn't be evicted because of your unpaid rent, you'll fill out an Answer form and file it with the court. Tell the court about ANY of the these things that you said your landlord didn't do:</p>
+        
+      '#format': basic_html
+    no_15_day_notice:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="15_day_notice"]':
+            value: 'No'
+      '#text': |
+        <p>&nbsp;-Your landlord didn't give you a "15-Day Notice to Pay or Quit"</p>
+        
+      '#format': basic_html
+    no_documents:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="state_of_california_rights_and_responsibilities"]':
+            value: 'No'
+      '#text': |
+        <p>The 15-Day Notice didn't include a notice from the State of California about your rights and responsibilities and/or an unsigned&nbsp;"declaration of COVID-19-related financial distress".</p>
+        
+      '#format': basic_html
+    no_rental_assistance_notice:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="rental_assistance_information"]':
+            value: 'No'
+      '#text': |
+        <p>-Your landlord didn't give you a general notice that said you might qualify for rental assistance with a website and phone number where you can get more information. This could have been part of other paperwork they gave you.</p>
+        
+      '#format': basic_html
+    what_tenant_did:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="declaration_of_financial_distress_and_pay_25_percent_of_rent"]':
+            value: 'Yes'
+      '#text': |
+        <p>Tell the court about ANY of the these things that you did&nbsp;do:</p>
+        
+        <p>You gave your landlord a signed "declaration of COVID-19-related financial distress" within 15 days of getting the 15-Day Notice to Pay or Quit (before the 15 days expired). You delivered it in person (if the Notice provided an address for personal delivery), by email (if the Notice provides an email address), by mail, or any way that you usually pay rent.</p>
+        
+        <p>&nbsp; &nbsp; &nbsp;AND (ONLY if you didn't pay some of your rent between September 1, 2020 and June 30, 2021):</p>
+        
+        <p>You DID pay at least 25% of your rent during this time, either monthly or the whole 25% BY June 30, 2021.</p>
+        
+      '#format': basic_html
+  not_protected_but_other_options_2:
+    '#type': webform_wizard_page
+    '#title': 'It looks like you''re not protected by COVID-19 rental debt laws but you might have other eviction protections.'
+    '#states':
+      visible:
+        ':input[name="has_your_landlord_had_a_summons_and_complaint_delivered_to_you_"]':
+          value: 'Yes'
+        ':input[name="15_day_notice"]':
+          value: 'Yes'
+        ':input[name="state_of_california_rights_and_responsibilities"]':
+          value: 'Yes'
+        ':input[name="rental_assistance_information"]':
+          value: 'Yes'
+        ':input[name="declaration_of_financial_distress_and_pay_25_percent_of_rent"]':
+          value: 'Yes'
 css: ''
 javascript: ''
 settings:

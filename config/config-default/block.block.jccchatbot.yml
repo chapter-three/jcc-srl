@@ -15,6 +15,6 @@ plugin: jcc_chatbot
 settings:
   id: jcc_chatbot
   label: 'JCC Chatbot'
-  provider: jcc_chatbot
   label_display: visible
+  provider: jcc_chatbot
 visibility: {  }

@@ -27,10 +27,10 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       menu_links: menu_links
       cascading_menu: cascading_menu
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: -47
@@ -48,8 +48,8 @@ settings:
         weight: -43
         enabled: false
       cascading_menu:
-        enabled: true
         weight: -48
+        enabled: true
       cascading_menu_item:
         weight: -42
         enabled: false
@@ -72,8 +72,8 @@ settings:
         weight: -36
         enabled: false
       menu_links:
-        enabled: true
         weight: -49
+        enabled: true
       postcard:
         weight: -35
         enabled: false

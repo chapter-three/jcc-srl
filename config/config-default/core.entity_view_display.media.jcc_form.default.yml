@@ -42,7 +42,7 @@ bundle: jcc_form
 mode: default
 content:
   field_arabic_url:
-    weight: 4
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -51,10 +51,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 4
     region: content
   field_cambodian_url:
-    weight: 5
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -63,10 +63,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 5
     region: content
   field_chinese_traditional_url:
-    weight: 7
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -75,10 +75,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 7
     region: content
   field_chinese_url:
-    weight: 6
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -87,10 +87,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 6
     region: content
   field_farsi_url:
-    weight: 8
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -99,18 +99,18 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 8
     region: content
   field_form_category:
-    weight: 17
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 17
     region: content
   field_form_filling_instructions_:
-    weight: 19
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -119,31 +119,33 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 19
     region: content
   field_form_prefix:
-    weight: 16
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 16
     region: content
   field_form_thumbnail:
-    weight: 18
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    type: image
+    weight: 18
     region: content
   field_hmong_url:
-    weight: 9
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -152,10 +154,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 9
     region: content
   field_korean_url:
-    weight: 10
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -164,28 +166,28 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 10
     region: content
   field_mandatory:
-    weight: 21
+    type: boolean
     label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    type: boolean
+    weight: 21
     region: content
   field_number:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_punjabi_url:
-    weight: 11
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -194,19 +196,19 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 11
     region: content
   field_revision_date:
-    weight: 2
+    type: datetime_custom
     label: above
     settings:
       timezone_override: ''
       date_format: 'M j, Y'
     third_party_settings: {  }
-    type: datetime_custom
+    weight: 2
     region: content
   field_russian_url:
-    weight: 12
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -215,10 +217,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 12
     region: content
   field_spanish_url:
-    weight: 13
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -227,10 +229,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 13
     region: content
   field_tagalog_url:
-    weight: 14
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -239,12 +241,10 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 14
     region: content
   field_url:
     type: link
-    weight: 3
-    region: content
     label: hidden
     settings:
       trim_length: null
@@ -253,8 +253,10 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
+    weight: 3
+    region: content
   field_vietnamese_url:
-    weight: 15
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -263,23 +265,23 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 15
     region: content
   field_weight:
-    weight: 20
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 20
     region: content
   name:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   field_case_type: true

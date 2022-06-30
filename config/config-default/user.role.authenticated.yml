@@ -1,7 +1,22 @@
 uuid: 5f4390ad-5845-45b2-b032-71a4bc04346b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.iframe_only
+    - filter.format.simple_html
+    - rest.resource.webform_rest_complete_submission
+    - rest.resource.webform_rest_submission
+  module:
+    - access_unpublished
+    - cc
+    - fillpdf
+    - filter
+    - media
+    - rest
+    - shortcut
+    - system
 _core:
   default_config_hash: 9uT02MET40-oWxiM1uv6x1KX4Pke_SScFY5Rk7gIuAo
 id: authenticated
@@ -9,10 +24,8 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access shortcuts'
-  - 'access site-wide contact form'
   - 'access_unpublished node basic'
   - 'access_unpublished node court'
   - 'access_unpublished node courthouse'
@@ -23,11 +36,9 @@ permissions:
   - 'access_unpublished node srl_onramp'
   - 'access_unpublished node srl_wayfinder'
   - 'access_unpublished node timeline'
-  - 'post comments'
   - 'publish all pdfs'
   - 'restful get webform_rest_complete_submission'
   - 'restful get webform_rest_submission'
-  - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format iframe_only'
   - 'use text format simple_html'

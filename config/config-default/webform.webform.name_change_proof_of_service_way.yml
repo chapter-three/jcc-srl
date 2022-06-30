@@ -12,7 +12,97 @@ id: name_change_proof_of_service_way
 title: 'Name Change Proof of Service Wayfinder'
 description: ''
 category: ''
-elements: "whose_name_would_you_like_to_change_:\n  '#type': webform_wizard_page\n  '#title': 'Whose name would you like to change?'\n  '#hide_submit': true\n  processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>The forms you need to fill out and the steps in the process are different for children and adults.</p>\n      \n    '#format': basic_html\n  adult_child:\n    '#type': radios\n    '#title': 'adult or child'\n    '#options':\n      'An adult': 'An adult'\n      'A child (someone under 18)': 'A child (someone under 18)'\n    '#options__properties': ''\nwill_one_or_both_parents_sign_the_request_:\n  '#type': webform_wizard_page\n  '#title': 'Will one or both parents sign the request?'\n  '#states':\n    invisible:\n      ':input[name=\"adult_child\"]':\n        value: 'An adult'\n  '#hide_submit': true\n  one_or_both_parents:\n    '#type': radios\n    '#title': 'one or both parents'\n    '#options':\n      'Both Parents ': 'Both Parents '\n      'One Parent': 'One Parent'\n    '#options__properties': ''\n  processed_text_01:\n    '#type': processed_text\n    '#text': |\n      <p>The steps are different if only one parent is making the request and signing the paperwork.&nbsp;If the other parent is deceased, choose \"both parents.\"&nbsp;&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>If you're the child's legal guardian, get specific instructions here.&nbsp;</p>\n      \n    '#format': basic_html\nbased_on_your_answers_:\n  '#type': webform_wizard_page\n  '#title': 'Based on your answers:'\n  '#hide_submit': true\n  processed_text_02:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"adult_child\"]':\n            value: 'An adult'\n        - or\n        - ':input[name=\"one_or_both_parents\"]':\n            value: 'Both Parents '\n    '#text': |\n      <p class=\"jcc-lead\">You don't need to do the&nbsp;proof of service step if the name change is for an adult or a child where both parents are signing the petition.&nbsp;&nbsp;</p>\n      \n    '#format': basic_html\n  processed_text_03:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"adult_child\"]':\n          value: 'A child (someone under 18)'\n        ':input[name=\"one_or_both_parents\"]':\n          value: 'One Parent'\n    '#text': |\n      <p class=\"jcc-lead\">Since both parents are not signing the name change request, you will need to do a proof of service step.&nbsp;</p>\n      \n      <div class=\"jcc-tiles-section jcc-tiles-section--has-two-columns\">\n      <ul class=\"jcc-tiles\">\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/serve-order-show-cause\" target=\"_blank\">Serve the order to show cause</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      \t<li>&nbsp;</li>\n      </ul>\n      </div>\n      \n    '#format': basic_html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  whose_name_would_you_like_to_change_:
+    '#type': webform_wizard_page
+    '#title': 'Whose name would you like to change?'
+    '#hide_submit': true
+    processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>The forms you need to fill out and the steps in the process are different for children and adults.</p>
+        
+      '#format': basic_html
+    adult_child:
+      '#type': radios
+      '#title': 'adult or child'
+      '#options':
+        'An adult': 'An adult'
+        'A child (someone under 18)': 'A child (someone under 18)'
+      '#options__properties': ''
+  will_one_or_both_parents_sign_the_request_:
+    '#type': webform_wizard_page
+    '#title': 'Will one or both parents sign the request?'
+    '#states':
+      invisible:
+        ':input[name="adult_child"]':
+          value: 'An adult'
+    '#hide_submit': true
+    one_or_both_parents:
+      '#type': radios
+      '#title': 'one or both parents'
+      '#options':
+        'Both Parents ': 'Both Parents '
+        'One Parent': 'One Parent'
+      '#options__properties': ''
+    processed_text_01:
+      '#type': processed_text
+      '#text': |
+        <p>The steps are different if only one parent is making the request and signing the paperwork.&nbsp;If the other parent is deceased, choose "both parents."&nbsp;&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>If you're the child's legal guardian, get specific instructions here.&nbsp;</p>
+        
+      '#format': basic_html
+  based_on_your_answers_:
+    '#type': webform_wizard_page
+    '#title': 'Based on your answers:'
+    '#hide_submit': true
+    processed_text_02:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="adult_child"]':
+              value: 'An adult'
+          - or
+          - ':input[name="one_or_both_parents"]':
+              value: 'Both Parents '
+      '#text': |
+        <p class="jcc-lead">You don't need to do the&nbsp;proof of service step if the name change is for an adult or a child where both parents are signing the petition.&nbsp;&nbsp;</p>
+        
+      '#format': basic_html
+    processed_text_03:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="adult_child"]':
+            value: 'A child (someone under 18)'
+          ':input[name="one_or_both_parents"]':
+            value: 'One Parent'
+      '#text': |
+        <p class="jcc-lead">Since both parents are not signing the name change request, you will need to do a proof of service step.&nbsp;</p>
+        
+        <div class="jcc-tiles-section jcc-tiles-section--has-two-columns">
+        <ul class="jcc-tiles">
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/serve-order-show-cause" target="_blank">Serve the order to show cause</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        	<li>&nbsp;</li>
+        </ul>
+        </div>
+        
+      '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

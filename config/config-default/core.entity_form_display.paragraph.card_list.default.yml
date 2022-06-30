@@ -21,13 +21,15 @@ bundle: card_list
 mode: default
 content:
   field_background_card:
+    type: options_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_brow:
+    type: text_textfield
     weight: 1
+    region: content
     settings:
       size: 60
       placeholder: ''
@@ -38,11 +40,10 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: text_textfield
-    region: content
   field_cards:
     type: entity_reference_paragraphs
     weight: 4
+    region: content
     settings:
       title: Card
       title_plural: Cards
@@ -53,16 +54,17 @@ content:
     third_party_settings:
       cc:
         status: 0
-    region: content
   field_create_anchor:
+    type: boolean_checkbox
     weight: 3
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_title_display:
+    type: text_textfield
     weight: 2
+    region: content
     settings:
       size: 60
       placeholder: ''
@@ -73,8 +75,6 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: text_textfield
-    region: content
 hidden:
   created: true
   status: true

@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       step: step
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 8
@@ -47,8 +47,8 @@ settings:
         weight: 13
         enabled: false
       step:
-        enabled: true
         weight: 17
+        enabled: true
       step_container:
         weight: 14
         enabled: false

@@ -10,14 +10,12 @@ dependencies:
     - datalayer
     - text
 third_party_settings:
-  allowed_formats:
-    basic_html: basic_html
-    simple_html: '0'
-    full_html: '0'
-    plain_text: '0'
   datalayer:
     expose: 1
     label: body
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 _core:
   default_config_hash: 3CV8O7axlnzMXG79wJtpA5ZNv_y0bJyjJ8k0v3J_ix4
 id: node.basic.body

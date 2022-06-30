@@ -12,7 +12,269 @@ id: child_custody_wayfinder
 title: 'Child Custody Wayfinder'
 description: ''
 category: ''
-elements: "is_the_child_in_immediate_danger:\n  '#type': webform_wizard_page\n  '#title': 'Is the child in immediate danger'\n  '#hide_submit': true\n  emergency:\n    '#type': radios\n    '#title': Emergency\n    '#options':\n      'yes': 'Yes'\n      'no': 'No'\n    '#options__properties': ''\nhas_the_child_lived_in_california_for_at_least_6_months_:\n  '#type': webform_wizard_page\n  '#title': 'Has the child lived in California for at least 6 months?'\n  '#states':\n    invisible:\n      ':input[name=\"emergency\"]':\n        value: 'yes'\n  california_residency:\n    '#type': radios\n    '#title': California_residency\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'I''m not sure': 'I''m not sure'\n    '#options__properties': ''\ndo_you_have_an_existing_child_custody_order_from_the_court_:\n  '#type': webform_wizard_page\n  '#title': 'Do you have an existing child custody order from the court?'\n  '#states':\n    invisible:\n      - ':input[name=\"emergency\"]':\n          value: 'yes'\n      - or\n      - ':input[name=\"california_residency\"]':\n          value: 'No'\n      - or\n      - ':input[name=\"california_residency\"]':\n          value: 'I''m not sure'\n  '#hide_submit': true\n  existing_order:\n    '#type': radios\n    '#title': 'Existing order'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n    '#options__properties': ''\nselect_which_of_these_situations_apply_to_you:\n  '#type': webform_wizard_page\n  '#title': 'Select the option that describes your relationship with the other parent'\n  '#states':\n    invisible:\n      - ':input[name=\"emergency\"]':\n          value: 'yes'\n      - or\n      - ':input[name=\"california_residency\"]':\n          value: 'No'\n      - or\n      - ':input[name=\"california_residency\"]':\n          value: 'I''m not sure'\n  select_situation:\n    '#type': radios\n    '#title': 'Select situation'\n    '#options':\n      'divorce final': 'We are divorced'\n      'divorce in process': 'We are in the process of getting divorced'\n      'married not divorcing': 'We are married and not in the process of a divorce'\n      'not married': 'We are not and never have been married'\n    '#options__properties': ''\nare_both_parents_the_legal_parents_of_the_child_:\n  '#type': webform_wizard_page\n  '#title': 'Are both parents the legal parents of the child?'\n  '#states':\n    invisible:\n      - ':input[name=\"emergency\"]':\n          value: 'yes'\n      - or\n      - ':input[name=\"california_residency\"]':\n          value: 'No'\n      - or\n      - ':input[name=\"california_residency\"]':\n          value: 'I''m not sure'\n      - or\n      - ':input[name=\"select_situation\"]':\n          value: 'divorce final'\n      - or\n      - ':input[name=\"select_situation\"]':\n          value: 'divorce in process'\n      - or\n      - ':input[name=\"select_situation\"]':\n          value: 'married not divorcing'\n  parentage_explaination:\n    '#type': processed_text\n    '#text': |\n      <p>This means that the parents are listed on the child birth certificate or have signed a voluntary declaration of parentage.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  parentage_established:\n    '#type': radios\n    '#title': 'Parentage established'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'I''m not sure': 'I''m not sure'\n    '#options__properties': ''\nbased_on_your_answers:\n  '#type': webform_wizard_page\n  '#title': 'Based on your answers'\n  '#hide_submit': true\n  dvro:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"emergency\"]':\n          value: 'yes'\n      invisible:\n        ':input[name=\"emergency\"]':\n          value: 'no'\n    '#text': |\n      <p>Brief info on emergency order/restraining orders</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>NAVIGATION TO CONTENT</p>\n      \n    '#format': basic_html\n  no_jurisdiction:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"california_residency\"]':\n            value: 'No'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'I''m not sure'\n      invisible:\n        ':input[name=\"california_residency\"]':\n          value: 'Yes'\n        ':input[name=\"emergency\"]':\n          value: 'yes'\n    '#text': |\n      <p>Statement about the state not having jurisdiction because of the length of time the child has lived in the state</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>NAVIGATION TO RESOURCES?</p>\n      \n    '#format': basic_html\n  post_judgement_rfo:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"select_situation\"]':\n          value: 'divorce final'\n      invisible:\n        ':input[name=\"emergency\"]':\n          value: 'yes'\n    '#text': |\n      <p>Brief information about making a change to an existing order</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Info about child support agencies?</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>NAVIGATION TO RFO CONTENT</p>\n      \n    '#format': basic_html\n  prejudgment_rfo:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"select_situation\"]':\n          value: 'divorce in process'\n      invisible:\n        - ':input[name=\"emergency\"]':\n            value: 'yes'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'No'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'I''m not sure'\n    '#text': |\n      <p>Brief content about getting a temporary order when your divorce is in process.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>NAVIGATION TO RFO/Temp order content</p>\n      \n    '#format': basic_html\n  child_support_nodivorce:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"select_situation\"]':\n            value: 'married not divorcing'\n        - or\n        - ':input[name=\"select_situation\"]':\n            value: 'not married'\n      invisible:\n        - ':input[name=\"emergency\"]':\n            value: 'yes'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'No'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'I''m not sure'\n        - or\n        - ':input[name=\"select_situation\"]':\n            value: 'divorce final'\n        - or\n        - ':input[name=\"select_situation\"]':\n            value: 'divorce in process'\n    '#text': |\n      <p>Brief info on child support orders (not associated with a divorce)</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>NAVIGATION TO NEW CHILD SUPPORT CONTENT</p>\n      \n    '#format': basic_html\n  parentage:\n    '#type': processed_text\n    '#states':\n      invisible:\n        - ':input[name=\"emergency\"]':\n            value: 'yes'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'No'\n        - or\n        - ':input[name=\"california_residency\"]':\n            value: 'I''m not sure'\n        - or\n        - ':input[name=\"parentage_established\"]':\n            value: 'Yes'\n        - or\n        - ':input[name=\"select_situation\"]':\n            value: 'divorce final'\n        - or\n        - ':input[name=\"existing_order\"]':\n            value: 'Yes'\n        - or\n        - ':input[name=\"select_situation\"]':\n            value: 'divorce in process'\n    '#text': |\n      <p>Brief explanation about needing to establish legal parentage in order to get a child custody order</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>{Maybe mention child support agencies?}</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>NAVIGATION TO PARENTAGE INTRO</p>\n      \n    '#format': basic_html"
+elements: |-
+  is_the_child_in_immediate_danger:
+    '#type': webform_wizard_page
+    '#title': 'Is the child in immediate danger'
+    '#hide_submit': true
+    emergency:
+      '#type': radios
+      '#title': Emergency
+      '#options':
+        'yes': 'Yes'
+        'no': 'No'
+      '#options__properties': ''
+  has_the_child_lived_in_california_for_at_least_6_months_:
+    '#type': webform_wizard_page
+    '#title': 'Has the child lived in California for at least 6 months?'
+    '#states':
+      invisible:
+        ':input[name="emergency"]':
+          value: 'yes'
+    california_residency:
+      '#type': radios
+      '#title': California_residency
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'I''m not sure': 'I''m not sure'
+      '#options__properties': ''
+  do_you_have_an_existing_child_custody_order_from_the_court_:
+    '#type': webform_wizard_page
+    '#title': 'Do you have an existing child custody order from the court?'
+    '#states':
+      invisible:
+        - ':input[name="emergency"]':
+            value: 'yes'
+        - or
+        - ':input[name="california_residency"]':
+            value: 'No'
+        - or
+        - ':input[name="california_residency"]':
+            value: 'I''m not sure'
+    '#hide_submit': true
+    existing_order:
+      '#type': radios
+      '#title': 'Existing order'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#options__properties': ''
+  select_which_of_these_situations_apply_to_you:
+    '#type': webform_wizard_page
+    '#title': 'Select the option that describes your relationship with the other parent'
+    '#states':
+      invisible:
+        - ':input[name="emergency"]':
+            value: 'yes'
+        - or
+        - ':input[name="california_residency"]':
+            value: 'No'
+        - or
+        - ':input[name="california_residency"]':
+            value: 'I''m not sure'
+    select_situation:
+      '#type': radios
+      '#title': 'Select situation'
+      '#options':
+        'divorce final': 'We are divorced'
+        'divorce in process': 'We are in the process of getting divorced'
+        'married not divorcing': 'We are married and not in the process of a divorce'
+        'not married': 'We are not and never have been married'
+      '#options__properties': ''
+  are_both_parents_the_legal_parents_of_the_child_:
+    '#type': webform_wizard_page
+    '#title': 'Are both parents the legal parents of the child?'
+    '#states':
+      invisible:
+        - ':input[name="emergency"]':
+            value: 'yes'
+        - or
+        - ':input[name="california_residency"]':
+            value: 'No'
+        - or
+        - ':input[name="california_residency"]':
+            value: 'I''m not sure'
+        - or
+        - ':input[name="select_situation"]':
+            value: 'divorce final'
+        - or
+        - ':input[name="select_situation"]':
+            value: 'divorce in process'
+        - or
+        - ':input[name="select_situation"]':
+            value: 'married not divorcing'
+    parentage_explaination:
+      '#type': processed_text
+      '#text': |
+        <p>This means that the parents are listed on the child birth certificate or have signed a voluntary declaration of parentage.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    parentage_established:
+      '#type': radios
+      '#title': 'Parentage established'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'I''m not sure': 'I''m not sure'
+      '#options__properties': ''
+  based_on_your_answers:
+    '#type': webform_wizard_page
+    '#title': 'Based on your answers'
+    '#hide_submit': true
+    dvro:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="emergency"]':
+            value: 'yes'
+        invisible:
+          ':input[name="emergency"]':
+            value: 'no'
+      '#text': |
+        <p>Brief info on emergency order/restraining orders</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>NAVIGATION TO CONTENT</p>
+        
+      '#format': basic_html
+    no_jurisdiction:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="california_residency"]':
+              value: 'No'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'I''m not sure'
+        invisible:
+          ':input[name="california_residency"]':
+            value: 'Yes'
+          ':input[name="emergency"]':
+            value: 'yes'
+      '#text': |
+        <p>Statement about the state not having jurisdiction because of the length of time the child has lived in the state</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>NAVIGATION TO RESOURCES?</p>
+        
+      '#format': basic_html
+    post_judgement_rfo:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="select_situation"]':
+            value: 'divorce final'
+        invisible:
+          ':input[name="emergency"]':
+            value: 'yes'
+      '#text': |
+        <p>Brief information about making a change to an existing order</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Info about child support agencies?</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>NAVIGATION TO RFO CONTENT</p>
+        
+      '#format': basic_html
+    prejudgment_rfo:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="select_situation"]':
+            value: 'divorce in process'
+        invisible:
+          - ':input[name="emergency"]':
+              value: 'yes'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'No'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'I''m not sure'
+      '#text': |
+        <p>Brief content about getting a temporary order when your divorce is in process.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>NAVIGATION TO RFO/Temp order content</p>
+        
+      '#format': basic_html
+    child_support_nodivorce:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="select_situation"]':
+              value: 'married not divorcing'
+          - or
+          - ':input[name="select_situation"]':
+              value: 'not married'
+        invisible:
+          - ':input[name="emergency"]':
+              value: 'yes'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'No'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'I''m not sure'
+          - or
+          - ':input[name="select_situation"]':
+              value: 'divorce final'
+          - or
+          - ':input[name="select_situation"]':
+              value: 'divorce in process'
+      '#text': |
+        <p>Brief info on child support orders (not associated with a divorce)</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>NAVIGATION TO NEW CHILD SUPPORT CONTENT</p>
+        
+      '#format': basic_html
+    parentage:
+      '#type': processed_text
+      '#states':
+        invisible:
+          - ':input[name="emergency"]':
+              value: 'yes'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'No'
+          - or
+          - ':input[name="california_residency"]':
+              value: 'I''m not sure'
+          - or
+          - ':input[name="parentage_established"]':
+              value: 'Yes'
+          - or
+          - ':input[name="select_situation"]':
+              value: 'divorce final'
+          - or
+          - ':input[name="existing_order"]':
+              value: 'Yes'
+          - or
+          - ':input[name="select_situation"]':
+              value: 'divorce in process'
+      '#text': |
+        <p>Brief explanation about needing to establish legal parentage in order to get a child custody order</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>{Maybe mention child support agencies?}</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>NAVIGATION TO PARENTAGE INTRO</p>
+        
+      '#format': basic_html
 css: ''
 javascript: ''
 settings:

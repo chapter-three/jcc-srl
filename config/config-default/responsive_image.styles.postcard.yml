@@ -13,8 +13,6 @@ id: postcard
 label: Postcard
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: '(min-width:1024px) 652px, 100vw'
@@ -25,5 +23,7 @@ image_style_mappings:
         - 3_2_375x250
         - 3_2_652x435
         - 3_2_768x512
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: 3_2_375x250

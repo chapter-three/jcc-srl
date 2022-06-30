@@ -10,14 +10,11 @@ dependencies:
     - datalayer
     - text
 third_party_settings:
-  allowed_formats:
-    basic_html: '0'
-    simple_html: '0'
-    full_html: '0'
-    plain_text: '0'
   datalayer:
     expose: 0
     label: field_body
+  allowed_formats:
+    allowed_formats: {  }
 id: paragraph.text.field_body
 field_name: field_body
 entity_type: paragraph

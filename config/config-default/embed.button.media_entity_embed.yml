@@ -20,6 +20,6 @@ type_settings:
   entity_browser_settings:
     display_review: true
 icon:
-  data: ''
   uri: 'public://embed_buttons/media.png'
+  data: ''
 icon_uuid: null

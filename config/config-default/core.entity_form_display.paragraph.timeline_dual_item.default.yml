@@ -36,280 +36,282 @@ third_party_settings:
         - field_markup1
         - group_top_inner
         - group_top_read_more
+      label: Top
+      region: content
       parent_name: group_details
       weight: 0
       format_type: tab
-      region: content
       format_settings:
+        classes: ''
+        id: ''
+        formatter: closed
         description: ''
         required_fields: true
-        id: ''
-        classes: ''
         direction: vertical
-        formatter: closed
         open: false
-      label: Top
     group_bottom:
       children:
         - field_bottom_deadline
         - field_markup2
         - group_bottom_inner
         - group_bottom_read_more
+      label: Bottom
+      region: content
       parent_name: group_details
       weight: 2
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
+        formatter: closed
         description: ''
         required_fields: true
         direction: vertical
-        formatter: closed
         open: false
-      label: Bottom
     group_details:
       children:
         - group_top
         - group_icon
         - group_bottom
+      label: Details
+      region: content
       parent_name: ''
       weight: 0
       format_type: tabs
-      region: content
       format_settings:
-        direction: vertical
-        id: ''
         classes: ''
-      label: Details
+        id: ''
+        direction: vertical
     group_top_read_more:
       children: {  }
+      label: 'Top Read More'
+      region: content
       parent_name: group_top
       weight: 13
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: 'Top Read More'
     group_bottom_read_more:
       children: {  }
+      label: 'Bottom Read More'
+      region: content
       parent_name: group_bottom
       weight: 7
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: 'Bottom Read More'
     group_icon:
       children:
         - field_timeline_dual_icon
+      label: Icon
+      region: content
       parent_name: group_details
       weight: 1
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
         open: false
-      label: Icon
     group_top_fields:
       children:
         - group_top_info
         - group_top_excerpt
         - group_top_link
         - group_top_modal
+      label: 'Top fields'
+      region: content
       parent_name: group_top_inner
       weight: 12
       format_type: tabs
-      region: content
       format_settings:
-        direction: horizontal
-        id: ''
         classes: ''
-      label: 'Top fields'
+        id: ''
+        direction: horizontal
     group_top_excerpt:
       children:
         - field_top_excerpt
+      label: Excerpt
+      region: content
       parent_name: group_top_fields
       weight: 21
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         formatter: closed
-        required_fields: true
         description: ''
-      label: Excerpt
+        required_fields: true
     group_top_link:
       children:
         - field_top_read_more
+      label: Link
+      region: content
       parent_name: group_top_fields
       weight: 22
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         formatter: closed
-        required_fields: true
         description: ''
-      label: Link
+        required_fields: true
     group_top_modal:
       children:
         - field_top_modal_label
         - field_top_read_more_modal
+      label: Modal
+      region: content
       parent_name: group_top_fields
       weight: 23
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         formatter: closed
-        required_fields: true
         description: ''
-      label: Modal
+        required_fields: true
     group_top_inner:
       children:
         - field_top_num
         - group_top_fields
+      label: 'Top inner'
+      region: content
       parent_name: group_top
       weight: 12
       format_type: fieldset
-      region: content
       format_settings:
-        id: ''
         classes: no-title
+        id: ''
         description: ''
         required_fields: false
-      label: 'Top inner'
     group_bottom_inner:
       children:
         - field_bottom_num
         - group_bottom_fields
+      label: 'Bottom inner'
+      region: content
       parent_name: group_bottom
       weight: 6
       format_type: fieldset
-      region: content
       format_settings:
-        id: ''
         classes: no-title
+        id: ''
         description: ''
         required_fields: false
-      label: 'Bottom inner'
     group_bottom_fields:
       children:
         - group_bottom_info
         - group_bottom_excerpt
         - group_bottom_link
         - group_bottom_modal
+      label: 'Bottom fields'
+      region: content
       parent_name: group_bottom_inner
       weight: 4
       format_type: tabs
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         direction: horizontal
-      label: 'Bottom fields'
     group_bottom_excerpt:
       children:
         - field_bottom_excerpt
+      label: Excerpt
+      region: content
       parent_name: group_bottom_fields
       weight: 28
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Excerpt
     group_bottom_link:
       children:
         - field_bottom_read_more
+      label: Link
+      region: content
       parent_name: group_bottom_fields
       weight: 29
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Link
     group_bottom_modal:
       children:
         - field_bottom_modal_label
         - field_bottom_read_more_modal
+      label: Modal
+      region: content
       parent_name: group_bottom_fields
       weight: 30
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Modal
     group_top_info:
       children:
         - field_markup3
+      label: Info
+      region: content
       parent_name: group_top_fields
       weight: 20
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Info
     group_bottom_info:
       children:
         - field_markup4
+      label: Info
+      region: content
       parent_name: group_bottom_fields
       weight: 27
       format_type: tab
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         formatter: closed
+        description: ''
         required_fields: true
-      label: Info
 id: paragraph.timeline_dual_item.default
 targetEntityType: paragraph
 bundle: timeline_dual_item
 mode: default
 content:
   field_bottom_deadline:
+    type: string_textfield
     weight: 4
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_bottom_excerpt:
+    type: text_textarea
     weight: 6
+    region: content
     settings:
       rows: 1
       placeholder: ''
@@ -322,32 +324,32 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_bottom_modal_label:
+    type: string_textfield
     weight: 24
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_bottom_num:
+    type: options_select
     weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_bottom_read_more:
+    type: link_default
     weight: 13
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_bottom_read_more_modal:
+    type: text_textarea
     weight: 25
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -360,48 +362,48 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_markup1:
+    type: markup
     weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: markup
-    region: content
   field_markup2:
+    type: markup
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: markup
-    region: content
   field_markup3:
+    type: markup
     weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: markup
-    region: content
   field_markup4:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
     type: markup
+    weight: 2
     region: content
-  field_timeline_dual_icon:
-    weight: 3
     settings: {  }
     third_party_settings: {  }
+  field_timeline_dual_icon:
     type: options_select
+    weight: 3
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_top_deadline:
+    type: string_textfield
     weight: 10
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_top_excerpt:
+    type: text_textarea
     weight: 10
+    region: content
     settings:
       rows: 1
       placeholder: ''
@@ -414,32 +416,32 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_top_modal_label:
+    type: string_textfield
     weight: 26
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_top_num:
+    type: options_select
     weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_top_read_more:
+    type: link_default
     weight: 7
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_top_read_more_modal:
+    type: text_textarea
     weight: 27
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -452,8 +454,6 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   translation:
     weight: 1
     region: content

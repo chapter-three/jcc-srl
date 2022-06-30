@@ -27,10 +27,10 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       switchboard: switchboard
       text: text
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 18
@@ -87,11 +87,11 @@ settings:
         weight: 28
         enabled: false
       switchboard:
-        enabled: true
         weight: 29
-      text:
         enabled: true
+      text:
         weight: 45
+        enabled: true
       tile:
         weight: 30
         enabled: false

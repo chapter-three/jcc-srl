@@ -58,7 +58,8 @@ settings:
     templates:
       template_path: ''
       replace_content: 0
-    linkit:
+    drupallink:
+      linkit_enabled: true
       linkit_profile: ''
 image_upload:
   status: true

@@ -10,10 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    simple_html: simple_html
-    basic_html: '0'
-    full_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - simple_html
 id: paragraph.hero_cards.field_brow
 field_name: field_brow
 entity_type: paragraph

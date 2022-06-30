@@ -12,7 +12,499 @@ id: answer_contract_assistant
 title: 'Answer Contract Assistant'
 description: 'An assistant to help with completing the Judicial Council form Answer- Contract (form PLD-C-010)'
 category: ''
-elements: "getting_started_with_your_answer:\n  '#type': webform_wizard_page\n  '#title': 'Getting started with your answer'\n  download_form_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">This online app will walk you through answering your consumer debt complaint. It will provide instructions for filling out&nbsp;the&nbsp;<em>Answer- Contract</em>&nbsp;(form PLD-C-010).</p>\n      \n      <p>To get started,&nbsp;&nbsp;download the form&nbsp;<em>Answer- Contract</em>&nbsp;(<a href=\"https://www.courts.ca.gov/documents/pldc010.pdf\" target=\"_blank\">form PLD-C-010</a>) (link will open in a new tab). You may print out the form and complete it by hand, or edit it inside the free Adobe Acrobat Reader to type your answer and print it.</p>\n      \n    '#format': basic_html\ncomplete_the_caption:\n  '#type': webform_wizard_page\n  '#title': 'Complete the caption'\n  caption_instructions:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">First, complete the top caption of your&nbsp;<em>Answer- Contract</em>.</p>\n      \n      <p>Write or type your telephone number where indicated, and your name and address in the box titled \"Attorney or party without attorney.\" Where it says \"Attorney for (name)\" write \"In Pro Per,\" an abbreviation of a Latin phrase meaning you are representing yourself.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Copy the court information from the complaint, as well as the name of the Plaintiff and Defendant.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Under \"Answer- Contract\" check the box \"To Complaint of\" and write the name of the plaintiff afterward.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>To the right of the caption, copy the case number from the Complaint into the box marked \"Case Number.\"</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"d7a01677-3429-446d-9041-69da40ebfe92\"></drupal-media>\n      \n    '#format': basic_html\ndoes_the_complaint_have_a_verification:\n  '#type': webform_wizard_page\n  '#title': 'Does the Complaint have a verification?'\n  have_verification_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">Looking at the complaint, did the complaint have a verification? A verification is typically a separate page following the complaint which states how the person signing it is involved in the case, that the person signing it has knowledge of the case&nbsp;and has read the complaint, and that the&nbsp;information in the complaint is true. This statement is then signed under penalty of perjury.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Most debt collection cases do not have a verification, so it is okay if you do not find one. In consumer debt cases you will typically find another page signed under penalty of perjury stating the reason the case is filed in the county it is. This is a declaration of venue and is not a verification.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Does the complaint include a verification?</p>\n      \n    '#format': basic_html\n  has_verification:\n    '#type': radios\n    '#title': 'Has verification'\n    '#options':\n      'yes': 'Yes, the complaint is verified (rare)'\n      'no': 'No, the complaint is NOT verified (common)'\n    '#required': true\n    '#required_error': 'Please choose an option before continuing'\n    '#options__properties': ''\nspecifically_deny_the_allegations_in_the_complaint:\n  '#type': webform_wizard_page\n  '#title': 'Specifically deny the allegations in the complaint'\n  '#states':\n    visible:\n      ':input[name=\"has_verification\"]':\n        value: 'yes'\n  specific_denial_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">Since the complaint is verified, you must state what is specifically false in the complaint. By making a specific denial, you are admitting that the facts are true in the complaint except for those that you indicate in your answer are not true.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>\n      \n      <p>Type or write your name in paragraph 2.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Check box 3(b), to indicate you will be specifically denying some of the allegations in the complaint. In paragraph 3(b)(1), write down the number(s) of the paragraph(s) in the complaint that are not true.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>In paragraph 3(b)(2) indicate the numbers of the paragraphs that might not be true because you don't have any knowledge that would allow you to confirm them as true.</p>\n      \n      <p>Any paragraphs that you do not list in paragraph 3(b)(1) or 3(b)(2) will be admitted to be true.</p>\n      \n      <p>Proceed to page 2 of your&nbsp;<em>Answer</em>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"f19207b6-3107-4cdd-972d-0f3df7cb79f7\"></drupal-media>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\ngenerally_deny_the_allegations_in_the_complaint:\n  '#type': webform_wizard_page\n  '#title': 'Generally deny the allegations in the complaint'\n  '#states':\n    visible:\n      ':input[name=\"has_verification\"]':\n        value: 'no'\n  generally_deny_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">You are able to do what is called a \"general denial.\" By making a general denial, you are not saying anything is necessarily false in the complaint, only that the court should consider it false unless it is proven by the plaintiff. This means that the plaintiff is responsible for proving every allegation in the Complaint.</p>\n      \n      <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Type or write your name in paragraph 2.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Check box 3(a), to generally deny the allegations in the complaint. Do not fill in any other information on the first page, and proceed to page 2 of your&nbsp;<em>Answer</em>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"5e94085e-05f5-4a70-a2a8-a3b573e30590\"></drupal-media>\n      \n    '#format': basic_html\nidentify_your_defenses:\n  '#type': webform_wizard_page\n  '#title': 'Identify your defenses'\n  defenses_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>In paragraph 4, on the second page, you will write your defenses. You may write them in the space provided, or may attach them on a separate paper. If you use the defense interview in this app,&nbsp;you may check the \"Continued in Attachment 4\" box, printout and attach the results page from the interview as your attachment.</p>\n      \n      <p>&nbsp;</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"a3589eea-6751-4009-900e-0dec21dae8e5\"></drupal-media>\n      \n      <p>&nbsp;</p>\n      \n      <p>The defenses that you list are called affirmative defenses because you must prove them. They range from complete defenses that would cause you to win the case, to partial defenses, which would cause you to owe less than the amount alleged.</p>\n      \n    '#format': basic_html\ndo_you_want_to_take_the_defenses_interview:\n  '#type': webform_wizard_page\n  '#title': 'Do you want to take the defenses interview?'\n  defense_interview_opt_in_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">This online interview can ask&nbsp;a series of questions that will help identify common defenses to your lawsuit. It will generate a list of those defenses that can be copied onto your&nbsp;<em>Answer- Contract</em>, or printed out and used as an attachment to your answer.</p>\n      \n      <p>Do you wish to take the defenses interview?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  defense_interview_opt_in:\n    '#type': radios\n    '#title': 'Defense interview opt-in'\n    '#options':\n      'yes': 'Yes, I would like to take the defenses interview'\n      'no': 'No, I''ll take care of my defenses on my own'\n    '#required': true\n    '#required_error': 'Please select a value before continuing'\n    '#options__properties': ''\ntype_of_debt:\n  '#type': webform_wizard_page\n  '#title': 'Type of debt'\n  '#states':\n    visible:\n      ':input[name=\"defense_interview_opt_in\"]':\n        value: 'yes'\n  type_of_debt_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">To begin, identify the type of consumer debt that is alleged in the complaint:</p>\n      \n    '#format': basic_html\n  debt_type:\n    '#type': radios\n    '#title': 'Debt type'\n    '#options':\n      credit_card: 'Credit card debt'\n      medical: 'Medical debt'\n      car_loan: 'Car loan debt'\n      student_loan: 'Student loan debt'\n      other: 'Other debt'\n    '#required': true\n    '#required_error': 'Please select an option before continuing'\n    '#options__properties': ''\ncauses_of_action:\n  '#type': webform_wizard_page\n  '#title': 'Causes of action'\n  '#states':\n    visible:\n      ':input[name=\"defense_interview_opt_in\"]':\n        value: 'yes'\n  causes_of_action_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">Review the complaint and locate each \"cause of action.\" A cause of action is a legal theory the plaintiff is suing under. Common causes of action include:</p>\n      \n      <p><strong>Breach of contract</strong>: Alleging there was a written or oral contract (agreement) that you and the other side entered, and an allegation that you somehow broke the agreement resulting in damages.</p>\n      \n      <p><strong>Common counts</strong>: A number of common allegations typically alleging that money or goods were loaned or exchanged with a promise to pay them back. Sometimes individually described as:</p>\n      \n      <ul>\n      \t<li><strong>An open book account</strong>: alleging that the plaintiff keeps a ledger of transactions with you, and that there is a balance due</li>\n      \t<li><strong>Account stated</strong>: alleging that the plaintiff sent you a statement and it wasn't disputed</li>\n      \t<li><strong>Goods or services exchanged:&nbsp;</strong>alleging a good or service was given in exchange for a promise of payment</li>\n      \t<li><strong>Money loaned</strong>: alleging that money was loaned to you or another person at your request, with the promise of repayment.</li>\n      </ul>\n      \n      <p><strong>Fraud</strong>: An allegation that you misrepresented something, that misrepresentation was relied upon, and the defendant was harmed as a result of this misrepresentation. This is rare in consumer debt cases.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  cause_of_action:\n    '#type': checkboxes\n    '#title': 'Causes of action'\n    '#options':\n      breach_of_contract: 'Breach of contract'\n      common_counts: 'Common counts'\n      fraud: Fraud\n      Other: 'Other cause of action'\n    '#options_all_value': ''\n    '#options_all_text': ''\n    '#options_none_value': ''\n    '#options_none_text': ''\n    '#required': true\n    '#required_error': 'Please select one or more options before continuing.'\n    '#options__properties': ''\nwarning_other_relief:\n  '#type': webform_wizard_page\n  '#title': 'Warning- other relief'\n  '#states':\n    visible:\n      ':input[name=\"cause_of_action[Other]\"]':\n        checked: true\n  other_debt_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"cause_of_action[breach_of_contract]\"]':\n            checked: true\n        - or\n        - ':input[name=\"cause_of_action[common_counts]\"]':\n            checked: true\n    '#text': |\n      <p class=\"jcc-lead\">It is unusual to have a cause of action other than breach of contract, common counts, or occasionally&nbsp;fraud in a consumer debt case. This interview might not detect defenses to this other cause of action. Please research other defenses that you might have to this other cause of action before submitting your Answer.</p>\n      \n      <p class=\"jcc-lead\">&nbsp;</p>\n      \n    '#format': basic_html\n  unable_to_use_wizard_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"cause_of_action[breach_of_contract]\"]':\n          unchecked: true\n        ':input[name=\"cause_of_action[common_counts]\"]':\n          unchecked: true\n    '#text': |\n      <p class=\"jcc-lead\">Unfortunately, your case does not sound like a typical consumer debt case, and as a result, this interview is unable to identify your defenses.</p>\n      \n      <p>Your local law library may be able to assist you in researching your cause of action and potential defenses to your cause of action. Please be aware that if you do not list your defenses in paragraph 4 or attachment 4 that you give up those defenses, so it is important to research and list the defenses that you might have.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  unable_to_use_defense_wizard:\n    '#type': checkbox\n    '#title': 'I have read and understood the above warning.'\n    '#required': true\n    '#required_error': 'Please check that you have read and understood the warning before continuing.'\n    '#states':\n      visible:\n        ':input[name=\"cause_of_action[breach_of_contract]\"]':\n          unchecked: true\n        ':input[name=\"cause_of_action[common_counts]\"]':\n          unchecked: true\nprivate_or_federal_student_loans:\n  '#type': webform_wizard_page\n  '#title': 'Private or federal student loans'\n  '#states':\n    visible:\n      ':input[name=\"defense_interview_opt_in\"]':\n        value: 'yes'\n      ':input[name=\"debt_type\"]':\n        value: student_loan\n      ':input[name=\"unable_to_use_defense_wizard\"]':\n        unchecked: true\n  federal_or_private_student_loan_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>Are the student loans in the&nbsp;<em>Complaint</em>&nbsp;private student loans or federal student loans?</p>\n      \n    '#format': basic_html\n  federal_or_private_student_loan:\n    '#type': radios\n    '#title': 'Federal or private student loan'\n    '#options':\n      federal: 'Federal student loan(s)'\n      private: 'Private student loan(s)'\n      unknown: 'I don''t know'\n    '#required': true\n    '#required_error': 'Please select an option before continuing'\n    '#options__properties': ''\noral_or_written_agreement:\n  '#type': webform_wizard_page\n  '#title': 'Oral or written agreement'\n  '#states':\n    visible:\n      ':input[name=\"debt_type\"]':\n        value: other\n      ':input[name=\"unable_to_use_defense_wizard\"]':\n        unchecked: true\n      ':input[name=\"cause_of_action[breach_of_contract]\"]':\n        checked: true\n  oral_or_written_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>Is the contract (agreement) alleged in the&nbsp;<em>Complaint</em>&nbsp;a written agreement or an oral agreement?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  oral_or_written:\n    '#type': radios\n    '#title': 'Oral or written'\n    '#options':\n      written: Written\n      oral: Oral\n    '#required': true\n    '#required_error': 'Please select an option before continuing'\n    '#options__properties': ''\ncommon_counts_other:\n  '#type': webform_wizard_page\n  '#title': 'Common counts'\n  '#states':\n    visible:\n      ':input[name=\"cause_of_action[common_counts]\"]':\n        checked: true\n      ':input[name=\"oral_or_written\"]':\n        '!value': written\n  common_counts_1_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>In the cause of action for common counts, are any of the common counts for \"open book account for money due,\" or \"an account stated in writing\" (paragraph CC-1(a) of form PLD-C-001(2), if used)?</p>\n      \n    '#format': basic_html\n  common_counts_4_year:\n    '#type': radios\n    '#title': 'Common Counts 4 year'\n    '#options':\n      'yes': 'Yes, there is a cause of action for \"account stated\" or for an \"open book account\"'\n      'no': 'No, there is NO cause of action for \"account stated\" or an \"open book account\"'\n    '#required': true\n    '#required_error': 'Please select an option before continuing'\n    '#options__properties': ''\nstatute_of_limitations_1:\n  '#type': webform_wizard_page\n  '#title': '4 year statute of limitations'\n  '#states':\n    visible:\n      ':input[name=\"defense_interview_opt_in\"]':\n        value: 'yes'\n      ':input[name=\"unable_to_use_defense_wizard\"]':\n        unchecked: true\n      ':input[name=\"federal_or_private_student_loan\"]':\n        '!value': federal\n      ':input[name=\"oral_or_written\"]':\n        '!value': oral\n      ':input[name=\"common_counts_4_year\"]':\n        '!value': 'no'\n  credit_card_statute_of_limitations_1_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"debt_type\"]':\n          value: credit_card\n    '#text': |\n      <p>The first set of defenses being evaluated are based on whether the lawsuit was filed in a timely manner.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Thinking about the credit card account alleged in the complaint and the most recent of either the last time it was used&nbsp;or that you made a payment, did more than four years pass between this date and the date the lawsuit was filed with the court?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  medical_debt_statute_of_limitations_1_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"debt_type\"]':\n          value: medical\n    '#text': |\n      <p>The first set of defenses being evaluated are based on whether the lawsuit was filed in a timely manner.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Thinking about the medical debt account alleged in the complaint try to remember the last time you made a payment on the debt. If you did not make a payment on the debt try to remember the date the medical services were provided. Are there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  car_loan_statute_of_limitations_1_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"debt_type\"]':\n          value: car_loan\n    '#text': |\n      <p>The first set of defenses being evaluated are based on whether the lawsuit was filed in a timely manner.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Thinking about the car loan alleged in the complaint try to remember the last time you made a payment on the loan. If you did not make a payment on the loan try to remember the date the first payment was due. Are there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  student_loan_statute_of_limitations_1_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"debt_type\"]':\n          value: student_loan\n    '#text': |\n      <p>Thinking about the student loan alleged in the complaint try to remember the last time you made a payment on the loan. If you did not make a payment on the debt try to remember the date the first payment was due. Are there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>\n      \n    '#format': basic_html\n  other_debt_statute_of_limitations_1_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"debt_type\"]':\n          value: other\n        ':input[name=\"oral_or_written\"]':\n          value: written\n    '#text': |\n      <p>Thinking about the debt account alleged in the complaint try to remember the last time you made a payment on the debt. If you did not make a payment on the debt try to remember the date the first payment was due. are&nbsp;there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  other_debt_statute_of_limitations_2_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"debt_type\"]':\n          value: other\n        ':input[name=\"common_counts_4_year\"]':\n          value: 'yes'\n    '#text': |\n      <p>Thinking about the debt account alleged in the complaint try to remember the last time you made a payment on the debt. If you did not make a payment on the debt try to remember the date the first payment was due. are&nbsp;there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  4_year_statute_of_limitations:\n    '#type': radios\n    '#title': '4 year statute of limitations'\n    '#options':\n      'yes': 'It has been more than four years'\n      'no': 'It has NOT been more than four years'\n      maybe: 'It may have been more than four years'\n      not_account: 'I don''t remember, or it''s not my account'\n    '#required': true\n    '#required_error': 'Please select an option before continuing'\n    '#options__properties': ''\n3_year_statute_of_limitations:\n  '#type': webform_wizard_page\n  '#title': '3 year statute of limitations'\n  '#states':\n    visible:\n      ':input[name=\"cause_of_action[fraud]\"]':\n        checked: true\n      ':input[name=\"unable_to_use_defense_wizard\"]':\n        unchecked: true\n      ':input[name=\"4_year_statute_of_limitations\"]':\n        value:\n          '!pattern': ^(yes|maybe|not_account)$\nsign_and_finish:\n  '#type': webform_wizard_page\n  '#title': 'Sign and finish'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  getting_started_with_your_answer:
+    '#type': webform_wizard_page
+    '#title': 'Getting started with your answer'
+    download_form_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">This online app will walk you through answering your consumer debt complaint. It will provide instructions for filling out&nbsp;the&nbsp;<em>Answer- Contract</em>&nbsp;(form PLD-C-010).</p>
+        
+        <p>To get started,&nbsp;&nbsp;download the form&nbsp;<em>Answer- Contract</em>&nbsp;(<a href="https://www.courts.ca.gov/documents/pldc010.pdf" target="_blank">form PLD-C-010</a>) (link will open in a new tab). You may print out the form and complete it by hand, or edit it inside the free Adobe Acrobat Reader to type your answer and print it.</p>
+        
+      '#format': basic_html
+  complete_the_caption:
+    '#type': webform_wizard_page
+    '#title': 'Complete the caption'
+    caption_instructions:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">First, complete the top caption of your&nbsp;<em>Answer- Contract</em>.</p>
+        
+        <p>Write or type your telephone number where indicated, and your name and address in the box titled "Attorney or party without attorney." Where it says "Attorney for (name)" write "In Pro Per," an abbreviation of a Latin phrase meaning you are representing yourself.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Copy the court information from the complaint, as well as the name of the Plaintiff and Defendant.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Under "Answer- Contract" check the box "To Complaint of" and write the name of the plaintiff afterward.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>To the right of the caption, copy the case number from the Complaint into the box marked "Case Number."</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="d7a01677-3429-446d-9041-69da40ebfe92"></drupal-media>
+        
+      '#format': basic_html
+  does_the_complaint_have_a_verification:
+    '#type': webform_wizard_page
+    '#title': 'Does the Complaint have a verification?'
+    have_verification_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">Looking at the complaint, did the complaint have a verification? A verification is typically a separate page following the complaint which states how the person signing it is involved in the case, that the person signing it has knowledge of the case&nbsp;and has read the complaint, and that the&nbsp;information in the complaint is true. This statement is then signed under penalty of perjury.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Most debt collection cases do not have a verification, so it is okay if you do not find one. In consumer debt cases you will typically find another page signed under penalty of perjury stating the reason the case is filed in the county it is. This is a declaration of venue and is not a verification.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Does the complaint include a verification?</p>
+        
+      '#format': basic_html
+    has_verification:
+      '#type': radios
+      '#title': 'Has verification'
+      '#options':
+        'yes': 'Yes, the complaint is verified (rare)'
+        'no': 'No, the complaint is NOT verified (common)'
+      '#required': true
+      '#required_error': 'Please choose an option before continuing'
+      '#options__properties': ''
+  specifically_deny_the_allegations_in_the_complaint:
+    '#type': webform_wizard_page
+    '#title': 'Specifically deny the allegations in the complaint'
+    '#states':
+      visible:
+        ':input[name="has_verification"]':
+          value: 'yes'
+    specific_denial_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">Since the complaint is verified, you must state what is specifically false in the complaint. By making a specific denial, you are admitting that the facts are true in the complaint except for those that you indicate in your answer are not true.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>
+        
+        <p>Type or write your name in paragraph 2.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Check box 3(b), to indicate you will be specifically denying some of the allegations in the complaint. In paragraph 3(b)(1), write down the number(s) of the paragraph(s) in the complaint that are not true.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>In paragraph 3(b)(2) indicate the numbers of the paragraphs that might not be true because you don't have any knowledge that would allow you to confirm them as true.</p>
+        
+        <p>Any paragraphs that you do not list in paragraph 3(b)(1) or 3(b)(2) will be admitted to be true.</p>
+        
+        <p>Proceed to page 2 of your&nbsp;<em>Answer</em>.</p>
+        
+        <p>&nbsp;</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="f19207b6-3107-4cdd-972d-0f3df7cb79f7"></drupal-media>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+  generally_deny_the_allegations_in_the_complaint:
+    '#type': webform_wizard_page
+    '#title': 'Generally deny the allegations in the complaint'
+    '#states':
+      visible:
+        ':input[name="has_verification"]':
+          value: 'no'
+    generally_deny_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">You are able to do what is called a "general denial." By making a general denial, you are not saying anything is necessarily false in the complaint, only that the court should consider it false unless it is proven by the plaintiff. This means that the plaintiff is responsible for proving every allegation in the Complaint.</p>
+        
+        <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Type or write your name in paragraph 2.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Check box 3(a), to generally deny the allegations in the complaint. Do not fill in any other information on the first page, and proceed to page 2 of your&nbsp;<em>Answer</em>.</p>
+        
+        <p>&nbsp;</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="5e94085e-05f5-4a70-a2a8-a3b573e30590"></drupal-media>
+        
+      '#format': basic_html
+  identify_your_defenses:
+    '#type': webform_wizard_page
+    '#title': 'Identify your defenses'
+    defenses_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>In paragraph 4, on the second page, you will write your defenses. You may write them in the space provided, or may attach them on a separate paper. If you use the defense interview in this app,&nbsp;you may check the "Continued in Attachment 4" box, printout and attach the results page from the interview as your attachment.</p>
+        
+        <p>&nbsp;</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="a3589eea-6751-4009-900e-0dec21dae8e5"></drupal-media>
+        
+        <p>&nbsp;</p>
+        
+        <p>The defenses that you list are called affirmative defenses because you must prove them. They range from complete defenses that would cause you to win the case, to partial defenses, which would cause you to owe less than the amount alleged.</p>
+        
+      '#format': basic_html
+  do_you_want_to_take_the_defenses_interview:
+    '#type': webform_wizard_page
+    '#title': 'Do you want to take the defenses interview?'
+    defense_interview_opt_in_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">This online interview can ask&nbsp;a series of questions that will help identify common defenses to your lawsuit. It will generate a list of those defenses that can be copied onto your&nbsp;<em>Answer- Contract</em>, or printed out and used as an attachment to your answer.</p>
+        
+        <p>Do you wish to take the defenses interview?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    defense_interview_opt_in:
+      '#type': radios
+      '#title': 'Defense interview opt-in'
+      '#options':
+        'yes': 'Yes, I would like to take the defenses interview'
+        'no': 'No, I''ll take care of my defenses on my own'
+      '#required': true
+      '#required_error': 'Please select a value before continuing'
+      '#options__properties': ''
+  type_of_debt:
+    '#type': webform_wizard_page
+    '#title': 'Type of debt'
+    '#states':
+      visible:
+        ':input[name="defense_interview_opt_in"]':
+          value: 'yes'
+    type_of_debt_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">To begin, identify the type of consumer debt that is alleged in the complaint:</p>
+        
+      '#format': basic_html
+    debt_type:
+      '#type': radios
+      '#title': 'Debt type'
+      '#options':
+        credit_card: 'Credit card debt'
+        medical: 'Medical debt'
+        car_loan: 'Car loan debt'
+        student_loan: 'Student loan debt'
+        other: 'Other debt'
+      '#required': true
+      '#required_error': 'Please select an option before continuing'
+      '#options__properties': ''
+  causes_of_action:
+    '#type': webform_wizard_page
+    '#title': 'Causes of action'
+    '#states':
+      visible:
+        ':input[name="defense_interview_opt_in"]':
+          value: 'yes'
+    causes_of_action_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">Review the complaint and locate each "cause of action." A cause of action is a legal theory the plaintiff is suing under. Common causes of action include:</p>
+        
+        <p><strong>Breach of contract</strong>: Alleging there was a written or oral contract (agreement) that you and the other side entered, and an allegation that you somehow broke the agreement resulting in damages.</p>
+        
+        <p><strong>Common counts</strong>: A number of common allegations typically alleging that money or goods were loaned or exchanged with a promise to pay them back. Sometimes individually described as:</p>
+        
+        <ul>
+        	<li><strong>An open book account</strong>: alleging that the plaintiff keeps a ledger of transactions with you, and that there is a balance due</li>
+        	<li><strong>Account stated</strong>: alleging that the plaintiff sent you a statement and it wasn't disputed</li>
+        	<li><strong>Goods or services exchanged:&nbsp;</strong>alleging a good or service was given in exchange for a promise of payment</li>
+        	<li><strong>Money loaned</strong>: alleging that money was loaned to you or another person at your request, with the promise of repayment.</li>
+        </ul>
+        
+        <p><strong>Fraud</strong>: An allegation that you misrepresented something, that misrepresentation was relied upon, and the defendant was harmed as a result of this misrepresentation. This is rare in consumer debt cases.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    cause_of_action:
+      '#type': checkboxes
+      '#title': 'Causes of action'
+      '#options':
+        breach_of_contract: 'Breach of contract'
+        common_counts: 'Common counts'
+        fraud: Fraud
+        Other: 'Other cause of action'
+      '#options_all_value': ''
+      '#options_all_text': ''
+      '#options_none_value': ''
+      '#options_none_text': ''
+      '#required': true
+      '#required_error': 'Please select one or more options before continuing.'
+      '#options__properties': ''
+  warning_other_relief:
+    '#type': webform_wizard_page
+    '#title': 'Warning- other relief'
+    '#states':
+      visible:
+        ':input[name="cause_of_action[Other]"]':
+          checked: true
+    other_debt_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="cause_of_action[breach_of_contract]"]':
+              checked: true
+          - or
+          - ':input[name="cause_of_action[common_counts]"]':
+              checked: true
+      '#text': |
+        <p class="jcc-lead">It is unusual to have a cause of action other than breach of contract, common counts, or occasionally&nbsp;fraud in a consumer debt case. This interview might not detect defenses to this other cause of action. Please research other defenses that you might have to this other cause of action before submitting your Answer.</p>
+        
+        <p class="jcc-lead">&nbsp;</p>
+        
+      '#format': basic_html
+    unable_to_use_wizard_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="cause_of_action[breach_of_contract]"]':
+            unchecked: true
+          ':input[name="cause_of_action[common_counts]"]':
+            unchecked: true
+      '#text': |
+        <p class="jcc-lead">Unfortunately, your case does not sound like a typical consumer debt case, and as a result, this interview is unable to identify your defenses.</p>
+        
+        <p>Your local law library may be able to assist you in researching your cause of action and potential defenses to your cause of action. Please be aware that if you do not list your defenses in paragraph 4 or attachment 4 that you give up those defenses, so it is important to research and list the defenses that you might have.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    unable_to_use_defense_wizard:
+      '#type': checkbox
+      '#title': 'I have read and understood the above warning.'
+      '#required': true
+      '#required_error': 'Please check that you have read and understood the warning before continuing.'
+      '#states':
+        visible:
+          ':input[name="cause_of_action[breach_of_contract]"]':
+            unchecked: true
+          ':input[name="cause_of_action[common_counts]"]':
+            unchecked: true
+  private_or_federal_student_loans:
+    '#type': webform_wizard_page
+    '#title': 'Private or federal student loans'
+    '#states':
+      visible:
+        ':input[name="defense_interview_opt_in"]':
+          value: 'yes'
+        ':input[name="debt_type"]':
+          value: student_loan
+        ':input[name="unable_to_use_defense_wizard"]':
+          unchecked: true
+    federal_or_private_student_loan_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>Are the student loans in the&nbsp;<em>Complaint</em>&nbsp;private student loans or federal student loans?</p>
+        
+      '#format': basic_html
+    federal_or_private_student_loan:
+      '#type': radios
+      '#title': 'Federal or private student loan'
+      '#options':
+        federal: 'Federal student loan(s)'
+        private: 'Private student loan(s)'
+        unknown: 'I don''t know'
+      '#required': true
+      '#required_error': 'Please select an option before continuing'
+      '#options__properties': ''
+  oral_or_written_agreement:
+    '#type': webform_wizard_page
+    '#title': 'Oral or written agreement'
+    '#states':
+      visible:
+        ':input[name="debt_type"]':
+          value: other
+        ':input[name="unable_to_use_defense_wizard"]':
+          unchecked: true
+        ':input[name="cause_of_action[breach_of_contract]"]':
+          checked: true
+    oral_or_written_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>Is the contract (agreement) alleged in the&nbsp;<em>Complaint</em>&nbsp;a written agreement or an oral agreement?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    oral_or_written:
+      '#type': radios
+      '#title': 'Oral or written'
+      '#options':
+        written: Written
+        oral: Oral
+      '#required': true
+      '#required_error': 'Please select an option before continuing'
+      '#options__properties': ''
+  common_counts_other:
+    '#type': webform_wizard_page
+    '#title': 'Common counts'
+    '#states':
+      visible:
+        ':input[name="cause_of_action[common_counts]"]':
+          checked: true
+        ':input[name="oral_or_written"]':
+          '!value': written
+    common_counts_1_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>In the cause of action for common counts, are any of the common counts for "open book account for money due," or "an account stated in writing" (paragraph CC-1(a) of form PLD-C-001(2), if used)?</p>
+        
+      '#format': basic_html
+    common_counts_4_year:
+      '#type': radios
+      '#title': 'Common Counts 4 year'
+      '#options':
+        'yes': 'Yes, there is a cause of action for "account stated" or for an "open book account"'
+        'no': 'No, there is NO cause of action for "account stated" or an "open book account"'
+      '#required': true
+      '#required_error': 'Please select an option before continuing'
+      '#options__properties': ''
+  statute_of_limitations_1:
+    '#type': webform_wizard_page
+    '#title': '4 year statute of limitations'
+    '#states':
+      visible:
+        ':input[name="defense_interview_opt_in"]':
+          value: 'yes'
+        ':input[name="unable_to_use_defense_wizard"]':
+          unchecked: true
+        ':input[name="federal_or_private_student_loan"]':
+          '!value': federal
+        ':input[name="oral_or_written"]':
+          '!value': oral
+        ':input[name="common_counts_4_year"]':
+          '!value': 'no'
+    credit_card_statute_of_limitations_1_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="debt_type"]':
+            value: credit_card
+      '#text': |
+        <p>The first set of defenses being evaluated are based on whether the lawsuit was filed in a timely manner.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Thinking about the credit card account alleged in the complaint and the most recent of either the last time it was used&nbsp;or that you made a payment, did more than four years pass between this date and the date the lawsuit was filed with the court?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    medical_debt_statute_of_limitations_1_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="debt_type"]':
+            value: medical
+      '#text': |
+        <p>The first set of defenses being evaluated are based on whether the lawsuit was filed in a timely manner.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Thinking about the medical debt account alleged in the complaint try to remember the last time you made a payment on the debt. If you did not make a payment on the debt try to remember the date the medical services were provided. Are there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    car_loan_statute_of_limitations_1_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="debt_type"]':
+            value: car_loan
+      '#text': |
+        <p>The first set of defenses being evaluated are based on whether the lawsuit was filed in a timely manner.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Thinking about the car loan alleged in the complaint try to remember the last time you made a payment on the loan. If you did not make a payment on the loan try to remember the date the first payment was due. Are there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    student_loan_statute_of_limitations_1_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="debt_type"]':
+            value: student_loan
+      '#text': |
+        <p>Thinking about the student loan alleged in the complaint try to remember the last time you made a payment on the loan. If you did not make a payment on the debt try to remember the date the first payment was due. Are there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>
+        
+      '#format': basic_html
+    other_debt_statute_of_limitations_1_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="debt_type"]':
+            value: other
+          ':input[name="oral_or_written"]':
+            value: written
+      '#text': |
+        <p>Thinking about the debt account alleged in the complaint try to remember the last time you made a payment on the debt. If you did not make a payment on the debt try to remember the date the first payment was due. are&nbsp;there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    other_debt_statute_of_limitations_2_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="debt_type"]':
+            value: other
+          ':input[name="common_counts_4_year"]':
+            value: 'yes'
+      '#text': |
+        <p>Thinking about the debt account alleged in the complaint try to remember the last time you made a payment on the debt. If you did not make a payment on the debt try to remember the date the first payment was due. are&nbsp;there more than four years between that date and the date that the plaintiff filed the lawsuit?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    4_year_statute_of_limitations:
+      '#type': radios
+      '#title': '4 year statute of limitations'
+      '#options':
+        'yes': 'It has been more than four years'
+        'no': 'It has NOT been more than four years'
+        maybe: 'It may have been more than four years'
+        not_account: 'I don''t remember, or it''s not my account'
+      '#required': true
+      '#required_error': 'Please select an option before continuing'
+      '#options__properties': ''
+  3_year_statute_of_limitations:
+    '#type': webform_wizard_page
+    '#title': '3 year statute of limitations'
+    '#states':
+      visible:
+        ':input[name="cause_of_action[fraud]"]':
+          checked: true
+        ':input[name="unable_to_use_defense_wizard"]':
+          unchecked: true
+        ':input[name="4_year_statute_of_limitations"]':
+          value:
+            '!pattern': ^(yes|maybe|not_account)$
+  sign_and_finish:
+    '#type': webform_wizard_page
+    '#title': 'Sign and finish'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

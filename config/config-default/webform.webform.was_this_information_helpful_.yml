@@ -17,7 +17,38 @@ id: was_this_information_helpful_
 title: 'Was this information helpful?'
 description: ''
 category: ''
-elements: "was_this_information_helpful_:\n  '#type': webform_buttons\n  '#title': 'Was this helpful?'\n  '#description': 'did this information help you with your case?'\n  '#description_display': tooltip\n  '#options': yes_no\n  '#format_items': comma\n  '#format_items_html': ''\n  '#format_items_text': ''\nany_additional_feedback_:\n  '#type': textarea\n  '#title': 'Any Additional Feedback?'\n  '#autocomplete': 'off'\n  '#states':\n    visible-slide:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nemail_optional_:\n  '#type': email\n  '#title': 'Email (optional)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#states':\n    visible:\n      ':input[name=\"was_this_information_helpful_\"]':\n        checked: true"
+elements: |-
+  was_this_information_helpful_:
+    '#type': webform_buttons
+    '#title': 'Was this helpful?'
+    '#description': 'did this information help you with your case?'
+    '#description_display': tooltip
+    '#options': yes_no
+    '#format_items': comma
+    '#format_items_html': ''
+    '#format_items_text': ''
+  any_additional_feedback_:
+    '#type': textarea
+    '#title': 'Any Additional Feedback?'
+    '#autocomplete': 'off'
+    '#states':
+      visible-slide:
+        ':input[name="was_this_information_helpful_"]':
+          checked: true
+  email_optional_:
+    '#type': email
+    '#title': 'Email (optional)'
+    '#states':
+      visible:
+        ':input[name="was_this_information_helpful_"]':
+          checked: true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#states':
+      visible:
+        ':input[name="was_this_information_helpful_"]':
+          checked: true
 css: ''
 javascript: ''
 settings:
