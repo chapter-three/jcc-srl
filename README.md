@@ -152,6 +152,8 @@ To add a patch to drupal module `foobar` insert the patches section in the extra
 }
 ```
 
+For patching robots.txt in Drupal 9, path such as trailing slashes might require different handling compare Drupal 8 else an error will occur during install/update. For example, [a proposed patch](https://www.drupal.org/project/drupal/issues/180379) that mentioned some Drupal URLs no longer requiring a trailing slash.
+
 ## Git Workflow and Deploying Code
 
 **NOTE: Always reset your local to a production like state before starting a new feature. Configuration should be imported from `master` and/or a production database should be imported before starting work, so that config changes from the new feature are clean when exported.**
