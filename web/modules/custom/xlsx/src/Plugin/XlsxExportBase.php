@@ -10,13 +10,12 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\xlsx\Plugin\XlsxSourceManager;
 use Drupal\xlsx\Plugin\XlsxExportManager;
 use Drupal\xlsx\Plugin\XlsxDataManager;
 use Drupal\xlsx\Plugin\XlsxRemoteManager;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Document\Security;
 use Drupal\xlsx\Spreadsheets;
 
 /**
@@ -37,7 +36,7 @@ class XlsxExportBase extends PluginBase implements XlsxExportInterface, Containe
   protected $fileSystem;
 
   /**
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $tempStoreFactory;
 
@@ -100,7 +99,7 @@ class XlsxExportBase extends PluginBase implements XlsxExportInterface, Containe
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
       $container->get('file_system'),
-      $container->get('user.private_tempstore'),
+      $container->get('tempstore.private'),
       $container->get('entity_type.manager'),
       $container->get('plugin.manager.xlsx_source'),
       $container->get('plugin.manager.xlsx_cell'),
@@ -156,7 +155,7 @@ class XlsxExportBase extends PluginBase implements XlsxExportInterface, Containe
    * {@inheritdoc}
    */
   public function submitExportForm(array &$form, FormStateInterface $form_state) {
-    
+
   }
 
   /**
@@ -169,7 +168,7 @@ class XlsxExportBase extends PluginBase implements XlsxExportInterface, Containe
 
     $modified_by = '';
     if ($current_user = \Drupal::currentUser()->getAccount()) {
-      $modified_by = $current_user->getUsername() . ' (' . $current_user->getEmail() . ')';
+      $modified_by = $current_user->getDisplayName() . ' (' . $current_user->getEmail() . ')';
     }
 
     $obj = new Spreadsheet();
