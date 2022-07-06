@@ -78,7 +78,7 @@ function jcc_forms_preprocess_views_view__find_forms__all(&$variables) {
 }
 
 function __jcc_language_sets() {
-  $data = file_get_contents(drupal_get_path('module', 'jcc_forms'). '/jcc_forms-language-labels.json');
+  $data = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('module', 'jcc_forms') . '/jcc_forms-language-labels.json');
 
   return json_decode($data);
 }
@@ -111,12 +111,6 @@ function __jcc_build_forms_content($rows, $organize_by) {
       if (isset($item->_entity->$field_name) && $item->_entity->$field_name->uri != null) {
         $label_in_language = $labels->label_in_language;
         $link_text = Markup::create('<span class="radius-pill tag">' . $label_in_language . '</span>');
-
-        /** @var Drupal\core\Url $field_url */
-        //$field_url = Url::fromUri($item->_entity->$field_name->uri);
-
-        /** @var Drupal\Core\Link $link */
-        //$link = Link::fromTextAndUrl($link_text, $field_url);
 
         array_push($item_languages, $link_text);
       }
