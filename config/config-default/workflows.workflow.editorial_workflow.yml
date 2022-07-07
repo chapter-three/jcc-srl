@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.basic
-    - node.type.court
-    - node.type.courthouse
     - node.type.handbook
     - node.type.overview
     - node.type.srl_howto
@@ -77,8 +75,6 @@ type_settings:
   entity_types:
     node:
       - basic
-      - court
-      - courthouse
       - handbook
       - overview
       - srl_howto
