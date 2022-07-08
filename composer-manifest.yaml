@@ -20,7 +20,7 @@ packages:
     cweagans/composer-patches: 1.7.2
     d3/d3: v3.5.17
     dflydev/dot-access-data: v1.1.0
-    doctrine/annotations: 1.13.2
+    doctrine/annotations: 1.13.3
     doctrine/cache: 1.13.0
     doctrine/collections: 1.6.8
     doctrine/common: 2.13.3
@@ -45,10 +45,10 @@ packages:
     drupal/config_filter: 1.9.0
     drupal/config_ignore: 2.3.0
     drupal/config_split: 1.8.0
-    drupal/core: 9.4.1
+    drupal/core: 9.4.2
     drupal/core-composer-scaffold: 9.4.1
     drupal/core-project-message: 9.4.1
-    drupal/core-recommended: 9.4.1
+    drupal/core-recommended: 9.4.2
     drupal/core-vendor-hardening: 9.4.1
     drupal/crop: 2.2.0
     drupal/csv_serialization: 2.1.0
@@ -150,7 +150,7 @@ packages:
     html2text/html2text: 4.3.1
     joachim-n/composer-manifest: 1.1.4
     judicialcouncil/courtyard-artifact: 0.1.335
-    laminas/laminas-diactoros: 2.11.2
+    laminas/laminas-diactoros: 2.11.3
     laminas/laminas-escaper: 2.9.0
     laminas/laminas-feed: 2.17.0
     laminas/laminas-stdlib: 3.7.1
