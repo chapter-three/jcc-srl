@@ -1,6 +1,6 @@
 name: Atrium
 description: A custom theme for JCC.
-core: 8.x
+core_version_requirement: ^8 || ^9
 type: theme
 base theme: classy
 logo: images/logo/jcc-logo--selfhelp__white.png

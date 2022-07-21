@@ -4,13 +4,11 @@ namespace Drupal\xlsx\Form\Mapping;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\ContentEntityType;
 use Drupal\Core\Entity\EntityFieldManager;
-use Drupal\Core\Logger\LoggerChannelFactory;
-use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -107,7 +105,7 @@ abstract class BaseForm extends FormBase {
   /**
    * Constructs a \Drupal\ps_plans\Form\MappingBaseForm.
    *
-   * @param \Drupal\user\PrivateTempStoreFactory $temp_store_factory
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store_factory
    * @param \Drupal\xlsx\XlsxSourceManager $xlsx_source
    * @param \Drupal\xlsx\XlsxCellManager $xlsx_cell
    * @param \Drupal\xlsx\XlsxExportManager $xlsx_export
@@ -135,7 +133,7 @@ abstract class BaseForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('user.private_tempstore'),
+      $container->get('tempstore.private'),
       $container->get('plugin.manager.xlsx_source'),
       $container->get('plugin.manager.xlsx_cell'),
       $container->get('plugin.manager.xlsx_export'),

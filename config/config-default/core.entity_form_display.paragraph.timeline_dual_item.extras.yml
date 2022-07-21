@@ -36,114 +36,116 @@ third_party_settings:
         - field_top_deadline
         - field_top_excerpt
         - group_top_read_more
+      label: Top
+      region: content
       parent_name: group_details
       weight: 0
       format_type: details
-      region: content
       format_settings:
+        classes: ''
+        id: ''
+        open: false
         description: ''
         required_fields: true
-        id: ''
-        classes: ''
         direction: vertical
         formatter: closed
-        open: false
-      label: Top
     group_bottom:
       children:
         - field_bottom_num
         - field_bottom_deadline
         - field_bottom_excerpt
         - group_bottom_read_more
+      label: Bottom
+      region: content
       parent_name: group_details
       weight: 2
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
+        open: false
         description: ''
         required_fields: true
         direction: vertical
         formatter: closed
-        open: false
-      label: Bottom
     group_details:
       children:
         - group_top
         - group_icon
         - group_bottom
+      label: Details
+      region: hidden
       parent_name: ''
       weight: 4
       format_type: tabs
-      region: hidden
       format_settings:
-        direction: vertical
-        id: ''
         classes: ''
-      label: Details
+        id: ''
+        direction: vertical
     group_top_read_more:
       children:
         - field_top_read_more_type
         - field_top_read_more
         - field_top_read_more_modal
+      label: 'Top Read More'
+      region: content
       parent_name: group_top
       weight: 20
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: 'Top Read More'
     group_bottom_read_more:
       children:
         - field_bottom_read_more_type
         - field_bottom_read_more
         - field_bottom_read_more_modal
+      label: 'Bottom Read More'
+      region: content
       parent_name: group_bottom
       weight: 20
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
+        id: ''
         open: false
+        description: ''
         required_fields: true
-      label: 'Bottom Read More'
     group_icon:
       children:
         - field_timeline_dual_icon
+      label: Icon
+      region: content
       parent_name: group_details
       weight: 1
       format_type: details
-      region: content
       format_settings:
-        id: ''
         classes: ''
-        description: ''
-        formatter: closed
-        required_fields: true
+        id: ''
         open: false
-      label: Icon
+        description: ''
+        required_fields: true
+        formatter: closed
 id: paragraph.timeline_dual_item.extras
 targetEntityType: paragraph
 bundle: timeline_dual_item
 mode: extras
 content:
   field_bottom_deadline:
+    type: string_textfield
     weight: 18
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_bottom_excerpt:
+    type: text_textarea
     weight: 19
+    region: content
     settings:
       rows: 1
       placeholder: ''
@@ -156,24 +158,24 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_bottom_num:
+    type: options_select
     weight: 17
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_bottom_read_more:
+    type: link_default
     weight: 13
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_bottom_read_more_modal:
+    type: text_textarea
     weight: 14
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -186,24 +188,24 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_timeline_dual_icon:
+    type: options_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_top_deadline:
+    type: string_textfield
     weight: 18
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_top_excerpt:
+    type: text_textarea
     weight: 19
+    region: content
     settings:
       rows: 1
       placeholder: ''
@@ -216,24 +218,24 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_top_num:
+    type: options_select
     weight: 16
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_top_read_more:
+    type: link_default
     weight: 7
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_top_read_more_modal:
+    type: text_textarea
     weight: 8
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -246,13 +248,11 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   translation:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   field_bottom_modal_label: true

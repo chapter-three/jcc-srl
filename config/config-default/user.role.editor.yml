@@ -1,7 +1,37 @@
 uuid: 60bc04c0-4f56-4134-b0bd-bca015010660
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.jcc_form
+    - media.type.remote_video
+    - media.type.snippet
+    - media.type.video
+    - workflows.workflow.editorial_workflow
+  module:
+    - content_moderation
+    - content_translation
+    - contextual
+    - dropzonejs
+    - entity_browser
+    - entity_clone
+    - environment_indicator
+    - fillpdf
+    - locale
+    - media
+    - metatag
+    - node
+    - paragraphs
+    - path
+    - rebuild_cache_access
+    - scheduler
+    - search
+    - search_api_exclude_entity
+    - system
+    - workbench
 id: editor
 label: Editor
 weight: -8

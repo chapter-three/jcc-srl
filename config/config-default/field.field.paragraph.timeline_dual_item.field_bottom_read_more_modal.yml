@@ -10,14 +10,12 @@ dependencies:
     - datalayer
     - text
 third_party_settings:
-  allowed_formats:
-    basic_html: basic_html
-    simple_html: '0'
-    full_html: '0'
-    plain_text: '0'
   datalayer:
     expose: 0
     label: field_bottom_read_more_modal
+  allowed_formats:
+    allowed_formats:
+      - basic_html
 id: paragraph.timeline_dual_item.field_bottom_read_more_modal
 field_name: field_bottom_read_more_modal
 entity_type: paragraph

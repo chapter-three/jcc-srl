@@ -5,7 +5,10 @@ dependencies:
   config:
     - taxonomy.vocabulary.jcc_form_prefix
 id: taxonomy_vocabulary_jcc_form_prefix
+entity_type_id: taxonomy_vocabulary
+entity_id: jcc_form_prefix
 action: page_not_found
 allow_override: 0
 redirect: ''
 redirect_code: 301
+redirect_fallback_action: access_denied

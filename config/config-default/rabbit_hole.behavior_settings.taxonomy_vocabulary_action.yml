@@ -5,7 +5,10 @@ dependencies:
   config:
     - taxonomy.vocabulary.action
 id: taxonomy_vocabulary_action
+entity_type_id: taxonomy_vocabulary
+entity_id: action
 action: page_not_found
 allow_override: 0
 redirect: ''
 redirect_code: 301
+redirect_fallback_action: access_denied

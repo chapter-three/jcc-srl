@@ -9,34 +9,36 @@ name: Solr
 description: ''
 backend: search_api_solr
 backend_config:
+  retrieve_data: false
+  highlight_data: false
+  site_hash: false
+  server_prefix: ''
+  domain: generic
+  environment: default
   connector: basic_auth
   connector_config:
     scheme: https
     host: jcc-trialcourt-solr.azurewebsites.net
     port: 443
     path: /
-    core: jcc-srl-live
+    core: jcc-srl-sandbox-1
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
     finalize_timeout: 30
-    commit_within: 1000
-    username: jcc
-    password: 'M^svR?F9pe-8Hwfw'
+    skip_schema_check: false
     solr_version: ''
     http_method: AUTO
+    commit_within: 1000
     jmx: false
     solr_install_dir: ''
+    username: jcc
+    password: 'M^svR?F9pe-8Hwfw'
+  optimize: false
+  fallback_multiple: true
   disabled_field_types: {  }
   disabled_caches: {  }
   disabled_request_handlers: {  }
   disabled_request_dispatchers: {  }
   rows: 10
-  retrieve_data: false
-  highlight_data: false
-  skip_schema_check: false
-  server_prefix: ''
-  domain: generic
-  environment: default
-  optimize: false
-  site_hash: false
+  index_single_documents_fallback_count: 10

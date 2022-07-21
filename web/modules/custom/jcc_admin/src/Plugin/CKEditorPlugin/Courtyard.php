@@ -42,14 +42,14 @@ class Courtyard extends PluginBase implements CKEditorPluginInterface, CKEditorP
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'jcc_admin') . '/courtyard/plugin.js';
+    return \Drupal::service('extension.path.resolver')->getPath('module', 'jcc_admin') . '/courtyard/plugin.js';
   }
 
   /**
    * @return array
    */
   public function getButtons() {
-    $iconImage = drupal_get_path('module', 'jcc_admin') . '/courtyard/images/icon.png';
+    $iconImage = \Drupal::service('extension.path.resolver')->getPath('module', 'jcc_admin') . '/courtyard/images/icon.png';
 
     return [
       'courtyard' => [

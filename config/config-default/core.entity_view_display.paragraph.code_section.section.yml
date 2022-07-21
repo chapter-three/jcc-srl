@@ -16,18 +16,18 @@ bundle: code_section
 mode: section
 content:
   field_section:
-    weight: 0
+    type: range_decimal
     label: hidden
     settings:
-      decimal_separator: .
-      scale: 2
       range_separator: '-'
       thousand_separator: ''
+      decimal_separator: .
+      scale: 2
       range_combine: true
       from_prefix_suffix: false
       to_prefix_suffix: false
     third_party_settings: {  }
-    type: range_decimal
+    weight: 0
     region: content
 hidden:
   field_code: true

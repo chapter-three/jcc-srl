@@ -17,7 +17,9 @@ bundle: card
 mode: default
 content:
   field_body:
+    type: text_textarea
     weight: 2
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -30,16 +32,16 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_icon:
+    type: options_select
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_title_display:
+    type: text_textfield
     weight: 1
+    region: content
     settings:
       size: 60
       placeholder: ''
@@ -50,8 +52,6 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: text_textfield
-    region: content
 hidden:
   created: true
   status: true

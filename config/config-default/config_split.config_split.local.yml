@@ -7,6 +7,7 @@ _core:
 id: local
 label: Local
 description: 'Local development environments.'
+weight: 0
 folder: ../config/config-local
 module:
   devel: 0
@@ -18,4 +19,3 @@ graylist:
   - 'webform.webform.*'
 graylist_dependents: false
 graylist_skip_equal: true
-weight: 0

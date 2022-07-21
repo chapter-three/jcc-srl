@@ -12,7 +12,13 @@ id: example_conditional_redirect
 title: 'Example Conditional Redirect'
 description: ''
 category: ''
-elements: "how_do_you_want_to_proceed_:\n  '#type': select\n  '#title': 'How do you want to proceed?'\n  '#options':\n    google: 'I want to Google something.'\n    courts: 'I want to go to the Main Courts site'"
+elements: |-
+  how_do_you_want_to_proceed_:
+    '#type': select
+    '#title': 'How do you want to proceed?'
+    '#options':
+      google: 'I want to Google something.'
+      courts: 'I want to go to the Main Courts site'
 css: ''
 javascript: ''
 settings:

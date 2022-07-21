@@ -42,7 +42,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       accordion_container: accordion_container
       card_list: card_list
@@ -58,13 +57,14 @@ settings:
       self_help_finder: self_help_finder
       iframe: iframe
       text: text
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 18
         enabled: false
       accordion_container:
-        enabled: true
         weight: 19
+        enabled: true
       card:
         weight: 20
         enabled: false
@@ -72,8 +72,8 @@ settings:
         weight: 24
         enabled: false
       card_list:
-        enabled: true
         weight: 21
+        enabled: true
       cascading_menu:
         weight: 31
         enabled: false
@@ -84,53 +84,53 @@ settings:
         weight: 22
         enabled: false
       complete:
-        enabled: true
         weight: 23
+        enabled: true
       datefinder:
-        enabled: true
         weight: 24
-      flex:
         enabled: true
+      flex:
         weight: 25
+        enabled: true
       hero_cards:
         weight: 30
         enabled: false
       iframe:
-        enabled: true
         weight: 39
-      links:
         enabled: true
+      links:
         weight: 31
+        enabled: true
       menu_links:
         weight: 39
         enabled: false
       postcard:
-        enabled: true
         weight: 26
-      self_help_finder:
         enabled: true
+      self_help_finder:
         weight: 34
+        enabled: true
       step:
         weight: 27
         enabled: false
       step_container:
-        enabled: true
         weight: 28
+        enabled: true
       switchboard:
-        enabled: true
         weight: 29
-      text:
         enabled: true
+      text:
         weight: 45
+        enabled: true
       tile:
         weight: 30
         enabled: false
       timeline:
-        enabled: true
         weight: 31
-      timeline_dual:
         enabled: true
+      timeline_dual:
         weight: 32
+        enabled: true
       timeline_dual_item:
         weight: 33
         enabled: false

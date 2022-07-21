@@ -12,7 +12,287 @@ id: gender_recognition_wayfinder
 title: 'Gender Recognition Wayfinder'
 description: ''
 category: ''
-elements: "what_would_you_like_to_do_:\n  '#type': webform_wizard_page\n  '#title': 'Who is the gender recognition order for?'\n  '#hide_submit': true\n  adult_child_explanation:\n    '#type': processed_text\n    '#text': |\n      <p>The forms you need to fill out and the steps in the process are different for children and adults.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  choose_path:\n    '#type': radios\n    '#title': choose_age\n    '#options':\n      adult: 'An adult'\n      child: 'A child (someone under age 18)'\n    '#options__properties': ''\nare_you_changing_your_name_to_match_your_gender_identity_:\n  '#type': webform_wizard_page\n  '#title': 'What do you want to get from the court?'\n  '#hide_submit': true\n  name_gender_match_elaboration:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: adult\n    '#text': |\n      <p>There are different steps depending on the type of gender recognition you need. Click on the option that fits your situation.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  name_gender_elaboration_child:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: child\n    '#text': |\n      <p>There are different steps depending on if you just want a court order recognizing your child's gender or if you <strong>also</strong> want to change your child's legal name at the same time.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  name_gender_offramp:\n    '#type': radios\n    '#title': Name_gender_offramp\n    '#options':\n      'Gender recog only': 'I just want a court order recognizing my gender'\n      'Name and gender': 'I want a court order recognizing my gender and I also want to change my legal name'\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: adult\n    '#options__properties': ''\n  name_gender_offramp_child:\n    '#type': radios\n    '#title': Name_gender_offramp_child\n    '#options':\n      'Gender recog only': 'I just want a court order recognizing my child''s gender'\n      'gender and name': 'I want a court order recognizing my child''s gender and also change their legal name'\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: child\n    '#options__properties': ''\nwill_one_or_both_parents_sign_the_request_:\n  '#type': webform_wizard_page\n  '#title': 'Will one or both parents sign the request?'\n  '#states':\n    visible:\n      ':input[name=\"choose_path\"]':\n        value: child\n  '#hide_submit': true\n  one_both_parent_elaboration:\n    '#type': processed_text\n    '#text': |\n      <p>The steps are different if only one parent is making the request and signing the paperwork.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>If the other parent is deceased, choose \"both parents.\"&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  one_both_parent_choice:\n    '#type': radios\n    '#title': one_both_parent_choice\n    '#options':\n      Both: 'Both parents'\n      One: 'One parent'\n    '#options__properties': ''\nbased_on_your_answers:\n  '#type': webform_wizard_page\n  '#title': 'Based on your answers'\n  '#hide_submit': true\n  change_recog_adult:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: adult\n        ':input[name=\"name_gender_offramp\"]':\n          value: 'Gender recog only'\n    '#text': |\n      <p>In California, you can ask for a court order legally recognizing your gender.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/adult-gender-change-no-name-change\">Get a court order recognizing your gender</a></h3>\n      \t</div>\n      \t</li>\n      </ul>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  recog_namechange_adult:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: adult\n        ':input[name=\"name_gender_offramp\"]':\n          value: 'Name and gender'\n    '#text': |\n      <p>In California, you can ask for a court order recognizing your gender and also change your name at the same time.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"/adult-name-and-gender-recognition\">Get a court order recognizing your gender</a><a href=\"https://selfhelp.courts.ca.gov/adult-name-and-gender-change\">&nbsp;and change your name</a></h3>\n      \t</div>\n      \t</li>\n      </ul>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  change_recog_bothparents:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: child\n        ':input[name=\"one_both_parent_choice\"]':\n          value: Both\n        ':input[name=\"name_gender_offramp_child\"]':\n          value: 'gender and name'\n    '#text': |\n      <p>You can ask the court for an order to recognize your child's gender and change their name at the same time. If you and the other parent agree, you ask the court together by filing a petition.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/child-change-gender-and-name-both-parents\">Change your child's name and get an order to recognize their gender</a></h3>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  change_recog_oneparent:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: child\n        ':input[name=\"one_both_parent_choice\"]':\n          value: One\n        ':input[name=\"name_gender_offramp_child\"]':\n          value: 'gender and name'\n    '#text': |\n      <p>You can ask the court for an order to recognize your child's gender and change their name at the same time.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>If you are the only parent making the request, you have to file a petition with the court, let the other parent know about it, and go to a court hearing.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/child-change-gender-and-name-one-parent\">Get a court order recognizing your child's gender and change their name</a></h3>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  recog_only_bothparents:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: child\n        ':input[name=\"one_both_parent_choice\"]':\n          value: Both\n        ':input[name=\"name_gender_offramp_child\"]':\n          value: 'Gender recog only'\n    '#text': |\n      <p>You can ask the court for an order to recognize your child's gender. If you and the other parent agree, you ask the court together by filing a petition.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/child-change-gender-both-parents\">Get a court order to recognize your child's&nbsp;gender</a></h3>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  recog_only_oneparent:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"choose_path\"]':\n          value: child\n        ':input[name=\"one_both_parent_choice\"]':\n          value: One\n        ':input[name=\"name_gender_offramp_child\"]':\n          value: 'Gender recog only'\n    '#text': |\n      <p>You can ask the court for an order to recognize your child's gender.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>If you are the only parent making the request, you have to file a petition with the court, let the other parent know about it, and go to a court hearing.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/child-gender-change-one-parent\">Get a court order to recognize your child's&nbsp;gender</a></h3>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  what_would_you_like_to_do_:
+    '#type': webform_wizard_page
+    '#title': 'Who is the gender recognition order for?'
+    '#hide_submit': true
+    adult_child_explanation:
+      '#type': processed_text
+      '#text': |
+        <p>The forms you need to fill out and the steps in the process are different for children and adults.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    choose_path:
+      '#type': radios
+      '#title': choose_age
+      '#options':
+        adult: 'An adult'
+        child: 'A child (someone under age 18)'
+      '#options__properties': ''
+  are_you_changing_your_name_to_match_your_gender_identity_:
+    '#type': webform_wizard_page
+    '#title': 'What do you want to get from the court?'
+    '#hide_submit': true
+    name_gender_match_elaboration:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: adult
+      '#text': |
+        <p>There are different steps depending on the type of gender recognition you need. Click on the option that fits your situation.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    name_gender_elaboration_child:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: child
+      '#text': |
+        <p>There are different steps depending on if you just want a court order recognizing your child's gender or if you <strong>also</strong> want to change your child's legal name at the same time.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    name_gender_offramp:
+      '#type': radios
+      '#title': Name_gender_offramp
+      '#options':
+        'Gender recog only': 'I just want a court order recognizing my gender'
+        'Name and gender': 'I want a court order recognizing my gender and I also want to change my legal name'
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: adult
+      '#options__properties': ''
+    name_gender_offramp_child:
+      '#type': radios
+      '#title': Name_gender_offramp_child
+      '#options':
+        'Gender recog only': 'I just want a court order recognizing my child''s gender'
+        'gender and name': 'I want a court order recognizing my child''s gender and also change their legal name'
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: child
+      '#options__properties': ''
+  will_one_or_both_parents_sign_the_request_:
+    '#type': webform_wizard_page
+    '#title': 'Will one or both parents sign the request?'
+    '#states':
+      visible:
+        ':input[name="choose_path"]':
+          value: child
+    '#hide_submit': true
+    one_both_parent_elaboration:
+      '#type': processed_text
+      '#text': |
+        <p>The steps are different if only one parent is making the request and signing the paperwork.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>If the other parent is deceased, choose "both parents."&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    one_both_parent_choice:
+      '#type': radios
+      '#title': one_both_parent_choice
+      '#options':
+        Both: 'Both parents'
+        One: 'One parent'
+      '#options__properties': ''
+  based_on_your_answers:
+    '#type': webform_wizard_page
+    '#title': 'Based on your answers'
+    '#hide_submit': true
+    change_recog_adult:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: adult
+          ':input[name="name_gender_offramp"]':
+            value: 'Gender recog only'
+      '#text': |
+        <p>In California, you can ask for a court order legally recognizing your gender.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/adult-gender-change-no-name-change">Get a court order recognizing your gender</a></h3>
+        	</div>
+        	</li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    recog_namechange_adult:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: adult
+          ':input[name="name_gender_offramp"]':
+            value: 'Name and gender'
+      '#text': |
+        <p>In California, you can ask for a court order recognizing your gender and also change your name at the same time.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="/adult-name-and-gender-recognition">Get a court order recognizing your gender</a><a href="https://selfhelp.courts.ca.gov/adult-name-and-gender-change">&nbsp;and change your name</a></h3>
+        	</div>
+        	</li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    change_recog_bothparents:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: child
+          ':input[name="one_both_parent_choice"]':
+            value: Both
+          ':input[name="name_gender_offramp_child"]':
+            value: 'gender and name'
+      '#text': |
+        <p>You can ask the court for an order to recognize your child's gender and change their name at the same time. If you and the other parent agree, you ask the court together by filing a petition.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/child-change-gender-and-name-both-parents">Change your child's name and get an order to recognize their gender</a></h3>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    change_recog_oneparent:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: child
+          ':input[name="one_both_parent_choice"]':
+            value: One
+          ':input[name="name_gender_offramp_child"]':
+            value: 'gender and name'
+      '#text': |
+        <p>You can ask the court for an order to recognize your child's gender and change their name at the same time.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>If you are the only parent making the request, you have to file a petition with the court, let the other parent know about it, and go to a court hearing.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/child-change-gender-and-name-one-parent">Get a court order recognizing your child's gender and change their name</a></h3>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    recog_only_bothparents:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: child
+          ':input[name="one_both_parent_choice"]':
+            value: Both
+          ':input[name="name_gender_offramp_child"]':
+            value: 'Gender recog only'
+      '#text': |
+        <p>You can ask the court for an order to recognize your child's gender. If you and the other parent agree, you ask the court together by filing a petition.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/child-change-gender-both-parents">Get a court order to recognize your child's&nbsp;gender</a></h3>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    recog_only_oneparent:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="choose_path"]':
+            value: child
+          ':input[name="one_both_parent_choice"]':
+            value: One
+          ':input[name="name_gender_offramp_child"]':
+            value: 'Gender recog only'
+      '#text': |
+        <p>You can ask the court for an order to recognize your child's gender.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>If you are the only parent making the request, you have to file a petition with the court, let the other parent know about it, and go to a court hearing.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Follow the link below for more information and step-by-step instructions for how to complete the process.</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/child-gender-change-one-parent">Get a court order to recognize your child's&nbsp;gender</a></h3>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

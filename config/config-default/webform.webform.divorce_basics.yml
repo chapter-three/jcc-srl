@@ -12,7 +12,78 @@ id: divorce_basics
 title: 'Divorce Basics'
 description: ''
 category: ''
-elements: "divorce_basics:\n  '#type': webform_wizard_page\n  '#title': 'Property & Children'\n  '#next_button_label': Next\n  property_children:\n    '#type': processed_text\n    '#text': |\n      <h5>You'll need to make decisions about property and children (if you have them)</h5>\n      \n      <p>Once you file and officially let your spouse know about the case (called&nbsp;<em><strong>serving&nbsp;court papers</strong></em>),&nbsp;decisions need to be made about&nbsp;</p>\n      \n      <ul>\n      \t<li>\n      \t<p>How to split any property or debts&nbsp;</p>\n      \t</li>\n      \t<li>\n      \t<p>Whether one of you needs spousal support and how much&nbsp;</p>\n      \t</li>\n      \t<li>\n      \t<p>The care and support of your children (if you have them)&nbsp;&nbsp;</p>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\ndo_we_need_to_both_agree_:\n  '#type': webform_wizard_page\n  '#title': 'Do we need to both agree?'\n  spouse_participation:\n    '#type': processed_text\n    '#text': |\n      <h5>Your spouse may participate, but doesn't have to</h5>\n      \n      <p>&nbsp;If your spouse chooses to participate in the divorce process, you and your spouse can agree about these things.&nbsp;<strong>If&nbsp;you don’t&nbsp;agree,&nbsp;you can&nbsp;use a court process to have the court decide.</strong>&nbsp;If your spouse doesn’t participate, you can ask the court to decide.&nbsp;</p>\n      \n      <p>Once&nbsp;these issues are decided, you submit final paperwork to the court&nbsp;so&nbsp;your divorce&nbsp;can&nbsp;become final.&nbsp;<strong>This whole process takes at least 6 months, often longer.&nbsp;</strong></p>\n      \n    '#format': basic_html\nyou_need_to_live_in_california:\n  '#type': webform_wizard_page\n  '#title': 'You need to live in California'\n  residency_requirement:\n    '#type': processed_text\n    '#text': |\n      <p>You can file for divorce in California if:&nbsp;&nbsp;&nbsp; &nbsp;</p>\n      \n      <ul>\n      \t<li>\n      \t<p>You or your spouse have lived in California for the last 6 months&nbsp;<em><strong>AND</strong></em></p>\n      \t</li>\n      \t<li>\n      \t<p>You or your spouse have lived in&nbsp;your county&nbsp;for at least 3 months<span>&nbsp;</span></p>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\nfiguring_out_your_path:\n  '#type': webform_wizard_page\n  '#title': 'Figuring out your path'\n  '#hide_submit': true\n  questions:\n    '#type': processed_text\n    '#text': |\n      <h5>There are different processes for getting a divorce depending on your situation</h5>\n      \n      <p>Depending on how long you’ve been married, whether or not you have children, and several other factors, the process you need to follow to get a divorce will differ.&nbsp;</p>\n      \n      <p><strong>You can find out what process you need to follow by answering 2-3 questions.</strong></p>\n      \n      <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class=\"usa-button usa-button--secondary\" href=\"https://selfhelp.courts.ca.gov/form/divorce-wayfinder\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get My Steps for Divorce&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>&nbsp; &nbsp; &nbsp;&nbsp;</p>\n      \n    '#format': basic_html"
+elements: |-
+  divorce_basics:
+    '#type': webform_wizard_page
+    '#title': 'Property & Children'
+    '#next_button_label': Next
+    property_children:
+      '#type': processed_text
+      '#text': |
+        <h5>You'll need to make decisions about property and children (if you have them)</h5>
+        
+        <p>Once you file and officially let your spouse know about the case (called&nbsp;<em><strong>serving&nbsp;court papers</strong></em>),&nbsp;decisions need to be made about&nbsp;</p>
+        
+        <ul>
+        	<li>
+        	<p>How to split any property or debts&nbsp;</p>
+        	</li>
+        	<li>
+        	<p>Whether one of you needs spousal support and how much&nbsp;</p>
+        	</li>
+        	<li>
+        	<p>The care and support of your children (if you have them)&nbsp;&nbsp;</p>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+  do_we_need_to_both_agree_:
+    '#type': webform_wizard_page
+    '#title': 'Do we need to both agree?'
+    spouse_participation:
+      '#type': processed_text
+      '#text': |
+        <h5>Your spouse may participate, but doesn't have to</h5>
+        
+        <p>&nbsp;If your spouse chooses to participate in the divorce process, you and your spouse can agree about these things.&nbsp;<strong>If&nbsp;you don’t&nbsp;agree,&nbsp;you can&nbsp;use a court process to have the court decide.</strong>&nbsp;If your spouse doesn’t participate, you can ask the court to decide.&nbsp;</p>
+        
+        <p>Once&nbsp;these issues are decided, you submit final paperwork to the court&nbsp;so&nbsp;your divorce&nbsp;can&nbsp;become final.&nbsp;<strong>This whole process takes at least 6 months, often longer.&nbsp;</strong></p>
+        
+      '#format': basic_html
+  you_need_to_live_in_california:
+    '#type': webform_wizard_page
+    '#title': 'You need to live in California'
+    residency_requirement:
+      '#type': processed_text
+      '#text': |
+        <p>You can file for divorce in California if:&nbsp;&nbsp;&nbsp; &nbsp;</p>
+        
+        <ul>
+        	<li>
+        	<p>You or your spouse have lived in California for the last 6 months&nbsp;<em><strong>AND</strong></em></p>
+        	</li>
+        	<li>
+        	<p>You or your spouse have lived in&nbsp;your county&nbsp;for at least 3 months<span>&nbsp;</span></p>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+  figuring_out_your_path:
+    '#type': webform_wizard_page
+    '#title': 'Figuring out your path'
+    '#hide_submit': true
+    questions:
+      '#type': processed_text
+      '#text': |
+        <h5>There are different processes for getting a divorce depending on your situation</h5>
+        
+        <p>Depending on how long you’ve been married, whether or not you have children, and several other factors, the process you need to follow to get a divorce will differ.&nbsp;</p>
+        
+        <p><strong>You can find out what process you need to follow by answering 2-3 questions.</strong></p>
+        
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a class="usa-button usa-button--secondary" href="https://selfhelp.courts.ca.gov/form/divorce-wayfinder">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get My Steps for Divorce&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+        
+      '#format': basic_html
 css: ''
 javascript: ''
 settings:

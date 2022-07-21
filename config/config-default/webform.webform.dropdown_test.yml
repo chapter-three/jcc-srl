@@ -12,7 +12,73 @@ id: dropdown_test
 title: 'Dropdown Test'
 description: ''
 category: ''
-elements: "dropdown_test:\n  '#type': webform_wizard_page\n  '#title': 'Dropdown test'\n  dropdown:\n    '#type': select\n    '#title': 'Choose One'\n    '#options':\n      One: One\n      Two: Two\n      Three: Three\n      Four: Four\n      Five: Five\n      Six: Six\n      Seven: Seven\n      Eight: Eight\n      Nine: Nine\n      Ten: Ten\n      Eleven: Eleven\n      Twelve: Twelve\n      Thirteen: Thirteen\n      Fourteen: Fourteen\n      Fifteen: Fifteen\n      Sixteeen: Sixteeen\n      Seventeen: Seventeen\n      Eighteen: Eighteen\n      Nineteen: Nineteen\n      Twenty: Twenty\n      Twenty-one: Twenty-one\n      Twenty-two: Twenty-two\n      Twenty-three: Twenty-three\n      Twenty-four: Twenty-four\n      Twenty-five: Twenty-five\n      Twenty-six: Twenty-six\n      Twenty-seven: Twenty-seven\n      Twenty-eight: Twenty-eight\n      Twenty-nine: Twenty-nine\n      Thirty: Thirty\n      Thirty-one: Thirty-one\n      Thirty-two: Thirty-two\n      Thirty-three: Thirty-three\n      Thirty-four: Thirty-four\n      Thirty-five: Thirty-five\n      Thirty-six: Thirty-six\n      Thirty-seven: Thirty-seven\n      Thirty-eight: Thirty-eight\n      Thirty-nine: Thirty-nine\n      Forty: Forty\n      Forty-one: Forty-one\n      Forty-two: Forty-two\n      Forty-three: Forty-three\n      Forty-four: Forty-four\n      Forty-five: Forty-five\n      Forty-six: Forty-six\n      Forty-seven: Forty-seven\n      Forty-eight: Forty-eight\n      Forty-nine: Forty-nine\n      Fifty: Fifty\n      Fifty-one: Fifty-one\n      Fifty-two: Fifty-two\n      Fifty-three: Fifty-three\n      Fifty-four: Fifty-four\n      Fifty-five: Fifty-five\n      Fifty-six: Fifty-six\n      Fifty-seven: Fifty-seven\n      Fifty-eight: Fifty-eight\n      Fifty-nine: Fifty-nine"
+elements: |-
+  dropdown_test:
+    '#type': webform_wizard_page
+    '#title': 'Dropdown test'
+    dropdown:
+      '#type': select
+      '#title': 'Choose One'
+      '#options':
+        One: One
+        Two: Two
+        Three: Three
+        Four: Four
+        Five: Five
+        Six: Six
+        Seven: Seven
+        Eight: Eight
+        Nine: Nine
+        Ten: Ten
+        Eleven: Eleven
+        Twelve: Twelve
+        Thirteen: Thirteen
+        Fourteen: Fourteen
+        Fifteen: Fifteen
+        Sixteeen: Sixteeen
+        Seventeen: Seventeen
+        Eighteen: Eighteen
+        Nineteen: Nineteen
+        Twenty: Twenty
+        Twenty-one: Twenty-one
+        Twenty-two: Twenty-two
+        Twenty-three: Twenty-three
+        Twenty-four: Twenty-four
+        Twenty-five: Twenty-five
+        Twenty-six: Twenty-six
+        Twenty-seven: Twenty-seven
+        Twenty-eight: Twenty-eight
+        Twenty-nine: Twenty-nine
+        Thirty: Thirty
+        Thirty-one: Thirty-one
+        Thirty-two: Thirty-two
+        Thirty-three: Thirty-three
+        Thirty-four: Thirty-four
+        Thirty-five: Thirty-five
+        Thirty-six: Thirty-six
+        Thirty-seven: Thirty-seven
+        Thirty-eight: Thirty-eight
+        Thirty-nine: Thirty-nine
+        Forty: Forty
+        Forty-one: Forty-one
+        Forty-two: Forty-two
+        Forty-three: Forty-three
+        Forty-four: Forty-four
+        Forty-five: Forty-five
+        Forty-six: Forty-six
+        Forty-seven: Forty-seven
+        Forty-eight: Forty-eight
+        Forty-nine: Forty-nine
+        Fifty: Fifty
+        Fifty-one: Fifty-one
+        Fifty-two: Fifty-two
+        Fifty-three: Fifty-three
+        Fifty-four: Fifty-four
+        Fifty-five: Fifty-five
+        Fifty-six: Fifty-six
+        Fifty-seven: Fifty-seven
+        Fifty-eight: Fifty-eight
+        Fifty-nine: Fifty-nine
 css: ''
 javascript: ''
 settings:

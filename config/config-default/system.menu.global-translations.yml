@@ -1,8 +1,0 @@
-uuid: 4b0d0c16-51a9-49fc-8439-8796d46e6a56
-langcode: en
-status: true
-dependencies: {  }
-id: global-translations
-label: 'Global translations'
-description: ''
-locked: false

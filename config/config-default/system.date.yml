@@ -1,11 +1,11 @@
+_core:
+  default_config_hash: 8WpQorNk5yJYiSOdLe3wU6gw9fVsPAbUULUFIR20FBo
+first_day: 0
 country:
   default: US
-first_day: 0
 timezone:
   default: America/Los_Angeles
   user:
     configurable: true
-    warn: false
     default: 0
-_core:
-  default_config_hash: 8WpQorNk5yJYiSOdLe3wU6gw9fVsPAbUULUFIR20FBo
+    warn: false

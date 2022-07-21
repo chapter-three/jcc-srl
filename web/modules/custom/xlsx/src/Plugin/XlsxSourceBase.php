@@ -10,7 +10,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\file\Entity\File;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
@@ -32,7 +32,7 @@ class XlsxSourceBase extends PluginBase implements XlsxSourceInterface, Containe
   protected $fileSystem;
 
   /**
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $tempStoreFactory;
 
@@ -65,7 +65,7 @@ class XlsxSourceBase extends PluginBase implements XlsxSourceInterface, Containe
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition,
       $container->get('file_system'),
-      $container->get('user.private_tempstore'),
+      $container->get('tempstore.private'),
       $container->get('entity_type.manager')
     );
   }
@@ -102,7 +102,7 @@ class XlsxSourceBase extends PluginBase implements XlsxSourceInterface, Containe
    * {@inheritdoc}
    */
   public function submitSourceForm(array &$form, FormStateInterface $form_state) {
-    
+
   }
 
   /**
@@ -116,7 +116,7 @@ class XlsxSourceBase extends PluginBase implements XlsxSourceInterface, Containe
    * {@inheritdoc}
    */
   public function submitImportForm(array &$form, FormStateInterface $form_state, $xlsx = NULL) {
-    
+
   }
 
   /**
@@ -146,7 +146,7 @@ class XlsxSourceBase extends PluginBase implements XlsxSourceInterface, Containe
       $reader->setInputEncoding($params['encoding']);
     }
     $spreadsheet = $reader->load($this->fileSystem->realpath($file->getFileUri()));
-    
+
     $sheet_columns = [];
     $loadedSheetNames = $spreadsheet->getSheetNames();
     foreach ($loadedSheetNames as $sheet_name) {

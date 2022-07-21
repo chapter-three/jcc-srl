@@ -12,7 +12,317 @@ id: divorce_judgment
 title: 'Divorce Judgment'
 description: 'A wayfinder to determine the necessary instructions for judgment.'
 category: ''
-elements: "how_are_you_coming_to_judgment_:\n  '#type': webform_wizard_page\n  '#title': 'Which best describes your divorce so far?'\n  '#hide_submit': true\n  judgment_type:\n    '#type': radios\n    '#title': 'Judgment type'\n    '#options':\n      default: 'I filed and served the divorce Petition. It’s been more than 30 days and my spouse hasn’t filed a Response. (Default) '\n      default_agreement: 'I filed and served the divorce Petition. It’s been more than 30 days and my spouse hasn’t filed a Response. But, we have a written agreement.  (Default with agreement) '\n      uncontested: 'My spouse (or I) filed a Response and we’ve been able to come to an agreement. '\n      trial: 'My spouse and I had a divorce trial. '\n    '#options__properties': ''\ndo_you_have_check_what_applies_:\n  '#type': webform_wizard_page\n  '#title': 'Do you have children together?'\n  children:\n    '#type': radios\n    '#title': 'Do you have children together?'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n    '#options__properties': ''\nbased_on_your_answers:\n  '#type': webform_wizard_page\n  '#title': 'Based on your answers'\n  default_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: default\n        ':input[name=\"children\"]':\n          value: 'No'\n    '#text': |\n      <h5>You can finish your divorce as a default</h5>\n      \n      <p>&nbsp;</p>\n      \n      <p>Since it's been more than 30 days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can&nbsp;ask the court for a default&nbsp;so you&nbsp;start the paperwork to&nbsp;finish the divorce.&nbsp;&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions for how to do this.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-default\">Finalize your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  defaultchildren_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: default\n        ':input[name=\"children\"]':\n          value: 'Yes'\n    '#text': |\n      <h5>You can finish your divorce as a default</h5>\n      \n      <p>&nbsp;</p>\n      \n      <p>Since it's been more than 30 days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can&nbsp;ask the court for a default&nbsp;so you&nbsp;start the paperwork to&nbsp;finish the divorce.&nbsp;&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions for how to do this.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-default-children\">Finalize your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  default_agree_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: default_agreement\n        ':input[name=\"children\"]':\n          value: 'No'\n    '#text': |\n      <h5>You can finish your divorce as a default with agreement</h5>\n      \n      <h5>&nbsp;</h5>\n      \n      <p>Since it's been more than thirty days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can finish your divorce with a default.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>But since you and your spouse have a written agreement, you can ask the court to make the agreement part of the final orders in your divorce.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-default-agreement\">Finish your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  defaultchildren_agree_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: default_agreement\n        ':input[name=\"children\"]':\n          value: 'Yes'\n    '#text': |\n      <h5>You can finish your divorce as a default with agreement</h5>\n      \n      <h5>&nbsp;</h5>\n      \n      <p>Since it's been more than thirty days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can finish your divorce with a default.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>But since you and your spouse have a written agreement, you can ask the court to make the agreement part of the final orders in your divorce.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-default-agreement-children\">Finish your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  agreement_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: uncontested\n        ':input[name=\"children\"]':\n          value: 'No'\n    '#text': |\n      <h5>You can finalize your agreement and finish your divorce</h5>\n      \n      <h5>&nbsp;</h5>\n      \n      <p>Since you and your spouse (or you) filed a&nbsp;Response&nbsp;and the two of you have a written agreement about how you want to handle the issues in your case, you&nbsp;can start the paperwork to&nbsp;finish&nbsp;your divorce.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-when-you-have-written-agreement\">Finish your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  agreementchildren_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: uncontested\n        ':input[name=\"children\"]':\n          value: 'Yes'\n    '#text': |\n      <h5>You can finalize your agreement and finish your divorce</h5>\n      \n      <h5>&nbsp;</h5>\n      \n      <p>Since you and your spouse (or you) filed a&nbsp;Response&nbsp;and the two of you have a written agreement about how you want to handle the issues in your case, you&nbsp;can start the paperwork to&nbsp;finish&nbsp;your divorce.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-when-you-have-written-agreement-children\">Finish your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  trial_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: trial\n        ':input[name=\"children\"]':\n          value: 'No'\n    '#text': |\n      <h5>You can start the paperwork to finish your divorce</h5>\n      \n      <p>&nbsp;</p>\n      \n      <p>You must turn in a set of final forms&nbsp;to the court. The court will review these forms to be sure there’s nothing missing. If not, the judge will sign the judgment, the papers will be filed, and your divorce is final. &nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/divorce-finalize-after-trial\">Finish your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  trialchildren_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"judgment_type\"]':\n          value: trial\n        ':input[name=\"children\"]':\n          value: 'Yes'\n    '#text': |\n      <h5>You can start the paperwork to finish your divorce</h5>\n      \n      <p>&nbsp;</p>\n      \n      <p>You must turn in a set of final forms&nbsp;to the court. The court will review these forms to be sure there’s nothing missing. If not, the judge will sign the judgment, the papers will be filed, and your divorce is final. &nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Use the link below to get step-by-step instructions</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/finish-your-divorce-after-trial-children\">Finish your divorce</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  how_are_you_coming_to_judgment_:
+    '#type': webform_wizard_page
+    '#title': 'Which best describes your divorce so far?'
+    '#hide_submit': true
+    judgment_type:
+      '#type': radios
+      '#title': 'Judgment type'
+      '#options':
+        default: 'I filed and served the divorce Petition. It’s been more than 30 days and my spouse hasn’t filed a Response. (Default) '
+        default_agreement: 'I filed and served the divorce Petition. It’s been more than 30 days and my spouse hasn’t filed a Response. But, we have a written agreement.  (Default with agreement) '
+        uncontested: 'My spouse (or I) filed a Response and we’ve been able to come to an agreement. '
+        trial: 'My spouse and I had a divorce trial. '
+      '#options__properties': ''
+  do_you_have_check_what_applies_:
+    '#type': webform_wizard_page
+    '#title': 'Do you have children together?'
+    children:
+      '#type': radios
+      '#title': 'Do you have children together?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#options__properties': ''
+  based_on_your_answers:
+    '#type': webform_wizard_page
+    '#title': 'Based on your answers'
+    default_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: default
+          ':input[name="children"]':
+            value: 'No'
+      '#text': |
+        <h5>You can finish your divorce as a default</h5>
+        
+        <p>&nbsp;</p>
+        
+        <p>Since it's been more than 30 days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can&nbsp;ask the court for a default&nbsp;so you&nbsp;start the paperwork to&nbsp;finish the divorce.&nbsp;&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions for how to do this.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-default">Finalize your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    defaultchildren_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: default
+          ':input[name="children"]':
+            value: 'Yes'
+      '#text': |
+        <h5>You can finish your divorce as a default</h5>
+        
+        <p>&nbsp;</p>
+        
+        <p>Since it's been more than 30 days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can&nbsp;ask the court for a default&nbsp;so you&nbsp;start the paperwork to&nbsp;finish the divorce.&nbsp;&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions for how to do this.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-default-children">Finalize your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    default_agree_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: default_agreement
+          ':input[name="children"]':
+            value: 'No'
+      '#text': |
+        <h5>You can finish your divorce as a default with agreement</h5>
+        
+        <h5>&nbsp;</h5>
+        
+        <p>Since it's been more than thirty days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can finish your divorce with a default.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>But since you and your spouse have a written agreement, you can ask the court to make the agreement part of the final orders in your divorce.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-default-agreement">Finish your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    defaultchildren_agree_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: default_agreement
+          ':input[name="children"]':
+            value: 'Yes'
+      '#text': |
+        <h5>You can finish your divorce as a default with agreement</h5>
+        
+        <h5>&nbsp;</h5>
+        
+        <p>Since it's been more than thirty days since you had the&nbsp;Petition&nbsp;served and your spouse still hasn’t filed a&nbsp;Response, you can finish your divorce with a default.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>But since you and your spouse have a written agreement, you can ask the court to make the agreement part of the final orders in your divorce.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-default-agreement-children">Finish your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    agreement_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: uncontested
+          ':input[name="children"]':
+            value: 'No'
+      '#text': |
+        <h5>You can finalize your agreement and finish your divorce</h5>
+        
+        <h5>&nbsp;</h5>
+        
+        <p>Since you and your spouse (or you) filed a&nbsp;Response&nbsp;and the two of you have a written agreement about how you want to handle the issues in your case, you&nbsp;can start the paperwork to&nbsp;finish&nbsp;your divorce.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-when-you-have-written-agreement">Finish your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    agreementchildren_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: uncontested
+          ':input[name="children"]':
+            value: 'Yes'
+      '#text': |
+        <h5>You can finalize your agreement and finish your divorce</h5>
+        
+        <h5>&nbsp;</h5>
+        
+        <p>Since you and your spouse (or you) filed a&nbsp;Response&nbsp;and the two of you have a written agreement about how you want to handle the issues in your case, you&nbsp;can start the paperwork to&nbsp;finish&nbsp;your divorce.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-when-you-have-written-agreement-children">Finish your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    trial_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: trial
+          ':input[name="children"]':
+            value: 'No'
+      '#text': |
+        <h5>You can start the paperwork to finish your divorce</h5>
+        
+        <p>&nbsp;</p>
+        
+        <p>You must turn in a set of final forms&nbsp;to the court. The court will review these forms to be sure there’s nothing missing. If not, the judge will sign the judgment, the papers will be filed, and your divorce is final. &nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/divorce-finalize-after-trial">Finish your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    trialchildren_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="judgment_type"]':
+            value: trial
+          ':input[name="children"]':
+            value: 'Yes'
+      '#text': |
+        <h5>You can start the paperwork to finish your divorce</h5>
+        
+        <p>&nbsp;</p>
+        
+        <p>You must turn in a set of final forms&nbsp;to the court. The court will review these forms to be sure there’s nothing missing. If not, the judge will sign the judgment, the papers will be filed, and your divorce is final. &nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Use the link below to get step-by-step instructions</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/finish-your-divorce-after-trial-children">Finish your divorce</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

@@ -12,7 +12,265 @@ id: divorce_finder
 title: 'Divorce Finder'
 description: 'Locate the correct county for filing a divorce'
 category: ''
-elements: "have_you_lived_in_california_for_the_last_six_months_:\n  '#type': webform_wizard_page\n  '#title': 'Have you lived in California for the last six months?'\n  '#hide_submit': true\n  have_you_lived_in_california_for_the_last_six_months:\n    '#type': radios\n    '#title': 'Have you lived in California for the last six months?'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'Not sure': 'I''m not sure'\n    '#options__properties': ''\nhave_you_lived_in_your_county_for_the_last_3_months_:\n  '#type': webform_wizard_page\n  '#title': 'Have you lived in your present county for the last 3 months?'\n  '#states':\n    invisible:\n      ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n        value: 'No'\n  '#hide_submit': true\n  have_you_lived_in_your_county_for_the_last_3_months:\n    '#type': radios\n    '#title': 'Have you lived in your county for the last 3 months?'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'Not Sure': 'I''m not sure'\n    '#options__properties': ''\nhas_your_spouse_lived_in_california_for_the_last_6_months_:\n  '#type': webform_wizard_page\n  '#title': 'Has your spouse lived in California for the last 6 months?'\n  '#hide_submit': true\n  has_your_spouse_lived_in_california_for_the_last_six_months:\n    '#type': radios\n    '#title': 'Has your spouse lived in California for the last six months?'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'Not Sure': 'I''m not sure'\n    '#options__properties': ''\nhas_your_spouse_lived_in_their_present_county_for_the_last_3_mon:\n  '#type': webform_wizard_page\n  '#title': 'Has your spouse lived in their present county for the last 3 months?'\n  '#states':\n    invisible:\n      ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n        value: 'No'\n  '#hide_submit': true\n  has_your_spouse_lived_in_their_present_county_for_the_last_3:\n    '#type': radios\n    '#title': 'Has your spouse lived in their present county for the last 3 months'\n    '#options':\n      'Yes': 'Yes'\n      'No': 'No'\n      'I''m not sure': 'I''m not sure'\n    '#options__properties': ''\nwhere_to_file:\n  '#type': webform_wizard_page\n  '#title': 'Where to file'\n  '#hide_submit': true\n  based_on_your_answers:\n    '#type': processed_text\n    '#text': |\n      <p>Based on your answers:</p>\n      \n    '#format': basic_html\n  your_county:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n          value: 'Yes'\n        ':input[name=\"have_you_lived_in_your_county_for_the_last_3_months\"]':\n          value: 'Yes'\n    '#text': |\n      <p><strong>You may file for divorce in the county you live.</strong></p>\n      \n    '#format': basic_html\n  spouse_county:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n          value: 'Yes'\n        ':input[name=\"has_your_spouse_lived_in_their_present_county_for_the_last_3\"]':\n          value: 'Yes'\n    '#text': |\n      <p><strong>You may file for divorce in the county your spouse lives.</strong></p>\n      \n    '#format': basic_html\n  your_county_if_six_months:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n          value: 'Not sure'\n        ':input[name=\"have_you_lived_in_your_county_for_the_last_3_months\"]':\n          value: 'Yes'\n    '#text': |\n      <p>You may be able to file for divorce in your county IF you have lived in California for more than six months.</p>\n      \n    '#format': basic_html\n  your_county_if_three_months:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n          value: 'Yes'\n        ':input[name=\"have_you_lived_in_your_county_for_the_last_3_months\"]':\n          value: 'Not Sure'\n    '#text': |\n      <p>You may be able to file in your county IF you have lived there for the past three months.</p>\n      \n    '#format': basic_html\n  your_county_if_three_and_six_months:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n          value: 'Not sure'\n        ':input[name=\"have_you_lived_in_your_county_for_the_last_3_months\"]':\n          value: 'Not Sure'\n    '#text': |\n      <p>You may be able to file in your county IF you have lived in California for at least 6 months AND your present county at least 3 months.</p>\n      \n    '#format': basic_html\n  spouse_county_if_six_months:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n          value: 'Not Sure'\n        ':input[name=\"has_your_spouse_lived_in_their_present_county_for_the_last_3\"]':\n          value: 'Yes'\n    '#text': |\n      <p>You may be able to file in your spouse's county IF your spouse has lived in California for 6 months.</p>\n      \n    '#format': basic_html\n  spouse_county_if_three_months:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n          value: 'Yes'\n        ':input[name=\"has_your_spouse_lived_in_their_present_county_for_the_last_3\"]':\n          value: 'I''m not sure'\n    '#text': |\n      <p>You may be able to file in your spouse's county IF your spouse has resided in that county for at least three months.</p>\n      \n    '#format': basic_html\n  spouse_county_if_three_and_six_months:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n          value: 'Not Sure'\n        ':input[name=\"has_your_spouse_lived_in_their_present_county_for_the_last_3\"]':\n          value: 'I''m not sure'\n    '#text': |\n      <p>You may be able to file in your spouse's county IF your spouse has&nbsp;lived in California for at least 6 months AND their present county at least 3 months.</p>\n      \n    '#format': basic_html\n  no_six_month_both:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n          value: 'No'\n        ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n          value: 'No'\n    '#text': |\n      <p><strong>You can't file for divorce in California right now.</strong></p>\n      \n      <p>To get a divorce in California, you or your spouse must have lived in:</p>\n      \n      <ul>\n      \t<li>California for the last 6 months AND</li>\n      \t<li>one of the&nbsp;<a href=\"https://www.courts.ca.gov/find-my-court.htm\" target=\"_blank\">California counties</a>&nbsp;for the last 3 months.</li>\n      </ul>\n      \n      <p>&nbsp;</p>\n      \n      <p>You may be able to file for a&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation\">legal separation</a>&nbsp;or an&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#annulment\">annulment</a>&nbsp;in your county or your spouse's county.</p>\n      \n    '#format': basic_html\n  no_six_and_three:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_california_for_the_last_six_months\"]':\n          value: 'No'\n        ':input[name=\"has_your_spouse_lived_in_their_present_county_for_the_last_3\"]':\n          value: 'No'\n    '#text': |\n      <p><strong>You can't file for divorce in California right now.</strong></p>\n      \n      <p>To get a divorce in California, you or your spouse must have lived in:</p>\n      \n      <ul>\n      \t<li>California for the last 6 months AND</li>\n      \t<li>one of the&nbsp;<a href=\"https://www.courts.ca.gov/find-my-court.htm\" target=\"_blank\">California counties</a>&nbsp;for the last 3 months.</li>\n      </ul>\n      \n      <p>&nbsp;</p>\n      \n      <p>You may be able to file for a&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation\">legal separation</a>&nbsp;or an&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#annulment\">annulment</a>&nbsp;in your county or your spouse's county.</p>\n      \n    '#format': basic_html\n  no_three_and_six:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_your_county_for_the_last_3_months\"]':\n          value: 'No'\n        ':input[name=\"has_your_spouse_lived_in_california_for_the_last_six_months\"]':\n          value: 'No'\n    '#text': |\n      <p><strong>You can't file for divorce in California right now.</strong></p>\n      \n      <p>To get a divorce in California, you or your spouse must have lived in:</p>\n      \n      <ul>\n      \t<li>California for the last 6 months AND</li>\n      \t<li>one of the&nbsp;<a href=\"https://www.courts.ca.gov/find-my-court.htm\" target=\"_blank\">California counties</a>&nbsp;for the last 3 months.</li>\n      </ul>\n      \n      <p>&nbsp;</p>\n      \n      <p>You may be able to file for a&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation\">legal separation</a>&nbsp;or an&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#annulment\">annulment</a>&nbsp;in your county or your spouse's county.</p>\n      \n    '#format': basic_html\n  no_three_month_both:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"have_you_lived_in_your_county_for_the_last_3_months\"]':\n          value: 'No'\n        ':input[name=\"has_your_spouse_lived_in_their_present_county_for_the_last_3\"]':\n          value: 'No'\n    '#text': |\n      <p><strong>You can't file for divorce in California right now.</strong></p>\n      \n      <p>To get a divorce in California, you or your spouse must have lived in:</p>\n      \n      <ul>\n      \t<li>California for the last 6 months AND</li>\n      \t<li>one of the&nbsp;<a href=\"https://www.courts.ca.gov/find-my-court.htm\" target=\"_blank\">California counties</a>&nbsp;for the last 3 months.</li>\n      </ul>\n      \n      <p>&nbsp;</p>\n      \n      <p>You may be able to file for a&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation\">legal separation</a>&nbsp;or an&nbsp;<a href=\"https://www.courts.ca.gov/selfhelp-glossary.htm#annulment\">annulment</a>&nbsp;in your county or your spouse's county.</p>\n      \n    '#format': basic_html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  have_you_lived_in_california_for_the_last_six_months_:
+    '#type': webform_wizard_page
+    '#title': 'Have you lived in California for the last six months?'
+    '#hide_submit': true
+    have_you_lived_in_california_for_the_last_six_months:
+      '#type': radios
+      '#title': 'Have you lived in California for the last six months?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'Not sure': 'I''m not sure'
+      '#options__properties': ''
+  have_you_lived_in_your_county_for_the_last_3_months_:
+    '#type': webform_wizard_page
+    '#title': 'Have you lived in your present county for the last 3 months?'
+    '#states':
+      invisible:
+        ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+          value: 'No'
+    '#hide_submit': true
+    have_you_lived_in_your_county_for_the_last_3_months:
+      '#type': radios
+      '#title': 'Have you lived in your county for the last 3 months?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'Not Sure': 'I''m not sure'
+      '#options__properties': ''
+  has_your_spouse_lived_in_california_for_the_last_6_months_:
+    '#type': webform_wizard_page
+    '#title': 'Has your spouse lived in California for the last 6 months?'
+    '#hide_submit': true
+    has_your_spouse_lived_in_california_for_the_last_six_months:
+      '#type': radios
+      '#title': 'Has your spouse lived in California for the last six months?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'Not Sure': 'I''m not sure'
+      '#options__properties': ''
+  has_your_spouse_lived_in_their_present_county_for_the_last_3_mon:
+    '#type': webform_wizard_page
+    '#title': 'Has your spouse lived in their present county for the last 3 months?'
+    '#states':
+      invisible:
+        ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+          value: 'No'
+    '#hide_submit': true
+    has_your_spouse_lived_in_their_present_county_for_the_last_3:
+      '#type': radios
+      '#title': 'Has your spouse lived in their present county for the last 3 months'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'I''m not sure': 'I''m not sure'
+      '#options__properties': ''
+  where_to_file:
+    '#type': webform_wizard_page
+    '#title': 'Where to file'
+    '#hide_submit': true
+    based_on_your_answers:
+      '#type': processed_text
+      '#text': |
+        <p>Based on your answers:</p>
+        
+      '#format': basic_html
+    your_county:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+            value: 'Yes'
+          ':input[name="have_you_lived_in_your_county_for_the_last_3_months"]':
+            value: 'Yes'
+      '#text': |
+        <p><strong>You may file for divorce in the county you live.</strong></p>
+        
+      '#format': basic_html
+    spouse_county:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+            value: 'Yes'
+          ':input[name="has_your_spouse_lived_in_their_present_county_for_the_last_3"]':
+            value: 'Yes'
+      '#text': |
+        <p><strong>You may file for divorce in the county your spouse lives.</strong></p>
+        
+      '#format': basic_html
+    your_county_if_six_months:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+            value: 'Not sure'
+          ':input[name="have_you_lived_in_your_county_for_the_last_3_months"]':
+            value: 'Yes'
+      '#text': |
+        <p>You may be able to file for divorce in your county IF you have lived in California for more than six months.</p>
+        
+      '#format': basic_html
+    your_county_if_three_months:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+            value: 'Yes'
+          ':input[name="have_you_lived_in_your_county_for_the_last_3_months"]':
+            value: 'Not Sure'
+      '#text': |
+        <p>You may be able to file in your county IF you have lived there for the past three months.</p>
+        
+      '#format': basic_html
+    your_county_if_three_and_six_months:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+            value: 'Not sure'
+          ':input[name="have_you_lived_in_your_county_for_the_last_3_months"]':
+            value: 'Not Sure'
+      '#text': |
+        <p>You may be able to file in your county IF you have lived in California for at least 6 months AND your present county at least 3 months.</p>
+        
+      '#format': basic_html
+    spouse_county_if_six_months:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+            value: 'Not Sure'
+          ':input[name="has_your_spouse_lived_in_their_present_county_for_the_last_3"]':
+            value: 'Yes'
+      '#text': |
+        <p>You may be able to file in your spouse's county IF your spouse has lived in California for 6 months.</p>
+        
+      '#format': basic_html
+    spouse_county_if_three_months:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+            value: 'Yes'
+          ':input[name="has_your_spouse_lived_in_their_present_county_for_the_last_3"]':
+            value: 'I''m not sure'
+      '#text': |
+        <p>You may be able to file in your spouse's county IF your spouse has resided in that county for at least three months.</p>
+        
+      '#format': basic_html
+    spouse_county_if_three_and_six_months:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+            value: 'Not Sure'
+          ':input[name="has_your_spouse_lived_in_their_present_county_for_the_last_3"]':
+            value: 'I''m not sure'
+      '#text': |
+        <p>You may be able to file in your spouse's county IF your spouse has&nbsp;lived in California for at least 6 months AND their present county at least 3 months.</p>
+        
+      '#format': basic_html
+    no_six_month_both:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+            value: 'No'
+          ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+            value: 'No'
+      '#text': |
+        <p><strong>You can't file for divorce in California right now.</strong></p>
+        
+        <p>To get a divorce in California, you or your spouse must have lived in:</p>
+        
+        <ul>
+        	<li>California for the last 6 months AND</li>
+        	<li>one of the&nbsp;<a href="https://www.courts.ca.gov/find-my-court.htm" target="_blank">California counties</a>&nbsp;for the last 3 months.</li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>You may be able to file for a&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation">legal separation</a>&nbsp;or an&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#annulment">annulment</a>&nbsp;in your county or your spouse's county.</p>
+        
+      '#format': basic_html
+    no_six_and_three:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_california_for_the_last_six_months"]':
+            value: 'No'
+          ':input[name="has_your_spouse_lived_in_their_present_county_for_the_last_3"]':
+            value: 'No'
+      '#text': |
+        <p><strong>You can't file for divorce in California right now.</strong></p>
+        
+        <p>To get a divorce in California, you or your spouse must have lived in:</p>
+        
+        <ul>
+        	<li>California for the last 6 months AND</li>
+        	<li>one of the&nbsp;<a href="https://www.courts.ca.gov/find-my-court.htm" target="_blank">California counties</a>&nbsp;for the last 3 months.</li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>You may be able to file for a&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation">legal separation</a>&nbsp;or an&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#annulment">annulment</a>&nbsp;in your county or your spouse's county.</p>
+        
+      '#format': basic_html
+    no_three_and_six:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_your_county_for_the_last_3_months"]':
+            value: 'No'
+          ':input[name="has_your_spouse_lived_in_california_for_the_last_six_months"]':
+            value: 'No'
+      '#text': |
+        <p><strong>You can't file for divorce in California right now.</strong></p>
+        
+        <p>To get a divorce in California, you or your spouse must have lived in:</p>
+        
+        <ul>
+        	<li>California for the last 6 months AND</li>
+        	<li>one of the&nbsp;<a href="https://www.courts.ca.gov/find-my-court.htm" target="_blank">California counties</a>&nbsp;for the last 3 months.</li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>You may be able to file for a&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation">legal separation</a>&nbsp;or an&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#annulment">annulment</a>&nbsp;in your county or your spouse's county.</p>
+        
+      '#format': basic_html
+    no_three_month_both:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="have_you_lived_in_your_county_for_the_last_3_months"]':
+            value: 'No'
+          ':input[name="has_your_spouse_lived_in_their_present_county_for_the_last_3"]':
+            value: 'No'
+      '#text': |
+        <p><strong>You can't file for divorce in California right now.</strong></p>
+        
+        <p>To get a divorce in California, you or your spouse must have lived in:</p>
+        
+        <ul>
+        	<li>California for the last 6 months AND</li>
+        	<li>one of the&nbsp;<a href="https://www.courts.ca.gov/find-my-court.htm" target="_blank">California counties</a>&nbsp;for the last 3 months.</li>
+        </ul>
+        
+        <p>&nbsp;</p>
+        
+        <p>You may be able to file for a&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#legalseparation">legal separation</a>&nbsp;or an&nbsp;<a href="https://www.courts.ca.gov/selfhelp-glossary.htm#annulment">annulment</a>&nbsp;in your county or your spouse's county.</p>
+        
+      '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

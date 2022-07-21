@@ -6,43 +6,35 @@ dependencies:
     - node
 _core:
   default_config_hash: HsjEWnjOmcDLSHEP0IKxGT99OLu33n1Fy48EZaNGMuA
-id: default
 label: Default
+id: default
 description: 'Default Linkit Profile'
-attributes:
-  target:
-    id: target
-    weight: 0
-    settings:
-      widget_type: simple_checkbox
-  title:
-    id: title
-    weight: 0
-    settings:
-      automatic_title: true
 matchers:
   df252163-3a1a-45b8-82a8-69618a00a145:
-    uuid: df252163-3a1a-45b8-82a8-69618a00a145
     id: 'entity:node'
-    weight: 0
+    uuid: df252163-3a1a-45b8-82a8-69618a00a145
     settings:
-      result_description: '[node:field_case_types:0:entity]'
+      metadata: '[node:field_case_types:0:entity]'
       bundles: {  }
       group_by_bundle: true
+      substitution_type: canonical
       include_unpublished: false
-  995df179-f232-4231-99f6-60e9f58539e7:
-    uuid: 995df179-f232-4231-99f6-60e9f58539e7
-    id: 'entity:media'
     weight: 0
+  995df179-f232-4231-99f6-60e9f58539e7:
+    id: 'entity:media'
+    uuid: 995df179-f232-4231-99f6-60e9f58539e7
     settings:
-      result_description: Media
+      metadata: Media
       bundles: {  }
       group_by_bundle: true
-  23a7e9ee-8fe0-4c82-bc7f-f8d5b5386b25:
-    uuid: 23a7e9ee-8fe0-4c82-bc7f-f8d5b5386b25
-    id: 'entity:webform'
+      substitution_type: canonical
     weight: 0
+  23a7e9ee-8fe0-4c82-bc7f-f8d5b5386b25:
+    id: 'entity:webform'
+    uuid: 23a7e9ee-8fe0-4c82-bc7f-f8d5b5386b25
     settings:
-      result_description: Webform
+      metadata: Webform
       bundles: null
       group_by_bundle: null
+      substitution_type: canonical
+    weight: 0

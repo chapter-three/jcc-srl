@@ -1,5 +1,29 @@
 form_settings:
+  taxonomy_term:
+    default_value: false
+    disable: true
+    hidden: true
   block_content:
+    default_value: true
+    disable: true
+    hidden: true
+  file:
+    default_value: false
+    disable: true
+    hidden: true
+  node:
+    default_value: false
+    disable: false
+    hidden: false
+  shortcut:
+    default_value: false
+    disable: false
+    hidden: true
+  user:
+    default_value: false
+    disable: false
+    hidden: true
+  menu_link_content:
     default_value: true
     disable: true
     hidden: true
@@ -15,10 +39,6 @@ form_settings:
     hidden: true
     default_value: false
     disable: false
-  file:
-    disable: true
-    hidden: true
-    default_value: false
   media:
     disable: true
     hidden: true
@@ -35,22 +55,6 @@ form_settings:
     hidden: true
     default_value: false
     disable: false
-  shortcut:
-    hidden: true
-    default_value: false
-    disable: false
-  taxonomy_term:
-    disable: true
-    hidden: true
-    default_value: false
-  user:
-    hidden: true
-    default_value: false
-    disable: false
-  menu_link_content:
-    default_value: true
-    disable: true
-    hidden: true
   paragraph:
     default_value: true
     disable: true
@@ -60,10 +64,6 @@ form_settings:
     disable: false
     hidden: false
   content_moderation_state:
-    default_value: false
-    disable: false
-    hidden: false
-  node:
     default_value: false
     disable: false
     hidden: false

@@ -18,12 +18,12 @@ plugin: 'facet_block:case_types'
 settings:
   id: 'facet_block:case_types'
   label: 'Case types'
-  provider: facets
   label_display: visible
+  provider: facets
   block_id: casetypes
 visibility:
   request_path:
     id: request_path
-    pages: /search
     negate: false
     context_mapping: {  }
+    pages: /search

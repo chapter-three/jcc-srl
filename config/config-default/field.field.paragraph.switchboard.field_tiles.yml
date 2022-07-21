@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       tile: tile
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 15
@@ -59,8 +59,8 @@ settings:
         weight: 25
         enabled: false
       tile:
-        enabled: true
         weight: 26
+        enabled: true
       timeline:
         weight: 27
         enabled: false

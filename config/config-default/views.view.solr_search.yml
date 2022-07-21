@@ -17,88 +17,23 @@ base_table: search_api_index_solr_index
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: none
-        options: {  }
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: mini
-        options:
-          items_per_page: 25
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-      style:
-        type: default
-      row:
-        type: search_api
-        options:
-          view_modes:
-            'entity:media':
-              audio: default
-              file: default
-              image: default
-              jcc_form: search_index
-              remote_video: default
-              snippet: default
-              svg: default
-              video: default
-            'entity:node':
-              basic: search_index
-              court: search_index
-              courthouse: search_index
-              handbook: search_index
-              overview: search_index
-              srl_howto: search_index
-              srl_howto_instruction: search_index
-              srl_onramp: search_index
-              srl_wayfinder: search_index
-              timeline: search_index
+      title: Search
       fields:
         body:
+          id: body
           table: search_api_index_solr_index
           field: body
-          id: body
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -160,6 +95,56 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 25
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: "<div class=\"active jcc-alert usa-alert usa-alert--no-icon usa-alert--warning\" id=\"alert-bar\">\r\n<div class=\"jcc-alert__body usa-alert__body\">\r\n<div class=\"jcc-alert__text usa-alert__text\">\r\n<h3 class=\"usa-alert__heading jcc-alert__heading\">We were unable to find a result for you.</h3>\r\n<p>Please try again with a different keyword or here are some resources that can help answer common questions:</p>\r\n<ul>\r\n<li><a href=\"/\">See the home page</a> for more options</li>\r\n<li>Get answers about your specific case, divorce records, or traffic fines and payments by <a href=\"https://www.courts.ca.gov/find-my-court.htm\" aria-label=\"Contact you local court to get answers about your case, records, or fines and payments\">contacting your local court</a></li>\r\n<li><a href=\"https://selfhelp.courts.ca.gov/getting-legal-help\">Find free or low-cost legal help</a></li>\r\n<li><a href=\"https://www.courts.ca.gov/find-my-court.htm\">Get free services from your court</a></li>\r\n<li><a href=\"https://calcountylawlib.libanswers.com/\">Ask a law librarian</a></li>\r\n</ul>\r\n</div>\r\n<div class=\"jcc-alert__close\" id=\"alert-close\">&nbsp;</div>\r\n</div>\r\n</div>\r\n\r\n"
+            format: full_html
+          tokenize: false
+      sorts: {  }
+      arguments: {  }
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -168,6 +153,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -215,7 +201,6 @@ display:
             - field_description_1
             - field_number
             - name
-          plugin_id: search_api_fulltext
         search_api_language:
           id: search_api_language
           table: search_api_index_solr_index
@@ -223,6 +208,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_language
           operator: in
           value:
             '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
@@ -255,7 +241,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_language
         bundle:
           id: bundle
           table: search_api_index_solr_index
@@ -263,6 +248,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_options
           operator: not
           value:
             audio: audio
@@ -302,32 +288,46 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          plugin_id: search_api_options
-      sorts: {  }
-      title: Search
+      style:
+        type: default
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:media':
+              audio: default
+              file: default
+              image: default
+              jcc_form: search_index
+              remote_video: default
+              snippet: default
+              svg: default
+              video: default
+            'entity:node':
+              basic: search_index
+              court: search_index
+              courthouse: search_index
+              handbook: search_index
+              overview: search_index
+              srl_howto: search_index
+              srl_howto_instruction: search_index
+              srl_onramp: search_index
+              srl_wayfinder: search_index
+              timeline: search_index
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      relationships: {  }
+      use_ajax: false
       header: {  }
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: "<div class=\"active jcc-alert usa-alert usa-alert--no-icon usa-alert--warning\" id=\"alert-bar\">\r\n<div class=\"jcc-alert__body usa-alert__body\">\r\n<div class=\"jcc-alert__text usa-alert__text\">\r\n<h3 class=\"usa-alert__heading jcc-alert__heading\">We were unable to find a result for you.</h3>\r\n<p>Please try again with a different keyword or here are some resources that can help answer common questions:</p>\r\n<ul>\r\n<li><a href=\"/\">See the home page</a> for more options</li>\r\n<li>Get answers about your specific case, divorce records, or traffic fines and payments by <a href=\"https://www.courts.ca.gov/find-my-court.htm\" aria-label=\"Contact you local court to get answers about your case, records, or fines and payments\">contacting your local court</a></li>\r\n<li><a href=\"https://selfhelp.courts.ca.gov/getting-legal-help\">Find free or low-cost legal help</a></li>\r\n<li><a href=\"https://www.courts.ca.gov/find-my-court.htm\">Get free services from your court</a></li>\r\n<li><a href=\"https://calcountylawlib.libanswers.com/\">Ask a law librarian</a></li>\r\n</ul>\r\n</div>\r\n<div class=\"jcc-alert__close\" id=\"alert-close\">&nbsp;</div>\r\n</div>\r\n</div>\r\n\r\n"
-            format: full_html
-          plugin_id: text
-      relationships: {  }
-      arguments: {  }
       display_extenders:
         metatag_display_extender: {  }
         ajax_history:
           enable_history: false
-      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -340,21 +340,21 @@ display:
         - 'config:field.storage.node.body'
         - 'config:search_api.index.solr_index'
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders:
-        metatag_display_extender: {  }
-        ajax_history:
-          enable_history: false
-      path: search
       cache:
         type: none
       defaults:
         cache: false
       exposed_block: true
+      display_extenders:
+        metatag_display_extender: {  }
+        ajax_history:
+          enable_history: false
+      path: search
     cache_metadata:
       max-age: -1
       contexts:

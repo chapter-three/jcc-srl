@@ -5,6 +5,7 @@ dependencies: {  }
 id: prod
 label: Production
 description: 'Intended for Pantheon ''develop'' and ''live'' environments.'
+weight: 1
 folder: ../config/config-prod
 module:
   mailsystem: 0
@@ -17,4 +18,3 @@ blacklist:
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
-weight: 1

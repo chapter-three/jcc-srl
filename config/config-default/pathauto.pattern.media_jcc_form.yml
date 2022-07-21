@@ -14,12 +14,12 @@ pattern: 'jcc-form/[media:field_number]'
 selection_criteria:
   c219209f-63d9-4bef-8ef7-d91463d44a5c:
     id: 'entity_bundle:media'
-    bundles:
-      jcc_form: jcc_form
     negate: false
+    uuid: c219209f-63d9-4bef-8ef7-d91463d44a5c
     context_mapping:
       media: media
-    uuid: c219209f-63d9-4bef-8ef7-d91463d44a5c
+    bundles:
+      jcc_form: jcc_form
 selection_logic: and
 weight: -8
 relationships: {  }

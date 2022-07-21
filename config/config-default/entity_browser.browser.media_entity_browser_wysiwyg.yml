@@ -26,18 +26,23 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   4185b1a8-cb18-4d7e-84d3-6091e2ba4e6c:
+    id: view
+    uuid: 4185b1a8-cb18-4d7e-84d3-6091e2ba4e6c
+    label: Gallery
+    weight: 1
     settings:
-      view: media_entity_browser
-      view_display: media_browser_all
       submit_text: 'Select media'
       auto_select: false
-    uuid: 4185b1a8-cb18-4d7e-84d3-6091e2ba4e6c
-    weight: 1
-    label: Gallery
-    id: view
+      view: media_entity_browser
+      view_display: media_browser_all
   4587c448-ca2a-4fe8-8708-909bb827dd1b:
+    id: dropzonejs_media_entity
+    uuid: 4587c448-ca2a-4fe8-8708-909bb827dd1b
+    label: 'Upload Images'
+    weight: 2
     settings:
-      media_type: image
+      submit_text: 'Select images'
+      auto_select: false
       upload_location: 'public://[date:custom:Y]-[date:custom:m]'
       dropzone_description: 'Drop images here to upload them'
       max_filesize: 8M
@@ -48,19 +53,14 @@ widgets:
       resize_quality: !!float 1
       resize_method: contain
       thumbnail_method: contain
-      submit_text: 'Select images'
-      auto_select: false
-    uuid: 4587c448-ca2a-4fe8-8708-909bb827dd1b
-    weight: 2
-    label: 'Upload Images'
-    id: dropzonejs_media_entity
+      media_type: image
   6ba94cd4-3407-48b6-8af8-d88cbeb94562:
+    id: entity_form
+    uuid: 6ba94cd4-3407-48b6-8af8-d88cbeb94562
+    label: 'Embed Video'
+    weight: 3
     settings:
+      submit_text: 'Save Video'
       entity_type: media
       bundle: remote_video
       form_mode: default
-      submit_text: 'Save Video'
-    uuid: 6ba94cd4-3407-48b6-8af8-d88cbeb94562
-    weight: 3
-    label: 'Embed Video'
-    id: entity_form

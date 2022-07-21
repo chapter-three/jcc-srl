@@ -46,16 +46,16 @@ third_party_settings:
         - field_watchers
         - field_case_type_forms_page
         - field_case_type_override
+      label: Tags
+      region: content
       parent_name: ''
       weight: 13
       format_type: fieldset
-      region: content
       format_settings:
+        classes: jcc-tag-set
+        id: ''
         description: ''
         required_fields: true
-        id: ''
-        classes: jcc-tag-set
-      label: Tags
     group_title_or_hero:
       children:
         - title
@@ -65,16 +65,16 @@ third_party_settings:
         - field_column_first
         - field_image
         - field_header
+      label: 'Title or hero'
+      region: content
       parent_name: ''
       weight: 1
       format_type: fieldset
-      region: content
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: true
-      label: 'Title or hero'
 _core:
   default_config_hash: Ygv0WAMNjjZagjG3c7Qgo2X51s4u_jdwbY3vfZtBW6Q
 id: node.basic.default
@@ -85,13 +85,13 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 8
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 4
@@ -99,45 +99,46 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_actions:
+    type: options_select
     weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_case_type_override:
+    type: link_default
     weight: 18
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_case_types:
+    type: options_select
     weight: 13
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_column_first:
+    type: text_textarea_with_summary
     weight: 4
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    type: text_textarea_with_summary
-    region: content
   field_exclude_from_search:
+    type: search_api_exclude_entity_widget
     weight: 101
+    region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
     third_party_settings: {  }
-    type: search_api_exclude_entity_widget
-    region: content
   field_header:
     type: entity_reference_paragraphs
     weight: 6
+    region: content
     settings:
       title: Header
       title_plural: Header
@@ -148,45 +149,46 @@ content:
     third_party_settings:
       cc:
         status: 0
-    region: content
   field_hide_title:
+    type: boolean_checkbox
     weight: 1
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_image:
+    type: media_library_widget
     weight: 5
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_media:
+    type: entity_browser_entity_reference
     weight: 9
+    region: content
     settings:
       entity_browser: meb
       field_widget_display: rendered_entity
+      field_widget_edit: false
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
       field_widget_display_settings:
         view_mode: default
-      field_widget_remove: true
-      open: true
       selection_mode: selection_append
-      field_widget_edit: false
-      field_widget_replace: false
     third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_metatag:
+    type: metatag_firehose
     weight: 11
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_paragraphs:
+    type: entity_reference_paragraphs
     weight: 12
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -197,38 +199,36 @@ content:
     third_party_settings:
       cc:
         status: 0
-    type: entity_reference_paragraphs
-    region: content
   field_parent:
+    type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_parties:
+    type: options_select
     weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_title_display:
+    type: text_textfield
     weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
-    region: content
   field_watchers:
+    type: options_select
     weight: 16
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   langcode:
     type: language_select
     weight: 3
@@ -239,8 +239,8 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 100
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -267,10 +267,10 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 7
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -288,12 +288,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

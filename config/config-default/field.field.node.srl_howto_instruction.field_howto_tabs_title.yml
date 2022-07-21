@@ -10,14 +10,12 @@ dependencies:
     - datalayer
     - text
 third_party_settings:
-  allowed_formats:
-    simple_html: simple_html
-    basic_html: '0'
-    full_html: '0'
-    plain_text: '0'
   datalayer:
     expose: 1
     label: field_howto_tabs_title
+  allowed_formats:
+    allowed_formats:
+      - simple_html
 id: node.srl_howto_instruction.field_howto_tabs_title
 field_name: field_howto_tabs_title
 entity_type: node

@@ -12,7 +12,191 @@ id: fee_waiver_form_assistant
 title: 'Fee Waiver Form Assistant'
 description: 'Form assistant for completing a fee waiver.'
 category: ''
-elements: "qualifications_for_fee_waiver:\n  '#type': webform_wizard_page\n  '#title': 'Qualifications for fee waiver'\n  qualifications_text:\n    '#type': processed_text\n    '#text': |\n      <p>In some cases, the court may waive (give up) court fees, or reduce the amount owed. If you are on certain types of public assistance or if your income falls below 125% of the federal poverty level as shown on the table below your court fees will be waived. Otherwise, if the court finds that you cannot pay for the basic necessities of life and court fees it may waive or reduce your court fees.</p>\n      \n      <p>Please select the first statement below that is true for you.</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"2d21a68a-39ca-4b55-b17d-76853bfc0a66\" data-view-mode=\"postcard_background\"></drupal-media>\n      \n    '#format': basic_html\n  how_do_you_qualify_for_a_fee_waiver_:\n    '#type': radios\n    '#title': 'How do you qualify for a fee waiver? (Choose the first that applies)'\n    '#options':\n      Public_assistance: 'I receive public assistance -- (one or more of: Food Stamps, Supplemental Security Income (SSI), SSP, Medi-Cal, County Relief/General Assistance, IHSS, CalWORKS or Tribal TANF, or CAPI)'\n      Income: 'My household income is below the amount on the table'\n      Income_over: 'I cannot afford my household''s basic needs and court fees'\n    '#options__properties': ''\ndownload_the_forms:\n  '#type': webform_wizard_page\n  '#title': 'Download the forms'\n  form_list:\n    '#type': processed_text\n    '#text': |\n      <p>Download or obtain from your court the following forms:</p>\n      \n      <ul>\n      \t<li><em>Request to Waive Court Fees </em>(<a href=\"https://www.courts.ca.gov/documents/fw001.pdf\">form FW-001</a>)</li>\n      \t<li><em>Order on Court Fee Waiver</em>&nbsp;(<a href=\"https://www.courts.ca.gov/documents/fw003.pdf\">form FW-003</a>)</li>\n      </ul>\n      \n      <p>You will complete these forms in the following steps.</p>\n      \n    '#format': basic_html\ncomplete_caption:\n  '#type': webform_wizard_page\n  '#title': 'Complete the caption'\n  caption_instructions:\n    '#type': processed_text\n    '#text': |\n      <p><img alt=\"Caption of form FW-001\" src=\"/sites/default/files/styles/3_2_768x512/public/2020-06/FWCaption.png\" /></p>\n      \n      <p>Begin by filling out the caption on the right-hand side, with the county of the court and the court's address (this may have been stamped in for you by the court). If you are filing this with the first papers to start a lawsuit, leave the case number blank, otherwise write in the case number. Finally, the case name is the last name of the person starting the case the letter \"v\" for \"versus\" and the last name of the person responding to the case. If either is a corporation, LLC, or fictitious business name, an abbreviated form of the name may be used.&nbsp;</p>\n      \n    '#format': basic_html\ncomplete_your_name:\n  '#type': webform_wizard_page\n  '#title': 'Complete your name'\n  name_instructions:\n    '#type': processed_text\n    '#text': |\n      <p><img alt=\"Sections 1, 2, and 3 of form FW-001\" src=\"/sites/default/files/styles/3_2_768x512/public/2020-06/FWNameJob_0.png\" /></p>\n      \n      <p>In section 1, write your name, address, and telephone number where indicated. In section 2, write your job title, the name of your employer, or your employer's address. If you are self-employed, or an independent contractor, write \"self\" for name of employer, and your address.</p>\n      \n      <p>Since you do not have an attorney, leave section 3 blank.</p>\n      \n    '#format': basic_html\nselect_court_and_reason:\n  '#type': webform_wizard_page\n  '#title': 'Select Court and reason'\n  select_court:\n    '#type': processed_text\n    '#text': |\n      <p><img alt=\"Paragraphs 4, 5, and 6 of form FW-001\" src=\"/sites/default/files/styles/3_2_768x512/public/2020-06/FWCourtandReason_0.png\" /></p>\n      \n      <p>In paragraph 4, select \"Superior Court.\"</p>\n      \n    '#format': basic_html\n  public_assistance:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Public_assistance\n    '#text': |\n      <p>In paragraph 5, select \"a,\" and then check each type of public assistance that you receive. Do not check \"b\" or \"c.\"</p>\n      \n    '#format': basic_html\n  income:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Income\n    '#text': |\n      <p>In paragraph 5, check box \"b\" and confirm that your combined household income is below the amount shown in the chart. This income is monthly income before taxes or other deductions are taken out. This amount is periodically revised, so make sure you are using the chart from the most recent version of the fee waiver form.</p>\n      \n    '#format': basic_html\n  basic_necessities:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Income_over\n    '#text': |\n      <p>In paragraph 5, check box \"c.\" Below that, select only one of the three boxes, to indicate whether you are asking the court to waive your court fees, reduce your court fees, or allow you to make payments over time.</p>\n      \n    '#format': basic_html\n  date_print_sign:\n    '#type': processed_text\n    '#text': |\n      <p>If you have asked for a fee waiver within the past six months, check box 6, otherwise leave it blank. If you filed a previous request, attach a copy if you can, and check the second box in number 6 as well.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Finally, date, print, and sign your name at the bottom of the form where indicated.</p>\n      \n    '#format': basic_html\nfinancial_information:\n  '#type': webform_wizard_page\n  '#title': 'Financial information'\n  no_financial_information:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Public_assistance\n    '#text': |\n      <p>Do not complete any information on the second page. You are done!</p>\n      \n    '#format': basic_html\n  financial_7to9:\n    '#type': processed_text\n    '#states':\n      invisible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Public_assistance\n    '#text': |\n      <p><img alt=\"Paragraphs 7 and 8 of form FW-001\" src=\"/sites/default/files/styles/3_2_768x512/public/2020-06/FW78.png\" /> <img alt=\"Paragraph 9 of form FW-001\" src=\"/sites/default/files/styles/3_2_768x512/public/2020-06/FW9.png\" /></p>\n      \n      <p>On the second page, you will need to complete information about your income in sections 7 to 9 on the second page.</p>\n      \n      <p>If your income changes substantially from month to month, check box 7, and use your average monthly income in the following sections.</p>\n      \n      <p>In section 8, write your gross income before any taxes and deductions and identify the sources. Total these in 8(b).</p>\n      \n      <p>In section 9 write the name, age and relationship to you of all other persons living in your household that you support, or depend upon for support. Then, write their gross income before taxes or deductions. Do not count people that are only roommates. Total the amounts in 9(b). If there are no household members other than yourself, write \"None\" in section 9, so that the court knows you did not skip the section.</p>\n      \n      <p>Total the amounts in 8(b) and 9(b) in the spot identified. This is your total gross household income.</p>\n      \n    '#format': basic_html\n  done_after_9:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Income\n    '#text': |\n      <p>You have completed form FW_001. Do not complete any information in sections 10 or 11.</p>\n      \n    '#format': basic_html\n  financial_10to11:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"how_do_you_qualify_for_a_fee_waiver_\"]':\n          value: Income_over\n    '#text': |\n      <p>Print information about your property in section 10. Cash in section 10(a) is the actual cash you have on hand, while bank accounts are listed in 10(b). When completing information about your vehicles in and real estate in 10(c) and 10(d), the \"fair market value\" is the amount you could sell it for now, not the amount that you paid. If you do not have a vehicle or do not own land, write \"None\" in the section so the court knows you did not skip the item.</p>\n      \n      <p>In section 11 you will list your monthly expenses. If you split the expenses with a roommate, write only the amount that you and the persons listed in section 9 pay. If you do not pay a particular expense, write \"0\" or \"None\" so the court knows you did not skip the item.&nbsp;</p>\n      \n    '#format': basic_html\ncaption_the_order:\n  '#type': webform_wizard_page\n  '#title': 'Caption the order'\n  complete_fw003:\n    '#type': processed_text\n    '#text': |\n      <p>On form FW-003, complete the caption with the address of the court, the case number, if one has already been assigned, and the case name, just as you did on the FW-001.</p>\n      \n      <p>Then, in section 1, fill in your name and address.</p>\n      \n      <p>Once you have completed the caption, leave the remainder of the form blank, the court will complete it for you. Whe completed, this will be the court order waiving your fees, reducing your fees, or allowing you to make payments over time.</p>\n      \n    '#format': basic_html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  qualifications_for_fee_waiver:
+    '#type': webform_wizard_page
+    '#title': 'Qualifications for fee waiver'
+    qualifications_text:
+      '#type': processed_text
+      '#text': |
+        <p>In some cases, the court may waive (give up) court fees, or reduce the amount owed. If you are on certain types of public assistance or if your income falls below 125% of the federal poverty level as shown on the table below your court fees will be waived. Otherwise, if the court finds that you cannot pay for the basic necessities of life and court fees it may waive or reduce your court fees.</p>
+        
+        <p>Please select the first statement below that is true for you.</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="2d21a68a-39ca-4b55-b17d-76853bfc0a66" data-view-mode="postcard_background"></drupal-media>
+        
+      '#format': basic_html
+    how_do_you_qualify_for_a_fee_waiver_:
+      '#type': radios
+      '#title': 'How do you qualify for a fee waiver? (Choose the first that applies)'
+      '#options':
+        Public_assistance: 'I receive public assistance -- (one or more of: Food Stamps, Supplemental Security Income (SSI), SSP, Medi-Cal, County Relief/General Assistance, IHSS, CalWORKS or Tribal TANF, or CAPI)'
+        Income: 'My household income is below the amount on the table'
+        Income_over: 'I cannot afford my household''s basic needs and court fees'
+      '#options__properties': ''
+  download_the_forms:
+    '#type': webform_wizard_page
+    '#title': 'Download the forms'
+    form_list:
+      '#type': processed_text
+      '#text': |
+        <p>Download or obtain from your court the following forms:</p>
+        
+        <ul>
+        	<li><em>Request to Waive Court Fees </em>(<a href="https://www.courts.ca.gov/documents/fw001.pdf">form FW-001</a>)</li>
+        	<li><em>Order on Court Fee Waiver</em>&nbsp;(<a href="https://www.courts.ca.gov/documents/fw003.pdf">form FW-003</a>)</li>
+        </ul>
+        
+        <p>You will complete these forms in the following steps.</p>
+        
+      '#format': basic_html
+  complete_caption:
+    '#type': webform_wizard_page
+    '#title': 'Complete the caption'
+    caption_instructions:
+      '#type': processed_text
+      '#text': |
+        <p><img alt="Caption of form FW-001" src="/sites/default/files/styles/3_2_768x512/public/2020-06/FWCaption.png" /></p>
+        
+        <p>Begin by filling out the caption on the right-hand side, with the county of the court and the court's address (this may have been stamped in for you by the court). If you are filing this with the first papers to start a lawsuit, leave the case number blank, otherwise write in the case number. Finally, the case name is the last name of the person starting the case the letter "v" for "versus" and the last name of the person responding to the case. If either is a corporation, LLC, or fictitious business name, an abbreviated form of the name may be used.&nbsp;</p>
+        
+      '#format': basic_html
+  complete_your_name:
+    '#type': webform_wizard_page
+    '#title': 'Complete your name'
+    name_instructions:
+      '#type': processed_text
+      '#text': |
+        <p><img alt="Sections 1, 2, and 3 of form FW-001" src="/sites/default/files/styles/3_2_768x512/public/2020-06/FWNameJob_0.png" /></p>
+        
+        <p>In section 1, write your name, address, and telephone number where indicated. In section 2, write your job title, the name of your employer, or your employer's address. If you are self-employed, or an independent contractor, write "self" for name of employer, and your address.</p>
+        
+        <p>Since you do not have an attorney, leave section 3 blank.</p>
+        
+      '#format': basic_html
+  select_court_and_reason:
+    '#type': webform_wizard_page
+    '#title': 'Select Court and reason'
+    select_court:
+      '#type': processed_text
+      '#text': |
+        <p><img alt="Paragraphs 4, 5, and 6 of form FW-001" src="/sites/default/files/styles/3_2_768x512/public/2020-06/FWCourtandReason_0.png" /></p>
+        
+        <p>In paragraph 4, select "Superior Court."</p>
+        
+      '#format': basic_html
+    public_assistance:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Public_assistance
+      '#text': |
+        <p>In paragraph 5, select "a," and then check each type of public assistance that you receive. Do not check "b" or "c."</p>
+        
+      '#format': basic_html
+    income:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Income
+      '#text': |
+        <p>In paragraph 5, check box "b" and confirm that your combined household income is below the amount shown in the chart. This income is monthly income before taxes or other deductions are taken out. This amount is periodically revised, so make sure you are using the chart from the most recent version of the fee waiver form.</p>
+        
+      '#format': basic_html
+    basic_necessities:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Income_over
+      '#text': |
+        <p>In paragraph 5, check box "c." Below that, select only one of the three boxes, to indicate whether you are asking the court to waive your court fees, reduce your court fees, or allow you to make payments over time.</p>
+        
+      '#format': basic_html
+    date_print_sign:
+      '#type': processed_text
+      '#text': |
+        <p>If you have asked for a fee waiver within the past six months, check box 6, otherwise leave it blank. If you filed a previous request, attach a copy if you can, and check the second box in number 6 as well.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Finally, date, print, and sign your name at the bottom of the form where indicated.</p>
+        
+      '#format': basic_html
+  financial_information:
+    '#type': webform_wizard_page
+    '#title': 'Financial information'
+    no_financial_information:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Public_assistance
+      '#text': |
+        <p>Do not complete any information on the second page. You are done!</p>
+        
+      '#format': basic_html
+    financial_7to9:
+      '#type': processed_text
+      '#states':
+        invisible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Public_assistance
+      '#text': |
+        <p><img alt="Paragraphs 7 and 8 of form FW-001" src="/sites/default/files/styles/3_2_768x512/public/2020-06/FW78.png" /> <img alt="Paragraph 9 of form FW-001" src="/sites/default/files/styles/3_2_768x512/public/2020-06/FW9.png" /></p>
+        
+        <p>On the second page, you will need to complete information about your income in sections 7 to 9 on the second page.</p>
+        
+        <p>If your income changes substantially from month to month, check box 7, and use your average monthly income in the following sections.</p>
+        
+        <p>In section 8, write your gross income before any taxes and deductions and identify the sources. Total these in 8(b).</p>
+        
+        <p>In section 9 write the name, age and relationship to you of all other persons living in your household that you support, or depend upon for support. Then, write their gross income before taxes or deductions. Do not count people that are only roommates. Total the amounts in 9(b). If there are no household members other than yourself, write "None" in section 9, so that the court knows you did not skip the section.</p>
+        
+        <p>Total the amounts in 8(b) and 9(b) in the spot identified. This is your total gross household income.</p>
+        
+      '#format': basic_html
+    done_after_9:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Income
+      '#text': |
+        <p>You have completed form FW_001. Do not complete any information in sections 10 or 11.</p>
+        
+      '#format': basic_html
+    financial_10to11:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="how_do_you_qualify_for_a_fee_waiver_"]':
+            value: Income_over
+      '#text': |
+        <p>Print information about your property in section 10. Cash in section 10(a) is the actual cash you have on hand, while bank accounts are listed in 10(b). When completing information about your vehicles in and real estate in 10(c) and 10(d), the "fair market value" is the amount you could sell it for now, not the amount that you paid. If you do not have a vehicle or do not own land, write "None" in the section so the court knows you did not skip the item.</p>
+        
+        <p>In section 11 you will list your monthly expenses. If you split the expenses with a roommate, write only the amount that you and the persons listed in section 9 pay. If you do not pay a particular expense, write "0" or "None" so the court knows you did not skip the item.&nbsp;</p>
+        
+      '#format': basic_html
+  caption_the_order:
+    '#type': webform_wizard_page
+    '#title': 'Caption the order'
+    complete_fw003:
+      '#type': processed_text
+      '#text': |
+        <p>On form FW-003, complete the caption with the address of the court, the case number, if one has already been assigned, and the case name, just as you did on the FW-001.</p>
+        
+        <p>Then, in section 1, fill in your name and address.</p>
+        
+        <p>Once you have completed the caption, leave the remainder of the form blank, the court will complete it for you. Whe completed, this will be the court order waiving your fees, reducing your fees, or allowing you to make payments over time.</p>
+        
+      '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

@@ -1,7 +1,8 @@
+_core:
+  default_config_hash: N67AkcKPlikWJbwxABv6MSMpGuXe36qWZfH88pEzeqc
 add_page_meta: true
 output_terms: true
 output_fields: true
-group: false
 lib_helper: false
 entity_meta:
   created: '0'
@@ -34,6 +35,7 @@ current_user_meta:
   roles: '0'
   created: '0'
   access: '0'
+group: false
 expose_user_details_fields: false
 entity_title: entityTitle
 entity_type: entityType
@@ -45,5 +47,3 @@ drupal_country: drupalCountry
 site_name: siteName
 key_replacements:
   - ''
-_core:
-  default_config_hash: N67AkcKPlikWJbwxABv6MSMpGuXe36qWZfH88pEzeqc

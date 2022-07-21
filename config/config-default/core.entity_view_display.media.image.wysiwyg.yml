@@ -18,13 +18,13 @@ mode: wysiwyg
 content:
   thumbnail:
     type: responsive_image
-    weight: 0
     label: hidden
     settings:
       responsive_image_style: wysiwyg
       image_link: ''
-    region: content
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   field_media_image: true

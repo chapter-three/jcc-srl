@@ -42,24 +42,22 @@ mode: search_index
 content:
   field_description:
     type: text_summary_or_trimmed
-    weight: 3
-    region: content
     label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
+    weight: 3
+    region: content
   field_number:
-    weight: 1
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 1
     region: content
   field_url:
     type: link
-    weight: 2
-    region: content
     label: hidden
     settings:
       trim_length: null
@@ -68,14 +66,16 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
+    weight: 2
+    region: content
   name:
     type: string
-    weight: 0
-    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   created: true
   field_arabic_url: true

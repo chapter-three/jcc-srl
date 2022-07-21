@@ -20,7 +20,9 @@ bundle: step
 mode: default
 content:
   field_description:
+    type: text_textarea
     weight: 1
+    region: content
     settings:
       rows: 2
       placeholder: ''
@@ -33,11 +35,10 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_paragraphs:
     type: entity_reference_paragraphs
     weight: 11
+    region: content
     settings:
       title: 'Additional item'
       title_plural: 'Additional items'
@@ -48,9 +49,10 @@ content:
     third_party_settings:
       cc:
         status: 0
-    region: content
   field_title_display:
+    type: text_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
@@ -61,8 +63,6 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: text_textfield
-    region: content
   translation:
     weight: 10
     region: content

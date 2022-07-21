@@ -37,7 +37,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       accordion_container: accordion_container
       card_list: card_list
@@ -51,13 +50,14 @@ settings:
       timeline_dual: timeline_dual
       self_help_finder: self_help_finder
       text: text
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: -25
         enabled: false
       accordion_container:
-        enabled: true
         weight: -35
+        enabled: true
       card:
         weight: -24
         enabled: false
@@ -65,8 +65,8 @@ settings:
         weight: 28
         enabled: false
       card_list:
-        enabled: true
         weight: -34
+        enabled: true
       cascading_menu:
         weight: 30
         enabled: false
@@ -77,14 +77,14 @@ settings:
         weight: -23
         enabled: false
       complete:
-        enabled: true
         weight: -33
+        enabled: true
       datefinder:
-        enabled: true
         weight: -32
-      flex:
         enabled: true
+      flex:
         weight: -31
+        enabled: true
       hero_cards:
         weight: 36
         enabled: false
@@ -95,32 +95,32 @@ settings:
         weight: 38
         enabled: false
       postcard:
-        enabled: true
         weight: -30
-      self_help_finder:
         enabled: true
+      self_help_finder:
         weight: 40
+        enabled: true
       step:
         weight: -22
         enabled: false
       step_container:
-        enabled: true
         weight: -29
+        enabled: true
       switchboard:
-        enabled: true
         weight: -28
-      text:
         enabled: true
+      text:
         weight: 45
+        enabled: true
       tile:
         weight: -21
         enabled: false
       timeline:
-        enabled: true
         weight: -27
-      timeline_dual:
         enabled: true
+      timeline_dual:
         weight: -26
+        enabled: true
       timeline_dual_item:
         weight: -19
         enabled: false
