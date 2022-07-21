@@ -45,10 +45,10 @@ packages:
     drupal/config_filter: 1.9.0
     drupal/config_ignore: 2.3.0
     drupal/config_split: 1.8.0
-    drupal/core: 9.4.2
+    drupal/core: 9.4.3
     drupal/core-composer-scaffold: 9.4.1
     drupal/core-project-message: 9.4.1
-    drupal/core-recommended: 9.4.2
+    drupal/core-recommended: 9.4.3
     drupal/core-vendor-hardening: 9.4.1
     drupal/crop: 2.2.0
     drupal/csv_serialization: 2.1.0
