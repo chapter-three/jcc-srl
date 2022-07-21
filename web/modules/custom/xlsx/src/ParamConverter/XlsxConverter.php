@@ -27,7 +27,7 @@ class XlsxConverter extends EntityConverter implements ParamConverterInterface {
     $id = $defaults['xlsx'] ?? FALSE;
 
     // Load the xlsx entity.
-    if (!$id || !($entity = $this->entityManager->getStorage($entity_type_id)->loadByProperties(['id' => $id]))) {
+    if (!$id || !($entity = $this->entityTypeManager->getStorage($entity_type_id)->loadByProperties(['id' => $id]))) {
       $cache_metadata = new CacheableMetadata();
       throw new CacheableNotFoundHttpException($cache_metadata->setCacheContexts(['url']), 'Unable to load XLSX entity.');
     }

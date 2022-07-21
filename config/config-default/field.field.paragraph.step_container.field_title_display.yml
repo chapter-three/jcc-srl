@@ -10,14 +10,12 @@ dependencies:
     - datalayer
     - text
 third_party_settings:
-  allowed_formats:
-    simple_html: simple_html
-    basic_html: '0'
-    full_html: '0'
-    plain_text: '0'
   datalayer:
     expose: 0
     label: field_title_display
+  allowed_formats:
+    allowed_formats:
+      - simple_html
 id: paragraph.step_container.field_title_display
 field_name: field_title_display
 entity_type: paragraph

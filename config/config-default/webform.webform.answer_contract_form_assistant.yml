@@ -12,7 +12,158 @@ id: answer_contract_form_assistant
 title: 'Answer Contract Form Assistant'
 description: 'An assistant to help with completing the Judicial Council form Answer- Contract (form PLD-C-010).'
 category: ''
-elements: "download_the_answer_contract_form:\n  '#type': webform_wizard_page\n  '#title': 'Getting started with your Answer'\n  download_instructions_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p class=\"jcc-lead\">This online app will walk you through answering your consumer debt complaint. It will provide instructions for filling out&nbsp;the&nbsp;<em>Answer- Contract</em>&nbsp;(form PLD-C-010).</p>\n      \n      <p>To get started,&nbsp;&nbsp;download the form&nbsp;<em>Answer- Contract</em>&nbsp;(<a href=\"https://www.courts.ca.gov/documents/pldc010.pdf\" target=\"_blank\">form PLD-C-010</a>) (link will open in a new tab). You may print out the form and complete it by hand, or edit it inside the free Adobe Acrobat Reader to type your answer and print it.</p>\n      \n    '#format': basic_html\ncomplete_the_caption:\n  '#type': webform_wizard_page\n  '#title': 'Complete the caption'\n  caption1_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>First, complete the top caption of your&nbsp;<em>Answer- Contract</em>.</p>\n      \n      <p>Write or type your telephone number where indicated, and your name and address in the box titled \"Attorney or party without attorney.\" Where it says \"Attorney for (name)\" write \"In Pro Per,\" an abbreviation of a Latin phrase meaning you are representing yourself.</p>\n      \n      <p>Copy the court information from the complaint, as well as the name of the Plaintiff and Defendant.</p>\n      \n      <p>Under \"Answer- Contract\" check the box \"To Complaint of\" and write the name of the plaintiff afterward.</p>\n      \n      <p>To the right of the caption, copy the case number from the Complaint into the box marked \"Case Number.\"</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"d7a01677-3429-446d-9041-69da40ebfe92\"></drupal-media>\n      \n    '#format': basic_html\ngeneral_or_specific_denial:\n  '#type': webform_wizard_page\n  '#title': 'Entering a general or specific denial to the complaint'\n  have_verification_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>Looking at the complaint, did the complaint have a verification? A verification is typically a separate page following the complaint which states how the person signing it is involved in the case, that the person signing it has knowledge of the case&nbsp;and has read the complaint, and that the&nbsp;information in the complaint is true. This statement is then signed under penalty of perjury.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Most debt collection cases do not have a verification, so it is okay if you do not find one. In consumer debt cases you will typically find another page signed under penalty of perjury stating the reason the case is filed in the county it is. This is a declaration of venue and is not a verification.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Does the complaint include a verification?</p>\n      \n    '#format': basic_html\n  has_verification:\n    '#type': radios\n    '#title': has_verification\n    '#options':\n      'yes': 'Yes, the complaint has a verification (uncommon)'\n      'no': 'No, the complaint does not have a verification (common)'\n    '#required': true\n    '#required_error': 'Please check either \"Yes\" or \"No\" before continuing.'\n    '#options__properties': ''\n  no_verification_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"has_verification\"]':\n          value: 'no'\n    '#text': |\n      <p>You are able to do what is called a \"general denial.\" By making a general denial, you are not saying anything is necessarily false in the complaint, only that the court should consider it false unless it is proven by the plaintiff. This means that the plaintiff is responsible for proving every allegation in the Complaint.</p>\n      \n      <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>\n      \n      <p>Type or write your name in paragraph 2.</p>\n      \n      <p>Check box 3(a), to generally deny the allegations in the complaint. Do not fill in any other information on the first page, and proceed to page 2 of your&nbsp;<em>Answer</em>.</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"5e94085e-05f5-4a70-a2a8-a3b573e30590\"></drupal-media>\n      \n    '#format': basic_html\n  verification_processed_text:\n    '#type': processed_text\n    '#states':\n      visible:\n        ':input[name=\"has_verification\"]':\n          value: 'yes'\n    '#text': |\n      <p>Since the complaint is verified, you must state what is specifically false in the complaint. By making a specific denial, you are admitting that the facts are true in the complaint except for those that you indicate in your answer are not true.</p>\n      \n      <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>\n      \n      <p>Type or write your name in paragraph 2.</p>\n      \n      <p>Check box 3(b), to indicate you will be specifically denying some of the allegations in the complaint. In paragraph 3(b)(1), write down the number(s) of the paragraph(s) in the complaint that are not true.</p>\n      \n      <p>In paragraph 3(b)(2) indicate the numbers of the paragraphs that might not be true because you don't have any knowledge that would allow you to confirm them as true.</p>\n      \n      <p>Any paragraphs that you do not list in paragraph 3(b)(1) or 3(b)(2) will be admitted to be true.</p>\n      \n      <p>Proceed to page 2 of your&nbsp;<em>Answer</em>.</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"f19207b6-3107-4cdd-972d-0f3df7cb79f7\"></drupal-media>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\ndefenses:\n  '#type': webform_wizard_page\n  '#title': Defenses\n  '#states_clear': false\n  defenses_general_description_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>In paragraph 4, on the second page, you will write your defenses. You may write them in the space provided, or may attach them on a separate paper. If you use the defense interview in this app,&nbsp;you may check the \"Continued in Attachment 4\" box, and attach the printout from this app.</p>\n      \n      <p>&nbsp;</p>\n      \n      <drupal-media data-align=\"center\" data-entity-type=\"media\" data-entity-uuid=\"a3589eea-6751-4009-900e-0dec21dae8e5\"></drupal-media>\n      \n      <p>&nbsp;</p>\n      \n      <p>The defenses that you list are called affirmative defenses because you must prove them. They range from complete defenses that would cause you to win the case, to partial defenses, which would cause you to owe less than the amount alleged.</p>\n      \n    '#format': basic_html\nsignature:\n  '#type': webform_wizard_page\n  '#title': 'Sign & Complete!'\n  signature_processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>1. At the bottom of the page, print your name on the left-hand line. You will sign your name on the right-hand line.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>2. Download &amp; Print&nbsp;the Defenses attachment, if you created one.&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>3. Once you have your Answer your next step is to serve the Answer form to the debt collector.&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p>Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"#\">Serve&nbsp;your Answer</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true"
+elements: |-
+  download_the_answer_contract_form:
+    '#type': webform_wizard_page
+    '#title': 'Getting started with your Answer'
+    download_instructions_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p class="jcc-lead">This online app will walk you through answering your consumer debt complaint. It will provide instructions for filling out&nbsp;the&nbsp;<em>Answer- Contract</em>&nbsp;(form PLD-C-010).</p>
+        
+        <p>To get started,&nbsp;&nbsp;download the form&nbsp;<em>Answer- Contract</em>&nbsp;(<a href="https://www.courts.ca.gov/documents/pldc010.pdf" target="_blank">form PLD-C-010</a>) (link will open in a new tab). You may print out the form and complete it by hand, or edit it inside the free Adobe Acrobat Reader to type your answer and print it.</p>
+        
+      '#format': basic_html
+  complete_the_caption:
+    '#type': webform_wizard_page
+    '#title': 'Complete the caption'
+    caption1_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>First, complete the top caption of your&nbsp;<em>Answer- Contract</em>.</p>
+        
+        <p>Write or type your telephone number where indicated, and your name and address in the box titled "Attorney or party without attorney." Where it says "Attorney for (name)" write "In Pro Per," an abbreviation of a Latin phrase meaning you are representing yourself.</p>
+        
+        <p>Copy the court information from the complaint, as well as the name of the Plaintiff and Defendant.</p>
+        
+        <p>Under "Answer- Contract" check the box "To Complaint of" and write the name of the plaintiff afterward.</p>
+        
+        <p>To the right of the caption, copy the case number from the Complaint into the box marked "Case Number."</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="d7a01677-3429-446d-9041-69da40ebfe92"></drupal-media>
+        
+      '#format': basic_html
+  general_or_specific_denial:
+    '#type': webform_wizard_page
+    '#title': 'Entering a general or specific denial to the complaint'
+    have_verification_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>Looking at the complaint, did the complaint have a verification? A verification is typically a separate page following the complaint which states how the person signing it is involved in the case, that the person signing it has knowledge of the case&nbsp;and has read the complaint, and that the&nbsp;information in the complaint is true. This statement is then signed under penalty of perjury.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Most debt collection cases do not have a verification, so it is okay if you do not find one. In consumer debt cases you will typically find another page signed under penalty of perjury stating the reason the case is filed in the county it is. This is a declaration of venue and is not a verification.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Does the complaint include a verification?</p>
+        
+      '#format': basic_html
+    has_verification:
+      '#type': radios
+      '#title': has_verification
+      '#options':
+        'yes': 'Yes, the complaint has a verification (uncommon)'
+        'no': 'No, the complaint does not have a verification (common)'
+      '#required': true
+      '#required_error': 'Please check either "Yes" or "No" before continuing.'
+      '#options__properties': ''
+    no_verification_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="has_verification"]':
+            value: 'no'
+      '#text': |
+        <p>You are able to do what is called a "general denial." By making a general denial, you are not saying anything is necessarily false in the complaint, only that the court should consider it false unless it is proven by the plaintiff. This means that the plaintiff is responsible for proving every allegation in the Complaint.</p>
+        
+        <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>
+        
+        <p>Type or write your name in paragraph 2.</p>
+        
+        <p>Check box 3(a), to generally deny the allegations in the complaint. Do not fill in any other information on the first page, and proceed to page 2 of your&nbsp;<em>Answer</em>.</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="5e94085e-05f5-4a70-a2a8-a3b573e30590"></drupal-media>
+        
+      '#format': basic_html
+    verification_processed_text:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="has_verification"]':
+            value: 'yes'
+      '#text': |
+        <p>Since the complaint is verified, you must state what is specifically false in the complaint. By making a specific denial, you are admitting that the facts are true in the complaint except for those that you indicate in your answer are not true.</p>
+        
+        <p>Skip over paragraph 1 for now. You will insert the number of pages when you have completed your&nbsp;<em>Answer</em>.</p>
+        
+        <p>Type or write your name in paragraph 2.</p>
+        
+        <p>Check box 3(b), to indicate you will be specifically denying some of the allegations in the complaint. In paragraph 3(b)(1), write down the number(s) of the paragraph(s) in the complaint that are not true.</p>
+        
+        <p>In paragraph 3(b)(2) indicate the numbers of the paragraphs that might not be true because you don't have any knowledge that would allow you to confirm them as true.</p>
+        
+        <p>Any paragraphs that you do not list in paragraph 3(b)(1) or 3(b)(2) will be admitted to be true.</p>
+        
+        <p>Proceed to page 2 of your&nbsp;<em>Answer</em>.</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="f19207b6-3107-4cdd-972d-0f3df7cb79f7"></drupal-media>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+  defenses:
+    '#type': webform_wizard_page
+    '#title': Defenses
+    '#states_clear': false
+    defenses_general_description_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>In paragraph 4, on the second page, you will write your defenses. You may write them in the space provided, or may attach them on a separate paper. If you use the defense interview in this app,&nbsp;you may check the "Continued in Attachment 4" box, and attach the printout from this app.</p>
+        
+        <p>&nbsp;</p>
+        
+        <drupal-media data-align="center" data-entity-type="media" data-entity-uuid="a3589eea-6751-4009-900e-0dec21dae8e5"></drupal-media>
+        
+        <p>&nbsp;</p>
+        
+        <p>The defenses that you list are called affirmative defenses because you must prove them. They range from complete defenses that would cause you to win the case, to partial defenses, which would cause you to owe less than the amount alleged.</p>
+        
+      '#format': basic_html
+  signature:
+    '#type': webform_wizard_page
+    '#title': 'Sign & Complete!'
+    signature_processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>1. At the bottom of the page, print your name on the left-hand line. You will sign your name on the right-hand line.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>2. Download &amp; Print&nbsp;the Defenses attachment, if you created one.&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>3. Once you have your Answer your next step is to serve the Answer form to the debt collector.&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p>Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="#">Serve&nbsp;your Answer</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit_hide': true
 css: ''
 javascript: ''
 settings:

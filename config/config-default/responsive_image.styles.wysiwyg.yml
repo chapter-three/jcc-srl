@@ -13,8 +13,6 @@ id: wysiwyg
 label: WYSIWYG
 image_style_mappings:
   -
-    breakpoint_id: responsive_image.viewport_sizing
-    multiplier: 1x
     image_mapping_type: sizes
     image_mapping:
       sizes: 100vw
@@ -25,5 +23,7 @@ image_style_mappings:
         - 375x
         - 640x
         - 768x
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
 breakpoint_group: responsive_image
 fallback_image_style: 1600x

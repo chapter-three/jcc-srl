@@ -21,7 +21,9 @@ bundle: tile
 mode: default
 content:
   field_body:
+    type: text_textarea
     weight: 6
+    region: content
     settings:
       rows: 2
       placeholder: ''
@@ -34,28 +36,28 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_link:
+    type: link_default
     weight: 3
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_page:
+    type: entity_reference_autocomplete
     weight: 4
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_statement:
+    type: text_textfield
     weight: 2
+    region: content
     settings:
       size: 60
       placeholder: ''
@@ -66,20 +68,18 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: text_textfield
-    region: content
   field_tile_type:
+    type: options_select
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_webform:
+    type: options_select
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   translation:
     weight: 7
     region: content

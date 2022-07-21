@@ -283,7 +283,6 @@ handlers:
       body: |
         <p>{{ webform_token('[webform_submission:source-title]', webform_submission) }}</p>
         <p>{{ webform_token('[current-page:url:brief]', webform_submission) }}</p>
-
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true

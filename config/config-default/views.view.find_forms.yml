@@ -25,44 +25,12 @@ base_table: media_field_data
 base_field: mid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'view media'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: none
-        options:
-          offset: 0
-      style:
-        type: default
-      row:
-        type: fields
+      title: 'Forms Lookup'
       fields:
         field_number:
           id: field_number
@@ -71,6 +39,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -126,32 +95,27 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         name:
           id: name
           table: media_field_data
           field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: media
           entity_field: media
+          plugin_id: field
           label: ''
+          exclude: false
           alter:
             alter_text: false
             make_link: false
             absolute: false
-            trim: false
             word_boundary: false
             ellipsis: false
             strip_tags: false
+            trim: false
             html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
           element_type: ''
           element_class: ''
           element_label_type: ''
@@ -161,9 +125,13 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
+          hide_empty: false
+          empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
           type: string
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -181,6 +149,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -235,7 +204,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_form_prefix:
           id: field_form_prefix
           table: media__field_form_prefix
@@ -243,6 +211,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -298,7 +267,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_url:
           id: field_url
           table: media__field_url
@@ -306,6 +274,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -365,7 +334,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_mandatory:
           id: field_mandatory
           table: media__field_mandatory
@@ -373,6 +341,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -418,8 +387,8 @@ display:
           type: boolean
           settings:
             format: default
-            format_custom_true: ''
             format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -430,7 +399,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
         field_revision_date:
           id: field_revision_date
           table: media__field_revision_date
@@ -438,6 +406,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -494,40 +463,71 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'view media'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts: {  }
+      arguments: {  }
       filters:
         status:
-          value: '1'
+          id: status
           table: media_field_data
           field: status
-          plugin_id: boolean
           entity_type: media
           entity_field: status
-          id: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
           expose:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
-          group: 1
         bundle:
           id: bundle
           table: media_field_data
           field: bundle
-          value:
-            jcc_form: jcc_form
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
+          value:
+            jcc_form: jcc_form
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts: {  }
-      title: 'Forms Lookup'
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
       header: {  }
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders:
         metatag_display_extender: {  }
         ajax_history: {  }
@@ -545,50 +545,11 @@ display:
         - 'config:field.storage.media.field_revision_date'
         - 'config:field.storage.media.field_url'
   all_by_category:
-    display_plugin: page
     id: all_by_category
     display_title: 'All By Category'
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders:
-        metatag_display_extender: {  }
-        ajax_history: {  }
-      path: find-forms/all-by-category
-      display_description: ''
-      filters:
-        status:
-          value: '1'
-          table: media_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: media
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          value:
-            jcc_form: jcc_form
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
-          expose:
-            operator_limit_selection: false
-            operator_list: {  }
-      defaults:
-        filters: false
-        filter_groups: false
-        sorts: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       sorts:
         field_number_value:
           id: field_number_value
@@ -597,11 +558,12 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: standard
           order: ASC
-          exposed: false
           expose:
             label: ''
-          plugin_id: standard
+            field_identifier: field_number_value
+          exposed: false
         field_form_category_target_id:
           id: field_form_category_target_id
           table: media__field_form_category
@@ -609,11 +571,51 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: standard
           order: ASC
-          exposed: false
           expose:
             label: ''
-          plugin_id: standard
+            field_identifier: field_form_category_target_id
+          exposed: false
+      filters:
+        status:
+          id: status
+          table: media_field_data
+          field: status
+          entity_type: media
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+          value:
+            jcc_form: jcc_form
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender: {  }
+        ajax_history: {  }
+      path: find-forms/all-by-category
     cache_metadata:
       max-age: -1
       contexts:

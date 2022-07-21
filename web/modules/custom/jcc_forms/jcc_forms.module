@@ -144,7 +144,7 @@ function jcc_forms_preprocess_views_view__find_forms__all_by_category(&$variable
 }
 
 function __jcc_language_sets() {
-  $data = file_get_contents(drupal_get_path('module', 'jcc_forms'). '/jcc_forms-language-labels.json');
+  $data = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('module', 'jcc_forms'). '/jcc_forms-language-labels.json');
 
   return json_decode($data);
 }

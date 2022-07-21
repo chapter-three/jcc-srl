@@ -18,14 +18,14 @@ plugin: webform_block
 settings:
   id: webform_block
   label: Webform
-  provider: webform
   label_display: '0'
+  provider: webform
   webform_id: was_this_information_helpful_
   default_data: ''
   redirect: false
 visibility:
   request_path:
     id: request_path
-    pages: "/form/*\r\n<front>\r\n"
     negate: true
     context_mapping: {  }
+    pages: "/form/*\r\n<front>\r\n"

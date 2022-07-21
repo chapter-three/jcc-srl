@@ -25,41 +25,41 @@ bundle: srl_wayfinder
 mode: default
 content:
   content_moderation_control:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_description:
-    weight: 3
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 3
     region: content
   field_options:
-    weight: 1
+    type: cc_user_input_revisions
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
-    type: cc_user_input_revisions
+    weight: 1
     region: content
   field_paragraphs:
-    weight: 2
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 2
     region: content
   field_title_display:
-    weight: 4
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 4
     region: content
 hidden:
   field_actions: true

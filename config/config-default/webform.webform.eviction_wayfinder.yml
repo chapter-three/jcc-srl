@@ -12,7 +12,200 @@ id: eviction_wayfinder
 title: 'Eviction Wayfinder'
 description: ''
 category: ''
-elements: "did_you_receive_a_complaint_or_a_notice:\n  '#type': webform_wizard_page\n  '#title': 'What kind of document did you receive from your landlord?'\n  '#hide_submit': true\n  processed_text:\n    '#type': processed_text\n    '#text': |\n      <p>For a landlord to evict you legally, they have to first give you a notice to move out or give you a chance to fix the problem (like paying the rent). This is called an <strong>eviction notice.&nbsp;</strong></p>\n      \n      <p>&nbsp;</p>\n      \n      <p>If you do not do what the notice asks before the time in the notice runs out, the landlord can file a case against you in court. When this case is filed, the landlord will give you what is called a <strong>Summons and Complaint</strong>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>Have you received an <strong>eviction notice</strong> or a <strong>Summons and Complaint</strong>?</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  what_kind_of_document_have_you_received_from_your_landlord_:\n    '#type': radios\n    '#title': 'What kind of document have you received from your landlord?'\n    '#options':\n      ev: 'An eviction notice'\n      sc: 'A Summons and Complaint'\n      evsc: 'Both an eviction notice and a Summons and Complaint'\n      dontknow: 'I''m not sure what kind of document I got'\n    '#options__properties': ''\nwhat_does_it_say_at_the_top_of_the_document_:\n  '#type': webform_wizard_page\n  '#title': 'What does it say at the top of the document?'\n  '#states':\n    visible:\n      ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n        value: dontknow\n  processed_text_01:\n    '#type': processed_text\n    '#text': |\n      <p>Select the option that is closest to the title of your document.</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  what_does_the_document_say:\n    '#type': radios\n    '#title': 'What does it say at the top of the document?'\n    '#options':\n      rent: 'Notice to Pay Rent or Quit'\n      covenants: 'Notice to Perform Covenants or Quit'\n      quit: 'Notice to Quit'\n      summons: Summons\n      sum130: SUM-130\n      complaint: 'Complaint Unlawful Detainer'\n      ud100: UD-100\n      dontknow: 'I don''t see any of these on the document'\n    '#options__properties': ''\ndoes_the_document_say_you_are_being_sued_or_you_have_been_sued_:\n  '#type': webform_wizard_page\n  '#title': 'Does the document say you are being sued or you have been sued?'\n  '#states':\n    visible:\n      ':input[name=\"what_does_the_document_say\"]':\n        value: dontknow\n  'yes':\n    '#type': radios\n    '#title': 'Yes'\n    '#options': yes_no\n    '#options__properties': ''\ndoes_the_title_of_the_document_include_a_number_of_days_:\n  '#type': webform_wizard_page\n  '#title': 'Does the title of the document include a number of days? '\n  '#states':\n    visible:\n      ':input[name=\"what_does_the_document_say\"]':\n        value: dontknow\n  processed_text_02:\n    '#type': processed_text\n    '#text': |\n      <p>For example, \"60 Day Notice to Pay Rent or Quit\" or \"Three Day Notice?\"</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n    '#format': basic_html\n  yesnodates:\n    '#type': radios\n    '#title': 'Yes'\n    '#options': yes_no\n    '#options__properties': ''\nbased_on_your_answers:\n  '#type': webform_wizard_page\n  '#title': 'Based on your answers'\n  processed_text_03:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"yes\"]':\n            value: 'No'\n        - or\n        - ':input[name=\"yesnodates\"]':\n            value: 'yes'\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: covenants\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: rent\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: quit\n        - or\n        - ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n            value: ev\n    '#text': |\n      <p>You have an <strong>Eviction Notice</strong>.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>This means that the landlord is telling you that you have to take some action to fix a problem or you will have to move out. The problem could be that you are behind on rent, or there is some damage to the home.</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>There are different types of eviction notices for different situations. For example, if the landlord is telling you to leave because you haven't paid rent, they will usually give you a \"3-Day Notice to Pay Rent or Quit.\"&nbsp;</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>When you have been given an Eviction Notice, <strong>you have options.</strong></p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/eviction-notice-options\">Explore your options</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html\n  summons_complaint_results:\n    '#type': processed_text\n    '#states':\n      visible:\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: sum130\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: summons\n        - or\n        - ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n            value: sc\n        - or\n        - ':input[name=\"what_kind_of_document_have_you_received_from_your_landlord_\"]':\n            value: evsc\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: complaint\n        - or\n        - ':input[name=\"what_does_the_document_say\"]':\n            value: ud100\n        - or\n        - ':input[name=\"yes\"]':\n            value: 'Yes'\n    '#text': |\n      <p>You received a Summons and Complaint</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>[Description to come]</p>\n      \n      <p>&nbsp;</p>\n      \n      <p>You have options for what to do.</p>\n      \n      <p>&nbsp;</p>\n      \n      <ul>\n      \t<li class=\"jcc-tiles__item\">\n      \t<div class=\"jcc-tile jcc-tile--hover\">\n      \t<p class=\"jcc-tile__brow\">Go to</p>\n      \n      \t<h3 class=\"jcc-tile__title\"><a href=\"https://selfhelp.courts.ca.gov/summons-and-complaint-options\">Explore your options</a></h3>\n      \n      \t<div class=\"jcc-tile__icon-link\">&nbsp;</div>\n      \t</div>\n      \t</li>\n      </ul>\n      \n    '#format': basic_html"
+elements: |-
+  did_you_receive_a_complaint_or_a_notice:
+    '#type': webform_wizard_page
+    '#title': 'What kind of document did you receive from your landlord?'
+    '#hide_submit': true
+    processed_text:
+      '#type': processed_text
+      '#text': |
+        <p>For a landlord to evict you legally, they have to first give you a notice to move out or give you a chance to fix the problem (like paying the rent). This is called an <strong>eviction notice.&nbsp;</strong></p>
+        
+        <p>&nbsp;</p>
+        
+        <p>If you do not do what the notice asks before the time in the notice runs out, the landlord can file a case against you in court. When this case is filed, the landlord will give you what is called a <strong>Summons and Complaint</strong>.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>Have you received an <strong>eviction notice</strong> or a <strong>Summons and Complaint</strong>?</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    what_kind_of_document_have_you_received_from_your_landlord_:
+      '#type': radios
+      '#title': 'What kind of document have you received from your landlord?'
+      '#options':
+        ev: 'An eviction notice'
+        sc: 'A Summons and Complaint'
+        evsc: 'Both an eviction notice and a Summons and Complaint'
+        dontknow: 'I''m not sure what kind of document I got'
+      '#options__properties': ''
+  what_does_it_say_at_the_top_of_the_document_:
+    '#type': webform_wizard_page
+    '#title': 'What does it say at the top of the document?'
+    '#states':
+      visible:
+        ':input[name="what_kind_of_document_have_you_received_from_your_landlord_"]':
+          value: dontknow
+    processed_text_01:
+      '#type': processed_text
+      '#text': |
+        <p>Select the option that is closest to the title of your document.</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    what_does_the_document_say:
+      '#type': radios
+      '#title': 'What does it say at the top of the document?'
+      '#options':
+        rent: 'Notice to Pay Rent or Quit'
+        covenants: 'Notice to Perform Covenants or Quit'
+        quit: 'Notice to Quit'
+        summons: Summons
+        sum130: SUM-130
+        complaint: 'Complaint Unlawful Detainer'
+        ud100: UD-100
+        dontknow: 'I don''t see any of these on the document'
+      '#options__properties': ''
+  does_the_document_say_you_are_being_sued_or_you_have_been_sued_:
+    '#type': webform_wizard_page
+    '#title': 'Does the document say you are being sued or you have been sued?'
+    '#states':
+      visible:
+        ':input[name="what_does_the_document_say"]':
+          value: dontknow
+    'yes':
+      '#type': radios
+      '#title': 'Yes'
+      '#options': yes_no
+      '#options__properties': ''
+  does_the_title_of_the_document_include_a_number_of_days_:
+    '#type': webform_wizard_page
+    '#title': 'Does the title of the document include a number of days? '
+    '#states':
+      visible:
+        ':input[name="what_does_the_document_say"]':
+          value: dontknow
+    processed_text_02:
+      '#type': processed_text
+      '#text': |
+        <p>For example, "60 Day Notice to Pay Rent or Quit" or "Three Day Notice?"</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+      '#format': basic_html
+    yesnodates:
+      '#type': radios
+      '#title': 'Yes'
+      '#options': yes_no
+      '#options__properties': ''
+  based_on_your_answers:
+    '#type': webform_wizard_page
+    '#title': 'Based on your answers'
+    processed_text_03:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="yes"]':
+              value: 'No'
+          - or
+          - ':input[name="yesnodates"]':
+              value: 'yes'
+          - or
+          - ':input[name="what_does_the_document_say"]':
+              value: covenants
+          - or
+          - ':input[name="what_does_the_document_say"]':
+              value: rent
+          - or
+          - ':input[name="what_does_the_document_say"]':
+              value: quit
+          - or
+          - ':input[name="what_kind_of_document_have_you_received_from_your_landlord_"]':
+              value: ev
+      '#text': |
+        <p>You have an <strong>Eviction Notice</strong>.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>This means that the landlord is telling you that you have to take some action to fix a problem or you will have to move out. The problem could be that you are behind on rent, or there is some damage to the home.</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>There are different types of eviction notices for different situations. For example, if the landlord is telling you to leave because you haven't paid rent, they will usually give you a "3-Day Notice to Pay Rent or Quit."&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>When you have been given an Eviction Notice, <strong>you have options.</strong></p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/eviction-notice-options">Explore your options</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
+    summons_complaint_results:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="what_does_the_document_say"]':
+              value: sum130
+          - or
+          - ':input[name="what_does_the_document_say"]':
+              value: summons
+          - or
+          - ':input[name="what_kind_of_document_have_you_received_from_your_landlord_"]':
+              value: sc
+          - or
+          - ':input[name="what_kind_of_document_have_you_received_from_your_landlord_"]':
+              value: evsc
+          - or
+          - ':input[name="what_does_the_document_say"]':
+              value: complaint
+          - or
+          - ':input[name="what_does_the_document_say"]':
+              value: ud100
+          - or
+          - ':input[name="yes"]':
+              value: 'Yes'
+      '#text': |
+        <p>You received a Summons and Complaint</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>[Description to come]</p>
+        
+        <p>&nbsp;</p>
+        
+        <p>You have options for what to do.</p>
+        
+        <p>&nbsp;</p>
+        
+        <ul>
+        	<li class="jcc-tiles__item">
+        	<div class="jcc-tile jcc-tile--hover">
+        	<p class="jcc-tile__brow">Go to</p>
+        
+        	<h3 class="jcc-tile__title"><a href="https://selfhelp.courts.ca.gov/summons-and-complaint-options">Explore your options</a></h3>
+        
+        	<div class="jcc-tile__icon-link">&nbsp;</div>
+        	</div>
+        	</li>
+        </ul>
+        
+      '#format': basic_html
 css: ''
 javascript: ''
 settings:

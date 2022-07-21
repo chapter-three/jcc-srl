@@ -20,12 +20,12 @@ bundle: overview
 mode: default
 content:
   content_moderation_control:
-    weight: -20
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: -20
+    region: content
   field_case_type_forms_page:
-    weight: 2
+    type: link
     label: above
     settings:
       trim_length: 80
@@ -34,22 +34,22 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 2
     region: content
   field_paragraphs:
-    weight: 1
+    type: entity_reference_revisions_entity_view
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
+    weight: 1
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_actions: true
   field_case_types: true

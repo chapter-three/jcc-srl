@@ -26,29 +26,32 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   6586703a-6976-4124-8a49-cbb07ceaa3b1:
+    id: view
+    uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
+    label: Gallery
+    weight: -10
     settings:
-      view: media_entity_browser
-      view_display: media_browser_all
       submit_text: 'Select media'
       auto_select: false
-    uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
-    weight: -10
-    label: Gallery
-    id: view
+      view: media_entity_browser
+      view_display: media_browser_all
   ecb3940b-e53b-4bc5-acb5-930d8780ea2f:
+    id: entity_form
+    uuid: ecb3940b-e53b-4bc5-acb5-930d8780ea2f
+    label: 'Embed Video'
+    weight: -8
     settings:
+      submit_text: 'Save video'
       entity_type: media
       bundle: remote_video
       form_mode: default
-      submit_text: 'Save video'
-    uuid: ecb3940b-e53b-4bc5-acb5-930d8780ea2f
-    weight: -8
-    label: 'Embed Video'
-    id: entity_form
   c4d79a97-669d-4ea8-9bff-b9e9020328a3:
+    id: dropzonejs_media_entity_inline_entity_form
+    uuid: c4d79a97-669d-4ea8-9bff-b9e9020328a3
+    label: 'Bulk Upload Images'
+    weight: -9
     settings:
-      form_mode: default
-      media_type: image
+      submit_text: 'Select images'
       upload_location: 'public://[date:custom:Y]-[date:custom:m]'
       dropzone_description: 'Drop files here to upload them'
       max_filesize: 8M
@@ -59,8 +62,5 @@ widgets:
       resize_quality: !!float 1
       resize_method: contain
       thumbnail_method: contain
-      submit_text: 'Select images'
-    uuid: c4d79a97-669d-4ea8-9bff-b9e9020328a3
-    weight: -9
-    label: 'Bulk Upload Images'
-    id: dropzonejs_media_entity_inline_entity_form
+      media_type: image
+      form_mode: default

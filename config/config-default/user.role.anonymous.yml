@@ -1,7 +1,17 @@
 uuid: 5474dd3c-3f25-491f-8df4-10c7f4706536
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - rest.resource.webform_rest_complete_submission
+    - rest.resource.webform_rest_submission
+  module:
+    - access_unpublished
+    - cc
+    - fillpdf
+    - media
+    - rest
+    - system
 _core:
   default_config_hash: JrtDp8Iu4bDYXyEa3b0ibCCP9Lcj-px3BRoEOpg85_Q
 id: anonymous
@@ -9,9 +19,7 @@ label: 'Anonymous user'
 weight: -10
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
-  - 'access site-wide contact form'
   - 'access_unpublished node basic'
   - 'access_unpublished node court'
   - 'access_unpublished node courthouse'
@@ -25,6 +33,5 @@ permissions:
   - 'publish all pdfs'
   - 'restful get webform_rest_complete_submission'
   - 'restful get webform_rest_submission'
-  - 'use text format restricted_html'
   - 'view media'
   - 'view published user input entities'

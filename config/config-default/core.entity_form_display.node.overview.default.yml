@@ -29,16 +29,16 @@ third_party_settings:
         - field_parties
         - field_watchers
         - field_case_type_forms_page
+      label: Tags
+      region: content
       parent_name: ''
       weight: 12
       format_type: fieldset
-      region: content
       format_settings:
-        id: ''
         classes: jcc-tag-set
+        id: ''
         description: ''
         required_fields: true
-      label: Tags
 id: node.overview.default
 targetEntityType: node
 bundle: overview
@@ -51,27 +51,29 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_actions:
+    type: options_select
     weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_case_type_forms_page:
+    type: link_default
     weight: 17
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_case_types:
+    type: options_select
     weight: 13
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_paragraphs:
+    type: entity_reference_paragraphs
     weight: 9
+    region: content
     settings:
       title: Switchboard
       title_plural: Switchboards
@@ -82,20 +84,18 @@ content:
     third_party_settings:
       cc:
         status: 0
-    type: entity_reference_paragraphs
-    region: content
   field_parties:
+    type: options_select
     weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_watchers:
+    type: options_select
     weight: 16
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   langcode:
     type: language_select
     weight: 1
@@ -106,8 +106,8 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 100
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -117,10 +117,10 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 5
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
@@ -141,17 +141,17 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 6
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -169,12 +169,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 2
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

@@ -38,16 +38,16 @@ third_party_settings:
         - field_actions
         - field_parties
         - field_watchers
+      label: Tags
+      region: content
       parent_name: ''
       weight: 14
       format_type: fieldset
-      region: content
       format_settings:
-        id: ''
         classes: jcc-tag-set
+        id: ''
         description: ''
         required_fields: true
-      label: Tags
 id: node.srl_wayfinder.default
 targetEntityType: node
 bundle: srl_wayfinder
@@ -60,19 +60,21 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_actions:
+    type: options_select
     weight: 16
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_case_types:
+    type: options_select
     weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_description:
+    type: text_textarea
     weight: 2
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -85,45 +87,45 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
   field_exclude_from_search:
+    type: search_api_exclude_entity_widget
     weight: 101
+    region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
     third_party_settings: {  }
-    type: search_api_exclude_entity_widget
-    region: content
   field_metatag:
+    type: metatag_firehose
     weight: 12
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_options:
+    type: inline_entity_form_complex
     weight: 3
+    region: content
     settings:
       form_mode: default
-      revision: true
       override_labels: true
       label_singular: 'Option set'
       label_plural: 'Option sets'
       allow_new: true
+      allow_existing: false
       match_operator: CONTAINS
+      allow_duplicate: false
       collapsible: false
       collapsed: false
-      allow_existing: false
-      allow_duplicate: false
+      revision: true
     third_party_settings:
       entity_browser_entity_form:
         entity_browser_id: _none
       cc:
         status: 0
-    type: inline_entity_form_complex
-    region: content
   field_paragraphs:
+    type: entity_reference_paragraphs
     weight: 4
+    region: content
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -134,16 +136,16 @@ content:
     third_party_settings:
       cc:
         status: '1'
-    type: entity_reference_paragraphs
-    region: content
   field_parties:
+    type: options_select
     weight: 17
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_title_display:
+    type: text_textfield
     weight: 1
+    region: content
     settings:
       size: 60
       placeholder: ''
@@ -154,14 +156,12 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-    type: text_textfield
-    region: content
   field_watchers:
+    type: options_select
     weight: 18
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   langcode:
     type: language_select
     weight: 6
@@ -172,8 +172,8 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 100
-    settings: {  }
     region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -195,15 +195,15 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 20
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 10
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -224,12 +224,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

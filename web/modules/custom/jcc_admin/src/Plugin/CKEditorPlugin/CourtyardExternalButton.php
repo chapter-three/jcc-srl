@@ -21,14 +21,14 @@ class CourtyardExternalButton extends Courtyard {
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'jcc_admin') . '/courtyard/externalbutton.js';
+    return \Drupal::service('extension.path.resolver')->getPath('module', 'jcc_admin') . '/courtyard/externalbutton.js';
   }
 
   /**
    * @return array
    */
   public function getButtons() {
-    $iconImage = drupal_get_path('module', 'jcc_admin') . '/courtyard/images/externalbutton.png';
+    $iconImage = \Drupal::service('extension.path.resolver')->getPath('module', 'jcc_admin') . '/courtyard/images/externalbutton.png';
 
     return [
       'externalbutton' => [

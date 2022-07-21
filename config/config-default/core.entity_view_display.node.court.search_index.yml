@@ -23,11 +23,11 @@ bundle: court
 mode: search_index
 content:
   field_cities:
-    weight: 0
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 0
     region: content
 hidden:
   content_moderation_control: true

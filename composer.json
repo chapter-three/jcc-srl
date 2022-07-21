@@ -93,10 +93,10 @@
         }
     },
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "ckeditor-plugin/templates": "^4.13",
         "composer/installers": "^1.7.0",
-        "cweagans/composer-patches": "^1.6.5",
+        "cweagans/composer-patches": "^1.7",
         "drupal/access_unpublished": "^1.0",
         "drupal/admin_toolbar": "^2.5",
         "drupal/adminimal_admin_toolbar": "^1.9",
@@ -107,15 +107,13 @@
         "drupal/block_field": "^1.0@alpha",
         "drupal/chosen": "^2.8",
         "drupal/ckeditor_templates": "^1.1",
-        "drupal/components": "^1.1",
-        "drupal/config_exclude": "1.x-dev",
+        "drupal/components": "^2.4",
         "drupal/config_ignore": "^2.1",
         "drupal/config_split": "^1.4",
-        "drupal/console": "^1.9",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
-        "drupal/core-vendor-hardening": "^8.8",
+        "drupal/core-composer-scaffold": "^9.3.0",
+        "drupal/core-project-message": "^9.3.0",
+        "drupal/core-recommended": "^9.3.0",
+        "drupal/core-vendor-hardening": "^9.3.0",
         "drupal/datalayer": "^1.0@beta",
         "drupal/default_content": "^1.0@alpha",
         "drupal/devel": "^4.1",
@@ -125,20 +123,20 @@
         "drupal/entity_browser": "^2.1",
         "drupal/entity_clone": "^1.0@beta",
         "drupal/entity_embed": "^1.0@RC",
-        "drupal/environment_indicator": "^3.6",
+        "drupal/environment_indicator": "^4.0",
         "drupal/extlink": "^1.1",
-        "drupal/facets": "^1.8",
+        "drupal/facets": "^2.0",
         "drupal/field_defaults": "^1.3",
         "drupal/field_group": "^3.1",
-        "drupal/fillpdf": "^4.11",
+        "drupal/fillpdf": "^5.0@RC",
         "drupal/fixed_block_content": "^1.0",
         "drupal/flag": "^4.0@beta",
         "drupal/focal_point": "^1.0",
         "drupal/google_tag": "^1.2",
-        "drupal/honeypot": "^1.29",
+        "drupal/honeypot": "^2.1",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/key": "^1.10",
-        "drupal/linkit": "^4.3",
+        "drupal/linkit": "^5.0@beta",
         "drupal/login_emailusername": "^1.1",
         "drupal/maillog": "1.x-dev",
         "drupal/markup": "^1.0@beta",
@@ -148,14 +146,14 @@
         "drupal/metatag": "^1.8",
         "drupal/migrate_plus": "^5.1",
         "drupal/migrate_source_csv": "^3.4",
-        "drupal/migrate_tools": "5.0",
+        "drupal/migrate_tools": "^6.0",
         "drupal/mimemail": "^1.0@alpha",
         "drupal/module_filter": "^3.1",
         "drupal/pantheon_advanced_page_cache": "^1.1",
         "drupal/paragraphs": "^1.10",
         "drupal/pathauto": "^1.4",
         "drupal/quicklink": "^1.3",
-        "drupal/r4032login": "^1.1",
+        "drupal/r4032login": "^2.1",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/range": "^1.1",
         "drupal/rebuild_cache_access": "^1.7",
@@ -165,7 +163,7 @@
         "drupal/role_delegation": "^1.0",
         "drupal/scheduler": "^1.3",
         "drupal/scheduler_content_moderation_integration": "^1.3",
-        "drupal/search404": "^1.0",
+        "drupal/search404": "^2.0",
         "drupal/search_api_autocomplete": "^1.2",
         "drupal/search_api_exclude": "^2.0",
         "drupal/search_api_exclude_entity": "^1.3",
@@ -180,20 +178,20 @@
         "drupal/views_aggregator": "^1.0@alpha",
         "drupal/views_ajax_history": "^1.5",
         "drupal/views_bulk_edit": "^2.4",
-        "drupal/views_bulk_operations": "^3.9",
+        "drupal/views_bulk_operations": "^4.1",
         "drupal/views_data_export": "^1.0",
         "drupal/webform": "^6.1",
         "drupal/webform_rest": "^4.0",
         "drupal/webform_translation_permissions": "^1.1",
         "drupal/workbench": "^1.3",
         "drupal/xmlsitemap": "^1.0@alpha",
-        "drush/drush": "^9.0.0",
+        "drush/drush": "^10.0.0",
         "enyo/dropzone": "^5.5",
         "harvesthq/chosen": "^1.8.7",
         "joachim-n/composer-manifest": "^1.0",
         "judicialcouncil/courtyard-artifact": "~0.1.3",
         "league/csv": "^9.6",
-        "oomphinc/composer-installers-extender": "^1.1",
+        "oomphinc/composer-installers-extender": "^2.0",
         "phpoffice/phpspreadsheet": "^1.14",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -214,7 +212,18 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "drupal/core-vendor-hardening": true,
+            "oomphinc/composer-installers-extender": true,
+            "zaporylie/composer-drupal-optimizations": true,
+            "joachim-n/composer-manifest": true,
+            "drupal/console-extend-plugin": true
+        }
     },
     "autoload": {
         "classmap": [
@@ -275,30 +284,19 @@
         "patches": {
             "drupal/core": {
                 "Don't override media title with metadata on translation save.": "https://www.drupal.org/files/issues/2019-04-25/media-translation_hassourcefieldchanged-2999370-11.patch",
-                "Media embed javascript error": "https://www.drupal.org/files/issues/2019-12-10/3097338-47.patch",
                 "Media library edit": "https://www.drupal.org/files/issues/2021-01-04/3168868-9.patch",
                 "Media name reverts to default": "https://www.drupal.org/files/issues/2020-10-28/3157183_20.patch"
             },
             "drupal/webform": {
                 "By default, do not save submissions.": "patches/disable-results-by-default.patch"
             },
-            "drupal/entity_clone": {
-                "Parent ID of original paragraph assigned to cloned node id.": "https://www.drupal.org/files/issues/2020-12-11/entity_clone-corrupted-paragraph-cloning-3060223-35.patch"
-            },
             "drupal/svg_image_field": {
                 "Fix previews": "https://www.drupal.org/files/issues/2019-05-06/svg_image_field-zero-width-preview-3053018.patch"
-            },
-            "drupal/linkit": {
-                "Linkit: invalid condition operator": "patches/2769191-invalid-condition-operator-config-entities-8.4.patch",
-                "Empty tokens": "patches/linkit_empty_tokens.patch"
             },
             "drupal/fillpdf": {
                 "Secure user data after pdf is rendered.": "patches/webform-pdf-protect.patch"
             }
         },
-        "installer-types": [
-            "library"
-        ],
         "installer-paths": {
             "web/core": [
                 "type:drupal-core"
@@ -325,7 +323,7 @@
                 "pantheon-systems/drupal-integrations"
             ],
             "locations": {
-                "web-root": "./web"
+                "web-root": "web/"
             },
             "file-mapping": {
                 "[project-root]/.editorconfig": false

@@ -42,60 +42,11 @@ base_table: search_api_index_jcc_forms_index
 base_field: search_api_id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: none
-        options: {  }
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          bypass_access: false
-          skip_access: false
-          preserve_facet_query_args: false
-      exposed_form:
-        type: basic
-        options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        type: mini
-        options:
-          items_per_page: 10
-          offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
-      style:
-        type: serializer
-      row:
-        type: fields
-        options:
-          inline: {  }
-          separator: ''
-          hide_empty: false
-          default_field_elements: true
       fields:
         field_description:
           id: field_description
@@ -104,6 +55,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -165,8 +118,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_number:
           id: field_number
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -174,6 +125,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -236,8 +189,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_url:
           id: field_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -245,6 +196,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -311,8 +264,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         name:
           id: name
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -326,6 +277,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: numeric
           label: ''
           exclude: false
           alter:
@@ -375,7 +327,6 @@ display:
           format_plural_string: !!binary MQNAY291bnQ=
           prefix: ''
           suffix: ''
-          plugin_id: numeric
         form_category:
           id: form_category
           table: search_api_index_jcc_forms_index
@@ -383,6 +334,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -445,7 +397,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         field_synonyms:
           id: field_synonyms
           table: search_api_index_jcc_forms_index
@@ -453,6 +404,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -515,7 +467,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         form_prefix_category:
           id: form_prefix_category
           table: search_api_index_jcc_forms_index
@@ -523,6 +474,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -585,7 +537,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         form_prefix:
           id: form_prefix
           table: search_api_index_jcc_forms_index
@@ -593,6 +544,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -655,7 +607,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          plugin_id: search_api_field
         mid:
           id: mid
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -663,6 +614,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -735,8 +688,6 @@ display:
             format_plural_values:
               - '1'
               - '@count'
-          entity_type: media
-          plugin_id: search_api_field
         field_arabic_url:
           id: field_arabic_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -744,6 +695,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -810,8 +763,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_cambodian_url:
           id: field_cambodian_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -819,6 +770,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -885,8 +838,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_chinese_traditional_url:
           id: field_chinese_traditional_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -894,6 +845,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -960,8 +913,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_chinese_url:
           id: field_chinese_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -969,6 +920,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1035,8 +988,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_farsi_url:
           id: field_farsi_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1044,6 +995,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1110,8 +1063,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_hmong_url:
           id: field_hmong_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1119,6 +1070,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1185,8 +1138,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_korean_url:
           id: field_korean_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1194,6 +1145,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1260,8 +1213,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_punjabi_url:
           id: field_punjabi_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1269,6 +1220,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1335,8 +1288,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_russian_url:
           id: field_russian_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1344,6 +1295,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1410,8 +1363,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_spanish_url:
           id: field_spanish_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1419,6 +1370,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1485,8 +1438,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_tagalog_url:
           id: field_tagalog_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1494,6 +1445,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1560,8 +1513,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_vietnamese_url:
           id: field_vietnamese_url
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1569,6 +1520,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1635,8 +1588,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_mandatory:
           id: field_mandatory
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1644,6 +1595,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1689,8 +1642,8 @@ display:
           type: boolean
           settings:
             format: true-false
-            format_custom_true: ''
             format_custom_false: ''
+            format_custom_true: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1712,8 +1665,6 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
         field_weight:
           id: field_weight
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1721,6 +1672,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1793,8 +1746,6 @@ display:
             format_plural_values:
               - '1'
               - '@count'
-          entity_type: media
-          plugin_id: search_api_field
         field_revision_date:
           id: field_revision_date
           table: search_api_datasource_jcc_forms_index_entity_media
@@ -1802,6 +1753,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: media
+          plugin_id: search_api_field
           label: ''
           exclude: false
           alter:
@@ -1865,8 +1818,82 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-          entity_type: media
-          plugin_id: search_api_field
+      pager:
+        type: mini
+        options:
+          offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_jcc_forms_index
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: search_api_relevance
+          exposed: false
+        field_weight:
+          id: field_weight
+          table: search_api_index_jcc_forms_index
+          field: field_weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: field_weight
+          exposed: false
+        form_number:
+          id: form_number
+          table: search_api_index_jcc_forms_index
+          field: form_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: form_number
+          exposed: false
+      arguments: {  }
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -1875,6 +1902,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: search_api_fulltext
           operator: and
           value: ''
           group: 1
@@ -1919,49 +1947,24 @@ display:
             - form_number
             - form_prefix
             - form_prefix_category
-          plugin_id: search_api_fulltext
-      sorts:
-        search_api_relevance:
-          id: search_api_relevance
-          table: search_api_index_jcc_forms_index
-          field: search_api_relevance
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: DESC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-        field_weight:
-          id: field_weight
-          table: search_api_index_jcc_forms_index
-          field: field_weight
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-        form_number:
-          id: form_number
-          table: search_api_index_jcc_forms_index
-          field: form_number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
+      style:
+        type: serializer
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      relationships: {  }
       header: {  }
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1994,19 +1997,16 @@ display:
         - 'config:field.storage.taxonomy_term.field_synonyms'
         - 'config:search_api.index.jcc_forms_index'
   rest_export_1:
-    display_plugin: rest_export
     id: rest_export_1
     display_title: 'REST export'
+    display_plugin: rest_export
     position: 1
     display_options:
-      display_extenders:
-        metatag_display_extender: {  }
-      path: json/jcc-forms
       pager:
         type: some
         options:
-          items_per_page: 0
           offset: 0
+          items_per_page: 0
       style:
         type: custom_serializer
         options:
@@ -2082,6 +2082,9 @@ display:
       defaults:
         filters: true
         filter_groups: true
+      display_extenders:
+        metatag_display_extender: {  }
+      path: json/jcc-forms
     cache_metadata:
       max-age: -1
       contexts:

@@ -20,12 +20,12 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   ee08feba-543e-45d4-b85e-4fea3eff4294:
+    id: view
+    uuid: ee08feba-543e-45d4-b85e-4fea3eff4294
+    label: Forms
+    weight: 1
     settings:
-      view: media_entity_browser
-      view_display: jcc_form_browser
       submit_text: 'Select forms'
       auto_select: false
-    uuid: ee08feba-543e-45d4-b85e-4fea3eff4294
-    weight: 1
-    label: Forms
-    id: view
+      view: media_entity_browser
+      view_display: jcc_form_browser

@@ -33,15 +33,15 @@ mode: teaser
 content:
   body:
     type: text_default
-    weight: 0
-    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: -20
     region: content
 hidden:
   field_actions: true

@@ -13,11 +13,11 @@ bundle: main
 mode: default
 content:
   field_case_type:
+    type: options_select
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   langcode:
     type: language_select
     weight: 2

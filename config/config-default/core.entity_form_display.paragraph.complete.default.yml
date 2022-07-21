@@ -15,7 +15,9 @@ bundle: complete
 mode: default
 content:
   field_complete:
+    type: text_textarea
     weight: 0
+    region: content
     settings:
       rows: 5
       placeholder: ''
@@ -28,8 +30,6 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
-    type: text_textarea
-    region: content
 hidden:
   created: true
   status: true

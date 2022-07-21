@@ -2,12 +2,6 @@ uuid: c4a9aca8-55eb-41fc-b880-b6f6a663a0d0
 langcode: en
 status: true
 dependencies:
-  module:
-    - search_api_solr
-    - media
-    - node
-    - search_api
-    - search_api_exclude_entity
   config:
     - field.storage.node.body
     - field.storage.node.field_actions
@@ -31,24 +25,27 @@ dependencies:
     - field.storage.node.field_switchboard_title
     - field.storage.node.field_watchers
     - search_api.server.solr
+  module:
+    - search_api_solr
+    - media
+    - node
+    - search_api
+    - search_api_exclude_entity
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
       regex:
         slop: 0.5
         pattern: blank
         maxAnalyzedChars: 10000
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
       highlight:
         mergeContiguous: false
         requireFieldMatch: false
@@ -65,10 +62,16 @@ third_party_settings:
       maxntp: 2000
       boost: false
       interestingTerms: none
+    term_modifiers:
+      slop: 10000000
+      fuzzy: 2
     advanced:
       index_prefix: ''
       collection: ''
       timezone: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
 id: solr_index
 name: 'Solr Index'
 description: ''
@@ -301,6 +304,7 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
 server: solr

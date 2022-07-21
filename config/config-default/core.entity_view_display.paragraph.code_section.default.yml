@@ -15,33 +15,33 @@ bundle: code_section
 mode: default
 content:
   field_code:
-    weight: 0
+    type: entity_reference_label
     label: above
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 0
     region: content
   field_section:
-    weight: 1
+    type: range_decimal
     label: above
     settings:
-      decimal_separator: .
-      scale: 2
       range_separator: '-'
       thousand_separator: ''
+      decimal_separator: .
+      scale: 2
       range_combine: true
       from_prefix_suffix: false
       to_prefix_suffix: false
     third_party_settings: {  }
-    type: range_decimal
+    weight: 1
     region: content
   field_section_suffix:
-    weight: 2
+    type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden: {  }

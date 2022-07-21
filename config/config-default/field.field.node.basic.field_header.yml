@@ -26,9 +26,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       hero_cards: hero_cards
+    negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 18
@@ -58,8 +58,8 @@ settings:
         weight: 25
         enabled: false
       hero_cards:
-        enabled: true
         weight: 29
+        enabled: true
       postcard:
         weight: 26
         enabled: false

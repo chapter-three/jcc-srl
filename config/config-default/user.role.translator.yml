@@ -1,7 +1,47 @@
 uuid: ea66a84a-382d-4b1a-9717-c6e276149d42
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.jcc_form
+    - node.type.basic
+    - node.type.court
+    - node.type.courthouse
+    - node.type.handbook
+    - node.type.overview
+    - node.type.srl_howto
+    - node.type.srl_howto_instruction
+    - node.type.srl_onramp
+    - node.type.srl_wayfinder
+    - node.type.timeline
+    - taxonomy.vocabulary.action
+    - taxonomy.vocabulary.case_type
+    - taxonomy.vocabulary.code
+    - taxonomy.vocabulary.jcc_form_category
+    - taxonomy.vocabulary.jcc_form_prefix
+    - taxonomy.vocabulary.party
+  module:
+    - block_content
+    - config_translation
+    - content_translation
+    - field_ui
+    - file
+    - language
+    - media
+    - menu_link_content
+    - node
+    - paragraphs
+    - rebuild_cache_access
+    - search
+    - search_api_exclude_entity
+    - system
+    - taxonomy
+    - tmgmt
+    - toolbar
+    - update
+    - views_ui
+    - webform
+    - webform_translation_permissions
 id: translator
 label: Translator
 weight: -7
@@ -14,26 +54,6 @@ permissions:
   - 'access site reports'
   - 'access toolbar'
   - 'access webform overview'
-  - 'access_unpublished paragraph accordion'
-  - 'access_unpublished paragraph accordion_container'
-  - 'access_unpublished paragraph card'
-  - 'access_unpublished paragraph card_form'
-  - 'access_unpublished paragraph card_list'
-  - 'access_unpublished paragraph flex'
-  - 'access_unpublished paragraph hero_cards'
-  - 'access_unpublished paragraph links'
-  - 'access_unpublished paragraph menu_links'
-  - 'access_unpublished paragraph postcard'
-  - 'access_unpublished paragraph self_help_finder'
-  - 'access_unpublished paragraph step'
-  - 'access_unpublished paragraph step_container'
-  - 'access_unpublished paragraph switchboard'
-  - 'access_unpublished paragraph text'
-  - 'access_unpublished paragraph tile'
-  - 'access_unpublished paragraph timeline'
-  - 'access_unpublished paragraph timeline_dual'
-  - 'access_unpublished paragraph timeline_dual_item'
-  - 'access_unpublished paragraph timeline_item'
   - 'administer block_content fields'
   - 'administer content translation'
   - 'administer content types'
@@ -134,3 +154,4 @@ permissions:
   - 'view the administration theme'
   - 'view timeline revisions'
   - 'view unpublished paragraphs'
+  - 'view update notifications'
