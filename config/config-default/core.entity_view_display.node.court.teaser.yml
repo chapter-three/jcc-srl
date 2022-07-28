@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.court.field_cities
     - field.field.node.court.field_description
     - field.field.node.court.field_exclude_from_search
+    - field.field.node.court.field_link
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
@@ -38,6 +39,7 @@ hidden:
   field_cities: true
   field_description: true
   field_exclude_from_search: true
+  field_link: true
   field_main_link: true
   field_parties: true
   field_secondary_link: true
