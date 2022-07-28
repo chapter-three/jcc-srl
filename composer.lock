@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "307436e537225a41a89865740b212233",
+    "content-hash": "e3431a2a1d42bae20538db782f1dd128",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5188,6 +5188,52 @@
             "homepage": "https://www.drupal.org/project/inline_entity_form",
             "support": {
                 "source": "https://git.drupalcode.org/project/inline_entity_form"
+            }
+        },
+        {
+            "name": "drupal/insert_view_adv",
+            "version": "dev-2.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/insert_view_adv.git",
+                "reference": "5d3dd71fa9d3f878eacd93452873b29fc808d857"
+            },
+            "require": {
+                "drupal/core": "^8.8.0 || ^9"
+            },
+            "require-dev": {
+                "drupal/bueditor": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.0.x": "2.0.x-dev"
+                },
+                "drupal": {
+                    "version": "2.0.0-alpha1+1-dev",
+                    "datestamp": "1650554256",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Artem Dmitriiev (a.dmitriiev)",
+                    "homepage": "https://www.drupal.org/u/a.dmitriiev",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Allows to include the views displays into WYSIWYG editors.",
+            "homepage": "https://www.drupal.org/project/insert_view_adv",
+            "support": {
+                "source": "https://git.drupalcode.org/project/insert_view_adv",
+                "issues": "https://drupal.org/project/issues/insert_view_adv"
             }
         },
         {
@@ -14787,6 +14833,7 @@
         "drupal/fillpdf": 5,
         "drupal/flag": 10,
         "drupal/inline_entity_form": 5,
+        "drupal/insert_view_adv": 20,
         "drupal/linkit": 10,
         "drupal/maillog": 20,
         "drupal/markup": 10,
