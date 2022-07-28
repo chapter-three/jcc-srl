@@ -33,19 +33,22 @@ mapping:
         column: A
         cell_plugin: as_is
       field_cities:
-        column: E
+        column: F
         cell_plugin: json_city
       field_main_link:
         column: B
         cell_plugin: link
       field_zip_codes:
-        column: F
+        column: G
         cell_plugin: json_zip
       field_secondary_link:
         column: C
         cell_plugin: link
-      field_description:
+      field_link:
         column: D
+        cell_plugin: link
+      field_description:
+        column: E
         cell_plugin: as_is
     -
       title:
@@ -134,9 +137,10 @@ mapping:
       A: 'Superior Court of California, County of '
       B: 'Court website URL'
       C: 'Self Help website page URL'
-      D: 'Matter distribution summary'
-      E: Cities
-      F: 'Zip Codes'
+      D: 'Traffic website page URL'
+      E: 'Matter distribution summary'
+      F: Cities
+      G: 'Zip Codes'
     Courthouses:
       A: 'Superior Court of California, County of '
       B: 'Courthouse Name'
