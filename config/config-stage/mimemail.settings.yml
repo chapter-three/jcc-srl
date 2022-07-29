@@ -1,11 +1,12 @@
 _core:
   default_config_hash: rLKGzzC9TqjbEZiBoiyMpOSyZgldADa5SzvbA2gQDxE
 name: 'JCC SRL'
-mail: webdev@jud.ca.gov
+mail: no-reply@courtinfo.ca.gov
 simple_address: false
 sitestyle: true
 textonly: false
 linkonly: false
+user_plaintext_field: ''
 format: basic_html
 preserve_class: false
 advanced:
