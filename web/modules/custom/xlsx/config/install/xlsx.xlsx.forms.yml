@@ -69,6 +69,72 @@ mapping:
       term_id:
         column: A
         cell_plugin: as_is
+      field_arabic_url:
+        column: F
+        cell_plugin: link
+      field_cambodian_url:
+        column: G
+        cell_plugin: link
+      field_chinese_traditional_url:
+        column: I
+        cell_plugin: link
+      field_chinese_url:
+        column: H
+        cell_plugin: link
+      field_description:
+        column: D
+        cell_plugin: as_is
+      field_farsi_url:
+        column: J
+        cell_plugin: link
+      field_form_category:
+        column: C
+        cell_plugin: form_category
+      field_form_filling_instructions_:
+        column: R
+        cell_plugin: as_is
+      field_form_prefix:
+        column: B
+        cell_plugin: form_prefix
+      field_form_thumbnail:
+        column: B
+        cell_plugin: jcc_thumbnail
+      field_hmong_url:
+        column: K
+        cell_plugin: link
+      field_korean_url:
+        column: L
+        cell_plugin: link
+      field_mandatory:
+        column: S
+        cell_plugin: as_is
+      field_number:
+        column: B
+        cell_plugin: as_is
+      field_punjabi_url:
+        column: M
+        cell_plugin: link
+      field_revision_date:
+        column: T
+        cell_plugin: as_is
+      field_russian_url:
+        column: 'N'
+        cell_plugin: link
+      field_spanish_url:
+        column: O
+        cell_plugin: link
+      field_tagalog_url:
+        column: P
+        cell_plugin: link
+      field_url:
+        column: E
+        cell_plugin: as_is
+      field_vietnamese_url:
+        column: Q
+        cell_plugin: link
+      field_weight:
+        column: U
+        cell_plugin: as_is
     -
       name:
         column: A
@@ -155,7 +221,7 @@ mapping:
         cell_plugin: as_is
       field_revision_date:
         column: T
-        cell_plugin: as-is
+        cell_plugin: as_is
   sheet_columns:
     Categories:
       A: 'Form Category ID'
