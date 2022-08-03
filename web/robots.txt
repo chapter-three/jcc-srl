@@ -2067,6 +2067,8 @@ Allow: /es/cambio-de-nombre-de-un-adulto
 Allow: /name-change/name-child-one-parent
 Allow: /es/cambie-su-nombre-cuando-se-casa
 Allow: /es/cambie-su-nombre-en-california
+# Update Robots.txt after custom sitemap 08 01 2022
+Allow: /sitemap.xml
 # Directories
 Disallow: /core/
 Disallow: /profiles/
