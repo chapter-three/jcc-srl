@@ -133,7 +133,9 @@ function __jcc_build_forms_content($rows, $organize_by) {
       'languages' => $item_languages
     ];
 
-    array_push($forms, $form);
+    if (!in_array($form, $forms)) {
+      array_push($forms, $form);
+    }
   }
 
   // Group forms by category.
