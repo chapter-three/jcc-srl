@@ -106,5 +106,12 @@
         } %}
       {% endif %}
     {% endblock %}
+
+    {% block pager %}
+      {% if pager %}
+        {{ pager }}
+      {% endif %}
+    {% endblock %}
   </{{ tag }}>
+
 {% endblock %}
