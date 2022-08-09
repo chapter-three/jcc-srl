@@ -155,7 +155,7 @@ mapping:
         cell_plugin: as_is
       field_revision_date:
         column: T
-        cell_plugin: as-is
+        cell_plugin: as_is
   sheet_columns:
     Categories:
       A: 'Form Category ID'
