@@ -50,7 +50,7 @@ class XlsxFile extends XlsxSourceBase {
    */
   public function importForm(array $form, FormStateInterface $form_state) {
     $form = $this->sourceForm($form, $form_state);
-    $form['xlsx']['#description'] = $this->t('Running a new import will remove preiously imported data and replace with the latest.');
+    $form['xlsx']['#description'] = $this->t('Running a new import will remove previously imported data and replace with the latest.');
     return $form;
   }
 

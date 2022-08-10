@@ -60,12 +60,16 @@ settings:
         -
           name: Tools
           items:
+            - insert_view_adv
             - Source
             - RemoveFormat
             - PasteFromWord
             - ShowBlocks
             - Maximize
   plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
     language:
       language_list: un
     stylescombo:
@@ -73,9 +77,8 @@ settings:
     templates:
       template_path: /themes/custom/atrium/ckeditor/ckeditor_templates.js
       replace_content: 0
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
+    insert_view_adv:
+      enable_live_preview: true
 image_upload:
   status: true
   scheme: public
