@@ -20,7 +20,7 @@ class Media extends XlsxDataBase {
    * {@inheritdoc}
    */
   public function getEntities($xlsx, $entity_type, $bundle) {
-    return $this->entityTypeManager->getStorage($entity_type)->loadByProperties(['type' => $bundle]);
+    return $this->entityTypeManager->getStorage($entity_type)->loadByProperties(['bundle' => $bundle]);
   }
 
 }
