@@ -62,11 +62,33 @@ function jcc_forms_preprocess_views_view__find_forms__all_by_category(&$variable
     return;
   }
 
+  $variables['forms_by_category'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], 'category');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function jcc_forms_preprocess_views_view__find_forms__all(&$variables) {
+
+  if (empty($variables['rows'])) {
+    return;
+  }
+
+  $variables['forms_by_number'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], NULL);
+}
+
+function __jcc_language_sets() {
+  $data = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('module', 'jcc_forms') . '/jcc_forms-language-labels.json');
+
+  return json_decode($data);
+}
+
+function __jcc_build_forms_content($rows, $organize_by) {
   $lang_props_sets = __jcc_language_sets();
   $forms = [];
   $label_other = 'Other Forms';
 
-  foreach ($variables['rows'][0]['#rows'] as $row) {
+  foreach ($rows as $row) {
     $item = $row['#row'];
     $form_number = $item->_entity->field_number->value;
     // Internal categories are being stored as form prefix labels
@@ -86,15 +108,9 @@ function jcc_forms_preprocess_views_view__find_forms__all_by_category(&$variable
     // Check for language variants.
     $item_languages = [];
     foreach ($lang_props_sets as $field_name => $labels) {
-      if(isset($item->_entity->$field_name) && $item->_entity->$field_name->uri != null) {
+      if (isset($item->_entity->$field_name) && $item->_entity->$field_name->uri != null) {
         $label_in_language = $labels->label_in_language;
         $link_text = Markup::create('<span class="radius-pill tag">' . $label_in_language . '</span>');
-
-        /** @var Drupal\core\Url $field_url */
-        //$field_url = Url::fromUri($item->_entity->$field_name->uri);
-
-        /** @var Drupal\Core\Link $link */
-        //$link = Link::fromTextAndUrl($link_text, $field_url);
 
         array_push($item_languages, $link_text);
       }
@@ -117,35 +133,32 @@ function jcc_forms_preprocess_views_view__find_forms__all_by_category(&$variable
       'languages' => $item_languages
     ];
 
-    // Do not list duplicates for the same category.
     if (!in_array($form, $forms)) {
       array_push($forms, $form);
     }
   }
 
   // Group forms by category.
-  $forms_by_category = [];
-  foreach ($forms as $value) {
-    if ($value['category']) {
-      $category = $value['category'];
-      $forms_by_category[$category][] = $value;
+  if ($organize_by == 'category') {
+    $forms_by_category = [];
+    foreach ($forms as $value) {
+      if ($value['category']) {
+        $category = $value['category'];
+        $forms_by_category[$category][] = $value;
+      }
     }
+
+    // Sort groups alphabetically.
+    ksort($forms_by_category);
+
+    // List uncategorized forms last.
+    $others = $forms_by_category[$label_other];
+    unset($forms_by_category[$label_other]);
+    $forms_by_category[$label_other] = $others;
+
+    $forms = $forms_by_category;
   }
 
-  // Sort groups alphabetically.
-  ksort($forms_by_category);
-
-  // List uncategorized forms last.
-  $others = $forms_by_category[$label_other];
-  unset($forms_by_category[$label_other]);
-  $forms_by_category[$label_other] = $others;
-
-  $variables['forms_by_category'] = $forms_by_category;
-}
-
-function __jcc_language_sets() {
-  $data = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('module', 'jcc_forms'). '/jcc_forms-language-labels.json');
-
-  return json_decode($data);
+  return $forms;
 }
 
