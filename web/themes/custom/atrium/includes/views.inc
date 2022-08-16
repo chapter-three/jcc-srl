@@ -39,9 +39,8 @@ function atrium_preprocess_views_view(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function atrium_preprocess_views_view__switchboard(&$variables) {
-  $parent = $variables['rows'][0]['#view']->result[0]->_relationship_entities['field_parent'];
-
-  if ($parent) {
+  if (!empty($variables['rows'][0]['#view']->result[0]->_relationship_entities['field_parent'])) {
+    $parent = $variables['rows'][0]['#view']->result[0]->_relationship_entities['field_parent'];
     $children_primary = $parent->field_children_primary;
     $children_secondary = $parent->field_children_secondary;
 
