@@ -1,0 +1,36 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      fields:
+        view_webform_submission:
+          label: Operaciones
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Acción
+        completed:
+          label: Completado
+        operations:
+          label: Operaciones
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Acción
+        completed:
+          label: Completado
+        view_webform_submission:
+          label: Operaciones
+        edit_webform_submission:
+          label: Operaciones
+  embed_review:
+    display_options:
+      fields:
+        completed:
+          label: Completado
+        view_webform_submission:
+          label: Operaciones

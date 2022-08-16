@@ -17,6 +17,8 @@ display:
           label: Etiquetas
         changed:
           label: Modificado
+        operations:
+          label: Operaciones
   checkout:
     display_title: 'Tramitar compra'
     display_options:

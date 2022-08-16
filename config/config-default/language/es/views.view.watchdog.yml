@@ -1,0 +1,14 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        nothing:
+          admin_label: Icono
+        name:
+          label: Usuario
+        link:
+          label: Operaciones

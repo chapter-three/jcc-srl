@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
+    - field.field.node.court.field_translation_update_notes
+    - field.field.node.court.field_translation_update_status
     - field.field.node.court.field_watchers
     - field.field.node.court.field_zip_codes
     - node.type.court
@@ -73,6 +75,23 @@ third_party_settings:
         effect: none
         description: ''
         required_fields: true
+    group_translation_update_status:
+      children:
+        - field_translation_update_status
+        - field_translation_update_notes
+      label: 'Translation update status'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+        weight: 0
 id: node.court.default
 targetEntityType: node
 bundle: court
@@ -80,7 +99,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -92,7 +111,7 @@ content:
     third_party_settings: {  }
   field_case_types:
     type: entity_reference_autocomplete_tags
-    weight: 15
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -102,7 +121,7 @@ content:
     third_party_settings: {  }
   field_cities:
     type: string_textarea
-    weight: 29
+    weight: 21
     region: content
     settings:
       rows: 5
@@ -118,7 +137,7 @@ content:
     third_party_settings: {  }
   field_exclude_from_search:
     type: search_api_exclude_entity_widget
-    weight: 21
+    weight: 20
     region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
@@ -153,6 +172,20 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  field_translation_update_notes:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_translation_update_status:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_watchers:
     type: options_select
     weight: 18
@@ -176,7 +209,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: string_textfield
-    weight: 20
+    weight: 19
     region: content
     settings:
       size: 60
@@ -184,44 +217,44 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 15
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -235,13 +268,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete_tags
-    weight: 6
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -251,18 +284,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 19
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 18
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

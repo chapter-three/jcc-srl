@@ -9,6 +9,8 @@ display:
           label: Estado
         label:
           label: Etiqueta
+        target_language:
+          label: Para
         translator:
           label: Proveedor
         progress:
@@ -19,6 +21,8 @@ display:
           label: Etiquetas
         changed:
           label: Modificado
+        operations:
+          label: Operaciones
       filters:
         state:
           expose:

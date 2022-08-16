@@ -1,0 +1,29 @@
+uuid: fcc81a44-d273-49f4-8405-de5e8b03f028
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_status
+    - node.type.handbook
+  module:
+    - datalayer
+    - options
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_translation_update_status
+  tmgmt_content:
+    excluded: false
+id: node.handbook.field_translation_update_status
+field_name: field_translation_update_status
+entity_type: node
+bundle: handbook
+label: 'Translation update status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

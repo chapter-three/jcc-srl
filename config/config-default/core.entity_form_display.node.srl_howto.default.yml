@@ -16,6 +16,8 @@ dependencies:
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
     - field.field.node.srl_howto.field_title_display
+    - field.field.node.srl_howto.field_translation_update_notes
+    - field.field.node.srl_howto.field_translation_update_status
     - field.field.node.srl_howto.field_watchers
     - node.type.srl_howto
     - workflows.workflow.editorial_workflow
@@ -66,6 +68,23 @@ third_party_settings:
         id: ''
         description: ''
         required_fields: true
+    group_translation_update_status:
+      children:
+        - field_translation_update_status
+        - field_translation_update_notes
+      label: 'Translation update status'
+      region: content
+      parent_name: ''
+      weight: 17
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.srl_howto.default
 targetEntityType: node
 bundle: srl_howto
@@ -151,7 +170,7 @@ content:
         maxlength_js_truncate_html: false
   field_exclude_from_search:
     type: search_api_exclude_entity_widget
-    weight: 26
+    weight: 24
     region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
@@ -162,6 +181,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_parent:
     type: entity_reference_autocomplete
@@ -221,6 +241,20 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  field_translation_update_notes:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_translation_update_status:
+    type: options_select
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_watchers:
     type: options_select
     weight: 20
@@ -236,7 +270,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -255,18 +289,18 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -309,13 +343,13 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }

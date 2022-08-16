@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        media_bulk_form:
+          action_title: Acción
+        status:
+          label: Estado
+        operations:
+          label: Operaciones
+      filters:
+        langcode:
+          expose:
+            label: Idioma

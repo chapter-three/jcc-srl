@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.handbook.field_exclude_from_search
     - field.field.node.handbook.field_parent
     - field.field.node.handbook.field_parties
+    - field.field.node.handbook.field_translation_update_notes
+    - field.field.node.handbook.field_translation_update_status
     - field.field.node.handbook.field_watchers
     - node.type.handbook
     - workflows.workflow.editorial_workflow
@@ -33,13 +35,30 @@ third_party_settings:
       label: Tags
       region: content
       parent_name: ''
-      weight: 10
+      weight: 9
       format_type: fieldset
       format_settings:
         classes: jcc-tag-set
         id: ''
         description: ''
         required_fields: true
+    group_translation_update_status:
+      children:
+        - field_translation_update_status
+        - field_translation_update_notes
+      label: 'Translation update status'
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+        weight: 0
 id: node.handbook.default
 targetEntityType: node
 bundle: handbook
@@ -85,7 +104,7 @@ content:
     third_party_settings: {  }
   field_exclude_from_search:
     type: search_api_exclude_entity_widget
-    weight: 101
+    weight: 17
     region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
@@ -93,6 +112,20 @@ content:
   field_parties:
     type: options_select
     weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_translation_update_notes:
+    type: text_textarea
+    weight: 19
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_translation_update_status:
+    type: options_select
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -111,7 +144,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -123,18 +156,18 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -173,13 +206,13 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
