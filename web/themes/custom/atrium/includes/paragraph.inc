@@ -25,7 +25,7 @@ function atrium_preprocess_paragraph(&$variables) {
       if(count($terms) == 1){
         if (!$terms[0]->get('field_url')->isEmpty()) {
           $variables['switchboard_footer']['label'] = t('Already know what you are looking for?');
-          $term_custom_uri = $terms[0]->get('field_url')->getValue();
+          $term_custom_uri = \Drupal::service('entity.repository')->getTranslationFromContext($terms[0])->get('field_url')->getValue();
 
           if($case_forms_url){
             $variables['switchboard_footer']['buttons'][0]['url'] = $case_forms_url;
@@ -35,18 +35,18 @@ function atrium_preprocess_paragraph(&$variables) {
           $variables['switchboard_footer']['buttons'][1]['icon']['name'] = 'list';
           if ($term_custom_uri[0]['title'] != '') {
             if($case_forms_url) {
-              $variables['switchboard_footer']['buttons'][0]['title'] = t('See ') . t($term_custom_uri[0]['title']) . t(' Forms');
+              $variables['switchboard_footer']['buttons'][0]['title'] = t('See All Forms');
             }
-            $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All ') . t($term_custom_uri[0]['title']) . t(' Pages');
+            $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All Pages');
           } else {
             // Translation through taxonomy management.
             $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
             $term_translated = Drupal::service('entity.repository')->getTranslationFromContext($terms[0], $lang_code);
             $term_name = $term_translated->getName();
             if($case_forms_url) {
-              $variables['switchboard_footer']['buttons'][0]['title'] = t('See ') . $term_name . t(' Forms');
+              $variables['switchboard_footer']['buttons'][0]['title'] = t('See All Forms');
             }
-            $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All ') . $term_name . t(' Pages');
+            $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All Pages');
           }
         }
       }
