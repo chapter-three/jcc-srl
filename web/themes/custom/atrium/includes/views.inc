@@ -46,8 +46,12 @@ function atrium_preprocess_views_view__switchboard(&$variables) {
     $children_secondary = $parent->field_children_secondary;
 
     $variables['parent_howto'] = $parent;
-    $variables['children_primary'] = __jcc_suppressArchived($children_primary);
-    $variables['children_secondary'] = __jcc_suppressArchived($children_secondary);
+    if ($children_primary) {
+      $variables['children_primary'] = __jcc_suppressArchived($children_primary);
+    }
+    if ($children_secondary) {
+      $variables['children_secondary'] = __jcc_suppressArchived($children_secondary);
+    }
   }
 }
 

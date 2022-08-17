@@ -23,21 +23,21 @@ function atrium_preprocess_node(&$variables) {
       if (!$node->get('field_case_type_override')->isEmpty()) {
         $case_type_override = $node->get('field_case_type_override');
         $variables['case_index']['url'] = Url::fromUri($case_type_override[0]->get('uri')->getValue());
-        $variables['case_index']['label'] = t('Index: All ') . t($case_type_override[0]->get('title')->getValue()) . t(' Pages');
+        $variables['case_index']['label'] = t('Index: All Pages');
       } else {
         $terms = $node->get('field_case_types')->referencedEntities();
         if(count($terms) == 1){
           if (!$terms[0]->get('field_url')->isEmpty()) {
-            $term_custom_uri = $terms[0]->get('field_url')->getValue();
+            $term_custom_uri = \Drupal::service('entity.repository')->getTranslationFromContext($terms[0])->get('field_url')->getValue();
             $variables['case_index']['url'] = Url::fromUri($term_custom_uri[0]['uri']);
             if ($term_custom_uri[0]['title'] != '') {
-              $variables['case_index']['label'] = t('Index: All ') . t($term_custom_uri[0]['title']) . t(' Pages');
+              $variables['case_index']['label'] = t('Index: All Pages');
             } else {
               // Translation through taxonomy management.
               $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
               $term_translated = Drupal::service('entity.repository')->getTranslationFromContext($terms[0], $lang_code);
               $term_name = $term_translated->getName();
-              $variables['case_index']['label'] = t('Index: All ') . $term_name . t(' Pages');
+              $variables['case_index']['label'] = t('Index: All Pages');
             }
           } else {
             break;
