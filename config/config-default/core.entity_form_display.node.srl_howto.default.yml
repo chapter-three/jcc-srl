@@ -75,7 +75,7 @@ third_party_settings:
       label: 'Translation update status'
       region: content
       parent_name: ''
-      weight: 17
+      weight: -10
       format_type: details_sidebar
       format_settings:
         classes: ''
