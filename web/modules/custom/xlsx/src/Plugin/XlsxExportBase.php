@@ -11,6 +11,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\xlsx\Plugin\XlsxSourceManager;
 use Drupal\xlsx\Plugin\XlsxExportManager;
 use Drupal\xlsx\Plugin\XlsxDataManager;
@@ -223,8 +224,21 @@ class XlsxExportBase extends PluginBase implements XlsxExportInterface, Containe
         if ($mapping = $this->getFieldMapping($key, $field_mapping)) {
           $xlsx_cell = !empty($mapping['cell_plugin']) ? $mapping['cell_plugin'] : 'as_is';
           if ($plugin = $this->xlsxCellManager->createInstance($xlsx_cell)) {
-            $rows[$entity->id()][] = $entity->hasField($mapping['field'])
-              ? $plugin->export($entity, $mapping['field'], $entity->get($mapping['field'])->value) : '';
+            $field_type = $entity->get($mapping['field'])->getFieldDefinition()->getType();
+            // If taxonomy field, export the terms.
+            if ($field_type == 'entity_reference') {
+              $terms = [];
+              foreach ($entity->get($mapping['field']) as $reference) {
+                if ($reference->getString()) {
+                  $terms[] = str_replace(' ','-', strtolower(Term::load($reference->getString())->getName()));
+                }
+              }
+              $rows[$entity->id()][] = $plugin->export($entity, $mapping['field'], implode(', ', $terms));
+            }
+            else {
+              $rows[$entity->id()][] = $entity->hasField($mapping['field'])
+                ? $plugin->export($entity, $mapping['field'], $entity->get($mapping['field'])->value) : '';
+            }
           }
           else {
             $rows[$entity->id()][] = $entity->hasField($mapping['field'])
