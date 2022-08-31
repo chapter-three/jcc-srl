@@ -1,0 +1,20 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      fields:
+        type:
+          label: 'Tipo de contenido'
+        operations:
+          label: Operaciones
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      filters:
+        type:
+          expose:
+            label: 'Tipo de contenido'
+        langcode:
+          expose:
+            label: Idioma

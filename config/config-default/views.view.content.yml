@@ -105,7 +105,7 @@ display:
             9:
               action_id: views_bulk_edit
               preconfiguration:
-                get_bundles_from_results: 1
+                get_bundles_from_results: true
             10:
               action_id: views_bulk_operations_delete_entity
             11:

@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.timeline.field_lead
     - field.field.node.timeline.field_paragraphs
     - field.field.node.timeline.field_parties
+    - field.field.node.timeline.field_translation_update_notes
+    - field.field.node.timeline.field_translation_update_status
     - field.field.node.timeline.field_watchers
     - node.type.timeline
   module:
@@ -35,6 +37,8 @@ hidden:
   field_lead: true
   field_paragraphs: true
   field_parties: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true

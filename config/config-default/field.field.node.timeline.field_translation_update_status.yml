@@ -1,0 +1,29 @@
+uuid: 14b616ba-a32e-485f-8c1b-2e7ed778c7d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_status
+    - node.type.timeline
+  module:
+    - datalayer
+    - options
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_translation_update_status
+  tmgmt_content:
+    excluded: false
+id: node.timeline.field_translation_update_status
+field_name: field_translation_update_status
+entity_type: node
+bundle: timeline
+label: 'Translation update status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

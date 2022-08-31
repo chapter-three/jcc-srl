@@ -1,0 +1,29 @@
+uuid: de7a3bb2-8875-4683-9fcd-52b0d3d44c0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_status
+    - node.type.courthouse
+  module:
+    - datalayer
+    - options
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_translation_update_status
+  tmgmt_content:
+    excluded: false
+id: node.courthouse.field_translation_update_status
+field_name: field_translation_update_status
+entity_type: node
+bundle: courthouse
+label: 'Translation update status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

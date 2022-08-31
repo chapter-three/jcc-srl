@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.srl_wayfinder.field_paragraphs
     - field.field.node.srl_wayfinder.field_parties
     - field.field.node.srl_wayfinder.field_title_display
+    - field.field.node.srl_wayfinder.field_translation_update_notes
+    - field.field.node.srl_wayfinder.field_translation_update_status
     - field.field.node.srl_wayfinder.field_watchers
     - node.type.srl_wayfinder
     - workflows.workflow.editorial_workflow
@@ -41,13 +43,30 @@ third_party_settings:
       label: Tags
       region: content
       parent_name: ''
-      weight: 14
+      weight: 13
       format_type: fieldset
       format_settings:
         classes: jcc-tag-set
         id: ''
         description: ''
         required_fields: true
+    group_t:
+      children:
+        - field_translation_update_status
+        - field_translation_update_notes
+      label: 'Translation update status'
+      region: content
+      parent_name: ''
+      weight: -10
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+        weight: 0
 id: node.srl_wayfinder.default
 targetEntityType: node
 bundle: srl_wayfinder
@@ -89,7 +108,7 @@ content:
         maxlength_js_truncate_html: false
   field_exclude_from_search:
     type: search_api_exclude_entity_widget
-    weight: 101
+    weight: 21
     region: content
     settings:
       field_label: 'Yes, exclude this entity from the search indexes.'
@@ -100,6 +119,7 @@ content:
     region: content
     settings:
       sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_options:
     type: inline_entity_form_complex
@@ -156,6 +176,20 @@ content:
       maxlength:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  field_translation_update_notes:
+    type: text_textarea
+    weight: 23
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_translation_update_status:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_watchers:
     type: options_select
     weight: 18
@@ -171,7 +205,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -183,18 +217,18 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -233,13 +267,13 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }

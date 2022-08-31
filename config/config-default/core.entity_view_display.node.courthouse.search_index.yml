@@ -34,6 +34,8 @@ dependencies:
     - field.field.node.courthouse.field_selfhelp_hours_thursday
     - field.field.node.courthouse.field_selfhelp_hours_tuesday
     - field.field.node.courthouse.field_selfhelp_hours_wednesday
+    - field.field.node.courthouse.field_translation_update_notes
+    - field.field.node.courthouse.field_translation_update_status
     - field.field.node.courthouse.field_watchers
     - node.type.courthouse
   module:
@@ -75,6 +77,8 @@ hidden:
   field_selfhelp_hours_thursday: true
   field_selfhelp_hours_tuesday: true
   field_selfhelp_hours_wednesday: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true

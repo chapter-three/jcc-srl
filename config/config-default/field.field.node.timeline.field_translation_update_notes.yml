@@ -1,0 +1,32 @@
+uuid: 84b3d932-2e1c-41a2-92f2-d7dad8d22032
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_notes
+    - node.type.timeline
+  module:
+    - allowed_formats
+    - datalayer
+    - text
+    - tmgmt_content
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  datalayer:
+    expose: 0
+    label: field_translation_update_notes
+  tmgmt_content:
+    excluded: false
+id: node.timeline.field_translation_update_notes
+field_name: field_translation_update_notes
+entity_type: node
+bundle: timeline
+label: 'Translation update notes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

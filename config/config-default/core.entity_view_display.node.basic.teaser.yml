@@ -19,6 +19,8 @@ dependencies:
     - field.field.node.basic.field_parent
     - field.field.node.basic.field_parties
     - field.field.node.basic.field_title_display
+    - field.field.node.basic.field_translation_update_notes
+    - field.field.node.basic.field_translation_update_status
     - field.field.node.basic.field_watchers
     - node.type.basic
   module:
@@ -58,6 +60,8 @@ hidden:
   field_parent: true
   field_parties: true
   field_title_display: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true
