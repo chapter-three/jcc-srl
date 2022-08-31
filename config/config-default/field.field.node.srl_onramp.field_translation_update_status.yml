@@ -1,0 +1,29 @@
+uuid: 1ec9dc8a-65ae-441a-afa4-8cc1907c73c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_status
+    - node.type.srl_onramp
+  module:
+    - datalayer
+    - options
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_translation_update_status
+  tmgmt_content:
+    excluded: false
+id: node.srl_onramp.field_translation_update_status
+field_name: field_translation_update_status
+entity_type: node
+bundle: srl_onramp
+label: 'Translation update status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

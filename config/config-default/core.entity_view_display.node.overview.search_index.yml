@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.overview.field_case_types
     - field.field.node.overview.field_paragraphs
     - field.field.node.overview.field_parties
+    - field.field.node.overview.field_translation_update_notes
+    - field.field.node.overview.field_translation_update_status
     - field.field.node.overview.field_watchers
     - node.type.overview
   module:
@@ -25,6 +27,8 @@ hidden:
   field_case_types: true
   field_paragraphs: true
   field_parties: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true

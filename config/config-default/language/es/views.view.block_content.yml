@@ -1,0 +1,10 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      fields:
+        operations:
+          label: Operaciones
+      exposed_form:
+        options:
+          reset_button_label: Reset

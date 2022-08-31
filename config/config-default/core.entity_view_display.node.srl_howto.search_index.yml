@@ -17,6 +17,8 @@ dependencies:
     - field.field.node.srl_howto.field_switchboard_subtitle
     - field.field.node.srl_howto.field_switchboard_title
     - field.field.node.srl_howto.field_title_display
+    - field.field.node.srl_howto.field_translation_update_notes
+    - field.field.node.srl_howto.field_translation_update_status
     - field.field.node.srl_howto.field_watchers
     - node.type.srl_howto
   module:
@@ -74,6 +76,8 @@ hidden:
   field_switchboard_subtitle: true
   field_switchboard_title: true
   field_title_display: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true
