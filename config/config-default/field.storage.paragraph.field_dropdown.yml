@@ -1,0 +1,19 @@
+uuid: 369e7f53-ebdc-48d4-b1ca-f4c674c55a9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_field
+    - paragraphs
+id: paragraph.field_dropdown
+field_name: field_dropdown
+entity_type: paragraph
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -43,6 +43,22 @@
       {% set menu = card.field_item.get(0).entity %}
       {% set type = menu.type.value.0.target_id %}
 
+      {% set dropdown = card.field_dropdown.get(0).entity %}
+
+      {{ kint(dropdown) }}
+      {{ kint(card.field_dropdown.get(0)) }}
+
+      {% if dropdown %}
+        {% for link in dropdown.field_item %}
+          {% set dropdown_links = links|merge([{
+            name: link.title,
+            url: link.url|render,
+          }]) %}
+        {% endfor %}
+        {{ kint(dropdown_links) }}
+      {% endif %}
+
+
       {% set links = [] %}
       {% if type == 'menu_links' %}
         {% set menu_type = 'single' %}

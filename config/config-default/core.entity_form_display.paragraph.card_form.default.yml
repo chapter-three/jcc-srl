@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_form.field_body
+    - field.field.paragraph.card_form.field_dropdown
     - field.field.paragraph.card_form.field_item
     - field.field.paragraph.card_form.field_title_display
     - paragraphs.paragraphs_type.card_form
   module:
+    - block_field
     - cc
     - field_group
     - paragraphs
@@ -40,6 +42,15 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_dropdown:
+    type: block_field_default
+    weight: 11
+    region: content
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
   field_item:
     type: entity_reference_paragraphs
     weight: 4
@@ -61,6 +72,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
