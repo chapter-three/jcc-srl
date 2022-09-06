@@ -1,0 +1,46 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      fields:
+        media_bulk_form:
+          action_title: Acción
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      filters:
+        name:
+          expose:
+            label: Nombre
+        bundle:
+          expose:
+            label: 'Tipos multimedia'
+          group_info:
+            label: 'Tipos multimedia'
+        langcode:
+          expose:
+            label: Idioma
+  page:
+    display_options:
+      fields:
+        media_bulk_form:
+          action_title: Acción
+        edit_media:
+          text: Editar
+        delete_media:
+          text: Eliminar
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Nombre
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: Nombre
+      filters:
+        name:
+          expose:
+            label: Nombre

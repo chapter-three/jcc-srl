@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.court.field_main_link
     - field.field.node.court.field_parties
     - field.field.node.court.field_secondary_link
+    - field.field.node.court.field_translation_update_notes
+    - field.field.node.court.field_translation_update_status
     - field.field.node.court.field_watchers
     - field.field.node.court.field_zip_codes
     - node.type.court
@@ -34,14 +36,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_link:
     type: link
@@ -53,7 +55,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_main_link:
     type: link
@@ -65,7 +67,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_secondary_link:
     type: link
@@ -77,20 +79,22 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_zip_codes:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
   field_actions: true
   field_case_types: true
   field_exclude_from_search: true
   field_parties: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true

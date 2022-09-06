@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        filename:
+          label: Nombre
+        status:
+          label: Estado
+      filters:
+        status:
+          expose:
+            label: Estado

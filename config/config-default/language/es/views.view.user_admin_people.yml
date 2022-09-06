@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Reset
+      fields:
+        name:
+          label: 'Nombre de usuario'
+        status:
+          label: Estado
+        roles_target_id:
+          label: Roles
+        operations:
+          label: Operaciones
+      filters:
+        status:
+          group_info:
+            label: Estado

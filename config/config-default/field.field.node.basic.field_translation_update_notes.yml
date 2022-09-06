@@ -1,0 +1,32 @@
+uuid: 47c67105-16b2-491e-83bd-524c59ce1116
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_notes
+    - node.type.basic
+  module:
+    - allowed_formats
+    - datalayer
+    - text
+    - tmgmt_content
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  datalayer:
+    expose: 0
+    label: field_translation_update_notes
+  tmgmt_content:
+    excluded: false
+id: node.basic.field_translation_update_notes
+field_name: field_translation_update_notes
+entity_type: node
+bundle: basic
+label: 'Translation update notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -16,6 +16,8 @@ dependencies:
     - field.field.node.srl_onramp.field_paragraphs
     - field.field.node.srl_onramp.field_parent
     - field.field.node.srl_onramp.field_parties
+    - field.field.node.srl_onramp.field_translation_update_notes
+    - field.field.node.srl_onramp.field_translation_update_status
     - field.field.node.srl_onramp.field_watchers
     - node.type.srl_onramp
   module:
@@ -43,6 +45,8 @@ hidden:
   field_paragraphs: true
   field_parent: true
   field_parties: true
+  field_translation_update_notes: true
+  field_translation_update_status: true
   field_watchers: true
   langcode: true
   links: true

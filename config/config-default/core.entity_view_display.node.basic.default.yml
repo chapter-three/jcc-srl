@@ -18,6 +18,8 @@ dependencies:
     - field.field.node.basic.field_parent
     - field.field.node.basic.field_parties
     - field.field.node.basic.field_title_display
+    - field.field.node.basic.field_translation_update_notes
+    - field.field.node.basic.field_translation_update_status
     - field.field.node.basic.field_watchers
     - image.style.large
     - node.type.basic
@@ -25,6 +27,7 @@ dependencies:
     - entity_reference_revisions
     - link
     - media
+    - options
     - text
     - user
 _core:
@@ -56,7 +59,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   field_column_first:
     type: text_default
@@ -89,6 +92,8 @@ content:
     settings:
       image_link: ''
       image_style: large
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content
@@ -108,6 +113,13 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  field_translation_update_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
 hidden:
   field_actions: true
   field_case_types: true
@@ -116,6 +128,7 @@ hidden:
   field_metatag: true
   field_parent: true
   field_parties: true
+  field_translation_update_notes: true
   field_watchers: true
   langcode: true
   links: true

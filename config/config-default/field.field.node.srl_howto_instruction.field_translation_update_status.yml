@@ -1,0 +1,29 @@
+uuid: 5905abb7-e28c-4520-b323-bcf0710a6657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_status
+    - node.type.srl_howto_instruction
+  module:
+    - datalayer
+    - options
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_translation_update_status
+  tmgmt_content:
+    excluded: false
+id: node.srl_howto_instruction.field_translation_update_status
+field_name: field_translation_update_status
+entity_type: node
+bundle: srl_howto_instruction
+label: 'Translation update status'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,32 @@
+uuid: a03fafa7-c91d-4a72-a363-ea5171b5e5e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_translation_update_notes
+    - node.type.court
+  module:
+    - allowed_formats
+    - datalayer
+    - text
+    - tmgmt_content
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+  datalayer:
+    expose: 0
+    label: field_translation_update_notes
+  tmgmt_content:
+    excluded: false
+id: node.court.field_translation_update_notes
+field_name: field_translation_update_notes
+entity_type: node
+bundle: court
+label: 'Translation update notes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
