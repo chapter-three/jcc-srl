@@ -10,6 +10,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\Core\Menu\MenuTreeParameters;
 
 function atrium_preprocess_paragraph(&$variables) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
@@ -48,6 +49,22 @@ function atrium_preprocess_paragraph(&$variables) {
             }
             $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All ') . $term_name . t(' Pages');
           }
+        }
+      }
+    }
+  } elseif ($paragraph->getType() == 'hero_cards'){
+    $cards = $paragraph->get('field_cards');
+
+    foreach ($cards->referencedEntities() as $card) {
+      if($card->field_dropdown_menu[0]){
+        $menu_fields = $card->field_dropdown_menu[0]->getValue();
+        $menu_title = $menu_fields['target_id'];
+        $menu_links = \Drupal::menuTree()->load($menu_title, new MenuTreeParameters());
+
+        foreach ($menu_links as $item) {
+        $link_url = $item->link->getUrlObject();
+        $link = $link_url->toString();
+          $variables['menu_links'][$menu_title][] = ['title'=>$item->link->getTitle(),'url'=>$link];
         }
       }
     }
