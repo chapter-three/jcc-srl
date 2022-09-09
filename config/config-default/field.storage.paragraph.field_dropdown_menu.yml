@@ -1,16 +1,17 @@
-uuid: 369e7f53-ebdc-48d4-b1ca-f4c674c55a9c
+uuid: e09b59f7-98e4-41ad-b38d-0438c6495dd2
 langcode: en
 status: true
 dependencies:
   module:
-    - block_field
     - paragraphs
-id: paragraph.field_dropdown
-field_name: field_dropdown
+    - system
+id: paragraph.field_dropdown_menu
+field_name: field_dropdown_menu
 entity_type: paragraph
-type: block_field
-settings: {  }
-module: block_field
+type: entity_reference
+settings:
+  target_type: menu
+module: core
 locked: false
 cardinality: 1
 translatable: true
