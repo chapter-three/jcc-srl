@@ -49,8 +49,10 @@ content:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
-      placeholder: ''
-    third_party_settings: {  }
+      placeholder: 'Start typing "Dropdown menu" to see options...'
+    third_party_settings:
+      cc:
+        status: 0
   field_item:
     type: entity_reference_paragraphs
     weight: 4

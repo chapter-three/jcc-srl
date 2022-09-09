@@ -1,0 +1,8 @@
+uuid: 6c5812df-3eeb-4ff7-9239-5cedcf862c63
+langcode: en
+status: true
+dependencies: {  }
+id: dropdown-menu---get-information-
+label: 'Dropdown menu - Get information about a legal topic'
+description: ''
+locked: false
