@@ -49,17 +49,44 @@
 
       {% if dropdown_menu %}
         {% set menu_id = card.field_dropdown_menu.get(0).entity.id %}
-        {% for key,link in menu_links[menu_id] %}
-          {% set links = links|merge([{
-            name: link.title,
-            url: link.url,
-          }]) %}
-        {% endfor %}
-        {% set menu_type = 'single' %}
-        {% set menu_label = menu.field_label.value ?: '' %}
-        {% set menu_default_option = menu.field_default_option.value ?: '' %}
-      {% else %}
+        {% if menu_links[menu_id]['second_level'] %}
 
+          {% set menu_type = 'cascading' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+
+          {% set menu_child_label = menu.field_label2.value ?: '' %}
+          {% set menu_default_child_option = menu.field_default_child_option.value ?: '' %}
+
+          {% for key, link in menu_links[menu_id] %}
+            {% if link.title %}
+
+              {% set cascading_links = [] %}
+              {% for cascading_link in link.children %}
+                {% set cascading_links = cascading_links|merge([{
+                  name: cascading_link.title,
+                  url: cascading_link.url,
+                }]) %}
+              {% endfor %}
+              {% set links = links|merge([{
+                name: link.title,
+                default_option: 'Choose option',
+                items: cascading_links,
+              }]) %}
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for key,link in menu_links[menu_id] %}
+            {% set links = links|merge([{
+              name: link.title,
+              url: link.url,
+            }]) %}
+          {% endfor %}
+          {% set menu_type = 'single' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+        {% endif %}
+      {% else %}
         {% if type == 'menu_links' %}
           {% set menu_type = 'single' %}
           {% set menu_label = menu.field_label.value ?: '' %}
