@@ -26,7 +26,7 @@ function atrium_preprocess_paragraph(&$variables) {
       if(count($terms) == 1){
         if (!$terms[0]->get('field_url')->isEmpty()) {
           $variables['switchboard_footer']['label'] = t('Already know what you are looking for?');
-          $term_custom_uri = \Drupal::service('entity.repository')->getTranslationFromContext($terms[0])->get('field_url')->getValue();
+          $term_custom_uri = $terms[0]->get('field_url')->getValue();
 
           if($case_forms_url){
             $variables['switchboard_footer']['buttons'][0]['url'] = $case_forms_url;
