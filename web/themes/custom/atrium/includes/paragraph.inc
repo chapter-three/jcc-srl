@@ -53,3 +53,11 @@ function atrium_preprocess_paragraph(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for Self-Help Finder paragraph.
+ */
+function atrium_preprocess_paragraph__self_help_finder(&$variables) {
+  $language_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['language_id'] = $language_id;
+}

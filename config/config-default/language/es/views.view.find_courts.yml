@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      filters:
+        nid:
+          group_info:
+            description: ''
+        combine:
+          expose:
+            label: 'Enter city, county, or zip code'
+      header:
+        area:
+          content:
+            value: "<p class=\"jcc-lead\">Search a zipcode or city to find a courthouse in your jurisdiction.</p>\r\n"
+            format: basic_html
+      title: 'Find Your Self-Help Center'
+  self_help_page:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<p class=\"jcc-lead\">Self-Help Centers can provide legal information and resources to people without a lawyer. Help can be in person, over the phone, or online.</p>\r\n"
+            format: basic_html
+    display_title: 'Self help page'
