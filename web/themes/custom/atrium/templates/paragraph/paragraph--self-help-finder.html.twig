@@ -2,6 +2,9 @@
 /**
  * @file
  * Template for "Self help finder" Paragraph.
+ *
+ * Available variables:
+ * - language_id: Current language context by id.
  */
 #}
 {% extends 'paragraph.html.twig' %}
@@ -28,7 +31,7 @@
             text: 'Search'|t,
             style: 'primary',
           },
-          url: '/self-help/find-self-help',
+          url: (language_id != 'en' ? '/' ~ language_id : '') ~ '/self-help/find-self-help',
           attribute: 's',
         },
         footer: 'Help can be in person, over the phone, or online.'|t,
