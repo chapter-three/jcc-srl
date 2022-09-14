@@ -10,6 +10,7 @@
  */
 
 use Drupal\Core\Url;
+use Drupal\Core\Menu\MenuTreeParameters;
 
 function atrium_preprocess_paragraph(&$variables) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
@@ -47,6 +48,32 @@ function atrium_preprocess_paragraph(&$variables) {
               $variables['switchboard_footer']['buttons'][0]['title'] = t('See All Forms');
             }
             $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All Pages');
+          }
+        }
+      }
+    }
+  } elseif ($paragraph->getType() == 'hero_cards'){
+    $variables['menu_links'] = [];
+    $cards = $paragraph->get('field_cards');
+
+    foreach ($cards->referencedEntities() as $card) {
+      if($card->field_dropdown_menu[0]){
+        $menu_fields = $card->field_dropdown_menu[0]->getValue();
+        $menu_title = $menu_fields['target_id'];
+        if(empty($variables['menu_links'][$menu_title])){
+          $menu_links = \Drupal::menuTree()->load($menu_title, new MenuTreeParameters());
+          foreach ($menu_links as $key => $item) {
+            $link_url = $item->link->getUrlObject();
+            $link = $link_url->toString();
+            $variables['menu_links'][$menu_title][$key] = ['title'=>$item->link->getTitle(),'url'=>$link];
+            if($item->hasChildren){
+              foreach ($item->subtree as $sub_key => $sub_item) {
+                $sub_link_url = $sub_item->link->getUrlObject();
+                $sub_link = $sub_link_url->toString();
+                $variables['menu_links'][$menu_title][$key]['children'][] = ['title' => $sub_item->link->getTitle(), 'url' => $sub_link];
+              }
+              $variables['menu_links'][$menu_title]['second_level'] = true;
+            }
           }
         }
       }

@@ -1,0 +1,20 @@
+uuid: e09b59f7-98e4-41ad-b38d-0438c6495dd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - system
+id: paragraph.field_dropdown_menu
+field_name: field_dropdown_menu
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

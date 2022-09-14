@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card_form.field_body
+    - field.field.paragraph.card_form.field_dropdown_menu
     - field.field.paragraph.card_form.field_item
     - field.field.paragraph.card_form.field_title_display
     - paragraphs.paragraphs_type.card_form
@@ -21,6 +22,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_dropdown_menu:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_item:
     type: entity_reference_revisions_entity_view
