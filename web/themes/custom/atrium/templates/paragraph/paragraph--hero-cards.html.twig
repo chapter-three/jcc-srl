@@ -43,39 +43,83 @@
       {% set menu = card.field_item.get(0).entity %}
       {% set type = menu.type.value.0.target_id %}
 
-      {% set links = [] %}
-      {% if type == 'menu_links' %}
-        {% set menu_type = 'single' %}
-        {% set menu_label = menu.field_label.value ?: '' %}
-        {% set menu_default_option = menu.field_default_option.value ?: '' %}
-        {% for link in menu.field_links %}
-          {% set links = links|merge([{
-            name: link.title,
-            url: link.url|render,
-          }]) %}
-        {% endfor %}
+      {% set dropdown_menu = card.field_dropdown_menu.get(0) %}
 
-      {% elseif type == 'cascading_menu' %}
-        {% set menu_type = 'cascading' %}
-        {% set menu_label = menu.field_label.value ?: '' %}
-        {% set menu_default_option = menu.field_default_option.value ?: '' %}
-        {% set menu_child_label = menu.field_label2.value ?: '' %}
-        {% set menu_default_child_option = menu.field_default_child_option.value ?: '' %}
-        {% for key, item in menu.field_items %}
-          {% set cascading_menu = menu.field_items.get(key).entity %}
-          {% set cascading_links = [] %}
-          {% for cascading_link in cascading_menu.field_links %}
-            {% set cascading_links = cascading_links|merge([{
-              name: cascading_link.title,
-              url: cascading_link.url|render,
+      {% set links = [] %}
+
+      {% if dropdown_menu %}
+        {% set menu_id = card.field_dropdown_menu.get(0).entity.id %}
+        {% if menu_links[menu_id]['second_level'] %}
+
+          {% set menu_type = 'cascading' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+
+          {% set menu_child_label = menu.field_label2.value ?: '' %}
+          {% set menu_default_child_option = menu.field_default_child_option.value ?: '' %}
+
+          {% for key, link in menu_links[menu_id] %}
+            {% if link.title %}
+
+              {% set cascading_links = [] %}
+              {% for cascading_link in link.children %}
+                {% set cascading_links = cascading_links|merge([{
+                  name: cascading_link.title,
+                  url: cascading_link.url,
+                }]) %}
+              {% endfor %}
+              {% set links = links|merge([{
+                name: link.title,
+                default_option: 'Choose option',
+                items: cascading_links,
+              }]) %}
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for key,link in menu_links[menu_id] %}
+            {% set links = links|merge([{
+              name: link.title,
+              url: link.url,
             }]) %}
           {% endfor %}
-          {% set links = links|merge([{
-            name: cascading_menu.field_top_title.value,
-            default_option: cascading_menu.field_label.value,
-            items: cascading_links,
-          }]) %}
-        {% endfor %}
+          {% set menu_type = 'single' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+        {% endif %}
+      {% else %}
+        {% if type == 'menu_links' %}
+          {% set menu_type = 'single' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+          {% for link in menu.field_links %}
+            {% set links = links|merge([{
+              name: link.title,
+              url: link.url|render,
+            }]) %}
+          {% endfor %}
+
+        {% elseif type == 'cascading_menu' %}
+          {% set menu_type = 'cascading' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+          {% set menu_child_label = menu.field_label2.value ?: '' %}
+          {% set menu_default_child_option = menu.field_default_child_option.value ?: '' %}
+          {% for key, item in menu.field_items %}
+            {% set cascading_menu = menu.field_items.get(key).entity %}
+            {% set cascading_links = [] %}
+            {% for cascading_link in cascading_menu.field_links %}
+              {% set cascading_links = cascading_links|merge([{
+                name: cascading_link.title,
+                url: cascading_link.url|render,
+              }]) %}
+            {% endfor %}
+            {% set links = links|merge([{
+              name: cascading_menu.field_top_title.value,
+              default_option: cascading_menu.field_label.value,
+              items: cascading_links,
+            }]) %}
+          {% endfor %}
+        {% endif %}
       {% endif %}
 
       {# Store each card in an array for the Pattern component. #}

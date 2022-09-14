@@ -1,0 +1,32 @@
+uuid: c6a703ec-9320-437f-b109-6ef6f24b6e91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_dropdown_menu
+    - paragraphs.paragraphs_type.card_form
+  module:
+    - datalayer
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_dropdown_menu
+  tmgmt_content:
+    excluded: false
+id: paragraph.card_form.field_dropdown_menu
+field_name: field_dropdown_menu
+entity_type: paragraph
+bundle: card_form
+label: 'Dropdown menu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
