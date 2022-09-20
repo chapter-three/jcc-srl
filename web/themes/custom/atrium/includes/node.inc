@@ -20,13 +20,13 @@ function atrium_preprocess_node(&$variables) {
     case "basic":
     case "srl_onramp":
       $variables['previous_label'] = t('Previous Page');
-      if (!$node->get('field_case_type_override')->isEmpty()) {
+      if ($node->get('field_case_type_override') && !$node->get('field_case_type_override')->isEmpty()) {
         $case_type_override = $node->get('field_case_type_override');
         $variables['case_index']['url'] = Url::fromUri($case_type_override[0]->get('uri')->getValue());
         $variables['case_index']['label'] = t('Index: All Pages');
       } else {
         $terms = $node->get('field_case_types')->referencedEntities();
-        if(count($terms) == 1){
+        if($terms) {
           if (!$terms[0]->get('field_url')->isEmpty()) {
             $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
             $term_custom_uri = $terms[0]->get('field_url')->getValue();

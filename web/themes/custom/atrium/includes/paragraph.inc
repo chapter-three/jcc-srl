@@ -34,21 +34,11 @@ function atrium_preprocess_paragraph(&$variables) {
           }
           $variables['switchboard_footer']['buttons'][1]['url'] = Url::fromUri($term_custom_uri[0]['uri']);
           $variables['switchboard_footer']['buttons'][1]['icon']['name'] = 'list';
-          if ($term_custom_uri[0]['title'] != '') {
-            if($case_forms_url) {
-              $variables['switchboard_footer']['buttons'][0]['title'] = t('See All Forms');
-            }
-            $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All Pages');
-          } else {
-            // Translation through taxonomy management.
-            $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
-            $term_translated = Drupal::service('entity.repository')->getTranslationFromContext($terms[0], $lang_code);
-            $term_name = $term_translated->getName();
-            if($case_forms_url) {
-              $variables['switchboard_footer']['buttons'][0]['title'] = t('See All Forms');
-            }
-            $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All Pages');
+          if($case_forms_url) {
+            $variables['switchboard_footer']['buttons'][0]['title'] = t('See All Forms');
           }
+          $variables['switchboard_footer']['buttons'][1]['title'] = t('Index: All Pages');
+
         }
       }
     }
