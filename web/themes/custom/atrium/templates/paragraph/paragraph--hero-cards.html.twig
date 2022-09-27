@@ -49,14 +49,17 @@
 
       {% if dropdown_menu %}
         {% set menu_id = card.field_dropdown_menu.get(0).entity.id %}
+        {% set default_label = card.field_dropdown_menu_default_opti.0.value %}
+        {% set default_sub_label = card.field_dropdown_menu_default_opt2.0.value %}
         {% if menu_links[menu_id]['second_level'] %}
 
           {% set menu_type = 'cascading' %}
-          {% set menu_label = menu.field_label.value|t ?: '' %}
-          {% set menu_default_option = menu.field_default_option.value|t ?: '' %}
+          {% set menu_label = menu.field_label.value ?: '' %}
+          {% set menu_default_option = default_label ?: '' %}
 
-          {% set menu_child_label = menu.field_label2.value|t ?: '' %}
-          {% set menu_default_child_option = menu.field_default_child_option.value|t ?: '' %}
+          {% set menu_child_label = default_label ?: '' %}
+          {% set menu_default_child_option = default_sub_label ?: '' %}
+
 
           {% for key, link in menu_links[menu_id] %}
             {% if link.title %}
@@ -70,7 +73,7 @@
               {% endfor %}
               {% set links = links|merge([{
                 name: link.title,
-                default_option: 'Choose option|t',
+                default_option: menu_default_child_option,
                 items: cascading_links,
               }]) %}
             {% endif %}
@@ -84,7 +87,7 @@
           {% endfor %}
           {% set menu_type = 'single' %}
           {% set menu_label = menu.field_label.value ?: '' %}
-          {% set menu_default_option = menu.field_default_option.value ?: '' %}
+          {% set menu_default_option = default_label ?: '' %}
         {% endif %}
       {% else %}
         {% if type == 'menu_links' %}
