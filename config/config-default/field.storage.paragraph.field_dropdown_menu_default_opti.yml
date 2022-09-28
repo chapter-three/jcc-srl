@@ -1,0 +1,21 @@
+uuid: 21e4335d-b53f-4783-b904-7b4b476ada30
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_dropdown_menu_default_opti
+field_name: field_dropdown_menu_default_opti
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

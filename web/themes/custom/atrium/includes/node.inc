@@ -16,17 +16,21 @@ use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 function atrium_preprocess_node(&$variables) {
   $node = $variables['node'];
   switch ($node->getType()) {
-    case "srl_howto_instruction":
-    case "basic":
-    case "srl_onramp":
+    case 'court':
+      break;
+    case 'timeline':
+      break;
+    default:
+      // Previous page link label if in use.
       $variables['previous_label'] = t('Previous Page');
-      if (!$node->get('field_case_type_override')->isEmpty()) {
+      // Index page link if tagged as case type.
+      if ($node->field_case_type_override && !$node->get('field_case_type_override')->isEmpty()) {
         $case_type_override = $node->get('field_case_type_override');
         $variables['case_index']['url'] = Url::fromUri($case_type_override[0]->get('uri')->getValue());
         $variables['case_index']['label'] = t('Index: All Pages');
       } else {
         $terms = $node->get('field_case_types')->referencedEntities();
-        if(count($terms) == 1){
+        if ($terms) {
           if (!$terms[0]->get('field_url')->isEmpty()) {
             $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
             $term_custom_uri = $terms[0]->get('field_url')->getValue();
@@ -40,7 +44,6 @@ function atrium_preprocess_node(&$variables) {
           } else {
             break;
           }
-
         }
       }
 

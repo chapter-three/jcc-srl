@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.card_form.field_body
     - field.field.paragraph.card_form.field_dropdown_menu
+    - field.field.paragraph.card_form.field_dropdown_menu_default_opt2
+    - field.field.paragraph.card_form.field_dropdown_menu_default_opti
     - field.field.paragraph.card_form.field_item
     - field.field.paragraph.card_form.field_title_display
     - paragraphs.paragraphs_type.card_form
@@ -53,6 +55,22 @@ content:
     third_party_settings:
       cc:
         status: 0
+  field_dropdown_menu_default_opt2:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_dropdown_menu_default_opti:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_item:
     type: entity_reference_paragraphs
     weight: 4
