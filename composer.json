@@ -103,6 +103,7 @@
         "drupal/adminimal_theme": "^1.5",
         "drupal/advagg": "^4.1",
         "drupal/allowed_formats": "^1.1",
+        "drupal/anchor_link": "^1.9",
         "drupal/autosave_form": "^1.0",
         "drupal/block_field": "^1.0@alpha",
         "drupal/chosen": "^2.8",
