@@ -34,6 +34,7 @@ settings:
           items:
             - DrupalLink
             - DrupalUnlink
+            - Anchor
         -
           name: Lists
           items:
@@ -70,8 +71,6 @@ settings:
     drupallink:
       linkit_enabled: true
       linkit_profile: default
-    language:
-      language_list: un
     stylescombo:
       styles: "p.jcc-lead|Lead paragraph\r\na.usa-button|Button: Primary\r\na.usa-button.usa-button--secondary|Button: Secondary\r\na.usa-button.usa-button--accent-warm|Button: Accent Warm\r\na.usa-button.usa-button--external.external-button|Button: External\r\na.usa-button.usa-button--secondary.js-back-button|Button: Back Secondary\r\n"
     templates:
