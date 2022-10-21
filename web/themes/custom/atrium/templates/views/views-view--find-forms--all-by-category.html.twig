@@ -21,6 +21,19 @@
 
 {% block view %}
   <{{ tag }}{{ attributes.addClass(classes) }}>
+    {% set hero_content %}
+      <p>
+        Browse the list of all court forms or
+        <a href="/find-forms">search by topic or form number</a>
+      </p>
+    {% endset %}
+    {% include '@molecules/blocks/hero/hero.twig' with {
+      hero: {
+        background_variant: 'has-background-color--dark',
+        title: 'Find Your Court Forms',
+        body: hero_content
+      }
+    } %}
     {% block content %}
       {% if forms_by_category %}
         {% set all_forms = [] %}
@@ -105,15 +118,17 @@
           }
         } %}
 
-        <div class="margin-y-2">
-          Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.
-        </div>
-
-        <div class="form-type--checkbox text-align-right margin-bottom-2">
+        <div class="jcc-find-forms__toggle_view form-type--checkbox text-align-right margin-bottom-2">
           <span class="ajax-progress-throbber margin-right-1"><span id="throbber__container"></span></span>
           <input aria-describedby="org_by_category" type="checkbox" checked="checked" class="form-checkbox form-boolean form-boolean--type-checkbox" onclick="location.href='/find-forms/all'; document.getElementById('throbber__container').classList.add('throbber'); this.disabled=true;">
           <span class="checkbox-toggle"><span class="checkbox-toggle__inner"></span></span>
           <label for="org_by_category" class="form-item__label option">Organize by category</label>
+        </div>
+
+        <div class="jcc-find-forms">
+          <div class="jcc-find-forms__notation">
+            <p>Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.</p>
+          </div>
         </div>
 
         {% include '@molecules/interactive/accordion/accordion.twig' with {
