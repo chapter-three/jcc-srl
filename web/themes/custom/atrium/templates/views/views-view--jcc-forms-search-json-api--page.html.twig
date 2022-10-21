@@ -21,43 +21,60 @@
 
 {% block view %}
   <{{ tag }}{{ attributes.addClass(classes) }}>
-    {% set hero_content %}
-      <p>
-        Browse the list of all court forms or
-        <a href="/find-forms">search by topic or form number</a>
-      </p>
-    {% endset %}
-    {% include '@molecules/blocks/hero/hero.twig' with {
-      hero: {
-        background_variant: 'has-background-color--dark',
-        title: 'Find Your Court Forms',
-        body: hero_content
-      }
-    } %}
+    {% block exposed %}
+      {% if exposed %}
+        {% set hero_content %}
+          <p>
+            Search for any topic or form number,
+            <a href="/find-forms/all">view all forms</a> or
+            <a href="/find-forms/all-by-category">view all forms by category</a>
+          </p>
+          <div class="view__filters">{{ exposed }}</div>
+        {% endset %}
+        {% include '@molecules/blocks/hero/hero.twig' with {
+          hero: {
+            background_variant: 'has-background-color--dark',
+            title: 'Find Your Court Forms',
+            body: hero_content
+          }
+        } %}
+      {% endif %}
+    {% endblock %}
 
     {% block content %}
-      {% set instruct %}
-        <p>Use Adobe Acrobat. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
-      {% endset %}
-      {% include '@molecules/blocks/alert/alert.twig' with {
-        alert: {
-          type: 'warning',
-          icon: true,
-          heading: 'Don\'t fill forms in your browser!',
-          text: instruct,
-        }
-      } %}
+      {% if query and search_results %}
+        {% if category_info %}
+          {% set category_info__content %}
+            <ul>
+              <li><a href="{{ category_info.url }}">Read the {{ category_info.title }} self-help guide</a></li>
+              <li><a href="{{ category_info.formsUrl }}">See {{ category_info.title }} forms packet</a></li>
+            </ul>
+          {% endset %}
+          {% include '@molecules/blocks/alert/alert.twig' with {
+            alert: {
+              type: 'info',
+              icon: true,
+              heading: 'Looking for info about ' ~ category_info.query ~ '?',
+              text: category_info__content,
+            }
+          } %}
+        {% endif %}
 
-      <div class="jcc-find-forms__toggle_view form-type--checkbox text-align-right margin-bottom-2">
-        <span class="ajax-progress-throbber margin-right-1"><span id="throbber__container"></span></span>
-        <input aria-describedby="org_by_category" type="checkbox" class="form-checkbox form-boolean form-boolean--type-checkbox" onclick="location.href='/find-forms/all-by-category'; document.getElementById('throbber__container').classList.add('throbber'); this.disabled=true;">
-        <span class="checkbox-toggle"><span class="checkbox-toggle__inner"></span></span>
-        <label for="org_by_category" class="form-item__label option">Organize by category</label>
-      </div>
+        {% set instruct %}
+          <p>Use Adobe Acrobat. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
+        {% endset %}
 
-      {% if forms_by_number %}
+        {% include '@molecules/blocks/alert/alert.twig' with {
+          alert: {
+            type: 'warning',
+            icon: true,
+            heading: 'Don\'t fill forms in your browser!',
+            text: instruct,
+          }
+        } %}
+
         {% set forms = [] %}
-        {% for form in forms_by_number %}
+        {% for form in search_results %}
           {% set title = form.number %}
           {% if form.mandatory %}
             {% set title = title ~ ' *' %}
@@ -109,6 +126,7 @@
 
         <div class="jcc-find-forms">
           <div class="jcc-find-forms__notation">
+            <p>Found {{ view.total_rows }} forms matching "{{ query }}".</p>
             <p>Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.</p>
           </div>
           <div class="jcc-find-forms__results">
@@ -121,14 +139,25 @@
             } %}
           </div>
         </div>
+      {% else %}
+        {% include '@organisms/sections/link-list-with-button/link-list-with-button.twig' with {
+          link_list_with_button: {
+            headergroup: {
+              title: 'Popular Topics'
+            },
+            columns: 2,
+            items: popular_topics,
+          }
+        } %}
       {% endif %}
     {% endblock %}
 
-    {% block pager %}
-      {% if pager %}
-        {{ pager }}
-      {% endif %}
-    {% endblock %}
+    {% if query and search_results %}
+      {% block pager %}
+        {% if pager %}
+          {{ pager }}
+        {% endif %}
+      {% endblock %}
+    {% endif %}
   </{{ tag }}>
-
 {% endblock %}
