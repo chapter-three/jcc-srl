@@ -2,4 +2,6 @@
 jcc_forms:
   css:
     theme:
-      css/jcc-forms.css: {}
+      css/jcc_forms.css: {}
+  js:
+    js/jcc_forms.js: {}

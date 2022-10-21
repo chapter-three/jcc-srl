@@ -1,0 +1,131 @@
+/* Overrides body default height handling to allow proper iframe-resizer.js management */
+.path-find-forms {
+  height: auto;
+}
+
+.view-jcc-forms-search-json-api .jcc-hero,
+.view-jcc-forms-search-json-api .usa-alert,
+.view-jcc-forms-search-json-api .jcc-link-list-with-button__container,
+.view-find-forms .jcc-hero,
+.view-find-forms .usa-alert,
+.view-find-forms .jcc-find-forms__toggle_view,
+.view-find-forms .usa-accordion,
+.jcc-find-forms {
+  max-width: 64rem;
+  margin: 0 auto;
+  margin-bottom: 1rem !important;
+}
+
+.view-jcc-forms-search-json-api .jcc-hero h1,
+.view-find-forms .jcc-hero h1 {
+  margin-top: 0;
+}
+
+.view-jcc-forms-search-json-api .usa-alert--info .usa-alert__body {
+  background-image: none;
+  padding-left: 1rem;
+}
+
+.view-jcc-forms-search-json-api .usa-alert ul {
+  margin-top: 0;
+  padding-right: 0;
+}
+
+.view-jcc-forms-search-json-api .usa-label {
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
+}
+
+.view-jcc-forms-search-json-api .jcc-hero h1 {
+  margin: 0 0 0.5rem;
+}
+
+.view-jcc-forms-search-json-api #edit-captcha {
+  display: none;
+}
+
+.view-jcc-forms-search-json-api .form-item-query,
+.view-jcc-forms-search-json-api .form-actions {
+  display: inline-block;
+}
+
+.view-jcc-forms-search-json-api .form-item-query {
+  display: inline-block;
+  width: 100%;
+  max-width: 30rem;
+}
+
+#views-exposed-form-jcc-forms-search-json-api-page {
+  display: none;
+}
+
+#views-exposed-form-jcc-forms-search-json-api-page.show {
+  display: block;
+}
+
+#views-exposed-form-jcc-forms-search-json-api-page #edit-submit-jcc-forms-search-json-api {
+  margin: 0.5rem 0.5rem 0 !important;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-with-button__container .jcc-header-group {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-with-button__container .jcc-header-group__title {
+  margin: 0 0 1rem 0 !important;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-with-button__container .jcc-header-group__title::before,
+.view-jcc-forms-search-json-api .jcc-link-list-with-button__container .jcc-header-group__title::after {
+  background: transparent !important;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-simple,
+.jcc-find-forms {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-simple .jcc-link-list__list {
+  list-style: none;
+  margin: 0;
+  padding: 0 !important;
+  border-right: 1px solid #ddd;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-simple .jcc-link-list__item {
+  padding: 0;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-simple a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+.view-jcc-forms-search-json-api .jcc-link-list-simple a:hover {
+  text-decoration: underline;
+}
+
+.jcc-find-forms .jcc-find-forms__notation {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1080px) {
+  .jcc-find-forms .jcc-find-forms__notation {
+    padding: 1rem;
+  }
+
+  .jcc-find-forms .jcc-list-group__item {
+    padding: 0 1rem !important;
+  }
+}
