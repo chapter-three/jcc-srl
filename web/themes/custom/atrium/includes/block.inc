@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -32,4 +33,17 @@ function atrium_theme_suggestions_block_alter(array &$suggestions, array $variab
     }
   }
   return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @see block_theme_suggestions_block()
+ */
+function atrium_preprocess_region__drawer(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node->field_case_types[0]->target_id) {
+    $case_type = Term::load($node->field_case_types[0]->target_id);
+    $variables['case_type'] = $case_type->name->value;
+  }
 }
