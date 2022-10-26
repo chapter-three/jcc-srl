@@ -1,0 +1,26 @@
+display:
+  default:
+    display_options:
+      filters:
+        nid:
+          group_info:
+            description: ''
+        combine:
+          expose:
+            label: 'Ingrese la ciudad, el condado o el código postal'
+      header:
+        area:
+          content:
+            value: "<p class=\"jcc-lead\">Search a zipcode or city to find a courthouse in your jurisdiction.</p>\r\n"
+            format: basic_html
+      title: 'Ubicaciones de los Centros de ayuda'
+      exposed_form:
+        options:
+          submit_button: Buscar
+  self_help_page:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<p class=\"jcc-lead\">Los Centros de ayuda pueden dar información y recursos legales a las personas que no tienen abogado.</p>\r\n"
+            format: basic_html
