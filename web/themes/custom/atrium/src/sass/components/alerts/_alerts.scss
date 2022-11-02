@@ -1,0 +1,8 @@
+/* Disable close button for alert components used as content */
+.jcc-text-section__column-left > {
+  .usa-alert {
+    .jcc-alert__close {
+      @include u-display(none);
+    }
+  }
+}

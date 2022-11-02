@@ -71,6 +71,7 @@ mix.styles(
  */
 mix
   .js("src/js/atrium.script.js", "js")
+  .js("src/js/chatbot-banner.js", "js")
   .js("src/js/datefinder.js", "js")
   .js("src/js/submit-scroll.js", "js")
   .js("src/js/howToTabs.js", "js")
