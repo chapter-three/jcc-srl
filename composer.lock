@@ -9623,16 +9623,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.335",
+            "version": "0.1.344",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "9ec477594162b7950d585e81641a79a4369eeb04"
+                "reference": "03e651d96e85d9236e424529fff32e5bb31d50ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/9ec477594162b7950d585e81641a79a4369eeb04",
-                "reference": "9ec477594162b7950d585e81641a79a4369eeb04",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/03e651d96e85d9236e424529fff32e5bb31d50ac",
+                "reference": "03e651d96e85d9236e424529fff32e5bb31d50ac",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9649,9 +9649,9 @@
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
             "support": {
                 "issues": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/issues",
-                "source": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/tree/0.1.335"
+                "source": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/tree/0.1.344"
             },
-            "time": "2022-06-29T17:45:21+00:00"
+            "time": "2022-11-02T21:30:21+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
