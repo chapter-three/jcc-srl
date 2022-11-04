@@ -13,8 +13,8 @@
       });
 
       function chatBotBanner() {
-        if ($('.jcc-chat').length != 0) {
-          $('.' + cookieId).prependTo('.jcc-text-section__column-left');
+        if ($('.jcc-chat').length != 0 && $('.jcc-chat--nobanner-flag').length == 0) {
+          $('.' + cookieId).prependTo('.jcc-text-section__column-left:first');
           $('.' + cookieId).fadeIn(3000);
         }
       }

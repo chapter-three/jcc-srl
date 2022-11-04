@@ -42,7 +42,9 @@ function atrium_theme_suggestions_block_alter(array &$suggestions, array $variab
  */
 function atrium_preprocess_region__drawer(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
-  if ($node->field_case_types[0]->target_id) {
+  // Banner visibility for appropriate content types.
+  $blacklist = ['overview', 'timeline', 'srl_onramp'];
+  if ($node->field_case_types[0] && !in_array($node->getType(), $blacklist)) {
     $case_type = Term::load($node->field_case_types[0]->target_id);
     $variables['case_type'] = $case_type->name->value;
   }
