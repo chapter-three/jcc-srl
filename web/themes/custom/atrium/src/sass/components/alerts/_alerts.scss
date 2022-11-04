@@ -1,4 +1,6 @@
 /* Disable close button for alert components used as content */
+.jcc-postcard__content,
+.jcc-step__excerpt,
 .jcc-text-section__column-left > {
   .usa-alert {
     .jcc-alert__close {
