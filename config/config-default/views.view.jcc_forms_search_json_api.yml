@@ -1996,6 +1996,152 @@ display:
         - 'config:field.storage.taxonomy_term.field_form_prefix_label'
         - 'config:field.storage.taxonomy_term.field_synonyms'
         - 'config:search_api.index.jcc_forms_index'
+  page:
+    id: page
+    display_title: 'Search Page'
+    display_plugin: page
+    position: 2
+    display_options:
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 100
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      cache:
+        type: none
+        options: {  }
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_jcc_forms_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Find Your Court Forms'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: query
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              translator: '0'
+              jcc_web_services: '0'
+              administrator: '0'
+            expose_fields: false
+            placeholder: 'E.g. divorce, name change, fl-100, restraining order'
+            searched_fields_id: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields:
+            - form_category
+            - form_description
+            - form_name
+            - form_number
+            - form_prefix
+            - form_prefix_category
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        cache: false
+        pager: false
+        style: false
+        row: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+        ajax_history: {  }
+      path: find-forms
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+      tags:
+        - 'config:field.storage.media.field_arabic_url'
+        - 'config:field.storage.media.field_cambodian_url'
+        - 'config:field.storage.media.field_chinese_traditional_url'
+        - 'config:field.storage.media.field_chinese_url'
+        - 'config:field.storage.media.field_description'
+        - 'config:field.storage.media.field_farsi_url'
+        - 'config:field.storage.media.field_hmong_url'
+        - 'config:field.storage.media.field_korean_url'
+        - 'config:field.storage.media.field_mandatory'
+        - 'config:field.storage.media.field_number'
+        - 'config:field.storage.media.field_punjabi_url'
+        - 'config:field.storage.media.field_revision_date'
+        - 'config:field.storage.media.field_russian_url'
+        - 'config:field.storage.media.field_spanish_url'
+        - 'config:field.storage.media.field_tagalog_url'
+        - 'config:field.storage.media.field_url'
+        - 'config:field.storage.media.field_vietnamese_url'
+        - 'config:field.storage.media.field_weight'
+        - 'config:field.storage.taxonomy_term.field_form_prefix_label'
+        - 'config:field.storage.taxonomy_term.field_synonyms'
+        - 'config:search_api.index.jcc_forms_index'
   rest_export_1:
     id: rest_export_1
     display_title: 'REST export'
