@@ -52,4 +52,4 @@ drawer:
 
 iframe-resizer-client:
   js:
-    assets/js/iframeResizer.contentWindow.min.js: {}
+    assets/js/iframeResizer.contentWindow.min.js: { preprocess: false }
