@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3431a2a1d42bae20538db782f1dd128",
+    "content-hash": "449cc8c0825213527076566a8b55d170",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9623,16 +9623,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.335",
+            "version": "0.1.346",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "9ec477594162b7950d585e81641a79a4369eeb04"
+                "reference": "d4890c58cc23fca46a9afee7b08de0681a76fac5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/9ec477594162b7950d585e81641a79a4369eeb04",
-                "reference": "9ec477594162b7950d585e81641a79a4369eeb04",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/d4890c58cc23fca46a9afee7b08de0681a76fac5",
+                "reference": "d4890c58cc23fca46a9afee7b08de0681a76fac5",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9649,9 +9649,9 @@
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
             "support": {
                 "issues": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/issues",
-                "source": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/tree/0.1.335"
+                "source": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/tree/0.1.346"
             },
-            "time": "2022-06-29T17:45:21+00:00"
+            "time": "2022-11-14T22:51:33+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
