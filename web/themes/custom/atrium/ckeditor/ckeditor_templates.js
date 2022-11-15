@@ -139,7 +139,6 @@ CKEDITOR.addTemplates('default', {
             <div class="usa-alert__body jcc-alert__body  ">
               <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
               <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
-              <div class="jcc-alert__close" id="alert-close"></div>
             </div>
           </div>
           <p>Text After</p>`
@@ -155,7 +154,6 @@ CKEDITOR.addTemplates('default', {
             <div class="usa-alert__body jcc-alert__body  ">
               <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
               <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
-              <div class="jcc-alert__close" id="alert-close"></div>
             </div>
           </div>
           <p>Text After</p>`
@@ -171,7 +169,6 @@ CKEDITOR.addTemplates('default', {
             <div class="usa-alert__body jcc-alert__body  ">
               <h4 class="usa-alert__heading jcc-alert__heading">Think about safety when serving papers,</h4>
               <div class="usa-alert__text jcc-alert__text">For some people, getting served papers can trigger emotional responses. If you’re using someone who is not a professional server, tell them to keep the interaction brief and not to engage in any conversation about the case. They should remain outside and not enter a private home.</div>
-              <div class="jcc-alert__close" id="alert-close"></div>
             </div>
           </div>
           <p>Text After</p>`
