@@ -44,7 +44,7 @@ function atrium_preprocess_region__drawer(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   // Banner visibility for appropriate content types.
   $blacklist = ['overview', 'timeline', 'srl_onramp'];
-  if ($node->field_case_types[0] && !in_array($node->getType(), $blacklist)) {
+  if ($node && $node->field_case_types[0] && !in_array($node->getType(), $blacklist)) {
     $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $case_type = Term::load($node->field_case_types[0]->target_id);
     $case_type_translated = \Drupal::service('entity.repository')->getTranslationFromContext($case_type, $lang_code);
