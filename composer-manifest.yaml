@@ -153,7 +153,7 @@ packages:
     harvesthq/chosen: 1.8.7
     html2text/html2text: 4.3.1
     joachim-n/composer-manifest: 1.1.4
-    judicialcouncil/courtyard-artifact: 0.1.346
+    judicialcouncil/courtyard-artifact: 0.1.347
     laminas/laminas-diactoros: 2.11.3
     laminas/laminas-escaper: 2.9.0
     laminas/laminas-feed: 2.17.0
