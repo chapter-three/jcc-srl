@@ -1,0 +1,219 @@
+{
+  "adoption": {
+    "id": "adoption",
+    "title": "Adoption",
+    "url": "https://www.courts.ca.gov/selfhelp-adoption.htm",
+    "formsUrl": "https://www.courts.ca.gov/1219.htm",
+    "query": "adoption",
+    "promote": true
+  },
+  "appeals": {
+    "id": "appeals",
+    "title": "Appeals",
+    "url": "https://www.courts.ca.gov/selfhelp-appeals.htm",
+    "formsUrl": "https://www.courts.ca.gov/8545.htm",
+    "query": "appeals",
+    "promote": true
+  },
+  "custody": {
+    "id": "custody",
+    "title": "Child Custody and Visitation",
+    "url": "https://www.courts.ca.gov/selfhelp-custody.htm",
+    "formsUrl": "https://www.courts.ca.gov/1192.htm",
+    "query": "custody",
+    "promote": true
+  },
+  "child_support": {
+    "id": "child-support",
+    "title": "Child Support",
+    "url": "https://www.courts.ca.gov/selfhelp-support.htm",
+    "formsUrl": "https://www.courts.ca.gov/1199.htm",
+    "query": "child support",
+    "promote": true
+  },
+  "civil": {
+    "id": "civil",
+    "title": "Civil",
+    "url": "https://www.courts.ca.gov/1061.htm",
+    "query": "civil",
+    "promote": true
+  },
+  "civil_harassment": {
+    "id": "civil-harassment",
+    "title": "Civil Harassment",
+    "url": "https://www.courts.ca.gov/1044.htm",
+    "formsUrl": "https://www.courts.ca.gov/1281.htm",
+    "query": "civil harassment",
+    "promote": true
+  },
+  "cleaning_criminal_record": {
+    "id": "cleaning-criminal-record",
+    "title": "Cleaning Criminal Record",
+    "url": "https://www.courts.ca.gov/1070.htm",
+    "formsUrl": "https://www.courts.ca.gov/1330.htm",
+    "query": "cleaning criminal record",
+    "promote": true
+  },
+  "conservatorship": {
+    "id": "conservatorship",
+    "title": "Conservatorship",
+    "url": "https://www.courts.ca.gov/selfhelp-conservatorship.htm",
+    "formsUrl": "https://www.courts.ca.gov/1302.htm",
+    "query": "conservatorship",
+    "promote": true
+  },
+  "criminal": {
+    "id": "criminal",
+    "title": "Criminal",
+    "url": "https://www.courts.ca.gov/selfhelp-criminallaw.htm",
+    "query": "criminal"
+  },
+  "debt-collection": {
+    "id": "debt-collection",
+    "title": "Debt Collection",
+    "url": "https://www.courts.ca.gov/selfhelp-problemswithmoney.htm",
+    "query": "debt collection"
+  },
+  "discovery_and_subpoenas": {
+    "id": "discovery-and-subpoenas",
+    "title": "Discovery and Subpoenas",
+    "url": "https://www.courts.ca.gov/1093.htm",
+    "query": "discovery and subpoenas",
+    "promote": true
+  },
+  "divorce": {
+    "id": "divorce",
+    "title": "Divorce",
+    "url": "https://www.courts.ca.gov/selfhelp-divorce.htm",
+    "formsUrl": "https://www.courts.ca.gov/8218.htm",
+    "query": "divorce",
+    "promote": true
+  },
+  "domestic_violence": {
+    "id": "domestic-violence",
+    "title": "Domestic Violence",
+    "url": "https://www.courts.ca.gov/selfhelp-domesticviolence.htm",
+    "formsUrl": "https://www.courts.ca.gov/1271.htm",
+    "query": "domestic violence",
+    "promote": true
+  },
+  "elder_abuse": {
+    "id": "elder-abuse",
+    "title": "Elder Abuse",
+    "url": "https://www.courts.ca.gov/1058.htm",
+    "formsUrl": "https://www.courts.ca.gov/1298.htm",
+    "query": "elder abuse",
+    "promote": true
+  },
+  "enforcement_of_judgement": {
+    "id": "enforcement-of-judgment",
+    "title": "Enforcement of Judgment",
+    "url": "https://www.courts.ca.gov/1014.htm",
+    "query": "enforcement of judgment",
+    "promote": true
+  },
+  "eviction": {
+    "id": "eviction",
+    "title": "Eviction",
+    "url": "https://www.courts.ca.gov/selfhelp-eviction.htm",
+    "query": "eviction",
+    "promote": true
+  },
+  "fee_waivers": {
+    "id": "fee-waivers",
+    "title": "Fee Waivers",
+    "url": "https://www.courts.ca.gov/selfhelp-feewaiver.htm",
+    "query": "fee waivers",
+    "promote": true
+  },
+  "gender_change": {
+    "id": "gender-change",
+    "title": "Gender Change",
+    "url": "https://www.courts.ca.gov/genderchange.htm",
+    "formsUrl": "https://www.courts.ca.gov/11183.htm",
+    "query": "gender change",
+    "promote": true
+  },
+  "guardianship": {
+    "id": "guardianship",
+    "title": "Guardianship",
+    "url": "https://www.courts.ca.gov/selfhelp-guardianship.htm",
+    "formsUrl": "https://www.courts.ca.gov/1214.htm",
+    "query": "guardianship",
+    "promote": true
+  },
+  "gun_violence_prevention": {
+    "id": "gun-violence-prevention",
+    "title": "Gun Violence Prevention",
+    "url": "https://www.courts.ca.gov/33961.htm",
+    "formsUrl": "https://www.courts.ca.gov/33683.htm",
+    "query": "gun violence prevention"
+  },
+  "juvenile": {
+    "id": "juvenile",
+    "title": "Juvenile",
+    "url": "https://www.courts.ca.gov/selfhelp-delinquency.htm",
+    "formsUrl": "https://www.courts.ca.gov/1217.htm",
+    "query": "juvenile",
+    "promote": true
+  },
+  "language_access": {
+    "id": "language-access",
+    "title": "Language Access",
+    "url": "https://www.courts.ca.gov/selfhelp-interpreter.htm",
+    "query": "language access",
+    "promote": true
+  },
+  "name_change": {
+    "id": "name-change",
+    "title": "Name Change",
+    "url": "https://www.courts.ca.gov/selfhelp-namechange.htm",
+    "formsUrl": "https://www.courts.ca.gov/1053.htm",
+    "query": "name change",
+    "promote": true
+  },
+  "parentage": {
+    "id": "parentage",
+    "title": "Parentage",
+    "url": "https://www.courts.ca.gov/selfhelp-parentage.htm",
+    "formsUrl": "https://www.courts.ca.gov/1203.htm",
+    "query": "parentage",
+    "promote": true
+  },
+  "probate": {
+    "id": "probate",
+    "title": "Probate",
+    "url": "https://www.courts.ca.gov/8865.htm",
+    "query": "probate",
+    "promote": true
+  },
+  "proof_of_service": {
+    "id": "proof-of-service",
+    "title": "Proof of Service",
+    "url": "https://www.courts.ca.gov/selfhelp-serving.htm",
+    "query": "proof of service",
+    "promote": true
+  },
+  "remote_appearance": {
+    "id": "remote-appearance",
+    "title": "Remote Appearance",
+    "query": "remote appearance",
+    "promote": true
+  },
+  "small_claims": {
+    "id": "small-claims",
+    "title": "Small Claims",
+    "url": "https://www.courts.ca.gov/selfhelp-smallclaims.htm",
+    "formsUrl": "https://www.courts.ca.gov/1017.htm",
+    "query": "small claims",
+    "promote": true
+  },
+  "traffic": {
+    "id": "traffic",
+    "title": "Traffic",
+    "url": "https://www.courts.ca.gov/selfhelp-traffic.htm",
+    "formsUrl": "https://www.courts.ca.gov/1056.htm",
+    "query": "traffic",
+    "promote": true
+  }
+}
