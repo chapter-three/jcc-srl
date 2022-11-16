@@ -51,6 +51,7 @@ function atrium_preprocess_paragraph(&$variables) {
         $menu_fields = $card->field_dropdown_menu[0]->getValue();
         $menu_title = $menu_fields['target_id'];
         if(empty($variables['menu_links'][$menu_title])){
+          $second_level = false;
           $menu_links = \Drupal::menuTree()->load($menu_title, new MenuTreeParameters());
           foreach ($menu_links as $key => $item) {
             $link_url = $item->link->getUrlObject();
@@ -62,8 +63,17 @@ function atrium_preprocess_paragraph(&$variables) {
                 $sub_link = $sub_link_url->toString();
                 $variables['menu_links'][$menu_title][$key]['children'][] = ['title' => $sub_item->link->getTitle(), 'url' => $sub_link];
               }
-              $variables['menu_links'][$menu_title]['second_level'] = true;
+              $second_level = true;
+              usort($variables['menu_links'][$menu_title][$key]['children'], function($a, $b) {
+                return $b['title'] <=> $a['title'];
+              });
             }
+          }
+          usort($variables['menu_links'][$menu_title], function($a, $b) {
+            return $b['title'] <=> $a['title'];
+          });
+          if ($second_level){
+            $variables['menu_links'][$menu_title]['second_level'] = true;
           }
         }
       }
