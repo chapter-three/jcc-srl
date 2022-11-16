@@ -21,7 +21,10 @@
 } %}
 
 {% if case_type %}
-  <div class="jcc-banner--chatbot">
+  {% set classes = ['jcc-banner--chatbot',
+    language_code ? language_code : '',
+  ]|merge(classes|default([''])) %}
+  <div {{ attributes.addClass(classes) }}>
     {% include '@molecules/blocks/alert/alert.twig' with {
       alert: {
         type: 'success',

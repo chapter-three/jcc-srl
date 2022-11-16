@@ -52,5 +52,6 @@ function atrium_preprocess_region__drawer(&$variables) {
       $case_type = $case_type_translated;
     }
     $variables['case_type'] = $case_type->name->value;
+    $variables['language_code'] = $lang_code;
   }
 }
