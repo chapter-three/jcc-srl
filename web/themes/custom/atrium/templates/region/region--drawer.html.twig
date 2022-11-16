@@ -19,3 +19,22 @@
     feedback: elements.webform,
   }
 } %}
+
+{% if case_type %}
+  {% set classes = ['jcc-banner--chatbot',
+    language_code ? language_code : '',
+  ]|merge(classes|default([''])) %}
+  <div {{ attributes.addClass(classes) }}>
+    {% include '@molecules/blocks/alert/alert.twig' with {
+      alert: {
+        type: 'success',
+        icon: true,
+        heading: 'Have a question about'|t ~ ' ' ~ case_type ~ '?',
+        text: 'Look for a \"Chat Now\" button in the right bottom corner of your screen. If you don’t see it, disable any pop-up/ad blockers on your browser.'|t,
+        close: true
+      }
+    } %}
+  </div>
+
+  {{ attach_library('atrium/chatbot-banner') }}
+{% endif %}

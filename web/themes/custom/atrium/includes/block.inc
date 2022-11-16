@@ -6,6 +6,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -32,4 +33,25 @@ function atrium_theme_suggestions_block_alter(array &$suggestions, array $variab
     }
   }
   return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @see block_theme_suggestions_block()
+ */
+function atrium_preprocess_region__drawer(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // Banner visibility for appropriate content types.
+  $blacklist = ['overview', 'timeline', 'srl_onramp'];
+  if ($node && $node->field_case_types[0] && !in_array($node->getType(), $blacklist)) {
+    $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $case_type = Term::load($node->field_case_types[0]->target_id);
+    $case_type_translated = \Drupal::service('entity.repository')->getTranslationFromContext($case_type, $lang_code);
+    if ($lang_code != 'en' && $case_type_translated) {
+      $case_type = $case_type_translated;
+    }
+    $variables['case_type'] = $case_type->name->value;
+    $variables['language_code'] = $lang_code;
+  }
 }
