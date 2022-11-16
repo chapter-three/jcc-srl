@@ -77,8 +77,50 @@ function jcc_forms_preprocess_views_view__find_forms__all(&$variables) {
   $variables['forms_by_number'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], NULL);
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$variables) {
+  if (empty($variables['rows'])) {
+    return;
+  }
+
+  $query = $variables['exposed']['query']['#value'];
+  $category_info_sets = __jcc_category_info_sets();
+
+  if (!empty($query)) {
+    foreach ($category_info_sets as $set) {
+      if ($set->query == strtolower($query) && $set->url) {
+        $variables['category_info'] = $set;
+        break;
+      }
+    }
+
+    $variables['query'] = $query;
+    $variables['search_results'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], NULL);
+  } else {
+    $popular_topics = [];
+    foreach ($category_info_sets as $set) {
+      if (isset($set->promote) && $set->promote == TRUE) {
+        $topic = [
+          'url_title' => $set->title,
+          'url' => '/find-forms?query=' . $set->query
+        ];
+        array_push($popular_topics, $topic);
+      }
+      $variables['popular_topics'] = $popular_topics;
+    }
+  }
+}
+
 function __jcc_language_sets() {
   $data = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('module', 'jcc_forms') . '/jcc_forms-language-labels.json');
+
+  return json_decode($data);
+}
+
+function __jcc_category_info_sets() {
+  $data = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('module', 'jcc_forms') . '/jcc_forms-category-info.json');
 
   return json_decode($data);
 }
@@ -86,7 +128,7 @@ function __jcc_language_sets() {
 function __jcc_build_forms_content($rows, $organize_by) {
   $lang_props_sets = __jcc_language_sets();
   $forms = [];
-  $label_other = 'Other Forms';
+  $label_no_category = 'Miscellaneous';
 
   foreach ($rows as $row) {
     $item = $row['#row'];
@@ -117,7 +159,7 @@ function __jcc_build_forms_content($rows, $organize_by) {
     }
 
     // List forms.
-    $category = $label_other;
+    $category = $label_no_category;
     if ($item_category) {
       $category = $item_category[0]->field_form_prefix_label->value;
     }
@@ -150,11 +192,6 @@ function __jcc_build_forms_content($rows, $organize_by) {
 
     // Sort groups alphabetically.
     ksort($forms_by_category);
-
-    // List uncategorized forms last.
-    $others = $forms_by_category[$label_other];
-    unset($forms_by_category[$label_other]);
-    $forms_by_category[$label_other] = $others;
 
     $forms = $forms_by_category;
   }
