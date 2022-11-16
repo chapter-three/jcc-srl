@@ -53,3 +53,7 @@ drawer:
 iframe-resizer-client:
   js:
     assets/js/iframeResizer.contentWindow.min.js: { preprocess: false }
+
+chatbot-banner:
+  js:
+    assets/js/chatbot-banner.js: {}

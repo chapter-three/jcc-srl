@@ -1,0 +1,24 @@
+/* Disable close button for alert components used as content */
+.jcc-postcard__content,
+.jcc-step__excerpt,
+.jcc-text-section__column-left > {
+  .usa-alert {
+    .jcc-alert__close {
+      @include u-display(none);
+    }
+  }
+}
+
+.jcc-banner--chatbot {
+  display: none;
+}
+
+.jcc-banner--chatbot .usa-alert--success .jcc-alert__body {
+  background-image: url(/sites/default/files/styles/medium/public/2022-01/Chat%20Now_01122022.png);
+  background-size: 4rem;
+  padding-left: 5.5rem;
+}
+
+.jcc-banner--chatbot.es .usa-alert--success .jcc-alert__body {
+  background-image: url(/sites/default/files/styles/medium/public/2022-11/chat_now--es.png);
+}
