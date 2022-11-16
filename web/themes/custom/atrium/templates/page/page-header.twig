@@ -4,6 +4,8 @@
  {% set form_action_link =  '/' ~ language.getId() ~ "/search" %}
 {% endif %}
 
+{% set home_url_ml =  path('<front>') %}
+
 {% include '@organisms/global/header-base/header-base.twig' with {
   header_base: {
     height_variant: 'basic',
@@ -20,6 +22,7 @@
     },
     title: site_branding.title,
     logo: site_branding.logo,
+    home_url: home_url_ml,
     menu_icon: {
       name: 'menu',
       title: "Menu",
