@@ -65,12 +65,12 @@ function atrium_preprocess_paragraph(&$variables) {
               }
               $second_level = true;
               usort($variables['menu_links'][$menu_title][$key]['children'], function($a, $b) {
-                return $b['title'] <=> $a['title'];
+                return $a['title'] <=> $b['title'];
               });
             }
           }
           usort($variables['menu_links'][$menu_title], function($a, $b) {
-            return $b['title'] <=> $a['title'];
+            return $a['title'] <=> $b['title'];
           });
           if ($second_level){
             $variables['menu_links'][$menu_title]['second_level'] = true;
