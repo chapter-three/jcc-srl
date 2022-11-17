@@ -64,14 +64,17 @@ function atrium_preprocess_paragraph(&$variables) {
                 $variables['menu_links'][$menu_title][$key]['children'][] = ['title' => $sub_item->link->getTitle(), 'url' => $sub_link];
               }
               $second_level = true;
+
               usort($variables['menu_links'][$menu_title][$key]['children'], function($a, $b) {
-                return $a['title'] <=> $b['title'];
+                return stripAccents($a['title']) <=> stripAccents($b['title']);
               });
             }
           }
-          usort($variables['menu_links'][$menu_title], function($a, $b) {
-            return $a['title'] <=> $b['title'];
+
+          uasort($variables['menu_links'][$menu_title], function($a, $b) {
+            return stripAccents($a['title']) <=> stripAccents($b['title']);
           });
+
           if ($second_level){
             $variables['menu_links'][$menu_title]['second_level'] = true;
           }
@@ -79,6 +82,13 @@ function atrium_preprocess_paragraph(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Custom function stripping accents for sorting purposes
+ */
+function stripAccents($str) {
+  return strtr(utf8_decode($str), utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
 }
 
 /**
