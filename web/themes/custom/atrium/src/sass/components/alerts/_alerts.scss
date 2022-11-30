@@ -10,6 +10,10 @@
 }
 
 .jcc-banner--chatbot {
+  @include u-margin-bottom(2);
+  @include at-media(desktop) {
+    max-width: 66%;
+  }
   display: none;
 }
 
