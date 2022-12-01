@@ -80,6 +80,18 @@ function jcc_forms_preprocess_views_view__find_forms__all(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
+function jcc_forms_preprocess_views_view__find_forms__latest_changes(&$variables) {
+
+  if (empty($variables['rows'])) {
+    return;
+  }
+
+  $variables['latest_changes'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], 'effective');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$variables) {
   if (empty($variables['rows'])) {
     return;
@@ -165,13 +177,13 @@ function __jcc_build_forms_content($rows, $organize_by) {
     }
     $form = [
       'number' => $form_number,
-      'description' => $item->_entity->name->value,
-      'category' => $category,
+      'name' => $item->_entity->name->value,
+      'category' => $organize_by == 'effective' && strpos($category, ':') ? substr($category, 0, strpos($category, ':')) : $category,
       'mandatory' => $item->_entity->field_mandatory->value,
-      'revision_date' => $item->_entity->field_revision_date->value,
+      'effective_date' => $item->_entity->field_date_effective->value,
       'url' => $information_url,
       'information' => $information_btn,
-      'download' => $download_btn,
+      'download' => $organize_by == 'effective' ? $download_url : $download_btn,
       'languages' => $item_languages
     ];
 
@@ -194,6 +206,20 @@ function __jcc_build_forms_content($rows, $organize_by) {
     ksort($forms_by_category);
 
     $forms = $forms_by_category;
+  }
+
+  // Group forms by effective date.
+  if ($organize_by == 'effective') {
+    $forms_by_effective = [];
+    foreach ($forms as $value) {
+      if ($value['effective_date']) {
+        $category = $value['category'];
+        $effective = $value['effective_date'];
+        $forms_by_effective[$effective][$category][] = $value;
+      }
+    }
+
+    $forms = $forms_by_effective;
   }
 
   return $forms;

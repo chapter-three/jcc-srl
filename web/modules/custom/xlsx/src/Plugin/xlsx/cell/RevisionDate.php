@@ -12,11 +12,11 @@ use Drupal\xlsx\Plugin\XlsxCellBase;
  *   name = @Translation("Revision Date"),
  *   description = @Translation("Process revision date fields"),
  *   field_types = {
- *     "link",
+ *     "datetime",
  *   }
  * )
  */
-class RevisionDate extends AsIs {
+class RevisionDate extends XlsxCellBase {
 
   /**
    * {@inheritdoc}
