@@ -7,6 +7,7 @@ dependencies:
     - field.storage.media.field_cambodian_url
     - field.storage.media.field_chinese_traditional_url
     - field.storage.media.field_chinese_url
+    - field.storage.media.field_date_effective
     - field.storage.media.field_description
     - field.storage.media.field_farsi_url
     - field.storage.media.field_hmong_url
@@ -14,7 +15,6 @@ dependencies:
     - field.storage.media.field_mandatory
     - field.storage.media.field_number
     - field.storage.media.field_punjabi_url
-    - field.storage.media.field_revision_date
     - field.storage.media.field_russian_url
     - field.storage.media.field_spanish_url
     - field.storage.media.field_tagalog_url
@@ -1746,10 +1746,10 @@ display:
             format_plural_values:
               - '1'
               - '@count'
-        field_revision_date:
-          id: field_revision_date
+        field_date_effective:
+          id: field_date_effective
           table: search_api_datasource_jcc_forms_index_entity_media
-          field: field_revision_date
+          field: field_date_effective
           relationship: none
           group_type: group
           admin_label: ''
@@ -1979,6 +1979,7 @@ display:
         - 'config:field.storage.media.field_cambodian_url'
         - 'config:field.storage.media.field_chinese_traditional_url'
         - 'config:field.storage.media.field_chinese_url'
+        - 'config:field.storage.media.field_date_effective'
         - 'config:field.storage.media.field_description'
         - 'config:field.storage.media.field_farsi_url'
         - 'config:field.storage.media.field_hmong_url'
@@ -1986,7 +1987,6 @@ display:
         - 'config:field.storage.media.field_mandatory'
         - 'config:field.storage.media.field_number'
         - 'config:field.storage.media.field_punjabi_url'
-        - 'config:field.storage.media.field_revision_date'
         - 'config:field.storage.media.field_russian_url'
         - 'config:field.storage.media.field_spanish_url'
         - 'config:field.storage.media.field_tagalog_url'
@@ -2125,6 +2125,7 @@ display:
         - 'config:field.storage.media.field_cambodian_url'
         - 'config:field.storage.media.field_chinese_traditional_url'
         - 'config:field.storage.media.field_chinese_url'
+        - 'config:field.storage.media.field_date_effective'
         - 'config:field.storage.media.field_description'
         - 'config:field.storage.media.field_farsi_url'
         - 'config:field.storage.media.field_hmong_url'
@@ -2132,7 +2133,6 @@ display:
         - 'config:field.storage.media.field_mandatory'
         - 'config:field.storage.media.field_number'
         - 'config:field.storage.media.field_punjabi_url'
-        - 'config:field.storage.media.field_revision_date'
         - 'config:field.storage.media.field_russian_url'
         - 'config:field.storage.media.field_spanish_url'
         - 'config:field.storage.media.field_tagalog_url'
@@ -2243,6 +2243,7 @@ display:
         - 'config:field.storage.media.field_cambodian_url'
         - 'config:field.storage.media.field_chinese_traditional_url'
         - 'config:field.storage.media.field_chinese_url'
+        - 'config:field.storage.media.field_date_effective'
         - 'config:field.storage.media.field_description'
         - 'config:field.storage.media.field_farsi_url'
         - 'config:field.storage.media.field_hmong_url'
@@ -2250,7 +2251,6 @@ display:
         - 'config:field.storage.media.field_mandatory'
         - 'config:field.storage.media.field_number'
         - 'config:field.storage.media.field_punjabi_url'
-        - 'config:field.storage.media.field_revision_date'
         - 'config:field.storage.media.field_russian_url'
         - 'config:field.storage.media.field_spanish_url'
         - 'config:field.storage.media.field_tagalog_url'

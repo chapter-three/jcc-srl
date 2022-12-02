@@ -47,8 +47,8 @@
                 {% set title = title ~ ' *' %}
               {% endif %}
               {% set content %}
-                {% if form.description %}<p>{{ form.description }}</p>{% endif %}
-                {% if form.revision_date %}<p>Revised: {{ form.revision_date|date('F j, Y') }}</p>{% endif %}
+                {% if form.name %}<p>{{ form.name }}</p>{% endif %}
+                {% if form.effective_date %}<p>Effective: {{ form.effective_date|date('F j, Y') }}</p>{% endif %}
                 {% if form.languages %}
                   {% set avail_languages = [] %}
                   {% for language in form.languages %}
