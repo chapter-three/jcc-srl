@@ -156,6 +156,12 @@ mapping:
       field_date_effective:
         column: T
         cell_plugin: revision_date
+      field_new_form:
+        column: V
+        cell_plugin: as_is
+      field_revoke_form:
+        column: W
+        cell_plugin: as_is
   sheet_columns:
     Categories:
       A: 'Form Category ID'
@@ -193,3 +199,5 @@ mapping:
       S: 'Mandatory Form'
       T: 'Revision Date'
       U: Weight
+      V: New
+      W: Revoked

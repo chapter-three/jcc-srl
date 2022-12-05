@@ -20,10 +20,12 @@ dependencies:
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_mandatory
     - field.field.media.jcc_form.field_media_file_1
+    - field.field.media.jcc_form.field_new_form
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_punjabi_url
     - field.field.media.jcc_form.field_revision_date
+    - field.field.media.jcc_form.field_revoke_form
     - field.field.media.jcc_form.field_russian_url
     - field.field.media.jcc_form.field_spanish_url
     - field.field.media.jcc_form.field_tagalog_url
@@ -183,7 +185,7 @@ content:
     third_party_settings: {  }
   field_mandatory:
     type: boolean_checkbox
-    weight: 31
+    weight: 32
     region: content
     settings:
       display_label: true
@@ -194,6 +196,13 @@ content:
     region: content
     settings:
       progress_indicator: throbber
+    third_party_settings: {  }
+  field_new_form:
+    type: boolean_checkbox
+    weight: 31
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_number:
     type: string_textfield
@@ -223,6 +232,13 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_revoke_form:
+    type: boolean_checkbox
+    weight: 34
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_russian_url:
     type: link_default
@@ -266,7 +282,7 @@ content:
     third_party_settings: {  }
   field_weight:
     type: options_select
-    weight: 32
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
