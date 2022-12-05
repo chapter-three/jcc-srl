@@ -32,7 +32,12 @@
                 <table class="usa-table">
                   {% for form in forms %}
                     <tr>
-                      <td><a href="{{ form.download }}">{{ form.number }}</a></td>
+                      {% if form.is_revoked %}
+                        <td>{{ form.number }}</td>
+                      {% else %}
+                        <td><a href="{{ form.download }}">{{ form.number }}</a></td>
+                        <td>{{ form.is_new == TRUE ? 'New' : 'Revised' }}</td>
+                      {% endif %}
                       <td>{{ form.name }}</td>
                     </tr>
                   {% endfor %}

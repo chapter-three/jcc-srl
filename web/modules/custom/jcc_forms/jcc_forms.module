@@ -141,6 +141,7 @@ function __jcc_build_forms_content($rows, $organize_by) {
   $lang_props_sets = __jcc_language_sets();
   $forms = [];
   $label_no_category = 'Miscellaneous';
+  $label_revoked = 'Revoked';
 
   foreach ($rows as $row) {
     $item = $row['#row'];
@@ -170,10 +171,17 @@ function __jcc_build_forms_content($rows, $organize_by) {
       }
     }
 
+    // Form states.
+    $is_revoked = $item->_entity->field_revoke_form->value;
+
     // List forms.
     $category = $label_no_category;
-    if ($item_category) {
-      $category = $item_category[0]->field_form_prefix_label->value;
+    if ($organize_by == 'effective' && $is_revoked) {
+      $category = $label_revoked;
+    } else {
+      if ($item_category) {
+        $category = $item_category[0]->field_form_prefix_label->value;
+      }
     }
     $form = [
       'number' => $form_number,
@@ -184,7 +192,9 @@ function __jcc_build_forms_content($rows, $organize_by) {
       'url' => $information_url,
       'information' => $information_btn,
       'download' => $organize_by == 'effective' ? $download_url : $download_btn,
-      'languages' => $item_languages
+      'languages' => $item_languages,
+      'is_new' => $item->_entity->field_new_form->value,
+      'is_revoked' => $is_revoked
     ];
 
     if (!in_array($form, $forms)) {
@@ -202,7 +212,7 @@ function __jcc_build_forms_content($rows, $organize_by) {
       }
     }
 
-    // Sort groups alphabetically.
+    // Sort categories alphabetically.
     ksort($forms_by_category);
 
     $forms = $forms_by_category;
@@ -216,6 +226,12 @@ function __jcc_build_forms_content($rows, $organize_by) {
         $category = $value['category'];
         $effective = $value['effective_date'];
         $forms_by_effective[$effective][$category][] = $value;
+        // Revoked forms listed last.
+        if (isset($forms_by_effective[$effective][$label_revoked])) {
+          $revoked = $forms_by_effective[$effective][$label_revoked];
+          unset($forms_by_effective[$effective][$label_revoked]);
+          $forms_by_effective[$effective][$label_revoked] = $revoked;
+        }
       }
     }
 

@@ -20,10 +20,12 @@ dependencies:
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_mandatory
     - field.field.media.jcc_form.field_media_file_1
+    - field.field.media.jcc_form.field_new_form
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_punjabi_url
     - field.field.media.jcc_form.field_revision_date
+    - field.field.media.jcc_form.field_revoke_form
     - field.field.media.jcc_form.field_russian_url
     - field.field.media.jcc_form.field_spanish_url
     - field.field.media.jcc_form.field_tagalog_url
@@ -178,6 +180,16 @@ content:
     third_party_settings: {  }
     weight: 21
     region: content
+  field_new_form:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 22
+    region: content
   field_number:
     type: string
     label: hidden
@@ -206,6 +218,16 @@ content:
       date_format: 'M j, Y'
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_revoke_form:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_russian_url:
     type: link

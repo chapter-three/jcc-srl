@@ -1,0 +1,32 @@
+uuid: d68517ca-76e6-4046-bf7d-d2a4c10d1831
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_revoke_form
+    - media.type.jcc_form
+  module:
+    - datalayer
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_revoke_form
+  tmgmt_content:
+    excluded: false
+id: media.jcc_form.field_revoke_form
+field_name: field_revoke_form
+entity_type: media
+bundle: jcc_form
+label: 'Revoke Form'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
