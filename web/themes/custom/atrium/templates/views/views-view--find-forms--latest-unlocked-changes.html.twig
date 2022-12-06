@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - forms_by_category: available JCC forms media
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{% set tag = tag|default('div') %}
+{% set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+] %}
+
+{% block view %}
+  <{{ tag }}{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="jcc-find-forms jcc-find-forms--borderless">
+        {% if latest_changes %}
+          {% for key, effective_group in latest_changes %}
+            <h2 class="jcc-find-forms__heading">Effective {{ key|date('F j, Y') }}</h2>
+            {% set all_forms = [] %}
+            {% for key, forms in effective_group %}
+              {% set categorized %}
+                <table class="usa-table">
+                  {% for form in forms %}
+                    <tr>
+                      {% if form.is_revoked %}
+                        <td>{{ form.number }}</td>
+                      {% else %}
+                        <td><a href="{{ form.download_unlocked }}">{{ form.number }}</a></td>
+                        <td>{{ form.is_new == TRUE ? 'New' : 'Revised' }}</td>
+                      {% endif %}
+                      <td>{{ form.name }}</td>
+                    </tr>
+                  {% endfor %}
+                </table>
+              {% endset %}
+
+              {% set all_forms = all_forms|merge([{
+                title: key,
+                body: categorized,
+              }]) %}
+            {% endfor %}
+
+            {% include '@molecules/interactive/accordion/accordion.twig' with {
+              accordion: {
+                expand_first: 'no',
+                items: all_forms,
+              }
+            } %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    {% endblock %}
+  </{{ tag }}>
+{% endblock %}
