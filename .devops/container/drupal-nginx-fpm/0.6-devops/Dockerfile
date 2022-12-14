@@ -5,6 +5,10 @@ LABEL maintainer="Ivan Bueno <ivan.bueno@jud.ca.gov>"
 # ENV vars
 # ========
 # drupal
+ARG GIT_REPO="https://github.com/judicialcouncilcalifornia/trialcourt.git"
+ENV GIT_REPO=$GIT_REPO
+ARG GIT_BRANCH="master"
+ENV GIT_BRANCH=$GIT_BRANCH
 ENV DRUPAL_HOME "/var/www/html"
 ENV DRUPAL_PRJ "/var/drupal_prj"
 #nginx
@@ -51,9 +55,7 @@ RUN set -ex \
   && rm -rf ${DRUPAL_BUILD}/.git \
   && cd ${DRUPAL_BUILD} \
   && composer install --no-dev --no-interaction --optimize-autoloader \
-  && scripts/theme.sh -i jcc_base && scripts/theme.sh -b jcc_base \
-  && scripts/theme.sh -i jcc_deprep && scripts/theme.sh -b jcc_deprep \
-  && scripts/theme.sh -i jcc_newsroom && scripts/theme.sh -b jcc_newsroom
+  && npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 # =========
 # Configure
 # =========
