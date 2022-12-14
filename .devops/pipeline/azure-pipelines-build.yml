@@ -4,9 +4,9 @@ trigger:
       - develop
       - stage
       - master
-  paths:
-    exclude:
-      - .devops/container/drupal-nginx-fpm
+#  paths:
+#    exclude:
+#      - .devops/container/drupal-nginx-fpm
 
 resources:
   - repo: self
