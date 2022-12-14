@@ -94,7 +94,7 @@ stages:
               tags: |
                 latest
                 $(tag)
-              arguments: --label buildtype=nightly --build-arg GIT_REPO=$(gitRepo)  --build-arg GIT_BRANCH=$(Build.SourceBranchName)
+              arguments: --label buildtype=nightly --build-arg GIT_REPO=$(gitRepo) --build-arg GIT_BRANCH=$(Build.SourceBranchName)
           - task: Docker@2
             displayName: Push to registry
             inputs:
