@@ -156,6 +156,9 @@ mapping:
       field_revoke_form:
         column: W
         cell_plugin: as_is
+      field_action_date:
+        column: X
+        cell_plugin: action_date
   sheet_columns:
     Categories:
       A: 'Form Category ID'
@@ -195,3 +198,4 @@ mapping:
       U: Weight
       V: New
       W: Revoked
+      X: 'Action Date'

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.full
+    - field.field.media.jcc_form.field_action_date
     - field.field.media.jcc_form.field_arabic_url
     - field.field.media.jcc_form.field_cambodian_url
     - field.field.media.jcc_form.field_case_type
@@ -133,6 +134,7 @@ content:
     region: content
 hidden:
   created: true
+  field_action_date: true
   field_arabic_url: true
   field_cambodian_url: true
   field_chinese_traditional_url: true
