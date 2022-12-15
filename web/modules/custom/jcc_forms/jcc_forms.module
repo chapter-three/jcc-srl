@@ -173,7 +173,6 @@ function __jcc_build_forms_content($rows, $organize_by) {
     // Unlocked version.
     $path = explode('/', $download_url);
     $download_unlocked_url = 'https://jrn.courts.ca.gov/jc/forms/documents/' . $path[sizeof($path)-1];
-    $download_unlocked_btn = Markup::create('<a class="usa-button usa-button--outline" href="' . $download_unlocked_url . '">Download</a>');
 
     // Check for language variants.
     $item_languages = [];
@@ -191,30 +190,51 @@ function __jcc_build_forms_content($rows, $organize_by) {
 
     // List forms.
     $category = $label_no_category;
-    if ($organize_by == 'effective' && $is_revoked) {
-      $category = $label_revoked;
-    } else {
-      if ($item_category) {
-        $category = $item_category[0]->field_form_prefix_label->value;
-      }
+    if ($item_category) {
+      $category = $item_category[0]->field_form_prefix_label->value;
     }
     $form = [
       'number' => $form_number,
       'name' => $item->_entity->name->value,
-      'category' => $organize_by == 'effective' && strpos($category, ':') ? substr($category, 0, strpos($category, ':')) : $category,
+      'category' => $category,
       'mandatory' => $item->_entity->field_mandatory->value,
       'effective_date' => $item->_entity->field_date_effective->value,
       'url' => $information_url,
       'information' => $information_btn,
-      'download' => $organize_by == 'effective' ? $download_url : $download_btn,
-      'download_unlocked' => $organize_by == 'effective' ? $download_unlocked_url : $download_unlocked_btn,
-      'languages' => $item_languages,
-      'is_new' => $item->_entity->field_new_form->value,
-      'is_revoked' => $is_revoked
+      'download' => $download_btn,
+      'languages' => $item_languages
     ];
+    if ($organize_by == 'effective') {
+      if ($is_revoked) {
+        $category = $label_revoked;
+      }
+      $effective_dates = $item->_entity->field_date_effective;
+      $action_dates = $item->_entity->field_action_date;
+      $i = 0;
+      foreach ($effective_dates as $effective_date) {
+        if (date('Y-m-d') >= $effective_date->value) {
+          $form = [
+            'number' => $form_number,
+            'name' => $item->_entity->name->value,
+            'category' => strpos($category, ':') ? substr($category, 0, strpos($category, ':')) : $category,
+            'effective_date' => $effective_date->value,
+            'action_date' => count($action_dates) > 1 ? $action_dates[$i]->value : $action_dates->value,
+            'download' => $download_url,
+            'download_unlocked' => $download_unlocked_url,
+            'is_new' => $item->_entity->field_new_form->value,
+            'is_revoked' => $is_revoked
+          ];
+          if (!in_array($form, $forms)) {
+            $forms[] = $form;
+          }
 
-    if (!in_array($form, $forms)) {
-      $forms[] = $form;
+          $i++;
+        }
+      }
+    } else {
+      if (!in_array($form, $forms)) {
+        $forms[] = $form;
+      }
     }
   }
 
@@ -236,20 +256,28 @@ function __jcc_build_forms_content($rows, $organize_by) {
 
   // Group forms by effective date.
   if ($organize_by == 'effective') {
+    // Ensure category & number sort.
+    usort($forms, fn($a, $b) => $a['category'] <=> $b['category']);
+    usort($forms, fn($a, $b) => $a['number'] <=> $b['number']);
     $forms_by_effective = [];
     foreach ($forms as $value) {
       if ($value['effective_date']) {
         $category = $value['category'];
         $effective = $value['effective_date'];
-        $forms_by_effective[$effective][$category][] = $value;
+        $approved = $value['action_date'];
+        $organizer = $effective . '-' . $approved;
+        $forms_by_effective[$organizer][$category][] = $value;
         // Revoked forms listed last.
-        if (isset($forms_by_effective[$effective][$label_revoked])) {
-          $revoked = $forms_by_effective[$effective][$label_revoked];
-          unset($forms_by_effective[$effective][$label_revoked]);
-          $forms_by_effective[$effective][$label_revoked] = $revoked;
+        if (isset($forms_by_effective[$organizer][$label_revoked])) {
+          $revoked = $forms_by_effective[$organizer][$label_revoked];
+          unset($forms_by_effective[$organizer][$label_revoked]);
+          $forms_by_effective[$organizer][$label_revoked] = $revoked;
         }
       }
     }
+
+    // Sort chronologically.
+    krsort($forms_by_effective);
 
     $forms = $forms_by_effective;
   }

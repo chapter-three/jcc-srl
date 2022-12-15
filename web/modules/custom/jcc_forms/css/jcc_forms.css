@@ -99,6 +99,8 @@
 
 .jcc-find-forms .jcc-find-forms__heading {
   margin: 2rem 0 1rem;
+  font-family: Lato,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-size: 1.49rem;
 }
 
 .view-jcc-forms-search-json-api .jcc-link-list-simple .jcc-link-list__list {

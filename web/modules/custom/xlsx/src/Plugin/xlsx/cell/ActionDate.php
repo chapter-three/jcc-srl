@@ -8,15 +8,15 @@ use Drupal\xlsx\Plugin\XlsxCellBase;
  * Default XLSX cell plugin.
  *
  * @XlsxCell(
- *   id = "revision_date",
- *   name = @Translation("Revision Date"),
- *   description = @Translation("Process revision date values"),
+ *   id = "action_date",
+ *   name = @Translation("Action Date"),
+ *   description = @Translation("Process action date values"),
  *   field_types = {
  *     "datetime",
  *   }
  * )
  */
-class RevisionDate extends XlsxCellBase {
+class ActionDate extends XlsxCellBase {
 
   /**
    * {@inheritdoc}
