@@ -5,9 +5,9 @@ LABEL maintainer="Ivan Bueno <ivan.bueno@jud.ca.gov>"
 # ENV vars
 # ========
 # drupal
-ARG GIT_REPO="https://github.com/JudicialCouncilOfCalifornia/jcc-srl.git"
+ARG GIT_REPO
 ENV GIT_REPO=$GIT_REPO
-ARG GIT_BRANCH="master"
+ARG GIT_BRANCH
 ENV GIT_BRANCH=$GIT_BRANCH
 ENV DRUPAL_HOME "/var/www/html"
 ENV DRUPAL_PRJ "/var/drupal_prj"
