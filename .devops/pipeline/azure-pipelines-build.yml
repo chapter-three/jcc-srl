@@ -169,6 +169,7 @@ stages:
                   siteFarmId: $(siteFarmId)
                   containerRegistry: $(containerRegistry)
                   sourceBranchName: $(Build.SourceBranchName)
+                  imageRepository: $(imageRepository)
                   tag: $(tag)
 
           - task: PublishBuildArtifacts@1
