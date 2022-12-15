@@ -1,4 +1,4 @@
-FROM judicialcouncil/drupal-nginx-fpm:0.7
+FROM judicialcouncil/drupal-nginx-fpm:0.8
 LABEL maintainer="Azure App Service Container Images <appsvc-images@microsoft.com>"
 LABEL maintainer="Ivan Bueno <ivan.bueno@jud.ca.gov>"
 # ========
