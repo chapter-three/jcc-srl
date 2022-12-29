@@ -212,24 +212,22 @@ function __jcc_build_forms_content($rows, $organize_by) {
       $action_dates = $item->_entity->field_action_date;
       $i = 0;
       foreach ($effective_dates as $effective_date) {
-        if (date('Y-m-d') >= $effective_date->value) {
-          $form = [
-            'number' => $form_number,
-            'name' => $item->_entity->name->value,
-            'category' => strpos($category, ':') ? substr($category, 0, strpos($category, ':')) : $category,
-            'effective_date' => $effective_date->value,
-            'action_date' => count($action_dates) > 1 ? $action_dates[$i]->value : $action_dates->value,
-            'download' => $download_url,
-            'download_unlocked' => $download_unlocked_url,
-            'is_new' => $item->_entity->field_new_form->value,
-            'is_revoked' => $is_revoked
-          ];
-          if (!in_array($form, $forms)) {
-            $forms[] = $form;
-          }
-
-          $i++;
+        $form = [
+          'number' => $form_number,
+          'name' => $item->_entity->name->value,
+          'category' => strpos($category, ':') ? substr($category, 0, strpos($category, ':')) : $category,
+          'effective_date' => $effective_date->value,
+          'action_date' => count($action_dates) > 1 ? $action_dates[$i]->value : $action_dates->value,
+          'download' => $download_url,
+          'download_unlocked' => $download_unlocked_url,
+          'is_new' => $item->_entity->field_new_form->value,
+          'is_revoked' => $is_revoked
+        ];
+        if (!in_array($form, $forms)) {
+          $forms[] = $form;
         }
+
+        $i++;
       }
     } else {
       if (!in_array($form, $forms)) {
