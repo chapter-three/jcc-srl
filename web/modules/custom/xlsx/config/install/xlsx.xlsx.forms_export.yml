@@ -129,9 +129,9 @@ mapping:
       field_punjabi_url:
         column: M
         cell_plugin: link
-      field_revision_date:
+      field_date_effective:
         column: T
-        cell_plugin: as_is
+        cell_plugin: revision_date
       field_russian_url:
         column: 'N'
         cell_plugin: link
@@ -150,6 +150,15 @@ mapping:
       field_weight:
         column: U
         cell_plugin: as_is
+      field_new_form:
+        column: V
+        cell_plugin: as_is
+      field_revoke_form:
+        column: W
+        cell_plugin: as_is
+      field_action_date:
+        column: X
+        cell_plugin: action_date
   sheet_columns:
     Categories:
       A: 'Form Category ID'
@@ -187,3 +196,6 @@ mapping:
       S: 'Mandatory Form'
       T: 'Revision Date'
       U: Weight
+      V: New
+      W: Revoked
+      X: 'Action Date'

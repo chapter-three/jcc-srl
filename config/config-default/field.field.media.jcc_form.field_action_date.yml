@@ -1,0 +1,29 @@
+uuid: d42e176e-3739-48c9-95b1-dbe5a52fd73a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_action_date
+    - media.type.jcc_form
+  module:
+    - datalayer
+    - datetime
+    - tmgmt_content
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_action_date
+  tmgmt_content:
+    excluded: false
+id: media.jcc_form.field_action_date
+field_name: field_action_date
+entity_type: media
+bundle: jcc_form
+label: 'Action Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
