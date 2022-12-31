@@ -81,7 +81,7 @@
           {% endif %}
           {% set content %}
             {% if form.name %}<p>{{ form.name }}</p>{% endif %}
-            {% if form.effective_date %}<p>Revised: {{ form.effective_date|date('F j, Y') }}</p>{% endif %}
+            {% if form.effective_date %}<p>Effective: {{ form.effective_date|date('F j, Y') }}</p>{% endif %}
             {% if form.languages %}
               {% set avail_languages = [] %}
               {% for language in form.languages %}
@@ -140,15 +140,23 @@
           </div>
         </div>
       {% else %}
-        {% include '@organisms/sections/link-list-with-button/link-list-with-button.twig' with {
-          link_list_with_button: {
-            headergroup: {
-              title: 'Popular Topics'
-            },
-            columns: 2,
-            items: popular_topics,
-          }
-        } %}
+        {% if popular_topics %}
+          {% include '@organisms/sections/link-list-with-button/link-list-with-button.twig' with {
+            link_list_with_button: {
+              headergroup: {
+                title: 'Popular Topics'
+              },
+              columns: 2,
+              items: popular_topics,
+            }
+          } %}
+        {% else %}
+          <div class="jcc-find-forms">
+            <div class="jcc-find-forms__notation">
+              <p>No forms found for the topic or number entered. Try adjusting your search or view <a href="/find-forms/all">all forms</a> or <a href="/find-forms/all-by-category">view by category</a>.</p>
+            </div>
+          </div>
+        {% endif %}
       {% endif %}
     {% endblock %}
 
