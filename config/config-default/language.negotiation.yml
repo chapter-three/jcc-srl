@@ -7,7 +7,23 @@ url:
   prefixes:
     en: ''
     es: es
+    ru: ru
+    ko: ko
+    pa: pa
+    fil: fil
+    ar: ar
+    fa: fa
+    zh-hans: zh-hans
+    vi: vi
   domains:
     en: ''
     es: ''
+    ru: ''
+    ko: ''
+    pa: ''
+    fil: ''
+    ar: ''
+    fa: ''
+    zh-hans: ''
+    vi: ''
 selected_langcode: site_default
