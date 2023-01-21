@@ -1,0 +1,9 @@
+uuid: d8076757-7f92-40d8-95ff-91cb16986c97
+langcode: en
+status: true
+dependencies: {  }
+id: fa
+label: 'Persian, Farsi'
+direction: rtl
+weight: -4
+locked: false
