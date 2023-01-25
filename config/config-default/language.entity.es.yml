@@ -5,5 +5,5 @@ dependencies: {  }
 id: es
 label: Español
 direction: ltr
-weight: 1
+weight: -7
 locked: false
