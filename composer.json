@@ -257,19 +257,7 @@
             "find .git/ -type d -name hooks | xargs rm -rf"
         ],
         "post-drupal-scaffold-cmd": [
-            "patch -p1 < patches/gitattributes.patch",
-            "patch -p1 < patches/robots.patch",
-            "patch -p1 < patches/robots-2.patch",
-            "patch -p1 < patches/robots-3.patch",
-            "patch -p1 < patches/robots-4.patch",
-            "patch -p1 < patches/robots-5.patch",
-            "patch -p1 < patches/robots-6.patch",
-            "patch -p1 < patches/robots-7.patch",
-            "patch -p1 < patches/robots-8.patch",
-            "patch -p1 < patches/robots-9.patch",
-            "patch -p1 < patches/robots-10.patch",
-            "patch -p1 < patches/robots-11.patch",
-            "patch -p1 < patches/robots-12.patch"
+            "patch -p1 < patches/robot.patch"
         ],
         "build-assets": [
             "@prepare-for-pantheon",

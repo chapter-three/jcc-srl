@@ -2105,7 +2105,7 @@ Allow: /es/comience-un-caso-de-tutela-limitada
 Allow: /es/como-ayudar-un-adulto-joven-con-una-discapacidad-del-desarrollo
 Allow: /es/crear-acuerdos-custodia-y-manutencion-de-los-hijos
 Allow: /es/custodia-de-los-hijos/evaluacion
-Allow: /es/Declaración-voluntaria-de-filiación
+Allow: /es/DeclaraciÃ³n-voluntaria-de-filiaciÃ³n
 Allow: /es/defensas-contra-la-deuda-de-renta-por-covid-19-en-la-corte-de-reclamos-menores
 Allow: /es/derecho-de-familia-anulacion/responder-manutencion-anulacion
 Allow: /es/DV-orden-de-restriccion
@@ -2120,9 +2120,9 @@ Allow: /es/DV-orden-de-restriccion/presentar
 Allow: /es/DV-orden-de-restriccion/proceso
 Allow: /es/DV-orden-de-restriccion/que-esperar-sala-de-la-corte
 Allow: /es/DV-orden-de-restriccion/recoger-documentos
-Allow: /es/DV-orden-de-restricción/entrega-legal-orden-a-largo-plazo
+Allow: /es/DV-orden-de-restricciÃ³n/entrega-legal-orden-a-largo-plazo
 Allow: /es/EA-orden-de-restriccion/preparese-para-audiencia-en-la-corte
-Allow: /es/EA-orden-de-restricción/presentar
+Allow: /es/EA-orden-de-restricciÃ³n/presentar
 Allow: /es/EA-orden-restriccion/recursos
 Allow: /es/el-proceso-de-deuda-de-renta-por-covid-19-en-reclamos-menores
 Allow: /es/entrega-legal-de-los-documentos-de-tutela-de-un-adulto-por-correo
@@ -2130,7 +2130,7 @@ Allow: /es/entrega-legal-en-persona-de-los-documentos-de-tutela-de-adulto
 Allow: /es/entregue-las-copias-de-sus-formularios-la-carcel-la-prision-o-al-cdcr
 Allow: /es/exencion-de-cuotas
 Allow: /es/exencion-de-cuotas-adicionales
-Allow: /es/exencion-de-cuotas/Si-no-se-otorga-su-exención-de-cuotas
+Allow: /es/exencion-de-cuotas/Si-no-se-otorga-su-exenciÃ³n-de-cuotas
 Allow: /es/formularios-de-divorcio
 Allow: /es/guia-para-tutores-de-un-menor-para-cambiar-el-genero-de-un-menor-con-o-sin-un-cambio-de-nombre
 Allow: /es/guia-para-tutores-para-cambiar-el-nombre-de-un-nino
@@ -2162,7 +2162,7 @@ Allow: /es/orden-de-restriccion-EA/otras-solicitudes-de-entrega-legal
 Allow: /es/orden-de-restriccion-EA/proceso
 Allow: /es/orden-de-restriccion-EA/que-esperar-sala-de-la-corte
 Allow: /es/orden-de-restriccion-EA/recoger-documentos
-Allow: /es/orden-de-restricción
+Allow: /es/orden-de-restricciÃ³n
 Allow: /es/peticion-custodia-manutencion
 Allow: /es/peticion-custodia-manutencion/entrega-legal
 Allow: /es/peticion-custodia-manutencion/entrega-legal-de-formularios/aviso-acuse-de-recibo
@@ -2245,10 +2245,10 @@ Allow: /es/reclamos-menores/solicitar-dinero/opciones
 Allow: /es/reclamos-menores/solicitar-dinero/redactar-acuerdo
 Allow: /es/recursos-para-casos-de-reclamos-menores
 Allow: /es/recursos-para-desarrollar-un-plan-de-crianza
-Allow: /es/responda-a-una-orden-de-restricción-de-EA
-Allow: /es/responda-a-una-orden-de-restricción-de-EA/entrega-legal
-Allow: /es/responda-a-una-orden-de-restricción-de-EA/llenar-y-presentar-respuesta
-Allow: /es/responda-a-una-orden-de-restricción-de-EA/ordenes-de-obediencia-de%20armas-de-fuego
+Allow: /es/responda-a-una-orden-de-restricciÃ³n-de-EA
+Allow: /es/responda-a-una-orden-de-restricciÃ³n-de-EA/entrega-legal
+Allow: /es/responda-a-una-orden-de-restricciÃ³n-de-EA/llenar-y-presentar-respuesta
+Allow: /es/responda-a-una-orden-de-restricciÃ³n-de-EA/ordenes-de-obediencia-de%20armas-de-fuego
 Allow: /es/responda-una-peticion-de-custodia-y-manutencion
 Allow: /es/responder-a-orden-de-restriccion-por-AC
 Allow: /es/responder-a-orden-de-restriccion-por-AC/entrega-legal
