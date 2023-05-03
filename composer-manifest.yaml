@@ -48,11 +48,11 @@ packages:
     drupal/config_filter: 1.9.0
     drupal/config_ignore: 2.3.0
     drupal/config_split: 1.8.0
-    drupal/core: 9.5.7
-    drupal/core-composer-scaffold: 9.5.7
-    drupal/core-project-message: 9.5.7
-    drupal/core-recommended: 9.5.7
-    drupal/core-vendor-hardening: 9.5.7
+    drupal/core: 9.5.8
+    drupal/core-composer-scaffold: 9.5.8
+    drupal/core-project-message: 9.5.8
+    drupal/core-recommended: 9.5.8
+    drupal/core-vendor-hardening: 9.5.8
     drupal/crop: 2.2.0
     drupal/csv_serialization: 2.1.0
     drupal/ctools: 3.7.0
@@ -149,7 +149,7 @@ packages:
     grasmash/yaml-expander: 1.4.0
     guzzlehttp/guzzle: 6.5.8
     guzzlehttp/promises: 1.5.2
-    guzzlehttp/psr7: 1.9.0
+    guzzlehttp/psr7: 1.9.1
     harvesthq/chosen: 1.8.7
     html2text/html2text: 4.3.1
     joachim-n/composer-manifest: 1.1.4
@@ -170,14 +170,14 @@ packages:
     oomphinc/composer-installers-extender: 2.0.1
     pear/archive_tar: 1.4.14
     pear/console_getopt: v1.4.3
-    pear/pear-core-minimal: v1.10.11
+    pear/pear-core-minimal: v1.10.13
     pear/pear_exception: v1.0.2
     phpoffice/phpspreadsheet: 1.23.0
     psr/cache: 1.0.1
     psr/container: 1.1.2
     psr/event-dispatcher: 1.0.0
-    psr/http-client: 1.0.1
-    psr/http-factory: 1.0.1
+    psr/http-client: 1.0.2
+    psr/http-factory: 1.0.2
     psr/http-message: 1.0.1
     psr/log: 1.1.4
     psr/simple-cache: 1.0.1
@@ -216,7 +216,7 @@ packages:
     symfony/translation: v4.4.47
     symfony/translation-contracts: v2.5.2
     symfony/validator: v4.4.48
-    symfony/var-dumper: v5.4.21
+    symfony/var-dumper: v5.4.22
     symfony/yaml: v4.4.45
     twig/twig: v2.15.4
     typo3/phar-stream-wrapper: v3.1.7
