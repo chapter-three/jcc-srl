@@ -1,3 +1,9 @@
+/**
+ * @file
+ * General code for the date calculation on webform page. This file is loaded on
+ * Demand Letter for security webform.
+ */
+
 (function($, Drupal) {
   "use strict";
 

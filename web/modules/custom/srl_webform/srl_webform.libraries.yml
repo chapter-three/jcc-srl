@@ -3,4 +3,4 @@ hideSubmit:
     js/hideSubmit.js: {}
 dateOnChange:
   js:
-    js/dateOnChange.js: {}
+    js/calculateDateFinal.js: {}
