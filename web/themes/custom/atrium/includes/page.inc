@@ -225,7 +225,7 @@ function _atrium_global_translation_menu() {
   $links_index = 0;
   foreach ($tree as $item) {
     $global_links[$links_index]['title'] = $item->link->getTitle();
-    $global_links[$links_index]['href'] = $host . $item->link->getUrlObject()->toString();
+    $global_links[$links_index]['href'] = $item->link->getUrlObject()->toString();
     $links_index ++;
   }
   return $global_links;
