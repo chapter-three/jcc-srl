@@ -46,6 +46,13 @@ function srl_webform_webform_element_webform_wizard_page_alter(array &$element, 
     $element['#attached']['library'][] = 'srl_webform/hideSubmit';
 
   }
+
+  if(($element['#webform'] == 'demand_letter_for_security_depos') && isset($element['#webform'])){
+
+    $element['#attached']['drupalSettings']['srl_webform']['id'] = $element['#webform'];
+    $element['#attached']['library'][] = 'srl_webform/calculateDateFinal';
+
+  }
 }
 
 /**
