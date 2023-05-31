@@ -7,7 +7,7 @@
 (function($, Drupal) {
   "use strict";
 
-  Drupal.behaviors.dateOnChange = {
+  Drupal.behaviors.calculateDateFinal = {
     attach: function(context, drupalSettings) {
 
       const addDaysToDate = (date, n) => {
