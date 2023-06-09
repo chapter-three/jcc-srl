@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
+use Drupal\webform\Entity\Webform;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -185,10 +186,30 @@ function _atrium_translation_menu() {
       ? str_replace("/$langcode", '', $current_path)
       : $current_path;
   }
-  // Create links for dropbutton component if translated content exists for page.
+  // Create links for dropbutton component if translated content or webform exists for page.
   $links = [];
   foreach ($languages as $langcode => $language) {
     $node = \Drupal::routeMatch()->getParameter('node');
+    $webform = \Drupal::routeMatch()->getParameter('webform');
+    
+    if ($webform instanceof Drupal\webform\Entity\Webform && $webform->hasTranslation($langcode)) {
+      // You can get webform id and anything else you need from the webform object.
+      $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/webform/'. $webform->id(), $langcode);
+      $prefixed_translated_path = '/' . $langcode . $translated_path;
+
+      // Default language paths have no prefix.
+      $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
+      if($webform != null
+        && $prefixed_translated_path != $prefixed_current_path
+        && $prefixed_translated_path != '/en' . $prefixed_current_path){
+        $links[] = [
+          'title' => $language->getName(),
+          'href' => "$host$langcode$translated_path",
+        ];
+
+      }
+    }
+
     if ($node instanceof \Drupal\node\NodeInterface && $node->hasTranslation($langcode)) {
       // You can get nid and anything else you need from the node object.
       $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
