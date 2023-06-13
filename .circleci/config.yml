@@ -184,38 +184,38 @@ jobs:
                 destination: /screenshots
     # Uncomment this job if you want to spin up Pantheon envs for every PR.
     # Remove this job if you don't want PR envs.
-    pr_env:
-        <<: *defaults
-        parameters:
-            site:
-                type: string
-        description: Create a PR environemnt on Pantheon
-        steps:
-            - checkout
-            - restore_cache:
-                keys:
-                    - composer-cache
-                    - terminus-install
-            - run:
-                # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: dependencies
-                command: /build-tools-ci/scripts/set-environment
-            - run:
-                name: install dev dependencies, build assets, etc.
-                command: ./.circleci/scripts/pantheon/01-prepare
-            - run:
-                name: build assets
-                command: composer -n build-assets
-            - run:
-                name: prepare database for site-under test
-                command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
-            - run:
-                name: run composer install again to get dev dependencies
-                command: composer install
-            - run:
-                name: remove transient test fixtures
-                command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
+    #pr_env:
+    #    <<: *defaults
+    #    parameters:
+    #        site:
+    #            type: string
+    #    description: Create a PR environemnt on Pantheon
+    #    steps:
+    #        - checkout
+    #        - restore_cache:
+    #            keys:
+    #                - composer-cache
+    #                - terminus-install
+    #        - run:
+    #            # Set TERMINUS_ENV and related environment variables.
+    #            # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+    #            name: dependencies
+    #            command: /build-tools-ci/scripts/set-environment
+    #        - run:
+    #            name: install dev dependencies, build assets, etc.
+    #            command: ./.circleci/scripts/pantheon/01-prepare
+    #        - run:
+    #            name: build assets
+    #            command: composer -n build-assets
+    #        - run:
+    #            name: prepare database for site-under test
+    #            command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
+    #        - run:
+    #            name: run composer install again to get dev dependencies
+    #            command: composer install
+    #        - run:
+    #            name: remove transient test fixtures
+    #            command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
 
 workflows:
   version: 2.1
@@ -252,19 +252,19 @@ workflows:
                 - /^epic-.*/
       # Uncomment this job if you want to spin up Pantheon envs for every PR.
       # Remove this job if you don't want PR envs.
-      - pr_env:
-          matrix:
-            parameters:
-              site: ["srl"]
-          requires:
-              - build_test
-          filters:
-              branches:
-                ignore:
-                  - develop
-                  - stage
-                  - master
-                  - /^epic-.*/
+      #- pr_env:
+      #    matrix:
+      #      parameters:
+      #        site: ["srl"]
+      #    requires:
+      #        - build_test
+      #    filters:
+      #        branches:
+      #          ignore:
+      #            - develop
+      #            - stage
+      #            - master
+      #            - /^epic-.*/
 experimental:
   notify:
     branches:
