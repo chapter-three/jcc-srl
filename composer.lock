@@ -7297,6 +7297,9 @@
                     "services": {
                         "drush.services.yml": "^9 || ^10"
                     }
+                },
+                "patches_applied": {
+                    "Call to a member function preExecute() on null": "https://www.drupal.org/files/issues/2023-05-20/3321499-9--views_errors_when_query_is_null.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
