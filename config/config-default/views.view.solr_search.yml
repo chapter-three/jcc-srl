@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - search_api.index.solr_index
+    - search_api.index.index
   module:
     - search_api
     - text
@@ -13,7 +13,7 @@ label: 'Solr Search'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_solr_index
+base_table: search_api_index_index
 base_field: search_api_id
 display:
   default:
@@ -26,7 +26,7 @@ display:
       fields:
         body:
           id: body
-          table: search_api_index_solr_index
+          table: search_api_index_index
           field: body
           relationship: none
           group_type: group
@@ -148,7 +148,7 @@ display:
       filters:
         search_api_fulltext:
           id: search_api_fulltext
-          table: search_api_index_solr_index
+          table: search_api_index_index
           field: search_api_fulltext
           relationship: none
           group_type: group
@@ -203,7 +203,7 @@ display:
             - name
         search_api_language:
           id: search_api_language
-          table: search_api_index_solr_index
+          table: search_api_index_index
           field: search_api_language
           relationship: none
           group_type: group
@@ -243,7 +243,7 @@ display:
             group_items: {  }
         bundle:
           id: bundle
-          table: search_api_index_solr_index
+          table: search_api_index_index
           field: bundle
           relationship: none
           group_type: group
@@ -338,7 +338,7 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
-        - 'config:search_api.index.solr_index'
+        - 'config:search_api.index.index'
   page_1:
     id: page_1
     display_title: Page
@@ -346,12 +346,15 @@ display:
     position: 1
     display_options:
       cache:
-        type: none
+        type: search_api_tag
+        options: {  }
       defaults:
         cache: false
       exposed_block: true
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
         ajax_history:
           enable_history: false
       path: search
@@ -365,4 +368,4 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:field.storage.node.body'
-        - 'config:search_api.index.solr_index'
+        - 'config:search_api.index.index'
