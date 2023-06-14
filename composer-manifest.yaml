@@ -7,11 +7,11 @@ packages:
     components/highlightjs: 9.7.0
     composer/installers: v1.12.0
     composer/semver: 3.3.2
-    consolidation/annotated-command: 4.5.6
+    consolidation/annotated-command: 4.9.1
     consolidation/config: 1.2.1
     consolidation/filter-via-dot-access-data: 1.0.0
     consolidation/log: 2.1.1
-    consolidation/output-formatters: 4.2.2
+    consolidation/output-formatters: 4.3.1
     consolidation/robo: 2.2.2
     consolidation/self-update: 1.2.0
     consolidation/site-alias: 3.1.5
@@ -24,7 +24,7 @@ packages:
     doctrine/cache: 1.13.0
     doctrine/collections: 1.8.0
     doctrine/common: 2.13.3
-    doctrine/deprecations: v1.0.0
+    doctrine/deprecations: v1.1.1
     doctrine/event-manager: 1.2.0
     doctrine/inflector: 1.4.4
     doctrine/lexer: 1.2.3
@@ -114,11 +114,11 @@ packages:
     drupal/scheduler_content_moderation_integration: 1.4.0
     drupal/search404: 2.0.0
     drupal/search_api: 1.29.0
-    drupal/search_api_autocomplete: 1.6.0
-    drupal/search_api_exclude: 2.0.0
-    drupal/search_api_exclude_entity: 1.3.0
+    drupal/search_api_autocomplete: 1.7.0
+    drupal/search_api_exclude: 2.0.2
+    drupal/search_api_exclude_entity: 2.0.0
     drupal/search_api_pantheon: 8.1.3
-    drupal/search_api_solr: 4.2.9
+    drupal/search_api_solr: 4.2.10
     drupal/search_kint: 'dev-1.x:ef50a53718e1c9a29b030a36f0646bf3d5ac9c0b'
     drupal/sendgrid_integration: 1.7.0
     drupal/simple_block: 1.3.0
@@ -142,7 +142,7 @@ packages:
     drupal/xmlsitemap: 1.2.0
     drush/drush: 10.3.6
     e0ipso/shaper: 1.2.4
-    egulias/email-validator: 3.2.5
+    egulias/email-validator: 3.2.6
     enshrined/svg-sanitize: 0.15.4
     enyo/dropzone: 5.5.0
     ezyang/htmlpurifier: v4.14.0
@@ -151,8 +151,9 @@ packages:
     grasmash/expander: 1.0.0
     grasmash/yaml-expander: 1.4.0
     guzzlehttp/guzzle: 6.5.8
-    guzzlehttp/promises: 1.5.2
+    guzzlehttp/promises: 1.5.3
     guzzlehttp/psr7: 1.9.1
+    halaxa/json-machine: 1.1.3
     harvesthq/chosen: 1.8.7
     html2text/html2text: 4.3.1
     http-interop/http-factory-guzzle: 1.2.0
@@ -166,13 +167,13 @@ packages:
     laminas/laminas-stdlib: 3.11.0
     league/container: 2.5.0
     league/csv: 9.8.0
-    maennchen/zipstream-php: 2.2.1
+    maennchen/zipstream-php: 2.2.6
     markbaker/complex: 3.0.1
     markbaker/matrix: 3.0.0
     masterminds/html5: 2.7.6
     mkalkbrenner/php-htmldiff-advanced: 0.0.8
-    myclabs/php-enum: 1.8.3
-    nikic/php-parser: v4.14.0
+    myclabs/php-enum: 1.8.4
+    nikic/php-parser: v4.15.5
     oomphinc/composer-installers-extender: 2.0.1
     pear/archive_tar: 1.4.14
     pear/console_getopt: v1.4.3
@@ -190,7 +191,7 @@ packages:
     psy/psysh: v0.11.5
     ralouphie/getallheaders: 3.0.3
     sendgrid/smtpapi: 0.7.0
-    solarium/solarium: 6.2.4
+    solarium/solarium: 6.3.0
     stack/builder: v1.0.6
     symfony-cmf/routing: 2.3.4
     symfony/console: v4.4.49
@@ -222,9 +223,9 @@ packages:
     symfony/translation: v4.4.47
     symfony/translation-contracts: v2.5.2
     symfony/validator: v4.4.48
-    symfony/var-dumper: v5.4.22
+    symfony/var-dumper: v5.4.24
     symfony/yaml: v4.4.45
-    twig/twig: v2.15.4
+    twig/twig: v2.15.5
     typo3/phar-stream-wrapper: v3.1.7
     vlucas/phpdotenv: v2.6.9
     webflo/drupal-finder: 1.2.2
