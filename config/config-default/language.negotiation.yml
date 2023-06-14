@@ -15,6 +15,7 @@ url:
     fa: fa
     zh-hans: zh-hans
     vi: vi
+    zh-hant: zh-hant
   domains:
     en: ''
     es: ''
@@ -26,4 +27,5 @@ url:
     fa: ''
     zh-hans: ''
     vi: ''
+    zh-hant: ''
 selected_langcode: site_default
