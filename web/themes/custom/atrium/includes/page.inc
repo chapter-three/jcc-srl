@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
+use Drupal\webform\Entity\Webform;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -171,12 +172,9 @@ function _atrium_get_menutree($menu_name) {
  */
 function _atrium_translation_menu() {
 
-  $host = \Drupal::request()->getSchemeAndHttpHost();
   $language_manager = \Drupal::languageManager();
   $languages = $language_manager->getLanguages();
-  $default_language = $language_manager->getDefaultLanguage();
   $current_path = \Drupal::request()->getRequestUri();
-  $prefixed_current_path = \Drupal::request()->getRequestUri();
 
   // Strip language from current path.
   foreach ($languages as $langcode => $language) {
@@ -185,28 +183,23 @@ function _atrium_translation_menu() {
       ? str_replace("/$langcode", '', $current_path)
       : $current_path;
   }
-  // Create links for dropbutton component if translated content exists for page.
-  $links = [];
+  // Create links for dropbutton component if translated content or webform exists for page.
+  $links = array();
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $webform = \Drupal::routeMatch()->getParameter('webform');
   foreach ($languages as $langcode => $language) {
-    $node = \Drupal::routeMatch()->getParameter('node');
-    if ($node instanceof \Drupal\node\NodeInterface && $node->hasTranslation($langcode)) {
-      // You can get nid and anything else you need from the node object.
-      $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id(), $langcode);
-      $prefixed_translated_path = '/' . $langcode . $translated_path;
 
-      // Default language paths have no prefix.
-      $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
-
-      if($node != null
-        && $prefixed_translated_path != $prefixed_current_path
-        && $prefixed_translated_path != '/en' . $prefixed_current_path
-        && $translated_path != \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $node->id())){
-        $links[] = [
-          'title' => $language->getName(),
-          'href' => "$host$langcode$translated_path",
-        ];
-      }
+    $translate_link = '';
+    if ($webform instanceof Drupal\webform\Entity\Webform && $webform->hasTranslation($langcode)) {
+      $translate_link = _atrium_translate_menu_dropbutton($webform,'webform', $langcode, $language);
     }
+    if ($node instanceof \Drupal\node\NodeInterface && $node->hasTranslation($langcode)) {
+      $translate_link = _atrium_translate_menu_dropbutton($node,'node', $langcode, $language);
+    }
+    if(!empty($translate_link)){
+      $links[] = $translate_link;
+    }
+
   }
   return $links;
 }
@@ -215,7 +208,7 @@ function _atrium_translation_menu() {
  * Format Global language links for drobputton component.
  *
  * @return array
- *   Array of global link items for dropbutton component.
+ *   Callback function written for dropbutton component.
  */
 function _atrium_global_translation_menu() {
   $host = \Drupal::request()->getSchemeAndHttpHost();
@@ -229,4 +222,32 @@ function _atrium_global_translation_menu() {
     $links_index ++;
   }
   return $global_links;
+}
+
+/**
+ * Format translation links for drobputton component.
+ *
+ * @return array
+ *   Array of translation link items for dropbutton component.
+ */
+function _atrium_translate_menu_dropbutton($entity, $entity_path_name, $langcode, $language) {
+
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+  $language_manager = \Drupal::languageManager();
+  $default_language = $language_manager->getDefaultLanguage();
+  $prefixed_current_path = \Drupal::request()->getRequestUri();
+
+  // You can get webform id and anything else you need from the webform object.
+  $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/' . $entity_path_name . '/' . $entity->id(), $langcode);
+  $prefixed_translated_path = '/' . $langcode . $translated_path;
+  // Default language paths have no prefix.
+  $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
+
+  if (  ($entity != null
+    && $prefixed_translated_path != $prefixed_current_path
+    && $prefixed_translated_path != '/en' . $prefixed_current_path)
+    && (($translated_path != \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $entity->id()) && $entity_path_name == 'node')
+      || $entity_path_name=='webform') ) {
+    return array('title' => $language->getName(), 'href' => "$host$langcode$translated_path");
+  }
 }
