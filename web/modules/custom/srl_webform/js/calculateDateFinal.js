@@ -29,8 +29,9 @@
       $formMessage.hide();
       $formClassDate.on("change",function(){
         const selected = new Date($(this).val());
-        const formattedDate = selected.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
-        const calculateDate = new Date(addDaysToDate(selected, 21));
+        const utcDate = new Date(selected.getUTCFullYear(), selected.getUTCMonth(), selected.getUTCDate());
+        const formattedDate = utcDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
+        const calculateDate = new Date(addDaysToDate(utcDate, 21));
         const calculateDateFinal = calculateDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
 
         $(".selected_date").text(formattedDate);
