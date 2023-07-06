@@ -1,6 +1,6 @@
-uuid: a5bdb4e8-955f-4488-9e5d-46571fcae361
+uuid: 268206af-69de-43e3-b94a-1a0e3785f674
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - search_api_solr.solr_cache.cache_document_default_7_0_0
@@ -19,54 +19,51 @@ dependencies:
     - search_api_solr.solr_field_type.text_phonetic_und_7_0_0
     - search_api_solr.solr_field_type.text_und_7_0_0
     - search_api_solr.solr_request_dispatcher.request_dispatcher_httpcaching_default_7_0_0
-    - search_api_solr.solr_request_dispatcher.request_dispatcher_httpcachingnever_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_autocomplete_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_elevate_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_extract_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_mlt_default_7_0_0
-    - search_api_solr.solr_request_handler.request_handler_replicationmaster_default_7_0_0
-    - search_api_solr.solr_request_handler.request_handler_replicationslave_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_select_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_spell_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_suggest_default_7_0_0
     - search_api_solr.solr_request_handler.request_handler_tvrh_default_7_0_0
   module:
+    - search_api_pantheon
     - search_api_solr
-id: solr
-name: Solr
+_core:
+  default_config_hash: xJR79-lRG0JHelCTH2q0JeLQhg-XcljOTDLI2f-cVzI
+id: pantheon_solr8
+name: 'Pantheon Search'
 description: ''
 backend: search_api_solr
 backend_config:
-  retrieve_data: false
-  highlight_data: false
-  site_hash: false
-  server_prefix: ''
-  domain: generic
-  environment: default
-  connector: basic_auth
+  connector: pantheon
   connector_config:
-    scheme: https
-    host: jcc-trialcourt-solr.azurewebsites.net
-    port: 443
-    path: /
-    core: jcc-srl-sandbox-1
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
     finalize_timeout: 30
-    skip_schema_check: false
-    solr_version: ''
+    solr_version: '8'
     http_method: AUTO
     commit_within: 1000
     jmx: false
+    jts: false
     solr_install_dir: ''
-    username: jcc
-    password: 'M^svR?F9pe-8Hwfw'
-  optimize: false
-  fallback_multiple: true
+    skip_schema_check: true
   disabled_field_types: {  }
   disabled_caches: {  }
-  disabled_request_handlers: {  }
-  disabled_request_dispatchers: {  }
+  disabled_request_handlers:
+    - request_handler_replicationslave_default_7_0_0
+    - request_handler_replicationmaster_default_7_0_0
+  disabled_request_dispatchers:
+    - request_dispatcher_httpcachingnever_default_7_0_0
   rows: 10
   index_single_documents_fallback_count: 10
+  retrieve_data: false
+  highlight_data: false
+  fallback_multiple: false
+  server_prefix: ''
+  domain: generic
+  environment: default
+  optimize: false
+  site_hash: false

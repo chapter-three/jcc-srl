@@ -4,3 +4,5 @@ php_version: 7.4
 drush_version: 10
 database:
   version: 10.3
+search:
+  version: 8
