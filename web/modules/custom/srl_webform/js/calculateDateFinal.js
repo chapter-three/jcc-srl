@@ -31,7 +31,7 @@
         const selected = new Date($(this).val());
         const utcDate = new Date(selected.getUTCFullYear(), selected.getUTCMonth(), selected.getUTCDate());
         const formattedDate = utcDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
-        const calculateDate = new Date(addDaysToDate(utcDate, 21));
+        const calculateDate = new Date(addDaysToDate(utcDate, 22));
         const calculateDateFinal = calculateDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
 
         $(".selected_date").text(formattedDate);
