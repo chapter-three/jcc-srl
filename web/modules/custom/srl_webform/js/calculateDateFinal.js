@@ -33,10 +33,14 @@
         const formattedDate = utcDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
         const calculateDate = new Date(addDaysToDate(utcDate, 22));
         const calculateDateFinal = calculateDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
-
         $(".selected_date").text(formattedDate);
         $(".calculate_date").text(calculateDateFinal);
-        $formMessage.show();
+
+        // Display message box If selected date is equal to 21 days or more than 21 days
+        if(utcDate.getTime() >= calculateDate.getTime()){
+          $formMessage.show();
+        }
+
       });
 
       $formClassCloseMsg.on("click",function(){
