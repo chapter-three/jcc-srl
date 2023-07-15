@@ -28,6 +28,7 @@
       );
       $formMessage.hide();
       $formClassDate.on("change",function(){
+        const todaysDate = new Date();
         const selected = new Date($(this).val());
         const utcDate = new Date(selected.getUTCFullYear(), selected.getUTCMonth(), selected.getUTCDate());
         const formattedDate = utcDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
@@ -36,8 +37,10 @@
         $(".selected_date").text(formattedDate);
         $(".calculate_date").text(calculateDateFinal);
 
-        // Display message box If selected date is equal to 21 days or more than 21 days
-        if(utcDate.getTime() >= calculateDate.getTime()){
+        // Hide message box If selected date is equal to 21 days or more than 21 days
+        if(utcDate.getTime() >= new Date(addDaysToDate(todaysDate, 22)).getTime()){
+          $formMessage.hide();
+        }else{
           $formMessage.show();
         }
 
