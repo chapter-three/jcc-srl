@@ -9957,16 +9957,16 @@
         },
         {
             "name": "judicialcouncil/courtyard-artifact",
-            "version": "0.1.370",
+            "version": "0.1.371",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact.git",
-                "reference": "e698bd4be76c2abc4aa192d1f7bd1a3f35cb9911"
+                "reference": "f55aed0fe2cbd4d3bcfb2aeedc405350c8df65a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/e698bd4be76c2abc4aa192d1f7bd1a3f35cb9911",
-                "reference": "e698bd4be76c2abc4aa192d1f7bd1a3f35cb9911",
+                "url": "https://api.github.com/repos/JudicialCouncilOfCalifornia/courtyard-artifact/zipball/f55aed0fe2cbd4d3bcfb2aeedc405350c8df65a6",
+                "reference": "f55aed0fe2cbd4d3bcfb2aeedc405350c8df65a6",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -9983,9 +9983,9 @@
             "description": "A build artifact of the Courtyard Pattern Lab pattern library.",
             "support": {
                 "issues": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/issues",
-                "source": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/tree/0.1.370"
+                "source": "https://github.com/JudicialCouncilOfCalifornia/courtyard-artifact/tree/0.1.371"
             },
-            "time": "2023-07-13T22:47:41+00:00"
+            "time": "2023-07-15T00:03:36+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
