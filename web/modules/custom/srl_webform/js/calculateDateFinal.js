@@ -15,6 +15,12 @@
         d.setDate(d.getDate() + n);
         return d.toISOString().split('T')[0];
       };
+      const minusDaysFromToDate = (date, n) => {
+        const d = new Date(date);
+        d.setDate(d.getDate() - n);
+        return d.toISOString().split('T')[0];
+      };
+
       const $formId = drupalSettings.srl_webform.id;
       const $formClass = ".webform-submission-" + $formId.replace(/_/g, "-") + "-form";
       const $formClassDate = $(
@@ -30,18 +36,20 @@
       $formClassDate.on("change",function(){
         const todaysDate = new Date();
         const selected = new Date($(this).val());
-        const utcDate = new Date(selected.getUTCFullYear(), selected.getUTCMonth(), selected.getUTCDate());
-        const formattedDate = utcDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
-        const calculateDate = new Date(addDaysToDate(utcDate, 22));
+        const utcSelectedDate = new Date(selected.getUTCFullYear(), selected.getUTCMonth(), selected.getUTCDate());
+        const differenceInTime = todaysDate.getTime() - utcSelectedDate.getTime();
+        const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+        const formattedDate = utcSelectedDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
+        const calculateDate = new Date(addDaysToDate(utcSelectedDate, 22));
         const calculateDateFinal = calculateDate.toLocaleString('en-us',{month:'short', day: 'numeric', year:'numeric'});
         $(".selected_date").text(formattedDate);
         $(".calculate_date").text(calculateDateFinal);
 
-        // Hide message box If selected date is equal to 21 days or more than 21 days
-        if(utcDate.getTime() >= new Date(addDaysToDate(todaysDate, 22)).getTime()){
-          $formMessage.hide();
-        }else{
+        // Hide message box If selected date is more than 21 days back
+        if(differenceInDays <= 21) {
           $formMessage.show();
+        }else{
+          $formMessage.hide();
         }
 
       });
