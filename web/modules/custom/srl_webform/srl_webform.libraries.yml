@@ -1,3 +1,6 @@
 hideSubmit:
   js:
     js/hideSubmit.js: {}
+calculateDateFinal:
+  js:
+    js/calculateDateFinal.js: {}
