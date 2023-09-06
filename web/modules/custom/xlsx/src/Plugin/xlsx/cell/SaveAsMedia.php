@@ -66,7 +66,7 @@ class SaveAsMedia extends XlsxCellBase {
    * {@inheritdoc}
    */
   public function export($entity, $field_name, $value) {
-    if ($entity->hasField($field_name)) {
+    if ($entity->hasField($field_name) && !$entity->get($field_name)->isEmpty()) {
       if ($ref = $entity->get($field_name)->first()->getValue()) {
         if ($media = Media::load($ref['target_id'])) {
           if ($media_field = $media->get('field_media_image')->first()->getValue()) {
