@@ -225,8 +225,12 @@ class XlsxExportBase extends PluginBase implements XlsxExportInterface, Containe
           $xlsx_cell = !empty($mapping['cell_plugin']) ? $mapping['cell_plugin'] : 'as_is';
           if ($plugin = $this->xlsxCellManager->createInstance($xlsx_cell)) {
             $field_type = $entity->get($mapping['field'])->getFieldDefinition()->getType();
+
+            $field_definition = $entity->get($mapping['field'])->getFieldDefinition();
+            $settings = $field_definition->getSettings();
+
             // If taxonomy field, export the terms.
-            if ($field_type == 'entity_reference') {
+            if ($field_type == 'entity_reference' && $settings['target_type'] == 'taxonomy_term') {
               $terms = [];
               foreach ($entity->get($mapping['field']) as $reference) {
                 if ($reference->getString()) {
