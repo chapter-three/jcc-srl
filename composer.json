@@ -289,7 +289,8 @@
                 "Invalid render array key": "https://www.drupal.org/files/issues/2022-08-31/3275683-6.patch"
             },
             "drupal/webform": {
-                "By default, do not save submissions.": "patches/disable-results-by-default.patch"
+                "By default, do not save submissions.": "patches/disable-results-by-default.patch",
+                "Fix strpos() deprecated function": "https://www.drupal.org/files/issues/2022-05-11/webform-strpos-php81-webform-requirements-3279930-2.patch"
             },
             "drupal/svg_image_field": {
                 "Fix previews": "https://www.drupal.org/files/issues/2019-05-06/svg_image_field-zero-width-preview-3053018.patch"
