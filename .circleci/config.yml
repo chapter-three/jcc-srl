@@ -104,7 +104,9 @@ jobs:
 
             - run:
                 name: Build Theme(s)
-                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+                command: |
+                  export NODE_OPTIONS=--openssl-legacy-provider
+                  npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 
             - run:
                 name: Deploying << parameters.site >>
