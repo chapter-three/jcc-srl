@@ -21,15 +21,13 @@
         }
       } only %}
     </div>
-    <div class="jcc-nav__container">
     {% include '@molecules/navigation/jump-nav/jump-nav.twig' with {
       jump_nav: {
         title: content.field_hero_nav_title|render ? content.field_hero_nav_title : ''
       }
     } %}
-    </div>
   {% endset %}
-  
+
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       breadcrumbs: {
