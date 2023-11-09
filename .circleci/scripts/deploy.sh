@@ -31,11 +31,6 @@ for name in "$@" ; do
   TIMESTAMP=$(date +'%y-%m-%dT%H:%m:%S')
   PANTHEON_ENV=$CIRCLE_BRANCH
 
-  # Skip deployment step for master branch if "DEPLOY_MASTER" is set explicitly to false.
-  if [ "$CIRCLE_BRANCH" = "master" ] && [ "$LIVE" = false ]; then
-    PANTHEON_ENV="dev"
-  fi
-
   git config --global user.email "$GIT_EMAIL"
   git config --global user.name "Ch3-P0"
 
