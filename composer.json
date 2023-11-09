@@ -101,7 +101,7 @@
         "drupal/admin_toolbar": "^2.5",
         "drupal/adminimal_admin_toolbar": "^1.9",
         "drupal/adminimal_theme": "^1.5",
-        "drupal/advagg": "^4.1",
+        "drupal/advagg": "^6.0@alpha",
         "drupal/allowed_formats": "^1.1",
         "drupal/anchor_link": "^1.9",
         "drupal/autosave_form": "^1.0",
@@ -137,6 +137,9 @@
         "drupal/honeypot": "^2.1",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/insert_view_adv": "2.0.x-dev@dev",
+        "drupal/jquery_ui_autocomplete": "^2.0",
+        "drupal/jquery_ui_checkboxradio": "^2.0",
+        "drupal/jquery_ui_menu": "^2.0",
         "drupal/jsonapi_extras": "^3.23",
         "drupal/key": "^1.10",
         "drupal/linkit": "^5.0@beta",
@@ -286,7 +289,8 @@
                 "Invalid render array key": "https://www.drupal.org/files/issues/2022-08-31/3275683-6.patch"
             },
             "drupal/webform": {
-                "By default, do not save submissions.": "patches/disable-results-by-default.patch"
+                "By default, do not save submissions.": "patches/disable-results-by-default.patch",
+                "Fix strpos() deprecated function": "https://www.drupal.org/files/issues/2022-05-11/webform-strpos-php81-webform-requirements-3279930-2.patch"
             },
             "drupal/svg_image_field": {
                 "Fix previews": "https://www.drupal.org/files/issues/2019-05-06/svg_image_field-zero-width-preview-3053018.patch"
