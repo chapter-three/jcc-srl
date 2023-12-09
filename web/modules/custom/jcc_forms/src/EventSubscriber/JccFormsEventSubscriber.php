@@ -14,7 +14,7 @@ class JccFormsEventSubscriber implements EventSubscriberInterface {
   public function setHeaderContentSecurityPolicy(FilterResponseEvent $event) {
     $response = $event->getResponse();
     $response->headers->remove('X-Frame-Options');
-    $response->headers->set('Content-Security-Policy', "frame-ancestors 'self' courts.ca.gov *.courts.ca.gov", FALSE);
+    $response->headers->set('Content-Security-Policy', "frame-ancestors 'self' courts.ca.gov *.courts.ca.gov *.pantheonsite.io localhost", FALSE);
   }
 
   /**
