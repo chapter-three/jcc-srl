@@ -21,25 +21,28 @@
 
 {% block view %}
   <{{ tag }}{{ attributes.addClass(classes) }}>
-    {% block exposed %}
-      {% if exposed %}
-        {% set hero_content %}
-          <p>
-            Search for any topic or form number,
-            <a href="/find-forms/all">view all forms</a> or
-            <a href="/find-forms/all-by-category">view all forms by category</a>
-          </p>
-          <div class="view__filters">{{ exposed }}</div>
-        {% endset %}
-        {% include '@molecules/blocks/hero/hero.twig' with {
-          hero: {
-            background_variant: 'has-background-color--dark',
-            title: 'Find Your Court Forms',
-            body: hero_content
-          }
-        } %}
-      {% endif %}
-    {% endblock %}
+
+    {% if not no_hero %}
+      {% block exposed %}
+        {% if exposed %}
+          {% set hero_content %}
+            <p>
+              Search for any topic or form number,
+              <a href="/find-forms/all">view all forms</a> or
+              <a href="/find-forms/all-by-category">view all forms by category</a>
+            </p>
+            <div class="view__filters">{{ exposed }}</div>
+          {% endset %}
+          {% include '@molecules/blocks/hero/hero.twig' with {
+            hero: {
+              background_variant: 'has-background-color--dark',
+              title: 'Find Your Court Forms',
+              body: hero_content
+            }
+          } %}
+        {% endif %}
+      {% endblock %}
+    {% endif %}
 
     {% block content %}
       {% if query and search_results %}
