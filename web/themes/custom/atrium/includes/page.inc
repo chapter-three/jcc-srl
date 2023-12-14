@@ -199,7 +199,6 @@ function _atrium_translation_menu() {
     if(!empty($translate_link)){
       $links[] = $translate_link;
     }
-
   }
   return $links;
 }
@@ -241,13 +240,21 @@ function _atrium_translate_menu_dropbutton($entity, $entity_path_name, $langcode
   $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/' . $entity_path_name . '/' . $entity->id(), $langcode);
   $prefixed_translated_path = '/' . $langcode . $translated_path;
   // Default language paths have no prefix.
+  $compile_langcode = $langcode;
   $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
 
   if (  ($entity != null
     && $prefixed_translated_path != $prefixed_current_path
     && $prefixed_translated_path != '/en' . $prefixed_current_path)
-    && (($translated_path != \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $entity->id()) && $entity_path_name == 'node')
+    && (($translated_path != \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $entity->id())
+        && $entity_path_name == 'node')
       || $entity_path_name=='webform') ) {
-    return array('title' => $language->getName(), 'href' => "$host$langcode$translated_path");
+
+    if(($entity_path_name == 'node' && $entity->getTranslation($compile_langcode)->get('moderation_state')->getString() == "published") || $entity_path_name=='webform') {
+      return array('title' => $language->getName(), 'href' => "$host$langcode$translated_path");
+    }else{
+      return '';
+    }
+
   }
 }
