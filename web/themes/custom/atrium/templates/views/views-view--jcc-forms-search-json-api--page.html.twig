@@ -21,25 +21,28 @@
 
 {% block view %}
   <{{ tag }}{{ attributes.addClass(classes) }}>
-    {% block exposed %}
-      {% if exposed %}
-        {% set hero_content %}
-          <p>
-            Search for any topic or form number,
-            <a href="/find-forms/all">view all forms</a> or
-            <a href="/find-forms/all-by-category">view all forms by category</a>
-          </p>
-          <div class="view__filters">{{ exposed }}</div>
-        {% endset %}
-        {% include '@molecules/blocks/hero/hero.twig' with {
-          hero: {
-            background_variant: 'has-background-color--dark',
-            title: 'Find Your Court Forms',
-            body: hero_content
-          }
-        } %}
-      {% endif %}
-    {% endblock %}
+
+    {% if not no_hero %}
+      {% block exposed %}
+        {% if exposed %}
+          {% set hero_content %}
+            <p>
+              Search for any topic or form number,
+              <a href="/find-forms/all">view all forms</a> or
+              <a href="/find-forms/all-by-category">view all forms by category</a>
+            </p>
+            <div class="view__filters">{{ exposed }}</div>
+          {% endset %}
+          {% include '@molecules/blocks/hero/hero.twig' with {
+            hero: {
+              background_variant: 'has-background-color--dark',
+              title: 'Find Your Court Forms',
+              body: hero_content
+            }
+          } %}
+        {% endif %}
+      {% endblock %}
+    {% endif %}
 
     {% block content %}
       {% if query and search_results %}
@@ -126,7 +129,9 @@
 
         <div class="jcc-find-forms">
           <div class="jcc-find-forms__notation">
-            <p>Found {{ view.total_rows }} forms matching "{{ query }}".</p>
+            {% if not no_count %}
+              <p>Found {{ view.total_rows }} forms matching "{{ query }}".</p>
+            {% endif %}
             <p>Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.</p>
           </div>
           <div class="jcc-find-forms__results">
