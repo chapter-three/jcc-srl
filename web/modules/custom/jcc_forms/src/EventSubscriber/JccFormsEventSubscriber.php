@@ -11,10 +11,10 @@ class JccFormsEventSubscriber implements EventSubscriberInterface {
   /**
   * Set header 'Content-Security-Policy' to response to allow embedding in iFrame.
   */
-  public function setHeaderContentSecurityPolicy(FilterResponseEvent $event) {
+  public function setHeaderContentSecurityPolicy(ResponseEvent $event) {
     $response = $event->getResponse();
     $response->headers->remove('X-Frame-Options');
-    $response->headers->set('Content-Security-Policy', "frame-ancestors 'self' courts.ca.gov *.courts.ca.gov", FALSE);
+    $response->headers->set('Content-Security-Policy', "frame-ancestors 'self' courts.ca.gov *.courts.ca.gov *-jcc-.pantheonsite.io localhost", FALSE);
   }
 
   /**
