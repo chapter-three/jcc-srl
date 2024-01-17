@@ -8,7 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
-use Drupal\webform\Entity\Webform;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -78,6 +78,9 @@ function atrium_preprocess_page(&$variables) {
  *   The menu tree.
  */
 function _atrium_get_menutree($menu_name) {
+  // Get current language.
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
   // Get the tree.
   $menu_tree_service = \Drupal::service('menu.link_tree');
   $tree = $menu_tree_service->load($menu_name, new MenuTreeParameters());
@@ -131,6 +134,16 @@ function _atrium_get_menutree($menu_name) {
             $child_title = $link->getTitle();
             $child_url_obj = $link->getUrlObject();
             $child_url = $child_url_obj->toString();
+            // If translation variant is "unpublished/not ready", use English.
+            if (!$child_url_obj->isExternal()) {
+              $route_params = $child_url_obj->getRouteParameters();
+              $child_nid = $route_params['node'];
+              $child_node = Node::load($child_nid);
+              if ($child_node->getTranslationStatus($langcode) == NULL) {
+                $child_url = $child_node->toUrl()->toString();
+              }
+            }
+
             // Using both text/name & href/url ↓ due to inconsistencies in
             // Pattern Lab components.
             $children[] = [
