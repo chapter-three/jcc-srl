@@ -33,7 +33,7 @@ packages:
     drupal/access_unpublished: 1.4.0
     drupal/admin_toolbar: 2.5.0
     drupal/adminimal_admin_toolbar: 1.11.0
-    drupal/adminimal_theme: 1.6.0
+    drupal/adminimal_theme: 1.7.0
     drupal/advagg: 6.0.0-alpha1
     drupal/allowed_formats: 1.5.0
     drupal/anchor_link: 1.9.0
@@ -80,7 +80,7 @@ packages:
     drupal/google_tag: 1.5.0
     drupal/honeypot: 2.1.1
     drupal/inline_entity_form: 1.0.0-rc11
-    drupal/insert_view_adv: '2.0.x-dev:5d3dd71fa9d3f878eacd93452873b29fc808d857'
+    drupal/insert_view_adv: 'dev-2.0.x:5d3dd71fa9d3f878eacd93452873b29fc808d857'
     drupal/jquery_ui: 1.6.0
     drupal/jquery_ui_autocomplete: 2.0.0
     drupal/jquery_ui_checkboxradio: 2.0.0
@@ -90,7 +90,7 @@ packages:
     drupal/linkit: 5.0.0-beta13
     drupal/log_stdout: 1.3.0
     drupal/login_emailusername: 1.2.0
-    drupal/maillog: '1.x-dev:053d0b4a53aea4f848be75b02fc8974bb7b053b3'
+    drupal/maillog: 'dev-1.x:053d0b4a53aea4f848be75b02fc8974bb7b053b3'
     drupal/mailsystem: 4.3.0
     drupal/markup: 1.0.0-beta5
     drupal/maxlength: 1.0.0-rc1
@@ -123,8 +123,9 @@ packages:
     drupal/search_api_exclude_entity: 2.0.0
     drupal/search_api_pantheon: 8.1.3
     drupal/search_api_solr: 4.2.10
-    drupal/search_kint: '1.x-dev:ef50a53718e1c9a29b030a36f0646bf3d5ac9c0b'
+    drupal/search_kint: 'dev-1.x:ef50a53718e1c9a29b030a36f0646bf3d5ac9c0b'
     drupal/sendgrid_integration: 1.7.0
+    drupal/seven: 1.0.0
     drupal/simple_block: 1.3.0
     drupal/simple_sitemap: 3.11.0
     drupal/smart_trim: 1.3.0
@@ -139,7 +140,7 @@ packages:
     drupal/views_bulk_edit: 2.6.0
     drupal/views_bulk_operations: 4.1.3
     drupal/views_data_export: 1.1.0
-    drupal/webform: 6.1.3
+    drupal/webform: 6.2.2
     drupal/webform_rest: 4.0.1
     drupal/webform_translation_permissions: 1.1.0
     drupal/workbench: 1.3.0
