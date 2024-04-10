@@ -225,7 +225,14 @@ function _atrium_translation_menu() {
 function _atrium_global_translation_menu() {
   $host = \Drupal::request()->getSchemeAndHttpHost();
 
-  $tree = \Drupal::menuTree()->load('global-translations', new \Drupal\Core\Menu\MenuTreeParameters());
+  $menu_tree = \Drupal::menuTree();
+  $tree = $menu_tree->load('global-translations', new \Drupal\Core\Menu\MenuTreeParameters());
+  //Fix to sort elements by weight
+  $manipulators = array(
+    array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+  );
+  $tree = $menu_tree->transform($tree, $manipulators);
+
   $global_links = [];
   $links_index = 0;
   foreach ($tree as $item) {
