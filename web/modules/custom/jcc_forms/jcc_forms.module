@@ -109,6 +109,19 @@ function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$vari
     return;
   }
 
+  // View options set by URL parameters.
+  $url = $_SERVER['REQUEST_URI'];
+  $url_components = parse_url($url);
+  parse_str($url_components['query'], $params);
+  // Opt to hide hero.
+  if (array_key_exists('no_hero', $params) && $params['no_hero'] == 'true') {
+    $variables['no_hero'] = TRUE;
+  }
+  // Opt to hide notation/summary.
+  if (array_key_exists('no_count', $params) && $params['no_count'] == 'true') {
+    $variables['no_count'] = TRUE;
+  }
+
   $query = $variables['exposed']['query']['#value'];
   $category_info_sets = __jcc_category_info_sets();
 

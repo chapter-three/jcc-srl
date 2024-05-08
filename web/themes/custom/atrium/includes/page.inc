@@ -8,7 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
-use Drupal\webform\Entity\Webform;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -78,6 +78,9 @@ function atrium_preprocess_page(&$variables) {
  *   The menu tree.
  */
 function _atrium_get_menutree($menu_name) {
+  // Get current language.
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
   // Get the tree.
   $menu_tree_service = \Drupal::service('menu.link_tree');
   $tree = $menu_tree_service->load($menu_name, new MenuTreeParameters());
@@ -131,6 +134,16 @@ function _atrium_get_menutree($menu_name) {
             $child_title = $link->getTitle();
             $child_url_obj = $link->getUrlObject();
             $child_url = $child_url_obj->toString();
+            // If translation variant is "unpublished/not ready", use English.
+            if (!$child_url_obj->isExternal()) {
+              $route_params = $child_url_obj->getRouteParameters();
+              $child_nid = $route_params['node'];
+              $child_node = Node::load($child_nid);
+              if ($child_node->getTranslationStatus($langcode) == NULL) {
+                $child_url = $child_node->toUrl()->toString();
+              }
+            }
+
             // Using both text/name & href/url ↓ due to inconsistencies in
             // Pattern Lab components.
             $children[] = [
@@ -199,7 +212,6 @@ function _atrium_translation_menu() {
     if(!empty($translate_link)){
       $links[] = $translate_link;
     }
-
   }
   return $links;
 }
@@ -241,13 +253,21 @@ function _atrium_translate_menu_dropbutton($entity, $entity_path_name, $langcode
   $translated_path = \Drupal::service('path_alias.manager')->getAliasByPath('/' . $entity_path_name . '/' . $entity->id(), $langcode);
   $prefixed_translated_path = '/' . $langcode . $translated_path;
   // Default language paths have no prefix.
+  $compile_langcode = $langcode;
   $langcode = $langcode == $default_language->getId() ? '' : "/$langcode";
 
   if (  ($entity != null
     && $prefixed_translated_path != $prefixed_current_path
     && $prefixed_translated_path != '/en' . $prefixed_current_path)
-    && (($translated_path != \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $entity->id()) && $entity_path_name == 'node')
+    && (($translated_path != \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $entity->id())
+        && $entity_path_name == 'node')
       || $entity_path_name=='webform') ) {
-    return array('title' => $language->getName(), 'href' => "$host$langcode$translated_path");
+
+    if(($entity_path_name == 'node' && $entity->getTranslation($compile_langcode)->get('moderation_state')->getString() == "published") || $entity_path_name=='webform') {
+      return array('title' => $language->getName(), 'href' => "$host$langcode$translated_path");
+    }else{
+      return '';
+    }
+
   }
 }

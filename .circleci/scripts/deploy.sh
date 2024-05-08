@@ -31,6 +31,12 @@ for name in "$@" ; do
   TIMESTAMP=$(date +'%y-%m-%dT%H:%m:%S')
   PANTHEON_ENV=$CIRCLE_BRANCH
 
+  # Uncomment if Dev deployment is needed (e.g. deploying pantheon.yml changes).
+  # Set LIVE to false in project-srl.sh.
+  # if [ "$CIRCLE_BRANCH" = "master" ] && [ "$LIVE" = false ]; then
+  #   PANTHEON_ENV="dev"
+  # fi
+
   git config --global user.email "$GIT_EMAIL"
   git config --global user.name "Ch3-P0"
 

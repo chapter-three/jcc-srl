@@ -1,7 +1,7 @@
 # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
 defaults: &defaults
   docker:
-    - image: quay.io/pantheon-public/build-tools-ci:7.x-php7.4
+    - image: quay.io/pantheon-public/build-tools-ci:8.x-php8.1
   working_directory: ~/project
   environment:
     #=========================================================================
@@ -104,7 +104,9 @@ jobs:
 
             - run:
                 name: Build Theme(s)
-                command: npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
+                command: |
+                  export NODE_OPTIONS=--openssl-legacy-provider
+                  npm install --prefix=web/themes/custom/atrium && npm run production --prefix=web/themes/custom/atrium
 
             - run:
                 name: Deploying << parameters.site >>

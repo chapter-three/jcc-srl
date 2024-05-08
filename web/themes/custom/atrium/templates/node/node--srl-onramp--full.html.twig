@@ -10,6 +10,17 @@
     ] %}
   {% endif %}
   {% set jump_nav %}
+    <div class="jcc-share__container">
+      {% include '@organisms/sections/share/share.twig' with {
+        share: {
+          email_modal: drupal_entity('webform', 'share_this_page'),
+          text_modal: drupal_entity('webform', 'mark_my_place_text_message'),
+          email: 'EMAIL'|t,
+          text: 'TEXT'|t,
+          print: 'PRINT'|t,
+        }
+      } only %}
+    </div>
     {% include '@molecules/navigation/jump-nav/jump-nav.twig' with {
       jump_nav: {
         title: content.field_hero_nav_title|render ? content.field_hero_nav_title : ''
