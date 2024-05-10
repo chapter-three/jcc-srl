@@ -107,33 +107,22 @@ function jcc_forms_preprocess_views_view__find_forms__latest_unlocked_changes(&$
  * Implements hook_preprocess_HOOK().
  */
 function jcc_forms_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  // TEMPORARY: Hidden translated forms search until data can be adjusted.
-  // If language term detected, execute new query if form URL exists.
-  // Limitation where condition add will not work if Fulltext finds nothing.
   if ($view->id() == 'jcc_forms_search_json_api') {
-    // Search terms as string and array.
-    $keys = $query->query()->getKeys();
-
-    // If search term is a supported language.
-    if ($keys) {
-      $lang_props_sets = __jcc_language_sets();
-      $is_languages = [];
-      foreach ($keys as $key) {
-        $key = ucfirst($key);
-        foreach ($lang_props_sets as $language) {
-          if (strpos($language->label_default, $key) !== FALSE) {
-            $is_languages[] = $key;
-          }
-        }
+    // TEMPORARY: Hidden translated forms search until data can be adjusted.
+    // Added where condition will not work when Fulltext finds nothing.
+    // If language term only, execute new query if language field exists.
+    $orig_keys = $query->getOriginalKeys();
+    if ($orig_keys) {
+      $fields = $query->getIndex()->getFields();
+      $field_id = preg_replace('/\s+/', '_', $orig_keys);
+      if ($orig_keys == 'chinese simple' || $orig_keys == 'Chinese Simple') {
+        $field_id = 'chinese';
       }
-    }
-
-    // New query to find translated forms.
-    if ($keys && count($is_languages) > 0) {
-      $query->keys('');
-      foreach ($is_languages as $language) {
+      if (array_key_exists('field_' . strtolower($field_id) .  '_url', $fields)) {
+        $query->keys('');
+        $query->setWhereGroup('OR');
         foreach ($query->getIndex()->getFields() as $field) {
-          if (strpos($field->getLabel(), $language) === 0) {
+          if (str_contains($field->getLabel(), ucwords($orig_keys))) {
             $query->getWhere()[2]['conditions'][] = [
               0 => $field->getFieldIdentifier(),
               1 => NULL,

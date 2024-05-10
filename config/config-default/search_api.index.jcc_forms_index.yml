@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.storage.media.field_arabic_url
     - field.storage.media.field_cambodian_url
-    - field.storage.media.field_chinese_traditional_url
     - field.storage.media.field_chinese_url
+    - field.storage.media.field_chinese_traditional_url
     - field.storage.media.field_description
     - field.storage.media.field_farsi_url
     - field.storage.media.field_number
@@ -59,7 +59,7 @@ field_settings:
       config:
         - field.storage.media.field_chinese_traditional_url
   field_chinese_url:
-    label: 'Chinese URL'
+    label: 'Chinese Simple URL'
     datasource_id: 'entity:media'
     property_path: field_chinese_url
     type: string
