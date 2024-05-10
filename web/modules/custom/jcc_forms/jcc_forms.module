@@ -112,18 +112,23 @@ function jcc_forms_views_query_alter(ViewExecutable $view, QueryPluginBase $quer
     // Added where condition will not work when Fulltext finds nothing.
     // If language term only, execute new query if language field exists.
     $orig_keys = $query->getOriginalKeys();
-    $fields = $query->getIndex()->getFields();
-    $field_id = preg_replace('/\s+/', '_', $orig_keys);
-    if ($orig_keys && array_key_exists('field_' . $field_id .  '_url', $fields)) {
-      $query->keys('');
-      $query->setWhereGroup('OR');
-      foreach ($query->getIndex()->getFields() as $field) {
-        if (str_contains($field->getLabel(), ucwords($orig_keys))) {
-          $query->getWhere()[2]['conditions'][] = [
-            0 => $field->getFieldIdentifier(),
-            1 => NULL,
-            2 => '<>',
-          ];
+    if ($orig_keys) {
+      $fields = $query->getIndex()->getFields();
+      $field_id = preg_replace('/\s+/', '_', $orig_keys);
+      if ($orig_keys == 'chinese simple' || $orig_keys == 'Chinese Simple') {
+        $field_id = 'chinese';
+      }
+      if (array_key_exists('field_' . strtolower($field_id) .  '_url', $fields)) {
+        $query->keys('');
+        $query->setWhereGroup('OR');
+        foreach ($query->getIndex()->getFields() as $field) {
+          if (str_contains($field->getLabel(), ucwords($orig_keys))) {
+            $query->getWhere()[2]['conditions'][] = [
+              0 => $field->getFieldIdentifier(),
+              1 => NULL,
+              2 => '<>',
+            ];
+          }
         }
       }
     }
