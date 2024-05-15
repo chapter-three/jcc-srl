@@ -1,0 +1,179 @@
+trigger:
+  branches:
+    include:
+      - develop
+      - stage
+      - master
+#  paths:
+#    exclude:
+#      - .devops/container/drupal-nginx-fpm
+
+resources:
+  - repo: self
+
+pool:
+  vmImage: 'ubuntu-20.04'
+
+name: $(Build.BuildId)
+
+parameters:
+  - name: sites
+    type: object
+    default:
+      - srl|3|310
+
+variables:
+  imageRepository: 'build/srl/$(Build.SourceBranchName)'
+  dockerfilePath: '$(Build.SourcesDirectory)/.devops/container/drupal-nginx-fpm/0.6-devops/Dockerfile'
+  dockerRegistryServiceConnection: 'Global Container Registry'
+  containerRegistry: 'globalctcmscr.azurecr.io'
+  tag: 'build_$(Build.BuildId)-$(Build.SourceVersion)'
+  location: 'West US 3'
+  gitRepo: 'https://github.com/JudicialCouncilOfCalifornia/jcc-srl.git'
+
+  phpVersion: 7.4
+  sshPort: 9837
+  site: ''
+  siteId: ''
+  siteName: ''
+  siteFarmId: ''
+  siteEnvPrefix: ''
+  ResourceGroupName: ''
+  uniqueMod: '1'
+
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    azureServiceConnection: 'PROD Resource Manager'
+  ${{ elseif eq(variables['Build.SourceBranchName'], 'stage') }}:
+    azureServiceConnection: 'UAT Resource Manager'
+  ${{ else }}:
+    azureServiceConnection: 'INT resource Manager'
+
+stages:
+
+  - stage: Test
+    displayName: Test
+    jobs:
+      - job: Compile
+        displayName: Compile code
+        steps:
+          - script: |
+              sudo update-alternatives --set php /usr/bin/php$(phpVersion)
+              sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
+              sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
+              sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
+              sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+              php -version
+            displayName: 'Use PHP version $(phpVersion)'
+          - script: composer install --no-interaction --prefer-dist
+            displayName: 'Composer install'
+      - job: Analyze
+        displayName: Analyze code
+        steps:
+          - script: composer -n lint
+            displayName: 'Lint php for syntax errors'
+          - script: composer -n code-sniff
+            displayName: 'Check coding standards'
+          - script: composer -n unit-test
+            displayName: 'Run unit tests'
+
+  - stage: Build
+    displayName: Build
+    dependsOn: Test
+    condition: and(succeeded('Test'), ne(variables['Build.SourceBranchName'], 'merge'))
+    jobs:
+      - job: Build
+        displayName: Build image
+        steps:
+          - task: Docker@2
+            displayName: Build
+            inputs:
+              command: build
+              containerRegistry: $(dockerRegistryServiceConnection)
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              tags: |
+                latest
+                $(tag)
+              arguments: --label buildtype=nightly --build-arg GIT_REPO=$(gitRepo) --build-arg GIT_BRANCH=$(Build.SourceBranchName)
+          - task: Docker@2
+            displayName: Push to registry
+            inputs:
+              command: push
+              containerRegistry: $(dockerRegistryServiceConnection)
+              repository: $(imageRepository)
+              tags: |
+                latest
+                $(tag)
+
+  - stage: Manifest
+    displayName: Manifest
+    jobs:
+      - job: ReadManifest
+        displayName: Read manifest file
+        steps:
+          - script: |
+              case $(Build.SourceBranchName) in
+                master)
+                  echo "##vso[task.setvariable variable=siteEnvPrefix;isOutput=true;]prod"
+                  ;;
+                stage)
+                  echo "##vso[task.setvariable variable=siteEnvPrefix;isOutput=true;]uat"
+                  ;;
+                *)
+                  echo "##vso[task.setvariable variable=siteEnvPrefix;isOutput=true;]int"
+                  ;;
+              esac
+            displayName: 'Set Environment Prefix'
+            name: EnvironmentPrefix
+          - script: echo "$(EnvironmentPrefix.siteEnvPrefix)"
+            displayName: 'Display Prefix'
+
+      - job: ProcessSites
+        displayName: Process sites
+        dependsOn: ['ReadManifest']
+        variables:
+          siteEnvPrefixLocal: $[ dependencies.ReadManifest.outputs['EnvironmentPrefix.siteEnvPrefix'] ]
+        steps:
+          - script: |
+              rm -rf $(Build.ArtifactStagingDirectory)/manifest.txt
+              touch $(Build.ArtifactStagingDirectory)/manifest.txt
+
+              rm -rf $(Build.ArtifactStagingDirectory)/build-image.txt
+              echo $(tag) > $(Build.ArtifactStagingDirectory)/build-image.txt
+
+              cp -r $(Build.SourcesDirectory)/.devops/scripts/trigger-release-build-pipeline.ps1 $(Build.ArtifactStagingDirectory)
+            displayName: 'Initialize drop files'
+
+          - ${{ each site in parameters.sites }}:
+              - script: |
+                  IFS='|'
+                  read -a siteInfo <<< "${{site}}"
+                  echo "${{site}}" >> $(Build.ArtifactStagingDirectory)/manifest.txt
+
+                  echo "CountyId: ${siteInfo[0]}"
+                  echo "CountyName : ${siteInfo[2]}"
+                  echo "FarmId : ${siteInfo[1]}"
+                  echo "##vso[task.setvariable variable=site;]${{site}}"
+                  echo "##vso[task.setvariable variable=siteId;]${siteInfo[2]}"
+                  echo "##vso[task.setvariable variable=siteFarmId;]${siteInfo[1]}"
+                  echo "##vso[task.setvariable variable=siteName;]${siteInfo[0]}"
+                  echo "##vso[task.setvariable variable=ResourceGroupName;]-ctcms-df${siteInfo[1]}-app-rg"
+                displayName: 'SITE: ${{ site }}'
+
+              - template: /.devops/pipeline/_deploy-container.yml
+                parameters:
+                  azureServiceConnection: $(azureServiceConnection)
+                  siteEnvPrefixLocal: $(siteEnvPrefixLocal)
+                  siteId: '$(siteEnvPrefixLocal)$(siteId)'
+                  uniqueMod: $(uniqueMod)
+                  siteFarmId: $(siteFarmId)
+                  containerRegistry: $(containerRegistry)
+                  sourceBranchName: $(Build.SourceBranchName)
+                  imageRepository: $(imageRepository)
+                  tag: $(tag)
+
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'drop'
+              publishLocation: 'Container'
