@@ -89,16 +89,13 @@ ckeditor_stylesheets:
   - assets/css/atrium.style.css
   - ../../../libraries/courtyard-artifact/1.x/public/css/styles-srl.min.css
 
-component-libraries:
-  protons:
-    paths:
+components:
+  namespaces:
+    protons:
       - ../../../libraries/courtyard-artifact/1.x/source/_patterns/00-protons
-  atoms:
-    paths:
+    atoms:
       - ../../../libraries/courtyard-artifact/1.x/source/_patterns/01-atoms
-  molecules:
-    paths:
+    molecules:
       - ../../../libraries/courtyard-artifact/1.x/source/_patterns/02-molecules
-  organisms:
-    paths:
+    organisms:
       - ../../../libraries/courtyard-artifact/1.x/source/_patterns/03-organisms
