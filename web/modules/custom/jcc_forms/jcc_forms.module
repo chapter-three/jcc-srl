@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -104,6 +106,38 @@ function jcc_forms_preprocess_views_view__find_forms__latest_unlocked_changes(&$
 /**
  * Implements hook_preprocess_HOOK().
  */
+function jcc_forms_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'jcc_forms_search_json_api') {
+    // TEMPORARY: Hidden translated forms search until data can be adjusted.
+    // Added where condition will not work when Fulltext finds nothing.
+    // If language term only, execute new query if language field exists.
+    $orig_keys = $query->getOriginalKeys();
+    if ($orig_keys) {
+      $fields = $query->getIndex()->getFields();
+      $field_id = preg_replace('/\s+/', '_', $orig_keys);
+      if ($orig_keys == 'chinese simple' || $orig_keys == 'Chinese Simple') {
+        $field_id = 'chinese';
+      }
+      if (array_key_exists('field_' . strtolower($field_id) .  '_url', $fields)) {
+        $query->keys('');
+        $query->setWhereGroup('OR');
+        foreach ($query->getIndex()->getFields() as $field) {
+          if (str_contains($field->getLabel(), ucwords($orig_keys))) {
+            $query->getWhere()[2]['conditions'][] = [
+              0 => $field->getFieldIdentifier(),
+              1 => NULL,
+              2 => '<>',
+            ];
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$variables) {
   if (empty($variables['rows'])) {
     return;
@@ -112,14 +146,16 @@ function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$vari
   // View options set by URL parameters.
   $url = $_SERVER['REQUEST_URI'];
   $url_components = parse_url($url);
-  parse_str($url_components['query'], $params);
-  // Opt to hide hero.
-  if (array_key_exists('no_hero', $params) && $params['no_hero'] == 'true') {
-    $variables['no_hero'] = TRUE;
-  }
-  // Opt to hide notation/summary.
-  if (array_key_exists('no_count', $params) && $params['no_count'] == 'true') {
-    $variables['no_count'] = TRUE;
+  if (isset($url_components['query'])) {
+    parse_str($url_components['query'], $params);
+    // Opt to hide hero.
+    if (array_key_exists('no_hero', $params) && $params['no_hero'] == 'true') {
+      $variables['no_hero'] = TRUE;
+    }
+    // Opt to hide notation/summary.
+    if (array_key_exists('no_count', $params) && $params['no_count'] == 'true') {
+      $variables['no_count'] = TRUE;
+    }
   }
 
   $query = $variables['exposed']['query']['#value'];
@@ -145,8 +181,8 @@ function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$vari
         ];
         $popular_topics[] = $topic;
       }
-      $variables['popular_topics'] = $popular_topics;
     }
+    $variables['popular_topics'] = $popular_topics;
   }
 }
 

@@ -28,6 +28,18 @@
     }
   }
 }
+html[dir="rtl"] .jcc-share__container {
+  @media only screen and (min-width: 1024px) {
+    position: absolute;
+    right: auto;
+    left: 0;
+    width: 37%;
+  }
+
+  @media only screen and (min-width: 1800px) {
+    width: 39%;
+  }
+}
 
 .jcc-share--spacer {
   display: none;
