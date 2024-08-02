@@ -112,6 +112,7 @@ function jcc_forms_views_query_alter(ViewExecutable $view, QueryPluginBase $quer
     // Added where condition will not work when Fulltext finds nothing.
     // If language term only, execute new query if language field exists.
     $orig_keys = $query->getOriginalKeys();
+
     $fields = $query->getIndex()->getFields();
     $field_id = preg_replace('/\s+/', '_', $orig_keys);
     if ($orig_keys && array_key_exists('field_' . $field_id .  '_url', $fields)) {
