@@ -59,7 +59,7 @@ field_settings:
       config:
         - field.storage.media.field_chinese_traditional_url
   field_chinese_url:
-    label: 'Chinese Simple URL'
+    label: 'Chinese Simplified URL'
     datasource_id: 'entity:media'
     property_path: field_chinese_url
     type: string

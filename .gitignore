@@ -40,3 +40,6 @@ node_modules
 
 #Ignore local drush options.
 /drush/drush.yml
+
+.swo
+
