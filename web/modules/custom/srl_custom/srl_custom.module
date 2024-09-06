@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations for the srl_custom module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function srl_custom_help($route_name, $route_match) {
+  switch ($route_name) {
+    case 'help.page.srl_custom':
+      return '<p>' . t('Help text for the srl_custom module.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_simple_sitemap_sitemap_alter().
+ *
+ * This hook is invoked before the final sitemap is written to XML.
+ */
+function srl_custom_simple_sitemap_links_alter(&$links, $sitemap_variant) {
+  \Drupal::logger(' srl_custom')->notice('Archived URL added to sitemap: ');
+              // Fetch archived entities
+  $connection = Database::getConnection();
+  // Load the archived entities you want to include in the sitemap.
+  $archived_ids =  $connection->select('content_moderation_state_field_data', 'ms')
+  ->distinct()
+  ->fields('ms', ['content_entity_id'])
+  ->condition('ms.moderation_state', 'archived')
+  ->execute()
+  ->fetchCol();
+
+  // Load the node storage service to get URLs for archived entities.
+  $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+  $archived_nodes = $node_storage->loadMultiple($archived_ids);
+
+  foreach ($archived_nodes as $node) {
+    // Generate the URL object for the archived entity.
+    $url_object = $node->toUrl()->setAbsolute();
+
+    // Ensure the URL is valid and routable.
+    if (isset($url_object) && $url_object->isRouted()) {
+      // Create a new sitemap entry.
+      $links[] = [
+        'loc' => $url_object->toString(),
+        'url' => $url_object->toString(),
+        'lastmod' => date('Y-m-d', $node->getChangedTime()), // Last modified date.
+        'changefreq' => 'weekly', // Frequency of change.
+        'priority' => 0.5,        // Priority in the sitemap.
+      ];
+
+      // Log the inclusion of the archived URL.
+      \Drupal::logger('my_module')->notice('Archived URL added to sitemap: ' . $url_object->toString());
+    }
+  }
+    // Log the inclusion of the archived URL.
+   
+}
