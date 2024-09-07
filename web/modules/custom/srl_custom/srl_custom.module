@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\core\Database\Database;
+
 /**
  * @file
  * Contains hook implementations for the srl_custom module.
@@ -21,8 +23,7 @@ function srl_custom_help($route_name, $route_match) {
  * This hook is invoked before the final sitemap is written to XML.
  */
 function srl_custom_simple_sitemap_links_alter(&$links, $sitemap_variant) {
-  \Drupal::logger(' srl_custom')->notice('Archived URL added to sitemap: ');
-              // Fetch archived entities
+  // Fetch archived entities
   $connection = Database::getConnection();
   // Load the archived entities you want to include in the sitemap.
   $archived_ids =  $connection->select('content_moderation_state_field_data', 'ms')
