@@ -45,7 +45,6 @@ function srl_custom_simple_sitemap_links_alter(&$links, $sitemap_variant) {
     if (isset($url_object) && $url_object->isRouted()) {
       // Create a new sitemap entry.
       $links[] = [
-        'loc' => $url_object->toString(),
         'url' => $url_object->toString(),
         'lastmod' => date('Y-m-d', $node->getChangedTime()), // Last modified date.
         'changefreq' => 'weekly', // Frequency of change.
