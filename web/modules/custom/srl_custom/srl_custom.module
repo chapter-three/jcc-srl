@@ -50,11 +50,6 @@ function srl_custom_simple_sitemap_links_alter(&$links, $sitemap_variant) {
         'changefreq' => 'weekly', // Frequency of change.
         'priority' => 0.5,        // Priority in the sitemap.
       ];
-
-      // Log the inclusion of the archived URL.
-      \Drupal::logger('my_module')->notice('Archived URL added to sitemap: ' . $url_object->toString());
     }
-  }
-    // Log the inclusion of the archived URL.
-   
+  }   
 }
