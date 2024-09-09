@@ -115,7 +115,7 @@ function jcc_forms_views_query_alter(ViewExecutable $view, QueryPluginBase $quer
     if ($orig_keys) {
       $fields = $query->getIndex()->getFields();
       $field_id = preg_replace('/\s+/', '_', $orig_keys);
-      if ($orig_keys == 'chinese simple' || $orig_keys == 'Chinese Simple') {
+      if (strtolower($orig_keys) == 'chinese simplified') {
         $field_id = 'chinese';
       }
       if (array_key_exists('field_' . strtolower($field_id) .  '_url', $fields)) {
