@@ -19,7 +19,7 @@ id: media.jcc_form.field_chinese_url
 field_name: field_chinese_url
 entity_type: media
 bundle: jcc_form
-label: 'Chinese Simple URL'
+label: 'Chinese Simplified URL'
 description: ''
 required: false
 translatable: true
