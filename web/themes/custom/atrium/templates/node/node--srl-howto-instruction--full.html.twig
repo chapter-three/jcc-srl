@@ -5,7 +5,7 @@
 
   {% set has_specific_tag = false %}
   {% for item in node.field_case_types %}
-    {% if item.entity.fields.name.value|trim|lower == 'divorce' %}
+    {% if item.entity.fields.name.value|trim|lower == 'appeals' %}
       {% set has_specific_tag = true %}
     {% endif %}
   {% endfor %}
