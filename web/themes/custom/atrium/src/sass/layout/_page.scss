@@ -92,6 +92,11 @@ footer {
   font-weight: 500;
   line-height: 40px;
 }
+@media (max-width: 63.99em) {
+  .appeal-message__title{
+    margin-left: 1rem;
+  }
+}
 
 @media print {
   .jcc-feedback.block,
