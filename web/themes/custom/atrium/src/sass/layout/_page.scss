@@ -78,6 +78,26 @@ footer {
   background-color: transparent;
 }
 
+.appeal-message {
+  background: #2378C3;
+  border-bottom: 3px solid #e5a000;
+  height: 50px;
+}
+
+.appeal-message__title {
+  max-width: 87.5rem;
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 45px;
+}
+@media (max-width: 63.99em) {
+  .appeal-message__title{
+    margin-left: 1rem;
+  }
+}
+
 @media print {
   .jcc-feedback.block,
   .block.jcc-chat,
