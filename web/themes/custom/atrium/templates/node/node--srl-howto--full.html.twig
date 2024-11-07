@@ -1,6 +1,19 @@
 {% extends 'node.html.twig' %}
 {% block content %}
 
+  {% set has_specific_tag = false %}
+  {% for item in node.field_case_types %}
+    {% if item.entity.fields.name.value|trim|lower == 'appeals' %}
+      {% set has_specific_tag = true %}
+    {% endif %}
+  {% endfor %}
+
+  {% if has_specific_tag %}
+    <div class="appeal-message appeal-message-border">
+      <div class="usa-nav-container appeal-message__title">California Courts of Appeals</div>
+    </div>
+  {% endif %}
+
   {# Hero #}
   {% if node.field_parent.value is not empty %}
     {% set breadcrumbs =  [
