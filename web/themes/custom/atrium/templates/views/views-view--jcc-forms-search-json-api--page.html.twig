@@ -49,8 +49,8 @@
         {% if category_info %}
           {% set category_info__content %}
             <ul>
-              <li><a href="{{ category_info.url }}">Read the {{ category_info.title }} self-help guide</a></li>
-              <li><a href="{{ category_info.formsUrl }}">See {{ category_info.title }} forms packet</a></li>
+              <li><a href="{{ category_info.url }}" target="_blank">Read the {{ category_info.title }} self-help guide</a></li>
+              <li><a href="{{ category_info.formsUrl }}" target="_blank">See {{ category_info.title }} forms packet</a></li>
             </ul>
           {% endset %}
           {% include '@molecules/blocks/alert/alert.twig' with {
