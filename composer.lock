@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d2a67c9621e6f975bf7109dce412940",
+    "content-hash": "4d3943d23f60a615bbb5b961434b6bea",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4546,6 +4546,79 @@
             "homepage": "https://www.drupal.org/project/entity_reference_revisions",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_reference_revisions"
+            }
+        },
+        {
+            "name": "drupal/entity_usage",
+            "version": "2.0.0-beta12",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_usage.git",
+                "reference": "8.x-2.0-beta12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta12.zip",
+                "reference": "8.x-2.0-beta12",
+                "shasum": "cdd31e6c413cad6fbdb1bd0aac9ad8a0331eb429"
+            },
+            "require": {
+                "drupal/core": "^9.1 || ^10"
+            },
+            "require-dev": {
+                "drupal/block_field": "~1.0",
+                "drupal/ckeditor": "^1.0",
+                "drupal/dynamic_entity_reference": "~1.0 || ^2.0 || ^4.0",
+                "drupal/entity_browser": "~2.0",
+                "drupal/entity_browser_block": "~1.0",
+                "drupal/entity_embed": "~1.0",
+                "drupal/entity_reference_revisions": "~1.0",
+                "drupal/inline_entity_form": "^1.0@RC",
+                "drupal/paragraphs": "~1.0",
+                "drupal/webform": "^6.0.0-alpha4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta12",
+                    "datestamp": "1684309054",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "lullabot",
+                    "homepage": "https://www.drupal.org/user/3815489"
+                },
+                {
+                    "name": "marcoscano",
+                    "homepage": "https://www.drupal.org/user/1288796"
+                },
+                {
+                    "name": "seanb",
+                    "homepage": "https://www.drupal.org/user/545912"
+                }
+            ],
+            "description": "Track usage of entities referenced by other entities",
+            "homepage": "https://www.drupal.org/project/entity_usage",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/entity_usage",
+                "issues": "http://drupal.org/project/issues/entity_usage"
             }
         },
         {
@@ -15862,15 +15935,15 @@
         "drupal/mimemail": 15,
         "drupal/rabbit_hole": 10,
         "drupal/simple_block": 10,
+        "drupal/stage_file_proxy": 5,
         "drupal/views_aggregator": 15,
-        "drupal/xmlsitemap": 15,
-        "drupal/stage_file_proxy": 5
+        "drupal/xmlsitemap": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
