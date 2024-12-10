@@ -52,6 +52,7 @@ module:
   entity_clone: 0
   entity_embed: 0
   entity_reference_revisions: 0
+  entity_usage: 0
   environment_indicator: 0
   facets: 0
   field: 0
@@ -147,11 +148,11 @@ module:
   simple_sitemap: 0
   smart_trim: 0
   srl_court_finder: 0
+  srl_custom: 0
   srl_errors: 0
   srl_ga_gtm: 0
   srl_updates: 0
   srl_webform: 0
-  srl_custom: 0
   srl_webform_submission_finder: 0
   svg_image: 0
   system: 0
