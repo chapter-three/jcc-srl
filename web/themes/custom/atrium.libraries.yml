@@ -1,0 +1,62 @@
+style:
+  css:
+    theme:
+      assets/css/atrium.style.css: {}
+      https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap:
+        type: external
+        minified: true
+  js:
+    assets/js/atrium.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - atrium/patternlab
+
+patternlab:
+  css:
+    theme:
+      ../../../libraries/courtyard-artifact/1.x/public/css/styles-srl.min.css: {}
+  js:
+    ../../../libraries/courtyard-artifact/1.x/public/js/scripts.min.js: { minified: true, preprocess: false }
+
+datefinder:
+  css:
+    theme:
+      assets/css/flatpickr.min.css: {}
+  js:
+    assets/js/datefinder.js: {}
+
+howtotabs:
+  js:
+    assets/js/howtotabs.js: {}
+
+jump-nav:
+  js:
+    assets/js/jump-nav.js: {}
+
+submit-scroll:
+  js:
+    assets/js/submit-scroll.js: {}
+
+find-courts:
+  js:
+    assets/js/find-courts.js: {}
+
+js-back-button:
+  js:
+    assets/js/jsBackButton.js: {}
+
+drawer:
+  js:
+    assets/js/drawer.js: {}
+
+iframe-resizer-client:
+  js:
+    assets/js/iframeResizer.contentWindow.min.js: { preprocess: false }
+
+calculator:
+  css:
+    theme:
+      assets/css/calculator.css: {}
+  js:
+    assets/js/calculator.js: {}
