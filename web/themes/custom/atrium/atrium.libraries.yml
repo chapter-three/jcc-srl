@@ -57,8 +57,10 @@ iframe-resizer-client:
 chatbot-banner:
   js:
     assets/js/chatbot-banner.js: {}
-    
+
 calculator:
   css:
     theme:
       assets/css/calculator.css: {}
+  js:
+    assets/js/calculator.js: {}
