@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d2a67c9621e6f975bf7109dce412940",
+    "content-hash": "45b75ecb6a25763379ec881b213cdd71",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8425,6 +8425,50 @@
             }
         },
         {
+            "name": "drupal/tmgmt_memsource",
+            "version": "1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tmgmt_memsource.git",
+                "reference": "8.x-1.20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_memsource-8.x-1.20.zip",
+                "reference": "8.x-1.20",
+                "shasum": "efd4baa79335b362a6a315303c47d69db14a2bee"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.20",
+                    "datestamp": "1731579583",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "filip.rachunek",
+                    "homepage": "https://www.drupal.org/user/3509967"
+                }
+            ],
+            "description": "Localize Drupal websites with the help of professional translation tools.",
+            "homepage": "https://www.drupal.org/project/tmgmt_memsource",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tmgmt_memsource"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.10.0",
             "source": {
@@ -8495,27 +8539,27 @@
         },
         {
             "name": "drupal/tooltip",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tooltip.git",
-                "reference": "1.1.1"
+                "reference": "1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tooltip-1.1.1.zip",
-                "reference": "1.1.1",
-                "shasum": "cc0bfe1aeebb54700ef8b8e2e7adbf563dcc9704"
+                "url": "https://ftp.drupal.org/files/projects/tooltip-1.1.2.zip",
+                "reference": "1.1.2",
+                "shasum": "7275819e6ef1fb41f975799c0b4356abe2e9ae34"
             },
             "require": {
                 "drupal/ckeditor": "^1.0",
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.1",
-                    "datestamp": "1691397408",
+                    "version": "1.1.2",
+                    "datestamp": "1730913739",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
