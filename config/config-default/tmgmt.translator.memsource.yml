@@ -1,0 +1,14 @@
+uuid: 34ef615f-9af1-40fe-a4a4-d9fe100efd00
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt_memsource
+name: memsource
+label: phrase
+description: 'Phrase TMS translator service.'
+auto_accept: null
+weight: null
+plugin: memsource
+settings: {  }
+remote_languages_mappings: {  }
