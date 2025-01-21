@@ -1,0 +1,46 @@
+#judgment-calculator {
+  padding-block: 4rem;
+}
+
+#judgment-calculator .jcc-cards {
+  max-width: 87.5rem;
+  margin-inline: auto;
+}
+
+#judgment-calculator .jcc-card {
+  max-width: none;
+  margin-block-end: 0;
+}
+
+#judgment-calculator .usa-accordion {
+  margin-block-start: 1rem;
+  padding-inline: 0;
+}
+
+#judgment-calculator .results-content .usa-card__body {
+  padding: 0;
+}
+
+#judgment-calculator .results {
+  margin-block-start: 3rem;
+}
+
+#judgment-calculator .result-item .usa-label {
+  display: inline-block;
+  width: 12rem;
+  font-weight: 600;
+}
+
+#judgment-calculator .grand-total-result-item {
+  margin-top: 1.5rem;
+  border-block-start: 0.01rem solid;
+}
+
+#payment_cost {
+  align-items: end;
+}
+
+#payment_cost button,
+#paymentTable button {
+  margin: 0;
+}
