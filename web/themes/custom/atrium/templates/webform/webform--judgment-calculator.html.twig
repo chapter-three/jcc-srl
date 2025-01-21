@@ -1,0 +1,154 @@
+{{ attach_library('jcc_forms/jcc_forms') }}
+{{ attach_library('atrium/calculator') }}
+{% if content %}
+  {%- include '@molecules/blocks/hero/hero.twig' with {
+    hero: {
+      title: content|render|striptags|trim,
+      height_variant: "minimum-height",
+      title_variant: "sr-only",
+      background_variant: "has-background-color--dark",
+    }
+  } only -%}
+{% endif %}
+
+{% set amount_block %}
+  {# Amount #}
+  <div id="judgement-Information" class="grid-row grid-gap">
+    <div class="grid-col-3">
+      <label class="usa-label">Judgment Amount:</label>
+      <input class="usa-input calculator-input" type="number" autofocus="autofocus" id="judgmentAmount" tabindex= "0 "placeholder="Enter amount" />
+    </div>
+    <div class="grid-col-3">
+      <label class="usa-label">Interest Rate (%):</label>
+      <select class="usa-select" id="interestRate" placeholder="Enter rate">
+        <option value="5">5%</option>
+        <option value="10">10%</option>
+      </select>
+    </div>
+    <div class="grid-col-3">
+      <label class="usa-label">Judgment Date:</label>
+      <input class="usa-input calculator-input" type="date" data-type="date" id="judgmentDate" />
+    </div>
+    <div class="grid-col-3">
+      <label class="usa-label">End Date:</label>
+      <input class="usa-input calculator-input" type="date" data-type="date" id="endDate" />
+    </div>
+  </div>
+
+  {# Payment and Cost #}
+  {% set payment %}
+    <div id="payment_cost" class="grid-row grid-gap">
+      <div class="grid-col-3">
+        <label class="usa-label">Date:</label>
+        <input class="usa-input calculator-input" type="date" data-type="date" id="paymentDate" />
+      </div>
+      <div class="grid-col-3">
+        <label class="usa-label">Payment Amount:</label>
+        <input class="usa-input calculator-input" type="number" id="paymentAmount" placeholder="Enter payment" />
+      </div>
+      <div class="grid-col-3">
+        <label class="usa-label">Cost:</label>
+        <input class="usa-input calculator-input" type="number" id="cost" placeholder="Enter cost" />
+      </div>
+      <div class="grid-col-3">
+        <button class="usa-button add-button" type = "button" id="addPaymentButton" data-toggle="processPayment">Add</button>
+      </div>
+    </div>
+    <table class="usa-table" id="paymentTable">
+      <tbody></tbody>
+    </table>
+  {% endset %}
+
+  {% include '@molecules/interactive/accordion/accordion.twig' with {
+    accordion: {
+      expand_first: 'no',
+      items: [
+        {
+          title: 'Payment and Cost (Optional)',
+          body: payment,
+        },
+      ],
+    }
+  } only %}
+{% endset %}
+
+{% set results_block %}
+  {# Action Buttons #}
+  <div id="calculator-form-actions" class="calc">
+    <button class="usa-button" type="button" id= "calculateButton" data-toggle="processPayment">Calculate</button>
+    <button class="usa-button" type="button"  data-toggle="reset">Start Over</button>
+    <button class="usa-button" type="button" data-toggle="printResults">Print</button>
+    {# <button class="usa-button" type="button"  onclick="exit()">Exit</button> #}
+  </div>
+
+  {# Results Panel #}
+  <div class="results" id="resultBox">
+    <h3>Results</h3>
+    <div class="form-panel__content result-container" >
+      <div class="result-item">
+        <label class="usa-label" for="resultJudgmentAmount">Judgment Amount:</label>
+        <span id="resultJudgmentAmount"></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label" for="principalReduction">Principal Reduction:</label>
+        <span id="principalReduction"></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label" for="principalBalance">Principal Balance:</label>
+        <span id="principalBalance"> </span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label" for="costsAfterJudgment">Costs After Judgment:</label>
+        <span id="costsAfterJudgment"></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label">Daily Interest:</label>
+        <span id="dailyInterest"></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label">Interest Accrued:</label>
+        <span id="interestAccrued" ></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label">Interest to Date:</label>
+        <span id="interestToDate"></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label">Total Interest:</label>
+        <span id="totalInterest"></span>
+      </div>
+      <div class="result-item">
+        <label class="usa-label">	Days:</label>
+        <label id="days"></label>
+      </div>
+      <div class="result-item grand-total-result-item">
+        <label class="usa-label">Grand Total:</label>
+        <label class="usa-label" id="grandTotal"></label>
+      </div>
+    </div>
+  </div>
+{% endset %}
+
+<form {{ attributes.addClass('usa-form', 'jcc-form') }}>
+  <div id="judgment-calculator" class="jcc-cards">
+    {% include '@organisms/sections/card-section-base/card-section-base.twig' with {
+      card_section: {
+        headergroup: {
+          title: 'Judgment Calculator',
+        },
+        cards: [
+          {
+            body: amount_block,
+            width: 'desktop:grid-col-12',
+          },
+          {
+            body: results_block,
+            width: 'desktop:grid-col-12',
+            borderless: 'true',
+            theme: 'results-content',
+          },
+        ],
+      }
+    } only %}
+  </div>
+</form>
