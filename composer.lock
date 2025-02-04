@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45b75ecb6a25763379ec881b213cdd71",
+    "content-hash": "895ff8861d92e5c0babd862484489747",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8416,20 +8416,20 @@
         },
         {
             "name": "drupal/tmgmt",
-            "version": "1.13.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tmgmt.git",
-                "reference": "8.x-1.13"
+                "reference": "8.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.13.zip",
-                "reference": "8.x-1.13",
-                "shasum": "6e59ed65335d450308158902ffcce6ccb626a4dd"
+                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.15.zip",
+                "reference": "8.x-1.15",
+                "shasum": "07732ee85222927585ee59e42b40b07fca8ff8b0"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.3 || ^10"
             },
             "require-dev": {
                 "drupal/metatag": "1.x-dev",
@@ -8440,13 +8440,13 @@
                 "drupal/tmgmt_language_combination": "*",
                 "drupal/tmgmt_local": "*",
                 "drupal/tmgmt_locale": "*",
-                "drupal/webform": "5.x-dev || 6.x-dev"
+                "drupal/webform": "5.x-dev || 6.x-dev || 6.2.x-dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.13",
-                    "datestamp": "1646811201",
+                    "version": "8.x-1.15",
+                    "datestamp": "1680643412",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8459,12 +8459,8 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
+                    "name": "berdir",
                     "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "Schnitzel",
-                    "homepage": "https://www.drupal.org/user/643820"
                 },
                 {
                     "name": "cgalli",
@@ -8487,6 +8483,10 @@
                     "homepage": "https://www.drupal.org/user/227761"
                 },
                 {
+                    "name": "schnitzel",
+                    "homepage": "https://www.drupal.org/user/643820"
+                },
+                {
                     "name": "webflo",
                     "homepage": "https://www.drupal.org/user/254778"
                 }
@@ -8499,17 +8499,17 @@
         },
         {
             "name": "drupal/tmgmt_memsource",
-            "version": "1.20.0",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tmgmt_memsource.git",
-                "reference": "8.x-1.20"
+                "reference": "8.x-1.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tmgmt_memsource-8.x-1.20.zip",
-                "reference": "8.x-1.20",
-                "shasum": "efd4baa79335b362a6a315303c47d69db14a2bee"
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_memsource-8.x-1.21.zip",
+                "reference": "8.x-1.21",
+                "shasum": "0a1cb0c9e53f0516fad694c96143f89758592b49"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10 || ^11"
@@ -8517,8 +8517,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.20",
-                    "datestamp": "1731579583",
+                    "version": "8.x-1.21",
+                    "datestamp": "1738147012",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8612,27 +8612,27 @@
         },
         {
             "name": "drupal/tooltip",
-            "version": "1.1.2",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tooltip.git",
-                "reference": "1.1.2"
+                "reference": "1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tooltip-1.1.2.zip",
-                "reference": "1.1.2",
-                "shasum": "7275819e6ef1fb41f975799c0b4356abe2e9ae34"
+                "url": "https://ftp.drupal.org/files/projects/tooltip-1.1.1.zip",
+                "reference": "1.1.1",
+                "shasum": "cc0bfe1aeebb54700ef8b8e2e7adbf563dcc9704"
             },
             "require": {
                 "drupal/ckeditor": "^1.0",
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.2",
-                    "datestamp": "1730913739",
+                    "version": "1.1.1",
+                    "datestamp": "1691397408",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15988,6 +15988,6 @@
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
