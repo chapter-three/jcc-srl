@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d2a67c9621e6f975bf7109dce412940",
+    "content-hash": "895ff8861d92e5c0babd862484489747",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8343,20 +8343,20 @@
         },
         {
             "name": "drupal/tmgmt",
-            "version": "1.13.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tmgmt.git",
-                "reference": "8.x-1.13"
+                "reference": "8.x-1.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.13.zip",
-                "reference": "8.x-1.13",
-                "shasum": "6e59ed65335d450308158902ffcce6ccb626a4dd"
+                "url": "https://ftp.drupal.org/files/projects/tmgmt-8.x-1.15.zip",
+                "reference": "8.x-1.15",
+                "shasum": "07732ee85222927585ee59e42b40b07fca8ff8b0"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.3 || ^10"
             },
             "require-dev": {
                 "drupal/metatag": "1.x-dev",
@@ -8367,13 +8367,13 @@
                 "drupal/tmgmt_language_combination": "*",
                 "drupal/tmgmt_local": "*",
                 "drupal/tmgmt_locale": "*",
-                "drupal/webform": "5.x-dev || 6.x-dev"
+                "drupal/webform": "5.x-dev || 6.x-dev || 6.2.x-dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.13",
-                    "datestamp": "1646811201",
+                    "version": "8.x-1.15",
+                    "datestamp": "1680643412",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8386,12 +8386,8 @@
             ],
             "authors": [
                 {
-                    "name": "Berdir",
+                    "name": "berdir",
                     "homepage": "https://www.drupal.org/user/214652"
-                },
-                {
-                    "name": "Schnitzel",
-                    "homepage": "https://www.drupal.org/user/643820"
                 },
                 {
                     "name": "cgalli",
@@ -8414,6 +8410,10 @@
                     "homepage": "https://www.drupal.org/user/227761"
                 },
                 {
+                    "name": "schnitzel",
+                    "homepage": "https://www.drupal.org/user/643820"
+                },
+                {
                     "name": "webflo",
                     "homepage": "https://www.drupal.org/user/254778"
                 }
@@ -8422,6 +8422,50 @@
             "homepage": "https://www.drupal.org/project/tmgmt",
             "support": {
                 "source": "https://git.drupalcode.org/project/tmgmt"
+            }
+        },
+        {
+            "name": "drupal/tmgmt_memsource",
+            "version": "1.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/tmgmt_memsource.git",
+                "reference": "8.x-1.21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/tmgmt_memsource-8.x-1.21.zip",
+                "reference": "8.x-1.21",
+                "shasum": "0a1cb0c9e53f0516fad694c96143f89758592b49"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.21",
+                    "datestamp": "1738147012",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "filip.rachunek",
+                    "homepage": "https://www.drupal.org/user/3509967"
+                }
+            ],
+            "description": "Localize Drupal websites with the help of professional translation tools.",
+            "homepage": "https://www.drupal.org/project/tmgmt_memsource",
+            "support": {
+                "source": "https://git.drupalcode.org/project/tmgmt_memsource"
             }
         },
         {
@@ -15862,15 +15906,15 @@
         "drupal/mimemail": 15,
         "drupal/rabbit_hole": 10,
         "drupal/simple_block": 10,
+        "drupal/stage_file_proxy": 5,
         "drupal/views_aggregator": 15,
-        "drupal/xmlsitemap": 15,
-        "drupal/stage_file_proxy": 5
+        "drupal/xmlsitemap": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
