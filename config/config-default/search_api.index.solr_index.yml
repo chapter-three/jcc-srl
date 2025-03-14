@@ -1,6 +1,6 @@
 uuid: c4a9aca8-55eb-41fc-b880-b6f6a663a0d0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.body
@@ -31,11 +31,13 @@ dependencies:
     - node
     - search_api
     - search_api_exclude_entity
+    - file
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
+    debug_finalize: false
     highlighter:
       maxAnalyzedChars: 51200
       fragmenter: gap
@@ -271,6 +273,7 @@ field_settings:
       module:
         - node
 datasource_settings:
+  'entity:file': {  }
   'entity:media':
     bundles:
       default: true
@@ -291,6 +294,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
   search_api_exclude_entity_processor:

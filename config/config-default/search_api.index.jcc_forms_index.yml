@@ -3,23 +3,125 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.media.field_arabic_url
+    - field.storage.media.field_cambodian_url
+    - field.storage.media.field_chinese_url
+    - field.storage.media.field_chinese_traditional_url
     - field.storage.media.field_description
+    - field.storage.media.field_farsi_url
     - field.storage.media.field_number
     - field.storage.media.field_form_category
     - field.storage.taxonomy_term.field_synonyms
     - field.storage.media.field_form_prefix
     - field.storage.taxonomy_term.field_form_prefix_label
+    - field.storage.media.field_hmong_url
+    - field.storage.media.field_korean_url
+    - field.storage.media.field_punjabi_url
+    - field.storage.media.field_revoke_form
+    - field.storage.media.field_russian_url
+    - field.storage.media.field_spanish_url
+    - field.storage.media.field_tagalog_url
+    - field.storage.media.field_vietnamese_url
     - field.storage.media.field_weight
     - search_api.server.deafult
   module:
     - taxonomy
     - media
     - search_api
+    - search_api_solr
 id: jcc_forms_index
 name: 'JCC Forms Index'
 description: 'Index for the forms lookup API'
 read_only: false
 field_settings:
+  field_arabic_url:
+    label: 'Arabic URL'
+    datasource_id: 'entity:media'
+    property_path: field_arabic_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_arabic_url
+  field_cambodian_url:
+    label: 'Cambodian URL'
+    datasource_id: 'entity:media'
+    property_path: field_cambodian_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_cambodian_url
+  field_chinese_traditional_url:
+    label: 'Chinese Traditional URL'
+    datasource_id: 'entity:media'
+    property_path: field_chinese_traditional_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_chinese_traditional_url
+  field_chinese_url:
+    label: 'Chinese Simplified URL'
+    datasource_id: 'entity:media'
+    property_path: field_chinese_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_chinese_url
+  field_farsi_url:
+    label: 'Farsi URL'
+    datasource_id: 'entity:media'
+    property_path: field_farsi_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_farsi_url
+  field_hmong_url:
+    label: 'Hmong URL'
+    datasource_id: 'entity:media'
+    property_path: field_hmong_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_hmong_url
+  field_korean_url:
+    label: 'Korean URL'
+    datasource_id: 'entity:media'
+    property_path: field_korean_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_korean_url
+  field_punjabi_url:
+    label: 'Punjabi URL'
+    datasource_id: 'entity:media'
+    property_path: field_punjabi_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_punjabi_url
+  field_revoke_form:
+    label: 'Revoke Form'
+    datasource_id: 'entity:media'
+    property_path: field_revoke_form
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.media.field_revoke_form
+  field_russian_url:
+    label: 'Russian URL'
+    datasource_id: 'entity:media'
+    property_path: field_russian_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_russian_url
+  field_spanish_url:
+    label: 'Spanish URL'
+    datasource_id: 'entity:media'
+    property_path: field_spanish_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_spanish_url
   field_synonyms:
     label: 'Form Category » Taxonomy term » Synonyms'
     datasource_id: 'entity:media'
@@ -31,6 +133,22 @@ field_settings:
         - field.storage.taxonomy_term.field_synonyms
       module:
         - taxonomy
+  field_tagalog_url:
+    label: 'Tagalog URL'
+    datasource_id: 'entity:media'
+    property_path: field_tagalog_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_tagalog_url
+  field_vietnamese_url:
+    label: 'Vietnamese URL'
+    datasource_id: 'entity:media'
+    property_path: field_vietnamese_url
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_vietnamese_url
   field_weight:
     label: Weight
     datasource_id: 'entity:media'
@@ -110,6 +228,8 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  entity_type: {  }
   ignore_character:
     weights:
       preprocess_index: -10
@@ -132,7 +252,19 @@ processor_settings:
       preprocess_query: -20
     all_fields: true
     fields:
+      - field_arabic_url
+      - field_cambodian_url
+      - field_chinese_traditional_url
+      - field_chinese_url
+      - field_farsi_url
+      - field_hmong_url
+      - field_korean_url
+      - field_punjabi_url
+      - field_russian_url
+      - field_spanish_url
       - field_synonyms
+      - field_tagalog_url
+      - field_vietnamese_url
       - form_category
       - form_description
       - form_name
@@ -141,6 +273,7 @@ processor_settings:
       - form_prefix_category
   language_with_fallback: {  }
   rendered_item: {  }
+  solr_date_range: {  }
 tracker_settings:
   default:
     indexing_order: fifo

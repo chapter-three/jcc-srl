@@ -47,8 +47,8 @@
                 {% set title = title ~ ' *' %}
               {% endif %}
               {% set content %}
-                {% if form.description %}<p>{{ form.description }}</p>{% endif %}
-                {% if form.revision_date %}<p>Revised: {{ form.revision_date|date('F j, Y') }}</p>{% endif %}
+                {% if form.name %}<p>{{ form.name }}</p>{% endif %}
+                {% if form.effective_date %}<p>Effective: {{ form.effective_date|date('F j, Y') }}</p>{% endif %}
                 {% if form.languages %}
                   {% set avail_languages = [] %}
                   {% for language in form.languages %}
@@ -107,7 +107,7 @@
         {% endfor %}
 
         {% set instruct %}
-          <p>Use Adobe Acrobat. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
+          <p>Use Adobe Reader. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
         {% endset %}
         {% include '@molecules/blocks/alert/alert.twig' with {
           alert: {

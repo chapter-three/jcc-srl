@@ -91,6 +91,18 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
+.jcc-find-forms--borderless {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.jcc-find-forms .jcc-find-forms__heading {
+  margin: 2rem 0 1rem;
+  font-family: Lato,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-size: 1.49rem;
+}
+
 .view-jcc-forms-search-json-api .jcc-link-list-simple .jcc-link-list__list {
   list-style: none;
   margin: 0;
@@ -119,7 +131,6 @@
   border-bottom: 1px solid #ddd;
   font-weight: bold;
 }
-
 @media only screen and (max-width: 1080px) {
   .jcc-find-forms .jcc-find-forms__notation {
     padding: 1rem;
@@ -128,4 +139,8 @@
   .jcc-find-forms .jcc-list-group__item {
     padding: 0 1rem !important;
   }
+}
+
+.jcc-find-forms .usa-table {
+  width: 100%;
 }

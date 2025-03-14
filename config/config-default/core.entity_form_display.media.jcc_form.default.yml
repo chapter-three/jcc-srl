@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.jcc_form.field_action_date
     - field.field.media.jcc_form.field_arabic_url
     - field.field.media.jcc_form.field_cambodian_url
     - field.field.media.jcc_form.field_case_type
@@ -20,10 +21,12 @@ dependencies:
     - field.field.media.jcc_form.field_korean_url
     - field.field.media.jcc_form.field_mandatory
     - field.field.media.jcc_form.field_media_file_1
+    - field.field.media.jcc_form.field_new_form
     - field.field.media.jcc_form.field_number
     - field.field.media.jcc_form.field_pdf_private
     - field.field.media.jcc_form.field_punjabi_url
     - field.field.media.jcc_form.field_revision_date
+    - field.field.media.jcc_form.field_revoke_form
     - field.field.media.jcc_form.field_russian_url
     - field.field.media.jcc_form.field_spanish_url
     - field.field.media.jcc_form.field_tagalog_url
@@ -48,6 +51,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_action_date:
+    type: datetime_default
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -107,13 +116,13 @@ content:
     third_party_settings: {  }
   field_date_effective:
     type: datetime_default
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_description:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 3
     region: content
     settings:
       rows: 9
@@ -183,17 +192,24 @@ content:
     third_party_settings: {  }
   field_mandatory:
     type: boolean_checkbox
-    weight: 31
+    weight: 32
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_media_file_1:
     type: file_generic
-    weight: 6
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
+    third_party_settings: {  }
+  field_new_form:
+    type: boolean_checkbox
+    weight: 31
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_number:
     type: string_textfield
@@ -205,7 +221,7 @@ content:
     third_party_settings: {  }
   field_pdf_private:
     type: file_generic
-    weight: 7
+    weight: 6
     region: content
     settings:
       progress_indicator: throbber
@@ -218,11 +234,12 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  field_revision_date:
-    type: datetime_default
-    weight: 2
+  field_revoke_form:
+    type: boolean_checkbox
+    weight: 34
     region: content
-    settings: {  }
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_russian_url:
     type: link_default
@@ -250,7 +267,7 @@ content:
     third_party_settings: {  }
   field_url:
     type: link_default
-    weight: 5
+    weight: 4
     region: content
     settings:
       placeholder_url: 'https://www.courts.ca.gov/documents'
@@ -266,13 +283,13 @@ content:
     third_party_settings: {  }
   field_weight:
     type: options_select
-    weight: 32
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 3
+    weight: 2
     region: content
     settings:
       include_locked: true
@@ -307,4 +324,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_revision_date: true
   status: true

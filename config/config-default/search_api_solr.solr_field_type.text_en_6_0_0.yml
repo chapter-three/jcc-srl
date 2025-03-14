@@ -165,6 +165,7 @@ unstemmed_field_type:
           class: solr.LowerCaseFilterFactory
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
+spellcheck_field_type: null
 collated_field_type:
   name: collated_en
   class: solr.ICUCollationField
@@ -284,8 +285,7 @@ text_files:
     was
     will
     with
-  protwords: |
-
+  protwords: ''
   accents: |
     # À => A
     "\u00C0" => "A"

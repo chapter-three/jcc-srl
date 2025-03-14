@@ -78,6 +78,7 @@ module:
   jcc_forms: 0
   jcc_twig: 0
   jsonapi: 0
+  jsonapi_extras: 0
   key: 0
   language: 0
   link: 0
@@ -136,6 +137,8 @@ module:
   search_api_db: 0
   search_api_exclude: 0
   search_api_exclude_entity: 0
+  search_api_pantheon: 0
+  search_api_pantheon_admin: 0
   search_api_solr: 0
   sendgrid_integration: 0
   serialization: 0
@@ -144,6 +147,7 @@ module:
   simple_sitemap: 0
   smart_trim: 0
   srl_court_finder: 0
+  srl_custom: 0
   srl_errors: 0
   srl_ga_gtm: 0
   srl_updates: 0
@@ -158,8 +162,10 @@ module:
   tmgmt_config: 0
   tmgmt_content: 0
   tmgmt_file: 0
+  tmgmt_memsource: 0
   token: 0
   toolbar: 0
+  tooltip: 0
   twig_tweak: 0
   update: 0
   user: 0
@@ -189,6 +195,5 @@ theme:
   classy: 0
   seven: 0
   adminimal_theme: 0
-  bartik: 0
   atrium: 0
 profile: mega

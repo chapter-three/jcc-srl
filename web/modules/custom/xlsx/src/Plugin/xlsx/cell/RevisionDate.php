@@ -10,25 +10,32 @@ use Drupal\xlsx\Plugin\XlsxCellBase;
  * @XlsxCell(
  *   id = "revision_date",
  *   name = @Translation("Revision Date"),
- *   description = @Translation("Process revision date fields"),
+ *   description = @Translation("Process revision date values"),
  *   field_types = {
- *     "link",
+ *     "datetime",
  *   }
  * )
  */
-class RevisionDate extends AsIs {
+class RevisionDate extends XlsxCellBase {
 
   /**
    * {@inheritdoc}
    */
   public function import($entity, $field_name, $value, $mapped_fields, $data_array, $worksheet_index) {
     if ($entity->hasField($field_name)) {
-      $drupalDate = date('Y-m-d', time());
+      //$drupalDate = date('Y-m-d', time());
       if (!empty($value)) {
-        $drupalDate = date('Y-m-d', strtotime($value));
-      }
+        $dates = explode(',', $value);
+        $processed = [];
+        foreach ($dates as $date) {
+          if (!in_array($date, $processed)) {
+            $drupalDate = date('Y-m-d', strtotime($date));
+            $processed[] = $drupalDate;
+          }
+        }
 
-      return $drupalDate;
+        return $processed;
+      }
     }
   }
 

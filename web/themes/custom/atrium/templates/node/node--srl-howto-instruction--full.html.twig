@@ -1,6 +1,23 @@
 {% extends 'node.html.twig' %}
 {% set back_btn_status = false %}
 {% block content %}
+
+  {# Check for specific tag #}
+  {% set has_specific_tag = false %}
+  {% for item in node.field_case_types %}
+    {% if item.entity.fields.name.value|trim|lower == 'appeals' %}
+      {% set has_specific_tag = true %}
+    {% endif %}
+  {% endfor %}
+
+  {# Display message if the specific tag is found #}
+  {% if has_specific_tag %}
+    <div class="appeal-message appeal-message-border">
+      <div class="usa-nav-container appeal-message__title">California Courts of Appeal</div>
+    </div>
+  {% endif %}
+
+
   {% include '@molecules/blocks/hero/hero.twig' with {
     hero: {
       background_variant: node.field_dark_background[0].value == 1 ? 'has-background-color--dark' : '',
@@ -43,7 +60,10 @@
       {% include '@organisms/sections/share/share.twig' with {
         share: {
           email_modal: drupal_entity('webform', 'share_this_page'),
-          text_modal: drupal_entity('webform', 'mark_my_place_text_message')
+          text_modal: drupal_entity('webform', 'mark_my_place_text_message'),
+          email: 'EMAIL'|t,
+          text: 'TEXT'|t,
+          print: 'PRINT'|t,
         }
       } only %}
     </div>

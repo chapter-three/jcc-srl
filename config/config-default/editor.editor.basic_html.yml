@@ -35,6 +35,7 @@ settings:
             - DrupalLink
             - DrupalUnlink
             - Anchor
+            - tooltip
         -
           name: Lists
           items:
@@ -78,6 +79,10 @@ settings:
       replace_content: 0
     insert_view_adv:
       enable_live_preview: true
+    tooltip:
+      text: 'Tooltip text'
+      placement: top
+      arrow: 1
 image_upload:
   status: true
   scheme: public

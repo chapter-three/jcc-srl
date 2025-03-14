@@ -21,33 +21,36 @@
 
 {% block view %}
   <{{ tag }}{{ attributes.addClass(classes) }}>
-    {% block exposed %}
-      {% if exposed %}
-        {% set hero_content %}
-          <p>
-            Search for any topic or form number,
-            <a href="/find-forms/all">view all forms</a> or
-            <a href="/find-forms/all-by-category">view all forms by category</a>
-          </p>
-          <div class="view__filters">{{ exposed }}</div>
-        {% endset %}
-        {% include '@molecules/blocks/hero/hero.twig' with {
-          hero: {
-            background_variant: 'has-background-color--dark',
-            title: 'Find Your Court Forms',
-            body: hero_content
-          }
-        } %}
-      {% endif %}
-    {% endblock %}
+
+    {% if not no_hero %}
+      {% block exposed %}
+        {% if exposed %}
+          {% set hero_content %}
+            <p>
+              Search for any topic or form number,
+              <a href="/find-forms/all">view all forms</a> or
+              <a href="/find-forms/all-by-category">view all forms by category</a>
+            </p>
+            <div class="view__filters">{{ exposed }}</div>
+          {% endset %}
+          {% include '@molecules/blocks/hero/hero.twig' with {
+            hero: {
+              background_variant: 'has-background-color--dark',
+              title: 'Find Your Court Forms',
+              body: hero_content
+            }
+          } %}
+        {% endif %}
+      {% endblock %}
+    {% endif %}
 
     {% block content %}
       {% if query and search_results %}
         {% if category_info %}
           {% set category_info__content %}
             <ul>
-              <li><a href="{{ category_info.url }}">Read the {{ category_info.title }} self-help guide</a></li>
-              <li><a href="{{ category_info.formsUrl }}">See {{ category_info.title }} forms packet</a></li>
+              <li><a href="{{ category_info.url }}" target="_blank">Read the {{ category_info.title }} self-help guide</a></li>
+              <li><a href="{{ category_info.formsUrl }}" target="_blank">See {{ category_info.title }} forms packet</a></li>
             </ul>
           {% endset %}
           {% include '@molecules/blocks/alert/alert.twig' with {
@@ -61,7 +64,7 @@
         {% endif %}
 
         {% set instruct %}
-          <p>Use Adobe Acrobat. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
+          <p>Use Adobe Reader. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
         {% endset %}
 
         {% include '@molecules/blocks/alert/alert.twig' with {
@@ -80,8 +83,8 @@
             {% set title = title ~ ' *' %}
           {% endif %}
           {% set content %}
-            {% if form.description %}<p>{{ form.description }}</p>{% endif %}
-            {% if form.revision_date %}<p>Revised: {{ form.revision_date|date('F j, Y') }}</p>{% endif %}
+            {% if form.name %}<p>{{ form.name }}</p>{% endif %}
+            {% if form.effective_date %}<p>Effective: {{ form.effective_date|date('F j, Y') }}</p>{% endif %}
             {% if form.languages %}
               {% set avail_languages = [] %}
               {% for language in form.languages %}
@@ -126,7 +129,9 @@
 
         <div class="jcc-find-forms">
           <div class="jcc-find-forms__notation">
-            <p>Found {{ view.total_rows }} forms matching "{{ query }}".</p>
+            {% if not no_count %}
+              <p>Found {{ view.total_rows }} forms matching "{{ query }}".</p>
+            {% endif %}
             <p>Forms marked with the asterisk ("*") are adopted for mandatory use by all courts.</p>
           </div>
           <div class="jcc-find-forms__results">
@@ -140,15 +145,23 @@
           </div>
         </div>
       {% else %}
-        {% include '@organisms/sections/link-list-with-button/link-list-with-button.twig' with {
-          link_list_with_button: {
-            headergroup: {
-              title: 'Popular Topics'
-            },
-            columns: 2,
-            items: popular_topics,
-          }
-        } %}
+        {% if popular_topics %}
+          {% include '@organisms/sections/link-list-with-button/link-list-with-button.twig' with {
+            link_list_with_button: {
+              headergroup: {
+                title: 'Popular Topics'
+              },
+              columns: 2,
+              items: popular_topics,
+            }
+          } %}
+        {% else %}
+          <div class="jcc-find-forms">
+            <div class="jcc-find-forms__notation">
+              <p>No forms found for the topic or number entered. Try adjusting your search or view <a href="/find-forms/all">all forms</a> or <a href="/find-forms/all-by-category">view by category</a>.</p>
+            </div>
+          </div>
+        {% endif %}
       {% endif %}
     {% endblock %}
 

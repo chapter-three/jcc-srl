@@ -12,8 +12,6 @@ label: Titles
 category: Demographic
 likert: false
 options: |
-  Miss: Miss
   Ms: Ms
   Mr: Mr
-  Mrs: Mrs
   Dr: Dr

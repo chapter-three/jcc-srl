@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -80,9 +82,80 @@ function jcc_forms_preprocess_views_view__find_forms__all(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
+function jcc_forms_preprocess_views_view__find_forms__latest_changes(&$variables) {
+
+  if (empty($variables['rows'])) {
+    return;
+  }
+
+  $variables['latest_changes'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], 'effective');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function jcc_forms_preprocess_views_view__find_forms__latest_unlocked_changes(&$variables) {
+
+  if (empty($variables['rows'])) {
+    return;
+  }
+
+  $variables['latest_changes'] = __jcc_build_forms_content($variables['rows'][0]['#rows'], 'effective');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function jcc_forms_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'jcc_forms_search_json_api') {
+    // TEMPORARY: Hidden translated forms search until data can be adjusted.
+    // Added where condition will not work when Fulltext finds nothing.
+    // If language term only, execute new query if language field exists.
+    $orig_keys = $query->getOriginalKeys();
+    if ($orig_keys) {
+      $fields = $query->getIndex()->getFields();
+      $field_id = preg_replace('/\s+/', '_', $orig_keys);
+      if (strtolower($orig_keys) == 'chinese simplified') {
+        $field_id = 'chinese';
+      }
+      if (array_key_exists('field_' . strtolower($field_id) .  '_url', $fields)) {
+        $query->keys('');
+        $query->setWhereGroup('OR');
+        foreach ($query->getIndex()->getFields() as $field) {
+          if (str_contains($field->getLabel(), ucwords($orig_keys))) {
+            $query->getWhere()[2]['conditions'][] = [
+              0 => $field->getFieldIdentifier(),
+              1 => NULL,
+              2 => '<>',
+            ];
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
 function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$variables) {
   if (empty($variables['rows'])) {
     return;
+  }
+
+  // View options set by URL parameters.
+  $url = $_SERVER['REQUEST_URI'];
+  $url_components = parse_url($url);
+  if (isset($url_components['query'])) {
+    parse_str($url_components['query'], $params);
+    // Opt to hide hero.
+    if (array_key_exists('no_hero', $params) && $params['no_hero'] == 'true') {
+      $variables['no_hero'] = TRUE;
+    }
+    // Opt to hide notation/summary.
+    if (array_key_exists('no_count', $params) && $params['no_count'] == 'true') {
+      $variables['no_count'] = TRUE;
+    }
   }
 
   $query = $variables['exposed']['query']['#value'];
@@ -106,10 +179,10 @@ function jcc_forms_preprocess_views_view__jcc_forms_search_json_api__page(&$vari
           'url_title' => $set->title,
           'url' => '/find-forms?query=' . $set->query
         ];
-        array_push($popular_topics, $topic);
+        $popular_topics[] = $topic;
       }
-      $variables['popular_topics'] = $popular_topics;
     }
+    $variables['popular_topics'] = $popular_topics;
   }
 }
 
@@ -129,6 +202,7 @@ function __jcc_build_forms_content($rows, $organize_by) {
   $lang_props_sets = __jcc_language_sets();
   $forms = [];
   $label_no_category = 'Miscellaneous';
+  $label_revoked = 'Revoked';
 
   foreach ($rows as $row) {
     $item = $row['#row'];
@@ -138,7 +212,6 @@ function __jcc_build_forms_content($rows, $organize_by) {
 
     // Forms information button.
     /** @var Drupal\core\Url $information_url */
-    //$information_url = Url::fromUri($item->_entity->$field_name->uri);
     $information_url = '/jcc-form/' . $form_number;
     $information_btn = Markup::create('<a class="usa-button usa-button--outline" href="' . $information_url . '" target="_blank">See form info</a>');
 
@@ -146,6 +219,9 @@ function __jcc_build_forms_content($rows, $organize_by) {
     /** @var Drupal\core\Url $download_url */
     $download_url = $item->_entity->field_url->uri;
     $download_btn = Markup::create('<a class="usa-button usa-button--outline" href="' . $download_url . '">Download</a>');
+    // Unlocked version.
+    $path = explode('/', $download_url);
+    $download_unlocked_url = 'https://jrn.courts.ca.gov/jc/forms/documents/' . $path[sizeof($path)-1];
 
     // Check for language variants.
     $item_languages = [];
@@ -154,9 +230,12 @@ function __jcc_build_forms_content($rows, $organize_by) {
         $label_in_language = $labels->label_in_language;
         $link_text = Markup::create('<span class="radius-pill tag">' . $label_in_language . '</span>');
 
-        array_push($item_languages, $link_text);
+        $item_languages[] = $link_text;
       }
     }
+
+    // Form states.
+    $is_revoked = $item->_entity->field_revoke_form->value;
 
     // List forms.
     $category = $label_no_category;
@@ -165,18 +244,44 @@ function __jcc_build_forms_content($rows, $organize_by) {
     }
     $form = [
       'number' => $form_number,
-      'description' => $item->_entity->name->value,
+      'name' => $item->_entity->name->value,
       'category' => $category,
       'mandatory' => $item->_entity->field_mandatory->value,
-      'revision_date' => $item->_entity->field_revision_date->value,
+      'effective_date' => $item->_entity->field_date_effective->value,
       'url' => $information_url,
       'information' => $information_btn,
       'download' => $download_btn,
       'languages' => $item_languages
     ];
+    if ($organize_by == 'effective') {
+      if ($is_revoked) {
+        $category = $label_revoked;
+      }
+      $effective_dates = $item->_entity->field_date_effective;
+      $action_dates = $item->_entity->field_action_date;
+      $i = 0;
+      foreach ($effective_dates as $effective_date) {
+        $form = [
+          'number' => $form_number,
+          'name' => $item->_entity->name->value,
+          'category' => strpos($category, ':') ? substr($category, 0, strpos($category, ':')) : $category,
+          'effective_date' => $effective_date->value,
+          'action_date' => count($action_dates) > 1 ? $action_dates[$i]->value : $action_dates->value,
+          'download' => $download_url,
+          'download_unlocked' => $download_unlocked_url,
+          'is_new' => $item->_entity->field_new_form->value,
+          'is_revoked' => $is_revoked
+        ];
+        if (!in_array($form, $forms)) {
+          $forms[] = $form;
+        }
 
-    if (!in_array($form, $forms)) {
-      array_push($forms, $form);
+        $i++;
+      }
+    } else {
+      if (!in_array($form, $forms)) {
+        $forms[] = $form;
+      }
     }
   }
 
@@ -190,10 +295,38 @@ function __jcc_build_forms_content($rows, $organize_by) {
       }
     }
 
-    // Sort groups alphabetically.
+    // Sort categories alphabetically.
     ksort($forms_by_category);
 
     $forms = $forms_by_category;
+  }
+
+  // Group forms by effective date.
+  if ($organize_by == 'effective') {
+    // Ensure category & number sort.
+    usort($forms, fn($a, $b) => $a['category'] <=> $b['category']);
+    usort($forms, fn($a, $b) => $a['number'] <=> $b['number']);
+    $forms_by_effective = [];
+    foreach ($forms as $value) {
+      if ($value['effective_date']) {
+        $category = $value['category'];
+        $effective = $value['effective_date'];
+        $approved = $value['action_date'];
+        $organizer = $effective . '-' . $approved;
+        $forms_by_effective[$organizer][$category][] = $value;
+        // Revoked forms listed last.
+        if (isset($forms_by_effective[$organizer][$label_revoked])) {
+          $revoked = $forms_by_effective[$organizer][$label_revoked];
+          unset($forms_by_effective[$organizer][$label_revoked]);
+          $forms_by_effective[$organizer][$label_revoked] = $revoked;
+        }
+      }
+    }
+
+    // Sort chronologically.
+    krsort($forms_by_effective);
+
+    $forms = $forms_by_effective;
   }
 
   return $forms;
