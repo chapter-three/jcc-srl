@@ -1,9 +1,9 @@
 uuid: 3724127a-9122-4985-a162-869ec6341c36
-langcode: en
+langcode: fil
 status: true
 dependencies: {  }
 id: fil
-label: Filipino
+label: Tagalog
 direction: ltr
-weight: -6
+weight: -1
 locked: false
