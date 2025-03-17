@@ -1,9 +1,9 @@
 uuid: eb36db4e-0d0d-40d0-bb9c-083b599072f7
-langcode: en
+langcode: zh-hant
 status: true
 dependencies: {  }
 id: zh-hant
-label: 'Chinese, Traditional'
+label: '繁體中文資源 (Traditional Chinese)'
 direction: ltr
-weight: 0
+weight: -7
 locked: false

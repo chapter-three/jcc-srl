@@ -4,7 +4,12 @@ quick_checkout: true
 anonymous_access: true
 purge_finished: _never
 respect_text_format: true
-allowed_formats: {  }
+allowed_formats:
+  - basic_html
+  - iframe_only
+  - simple_html
+  - full_html
+  - plain_text
 word_count_exclude_tags: true
 source_list_limit: 20
 submit_job_item_on_cron: false

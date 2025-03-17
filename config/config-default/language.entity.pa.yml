@@ -1,9 +1,9 @@
 uuid: 4049b1fa-fa4b-4ac9-a06a-dae7428ead6f
-langcode: en
+langcode: pa
 status: true
 dependencies: {  }
 id: pa
-label: Punjabi
+label: 'ਪੰਜਾਬੀ (Punjabi)'
 direction: ltr
 weight: -3
 locked: false
