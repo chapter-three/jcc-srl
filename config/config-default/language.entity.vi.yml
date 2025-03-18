@@ -1,9 +1,9 @@
 uuid: 07d9df3f-d3ce-4866-bd47-388cebf53d4b
-langcode: en
+langcode: vi
 status: true
 dependencies: {  }
 id: vi
-label: Vietnamese
+label: 'tiếng Việt (Vietnamese)'
 direction: ltr
-weight: -1
+weight: 0
 locked: false

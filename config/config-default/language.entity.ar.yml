@@ -1,9 +1,9 @@
 uuid: ade76191-b183-4f5a-ba30-55324d22c306
-langcode: en
+langcode: ar
 status: true
 dependencies: {  }
 id: ar
-label: Arabic
+label: 'العربية (Arabic)'
 direction: rtl
 weight: -9
 locked: false
