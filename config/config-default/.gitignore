@@ -1,4 +1,4 @@
 key.key.*
 recaptcha.settings.yml
-tmgmt.translator.memsource.yml
+tmgmt.translator.*
 tmgmt_memsource.settings.yml
