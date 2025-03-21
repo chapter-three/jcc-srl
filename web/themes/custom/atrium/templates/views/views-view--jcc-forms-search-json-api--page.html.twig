@@ -44,6 +44,9 @@
       {% endblock %}
     {% endif %}
 
+    {% set instruct %}
+      <p>Use Adobe Reader. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
+    {% endset %}
     {% include '@molecules/blocks/alert/alert.twig' with {
       alert: {
         type: 'warning',
@@ -71,10 +74,6 @@
             }
           } %}
         {% endif %}
-
-        {% set instruct %}
-          <p>Use Adobe Reader. <a href="/pdf-working-court-forms-1" target="_blank">See instructions</a>.</p>
-        {% endset %}
 
         {% set forms = [] %}
         {% for form in search_results %}
